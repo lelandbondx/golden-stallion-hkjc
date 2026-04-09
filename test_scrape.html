@@ -1,0 +1,632 @@
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Race Card - Racing Information - Horse Racing - The Hong Kong Jockey Club</title>
+        <link href="/racing/information/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="keywords" />
+        
+        
+    
+
+
+         
+            <link type="text/css" href="/racing/information/en-us/Content/Comm.aspx" rel="stylesheet" /> 
+                <link type="text/css" href="/racing/information/en-us/Content/racing.aspx" rel="stylesheet" />
+
+        <script type="text/javascript" src="/racing/information/Scripts/jquery-1.10.2.js"></script>
+        
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(".js_racecard_rt_num img").on("mouseover", function () {
+                var imgurl = $(this).attr("src");
+                var suffix = imgurl.substring(imgurl.lastIndexOf("."), imgurl.length);
+                var newimgurl = "";
+                if (imgurl.lastIndexOf("_o") < 0) {
+                    newimgurl = imgurl.substring(0, imgurl.lastIndexOf(".")) + "_r" + suffix;
+                    $(this).addClass("active");
+                    $(this).attr("src", newimgurl);
+                    $(this).attr("delSrc", imgurl);
+                }
+            })
+            $(".js_racecard_rt_num img").on("mouseout", function () {
+                if ($(this).hasClass("active")) {
+                    var imgurl = $(this).attr("delSrc");
+                    $(this).attr("src", imgurl);
+                }
+            })
+
+            $("img[id^=racecard_v3_btn][id$=_r]").mouseover(function () {
+                var imgurl = $(this).attr("src");
+                var suffix = imgurl.substring(imgurl.lastIndexOf("."), imgurl.length);
+                var newimgurl = "";
+                if (imgurl.indexOf("_r") < 0) {
+                    newimgurl = imgurl.substring(0, imgurl.lastIndexOf(".")) + "_r" + suffix;
+                    $(this).addClass("active");
+                    $(this).attr("src", newimgurl);
+                    $(this).attr("delSrc", imgurl);
+                }
+            })
+            $("img[id^=racecard_v3_btn][id$=_r]").mouseout(function () {
+                if ($(this).hasClass("active")) {
+                    var imgurl = $(this).attr("delSrc");
+                    $(this).attr("src", imgurl);
+                }
+            })
+                
+                $("input[type='checkbox'][value='Rtg.']").on('change', function () {
+                    $("input[type='checkbox'][value='Rtg.'][style='display: none;']").prop('checked', this.checked);
+                });
+                
+        });
+
+        function OpenPopWin(ps_Link, pv_Width, pv_Height, ps_Win) {
+            var randomnumber = Math.floor(Math.random() * 11);
+            var pv_Left = 20;
+            var pv_Top = 20;
+            var ls_options = "status=no,toolbar=no,menubar=no,location=no,scrollbars=no,resizable=yes,left=" + pv_Left + ",top=" + pv_Top + ",width=" + pv_Width + ",height=" + pv_Height;
+            window.open(ps_Link, randomnumber, ls_options);
+        }
+
+        function loadAlternativeColour(element) {
+            if (element.src != new URL(element.dataset.colour, document.baseURI).href) {
+                element.src = element.dataset.colour;
+            }
+            else {
+                element.style.opacity = "0";
+            }
+        }
+    </script>
+
+
+        
+    
+    <style type="text/css">
+
+        a.blueBtn1 {
+            display: inline-block;
+            background: linear-gradient(#2B5DBA,#2958B0);
+            border-radius: 4px;
+            height: 19px;
+            padding: 2px 13px 0 13px;
+            margin: 0 0 4px 3px;
+            font-weight: bold !important;
+            color: #fff !important;
+            font-family: Arial,Verdana,Helvetica,sans-serif;
+            font-size: 11px !important;
+            white-space: nowrap;
+        }
+
+        .greyBtn {
+            display: inline-block;
+            background: linear-gradient(#ECECEC,#DEDEDE); 
+            border-radius: 4px;
+            height: 19px;
+            padding: 2px 13px 0 13px;
+            margin: 0 0 4px 3px;
+            font-weight: bold !important;
+            color: #666 !important;
+            font-family: Arial,Verdana,Helvetica,sans-serif;
+            font-size: 11px !important;
+            white-space: nowrap;
+        }
+
+        a.racecard_rt_num:hover {
+            text-decoration:none;
+        }
+
+        .date_title  {
+            margin-bottom:10px;
+            margin-top:5px;
+            background: url(/racing/Info/english/revamp/images/racing/dash.gif) repeat-x left bottom;
+            min-height:25px;
+            width:760px;
+            text-align:right;
+        }
+
+        .raceCard .top_races td {
+            padding: 1px;
+        }
+
+        .raceCard .commTitlePic {
+            display: inline-block;
+            width: 760px;
+        }
+
+        #racecardlist a, #standbylist a {
+            color: #03c;
+        }
+
+        .world_pool_logo {
+            width: 192px;
+            height: 35px;
+        }
+        .raceCard_buttonContent{
+            display: flex;
+            width: 175px;
+            background: #f1f1f1;
+            border: 2px solid #e8e8e8;
+            padding: 4px;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        .raceCard_buttonContentItem{ 
+            display: flex;
+            flex-basis: 43%;
+            color: #000;
+            text-decoration: none;
+            height: 30px;
+            line-height: 12px;
+        }
+        .raceCard_buttonContentItem:hover {
+            color: #000;
+            text-decoration: none;
+        }
+        .raceCard_buttonContentItem div{
+            font-size: 10px;
+            padding-left: 2px;
+        }
+        .worldpoolcontent{
+            display: flex;
+            flex-direction: column;
+            float: right;
+            margin-right: 7px;
+        }
+        .worldpoolcontent div{
+            width: 120px;
+            height: auto;
+        }
+        .worldpoolcontent img {
+             float: right;
+        }
+        .visibilityInitial {
+            visibility: initial;
+        }
+        .visibilityHidden {
+            visibility: hidden;
+        }
+        .displayNone {
+            display: none;
+        }
+        .heightAuto{
+            height: 32px;
+        }
+        .raceCard_buttonContentItem img {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+
+
+        <style type="text/css">
+            .GearInfoWidth800 {margin-top: 20px}
+            .GearInfoWidth800 table{width:792px; font-size: 16px !important;}
+           .GearInfoWidth760 table{width:752px; font-size: 13px !important;}
+            .gearFontFamily font{
+                font-family: Arial, Verdana, Helvetica, sans-serif;
+            }
+            .tableBorderBlack > table {
+                border: 3px double #000 !important
+            }
+            .footer-top {display: grid;padding-top: 20px;grid-template-columns: auto 1fr;  }
+            .footer-top .footer-banner-rgp-imag {margin-left: auto;}
+            .footer-play-responsibly {color: #003c84;margin-bottom: 13px;line-height: 14px;font-weight: 700;}
+            .footer-play-responsibly-content {color: #333333;padding-bottom: 15px;line-height: 18px;font-weight: 400;}
+            .footer-play-responsibly-content p {margin: 0;}
+            .footer-play-responsibly-imag {width: 94px;height: 49px;display: flex;flex-wrap: wrap;align-content: center;justify-content: center;align-items: center;text-align: center;color: #333333;cursor: pointer;}
+            .footer-play-responsibly-imag img {width: 72px;height: 50px;}
+            .footer-play-responsibly-imag:hover {border: none;outline: none;text-decoration: none;color: inherit;}
+
+        </style>
+        <script language='javascript'>
+            var JcrwUrlPrefix = '/racing/Info';
+            var SSOCommonPath = '//common.hkjc.com/corporate/';
+
+            function OpenPopWinScroll(ps_Link, pv_Width, pv_Height, ps_Win) {
+                var pv_Left = 20;
+                var pv_Top = 20;
+                var ls_options = "status=no,toolbar=no,menubar=no,location=no,scrollbars=yes,resizable=yes,scrollbars=yes,left=" + pv_Left + ",top=" + pv_Top + ",width=" + pv_Width + ",height=" + pv_Height;
+                window.open(ps_Link, ps_Win, ls_options);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="mainContainer">
+            
+
+
+
+<link type="text/css" href="/racing/common/english/css/global.css" rel="stylesheet" />
+<link type="text/css" href="/racing/common/english/css/racing.css" rel="stylesheet" />
+<script type="text/javascript" src="/racing/Info/Scripts/MicrosoftAjax.min.js"></script>
+<script type="text/javascript" src="/racing/Info/Scripts/MicrosoftMvcAjax.min.js"></script>
+<script type="text/javascript" src="/racing/Info/Scripts/ImgRollover.min.js"></script>
+<script type="text/javascript" src="//common.hkjc.com/js/specialChar.js"></script>
+<script type="text/javascript" src="//common.hkjc.com/js/b64.min.js"></script>
+<script type="text/javascript" src="//common.hkjc.com/corporate/scripts/customer_profile.min.js"></script>
+<script type="text/javascript" src="/racing/Info/Scripts/jquery-1.4.1.min.js"></script>
+<script src="//common.hkjc.com/corporate/scripts/jquery.jsonp-2.1.3.min.js" type="text/javascript"></script>
+<script src="/racing/info/GlobalMenu/English/js/global.js" type="text/javascript"></script>
+<script src="//common.hkjc.com/corporate/scripts/SSOCore.js" type="text/javascript"></script>
+<script src="//common.hkjc.com/corporate/scripts/sso.min.js" type="text/javascript"></script>
+<script src="//common.hkjc.com/corporate/scripts/ssoConfig.js" type="text/javascript"></script>
+<script src="/racing/info/GlobalMenu/English/js/jcrw_sso.js" type="text/javascript"></script>
+<script src="/racing/info/english/include/readyToShowLoginBar.js" type="text/javascript"></script>
+<script type="text/javascript" src="/racing/information/Scripts/jquery-1.10.2.js"></script>
+<script src="/racing/common/js/4e-rw.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="/racing/information/Scripts/wa_handler.js"></script>
+    <script type="text/javascript" src="//common.hkjc.com/wa/wa_launch_wp_prod.js"></script>
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        WAHandler._log('~/Views/Shared/Header2.cshtml');
+        WAHandler.trackPageView("en-us", "racing", "racecard");
+    });
+</script>
+
+    <script src="https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js" type="text/javascript"></script>
+    <script src="/racing/information/Scripts/datadog-eum.js"></script>
+
+<style>
+
+
+    div#header {
+        width: 964px;
+    }
+
+    #mainContainer, #seo .content, #footer {
+        margin-left: 0px;
+    }
+
+    #contentContainer .shadowR {
+        display: none;
+    }
+
+    #innerContent {
+        width: 920px;
+        padding: 0 10px;
+        min-height: inherit;
+        position: relative;
+    }
+
+        #innerContent .twoMenuSelect {
+            background: rgb(32, 74, 136);
+            border: 0px solid rgb(255, 255, 255);
+            border-image: none; /*left: 13px; top: 114px;*/
+            padding-left: 6px;
+            width: 800px;
+            height: 23px;
+            visibility: visible;
+            position: absolute;
+            z-index: 21;
+        }
+
+    #contentContainer .content .navBg {
+        width: 920px;
+        height: 23px;
+        background: #204A88;
+        margin: 0 10px;
+    }
+
+    #menu1 {
+        position: absolute;
+        left: 10px !important;
+        top: -23px !important;
+        *top: -23px !important;
+        width: auto !important;
+    }
+
+    .menuNav {
+        position: relative;
+        left: 0 !important;
+        top: 0 !important;
+        float: left;
+        width: auto !important;
+    }
+
+        .menuNav a {
+            display: block;
+            background: rgb(32, 74, 136);
+            padding: 3px;
+            line-height: 16px;
+            text-align: left;
+            color: rgb(255, 255, 255);
+            font-family: Arial, Verdana;
+            font-size: 11px;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+        }
+
+            .menuNav a:hover {
+                text-decoration: none;
+            }
+
+            .menuNav a.selected {
+                background: #000;
+                color: #99ffff;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+    .menuNav {
+        background: rgb(32, 74, 136);
+        height: 23px;
+    }
+
+    .twoMenu {
+        background: rgb(32, 74, 136);
+        border-image: none;
+        left: 0px;
+        width: 210px;
+        visibility: hidden;
+        position: absolute;
+        z-index: 19;
+    }
+
+        .twoMenu a {
+            border: 2px solid rgb(37, 86, 159);
+            padding: 4px;
+            text-decoration: none;
+        }
+
+            .twoMenu a:not(:first-child) {
+                border-top: none;
+            }
+
+            .twoMenu a:hover {
+                background: #000;
+                color: #99ffff;
+                cursor: pointer;
+            }
+
+    #mainNav .subNav .content {
+        height: auto;
+        padding: 9px 20px 9px 20px;
+        width: 900px;
+    }
+
+        #mainNav .subNav .content ul li a.active {
+            color: #c7b163;
+        }
+
+    #header_bottom_banner {
+        display: none;
+    }
+
+    #contentContainer .content {
+        width: 940px;
+        background: #FFF;
+        padding: 10px 0 2px 0;
+        margin: 0 11px;
+    }
+
+    #seo .content {
+        margin: 0;
+        margin-left: 22px;
+    }
+
+    #footer {
+        margin: 0;
+        margin-left: 22px;
+    }
+
+    #mainNav .subNav .content ul {
+        font-size: 0;
+    }
+
+        #mainNav .subNav .content ul li {
+            height: 16px;
+            vertical-align: top;
+        }
+
+        #mainNav .subNav .content ul .stroke {
+            font-size: 12px;
+        }
+
+    .mainNav_cn .subNav .content ul li {
+        margin: 0;
+    }
+
+        .mainNav_cn .subNav .content ul li a {
+            line-height: inherit;
+        }
+
+    .menuNav a {
+        padding: 2px 5px 3px 1px;
+        margin-top: 2px;
+    }
+
+        .menuNav a.selected_cur {
+            background: #e7e7e7;
+            color: #000080;
+        }
+
+    .menuNav .twoMenu a.selected_cur {
+        background: #000088;
+        color: #fff;
+    }
+
+    .menuNav_cn {
+        padding: 0 2px;
+    }
+
+        .menuNav_cn a {
+            font-family: 新細明體,Arial, Verdana;
+            font-size: 12px;
+            padding: 2px 3.7px 3px 4px;
+        }
+
+    #topNav {
+        margin: 25px 5px 0 0;
+    }
+
+        #topNav input[type="text"] {
+            height: 20px;
+            width: 79px;
+            line-height: inherit;
+            font-size: 11px;
+        }
+
+        #topNav #globalLoginControl {
+            margin-left: 5px;
+        }
+
+        #topNav a {
+            padding: 0;
+        }
+
+
+    .menuNav a.selected_cur {
+        background: #e7e7e7;
+        color: #000080;
+    }
+
+    .menuNav .twoMenu a.selected_cur {
+        background: #000088;
+        color: #fff;
+    }
+
+    .navNewHeader {
+        display: flex;
+        justify-content: space-evenly;
+        line-height: 27px;
+        background: #032169 !important;
+        border-radius: 4px 4px 0 0;
+    }
+
+        .navNewHeader p {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+            .navNewHeader p:first-child a {
+                border-radius: 4px 0 0 0;
+            }
+
+            .navNewHeader p:last-child a {
+                border-radius: 0 4px 0 0;
+            }
+
+        .navNewHeader a {
+            display: block;
+            color: #fff;
+            padding: 0;
+            border: 1px solid rgb(0, 60, 132);
+            box-sizing: border-box;
+            font-size: 12px;
+            width: 100%;
+        }
+
+    .navNewHeaderActive {
+        background: #fff;
+        color: #173e96 !important;
+    }
+
+    .navNewHeader a:hover {
+        background: #fff;
+        text-decoration: none;
+        color: #173e96;
+    }
+
+    .logoBg {
+        background: none !important;
+    }
+
+        .logoBg img {
+            display: block;
+            height: 100%;
+        }
+
+    .ewinContainerBg {
+        background: none !important;
+    }
+
+        .ewinContainerBg img {
+            width: 100%;
+            height: 100%;
+        }
+</style>
+
+
+<script>
+    $(document).ready(function () {
+        var url = ReplaceLanguage(window.location.href);
+
+        if ('False' === 'True'){
+            url = "/en-us/local/information/selecthorse";
+        }
+        else if ("racecard" == "trackworkonedayresult") {
+            url = "/en-us/local/information/trackworksearch";
+        }
+
+        $("a.lang").attr("href", ReplaceLanguage(url));
+    });
+
+    function ChangeLang() {
+        var url = ReplaceLanguage(window.location.href);
+        if ('False' === 'True') {
+            url = "/en-us/local/information/selecthorse";
+        }
+        else if ("racecard" == "trackworkonedayresult") {
+            url = "/en-us/local/information/trackworksearch";
+        }
+
+        window.location.href = ReplaceLanguage(url);
+    }
+
+    function ReplaceLanguage(urlhref) {
+        if ("en-us" == "en-us")
+        {
+            return urlhref.replace(/English/gi, "Chinese").replace(/en-us/gi, "zh-hk");
+        }
+        else
+        {
+            return urlhref.replace(/English/gi, "English").replace(/en-us/gi, "en-us");
+        }
+    }
+
+    $(function () {
+
+        $("#mainNav .nav .content img").on("mouseover",function () {
+            var imgurl = $(this).attr("src");
+            var suffix = imgurl.substring(imgurl.lastIndexOf("."), imgurl.length);
+            var newimgurl = "";
+            if (imgurl.lastIndexOf("_over") < 0) {
+                newimgurl = imgurl.substring(0, imgurl.lastIndexOf(".")) + "_over" + suffix;
+                $(this).addClass("active");
+                $(this).attr("src", newimgurl);
+                $(this).attr("delSrc", imgurl);
+            }
+        })
+        $("#mainNav .nav .content img").on("mouseout",function () {
+            if ($(this).hasClass("active")) {
+                var imgurl = $(this).attr("delSrc");
+                $(this).attr("src", imgurl);
+            }
+        })
+
+        //$("#mainNav .subNav .content li").on("mouseover",function () {
+        //    $(this).siblings().children("a").css("color","#c7b163");
+        //    //if (!$(this).find("a").hasClass("active")) {
+        //    //    console.log(1)
+        //    //    $(this).find("a").addClass("active").parent("li").siblings("li:not(.active)").removeClass("active");
+        //    //    $(this).addClass("active");
+        //    //}
+        //})
+        //$("#mainNav .subNav .content li").mouseout(function () {
+        //    $(this).siblings().children("a").css("color", "#ae8701");
+        //    //if ($(this).hasClass("active")) {
+        //    //    $(this).removeClass("active");
+        //    //    $(this).find("a").removeClass("active");
+        //    //}
+        //})
+
+
+        $(".js_twoMenuSe
