@@ -146,7 +146,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Central Banner
-st.image("C:/Users/lelan/.gemini/antigravity/brain/23a3659b-d53f-4591-b02b-34b408eb85c9/golden_stallion_banner_1775267984516.png", use_container_width=True)
+st.image("golden_stallion_banner.png", use_container_width=True)
 
 st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">金马定量系统 • Lee\'s HKJC bot</div>', unsafe_allow_html=True)
