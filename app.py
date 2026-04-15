@@ -270,7 +270,7 @@ with tab1:
             <div class="tech-panel border-accent-gold" style="background: linear-gradient(145deg, rgba(30,20,5, 0.9), rgba(15, 8, 10, 0.9));">
                 <div class="data-label" style="color:#FFD700; font-size:0.95rem;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
                 <div class="data-value" style="font-size:2.4rem; font-family:'Montserrat'; font-weight:800; margin-bottom: 5px; color:#FFDF00; text-shadow: 0 4px 10px rgba(255,215,0,0.4);">Race {top_pick_today['race_no']} – #{top_pick_today['no']} {top_pick_today['name']}</div>
-                <div class="data-value" style="font-size:1.1rem; color:#f8fafc;">Live Odds: <b>{top_pick_today['win_odds']}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#ef4444;">{top_pick_today['confidence']}%</b></div>
+                <div class="data-value" style="font-size:1.1rem; color:#f8fafc;">Live Odds: <b>{top_pick_today['win_odds']:.2f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#ef4444;">{top_pick_today['confidence']}%</b></div>
             </div>
             ''', unsafe_allow_html=True)
             parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in global_best_bets[:3]])
@@ -300,7 +300,7 @@ with tab1:
                     <div class="data-label" style="color:#FFD700; font-size:0.9rem;">⭐ PRIMARY WIN PROBABILITY</div>
                     <div class="data-value" style="font-size:1.6rem;">{best['no']}. {best['name']}</div>
                     <div class="data-value" style="font-size:1rem; color:#d1d5db; margin-top:8px;">
-                        Jockey: <span style="color:#ffffff;">{best['jockey']}</span> | Trainer: <span style="color:#ffffff;">{best['trainer']}</span> | Odds: <span style="color:#ffffff;">{best['win_odds']:.1f}</span>
+                        Jockey: <span style="color:#ffffff;">{best['jockey']}</span> | Trainer: <span style="color:#ffffff;">{best['trainer']}</span> | Odds: <span style="color:#ffffff;">{best['win_odds']:.2f}</span>
                     </div>
                     <div class="data-label" style="font-size:0.9rem; margin-top:12px; border-top: 1px solid rgba(255,215,0,0.2); padding-top:10px;">Kelly Criterion Allocation: <span style="color:#FFD700; font-weight:800;">{suggested_kelly}</span></div>
                 </div>
@@ -312,7 +312,7 @@ with tab1:
                     <div class="data-value" style="font-size:1.35rem;">{second['no']}. {second['name']}</div>
                     <div class="data-value" style="font-size:1rem; color:#d1d5db; margin-top:8px;">
                         Jockey: <span style="color:#ffffff;">{second['jockey']}</span> | Trainer: <span style="color:#ffffff;">{second['trainer']}</span>
-                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{second['win_odds']:.1f}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{second['win_odds']:.2f}</span>
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Confidence: {second['confidence']}%</div>
                 </div>
@@ -324,7 +324,7 @@ with tab1:
                     <div class="data-value" style="font-size:1.35rem;">{third['no']}. {third['name']}</div>
                     <div class="data-value" style="font-size:1rem; color:#d1d5db; margin-top:8px;">
                         Jockey: <span style="color:#ffffff;">{third['jockey']}</span> | Trainer: <span style="color:#ffffff;">{third['trainer']}</span>
-                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{third['win_odds']:.1f}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{third['win_odds']:.2f}</span>
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Confidence: {third['confidence']}%</div>
                 </div>
@@ -338,7 +338,7 @@ with tab1:
                     <div style="background: rgba(239, 68, 68, 0.08); padding: 20px; border-radius: 8px; border: 1px dashed rgba(239, 68, 68, 0.4); margin-bottom: 5px;">
                         <div style="color:#ef4444; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: #{bold_pick['no']} {bold_pick['name']}</div>
                         <div style="color:#f8fafc; font-size:1rem; margin-bottom: 15px; line-height:1.5;">
-                            Our quantitative models have identified a significant probabilistic upside on <b>#{bold_pick['no']} {bold_pick['name']}</b> relative to the current market implied probability at <b>{bold_pick['win_odds']}</b> odds. 
+                            Our quantitative models have identified a significant probabilistic upside on <b>#{bold_pick['no']} {bold_pick['name']}</b> relative to the current market implied probability at <b>{bold_pick['win_odds']:.2f}</b> odds. 
                             (Jockey: <i>{bold_pick['jockey']}</i> | Trainer: <i>{bold_pick['trainer']}</i>)
                         </div>
                         <div style="color:#FFD700; font-size:1rem; margin-top:8px;">⭐ <b>Optimal Exacta/Quinella Pairing:</b> Couple the primary statistical leader <b>#{best['no']}</b> with the identified outlier <b>#{bold_pick['no']}</b> for maximal expected value.</div>
@@ -359,7 +359,7 @@ with tab1:
                         "trainer": st.column_config.TextColumn("Trainer", width="medium"),
                         "draw": st.column_config.NumberColumn("Draw", width="small"),
                         "rtg": st.column_config.NumberColumn("Rating", width="small"),
-                        "win_odds": st.column_config.NumberColumn("Odds", format="%.1f", width="small"),
+                        "win_odds": st.column_config.NumberColumn("Odds", format="%.2f", width="small"),
                         "confidence": st.column_config.ProgressColumn(
                             "AI Win Prob %",
                             min_value=0,
