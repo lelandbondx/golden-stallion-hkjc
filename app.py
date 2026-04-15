@@ -229,8 +229,9 @@ with tab1:
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
         
-        # Blend XGBoost structural model (30%) with Live Market Probability (70%) to ensure realistic picks
-        df_runners['model_prob'] = (df_runners['implied_prob'] * 0.7) + (df_runners['model_prob'] * 0.3)
+        # The XGBoost model is now fully market-aware (processes live win_odds and ratings)
+        # We rely 100% on the upgraded AI structural model to find true EV discrepancies.
+        df_runners['model_prob'] = df_runners['model_prob']
         
         # Normalize the blended probability
         total_b = df_runners['model_prob'].sum()

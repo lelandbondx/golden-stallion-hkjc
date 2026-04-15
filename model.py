@@ -29,10 +29,14 @@ def train_and_save_model():
 
     # Select basic features
     # Ensure they exist or fillna
-    features = ['draw', 'actual_weight', 'declared_weight']
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'win_odds']
     for f in features:
         if f not in runs.columns:
             runs[f] = 0
+            
+    # Clean up NaN inputs for new statistical parameters
+    runs['horse_rating'] = pd.to_numeric(runs['horse_rating'], errors='coerce').fillna(40)
+    runs['win_odds'] = pd.to_numeric(runs['win_odds'], errors='coerce').fillna(20.0)
             
     # Jockey and Trainer win rates
     if 'jockey_id' in runs.columns:
@@ -55,11 +59,11 @@ def train_and_save_model():
     X = train_data[model_features]
     y = train_data['won']
     
-    print("Training XGBoost model...")
+    print("Training Enhanced XGBoost model...")
     model = xgb.XGBClassifier(
-        n_estimators=200, 
-        max_depth=4, 
-        learning_rate=0.05, 
+        n_estimators=300, 
+        max_depth=5, 
+        learning_rate=0.03, 
         subsample=0.8,
         colsample_bytree=0.8,
         eval_metric='logloss',
@@ -115,10 +119,18 @@ def predict_probabilities(df):
         declared_weight = pd.to_numeric(row.get('declared_weight', 1050), errors='coerce')
         if pd.isna(declared_weight): declared_weight = 1050
             
+        rtg = pd.to_numeric(row.get('rtg', 40), errors='coerce')
+        if pd.isna(rtg): rtg = 40
+            
+        win_odds = pd.to_numeric(row.get('win_odds', 20.0), errors='coerce')
+        if pd.isna(win_odds): win_odds = 20.0
+            
         features.append({
             'draw': draw,
             'actual_weight': actual_weight,
             'declared_weight': declared_weight,
+            'horse_rating': rtg,
+            'win_odds': win_odds,
             'jockey_win_rate': j_rate,
             'trainer_win_rate': t_rate
         })
