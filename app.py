@@ -248,13 +248,9 @@ with tab1:
         
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
         
-        # Rescale the confidence to provide an 'assertive' AI prediction range (72% to ~98.5%)
-        p_min = df_runners['model_prob'].min()
-        p_max = df_runners['model_prob'].max()
-        if p_max > p_min:
-            df_runners['confidence'] = (72.5 + ((df_runners['model_prob'] - p_min) / (p_max - p_min)) * 26).round(1)
-        else:
-            df_runners['confidence'] = 75.0
+        # For professional bettors, we use the realistic model probability.
+        # Win probabilities in 12-14 horse fields typically range from 2% to 40%.
+        df_runners['confidence'] = (df_runners['model_prob'] * 100).round(1)
 
         
         race['processed_runners'] = df_runners
@@ -364,9 +360,9 @@ with tab1:
                         "rtg": st.column_config.NumberColumn("Rating", width="small"),
                         "win_odds": st.column_config.NumberColumn("Odds", format="%.1f", width="small"),
                         "confidence": st.column_config.ProgressColumn(
-                            "AI Confidence %",
+                            "AI Win Prob %",
                             min_value=0,
-                            max_value=100,
+                            max_value=50,
                         ),
                     },
                     hide_index=True,
