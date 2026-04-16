@@ -21,7 +21,7 @@ var/
 .pytest_cache/
 .coverage
 htmlcov/
-*.joblib
+
 .DS_Store
 .env
 
