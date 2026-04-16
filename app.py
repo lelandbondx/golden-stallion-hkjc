@@ -297,8 +297,6 @@ with tab1:
             
             pc1, pc2, pc3 = st.columns(3)
             with pc1:
-                k_stake = df_runners.loc[best.name, 'kelly_stake']
-                suggested_kelly = f"{round(k_stake * 100, 1)}%" if k_stake > 0 else "0.5% (MIN)"
                 st.markdown(f'''
                 <div class="tech-panel border-accent-gold">
                     <div class="data-label" style="color:#FFD700; font-size:0.9rem;">⭐ PRIMARY WIN PROBABILITY</div>
@@ -306,7 +304,7 @@ with tab1:
                     <div class="data-value" style="font-size:1rem; color:#d1d5db; margin-top:8px;">
                         Jockey: <span style="color:#ffffff;">{best['jockey']}</span> | Trainer: <span style="color:#ffffff;">{best['trainer']}</span> | Odds: <span style="color:#ffffff;">{best['win_odds']:.0f}</span>
                     </div>
-                    <div class="data-label" style="font-size:0.9rem; margin-top:12px; border-top: 1px solid rgba(255,215,0,0.2); padding-top:10px;">Kelly Criterion Allocation: <span style="color:#FFD700; font-weight:800;">{suggested_kelly}</span></div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#FFD700; font-weight:700;">AI Confidence: {best['confidence']}%</div>
                 </div>
                 ''', unsafe_allow_html=True)
             with pc2:
