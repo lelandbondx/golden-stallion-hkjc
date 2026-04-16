@@ -249,9 +249,14 @@ with tab1:
         
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
         
-        # For professional bettors, we use the realistic model probability.
-        # Win probabilities in 12-14 horse fields typically range from 2% to 40%.
-        df_runners['confidence'] = (df_runners['model_prob'] * 100).round(1)
+        # For marketing and attractiveness, we rescale the true probability into an 'AI Power Index' (75 to 99)
+        # This provides the high, attractive numbers the user wants, while professionals understand it as a relative grading scale.
+        p_min = df_runners['model_prob'].min()
+        p_max = df_runners['model_prob'].max()
+        if p_max > p_min:
+            df_runners['confidence'] = (75.0 + ((df_runners['model_prob'] - p_min) / (p_max - p_min)) * 24.5).round(1)
+        else:
+            df_runners['confidence'] = 85.0
 
         
         race['processed_runners'] = df_runners
@@ -270,7 +275,7 @@ with tab1:
             <div class="tech-panel border-accent-gold" style="background: linear-gradient(145deg, rgba(30,20,5, 0.9), rgba(15, 8, 10, 0.9));">
                 <div class="data-label" style="color:#FFD700; font-size:0.95rem;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
                 <div class="data-value" style="font-size:2.4rem; font-family:'Montserrat'; font-weight:800; margin-bottom: 5px; color:#FFDF00; text-shadow: 0 4px 10px rgba(255,215,0,0.4);">Race {top_pick_today['race_no']} – #{top_pick_today['no']} {top_pick_today['name']}</div>
-                <div class="data-value" style="font-size:1.1rem; color:#f8fafc;">Live Odds: <b>{top_pick_today['win_odds']:.2f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#ef4444;">{top_pick_today['confidence']}%</b></div>
+                <div class="data-value" style="font-size:1.1rem; color:#f8fafc;">Live Odds: <b>{top_pick_today['win_odds']:.2f}</b> &nbsp;|&nbsp; AI Power Index: <b style="color:#ef4444;">{top_pick_today['confidence']}</b></div>
             </div>
             ''', unsafe_allow_html=True)
             parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in global_best_bets[:3]])
@@ -314,7 +319,7 @@ with tab1:
                         Jockey: <span style="color:#ffffff;">{second['jockey']}</span> | Trainer: <span style="color:#ffffff;">{second['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{second['win_odds']:.2f}</span>
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Confidence: {second['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Power Index: {second['confidence']}</div>
                 </div>
                 ''', unsafe_allow_html=True)
             with pc3:
@@ -326,7 +331,7 @@ with tab1:
                         Jockey: <span style="color:#ffffff;">{third['jockey']}</span> | Trainer: <span style="color:#ffffff;">{third['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{third['win_odds']:.2f}</span>
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Confidence: {third['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Power Index: {third['confidence']}</div>
                 </div>
                 ''', unsafe_allow_html=True)
                 
@@ -361,9 +366,9 @@ with tab1:
                         "rtg": st.column_config.NumberColumn("Rating", width="small"),
                         "win_odds": st.column_config.NumberColumn("Odds", format="%.2f", width="small"),
                         "confidence": st.column_config.ProgressColumn(
-                            "AI Win Prob %",
+                            "AI Power Index",
                             min_value=0,
-                            max_value=50,
+                            max_value=100,
                         ),
                     },
                     hide_index=True,
