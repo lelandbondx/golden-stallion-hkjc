@@ -15,7 +15,11 @@ def get_live_meeting_data():
         if result.returncode == 0 and result.stdout.strip():
             data = json.loads(result.stdout)
             if data.get("status") == "success":
-                return data
+                # Filter out international simulcast overseas races
+                filtered_meetings = [m for m in data.get("meetings", []) if m.get("venue") in ["Sha Tin", "Happy Valley"]]
+                if filtered_meetings:
+                    data["meetings"] = filtered_meetings
+                    return data
     except Exception as e:
         print("Live scraper failed, falling back:", str(e))
         pass
