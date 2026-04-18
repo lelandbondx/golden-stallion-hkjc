@@ -26,13 +26,7 @@ st.set_page_config(page_title="Golden Stallion AI", layout="wide", page_icon="ðŸ
 # Run the autorefresh about every 20 seconds
 st_autorefresh(interval=20000, limit=1000, key="hkjc_live_refresh")
 
-import subprocess
-if not os.path.exists('node_modules'):
-    with st.spinner("Initializing Cloud Node.js Data Extractor..."):
-        try:
-            subprocess.run(["npm", "install", "@gikndue/hkjc-api"], check=True)
-        except Exception as e:
-            st.error(f"Failed to compile Node bridge: {str(e)}")
+# Removed NPM initialization since we are now natively using Python
 
 # CSS Injection for Chinese-Friendly Ruby/Gold 3D UI
 st.markdown("""
