@@ -367,8 +367,22 @@ with tab1:
                 )
 
 with tab2:
-    st.markdown("<h3 style='font-family:\"Montserrat\";'>Historical Archive</h3>", unsafe_allow_html=True)
-    st.write("Browse and analyze past race outcomes and field variables from our data servers.")
+    st.markdown("<h3 style='font-family:\"Montserrat\";'>Historical Archive & Gallery</h3>", unsafe_allow_html=True)
+    st.write("Browse and analyze past race outcomes, field variables, and iconic moments from our data servers.")
+    
+    st.markdown("#### 📸 Classic Race Gallery")
+    gal_col1, gal_col2, gal_col3 = st.columns(3)
+    with gal_col1:
+        if os.path.exists("data/images/shatin.png"):
+            st.image("data/images/shatin.png", caption="Thrilling Finish at Sha Tin", use_container_width=True)
+    with gal_col2:
+        if os.path.exists("data/images/happy_valley.png"):
+            st.image("data/images/happy_valley.png", caption="Night Racing at Happy Valley", use_container_width=True)
+    with gal_col3:
+        if os.path.exists("data/images/winner.png"):
+            st.image("data/images/winner.png", caption="Winner's Circle Celebration", use_container_width=True)
+            
+    st.markdown("---")
     
     try:
         if os.path.exists('data/runs.csv'):

@@ -280,42 +280,67 @@ def get_live_meeting_data():
 
 def build_fallback_live_data():
     """
-    Guarantees a fully fleshed out, static race card with 12-14 runners per race.
+    Guarantees fully fleshed out race cards for future dates as fallback.
     """
-    try:
-        current_date_str = datetime.now().strftime('%a %d %B %Y').replace(' 0', ' ')
-    except Exception:
-        current_date_str = "Mon 6 April 2026"
+    from datetime import datetime, timedelta
+    now = datetime.now()
+    
+    meetings = []
+    venues = ["Sha Tin", "Happy Valley", "Sha Tin"]
+    days_add = [0, 3, 7]
+    
+    for i in range(3):
+        try:
+            date_str = (now + timedelta(days=days_add[i])).strftime('%a %d %B %Y').replace(' 0', ' ')
+        except Exception:
+            date_str = f"Date {i+1}"
+            
+        meetings.append({
+            "venue": venues[i],
+            "date": date_str,
+            "status": "UPCOMING",
+            "going": "GOOD TO FIRM",
+            "weather": "25°C - Clear night" if venues[i] == "Happy Valley" else "26°C - Sunny",
+            "races": [
+                {
+                    "race_no": 1,
+                    "time": "19:15",
+                    "class_dist": "Class 4 - 1200m",
+                    "runners": [
+                        {"no": 1, "name": "KASA PAPA", "jockey": "Z Purton", "trainer": "A S Cruz", "draw": 4, "actual_weight": 135, "declared_weight": 1100, "rtg": 60, "win_odds": 2.5},
+                        {"no": 2, "name": "ON THE LASH", "jockey": "H Bowman", "trainer": "P C Ng", "draw": 7, "actual_weight": 133, "declared_weight": 1050, "rtg": 58, "win_odds": 5.0},
+                        {"no": 3, "name": "CONSPIRACY", "jockey": "K Teetan", "trainer": "D A Hayes", "draw": 2, "actual_weight": 132, "declared_weight": 1120, "rtg": 57, "win_odds": 8.0},
+                        {"no": 4, "name": "SPEEDY DRAGON", "jockey": "C L Chau", "trainer": "J Size", "draw": 3, "actual_weight": 131, "declared_weight": 1080, "rtg": 56, "win_odds": 12.0},
+                        {"no": 5, "name": "PERFECT PAIRING", "jockey": "A Atzeni", "trainer": "P F Yiu", "draw": 11, "actual_weight": 131, "declared_weight": 1150, "rtg": 56, "win_odds": 15.0},
+                        {"no": 6, "name": "ROSEWOOD FLEET", "jockey": "L Hewitson", "trainer": "C Fownes", "draw": 10, "actual_weight": 131, "declared_weight": 1090, "rtg": 56, "win_odds": 25.0},
+                        {"no": 7, "name": "SUPER SICARIO", "jockey": "L Ferraris", "trainer": "K H Ting", "draw": 5, "actual_weight": 130, "declared_weight": 1180, "rtg": 55, "win_odds": 30.0},
+                        {"no": 8, "name": "SMILING EMPEROR", "jockey": "A Badel", "trainer": "W K Mo", "draw": 1, "actual_weight": 129, "declared_weight": 1060, "rtg": 54, "win_odds": 4.5},
+                        {"no": 9, "name": "RED LION", "jockey": "Y L Chung", "trainer": "T P Yung", "draw": 8, "actual_weight": 125, "declared_weight": 1020, "rtg": 50, "win_odds": 35.0},
+                        {"no": 10, "name": "GALACTIC", "jockey": "M Chadwick", "trainer": "K W Lui", "draw": 6, "actual_weight": 124, "declared_weight": 1010, "rtg": 49, "win_odds": 18.0},
+                        {"no": 11, "name": "STAR WINNER", "jockey": "B Avdulla", "trainer": "F C Lor", "draw": 9, "actual_weight": 122, "declared_weight": 1105, "rtg": 47, "win_odds": 40.0},
+                        {"no": 12, "name": "FAST PACE", "jockey": "M L Yeung", "trainer": "C S Shum", "draw": 12, "actual_weight": 120, "declared_weight": 1088, "rtg": 45, "win_odds": 60.0},
+                    ]
+                },
+                {
+                    "race_no": 2,
+                    "time": "19:45",
+                    "class_dist": "Class 3 - 1650m",
+                    "runners": [
+                        {"no": 1, "name": "GOLDEN STALLION", "jockey": "Z Purton", "trainer": "J Size", "draw": 1, "actual_weight": 135, "declared_weight": 1150, "rtg": 80, "win_odds": 1.8},
+                        {"no": 2, "name": "SILVER BULLET", "jockey": "H Bowman", "trainer": "C Fownes", "draw": 4, "actual_weight": 132, "declared_weight": 1120, "rtg": 77, "win_odds": 6.5},
+                        {"no": 3, "name": "BRONZE MEDAL", "jockey": "K Teetan", "trainer": "A S Cruz", "draw": 6, "actual_weight": 130, "declared_weight": 1080, "rtg": 75, "win_odds": 9.0},
+                        {"no": 4, "name": "DIAMOND KING", "jockey": "A Badel", "trainer": "P F Yiu", "draw": 8, "actual_weight": 128, "declared_weight": 1100, "rtg": 73, "win_odds": 14.0},
+                        {"no": 5, "name": "PLATINUM STAR", "jockey": "L Hewitson", "trainer": "D A Hayes", "draw": 2, "actual_weight": 125, "declared_weight": 1060, "rtg": 70, "win_odds": 20.0},
+                        {"no": 6, "name": "SHARP RIDER", "jockey": "C L Chau", "trainer": "K W Lui", "draw": 10, "actual_weight": 123, "declared_weight": 1050, "rtg": 68, "win_odds": 25.0},
+                        {"no": 7, "name": "MAGIC SUPREME", "jockey": "L Ferraris", "trainer": "K L Man", "draw": 3, "actual_weight": 120, "declared_weight": 1130, "rtg": 65, "win_odds": 35.0},
+                    ]
+                }
+            ]
+        })
 
     return {
         "status": "success",
-        "meetings": [
-            {
-                "venue": "Sha Tin",
-                "date": current_date_str,
-                "status": "UPCOMING",
-                "going": "GOOD TO FIRM",
-                "weather": "25°C - Clear night",
-                "races": [
-                    {
-                        "race_no": 1,
-                        "time": "19:15",
-                        "class_dist": "Class 5 - 1200m",
-                        "runners": [
-                            {"no": 1, "name": "KASA PAPA", "jockey": "Z Purton", "trainer": "A S Cruz", "draw": 4, "actual_weight": 135, "declared_weight": 1100, "rtg": 40, "win_odds": 2.5},
-                            {"no": 2, "name": "ON THE LASH", "jockey": "H Bowman", "trainer": "P C Ng", "draw": 7, "actual_weight": 133, "declared_weight": 1050, "rtg": 38, "win_odds": 5.0},
-                            {"no": 3, "name": "CONSPIRACY", "jockey": "K Teetan", "trainer": "D A Hayes", "draw": 2, "actual_weight": 132, "declared_weight": 1120, "rtg": 37, "win_odds": 8.0},
-                            {"no": 4, "name": "SPEEDY DRAGON", "jockey": "C L Chau", "trainer": "J Size", "draw": 3, "actual_weight": 131, "declared_weight": 1080, "rtg": 36, "win_odds": 12.0},
-                            {"no": 5, "name": "PERFECT PAIRING", "jockey": "A Atzeni", "trainer": "P F Yiu", "draw": 11, "actual_weight": 131, "declared_weight": 1150, "rtg": 36, "win_odds": 15.0},
-                            {"no": 6, "name": "ROSEWOOD FLEET", "jockey": "L Hewitson", "trainer": "C Fownes", "draw": 10, "actual_weight": 131, "declared_weight": 1090, "rtg": 36, "win_odds": 25.0},
-                            {"no": 7, "name": "SUPER SICARIO", "jockey": "L Ferraris", "trainer": "K H Ting", "draw": 5, "actual_weight": 130, "declared_weight": 1180, "rtg": 35, "win_odds": 30.0},
-                            {"no": 8, "name": "SMILING EMPEROR", "jockey": "A Badel", "trainer": "W K Mo", "draw": 1, "actual_weight": 129, "declared_weight": 1060, "rtg": 34, "win_odds": 4.5},
-                            {"no": 9, "name": "RED LION", "jockey": "Y L Chung", "trainer": "T P Yung", "draw": 8, "actual_weight": 125, "declared_weight": 1020, "rtg": 30, "win_odds": 35.0},
-                        ]
-                    }
-                ]
-            }
-        ]
+        "meetings": meetings
     }
 
 def get_hkjc_news():
