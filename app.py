@@ -284,7 +284,7 @@ with tab1:
         with st.container():
             st.markdown(f'<div style="font-family:\'Montserrat\'; font-size:1.6rem; font-weight:800; color:#ef4444; margin-top:30px; margin-bottom:10px; text-shadow: 0 2px 5px rgba(239,68,68,0.4);">RACE {race.get("race_no", "")} – <span style="font-family:\'Inter\'; font-weight:500; font-size:1.2rem; color:#d1d5db;">{race.get("class_dist", "")}</span></div>', unsafe_allow_html=True)
             
-            race_picks = df_runners.sort_values(by='value_diff', ascending=False)
+            race_picks = df_runners.sort_values(by='model_prob', ascending=False)
             best = race_picks.iloc[0]
             second = race_picks.iloc[1]
             third = race_picks.iloc[2]
