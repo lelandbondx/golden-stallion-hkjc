@@ -6,66 +6,85 @@ import joblib
 
 MODEL_PATH = 'model.joblib'
 
-def calculate_win_rates(df, col_name, new_col_name):
-    win_rates = df.groupby(col_name)['won'].mean().reset_index()
-    win_rates.rename(columns={'won': new_col_name}, inplace=True)
-    return win_rates
+def prepare_features(df, is_live=False):
+    """
+    Computes advanced relative features.
+    If is_live is True, we assume df contains runners for a single race.
+    If is_live is False, df contains historical runs and must be grouped by race_id.
+    """
+    df = df.copy()
+    
+    # 1. Base cleanups
+    df['draw'] = pd.to_numeric(df.get('draw', 5), errors='coerce').fillna(5)
+    df['actual_weight'] = pd.to_numeric(df.get('actual_weight', 120), errors='coerce').fillna(120)
+    df['declared_weight'] = pd.to_numeric(df.get('declared_weight', 1050), errors='coerce').fillna(1050)
+    df['horse_rating'] = pd.to_numeric(df.get('horse_rating', df.get('rtg', 40)), errors='coerce').fillna(40)
+    df['win_odds'] = pd.to_numeric(df.get('win_odds', 20.0), errors='coerce').fillna(20.0)
+    
+    # Prevent divide by zero
+    df['win_odds'] = df['win_odds'].replace(0, 20.0)
+    df['implied_prob'] = 1.0 / df['win_odds']
+
+    if is_live:
+        # Compute relative features for a single live race
+        total_implied = df['implied_prob'].sum()
+        df['norm_implied_prob'] = df['implied_prob'] / total_implied if total_implied > 0 else df['implied_prob']
+        
+        df['weight_rank'] = df['actual_weight'].rank(ascending=False, method='min')
+        df['rating_rank'] = df['horse_rating'].rank(ascending=False, method='min')
+    else:
+        # Group by race_id for historical data
+        if 'race_id' in df.columns:
+            total_implied = df.groupby('race_id')['implied_prob'].transform('sum')
+            df['norm_implied_prob'] = df['implied_prob'] / total_implied
+            
+            df['weight_rank'] = df.groupby('race_id')['actual_weight'].rank(ascending=False, method='min')
+            df['rating_rank'] = df.groupby('race_id')['horse_rating'].rank(ascending=False, method='min')
+        else:
+            df['norm_implied_prob'] = df['implied_prob']
+            df['weight_rank'] = 1
+            df['rating_rank'] = 1
+
+    return df
 
 def train_and_save_model():
     print("Loading data for training...")
     try:
         runs = pd.read_csv('data/runs.csv')
-        races = pd.read_csv('data/races.csv')
     except Exception as e:
         print(f"Error loading data: {e}. Model will not be trained.")
         return None
 
-    # We need a 'won' column. It's usually present, or we derive it from 'result'
     if 'won' not in runs.columns:
         if 'result' in runs.columns:
             runs['won'] = (runs['result'] == 1).astype(int)
         else:
             return None
 
-    # Select basic features
-    # Ensure they exist or fillna
-    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'win_odds']
-    for f in features:
-        if f not in runs.columns:
-            runs[f] = 0
-            
-    # Clean up NaN inputs for new statistical parameters
-    runs['horse_rating'] = pd.to_numeric(runs['horse_rating'], errors='coerce').fillna(40)
-    runs['win_odds'] = pd.to_numeric(runs['win_odds'], errors='coerce').fillna(20.0)
-            
-    # Jockey and Trainer win rates
-    if 'jockey_id' in runs.columns:
-        jockey_rates = calculate_win_rates(runs, 'jockey_id', 'jockey_win_rate')
-        runs = runs.merge(jockey_rates, on='jockey_id', how='left')
-    else:
-        runs['jockey_win_rate'] = 0.08
-        
-    if 'trainer_id' in runs.columns:
-        trainer_rates = calculate_win_rates(runs, 'trainer_id', 'trainer_win_rate')
-        runs = runs.merge(trainer_rates, on='trainer_id', how='left')
-    else:
-        runs['trainer_win_rate'] = 0.08
-
-    model_features = features + ['jockey_win_rate', 'trainer_win_rate']
+    # Feature Engineering
+    runs = prepare_features(runs, is_live=False)
+    
+    # Features to use for training
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'win_odds', 
+                'implied_prob', 'norm_implied_prob', 'weight_rank', 'rating_rank']
     
     # Drop rows with NaN in features or target
-    train_data = runs.dropna(subset=model_features + ['won'])
+    train_data = runs.dropna(subset=features + ['won'])
     
-    X = train_data[model_features]
+    X = train_data[features]
     y = train_data['won']
     
+    # Handle class imbalance (winners are minority)
+    scale_pos_weight = (len(y) - sum(y)) / sum(y) if sum(y) > 0 else 1.0
+
     print("Training Enhanced XGBoost model...")
     model = xgb.XGBClassifier(
-        n_estimators=300, 
-        max_depth=5, 
-        learning_rate=0.03, 
+        n_estimators=400, 
+        max_depth=6, 
+        learning_rate=0.05, 
         subsample=0.8,
         colsample_bytree=0.8,
+        scale_pos_weight=scale_pos_weight,
         eval_metric='logloss',
         use_label_encoder=False
     )
@@ -84,62 +103,27 @@ def load_model():
 def predict_probabilities(df):
     """
     Given a dataframe with current race cards, predict win probabilities.
-    df must have 'draw', 'actual_weight', 'declared_weight', 'jockey', 'trainer'
-    We map jockey and trainer to basic win rates (Zac Purton gets a boost)
+    df must be a single race's runners.
     """
     model = load_model()
     if not model:
         return np.ones(len(df)) / len(df) # Uniform probability fallback
     
-    features = []
-    for _, row in df.iterrows():
-        # Heuristic mapping for live data
-        jockey_str = str(row.get('jockey', ''))
-        if 'Purton' in jockey_str:
-            j_rate = 0.18
-        elif any(j in jockey_str for j in ['Bowman', 'Teetan', 'Ho', 'Avdulla']):
-            j_rate = 0.12
-        else:
-            j_rate = 0.06
+    # Prepare features identically to training phase
+    live_df = prepare_features(df, is_live=True)
+    
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'win_odds', 
+                'implied_prob', 'norm_implied_prob', 'weight_rank', 'rating_rank']
+    
+    # Ensure all features exist in the dataframe
+    for f in features:
+        if f not in live_df.columns:
+            live_df[f] = 0.0
             
-        trainer_str = str(row.get('trainer', ''))
-        if any(t in trainer_str for t in ['Size', 'Lui', 'Cruz']):
-            t_rate = 0.13
-        elif any(t in trainer_str for t in ['Richards', 'Fownes', 'Hayes']):
-            t_rate = 0.10
-        else:
-            t_rate = 0.06
-        
-        draw = pd.to_numeric(row.get('draw', 5), errors='coerce')
-        if pd.isna(draw): draw = 5
-        
-        actual_weight = pd.to_numeric(row.get('actual_weight', 120), errors='coerce')
-        if pd.isna(actual_weight): actual_weight = 120
-            
-        declared_weight = pd.to_numeric(row.get('declared_weight', 1050), errors='coerce')
-        if pd.isna(declared_weight): declared_weight = 1050
-            
-        rtg = pd.to_numeric(row.get('rtg', 40), errors='coerce')
-        if pd.isna(rtg): rtg = 40
-            
-        win_odds = pd.to_numeric(row.get('win_odds', 20.0), errors='coerce')
-        if pd.isna(win_odds): win_odds = 20.0
-            
-        features.append({
-            'draw': draw,
-            'actual_weight': actual_weight,
-            'declared_weight': declared_weight,
-            'horse_rating': rtg,
-            'win_odds': win_odds,
-            'jockey_win_rate': j_rate,
-            'trainer_win_rate': t_rate
-        })
-        
-    X_live = pd.DataFrame(features)
+    X_live = live_df[features]
     probs = model.predict_proba(X_live)[:, 1] # Probability of winning
     
     # Normalize probabilities per race so they sum to 1
-    # Assuming df is passed per race
     total_prob = probs.sum()
     if total_prob > 0:
         probs = probs / total_prob
