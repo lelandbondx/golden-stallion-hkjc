@@ -190,7 +190,7 @@ meeting = meetings[selected_index]
 races = meeting.get('races', [])
 
 # TABS
-tab1, tab2, tab3, tab4 = st.tabs(["🔴 Live Matrix", "📊 Archive", "📺 Livestream", "📰 HKJC News"])
+tab1, tab2, tab3 = st.tabs(["🔴 Live Matrix", "📊 Archive", "📰 HKJC News"])
 
 with tab1:
     col_act1, col_act2, col_act3 = st.columns([1, 2, 1])
@@ -494,16 +494,6 @@ with tab2:
         st.error(f"Error reading local data assets: {str(e)}")
 
 with tab3:
-    st.markdown("<h3 style='font-family:\"Montserrat\"; text-align:center; padding-top: 20px;'>Live HKJC Video Stream</h3>", unsafe_allow_html=True)
-    
-    st.markdown('''
-        <div class="tech-panel border-accent-red" style="text-align:center; padding: 50px; margin: 20px auto; max-width: 800px;">
-            <div class="data-value" style="color:#d1d5db; font-weight:400; margin-bottom: 30px; font-size: 1.2rem;">The official HKJC Racecast initializes exactly 30 minutes before the first post.</div>
-            <a href="https://racing.hkjc.com/racing/english/cast/index.aspx" target="_blank" style="background: linear-gradient(180deg, #ef4444, #991b1b); color: #fff; text-decoration: none; font-size: 1.2rem; font-family:'Inter'; font-weight:600; border-radius: 8px; padding: 15px 40px; display: inline-block; box-shadow: 0 5px 15px rgba(239,68,68,0.4); transition: transform 0.2s;">Launch Video Player</a>
-        </div>
-    ''', unsafe_allow_html=True)
-
-with tab4:
     st.markdown("<h3 style='font-family:\"Montserrat\"; margin-top:10px;'>HKJC News & Media</h3>", unsafe_allow_html=True)
     
     news_items = fetch_news()
