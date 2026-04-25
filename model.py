@@ -65,8 +65,7 @@ def train_and_save_model():
     runs = prepare_features(runs, is_live=False)
     
     # Features to use for training
-    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'win_odds', 
-                'implied_prob', 'norm_implied_prob', 'weight_rank', 'rating_rank']
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank']
     
     # Drop rows with NaN in features or target
     train_data = runs.dropna(subset=features + ['won'])
@@ -112,8 +111,7 @@ def predict_probabilities(df):
     # Prepare features identically to training phase
     live_df = prepare_features(df, is_live=True)
     
-    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'win_odds', 
-                'implied_prob', 'norm_implied_prob', 'weight_rank', 'rating_rank']
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank']
     
     # Ensure all features exist in the dataframe
     for f in features:

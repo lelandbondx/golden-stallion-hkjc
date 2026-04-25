@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import os
+import re
 from streamlit_autorefresh import st_autorefresh
 
 try:
@@ -153,8 +154,21 @@ def fetch_data():
 def fetch_news():
     return get_hkjc_news()
 
+@st.cache_data(ttl=3600)
+def fetch_historical_comments():
+    try:
+        results = pd.read_csv('data/results.csv', usecols=['date', 'raceno', 'horseno', 'horse'])
+        comments = pd.read_csv('data/comments.csv', usecols=['date', 'raceno', 'horseno', 'comment'])
+        df = pd.merge(comments, results, on=['date', 'raceno', 'horseno'], how='inner')
+        df['clean_name'] = df['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
+        df = df.sort_values(by='date', ascending=False)
+        return df
+    except Exception as e:
+        return pd.DataFrame()
+
 # Initialize variables
 data = fetch_data()
+historical_df = fetch_historical_comments()
 meetings = data.get('meetings', [])
 
 if not meetings:
@@ -251,6 +265,47 @@ with tab1:
         else:
             df_runners['confidence'] = 50
 
+        # Add historical records
+        df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+        vet_notes = []
+        steward_notes = []
+        photo_hist = []
+        
+        for _, row in df_runners.iterrows():
+            if not historical_df.empty:
+                horse_hist = historical_df[historical_df['clean_name'] == row['clean_name']]
+                if not horse_hist.empty:
+                    last_run = horse_hist.iloc[0]
+                    comment = str(last_run['comment']).strip()
+                    
+                    photo = "✅ Yes" if any(x in comment.lower() for x in ["photo", "nose", "short head"]) else "❌ No"
+                    
+                    vet = "No Findings"
+                    steward = comment
+                    if "(" in comment and ")" in comment:
+                        matches = re.findall(r'\((.*?)\)', comment)
+                        if matches:
+                            last_match = matches[-1]
+                            if "vet" in last_match.lower() or "finding" in last_match.lower():
+                                vet = last_match
+                            else:
+                                vet = "No Findings"
+                    
+                    vet_notes.append(vet)
+                    steward_notes.append(steward)
+                    photo_hist.append(photo)
+                else:
+                    vet_notes.append("-")
+                    steward_notes.append("No prior history in DB")
+                    photo_hist.append("-")
+            else:
+                vet_notes.append("-")
+                steward_notes.append("No DB connection")
+                photo_hist.append("-")
+                
+        df_runners['vet_findings'] = vet_notes
+        df_runners['steward_notes'] = steward_notes
+        df_runners['photo_finish'] = photo_hist
         
         race['processed_runners'] = df_runners
         
@@ -285,44 +340,76 @@ with tab1:
             st.markdown(f'<div style="font-family:\'Montserrat\'; font-size:1.6rem; font-weight:800; color:#ef4444; margin-top:30px; margin-bottom:10px; text-shadow: 0 2px 5px rgba(239,68,68,0.4);">RACE {race.get("race_no", "")} – <span style="font-family:\'Inter\'; font-weight:500; font-size:1.2rem; color:#d1d5db;">{race.get("class_dist", "")}</span></div>', unsafe_allow_html=True)
             
             race_picks = df_runners.sort_values(by='model_prob', ascending=False)
+            
+            # Ensure we have at least 5 runners
+            if len(race_picks) < 5:
+                continue
+
             best = race_picks.iloc[0]
             second = race_picks.iloc[1]
             third = race_picks.iloc[2]
+            fourth = race_picks.iloc[3]
+            fifth = race_picks.iloc[4]
             
-            pc1, pc2, pc3 = st.columns(3)
+            pc1, pc2, pc3, pc4, pc5 = st.columns(5)
             with pc1:
                 st.markdown(f'''
                 <div class="tech-panel border-accent-gold">
-                    <div class="data-label" style="color:#FFD700; font-size:0.9rem;">⭐ PRIMARY WIN PROBABILITY</div>
-                    <div class="data-value" style="font-size:1.6rem;">{best['no']}. {best['name']}</div>
-                    <div class="data-value" style="font-size:1rem; color:#d1d5db; margin-top:8px;">
-                        Jockey: <span style="color:#ffffff;">{best['jockey']}</span> | Trainer: <span style="color:#ffffff;">{best['trainer']}</span> | Odds: <span style="color:#ffffff;">{best['win_odds']:.0f}</span>
+                    <div class="data-label" style="color:#FFD700; font-size:0.85rem;">⭐ PRIMARY WIN PROBABILITY</div>
+                    <div class="data-value" style="font-size:1.35rem;">{best['no']}. {best['name']}</div>
+                    <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
+                        J: <span style="color:#ffffff;">{best['jockey']}</span> | T: <span style="color:#ffffff;">{best['trainer']}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{best['win_odds']:.0f}</span>
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#FFD700; font-weight:700;">AI Confidence: {best['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#FFD700; font-weight:700;">AI Conf: {best['confidence']}%</div>
                 </div>
                 ''', unsafe_allow_html=True)
             with pc2:
                 st.markdown(f'''
                 <div class="tech-panel border-accent-red">
-                    <div class="data-label">🎯 OPTIMAL EXACTA PAIRING</div>
-                    <div class="data-value" style="font-size:1.35rem;">{second['no']}. {second['name']}</div>
-                    <div class="data-value" style="font-size:1rem; color:#d1d5db; margin-top:8px;">
-                        Jockey: <span style="color:#ffffff;">{second['jockey']}</span> | Trainer: <span style="color:#ffffff;">{second['trainer']}</span>
+                    <div class="data-label" style="font-size:0.85rem;">🎯 OPTIMAL EXACTA</div>
+                    <div class="data-value" style="font-size:1.25rem;">{second['no']}. {second['name']}</div>
+                    <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
+                        J: <span style="color:#ffffff;">{second['jockey']}</span> | T: <span style="color:#ffffff;">{second['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{second['win_odds']:.0f}</span>
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Confidence: {second['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Conf: {second['confidence']}%</div>
                 </div>
                 ''', unsafe_allow_html=True)
             with pc3:
                 st.markdown(f'''
                 <div class="tech-panel" style="border-left: 5px solid #4b5563;">
-                    <div class="data-label">💠 EXOTIC/TRIFECTA CONSIDERATION</div>
-                    <div class="data-value" style="font-size:1.35rem;">{third['no']}. {third['name']}</div>
-                    <div class="data-value" style="font-size:1rem; color:#d1d5db; margin-top:8px;">
-                        Jockey: <span style="color:#ffffff;">{third['jockey']}</span> | Trainer: <span style="color:#ffffff;">{third['trainer']}</span>
+                    <div class="data-label" style="font-size:0.85rem;">💠 TRIFECTA CONSIDERATION</div>
+                    <div class="data-value" style="font-size:1.25rem;">{third['no']}. {third['name']}</div>
+                    <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
+                        J: <span style="color:#ffffff;">{third['jockey']}</span> | T: <span style="color:#ffffff;">{third['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{third['win_odds']:.0f}</span>
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Confidence: {third['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {third['confidence']}%</div>
+                </div>
+                ''', unsafe_allow_html=True)
+            with pc4:
+                st.markdown(f'''
+                <div class="tech-panel" style="border-left: 5px solid #4b5563;">
+                    <div class="data-label" style="font-size:0.85rem;">4TH PREDICTION</div>
+                    <div class="data-value" style="font-size:1.25rem;">{fourth['no']}. {fourth['name']}</div>
+                    <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
+                        J: <span style="color:#ffffff;">{fourth['jockey']}</span> | T: <span style="color:#ffffff;">{fourth['trainer']}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{fourth['win_odds']:.0f}</span>
+                    </div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {fourth['confidence']}%</div>
+                </div>
+                ''', unsafe_allow_html=True)
+            with pc5:
+                st.markdown(f'''
+                <div class="tech-panel" style="border-left: 5px solid #4b5563;">
+                    <div class="data-label" style="font-size:0.85rem;">5TH PREDICTION</div>
+                    <div class="data-value" style="font-size:1.25rem;">{fifth['no']}. {fifth['name']}</div>
+                    <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
+                        J: <span style="color:#ffffff;">{fifth['jockey']}</span> | T: <span style="color:#ffffff;">{fifth['trainer']}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{fifth['win_odds']:.0f}</span>
+                    </div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {fifth['confidence']}%</div>
                 </div>
                 ''', unsafe_allow_html=True)
                 
@@ -342,8 +429,8 @@ with tab1:
                     </div>
                     ''', unsafe_allow_html=True)
 
-            with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}"):
-                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'confidence']].copy()
+            with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=True):
+                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
                 df_display = df_display.sort_values(by='confidence', ascending=False)
                 
                 st.dataframe(
@@ -361,6 +448,9 @@ with tab1:
                             min_value=0,
                             max_value=100,
                         ),
+                        "photo_finish": st.column_config.TextColumn("Photo Finish Hist?", width="small"),
+                        "vet_findings": st.column_config.TextColumn("Vet Findings", width="medium"),
+                        "steward_notes": st.column_config.TextColumn("Steward Notes", width="large"),
                     },
                     hide_index=True,
                     use_container_width=True
