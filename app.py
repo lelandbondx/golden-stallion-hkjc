@@ -166,9 +166,17 @@ def fetch_historical_comments():
     except Exception as e:
         return pd.DataFrame()
 
+@st.cache_data(ttl=86400)
+def fetch_standard_times():
+    try:
+        return pd.read_csv('data/course_standard_times.csv')
+    except Exception:
+        return pd.DataFrame()
+
 # Initialize variables
 data = fetch_data()
 historical_df = fetch_historical_comments()
+std_times_df = fetch_standard_times()
 meetings = data.get('meetings', [])
 
 if not meetings:
@@ -337,7 +345,62 @@ with tab1:
         df_runners = race['processed_runners']
         
         with st.container():
-            st.markdown(f'<div style="font-family:\'Montserrat\'; font-size:1.6rem; font-weight:800; color:#ef4444; margin-top:30px; margin-bottom:10px; text-shadow: 0 2px 5px rgba(239,68,68,0.4);">RACE {race.get("race_no", "")} – <span style="font-family:\'Inter\'; font-weight:500; font-size:1.2rem; color:#d1d5db;">{race.get("class_dist", "")}</span></div>', unsafe_allow_html=True)
+            
+            class_dist = str(race.get("class_dist", ""))
+            
+            # parse distance
+            dist_match = re.search(r'(\d+)m', class_dist, re.IGNORECASE)
+            distance = int(dist_match.group(1)) if dist_match else 0
+            
+            # parse class
+            c_val = "1"
+            if "Class 1" in class_dist: c_val = "1"
+            elif "Class 2" in class_dist: c_val = "2"
+            elif "Class 3" in class_dist: c_val = "3"
+            elif "Class 4" in class_dist: c_val = "4"
+            elif "Class 5" in class_dist: c_val = "5"
+            elif "Group" in class_dist or "G1" in class_dist or "G2" in class_dist or "G3" in class_dist: c_val = "Group"
+            elif "Griffin" in class_dist: c_val = "Griffin"
+            
+            venue_str = meeting.get('venue', 'Sha Tin')
+            if "Happy Valley" in venue_str:
+                target_venue = "Happy Valley Turf Track"
+            else:
+                if "AWT" in str(meeting.get('going')).upper() or "ALL WEATHER" in str(meeting.get('going')).upper():
+                    target_venue = "Sha Tin All Weather Track"
+                else:
+                    target_venue = "Sha Tin Turf Track"
+                    
+            std_time = "N/A"
+            rec_time = "N/A"
+            rec_horse = "-"
+            
+            if not std_times_df.empty:
+                match = std_times_df[(std_times_df['Venue'] == target_venue) & 
+                                     (std_times_df['Distance'] == distance) & 
+                                     (std_times_df['Class'] == c_val)]
+                if not match.empty:
+                    std_time = str(match.iloc[0]['Standard_Time'])
+                    rec_time = str(match.iloc[0]['Record_Time'])
+                    rec_horse = str(match.iloc[0]['Record_Horse'])
+                    if pd.isna(match.iloc[0]['Record_Time']): rec_time = "N/A"
+                    if pd.isna(match.iloc[0]['Record_Horse']): rec_horse = "-"
+
+            st.markdown(f'''
+            <div style="font-family:'Montserrat'; font-size:1.6rem; font-weight:800; color:#ef4444; margin-top:30px; margin-bottom:5px; text-shadow: 0 2px 5px rgba(239,68,68,0.4);">
+                RACE {race.get("race_no", "")} – <span style="font-family:'Inter'; font-weight:500; font-size:1.2rem; color:#d1d5db;">{class_dist}</span>
+            </div>
+            <div style="display:flex; gap: 20px; margin-bottom:15px;">
+                <div style="background: rgba(255, 215, 0, 0.1); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                    <span style="font-size:0.8rem; color:#9ca3af; text-transform:uppercase; font-weight:600;">⏱️ Standard Time:</span>
+                    <span style="font-size:0.95rem; color:#FFD700; font-weight:700; margin-left:5px;">{std_time}</span>
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.1); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.3);">
+                    <span style="font-size:0.8rem; color:#9ca3af; text-transform:uppercase; font-weight:600;">🏆 Course Record:</span>
+                    <span style="font-size:0.95rem; color:#ffffff; font-weight:700; margin-left:5px;">{rec_time} ({rec_horse})</span>
+                </div>
+            </div>
+            ''', unsafe_allow_html=True)
             
             race_picks = df_runners.sort_values(by='model_prob', ascending=False)
             
