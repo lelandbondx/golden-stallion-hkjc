@@ -254,6 +254,7 @@ def get_live_meeting_data():
                             race_obj["runners"].append({
                                 "no": int(runner.get("no") or 0),
                                 "name": runner.get("name_en") or horse_dict.get("name_en") or "Unknown",
+                                "code": horse_dict.get("code"),
                                 "jockey": jockey_name,
                                 "trainer": trainer_name,
                                 "draw": int(runner.get("barrierDrawNumber") or 0),
