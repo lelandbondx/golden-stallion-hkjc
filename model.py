@@ -51,6 +51,17 @@ def train_and_save_model():
     print("Loading data for training...")
     try:
         runs = pd.read_csv('data/runs.csv')
+        # Load enhanced features
+        if os.path.exists('data/train_horse_features.csv'):
+            enhanced = pd.read_csv('data/train_horse_features.csv')[['race_id', 'horse_id', 'last_win_rating', 'ST_win_rate', 'HV_win_rate']]
+            runs = pd.merge(runs, enhanced, on=['race_id', 'horse_id'], how='left')
+            runs['last_win_rating'] = runs['last_win_rating'].fillna(runs['horse_rating'])
+            runs['ST_win_rate'] = runs['ST_win_rate'].fillna(0)
+            runs['HV_win_rate'] = runs['HV_win_rate'].fillna(0)
+        else:
+            runs['last_win_rating'] = runs['horse_rating']
+            runs['ST_win_rate'] = 0.0
+            runs['HV_win_rate'] = 0.0
     except Exception as e:
         print(f"Error loading data: {e}. Model will not be trained.")
         return None
@@ -65,7 +76,7 @@ def train_and_save_model():
     runs = prepare_features(runs, is_live=False)
     
     # Features to use for training
-    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank']
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 'last_win_rating', 'ST_win_rate', 'HV_win_rate']
     
     # Drop rows with NaN in features or target
     train_data = runs.dropna(subset=features + ['won'])
@@ -111,7 +122,21 @@ def predict_probabilities(df):
     # Prepare features identically to training phase
     live_df = prepare_features(df, is_live=True)
     
-    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank']
+    # Merge live runners with latest historical stats
+    if os.path.exists('data/latest_horse_stats.csv'):
+        stats_df = pd.read_csv('data/latest_horse_stats.csv')
+        live_df['clean_name'] = live_df['name'].str.upper().str.strip()
+        stats_df['clean_name'] = stats_df['clean_name'].str.upper().str.strip()
+        live_df = pd.merge(live_df, stats_df, on='clean_name', how='left')
+        live_df['last_win_rating'] = live_df['last_win_rating'].fillna(live_df['horse_rating'])
+        live_df['ST_win_rate'] = live_df['ST_win_rate'].fillna(0)
+        live_df['HV_win_rate'] = live_df['HV_win_rate'].fillna(0)
+    else:
+        live_df['last_win_rating'] = live_df['horse_rating']
+        live_df['ST_win_rate'] = 0.0
+        live_df['HV_win_rate'] = 0.0
+    
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 'last_win_rating', 'ST_win_rate', 'HV_win_rate']
     
     # Ensure all features exist in the dataframe
     for f in features:

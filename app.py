@@ -173,10 +173,20 @@ def fetch_standard_times():
     except Exception:
         return pd.DataFrame()
 
+@st.cache_data(ttl=86400)
+def fetch_horse_stats():
+    try:
+        df = pd.read_csv('data/latest_horse_stats.csv')
+        df['clean_name'] = df['clean_name'].str.upper().str.strip()
+        return df
+    except Exception:
+        return pd.DataFrame()
+
 # Initialize variables
 data = fetch_data()
 historical_df = fetch_historical_comments()
 std_times_df = fetch_standard_times()
+horse_stats_df = fetch_horse_stats()
 meetings = data.get('meetings', [])
 
 if not meetings:
@@ -275,6 +285,15 @@ with tab1:
 
         # Add historical records
         df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+        
+        # Merge stats
+        if not horse_stats_df.empty:
+            df_runners = pd.merge(df_runners, horse_stats_df, on='clean_name', how='left')
+        else:
+            df_runners['last_win_rating'] = np.nan
+            df_runners['ST_vs_HV_pref'] = 'Neutral'
+            df_runners['last_form_going'] = 'Unknown'
+            
         vet_notes = []
         steward_notes = []
         photo_hist = []
@@ -493,8 +512,18 @@ with tab1:
                     ''', unsafe_allow_html=True)
 
             with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=True):
-                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
+                # Ensure missing columns exist
+                for col in ['last_win_rating', 'ST_vs_HV_pref', 'last_form_going']:
+                    if col not in df_runners.columns:
+                        df_runners[col] = '-'
+
+                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
                 df_display = df_display.sort_values(by='confidence', ascending=False)
+                
+                # Fill NAs
+                df_display['last_win_rating'] = df_display['last_win_rating'].fillna('-')
+                df_display['ST_vs_HV_pref'] = df_display['ST_vs_HV_pref'].fillna('Neutral')
+                df_display['last_form_going'] = df_display['last_form_going'].fillna('Unknown')
                 
                 st.dataframe(
                     df_display,
@@ -506,6 +535,9 @@ with tab1:
                         "draw": st.column_config.NumberColumn("Draw", width="small"),
                         "rtg": st.column_config.NumberColumn("Rating", width="small"),
                         "win_odds": st.column_config.NumberColumn("Odds", format="%.0f", width="small"),
+                        "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),
+                        "ST_vs_HV_pref": st.column_config.TextColumn("Track Pref", width="medium"),
+                        "last_form_going": st.column_config.TextColumn("Fav Cond", width="medium"),
                         "confidence": st.column_config.ProgressColumn(
                             "AI Confidence %",
                             min_value=0,
