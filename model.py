@@ -6,7 +6,7 @@ import joblib
 
 MODEL_PATH = 'model.joblib'
 
-def prepare_features(df, is_live=False):
+def prepare_features(df, is_live=False, venue=None, going=None):
     """
     Computes advanced relative features.
     If is_live is True, we assume df contains runners for a single race.
@@ -32,6 +32,9 @@ def prepare_features(df, is_live=False):
         
         df['weight_rank'] = df['actual_weight'].rank(ascending=False, method='min')
         df['rating_rank'] = df['horse_rating'].rank(ascending=False, method='min')
+        
+        df['current_venue'] = venue
+        df['current_going'] = going
     else:
         # Group by race_id for historical data
         if 'race_id' in df.columns:
@@ -44,6 +47,30 @@ def prepare_features(df, is_live=False):
             df['norm_implied_prob'] = df['implied_prob']
             df['weight_rank'] = 1
             df['rating_rank'] = 1
+            
+        df['current_venue'] = df.get('venue', 'Unknown')
+        df['current_going'] = df.get('going', 'Unknown')
+
+    # Track match and going match
+    df['ST_vs_HV_pref'] = df.get('ST_vs_HV_pref', 'Neutral').fillna('Neutral')
+    df['last_form_going'] = df.get('last_form_going', 'Unknown').fillna('Unknown')
+    
+    # Clean string matching
+    df['track_pref_match'] = np.where(
+        ((df['current_venue'].str.contains('Sha Tin', case=False, na=False)) & (df['ST_vs_HV_pref'] == 'Sha Tin')) |
+        ((df['current_venue'].str.contains('Happy Valley', case=False, na=False)) & (df['ST_vs_HV_pref'] == 'Happy Valley')),
+        1, 0
+    )
+    
+    df['going_pref_match'] = np.where(
+        (df['last_form_going'] != 'Unknown') & (df['current_going'].str.upper() == df['last_form_going'].str.upper()),
+        1, 0
+    )
+    
+    # Tips Index consensus score
+    if 'consensus_score' not in df.columns:
+        df['consensus_score'] = 0.0
+    df['consensus_score'] = pd.to_numeric(df['consensus_score'], errors='coerce').fillna(0)
 
     return df
 
@@ -53,15 +80,20 @@ def train_and_save_model():
         runs = pd.read_csv('data/runs.csv')
         # Load enhanced features
         if os.path.exists('data/train_horse_features.csv'):
-            enhanced = pd.read_csv('data/train_horse_features.csv')[['race_id', 'horse_id', 'last_win_rating', 'ST_win_rate', 'HV_win_rate']]
-            runs = pd.merge(runs, enhanced, on=['race_id', 'horse_id'], how='left')
+            enhanced = pd.read_csv('data/train_horse_features.csv')[['race_id', 'horse_id', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'ST_vs_HV_pref', 'last_form_going', 'venue', 'going']]
+            # Note: venue and going are already in runs.csv, but if we need them, we can use runs' own
+            runs = pd.merge(runs, enhanced[['race_id', 'horse_id', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'ST_vs_HV_pref', 'last_form_going']], on=['race_id', 'horse_id'], how='left')
             runs['last_win_rating'] = runs['last_win_rating'].fillna(runs['horse_rating'])
             runs['ST_win_rate'] = runs['ST_win_rate'].fillna(0)
             runs['HV_win_rate'] = runs['HV_win_rate'].fillna(0)
+            runs['ST_vs_HV_pref'] = runs['ST_vs_HV_pref'].fillna('Neutral')
+            runs['last_form_going'] = runs['last_form_going'].fillna('Unknown')
         else:
             runs['last_win_rating'] = runs['horse_rating']
             runs['ST_win_rate'] = 0.0
             runs['HV_win_rate'] = 0.0
+            runs['ST_vs_HV_pref'] = 'Neutral'
+            runs['last_form_going'] = 'Unknown'
     except Exception as e:
         print(f"Error loading data: {e}. Model will not be trained.")
         return None
@@ -76,7 +108,7 @@ def train_and_save_model():
     runs = prepare_features(runs, is_live=False)
     
     # Features to use for training
-    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 'last_win_rating', 'ST_win_rate', 'HV_win_rate']
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'track_pref_match', 'going_pref_match', 'consensus_score']
     
     # Drop rows with NaN in features or target
     train_data = runs.dropna(subset=features + ['won'])
@@ -110,7 +142,7 @@ def load_model():
     else:
         return train_and_save_model()
 
-def predict_probabilities(df):
+def predict_probabilities(df, venue=None, going=None):
     """
     Given a dataframe with current race cards, predict win probabilities.
     df must be a single race's runners.
@@ -119,10 +151,8 @@ def predict_probabilities(df):
     if not model:
         return np.ones(len(df)) / len(df) # Uniform probability fallback
     
-    # Prepare features identically to training phase
-    live_df = prepare_features(df, is_live=True)
-    
-    # Merge live runners with latest historical stats
+    # Merge live runners with latest historical stats FIRST so prepare_features can use them
+    live_df = df.copy()
     if os.path.exists('data/latest_horse_stats.csv'):
         stats_df = pd.read_csv('data/latest_horse_stats.csv')
         live_df['clean_name'] = live_df['name'].str.upper().str.strip()
@@ -131,12 +161,19 @@ def predict_probabilities(df):
         live_df['last_win_rating'] = live_df['last_win_rating'].fillna(live_df['horse_rating'])
         live_df['ST_win_rate'] = live_df['ST_win_rate'].fillna(0)
         live_df['HV_win_rate'] = live_df['HV_win_rate'].fillna(0)
+        live_df['ST_vs_HV_pref'] = live_df['ST_vs_HV_pref'].fillna('Neutral')
+        live_df['last_form_going'] = live_df['last_form_going'].fillna('Unknown')
     else:
         live_df['last_win_rating'] = live_df['horse_rating']
         live_df['ST_win_rate'] = 0.0
         live_df['HV_win_rate'] = 0.0
+        live_df['ST_vs_HV_pref'] = 'Neutral'
+        live_df['last_form_going'] = 'Unknown'
+
+    # Prepare features identically to training phase
+    live_df = prepare_features(live_df, is_live=True, venue=venue, going=going)
     
-    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 'last_win_rating', 'ST_win_rate', 'HV_win_rate']
+    features = ['draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'track_pref_match', 'going_pref_match', 'consensus_score']
     
     # Ensure all features exist in the dataframe
     for f in features:

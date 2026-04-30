@@ -2,6 +2,7 @@ import requests
 import json
 from datetime import datetime
 import pandas as pd
+from bs4 import BeautifulSoup
 
 GRAPHQL_QUERY = """
 fragment raceFragment on Race {
@@ -351,5 +352,58 @@ def get_hkjc_news():
         {"title": "Update on Sha Tin rail position C+3", "link": "https://racingnews.hkjc.com/english/"},
     ]
 
+def get_live_tips_index():
+    url = "https://racing.hkjc.com/racing/english/tipsindex/tips_index.asp"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    
+    tips_data = {}
+    
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(res.content, 'html.parser')
+        
+        # In HKJC, tables are used. When offline, there is an image. 
+        # When online, there is usually a race-by-race table structure.
+        
+        tables = soup.find_all('table')
+        for t in tables:
+            # Check if this table represents a race's tips
+            text = t.get_text()
+            if "Race" in text and ("Apple" in text or "Sing Pao" in text or "Oriental" in text):
+                # Try to parse standard tip structure
+                # Typically columns might be Media Name, 1st pick, 2nd pick, 3rd pick, 4th pick
+                rows = t.find_all('tr')
+                current_race = None
+                for row in rows:
+                    cells = row.find_all('td')
+                    row_text = [c.get_text(strip=True) for c in cells]
+                    
+                    if not row_text:
+                        continue
+                        
+                    # Identify race number row
+                    if "Race " in row_text[0]:
+                        import re
+                        m = re.search(r'Race (\d+)', row_text[0])
+                        if m:
+                            current_race = int(m.group(1))
+                            if current_race not in tips_data:
+                                tips_data[current_race] = {}
+                        continue
+                        
+                    if current_race and len(row_text) >= 4:
+                        # Probably a tipster row. E.g. ['Apple Daily', '1', '4', '8', '12']
+                        # Weighting: 1st pick = 4 points, 2nd = 3, 3rd = 2, 4th = 1
+                        points = [4, 3, 2, 1]
+                        for i, pick in enumerate(row_text[1:5]):
+                            if i < 4 and pick.isdigit():
+                                horse_no = int(pick)
+                                tips_data[current_race][horse_no] = tips_data[current_race].get(horse_no, 0) + points[i]
+    except Exception as e:
+        print(f"Failed to scrape tips index: {e}")
+        pass
+        
+    return tips_data
+
 if __name__ == "__main__":
-    print(get_live_meeting_data())
+    print(get_live_tips_index())

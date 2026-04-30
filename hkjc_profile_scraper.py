@@ -65,8 +65,23 @@ def get_horse_profile_stats(horse_code):
         # Fav going
         places = race_df[race_df['is_place'] == 1]
         last_form_going = 'Unknown'
+        
+        going_map = {
+            'GF': 'GOOD TO FIRM',
+            'G': 'GOOD',
+            'GY': 'GOOD TO YIELDING',
+            'Y': 'YIELDING',
+            'YS': 'YIELDING TO SOFT',
+            'S': 'SOFT',
+            'H': 'HEAVY',
+            'WS': 'WET SLOW',
+            'F': 'FIRM',
+            'WF': 'WET FAST'
+        }
+        
         if not places.empty:
-            last_form_going = places.iloc[0]['G']
+            raw_going = str(places.iloc[0]['G']).strip().upper()
+            last_form_going = going_map.get(raw_going, 'Unknown')
             
         return {
             "last_win_rating": last_win_rating,

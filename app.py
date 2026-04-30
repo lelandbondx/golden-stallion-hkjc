@@ -6,17 +6,19 @@ import re
 from streamlit_autorefresh import st_autorefresh
 
 try:
-    from scraper import get_live_meeting_data, get_hkjc_news
+    from scraper import get_live_meeting_data, get_hkjc_news, get_live_tips_index
 except ImportError:
     def get_live_meeting_data():
         return {"status": "error"}
     def get_hkjc_news():
         return []
+    def get_live_tips_index():
+        return {}
 
 try:
     from model import predict_probabilities, load_model
 except ImportError:
-    def predict_probabilities(df):
+    def predict_probabilities(df, venue=None, going=None):
         return np.ones(len(df)) / len(df)
     def load_model():
         pass
@@ -182,11 +184,16 @@ def fetch_horse_stats():
     except Exception:
         return pd.DataFrame()
 
+@st.cache_data(ttl=900)
+def fetch_tips():
+    return get_live_tips_index()
+
 # Initialize variables
 data = fetch_data()
 historical_df = fetch_historical_comments()
 std_times_df = fetch_standard_times()
 horse_stats_df = fetch_horse_stats()
+tips_data = fetch_tips()
 meetings = data.get('meetings', [])
 
 if not meetings:
@@ -245,8 +252,12 @@ with tab1:
         if not race.get('runners'): continue
         df_runners = pd.DataFrame(race['runners'])
         
+        # Map consensus score from tips data
+        current_race_tips = tips_data.get(race.get('race_no', 0), {})
+        df_runners['consensus_score'] = df_runners['no'].map(lambda x: current_race_tips.get(x, 0))
+        
         try:
-            probs = predict_probabilities(df_runners)
+            probs = predict_probabilities(df_runners, venue=meeting.get('venue'), going=meeting.get('going'))
         except Exception:
             probs = np.ones(len(df_runners)) / len(df_runners)
             
@@ -443,7 +454,7 @@ with tab1:
                         J: <span style="color:#ffffff;">{best['jockey']}</span> | T: <span style="color:#ffffff;">{best['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{best['win_odds']:.0f}</span>
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#FFD700; font-weight:700;">AI Conf: {best['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#FFD700; font-weight:700;">AI Conf: {best['confidence']}% &nbsp;|&nbsp; Tip Pts: {best.get('consensus_score', 0)}</div>
                 </div>
                 ''', unsafe_allow_html=True)
             with pc2:
@@ -455,7 +466,7 @@ with tab1:
                         J: <span style="color:#ffffff;">{second['jockey']}</span> | T: <span style="color:#ffffff;">{second['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{second['win_odds']:.0f}</span>
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Conf: {second['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Conf: {second['confidence']}% &nbsp;|&nbsp; Tip Pts: {second.get('consensus_score', 0)}</div>
                 </div>
                 ''', unsafe_allow_html=True)
             with pc3:
@@ -467,7 +478,7 @@ with tab1:
                         J: <span style="color:#ffffff;">{third['jockey']}</span> | T: <span style="color:#ffffff;">{third['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{third['win_odds']:.0f}</span>
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {third['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {third['confidence']}% &nbsp;|&nbsp; Tip Pts: {third.get('consensus_score', 0)}</div>
                 </div>
                 ''', unsafe_allow_html=True)
             with pc4:
@@ -517,7 +528,7 @@ with tab1:
                     if col not in df_runners.columns:
                         df_runners[col] = '-'
 
-                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
+                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
                 df_display = df_display.sort_values(by='confidence', ascending=False)
                 
                 # Fill NAs
@@ -535,6 +546,7 @@ with tab1:
                         "draw": st.column_config.NumberColumn("Draw", width="small"),
                         "rtg": st.column_config.NumberColumn("Rating", width="small"),
                         "win_odds": st.column_config.NumberColumn("Odds", format="%.0f", width="small"),
+                        "consensus_score": st.column_config.NumberColumn("Tipster Pts", width="small"),
                         "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),
                         "ST_vs_HV_pref": st.column_config.TextColumn("Track Pref", width="medium"),
                         "last_form_going": st.column_config.TextColumn("Fav Cond", width="medium"),
