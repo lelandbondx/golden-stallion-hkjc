@@ -213,6 +213,14 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         live_df['last_win_rating'] = live_df['horse_rating']
         live_df['ST_vs_HV_pref'] = 'Neutral'
         live_df['last_form_going'] = 'Unknown'
+        
+    if os.path.exists('data/gear_win_rates.csv') and 'horse_gear' in live_df.columns:
+        gear_df = pd.read_csv('data/gear_win_rates.csv')
+        gear_df['clean_name'] = gear_df['clean_name'].str.upper().str.strip()
+        live_df = pd.merge(live_df, gear_df, on=['clean_name', 'horse_gear'], how='left')
+        live_df['gear_win_rate'] = live_df['gear_win_rate'].fillna(0)
+    else:
+        live_df['gear_win_rate'] = 0.0
 
     live_df = prepare_features(live_df, is_live=True, venue=venue, going=going, race_date=race_date, race_class_int=race_class_int)
     

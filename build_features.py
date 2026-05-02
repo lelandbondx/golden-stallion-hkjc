@@ -90,17 +90,15 @@ def build_features():
     
     # Distance win rate
     df['is_this_dist'] = 1
-    df['won_this_dist'] = df['won']
-    # To do distance win rate properly per distance, we can group by horse_id and distance
-    df['cum_dist_runs'] = df.groupby(['horse_id', 'distance'])['is_this_dist'].cumsum().shift(1).fillna(0)
-    df['cum_dist_wins'] = df.groupby(['horse_id', 'distance'])['won_this_dist'].cumsum().shift(1).fillna(0)
-    
-    # Masking for multi-index shift issues: reset if horse OR distance changes
-    df['prev_dist'] = df.groupby('horse_id')['distance'].shift(1)
-    mask_dist = mask | (df['distance'] != df['prev_dist'])
-    df.loc[mask_dist, ['cum_dist_runs', 'cum_dist_wins']] = 0
-    
+    df['cum_dist_runs'] = df.groupby(['horse_id', 'distance'])['is_this_dist'].cumsum() - 1
+    df['cum_dist_wins'] = df.groupby(['horse_id', 'distance'])['won'].cumsum() - df['won']
     df['distance_win_rate'] = np.where(df['cum_dist_runs'] > 0, df['cum_dist_wins'] / df['cum_dist_runs'], 0)
+    
+    # Gear win rate
+    df['is_this_gear'] = 1
+    df['cum_gear_runs'] = df.groupby(['horse_id', 'horse_gear'])['is_this_gear'].cumsum() - 1
+    df['cum_gear_wins'] = df.groupby(['horse_id', 'horse_gear'])['won'].cumsum() - df['won']
+    df['gear_win_rate'] = np.where(df['cum_gear_runs'] > 0, df['cum_gear_wins'] / df['cum_gear_runs'], 0)
     
     # Last Win Rating
     df['temp_win_rtg'] = np.where(df['won'] == 1, df['horse_rating'], np.nan)
@@ -158,11 +156,16 @@ def build_features():
     live_stats.to_csv('data/latest_horse_stats.csv', index=False)
     print("Saved data/latest_horse_stats.csv")
     
+    gear_stats = df.groupby(['clean_name', 'horse_gear']).tail(1)[['clean_name', 'horse_gear', 'gear_win_rate']]
+    gear_stats = gear_stats.dropna(subset=['clean_name'])
+    gear_stats.to_csv('data/gear_win_rates.csv', index=False)
+    print("Saved data/gear_win_rates.csv")
+    
     # Clean up train_df and save
     features_to_keep = ['race_id', 'horse_id', 'clean_name', 'won', 'draw', 'actual_weight', 'declared_weight', 'horse_rating', 
                         'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'last_form_going', 'ST_vs_HV_pref',
                         'days_since_last_run', 'class_diff', 'rating_diff', 'gear_changed', 'recent_avg_pos', 'recent_win_rate',
-                        'distance_win_rate', 'jockey_win_rate', 'trainer_win_rate', 'venue', 'going', 'config']
+                        'distance_win_rate', 'gear_win_rate', 'jockey_win_rate', 'trainer_win_rate', 'venue', 'going', 'config']
     
     train_df = train_df[features_to_keep]
     train_df.to_csv('data/train_horse_features.csv', index=False)
