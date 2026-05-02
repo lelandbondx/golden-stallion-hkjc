@@ -263,7 +263,8 @@ def get_live_meeting_data():
                                 "declared_weight": int(runner.get("currentWeight") or 0),
                                 "rtg": int(runner.get("currentRating") or 0),
                                 "win_odds": float(runner.get("winOdds") or 0.0),
-                                "final_position": runner.get("finalPosition")
+                                "final_position": runner.get("finalPosition"),
+                                "horse_gear": runner.get("gearInfo", "")
                             })
                         race_obj["runners"] = sorted(race_obj["runners"], key=lambda k: k["no"])
                         meeting_out["races"].append(race_obj)

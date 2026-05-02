@@ -257,8 +257,19 @@ with tab1:
         df_runners['consensus_score'] = df_runners['no'].map(lambda x: current_race_tips.get(x, 0))
         
         try:
-            probs = predict_probabilities(df_runners, venue=meeting.get('venue'), going=meeting.get('going'))
-        except Exception:
+            # Parse class_int from race
+            class_str = race.get("class_dist", "")
+            class_int = 4
+            if "Class 1" in class_str: class_int = 1
+            elif "Class 2" in class_str: class_int = 2
+            elif "Class 3" in class_str: class_int = 3
+            elif "Class 4" in class_str: class_int = 4
+            elif "Class 5" in class_str: class_int = 5
+            elif "Group" in class_str or "G" in class_str: class_int = 0
+            
+            # The gear changes should ideally come from scraper, but for now we default them or rely on df_runners if scraped.
+            probs = predict_probabilities(df_runners, venue=meeting.get('venue'), going=meeting.get('going'), race_date=meeting.get('date'), race_class_int=class_int)
+        except Exception as e:
             probs = np.ones(len(df_runners)) / len(df_runners)
             
         df_runners['model_prob'] = probs
@@ -524,11 +535,11 @@ with tab1:
 
             with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=True):
                 # Ensure missing columns exist
-                for col in ['last_win_rating', 'ST_vs_HV_pref', 'last_form_going']:
+                for col in ['last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'class_diff', 'rating_diff', 'days_since_last_run', 'gear_changed', 'recent_avg_pos', 'distance_win_rate']:
                     if col not in df_runners.columns:
                         df_runners[col] = '-'
 
-                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
+                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
                 df_display = df_display.sort_values(by='confidence', ascending=False)
                 
                 # Fill NAs
@@ -547,6 +558,12 @@ with tab1:
                         "rtg": st.column_config.NumberColumn("Rating", width="small"),
                         "win_odds": st.column_config.NumberColumn("Odds", format="%.0f", width="small"),
                         "consensus_score": st.column_config.NumberColumn("Tipster Pts", width="small"),
+                        "class_diff": st.column_config.NumberColumn("Class Diff", width="small"),
+                        "rating_diff": st.column_config.NumberColumn("Rtg Diff", width="small"),
+                        "recent_avg_pos": st.column_config.NumberColumn("Rec Pos", format="%.1f", width="small"),
+                        "distance_win_rate": st.column_config.NumberColumn("Dist Win%", format="%.2f", width="small"),
+                        "days_since_last_run": st.column_config.NumberColumn("Days Off", width="small"),
+                        "gear_changed": st.column_config.NumberColumn("Gear Chg", width="small"),
                         "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),
                         "ST_vs_HV_pref": st.column_config.TextColumn("Track Pref", width="medium"),
                         "last_form_going": st.column_config.TextColumn("Fav Cond", width="medium"),
