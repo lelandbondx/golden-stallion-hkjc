@@ -83,12 +83,53 @@ def get_horse_profile_stats(horse_code):
             raw_going = str(places.iloc[0]['G']).strip().upper()
             last_form_going = going_map.get(raw_going, 'Unknown')
             
+        # Date
+        last_run_date = None
+        if not race_df.empty:
+            last_run_date = pd.to_datetime(race_df.iloc[0]['Date'], format="%d/%m/%y", errors='coerce')
+            
+        # Class
+        last_race_class_int = 4
+        if not race_df.empty:
+            cls_str = str(race_df.iloc[0].get('Cls', '4'))
+            if '1' in cls_str: last_race_class_int = 1
+            elif '2' in cls_str: last_race_class_int = 2
+            elif '3' in cls_str: last_race_class_int = 3
+            elif '4' in cls_str: last_race_class_int = 4
+            elif '5' in cls_str: last_race_class_int = 5
+            elif 'G' in cls_str.upper(): last_race_class_int = 0
+            
+        # Last rating
+        last_horse_rating = None
+        if not race_df.empty:
+            last_horse_rating = pd.to_numeric(race_df.iloc[0].get('Rtg.'), errors='coerce')
+            
+        # Last gear
+        last_gear = None
+        if not race_df.empty:
+            last_gear = str(race_df.iloc[0].get('Gear', ''))
+            
+        # Recent Form
+        recent_avg_pos = 7.0
+        recent_win_rate = 0.0
+        if not race_df.empty:
+            recent_runs = race_df.head(4).copy()
+            recent_runs['pos_num'] = pd.to_numeric(recent_runs['Pla.'], errors='coerce').fillna(7)
+            recent_avg_pos = recent_runs['pos_num'].mean()
+            recent_win_rate = recent_runs['is_win'].mean()
+            
         return {
             "last_win_rating": last_win_rating,
             "ST_win_rate": ST_win_rate,
             "HV_win_rate": HV_win_rate,
             "ST_vs_HV_pref": ST_vs_HV_pref,
-            "last_form_going": last_form_going
+            "last_form_going": last_form_going,
+            "recent_avg_pos": recent_avg_pos,
+            "recent_win_rate": recent_win_rate,
+            "last_run_date": last_run_date.strftime('%Y-%m-%d') if pd.notnull(last_run_date) else None,
+            "last_race_class_int": last_race_class_int,
+            "last_horse_rating": last_horse_rating,
+            "last_gear": last_gear
         }
         
     except Exception as e:
