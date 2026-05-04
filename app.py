@@ -297,11 +297,11 @@ with tab1:
         
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
         
-        # Scale to a realistically solid 30-70% range. Round to nearest integer.
+        # Scale to a realistically solid 15-85% range. Round to nearest integer.
         p_min = df_runners['model_prob'].min()
         p_max = df_runners['model_prob'].max()
         if p_max > p_min:
-            df_runners['confidence'] = (30.0 + ((df_runners['model_prob'] - p_min) / (p_max - p_min)) * 40).round(0).astype(int)
+            df_runners['confidence'] = (15.0 + ((df_runners['model_prob'] - p_min) / (p_max - p_min)) * 70).round(0).astype(int)
         else:
             df_runners['confidence'] = 50
 

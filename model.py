@@ -199,7 +199,8 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         live_df = pd.merge(live_df, stats_df, on='clean_name', how='left')
         
         # Fill NAs
-        live_df['last_win_rating'] = live_df['last_win_rating'].fillna(live_df['horse_rating'])
+        rating_col = live_df['horse_rating'] if 'horse_rating' in live_df.columns else live_df.get('rtg', 40)
+        live_df['last_win_rating'] = live_df['last_win_rating'].fillna(rating_col)
         live_df['ST_win_rate'] = live_df['ST_win_rate'].fillna(0)
         live_df['HV_win_rate'] = live_df['HV_win_rate'].fillna(0)
         live_df['ST_vs_HV_pref'] = live_df['ST_vs_HV_pref'].fillna('Neutral')
@@ -210,7 +211,8 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
     else:
         for col in ['last_win_rating', 'ST_win_rate', 'HV_win_rate', 'recent_avg_pos', 'recent_win_rate', 'distance_win_rate']:
             live_df[col] = 0.0
-        live_df['last_win_rating'] = live_df['horse_rating']
+        rating_col = live_df['horse_rating'] if 'horse_rating' in live_df.columns else live_df.get('rtg', 40)
+        live_df['last_win_rating'] = rating_col
         live_df['ST_vs_HV_pref'] = 'Neutral'
         live_df['last_form_going'] = 'Unknown'
         
