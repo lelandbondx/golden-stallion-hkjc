@@ -18,8 +18,8 @@ except ImportError:
 try:
     from model import predict_probabilities, load_model
 except ImportError:
-    def predict_probabilities(df, venue=None, going=None):
-        return np.ones(len(df)) / len(df)
+    def predict_probabilities(df, venue=None, going=None, race_date=None, race_class_int=None):
+        return np.ones(len(df)) / len(df), df
     def load_model():
         pass
 
@@ -267,10 +267,10 @@ with tab1:
             elif "Class 5" in class_str: class_int = 5
             elif "Group" in class_str or "G" in class_str: class_int = 0
             
-            # The gear changes should ideally come from scraper, but for now we default them or rely on df_runners if scraped.
-            probs = predict_probabilities(df_runners, venue=meeting.get('venue'), going=meeting.get('going'), race_date=meeting.get('date'), race_class_int=class_int)
+            probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=meeting.get('going'), race_date=meeting.get('date'), race_class_int=class_int)
         except Exception as e:
             probs = np.ones(len(df_runners)) / len(df_runners)
+            df_runners = df_runners
             
         df_runners['model_prob'] = probs
         df_runners['implied_raw'] = 1 / df_runners['win_odds'].replace(0, 1.0)
@@ -306,15 +306,8 @@ with tab1:
             df_runners['confidence'] = 50
 
         # Add historical records
-        df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
-        
-        # Merge stats
-        if not horse_stats_df.empty:
-            df_runners = pd.merge(df_runners, horse_stats_df, on='clean_name', how='left')
-        else:
-            df_runners['last_win_rating'] = np.nan
-            df_runners['ST_vs_HV_pref'] = 'Neutral'
-            df_runners['last_form_going'] = 'Unknown'
+        if 'clean_name' not in df_runners.columns:
+            df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
             
         vet_notes = []
         steward_notes = []

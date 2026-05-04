@@ -237,4 +237,4 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
     if total_prob > 0:
         probs = probs / total_prob
         
-    return probs
+    return probs, live_df
