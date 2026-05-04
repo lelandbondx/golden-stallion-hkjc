@@ -176,11 +176,19 @@ def train_and_save_model():
     print("Model saved to", MODEL_PATH)
     return model
 
+_loaded_model = None
+
 def load_model():
+    global _loaded_model
+    if _loaded_model is not None:
+        return _loaded_model
+        
     if os.path.exists(MODEL_PATH):
-        return joblib.load(MODEL_PATH)
+        _loaded_model = joblib.load(MODEL_PATH)
+        return _loaded_model
     else:
-        return train_and_save_model()
+        _loaded_model = train_and_save_model()
+        return _loaded_model
 
 def predict_probabilities(df, venue=None, going=None, race_date=None, race_class_int=None):
     """
