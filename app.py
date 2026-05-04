@@ -542,10 +542,10 @@ with tab1:
                 df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
                 df_display = df_display.sort_values(by='confidence', ascending=False)
                 
-                # Fill NAs
-                df_display['last_win_rating'] = df_display['last_win_rating'].fillna('-')
-                df_display['ST_vs_HV_pref'] = df_display['ST_vs_HV_pref'].fillna('Neutral')
-                df_display['last_form_going'] = df_display['last_form_going'].fillna('Unknown')
+                # Fill NAs and ensure string type for object columns to avoid PyArrow serialization errors
+                df_display['last_win_rating'] = df_display['last_win_rating'].astype(str).replace('nan', '-')
+                df_display['ST_vs_HV_pref'] = df_display['ST_vs_HV_pref'].fillna('Neutral').astype(str)
+                df_display['last_form_going'] = df_display['last_form_going'].fillna('Unknown').astype(str)
                 
                 st.dataframe(
                     df_display,
