@@ -269,6 +269,7 @@ with tab1:
             
             probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=meeting.get('going'), race_date=meeting.get('date'), race_class_int=class_int)
         except Exception as e:
+            print(f"Prediction Error for race {race.get('race_no')}: {e}")
             probs = np.ones(len(df_runners)) / len(df_runners)
             df_runners = df_runners
             
@@ -528,11 +529,11 @@ with tab1:
 
             with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=True):
                 # Ensure missing columns exist
-                for col in ['last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'class_diff', 'rating_diff', 'days_since_last_run', 'gear_changed', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate']:
+                for col in ['last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'class_diff', 'rating_diff', 'days_since_last_run', 'gear_changed', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear']:
                     if col not in df_runners.columns:
                         df_runners[col] = '-'
 
-                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
+                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
                 df_display = df_display.sort_values(by='confidence', ascending=False)
                 
                 # Fill NAs and ensure string type for object columns to avoid PyArrow serialization errors
@@ -556,6 +557,7 @@ with tab1:
                         "recent_avg_pos": st.column_config.NumberColumn("Rec Pos", format="%.1f", width="small"),
                         "distance_win_rate": st.column_config.NumberColumn("Dist Win%", format="%.2f", width="small"),
                         "gear_win_rate": st.column_config.NumberColumn("Gear Win%", format="%.2f", width="small"),
+                        "last_gear": st.column_config.TextColumn("Gear", width="small"),
                         "days_since_last_run": st.column_config.NumberColumn("Days Off", width="small"),
                         "gear_changed": st.column_config.NumberColumn("Gear Chg", width="small"),
                         "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),

@@ -33,8 +33,20 @@ def get_horse_profile_stats(horse_code):
         
         # Clean up data
         race_df['Pla.'] = race_df['Pla.'].astype(str)
-        race_df['is_win'] = race_df['Pla.'].apply(lambda x: 1 if x.strip() == '1' or '1 DH' in x else 0)
-        race_df['is_place'] = race_df['Pla.'].apply(lambda x: 1 if x.strip() in ['1', '2', '3'] or 'DH' in x and any(n in x for n in ['1', '2', '3']) else 0)
+        
+        def check_win(x):
+            x_clean = str(x).strip().upper()
+            if x_clean.lstrip('0') == '1' or '1 DH' in x_clean: return 1
+            return 0
+            
+        def check_place(x):
+            x_clean = str(x).strip().upper()
+            val = x_clean.lstrip('0')
+            if val in ['1', '2', '3'] or ('DH' in x_clean and any(n in x_clean for n in ['1', '2', '3'])): return 1
+            return 0
+            
+        race_df['is_win'] = race_df['Pla.'].apply(check_win)
+        race_df['is_place'] = race_df['Pla.'].apply(check_place)
         
         # Track
         race_df['Track'] = race_df['RC/Track/ Course'].astype(str).apply(lambda x: 'Sha Tin' if 'ST' in x else ('Happy Valley' if 'HV' in x else 'Unknown'))
@@ -69,6 +81,7 @@ def get_horse_profile_stats(horse_code):
         going_map = {
             'GF': 'GOOD TO FIRM',
             'G': 'GOOD',
+            'GD': 'GOOD',
             'GY': 'GOOD TO YIELDING',
             'Y': 'YIELDING',
             'YS': 'YIELDING TO SOFT',
@@ -109,12 +122,28 @@ def get_horse_profile_stats(horse_code):
         if not race_df.empty:
             last_gear = str(race_df.iloc[0].get('Gear', ''))
             
+        # Gear Win Rate (win rate with the exact same gear as last time)
+        gear_win_rate = 0.0
+        if last_gear and last_gear.strip() not in ['-', '']:
+            gear_runs = race_df[race_df['Gear'] == last_gear]
+            gear_wins = gear_runs[gear_runs['is_win'] == 1]
+            gear_win_rate = len(gear_wins) / len(gear_runs) if len(gear_runs) > 0 else 0.0
+            
+        # Distance Win Rate (using last distance as proxy)
+        distance_win_rate = 0.0
+        if not race_df.empty:
+            last_dist = str(race_df.iloc[0].get('Dist.', ''))
+            if last_dist and last_dist.strip() not in ['-', '']:
+                dist_runs = race_df[race_df['Dist.'] == last_dist]
+                dist_wins = dist_runs[dist_runs['is_win'] == 1]
+                distance_win_rate = len(dist_wins) / len(dist_runs) if len(dist_runs) > 0 else 0.0
+
         # Recent Form
         recent_avg_pos = 7.0
         recent_win_rate = 0.0
         if not race_df.empty:
             recent_runs = race_df.head(4).copy()
-            recent_runs['pos_num'] = pd.to_numeric(recent_runs['Pla.'], errors='coerce').fillna(7)
+            recent_runs['pos_num'] = pd.to_numeric(recent_runs['Pla.'].astype(str).str.lstrip('0'), errors='coerce').fillna(7)
             recent_avg_pos = recent_runs['pos_num'].mean()
             recent_win_rate = recent_runs['is_win'].mean()
             
@@ -129,7 +158,9 @@ def get_horse_profile_stats(horse_code):
             "last_run_date": last_run_date.strftime('%Y-%m-%d') if pd.notnull(last_run_date) else None,
             "last_race_class_int": last_race_class_int,
             "last_horse_rating": last_horse_rating,
-            "last_gear": last_gear
+            "last_gear": last_gear,
+            "gear_win_rate": gear_win_rate,
+            "distance_win_rate": distance_win_rate
         }
         
     except Exception as e:

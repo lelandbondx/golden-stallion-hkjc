@@ -204,7 +204,8 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         stats_df = pd.read_csv('data/latest_horse_stats.csv')
         live_df['clean_name'] = live_df['name'].str.upper().str.strip()
         stats_df['clean_name'] = stats_df['clean_name'].str.upper().str.strip()
-        live_df = pd.merge(live_df, stats_df, on='clean_name', how='left')
+        cols_to_use = stats_df.columns.difference(live_df.columns).tolist() + ['clean_name']
+        live_df = pd.merge(live_df, stats_df[cols_to_use], on='clean_name', how='left')
         
         # Fill NAs
         rating_col = live_df['horse_rating'] if 'horse_rating' in live_df.columns else live_df.get('rtg', 40)
@@ -227,10 +228,13 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
     if os.path.exists('data/gear_win_rates.csv') and 'horse_gear' in live_df.columns:
         gear_df = pd.read_csv('data/gear_win_rates.csv')
         gear_df['clean_name'] = gear_df['clean_name'].str.upper().str.strip()
+        if 'gear_win_rate' in live_df.columns:
+            live_df = live_df.drop(columns=['gear_win_rate'])
         live_df = pd.merge(live_df, gear_df, on=['clean_name', 'horse_gear'], how='left')
         live_df['gear_win_rate'] = live_df['gear_win_rate'].fillna(0)
     else:
-        live_df['gear_win_rate'] = 0.0
+        if 'gear_win_rate' not in live_df.columns:
+            live_df['gear_win_rate'] = 0.0
 
     live_df = prepare_features(live_df, is_live=True, venue=venue, going=going, race_date=race_date, race_class_int=race_class_int)
     
