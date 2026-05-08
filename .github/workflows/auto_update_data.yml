@@ -2,8 +2,8 @@ name: Auto-Update Horse Database
 
 on:
   schedule:
-    # Run at 18:00 UTC (2 AM Hong Kong Time) every day
-    - cron: '0 18 * * *'
+    # Run every 15 minutes to constantly scrape live odds, track conditions, and gear updates
+    - cron: '*/15 * * * *'
   workflow_dispatch: # Allow manual trigger from GitHub UI
 
 jobs:
@@ -22,16 +22,20 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas requests beautifulsoup4 lxml html5lib
+          pip install -r requirements.txt
+          pip install lxml html5lib
           
-      - name: Run Profile Scraper
+      - name: Run Full Golden Stallion Pipeline
         run: |
+          python build_db.py
+          python build_features.py
           python hkjc_profile_scraper.py
+          python scratch_train.py
           
       - name: Commit and Push Changes
         run: |
           git config --global user.name 'Golden Stallion Automator'
           git config --global user.email 'automator@golden-stallion.local'
-          git add data/latest_horse_stats.csv
+          git add data/ model.joblib
           # Only commit if there are changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update latest horse stats database" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update live models, odds, and track conditions" && git push)
