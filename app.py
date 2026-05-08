@@ -221,6 +221,12 @@ with tab1:
     col_act1, col_act2, col_act3 = st.columns([1, 2, 1])
     with col_act2:
         if st.button("INITIALIZE LIVE SYNC", use_container_width=True):
+            with st.spinner("Synchronizing live official stats..."):
+                try:
+                    from hkjc_profile_scraper import update_latest_stats
+                    update_latest_stats()
+                except Exception as e:
+                    print("Failed to update stats:", e)
             st.cache_data.clear()
             st.rerun()
 
@@ -278,9 +284,10 @@ with tab1:
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
         
-        # The XGBoost model is now fully market-aware (processes live win_odds and ratings)
-        # We rely 100% on the upgraded AI structural model to find true EV discrepancies.
-        df_runners['model_prob'] = df_runners['model_prob']
+        # The XGBoost model is purely quantitative. We apply the Tipster Consensus dynamically.
+        # Hybrid model: Each tipster point gives a 3% multiplier boost to the baseline probability.
+        if 'consensus_score' in df_runners.columns:
+            df_runners['model_prob'] = df_runners['model_prob'] * (1 + (df_runners['consensus_score'] * 0.03))
         
         # Normalize the blended probability
         total_b = df_runners['model_prob'].sum()

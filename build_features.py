@@ -64,10 +64,10 @@ def build_features():
     df['recent_win_rate'] = df['recent_win_rate'].fillna(0.0)
     
     # Track & Distance Prefs
-    df['is_ST'] = (df['venue'] == 'Sha Tin').astype(int)
-    df['is_HV'] = (df['venue'] == 'Happy Valley').astype(int)
-    df['won_ST'] = ((df['venue'] == 'Sha Tin') & (df['won'] == 1)).astype(int)
-    df['won_HV'] = ((df['venue'] == 'Happy Valley') & (df['won'] == 1)).astype(int)
+    df['is_ST'] = (df['venue'].isin(['Sha Tin', 'ST'])).astype(int)
+    df['is_HV'] = (df['venue'].isin(['Happy Valley', 'HV'])).astype(int)
+    df['won_ST'] = ((df['venue'].isin(['Sha Tin', 'ST'])) & (df['won'] == 1)).astype(int)
+    df['won_HV'] = ((df['venue'].isin(['Happy Valley', 'HV'])) & (df['won'] == 1)).astype(int)
     df['placed'] = (df['result_num'] <= 3).astype(int)
     
     df['cum_ST_runs'] = df.groupby('horse_id')['is_ST'].cumsum().shift(1).fillna(0)
@@ -161,11 +161,39 @@ def build_features():
     gear_stats.to_csv('data/gear_win_rates.csv', index=False)
     print("Saved data/gear_win_rates.csv")
     
+    try:
+        results = pd.read_csv('data/results.csv')
+        results['won_calc'] = results['plc'].astype(str).str.startswith('1').astype(int)
+        
+        j_runs = results.groupby('jockey').size().reset_index(name='runs')
+        j_wins = results.groupby('jockey')['won_calc'].sum().reset_index(name='wins')
+        j_stats = pd.merge(j_runs, j_wins, on='jockey')
+        j_stats['jockey_win_rate'] = np.where(j_stats['runs'] > 0, j_stats['wins'] / j_stats['runs'], 0.08)
+        j_stats['jockey'] = j_stats['jockey'].str.strip().str.upper()
+        j_stats[['jockey', 'jockey_win_rate']].to_csv('data/jockey_win_rates.csv', index=False)
+        print("Saved data/jockey_win_rates.csv")
+        
+        t_runs = results.groupby('trainer').size().reset_index(name='runs')
+        t_wins = results.groupby('trainer')['won_calc'].sum().reset_index(name='wins')
+        t_stats = pd.merge(t_runs, t_wins, on='trainer')
+        t_stats['trainer_win_rate'] = np.where(t_stats['runs'] > 0, t_stats['wins'] / t_stats['runs'], 0.08)
+        t_stats['trainer'] = t_stats['trainer'].str.strip().str.upper()
+        t_stats[['trainer', 'trainer_win_rate']].to_csv('data/trainer_win_rates.csv', index=False)
+        print("Saved data/trainer_win_rates.csv")
+    except Exception as e:
+        print(f"Error computing jockey/trainer stats: {e}")
+    
     # Clean up train_df and save
+    df['win_odds'] = pd.to_numeric(df['win_odds'], errors='coerce').fillna(20.0).replace(0, 20.0)
+    df['implied_prob'] = 1.0 / df['win_odds']
+    df['norm_implied_prob'] = df['implied_prob'] / df.groupby('race_id')['implied_prob'].transform('sum')
+
+    train_df = df.copy()
+
     features_to_keep = ['race_id', 'horse_id', 'clean_name', 'won', 'draw', 'actual_weight', 'declared_weight', 'horse_rating', 
                         'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'last_form_going', 'ST_vs_HV_pref',
                         'days_since_last_run', 'class_diff', 'rating_diff', 'gear_changed', 'recent_avg_pos', 'recent_win_rate',
-                        'distance_win_rate', 'gear_win_rate', 'jockey_win_rate', 'trainer_win_rate', 'venue', 'going', 'config']
+                        'distance_win_rate', 'gear_win_rate', 'jockey_win_rate', 'trainer_win_rate', 'venue', 'going', 'config', 'norm_implied_prob']
     
     train_df = train_df[features_to_keep]
     train_df.to_csv('data/train_horse_features.csv', index=False)

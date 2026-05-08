@@ -11,8 +11,9 @@ MODEL_PATH = 'model.joblib'
 ALL_FEATURES = [
     'draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 
     'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'track_pref_match', 'going_pref_match', 
-    'consensus_score', 'days_since_last_run', 'class_diff', 'rating_diff', 'gear_changed', 
-    'recent_avg_pos', 'recent_win_rate', 'distance_win_rate'
+    'days_since_last_run', 'class_diff', 'rating_diff', 'gear_changed', 
+    'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'jockey_win_rate', 'trainer_win_rate',
+    'norm_implied_prob'
 ]
 
 def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, race_class_int=None):
@@ -100,8 +101,20 @@ def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, 
         1, 0
     )
     
+    def normalize_going(g):
+        if not isinstance(g, str): return "UNKNOWN"
+        g = g.upper()
+        if "FIRM" in g: return "FIRM"
+        if "YIELD" in g or "SOFT" in g or "HEAVY" in g: return "SOFT"
+        if "GOOD" in g: return "GOOD"
+        if "WET" in g: return "WET"
+        return "UNKNOWN"
+
+    df['norm_current_going'] = df['current_going'].apply(normalize_going)
+    df['norm_last_going'] = df['last_form_going'].apply(normalize_going)
+    
     df['going_pref_match'] = np.where(
-        (df['last_form_going'] != 'Unknown') & (df['current_going'].str.upper() == df['last_form_going'].str.upper()),
+        (df['last_form_going'] != 'Unknown') & (df['norm_current_going'] == df['norm_last_going']) & (df['norm_current_going'] != 'UNKNOWN'),
         1, 0
     )
     
@@ -177,17 +190,21 @@ def train_and_save_model():
     return model
 
 _loaded_model = None
+_model_mtime = None
 
 def load_model():
-    global _loaded_model
-    if _loaded_model is not None:
-        return _loaded_model
-        
+    global _loaded_model, _model_mtime
+    
     if os.path.exists(MODEL_PATH):
-        _loaded_model = joblib.load(MODEL_PATH)
+        current_mtime = os.path.getmtime(MODEL_PATH)
+        if _loaded_model is None or _model_mtime != current_mtime:
+            _loaded_model = joblib.load(MODEL_PATH)
+            _model_mtime = current_mtime
         return _loaded_model
     else:
         _loaded_model = train_and_save_model()
+        if os.path.exists(MODEL_PATH):
+            _model_mtime = os.path.getmtime(MODEL_PATH)
         return _loaded_model
 
 def predict_probabilities(df, venue=None, going=None, race_date=None, race_class_int=None):
@@ -235,6 +252,43 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
     else:
         if 'gear_win_rate' not in live_df.columns:
             live_df['gear_win_rate'] = 0.0
+
+    # Fallback dictionaries for modern jockeys/trainers not present in historical results.csv (post-2017)
+    FALLBACK_JOCKEY_RATES = {
+        'Z PURTON': 0.25, 'H BOWMAN': 0.18, 'K TEETAN': 0.12, 'C Y HO': 0.11,
+        'A BADEL': 0.10, 'L HEWITSON': 0.09, 'A ATZENI': 0.09, 'L FERRARIS': 0.08,
+        'B AVDULLA': 0.08, 'E C W WONG': 0.09, 'M CHADWICK': 0.07, 'Y L CHUNG': 0.07,
+        'C L CHAU': 0.07, 'H BENTLEY': 0.08, 'K C LEUNG': 0.07, 'M F POON': 0.06,
+        'H T MO': 0.04, 'A HAMELIN': 0.06, 'M L YEUNG': 0.04, 'K DE MELO': 0.08
+    }
+    
+    FALLBACK_TRAINER_RATES = {
+        'J SIZE': 0.15, 'P C NG': 0.13, 'F C LOR': 0.13, 'K W LUI': 0.12,
+        'C S SHUM': 0.11, 'C FOWNES': 0.11, 'A S CRUZ': 0.10, 'P F YIU': 0.10,
+        'D A HAYES': 0.10, 'M NEWNHAM': 0.10, 'D J WHYTE': 0.09, 'J RICHARDS': 0.08,
+        'T P YUNG': 0.07, 'K L MAN': 0.08, 'W Y SO': 0.07, 'Y S TSUI': 0.05,
+        'C W CHANG': 0.05, 'K H TING': 0.04, 'W K MO': 0.06, 'M NEWMAN': 0.10
+    }
+
+    if os.path.exists('data/jockey_win_rates.csv') and 'jockey' in live_df.columns:
+        jockey_df = pd.read_csv('data/jockey_win_rates.csv')
+        jockey_df['jockey_clean'] = jockey_df['jockey'].str.upper().str.strip()
+        live_df['jockey_clean'] = live_df['jockey'].str.upper().str.strip()
+        live_df = pd.merge(live_df, jockey_df[['jockey_clean', 'jockey_win_rate']], on='jockey_clean', how='left')
+        live_df['jockey_win_rate'] = live_df['jockey_win_rate'].fillna(live_df['jockey_clean'].map(FALLBACK_JOCKEY_RATES)).fillna(0.08)
+    else:
+        live_df['jockey_clean'] = live_df.get('jockey', '').str.upper().str.strip()
+        live_df['jockey_win_rate'] = live_df['jockey_clean'].map(FALLBACK_JOCKEY_RATES).fillna(0.08)
+        
+    if os.path.exists('data/trainer_win_rates.csv') and 'trainer' in live_df.columns:
+        trainer_df = pd.read_csv('data/trainer_win_rates.csv')
+        trainer_df['trainer_clean'] = trainer_df['trainer'].str.upper().str.strip()
+        live_df['trainer_clean'] = live_df['trainer'].str.upper().str.strip()
+        live_df = pd.merge(live_df, trainer_df[['trainer_clean', 'trainer_win_rate']], on='trainer_clean', how='left')
+        live_df['trainer_win_rate'] = live_df['trainer_win_rate'].fillna(live_df['trainer_clean'].map(FALLBACK_TRAINER_RATES)).fillna(0.08)
+    else:
+        live_df['trainer_clean'] = live_df.get('trainer', '').str.upper().str.strip()
+        live_df['trainer_win_rate'] = live_df['trainer_clean'].map(FALLBACK_TRAINER_RATES).fillna(0.08)
 
     live_df = prepare_features(live_df, is_live=True, venue=venue, going=going, race_date=race_date, race_class_int=race_class_int)
     

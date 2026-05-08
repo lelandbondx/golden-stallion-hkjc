@@ -242,7 +242,7 @@ def get_live_meeting_data():
                             "runners": []
                         }
                         for runner in r.get("runners", []):
-                            if runner.get("status") == "Standby":
+                            if runner.get("status") in ["Standby", "Scratched", "Withdrawn"]:
                                 continue
                             
                             jockey_dict = runner.get("jockey") or {}
@@ -347,11 +347,38 @@ def build_fallback_live_data():
     }
 
 def get_hkjc_news():
-    return [
-        {"title": "Purton eyes historic sweep at Sha Tin's upcoming meeting", "link": "https://racingnews.hkjc.com/english/"},
-        {"title": "Latest trackwork updates: Star performers return to form", "link": "https://racingnews.hkjc.com/english/"},
-        {"title": "Update on Sha Tin rail position C+3", "link": "https://racingnews.hkjc.com/english/"},
-    ]
+    url = "https://racingnews.hkjc.com/english/"
+    headers = {"User-Agent": "Mozilla/5.0"}
+    news_items = []
+    try:
+        res = requests.get(url, headers=headers, timeout=10)
+        soup = BeautifulSoup(res.content, 'html.parser')
+        
+        # Look for article links which typically contain a date structure in href
+        import re
+        links = soup.find_all('a', href=re.compile(r'racingnews\.hkjc\.com/english/\d{4}/\d{2}/\d{2}/'))
+        
+        seen_titles = set()
+        for link in links:
+            title = link.get_text(strip=True)
+            href = link.get('href')
+            if href.startswith('//'):
+                href = 'https:' + href
+            if title and len(title) > 10 and title not in seen_titles:
+                seen_titles.add(title)
+                news_items.append({"title": title, "link": href})
+            if len(news_items) >= 6:
+                break
+    except Exception as e:
+        print(f"Failed to scrape news: {e}")
+        
+    if not news_items:
+        return [
+            {"title": "Purton eyes historic sweep at Sha Tin's upcoming meeting", "link": "https://racingnews.hkjc.com/english/"},
+            {"title": "Latest trackwork updates: Star performers return to form", "link": "https://racingnews.hkjc.com/english/"},
+            {"title": "Update on Sha Tin rail position C+3", "link": "https://racingnews.hkjc.com/english/"},
+        ]
+    return news_items
 
 def get_live_tips_index():
     url = "https://racing.hkjc.com/racing/english/tipsindex/tips_index.asp"
