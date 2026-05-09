@@ -284,10 +284,56 @@ with tab1:
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
         
+        # Caspar Fownes Picks
+        FOWNES_PICKS = {
+            1: [7, 9, 3, 2, 1],
+            2: [4, 2, 1, 7, 8],
+            3: [13, 1, 2, 6, 10],
+            4: [4, 8, 14, 6, 7],
+            5: [3, 1, 2, 9, 6],
+            6: [7, 8, 6, 11, 3],
+            7: [9, 4, 5, 7, 10],
+            8: [3, 4, 10, 7, 11],
+            9: [13, 5, 4, 10, 1],
+            10: [4, 3, 2, 5, 6],
+            11: [6, 11, 4, 5, 2]
+        }
+        
+        race_no_int = int(race.get('race_no', 0))
+        
+        def get_fownes_pts(horse_no, r_no):
+            try:
+                h_no = int(horse_no)
+                if r_no in FOWNES_PICKS:
+                    picks = FOWNES_PICKS[r_no]
+                    if h_no in picks:
+                        return 5 - picks.index(h_no)
+            except:
+                pass
+            return 0
+            
+        df_runners['fownes_pts'] = df_runners['no'].map(lambda x: get_fownes_pts(x, race_no_int))
+        
+        # Form and Speed logic
+        # Proxy "On Speed" with low draw (<= 4) and "Good Form" with recent_avg_pos <= 5 or recent_win_rate >= 0.1
+        df_runners['form_speed_pts'] = 0
+        if 'draw' in df_runners.columns and 'recent_avg_pos' in df_runners.columns:
+            draw_num = pd.to_numeric(df_runners['draw'], errors='coerce')
+            recent_pos = pd.to_numeric(df_runners['recent_avg_pos'], errors='coerce')
+            recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0), errors='coerce')
+            speed_pts = np.where(recent_pos <= 4.5, 4, 0)
+            form_pts = np.where(recent_win >= 0.1, 2, 0)
+            df_runners['form_speed_pts'] = speed_pts + form_pts
+
+        # Gemini Intel points for specifically named in-form horses
+        intel_horses = ["HOT DELIGHT", "GOLD PATCH", "AMAZING PARTNERS"]
+        df_runners['intel_pts'] = df_runners['name'].str.upper().apply(lambda x: 4 if any(ih in str(x) for ih in intel_horses) else 0)
+
         # The XGBoost model is purely quantitative. We apply the Tipster Consensus dynamically.
-        # Hybrid model: Each tipster point gives a 3% multiplier boost to the baseline probability.
-        if 'consensus_score' in df_runners.columns:
-            df_runners['model_prob'] = df_runners['model_prob'] * (1 + (df_runners['consensus_score'] * 0.03))
+        # Hybrid model: Each tipster/Fownes/form point gives a 3% multiplier boost to the baseline probability.
+        consensus = df_runners.get('consensus_score', 0).fillna(0)
+        total_boost_pts = consensus + df_runners['fownes_pts'] + df_runners['form_speed_pts'] + df_runners['intel_pts']
+        df_runners['model_prob'] = df_runners['model_prob'] * (1 + (total_boost_pts * 0.03))
         
         # Normalize the blended probability
         total_b = df_runners['model_prob'].sum()
