@@ -284,56 +284,42 @@ with tab1:
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
         
-        # Caspar Fownes Picks
-        FOWNES_PICKS = {
-            1: [7, 9, 3, 2, 1],
-            2: [4, 2, 1, 7, 8],
-            3: [13, 1, 2, 6, 10],
-            4: [4, 8, 14, 6, 7],
-            5: [3, 1, 2, 9, 6],
-            6: [7, 8, 6, 11, 3],
-            7: [9, 4, 5, 7, 10],
-            8: [3, 4, 10, 7, 11],
-            9: [13, 5, 4, 10, 1],
-            10: [4, 3, 2, 5, 6],
-            11: [6, 11, 4, 5, 2]
-        }
-        
-        race_no_int = int(race.get('race_no', 0))
-        
-        def get_fownes_pts(horse_no, r_no):
-            try:
-                h_no = int(horse_no)
-                if r_no in FOWNES_PICKS:
-                    picks = FOWNES_PICKS[r_no]
-                    if h_no in picks:
-                        return 5 - picks.index(h_no)
-            except:
-                pass
-            return 0
-            
-        df_runners['fownes_pts'] = df_runners['no'].map(lambda x: get_fownes_pts(x, race_no_int))
-        
-        # Form and Speed logic
-        # Proxy "On Speed" with low draw (<= 4) and "Good Form" with recent_avg_pos <= 5 or recent_win_rate >= 0.1
+        # Strong Form & Track Specialist Points
         df_runners['form_speed_pts'] = 0
-        if 'draw' in df_runners.columns and 'recent_avg_pos' in df_runners.columns:
-            draw_num = pd.to_numeric(df_runners['draw'], errors='coerce')
-            recent_pos = pd.to_numeric(df_runners['recent_avg_pos'], errors='coerce')
-            recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0), errors='coerce')
-            speed_pts = np.where(recent_pos <= 4.5, 4, 0)
-            form_pts = np.where(recent_win >= 0.1, 2, 0)
+        if 'recent_avg_pos' in df_runners.columns:
+            recent_pos = pd.to_numeric(df_runners['recent_avg_pos'], errors='coerce').fillna(7.0)
+            recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0), errors='coerce').fillna(0.0)
+            
+            # Massive boost for horses consistently placing or winning
+            speed_pts = np.where(recent_pos <= 3.5, 6, np.where(recent_pos <= 5.0, 3, 0))
+            form_pts = np.where(recent_win >= 0.25, 4, np.where(recent_win >= 0.1, 2, 0))
             df_runners['form_speed_pts'] = speed_pts + form_pts
 
-        # Gemini Intel points for specifically named in-form horses
-        intel_horses = ["HOT DELIGHT", "GOLD PATCH", "AMAZING PARTNERS"]
-        df_runners['intel_pts'] = df_runners['name'].str.upper().apply(lambda x: 4 if any(ih in str(x) for ih in intel_horses) else 0)
+        df_runners['track_condition_pts'] = 0
+        # Track Specialist
+        if 'ST_vs_HV_pref' in df_runners.columns:
+            track_match = (df_runners['ST_vs_HV_pref'] == meeting.get('venue')).astype(int)
+            df_runners['track_condition_pts'] += (track_match * 3)
+            
+        # Going Match
+        if 'last_form_going' in df_runners.columns:
+            going_match = (df_runners['last_form_going'] == meeting.get('going', 'UNKNOWN')).astype(int)
+            df_runners['track_condition_pts'] += (going_match * 2)
 
-        # The XGBoost model is purely quantitative. We apply the Tipster Consensus dynamically.
-        # Hybrid model: Each tipster/Fownes/form point gives a 3% multiplier boost to the baseline probability.
         consensus = df_runners.get('consensus_score', 0).fillna(0)
-        total_boost_pts = consensus + df_runners['fownes_pts'] + df_runners['form_speed_pts'] + df_runners['intel_pts']
-        df_runners['model_prob'] = df_runners['model_prob'] * (1 + (total_boost_pts * 0.03))
+        
+        # Calculate Total Boost
+        total_boost_pts = consensus + df_runners['form_speed_pts'] + df_runners['track_condition_pts']
+        
+        # Apply False Favorite Penalty: If a horse is favored (implied prob > 20%) but has terrible recent form (avg pos > 6)
+        false_fav_penalty = np.where((df_runners['implied_prob'] > 0.20) & (pd.to_numeric(df_runners.get('recent_avg_pos', 7), errors='coerce') > 6.0), -5, 0)
+        total_boost_pts += false_fav_penalty
+
+        # Apply multiplier (cap negative so prob doesn't go below 0)
+        multiplier = 1 + (total_boost_pts * 0.04)
+        multiplier = np.maximum(multiplier, 0.2) # Floor at 20% of original model_prob
+        
+        df_runners['model_prob'] = df_runners['model_prob'] * multiplier
         
         # Normalize the blended probability
         total_b = df_runners['model_prob'].sum()
