@@ -77,9 +77,14 @@ def run():
             draw_num = pd.to_numeric(df_runners['draw'], errors='coerce')
             recent_pos = pd.to_numeric(df_runners['recent_avg_pos'], errors='coerce')
             recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0), errors='coerce')
+            
+            # Massive debutant penalty to remove blindspots
+            is_debutant = (recent_pos == 7.0) & (recent_win == 0.0)
+            debutant_penalty = np.where(is_debutant, -15, 0)
+            
             speed_pts = np.where(recent_pos <= 4.5, 4, 0)
             form_pts = np.where(recent_win >= 0.1, 2, 0)
-            df_runners['form_speed_pts'] = speed_pts + form_pts
+            df_runners['form_speed_pts'] = speed_pts + form_pts + debutant_penalty
 
         # Gemini Intel points for specifically named in-form horses
         intel_horses = ["HOT DELIGHT", "GOLD PATCH", "AMAZING PARTNERS"]

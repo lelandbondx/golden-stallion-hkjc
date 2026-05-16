@@ -314,7 +314,12 @@ with tab1:
             # Massive boost for horses consistently placing or winning
             speed_pts = np.where(recent_pos <= 3.5, 6, np.where(recent_pos <= 5.0, 3, 0))
             form_pts = np.where(recent_win >= 0.25, 4, np.where(recent_win >= 0.1, 2, 0))
-            df_runners['form_speed_pts'] = speed_pts + form_pts
+            
+            # Massive penalty for debutants / missing form
+            is_debutant = (recent_pos == 7.0) & (recent_win == 0.0)
+            debutant_penalty = np.where(is_debutant, -15, 0)
+            
+            df_runners['form_speed_pts'] = speed_pts + form_pts + debutant_penalty
 
         df_runners['track_condition_pts'] = 0
         # Track Specialist

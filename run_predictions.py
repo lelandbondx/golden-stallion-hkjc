@@ -5,10 +5,20 @@ import numpy as np
 from scraper import get_live_meeting_data, get_live_tips_index
 from model import predict_probabilities, load_model
 
+import json
+
 def run():
     print("Loading data...")
     data = get_live_meeting_data()
     tips_data = get_live_tips_index()
+    
+    # Load private expert intel
+    try:
+        with open('data/gemini_intel.json', 'r') as f:
+            intel_data = json.load(f)
+            key_runners = [runner['horse_name'].upper() for runner in intel_data.get('key_runners', [])]
+    except Exception:
+        key_runners = []
     
     if data.get('status') != 'success' or not data.get('meetings'):
         print("Failed to get live meeting data.")
@@ -28,6 +38,8 @@ def run():
         df_runners = pd.DataFrame(race['runners'])
         current_race_tips = tips_data.get(race.get('race_no', 0), {})
         df_runners['consensus_score'] = df_runners['no'].map(lambda x: current_race_tips.get(x, 0))
+        if key_runners:
+            df_runners['consensus_score'] += np.where(df_runners['name'].str.upper().isin(key_runners), 10, 0)
         
         class_str = race.get("class_dist", "")
         class_int = 4
@@ -47,33 +59,47 @@ def run():
         
         # Strong Form & Track Specialist Points
         df_runners['form_speed_pts'] = 0
+        recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
+        recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
+        
         if 'recent_avg_pos' in df_runners.columns:
-            recent_pos = pd.to_numeric(df_runners['recent_avg_pos'], errors='coerce').fillna(7.0)
-            recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0), errors='coerce').fillna(0.0)
-            
-            # Massive boost for horses consistently placing or winning
-            speed_pts = np.where(recent_pos <= 3.5, 6, np.where(recent_pos <= 5.0, 3, 0))
-            form_pts = np.where(recent_win >= 0.25, 4, np.where(recent_win >= 0.1, 2, 0))
+            # User mandate: Form is the MOST IMPORTANT factor. Reverting back to massive multipliers.
+            speed_pts = np.where(recent_pos <= 3.5, 8, np.where(recent_pos <= 5.0, 4, 0))
+            form_pts = np.where(recent_win >= 0.25, 5, np.where(recent_win >= 0.1, 3, 0))
             df_runners['form_speed_pts'] = speed_pts + form_pts
 
         df_runners['track_condition_pts'] = 0
         # Track Specialist
         if 'ST_vs_HV_pref' in df_runners.columns:
             track_match = (df_runners['ST_vs_HV_pref'] == meeting.get('venue')).astype(int)
-            df_runners['track_condition_pts'] += (track_match * 3)
+            df_runners['track_condition_pts'] += (track_match * 5)
             
         # Going Match
         if 'last_form_going' in df_runners.columns:
             going_match = (df_runners['last_form_going'] == meeting.get('going', 'UNKNOWN')).astype(int)
-            df_runners['track_condition_pts'] += (going_match * 2)
+            df_runners['track_condition_pts'] += (going_match * 4)
+
+        # Distance Specialist points
+        distance_pts = np.where(pd.to_numeric(df_runners.get('distance_win_rate', 0), errors='coerce').fillna(0) > 0.20, 3, 0)
+
+        # Elite Jockey Synergy
+        jockey_win = pd.to_numeric(df_runners.get('jockey_win_rate', 0.08), errors='coerce').fillna(0.08)
+        jockey_synergy = np.where((jockey_win >= 0.15) & (recent_pos <= 5.0), 2, 0)
+        
+        # Value Tie-Breaker points (Only when backed by strong analytics)
+        # Undervalued by the public AND has a strong recent finish OR expert consensus
+        is_undervalued = df_runners['model_prob'] > (df_runners['implied_prob'] * 1.25)
+        has_strong_analytics = (recent_pos <= 5.0) | (df_runners.get('consensus_score', 0) > 0)
+        value_tie_breaker = np.where(is_undervalued & has_strong_analytics, 2, 0)
 
         consensus = df_runners.get('consensus_score', 0).fillna(0)
         
         # Calculate Total Boost
-        total_boost_pts = consensus + df_runners['form_speed_pts'] + df_runners['track_condition_pts']
+        total_boost_pts = consensus + df_runners['form_speed_pts'] + df_runners['track_condition_pts'] + distance_pts + jockey_synergy + value_tie_breaker
         
-        # Apply False Favorite Penalty: If a horse is favored (implied prob > 20%) but has terrible recent form (avg pos > 6)
-        false_fav_penalty = np.where((df_runners['implied_prob'] > 0.20) & (pd.to_numeric(df_runners.get('recent_avg_pos', 7), errors='coerce') > 6.0), -5, 0)
+        # Sharper Vulnerable Favorite Penalty: 
+        # If a horse is favored (odds < 5.0, implied_prob > 0.20) but hasn't been winning (win rate < 0.10) OR has bad finishes (avg pos > 5.0)
+        false_fav_penalty = np.where((df_runners['implied_prob'] > 0.20) & ((recent_win < 0.10) | (recent_pos > 5.0)), -5, 0)
         total_boost_pts += false_fav_penalty
 
         # Apply multiplier (cap negative so prob doesn't go below 0)
