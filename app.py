@@ -4,6 +4,27 @@ import numpy as np
 import os
 import re
 from streamlit_autorefresh import st_autorefresh
+import threading
+import time
+import requests
+
+def keep_alive():
+    while True:
+        try:
+            requests.get("https://hkjcbotlee.streamlit.app/")
+        except:
+            pass
+        try:
+            requests.get("https://huggingface.co/spaces/lelandbondx/golden-stallion")
+        except:
+            pass
+        try:
+            requests.get("https://huggingface.co/spaces/lelandbondx/golden-stallion-hkjc")
+        except:
+            pass
+        time.sleep(600)
+
+threading.Thread(target=keep_alive, daemon=True).start()
 
 try:
     from scraper import get_live_meeting_data, get_hkjc_news, get_live_tips_index

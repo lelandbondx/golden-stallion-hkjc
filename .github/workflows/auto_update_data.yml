@@ -32,6 +32,12 @@ jobs:
           python hkjc_profile_scraper.py
           python scratch_train.py
           
+      - name: Ping Space URLs
+        run: |
+          curl -s https://hkjcbotlee.streamlit.app/ > /dev/null || true
+          curl -s https://huggingface.co/spaces/lelandbondx/golden-stallion > /dev/null || true
+          curl -s https://huggingface.co/spaces/lelandbondx/golden-stallion-hkjc > /dev/null || true
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name 'Golden Stallion Automator'
