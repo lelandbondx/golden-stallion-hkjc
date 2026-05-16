@@ -78,9 +78,9 @@ def run():
             recent_pos = pd.to_numeric(df_runners['recent_avg_pos'], errors='coerce')
             recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0), errors='coerce')
             
-            # Massive debutant penalty to remove blindspots
+            # Moderate debutant penalty (avoids completely blinding the model to highly-backed first starters)
             is_debutant = (recent_pos == 7.0) & (recent_win == 0.0)
-            debutant_penalty = np.where(is_debutant, -15, 0)
+            debutant_penalty = np.where(is_debutant, -4, 0)
             
             speed_pts = np.where(recent_pos <= 4.5, 4, 0)
             form_pts = np.where(recent_win >= 0.1, 2, 0)
