@@ -12,8 +12,8 @@ ALL_FEATURES = [
     'draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 
     'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'track_pref_match', 'going_pref_match', 
     'days_since_last_run', 'class_diff', 'rating_diff', 'gear_changed', 
-    'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'jockey_win_rate', 'trainer_win_rate',
-    'norm_implied_prob'
+    'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'gear_win_rate', 'jockey_win_rate', 'trainer_win_rate',
+    'norm_implied_prob', 'prev_run_vet_finding'
 ]
 
 def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, race_class_int=None):
@@ -148,6 +148,8 @@ def train_and_save_model():
             runs['recent_avg_pos'] = runs['recent_avg_pos'].fillna(7)
             runs['recent_win_rate'] = runs['recent_win_rate'].fillna(0)
             runs['distance_win_rate'] = runs['distance_win_rate'].fillna(0)
+            runs['gear_win_rate'] = runs.get('gear_win_rate', 0).fillna(0)
+            runs['prev_run_vet_finding'] = runs.get('prev_run_vet_finding', 0).fillna(0)
             runs['venue'] = runs['venue'].fillna('Unknown')
             runs['going'] = runs['going'].fillna('Unknown')
         else:
@@ -234,8 +236,9 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         live_df['recent_avg_pos'] = live_df['recent_avg_pos'].fillna(7)
         live_df['recent_win_rate'] = live_df['recent_win_rate'].fillna(0)
         live_df['distance_win_rate'] = live_df['distance_win_rate'].fillna(0)
+        live_df['prev_run_vet_finding'] = live_df.get('prev_run_vet_finding', 0).fillna(0)
     else:
-        for col in ['last_win_rating', 'ST_win_rate', 'HV_win_rate', 'recent_avg_pos', 'recent_win_rate', 'distance_win_rate']:
+        for col in ['last_win_rating', 'ST_win_rate', 'HV_win_rate', 'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'prev_run_vet_finding']:
             live_df[col] = 0.0
         rating_col = live_df['horse_rating'] if 'horse_rating' in live_df.columns else live_df.get('rtg', 40)
         live_df['last_win_rating'] = rating_col

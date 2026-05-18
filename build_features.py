@@ -7,13 +7,15 @@ def build_features():
     runs = pd.read_csv('data/runs.csv')
     horse_info = pd.read_csv('data/horse_info.csv')
     
+    comments = pd.read_csv('data/comments.csv')
+    
     # Map horse_id to clean_name
     horse_info['horse_id'] = horse_info['Unnamed: 0']
     horse_info['clean_name'] = horse_info['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
     horse_map = horse_info[['horse_id', 'clean_name']].drop_duplicates()
     
     print("Merging data...")
-    df = pd.merge(runs, races[['race_id', 'date', 'venue', 'config', 'surface', 'going', 'distance', 'race_class']], on='race_id', how='inner')
+    df = pd.merge(runs, races[['race_id', 'date', 'venue', 'config', 'surface', 'going', 'distance', 'race_class', 'race_no']], on='race_id', how='inner')
     df = pd.merge(df, horse_map, on='horse_id', how='left')
     
     # Ensure date is datetime and sort
@@ -41,6 +43,18 @@ def build_features():
     df['prev_date'] = df.groupby('horse_id')['date'].shift(1)
     df['days_since_last_run'] = (df['date'] - df['prev_date']).dt.days.fillna(30) # Default to 30 days
     df['days_since_last_run'] = np.clip(df['days_since_last_run'], 0, 365) # Cap at 1 year
+    
+    # Parse comments for vet findings
+    comments['date'] = pd.to_datetime(comments['date'])
+    comments = comments.rename(columns={'raceno': 'race_no', 'horseno': 'horse_no'})
+    df = pd.merge(df, comments[['date', 'race_no', 'horse_no', 'comment']], on=['date', 'race_no', 'horse_no'], how='left')
+    
+    vet_keywords = ['lame', 'blood', 'trachea', 'heart']
+    df['vet_finding'] = df['comment'].fillna('').str.lower().apply(lambda x: 1 if any(k in x for k in vet_keywords) else 0)
+    
+    # Needs to be sorted again just in case merge messed it up
+    df = df.sort_values(by=['horse_id', 'date'])
+    df['prev_run_vet_finding'] = df.groupby('horse_id')['vet_finding'].shift(1).fillna(0)
     
     df['prev_class'] = df.groupby('horse_id')['class_int'].shift(1).fillna(df['class_int'])
     df['class_diff'] = df['class_int'] - df['prev_class'] # Drop in class (e.g. from 3 to 4) = +1
@@ -150,7 +164,7 @@ def build_features():
     latest['last_gear'] = latest['horse_gear']
     
     live_stats = latest[['clean_name', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'ST_vs_HV_pref', 'last_form_going', 
-                         'recent_avg_pos', 'recent_win_rate', 'last_run_date', 'last_race_class_int', 'last_horse_rating', 'last_gear', 'distance_win_rate']]
+                         'recent_avg_pos', 'recent_win_rate', 'last_run_date', 'last_race_class_int', 'last_horse_rating', 'last_gear', 'distance_win_rate', 'prev_run_vet_finding']]
     live_stats = live_stats.dropna(subset=['clean_name'])
     
     live_stats.to_csv('data/latest_horse_stats.csv', index=False)
@@ -193,7 +207,7 @@ def build_features():
     features_to_keep = ['race_id', 'horse_id', 'clean_name', 'won', 'draw', 'actual_weight', 'declared_weight', 'horse_rating', 
                         'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'last_form_going', 'ST_vs_HV_pref',
                         'days_since_last_run', 'class_diff', 'rating_diff', 'gear_changed', 'recent_avg_pos', 'recent_win_rate',
-                        'distance_win_rate', 'gear_win_rate', 'jockey_win_rate', 'trainer_win_rate', 'venue', 'going', 'config', 'norm_implied_prob']
+                        'distance_win_rate', 'gear_win_rate', 'jockey_win_rate', 'trainer_win_rate', 'venue', 'going', 'config', 'norm_implied_prob', 'prev_run_vet_finding']
     
     train_df = train_df[features_to_keep]
     train_df.to_csv('data/train_horse_features.csv', index=False)
