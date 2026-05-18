@@ -29,6 +29,7 @@ jobs:
         run: |
           python build_db.py
           python build_features.py
+          python build_features_results.py
           python hkjc_profile_scraper.py
           python scratch_train.py
           
