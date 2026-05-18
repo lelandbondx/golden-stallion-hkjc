@@ -246,6 +246,12 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         live_df['last_form_going'] = 'Unknown'
         
     if os.path.exists('data/gear_win_rates.csv') and 'horse_gear' in live_df.columns:
+        def norm_gear(g):
+            if not isinstance(g, str) or g.strip() in ['', '--', 'nan']: return '--'
+            return '/'.join(sorted([x.strip() for x in str(g).split('/') if x.strip()]))
+            
+        live_df['horse_gear'] = live_df['horse_gear'].apply(norm_gear)
+        
         gear_df = pd.read_csv('data/gear_win_rates.csv')
         gear_df['clean_name'] = gear_df['clean_name'].str.upper().str.strip()
         if 'gear_win_rate' in live_df.columns:

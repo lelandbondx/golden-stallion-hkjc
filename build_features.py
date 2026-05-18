@@ -62,6 +62,13 @@ def build_features():
     df['prev_rating'] = df.groupby('horse_id')['horse_rating'].shift(1).fillna(df['horse_rating'])
     df['rating_diff'] = df['horse_rating'] - df['prev_rating']
     
+    # Normalize gear
+    def norm_gear(g):
+        if not isinstance(g, str) or g.strip() in ['', '--', 'nan']: return '--'
+        return '/'.join(sorted([x.strip() for x in g.split('/') if x.strip()]))
+    
+    df['horse_gear'] = df['horse_gear'].apply(norm_gear)
+    
     df['prev_gear'] = df.groupby('horse_id')['horse_gear'].shift(1).fillna('--')
     df['gear_changed'] = (df['horse_gear'] != df['prev_gear']).astype(int)
     
