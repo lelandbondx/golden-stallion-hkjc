@@ -57,23 +57,30 @@ def run():
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
         
-        # Modest Form & Consensus Boost
+        # Targeted Standout Boost: Only boost if there is a confluence of strong indicators
         recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
-        recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
+        track_match = pd.to_numeric(df_runners.get('track_pref_match', 0), errors='coerce').fillna(0)
+        going_match = pd.to_numeric(df_runners.get('going_pref_match', 0), errors='coerce').fillna(0)
+        vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
+        class_drop = pd.to_numeric(df_runners.get('class_diff', 0), errors='coerce').fillna(0)
+        
+        # Super Standout condition: 
+        # Extremely good recent form (<= 3.5 avg pos) AND proven at this track/going AND healthy
+        is_super_standout = (recent_pos <= 3.5) & ((track_match == 1) | (going_match == 1)) & (vet_issue == 0)
+        
+        # Secondary edge: Class droppers who are in decent form (<= 5.0) and healthy
+        is_class_dropper_standout = (class_drop > 0) & (recent_pos <= 5.0) & (vet_issue == 0)
+        
+        standout_boost = np.where(is_super_standout, 0.08, 0.0) # 8% boost for true standouts
+        standout_boost += np.where(is_class_dropper_standout, 0.05, 0.0) # 5% boost for dangerous class droppers
+        
+        # Consensus intel boost (gentle tie breaker)
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
-        
-        # Keep a modest form boost (since user explicitly stated form is most important)
-        # Cap at about 10% boost for exceptional form
-        form_boost = np.where(recent_pos <= 3.5, 0.05, np.where(recent_pos <= 5.0, 0.02, 0.0))
-        form_boost += np.where(recent_win >= 0.25, 0.05, np.where(recent_win >= 0.1, 0.02, 0.0))
-        
-        # Consensus boost (gentle tie breaker, up to 2%)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 2), 0.0)
         
-        multiplier = 1.0 + form_boost + consensus_boost
-        
+        multiplier = 1.0 + standout_boost + consensus_boost
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
-            
+        
         total_b = df_runners['model_prob'].sum()
         if total_b > 0:
             df_runners['model_prob'] = df_runners['model_prob'] / total_b

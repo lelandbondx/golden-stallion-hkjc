@@ -305,44 +305,31 @@ with tab1:
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
         
-        # Strong Form & Track Specialist Points
-        df_runners['form_speed_pts'] = 0
-        if 'recent_avg_pos' in df_runners.columns:
-            recent_pos = pd.to_numeric(df_runners['recent_avg_pos'], errors='coerce').fillna(7.0)
-            recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0), errors='coerce').fillna(0.0)
-            
-            # Massive boost for horses consistently placing or winning
-            speed_pts = np.where(recent_pos <= 3.5, 6, np.where(recent_pos <= 5.0, 3, 0))
-            form_pts = np.where(recent_win >= 0.25, 4, np.where(recent_win >= 0.1, 2, 0))
-            
-            # Moderate penalty for debutants / missing form (avoid overriding market odds tomorrow)
-            is_debutant = (recent_pos == 7.0) & (recent_win == 0.0)
-            debutant_penalty = np.where(is_debutant, -4, 0)
-            
-            df_runners['form_speed_pts'] = speed_pts + form_pts + debutant_penalty
-
-        df_runners['track_condition_pts'] = 0
-        # Track Specialist
-        if 'ST_vs_HV_pref' in df_runners.columns:
-            track_match = (df_runners['ST_vs_HV_pref'] == meeting.get('venue')).astype(int)
-            df_runners['track_condition_pts'] += (track_match * 3)
-            
-        # Going Match
-        if 'last_form_going' in df_runners.columns:
-            going_match = (df_runners['last_form_going'] == meeting.get('going', 'UNKNOWN')).astype(int)
-            df_runners['track_condition_pts'] += (going_match * 2)
-
-        consensus = df_runners.get('consensus_score', 0).fillna(0)
+        # Targeted Standout Boost Logic (replaces blind point additions)
+        recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
+        track_match = (df_runners.get('ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
+        going_match = (df_runners.get('last_form_going', 'Unknown') == meeting.get('going', 'UNKNOWN')).astype(int)
+        vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
+        class_drop = pd.to_numeric(df_runners.get('class_diff', 0), errors='coerce').fillna(0)
         
-        # Calculate Total Boost
-        total_boost_pts = consensus + df_runners['form_speed_pts'] + df_runners['track_condition_pts']
+        # Super Standout condition: 
+        # Extremely good recent form (<= 3.5 avg pos) AND proven at this track/going AND healthy
+        is_super_standout = (recent_pos <= 3.5) & ((track_match == 1) | (going_match == 1)) & (vet_issue == 0)
         
-        # Apply False Favorite Penalty: If a horse is favored (implied prob > 20%) but has terrible recent form (avg pos > 6)
-        false_fav_penalty = np.where((df_runners['implied_prob'] > 0.20) & (pd.to_numeric(df_runners.get('recent_avg_pos', 7), errors='coerce') > 6.0), -5, 0)
-        total_boost_pts += false_fav_penalty
-
-        # Apply multiplier (cap negative so prob doesn't go below 0)
-        multiplier = 1 + (total_boost_pts * 0.04)
+        # Secondary edge: Class droppers who are in decent form (<= 5.0) and healthy
+        is_class_dropper_standout = (class_drop > 0) & (recent_pos <= 5.0) & (vet_issue == 0)
+        
+        standout_boost = np.where(is_super_standout, 0.08, 0.0) # 8% boost for true standouts
+        standout_boost += np.where(is_class_dropper_standout, 0.05, 0.0) # 5% boost for dangerous class droppers
+        
+        # False Favorite Penalty: If a horse is favored (implied prob > 20%) but has terrible recent form (avg pos > 6)
+        false_fav_penalty = np.where((df_runners['implied_prob'] > 0.20) & (recent_pos > 6.0), -0.15, 0.0)
+        
+        # Consensus intel boost (gentle tie breaker)
+        consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
+        consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 2), 0.0)
+        
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty
         multiplier = np.maximum(multiplier, 0.2) # Floor at 20% of original model_prob
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
