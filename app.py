@@ -563,7 +563,8 @@ with tab1:
                 </div>
                 ''', unsafe_allow_html=True)
                 
-            longshots = df_runners[df_runners['win_odds'] >= 12.0].sort_values(by='value_diff', ascending=False)
+            # Prevent the outlier from being the exact same horse as the primary leader
+            longshots = df_runners[(df_runners['win_odds'] >= 12.0) & (df_runners['no'] != best['no'])].sort_values(by='value_diff', ascending=False)
             if not longshots.empty:
                 bold_pick = longshots.iloc[0]
                 with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=False):
@@ -575,6 +576,7 @@ with tab1:
                             (Jockey: <i>{bold_pick['jockey']}</i> | Trainer: <i>{bold_pick['trainer']}</i>)
                         </div>
                         <div style="color:#FFD700; font-size:1rem; margin-top:8px;">⭐ <b>Optimal Exacta/Quinella Pairing:</b> Couple the primary statistical leader <b>#{best['no']}</b> with the identified outlier <b>#{bold_pick['no']}</b> for maximal expected value.</div>
+                        <div style="color:#FFD700; font-size:1rem; margin-top:8px;">⭐ <b>Trifecta Structure:</b> Use <b>#{best['no']}</b> and <b>#{bold_pick['no']}</b> as dual bankers, combined with <b>#{second['no']}</b> and <b>#{third['no']}</b> for the remaining legs.</div>
                         <div style="color:#FFD700; font-size:1rem; margin-top:8px;">⭐ <b>Cross-Race Leverage Target:</b> Deploy <b>#{bold_pick['no']}</b> strictly as a <u>Place (To Finish Top 3)</u> anchor in sequential combinations to compound probabilistic edge.</div>
                     </div>
                     ''', unsafe_allow_html=True)
