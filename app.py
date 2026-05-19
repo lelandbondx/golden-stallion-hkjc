@@ -567,7 +567,7 @@ with tab1:
             longshots = df_runners[(df_runners['win_odds'] >= 12.0) & (df_runners['no'] != best['no'])].sort_values(by='value_diff', ascending=False)
             if not longshots.empty:
                 bold_pick = longshots.iloc[0]
-                with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=False):
+                with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=True):
                     st.markdown(f'''
                     <div style="background: rgba(239, 68, 68, 0.08); padding: 20px; border-radius: 8px; border: 1px dashed rgba(239, 68, 68, 0.4); margin-bottom: 5px;">
                         <div style="color:#ef4444; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: #{bold_pick['no']} {bold_pick['name']}</div>
