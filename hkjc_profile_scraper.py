@@ -209,8 +209,8 @@ def update_latest_stats():
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         futures = []
         for code, name in horses_to_update.items():
-            if name not in existing_names:
-                futures.append(executor.submit(fetch_horse, code, name))
+            # Force update for all horses running in the upcoming meeting
+            futures.append(executor.submit(fetch_horse, code, name))
                 
         for future in concurrent.futures.as_completed(futures):
             res = future.result()
@@ -220,6 +220,8 @@ def update_latest_stats():
     if new_rows:
         new_df = pd.DataFrame(new_rows)
         combined = pd.concat([stats_df, new_df], ignore_index=True)
+        # Drop duplicates, keeping the most recently appended row
+        combined = combined.drop_duplicates(subset=['clean_name'], keep='last')
         combined.to_csv('data/latest_horse_stats.csv', index=False)
         print(f"Added {len(new_rows)} new horse stats and saved.")
     else:
