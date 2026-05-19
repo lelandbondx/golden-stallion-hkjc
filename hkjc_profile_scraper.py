@@ -31,6 +31,10 @@ def get_horse_profile_stats(horse_code):
         # Filter out season headers
         race_df = race_df[~race_df['Race Index'].str.contains('Season', na=False)]
         
+        # Enforce "Current Form" constraint: Only look at the horse's last 12 runs (approx 1 to 1.5 seasons)
+        # This prevents the AI from being confused by track or gear wins from 5-8 years ago.
+        race_df = race_df.head(12)
+        
         # Clean up data
         race_df['Pla.'] = race_df['Pla.'].astype(str)
         
