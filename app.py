@@ -167,7 +167,7 @@ st.markdown("""
 st.image("golden_stallion_banner.png", use_container_width=True)
 
 st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
-st.markdown('<div class="hero-subtitle">金马定量系统</div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-subtitle">金金驹AI__香港赛马会预测</div>', unsafe_allow_html=True)
 
 @st.cache_data(ttl=20)
 def fetch_data():
