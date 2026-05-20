@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import json
+import odds_tracker
 
 from scraper import get_live_meeting_data, get_live_tips_index
 from model import predict_probabilities, load_model
@@ -85,7 +86,15 @@ def run():
             df_runners['model_prob'] = df_runners['model_prob'] / total_b
             
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
-        df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 20, 0)
+        
+        df_runners['baseline_odds'] = df_runners.apply(lambda row: odds_tracker.get_baseline_odds(
+            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['win_odds']), axis=1)
+
+        df_runners['shift_bonus'] = df_runners.apply(lambda row: odds_tracker.calculate_odds_shift_bonus(
+            row['baseline_odds'], row['win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
+            pd.to_numeric(row.get('prev_run_vet_finding', 0))), axis=1)
+
+        df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 20, 0) + df_runners['shift_bonus']
         
         p_min = df_runners['model_prob'].min()
         p_max = df_runners['model_prob'].max()

@@ -7,6 +7,7 @@ from streamlit_autorefresh import st_autorefresh
 import threading
 import time
 import requests
+import odds_tracker
 
 def keep_alive():
     while True:
@@ -355,8 +356,15 @@ with tab1:
         
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
         
-        # Golden Stallion Score (Smart Blend): Base AI Formula + Value Bonus (Never penalizes elite favorites)
-        df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 20, 0)
+        df_runners['baseline_odds'] = df_runners.apply(lambda row: odds_tracker.get_baseline_odds(
+            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['win_odds']), axis=1)
+
+        df_runners['shift_bonus'] = df_runners.apply(lambda row: odds_tracker.calculate_odds_shift_bonus(
+            row['baseline_odds'], row['win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
+            pd.to_numeric(row.get('prev_run_vet_finding', 0))), axis=1)
+        
+        # Golden Stallion Score (Smart Blend): Base AI Formula + Value Bonus + Odds Shift Logic
+        df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 20, 0) + df_runners['shift_bonus']
         
         # Scale to a realistically solid 15-85% range. Round to nearest integer.
         p_min = df_runners['model_prob'].min()
