@@ -85,6 +85,7 @@ def run():
             df_runners['model_prob'] = df_runners['model_prob'] / total_b
             
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
+        df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 20, 0)
         
         p_min = df_runners['model_prob'].min()
         p_max = df_runners['model_prob'].max()
@@ -93,13 +94,13 @@ def run():
         else:
             df_runners['confidence'] = 50
             
-        race_picks = df_runners.sort_values(by='model_prob', ascending=False)
+        race_picks = df_runners.sort_values(by='gs_score', ascending=False)
         
         best = race_picks.iloc[0].to_dict()
         best.update({"race_no": race.get("race_no"), "class_dist": class_str})
         global_best_bets.append(best)
 
-    global_best_bets = sorted(global_best_bets, key=lambda x: x.get('model_prob', 0), reverse=True)
+    global_best_bets = sorted(global_best_bets, key=lambda x: x.get('gs_score', 0), reverse=True)
     
     print("TOP 5 DETAILED PICKS:")
     for i in range(min(5, len(global_best_bets))):
