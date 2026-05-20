@@ -414,7 +414,7 @@ with tab1:
         best.update({"race_no": race.get("race_no")})
         global_best_bets.append(best)
 
-    global_best_bets = sorted(global_best_bets, key=lambda x: x.get('value_diff', 0), reverse=True)
+    global_best_bets = sorted(global_best_bets, key=lambda x: x.get('model_prob', 0), reverse=True)
     top_pick_today = global_best_bets[0] if global_best_bets else None
 
     with st.expander("Macro Insights & Global Best Bets", expanded=True):

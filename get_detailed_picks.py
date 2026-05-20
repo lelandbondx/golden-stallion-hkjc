@@ -99,7 +99,7 @@ def run():
         best.update({"race_no": race.get("race_no"), "class_dist": class_str})
         global_best_bets.append(best)
 
-    global_best_bets = sorted(global_best_bets, key=lambda x: x.get('value_diff', 0), reverse=True)
+    global_best_bets = sorted(global_best_bets, key=lambda x: x.get('model_prob', 0), reverse=True)
     
     print("TOP 5 DETAILED PICKS:")
     for i in range(min(5, len(global_best_bets))):
