@@ -59,6 +59,7 @@ def run():
         
         # Targeted Standout Boost: Only boost if there is a confluence of strong indicators
         recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
+        recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
         track_match = pd.to_numeric(df_runners.get('track_pref_match', 0), errors='coerce').fillna(0)
         going_match = pd.to_numeric(df_runners.get('going_pref_match', 0), errors='coerce').fillna(0)
         vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
@@ -71,14 +72,20 @@ def run():
         # Secondary edge: Class droppers who are in decent form (<= 5.0) and healthy
         is_class_dropper_standout = (class_drop > 0) & (recent_pos <= 5.0) & (vet_issue == 0)
         
+        # Moderate debutant penalty
+        is_debutant = (recent_pos == 7.0) & (recent_win == 0.0)
+        
         standout_boost = np.where(is_super_standout, 0.08, 0.0) # 8% boost for true standouts
         standout_boost += np.where(is_class_dropper_standout, 0.05, 0.0) # 5% boost for dangerous class droppers
+        debutant_penalty = np.where(is_debutant, -0.05, 0.0) # 5% penalty for debutants
         
         # Consensus intel boost (gentle tie breaker)
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 2), 0.0)
         
-        multiplier = 1.0 + standout_boost + consensus_boost
+        multiplier = 1.0 + standout_boost + consensus_boost + debutant_penalty
+        # Ensure multiplier doesn't go below 0.1
+        multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
         
         total_b = df_runners['model_prob'].sum()

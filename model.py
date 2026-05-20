@@ -23,13 +23,15 @@ def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, 
     """
     df = df.copy()
     
+    if 'rtg' in df.columns:
+        if 'horse_rating' not in df.columns:
+            df['horse_rating'] = df['rtg']
+        else:
+            df['horse_rating'] = df['horse_rating'].fillna(df['rtg'])
+            
     for col, default_val in [('draw', 5), ('actual_weight', 120), ('declared_weight', 1050), ('horse_rating', 40), ('rtg', 40), ('win_odds', 20.0)]:
         if col not in df.columns:
             df[col] = default_val
-            
-    # Allow fallback for horse_rating if rtg is present
-    if 'rtg' in df.columns and 'horse_rating' in df.columns:
-        df['horse_rating'] = df['horse_rating'].fillna(df['rtg'])
         
     df['draw'] = pd.to_numeric(df['draw'], errors='coerce').fillna(5)
     df['actual_weight'] = pd.to_numeric(df['actual_weight'], errors='coerce').fillna(120)

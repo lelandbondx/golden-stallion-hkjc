@@ -322,6 +322,11 @@ with tab1:
         standout_boost = np.where(is_super_standout, 0.08, 0.0) # 8% boost for true standouts
         standout_boost += np.where(is_class_dropper_standout, 0.05, 0.0) # 5% boost for dangerous class droppers
         
+        # Moderate debutant penalty
+        recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
+        is_debutant = (recent_pos == 7.0) & (recent_win == 0.0)
+        debutant_penalty = np.where(is_debutant, -0.05, 0.0)
+        
         # False Favorite Penalty: If a horse is favored (implied prob > 20%) but has terrible recent form (avg pos > 6)
         false_fav_penalty = np.where((df_runners['implied_prob'] > 0.20) & (recent_pos > 6.0), -0.15, 0.0)
         
@@ -329,8 +334,8 @@ with tab1:
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 2), 0.0)
         
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty
-        multiplier = np.maximum(multiplier, 0.2) # Floor at 20% of original model_prob
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty
+        multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
         
