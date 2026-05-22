@@ -60,8 +60,8 @@ def run():
         # Targeted Standout Boost: Only boost if there is a confluence of strong indicators
         recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
         recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
-        track_match = pd.to_numeric(df_runners.get('track_pref_match', 0), errors='coerce').fillna(0)
-        going_match = pd.to_numeric(df_runners.get('going_pref_match', 0), errors='coerce').fillna(0)
+        track_match = (df_runners.get('ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
+        going_match = (df_runners.get('last_form_going', 'Unknown') == meeting.get('going', 'UNKNOWN')).astype(int)
         vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
         class_drop = pd.to_numeric(df_runners.get('class_diff', 0), errors='coerce').fillna(0)
         
@@ -79,11 +79,14 @@ def run():
         standout_boost += np.where(is_class_dropper_standout, 0.05, 0.0) # 5% boost for dangerous class droppers
         debutant_penalty = np.where(is_debutant, -0.05, 0.0) # 5% penalty for debutants
         
+        # False Favorite Penalty: If a horse is favored (implied prob > 20%) but has terrible recent form (avg pos > 6)
+        false_fav_penalty = np.where((df_runners['implied_prob'] > 0.20) & (recent_pos > 6.0), -0.15, 0.0)
+        
         # Consensus intel boost (gentle tie breaker)
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 2), 0.0)
         
-        multiplier = 1.0 + standout_boost + consensus_boost + debutant_penalty
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier

@@ -48,9 +48,9 @@ def calculate_odds_shift_bonus(baseline_odds, current_odds, recent_pos, vet_issu
     if shift_pct < -0.15 and recent_pos <= 4.0:
         bonus += 4.0  # Proportionate intelligent promotion
         
-    # RED FLAG DRIFT: Odds rise by > 20%, horse has a known vet issue
-    if shift_pct > 0.20 and vet_issue > 0:
-        bonus -= 6.0  # Proportionate demotion (insiders are abandoning)
+    # RED FLAG DRIFT: Odds rise by > 30%, horse has a known vet issue
+    if shift_pct > 0.30 and vet_issue > 0:
+        bonus -= 3.0  # Proportionate demotion (insiders are abandoning)
         
     # VALUE DRIFT: Odds rise by > 25%, horse has elite form and NO vet issues
     if shift_pct > 0.25 and recent_pos <= 3.5 and vet_issue == 0:

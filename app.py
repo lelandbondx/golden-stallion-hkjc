@@ -48,6 +48,35 @@ except ImportError:
 
 st.set_page_config(page_title="Golden Stallion AI", layout="wide", page_icon="🐎")
 
+# --- PAUSE SWITCH ---
+APP_PAUSED = False
+if APP_PAUSED:
+    st.markdown("""
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;500;600;700&display=swap');
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(180deg, #FFFFFF 0%, #ffe066 50%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 0px;
+        }
+        .stApp { 
+            background: radial-gradient(circle at top, #1a0f12 0%, #080405 100%);
+            color: #f8fafc; 
+        }
+    </style>
+    """, unsafe_allow_html=True)
+    st.image("golden_stallion_banner.png", use_container_width=True)
+    st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
+    st.error("⚠️ The AI Engine is currently paused for mid-meeting recalibration and results reporting. Please check back shortly.")
+    st.stop()
+# --------------------
+
 # Run the autorefresh about every 20 seconds
 st_autorefresh(interval=20000, limit=1000, key="hkjc_live_refresh")
 
