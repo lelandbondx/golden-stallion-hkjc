@@ -36,6 +36,11 @@ def run():
         if not race.get('runners'): continue
         
         df_runners = pd.DataFrame(race['runners'])
+        if 'win_odds' in df_runners.columns:
+            df_runners['scraped_win_odds'] = df_runners['win_odds'].copy()
+        else:
+            df_runners['scraped_win_odds'] = 0.0
+        
         current_race_tips = tips_data.get(race.get('race_no', 0), {})
         df_runners['consensus_score'] = df_runners['no'].map(lambda x: current_race_tips.get(x, 0))
         if key_runners:
@@ -98,10 +103,10 @@ def run():
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
         
         df_runners['baseline_odds'] = df_runners.apply(lambda row: odds_tracker.get_baseline_odds(
-            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['win_odds']), axis=1)
+            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['scraped_win_odds']), axis=1)
 
         df_runners['shift_bonus'] = df_runners.apply(lambda row: odds_tracker.calculate_odds_shift_bonus(
-            row['baseline_odds'], row['win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
+            row['baseline_odds'], row['scraped_win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
             pd.to_numeric(row.get('prev_run_vet_finding', 0))), axis=1)
 
         df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 20, 0) + df_runners['shift_bonus']
