@@ -102,7 +102,7 @@ def run():
             row['baseline_odds'], row['scraped_win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
             pd.to_numeric(row.get('prev_run_vet_finding', 0))), axis=1)
 
-        df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 20, 0) + df_runners['shift_bonus']
+        df_runners['gs_score'] = (df_runners['model_prob'] * 150) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 15, 0) + (df_runners['shift_bonus'] * 0.75)
         
         p_min = df_runners['model_prob'].min()
         p_max = df_runners['model_prob'].max()
