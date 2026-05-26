@@ -636,8 +636,8 @@ with tab1:
                     if col not in df_runners.columns:
                         df_runners[col] = '-'
 
-                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes']].copy()
-                df_display = df_display.sort_values(by='confidence', ascending=False)
+                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
+                df_display = df_display.sort_values(by='gs_score', ascending=False)
                 
                 # Fill NAs and ensure string type for object columns to avoid PyArrow serialization errors
                 df_display['last_win_rating'] = df_display['last_win_rating'].astype(str).replace('nan', '-')
@@ -666,6 +666,7 @@ with tab1:
                         "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),
                         "ST_vs_HV_pref": st.column_config.TextColumn("Track Pref", width="medium"),
                         "last_form_going": st.column_config.TextColumn("Fav Cond", width="medium"),
+                        "gs_score": st.column_config.NumberColumn("GS Score", format="%.1f", width="small"),
                         "confidence": st.column_config.ProgressColumn(
                             "AI Confidence %",
                             min_value=0,
