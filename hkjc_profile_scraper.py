@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import json
 import time
+from bs4 import BeautifulSoup
 
 def get_horse_profile_stats(horse_code):
     if not horse_code:
@@ -31,8 +32,7 @@ def get_horse_profile_stats(horse_code):
         # Filter out season headers
         race_df = race_df[~race_df['Race Index'].str.contains('Season', na=False)]
         
-        # Enforce "Current Form" constraint: Only look at the horse's last 12 runs (approx 1 to 1.5 seasons)
-        # This prevents the AI from being confused by track or gear wins from 5-8 years ago.
+        # Enforce "Current Form" constraint: Only look at the horse's last 12 runs
         race_df = race_df.head(12)
         
         # Clean up data
@@ -61,7 +61,7 @@ def get_horse_profile_stats(horse_code):
         last_win_rating = None
         wins = race_df[race_df['is_win'] == 1]
         if not wins.empty:
-            last_win_rating = wins.iloc[0]['Rtg.'] # 0th is the most recent because HKJC lists newest first!
+            last_win_rating = wins.iloc[0]['Rtg.']
             
         ST_runs = len(race_df[race_df['Track'] == 'Sha Tin'])
         ST_wins = len(wins[wins['Track'] == 'Sha Tin'])
@@ -126,14 +126,14 @@ def get_horse_profile_stats(horse_code):
         if not race_df.empty:
             last_gear = str(race_df.iloc[0].get('Gear', ''))
             
-        # Gear Win Rate (win rate with the exact same gear as last time)
+        # Gear Win Rate
         gear_win_rate = 0.0
         if last_gear and last_gear.strip() not in ['-', '']:
             gear_runs = race_df[race_df['Gear'] == last_gear]
             gear_wins = gear_runs[gear_runs['is_win'] == 1]
             gear_win_rate = len(gear_wins) / len(gear_runs) if len(gear_runs) > 0 else 0.0
             
-        # Distance Win Rate (using last distance as proxy)
+        # Distance Win Rate
         distance_win_rate = 0.0
         if not race_df.empty:
             last_dist = str(race_df.iloc[0].get('Dist.', ''))
@@ -151,6 +151,56 @@ def get_horse_profile_stats(horse_code):
             recent_avg_pos = recent_runs['pos_num'].mean()
             recent_win_rate = recent_runs['is_win'].mean()
             
+        # Scrape horse veterinary record from ovehorse.aspx
+        horse_id = None
+        try:
+            soup = BeautifulSoup(res.content, 'html.parser')
+            for a in soup.find_all('a', href=True):
+                if 'ovehorse' in a['href']:
+                    href = a['href']
+                    if 'horseid=' in href:
+                        horse_id = href.split('horseid=')[-1].split('&')[0]
+                        break
+        except Exception as e:
+            print(f"Error parsing horse_id for {horse_code}: {e}")
+            
+        prev_run_vet_finding = 0
+        if horse_id:
+            try:
+                vet_url = f"https://racing.hkjc.com/racing/information/English/Horse/ovehorse.aspx?horseid={horse_id}"
+                vet_res = requests.get(vet_url, headers=headers, timeout=10)
+                if vet_res.status_code == 200:
+                    vet_dfs = pd.read_html(vet_res.content)
+                    vet_history = []
+                    for df in vet_dfs:
+                        if df.shape[1] == 3 and 'Date' in df.columns and 'Details' in df.columns:
+                            vet_history = df.to_dict('records')
+                            break
+                        if df.shape[1] == 3 and ('Date' in df.iloc[0].values or 'Details' in df.iloc[0].values):
+                            df.columns = df.iloc[0]
+                            df = df.drop(0)
+                            vet_history = df.to_dict('records')
+                            break
+                    if vet_history:
+                        recent_finding = vet_history[0]
+                        date_str = str(recent_finding.get('Date', '')).strip()
+                        details = str(recent_finding.get('Details', '')).strip().lower()
+                        passed_date = str(recent_finding.get('Passed Date', '')).strip()
+                        
+                        vet_keywords = ['lame', 'blood', 'trachea', 'heart', 'irregularity', 'mucus', 'surgery', 'abnormal', 'infection', 'fever']
+                        if any(k in details for k in vet_keywords):
+                            try:
+                                date = pd.to_datetime(date_str, format="%d/%m/%y")
+                                today = pd.to_datetime("2026-05-26")
+                                days_diff = (today - date).days
+                                if days_diff <= 180:
+                                    prev_run_vet_finding = 1
+                            except Exception:
+                                if '2026' in date_str or '2025' in date_str:
+                                    prev_run_vet_finding = 1
+            except Exception as e:
+                print(f"Error parsing vet history for {horse_code}: {e}")
+                
         return {
             "last_win_rating": last_win_rating,
             "ST_win_rate": ST_win_rate,
@@ -164,7 +214,8 @@ def get_horse_profile_stats(horse_code):
             "last_horse_rating": last_horse_rating,
             "last_gear": last_gear,
             "gear_win_rate": gear_win_rate,
-            "distance_win_rate": distance_win_rate
+            "distance_win_rate": distance_win_rate,
+            "prev_run_vet_finding": prev_run_vet_finding
         }
         
     except Exception as e:
@@ -172,7 +223,6 @@ def get_horse_profile_stats(horse_code):
         return None
 
 def update_latest_stats():
-    # Load live data to get all tomorrow's horses
     from scraper import get_live_meeting_data
     data = get_live_meeting_data()
     
@@ -189,17 +239,14 @@ def update_latest_stats():
                         
     print(f"Found {len(horses_to_update)} horses to update.")
     
-    # Load existing stats
     try:
         stats_df = pd.read_csv('data/latest_horse_stats.csv')
     except Exception:
-        stats_df = pd.DataFrame(columns=['clean_name', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'ST_vs_HV_pref', 'last_form_going'])
+        stats_df = pd.DataFrame(columns=['clean_name', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'ST_vs_HV_pref', 'last_form_going', 'prev_run_vet_finding'])
         
     stats_dict = stats_df.to_dict('records')
-    existing_names = {row['clean_name'] for row in stats_dict}
     
     new_rows = []
-    
     import concurrent.futures
     
     def fetch_horse(code, name):
@@ -213,7 +260,6 @@ def update_latest_stats():
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         futures = []
         for code, name in horses_to_update.items():
-            # Force update for all horses running in the upcoming meeting
             futures.append(executor.submit(fetch_horse, code, name))
                 
         for future in concurrent.futures.as_completed(futures):
@@ -224,7 +270,6 @@ def update_latest_stats():
     if new_rows:
         new_df = pd.DataFrame(new_rows)
         combined = pd.concat([stats_df, new_df], ignore_index=True)
-        # Drop duplicates, keeping the most recently appended row
         combined = combined.drop_duplicates(subset=['clean_name'], keep='last')
         combined.to_csv('data/latest_horse_stats.csv', index=False)
         print(f"Added {len(new_rows)} new horse stats and saved.")
