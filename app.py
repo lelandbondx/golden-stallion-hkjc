@@ -25,7 +25,8 @@ def keep_alive():
             pass
         time.sleep(600)
 
-threading.Thread(target=keep_alive, daemon=True).start()
+if not any(t.name == "KeepAlive" for t in threading.enumerate()):
+    threading.Thread(target=keep_alive, name="KeepAlive", daemon=True).start()
 
 try:
     from scraper import get_live_meeting_data, get_hkjc_news, get_live_tips_index
