@@ -12,15 +12,15 @@ import odds_tracker
 def keep_alive():
     while True:
         try:
-            requests.get("https://hkjcbotlee.streamlit.app/")
+            requests.get("https://hkjcbotlee.streamlit.app/", timeout=10)
         except:
             pass
         try:
-            requests.get("https://huggingface.co/spaces/lelandbondx/golden-stallion")
+            requests.get("https://huggingface.co/spaces/lelandbondx/golden-stallion", timeout=10)
         except:
             pass
         try:
-            requests.get("https://huggingface.co/spaces/lelandbondx/golden-stallion-hkjc")
+            requests.get("https://huggingface.co/spaces/lelandbondx/golden-stallion-hkjc", timeout=10)
         except:
             pass
         time.sleep(600)
