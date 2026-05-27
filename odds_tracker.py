@@ -24,9 +24,13 @@ def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds):
     if key not in baseline_data or baseline_data[key] <= 0:
         if current_odds > 0:
             baseline_data[key] = current_odds
-            # Save updated baseline
-            with open(filename, 'w') as f:
-                json.dump(baseline_data, f)
+            # Save updated baseline safely (prevent crashes in read-only environments)
+            try:
+                os.makedirs(os.path.dirname(filename), exist_ok=True)
+                with open(filename, 'w') as f:
+                    json.dump(baseline_data, f)
+            except Exception as e:
+                print(f"[WARNING] Could not save baseline odds to file: {e}")
             return current_odds
         else:
             return 20.0 # Fallback

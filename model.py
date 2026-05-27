@@ -185,7 +185,8 @@ def train_and_save_model():
         colsample_bytree=0.8,
         scale_pos_weight=scale_pos_weight,
         eval_metric='logloss',
-        use_label_encoder=False
+        use_label_encoder=False,
+        random_state=42
     )
     model.fit(X, y)
     
