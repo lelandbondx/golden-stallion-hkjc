@@ -256,10 +256,23 @@ if not meetings:
 meeting_options = [f"{m.get('date')} - {m.get('venue')}" for m in meetings]
 
 default_index = 0
+from datetime import datetime, timedelta
+# Calculate today's date in Hong Kong Time (HKT is UTC+8)
+hkt_today = (datetime.utcnow() + timedelta(hours=8)).strftime('%Y-%m-%d')
+
+found_today = False
 for i, m in enumerate(meetings):
-    if str(m.get('status', 'UPCOMING')).upper() != "CLOSED":
+    if m.get('date') == hkt_today:
         default_index = i
+        found_today = True
         break
+
+if not found_today:
+    for i, m in enumerate(meetings):
+        if str(m.get('status', 'UPCOMING')).upper() != "CLOSED":
+            default_index = i
+            break
+
 
 selected_meeting_str = st.selectbox("📅 Select Race Meeting Date & Venue", meeting_options, index=default_index)
 selected_index = meeting_options.index(selected_meeting_str)

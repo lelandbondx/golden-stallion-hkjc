@@ -273,13 +273,34 @@ def get_live_meeting_data():
                     out_meetings.append(meeting_out)
                 
                 if out_meetings:
+                    try:
+                        import os
+                        os.makedirs('data', exist_ok=True)
+                        with open('data/last_scraped_meeting.json', 'w', encoding='utf-8') as f:
+                            json.dump({"status": "success", "meetings": out_meetings}, f, indent=2)
+                    except Exception as e:
+                        print("Failed to save last scraped meeting:", e)
                     return {"status": "success", "meetings": out_meetings}
     except Exception as e:
         print("Live Python scraper failed, falling back:", str(e))
         pass
 
+    # Try to load last successfully scraped meeting from file
+    try:
+        import os
+        if os.path.exists('data/last_scraped_meeting.json'):
+            with open('data/last_scraped_meeting.json', 'r', encoding='utf-8') as f:
+                cached_data = json.load(f)
+                if cached_data.get('status') == 'success' and cached_data.get('meetings'):
+                    for m in cached_data['meetings']:
+                        m['weather'] = "Cached data (live connection failed)"
+                    return cached_data
+    except Exception as e:
+        print("Failed to read last_scraped_meeting.json:", e)
+
     # Fallback if bridge fails
     return build_fallback_live_data()
+
 
 def build_fallback_live_data():
     """
