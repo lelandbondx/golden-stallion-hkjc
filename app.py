@@ -453,13 +453,14 @@ with tab1:
                     steward_notes.append(steward)
                     photo_hist.append(photo)
                 else:
-                    vet_notes.append("-")
-                    steward_notes.append("No prior history in DB")
-                    photo_hist.append("-")
+                    vet_notes.append("No active findings")
+                    steward_notes.append("Clear Record")
+                    photo_hist.append("None")
             else:
-                vet_notes.append("-")
+                vet_notes.append("No active findings")
                 steward_notes.append("No DB connection")
-                photo_hist.append("-")
+                photo_hist.append("None")
+
                 
         df_runners['vet_findings'] = vet_notes
         df_runners['steward_notes'] = steward_notes
