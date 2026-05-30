@@ -184,7 +184,12 @@ def build_features():
     
     try:
         results = pd.read_csv('data/results.csv')
-        results['won_calc'] = results['plc'].astype(str).str.startswith('1').astype(int)
+        def parse_won(x):
+            x_str = str(x).strip()
+            if x_str in ['1', '1.0', '1 DH'] or '1 DH' in x_str:
+                return 1
+            return 0
+        results['won_calc'] = results['plc'].apply(parse_won)
         
         j_runs = results.groupby('jockey').size().reset_index(name='runs')
         j_wins = results.groupby('jockey')['won_calc'].sum().reset_index(name='wins')
