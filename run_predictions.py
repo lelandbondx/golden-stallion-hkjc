@@ -89,7 +89,7 @@ def run():
         
         # Consensus intel boost (gentle tie breaker)
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
-        consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 2), 0.0)
+        consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
         
         multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty
         # Ensure multiplier doesn't go below 0.1

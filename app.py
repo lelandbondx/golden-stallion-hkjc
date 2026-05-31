@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import os
 import re
+import json
 from streamlit_autorefresh import st_autorefresh
 import threading
 import time
@@ -248,6 +249,13 @@ horse_stats_df = fetch_horse_stats()
 tips_data = fetch_tips()
 meetings = data.get('meetings', [])
 
+try:
+    with open('data/gemini_intel.json', 'r') as f:
+        intel_data = json.load(f)
+        key_runners = [runner['horse_name'].upper() for runner in intel_data.get('key_runners', [])]
+except Exception:
+    key_runners = []
+
 if not meetings:
     st.error("No active or recently closed meetings found on HKJC.")
     st.stop()
@@ -330,6 +338,8 @@ with tab1:
         # Map consensus score from tips data
         current_race_tips = tips_data.get(race.get('race_no', 0), {})
         df_runners['consensus_score'] = df_runners['no'].map(lambda x: current_race_tips.get(x, 0))
+        if key_runners:
+            df_runners['consensus_score'] += np.where(df_runners['name'].str.upper().isin(key_runners), 10, 0)
         
         try:
             # Parse class_int from race
@@ -380,7 +390,7 @@ with tab1:
         
         # Consensus intel boost (gentle tie breaker)
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
-        consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 2), 0.0)
+        consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
         
         multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
