@@ -402,56 +402,62 @@ def get_hkjc_news():
     return news_items
 
 def get_live_tips_index():
-    url = "https://racing.hkjc.com/racing/english/tipsindex/tips_index.asp"
+    import re
     headers = {"User-Agent": "Mozilla/5.0"}
-    
     tips_data = {}
     
-    try:
-        res = requests.get(url, headers=headers, timeout=10)
-        soup = BeautifulSoup(res.content, 'html.parser')
-        
-        # In HKJC, tables are used. When offline, there is an image. 
-        # When online, there is usually a race-by-race table structure.
-        
-        tables = soup.find_all('table')
-        for t in tables:
-            # Check if this table represents a race's tips
-            text = t.get_text()
-            if "Race" in text and ("Apple" in text or "Sing Pao" in text or "Oriental" in text):
-                # Try to parse standard tip structure
-                # Typically columns might be Media Name, 1st pick, 2nd pick, 3rd pick, 4th pick
+    # Standard size of HKJC meeting is usually 10-12 races. We query up to 12.
+    for race_no in range(1, 13):
+        url = f"https://racing.hkjc.com/racing/english/tipsindex/tips_index.asp?RaceNo={race_no}"
+        try:
+            res = requests.get(url, headers=headers, timeout=10)
+            if res.status_code != 200:
+                continue
+            soup = BeautifulSoup(res.content, 'html.parser')
+            
+            tables = soup.find_all('table')
+            race_tips = {}
+            
+            for t in tables:
                 rows = t.find_all('tr')
-                current_race = None
-                for row in rows:
-                    cells = row.find_all('td')
-                    row_text = [c.get_text(strip=True) for c in cells]
+                if not rows:
+                    continue
                     
-                    if not row_text:
-                        continue
+                first_row_cells = rows[0].find_all(['td', 'th'])
+                first_row_txt = "".join([c.get_text() for c in first_row_cells]).lower()
+                
+                if "initial" in first_row_txt and "day tips" in first_row_txt:
+                    for row in rows[1:]:
+                        cells = row.find_all('td')
+                        if len(cells) < 9:
+                            continue
                         
-                    # Identify race number row
-                    if "Race " in row_text[0]:
-                        import re
-                        m = re.search(r'Race (\d+)', row_text[0])
-                        if m:
-                            current_race = int(m.group(1))
-                            if current_race not in tips_data:
-                                tips_data[current_race] = {}
-                        continue
-                        
-                    if current_race and len(row_text) >= 4:
-                        # Probably a tipster row. E.g. ['Apple Daily', '1', '4', '8', '12']
-                        # Weighting: 1st pick = 4 points, 2nd = 3, 3rd = 2, 4th = 1
-                        points = [4, 3, 2, 1]
-                        for i, pick in enumerate(row_text[1:5]):
-                            if i < 4 and pick.isdigit():
-                                horse_no = int(pick)
-                                tips_data[current_race][horse_no] = tips_data[current_race].get(horse_no, 0) + points[i]
-    except Exception as e:
-        print(f"Failed to scrape tips index: {e}")
-        pass
-        
+                        try:
+                            h_no = int(cells[0].get_text(strip=True))
+                            r_tips_val = cells[8].get_text(strip=True)
+                            i_tips_val = cells[7].get_text(strip=True)
+                            
+                            r_val = float(re.sub(r'[^\d\.]', '', r_tips_val))
+                            i_val = float(re.sub(r'[^\d\.]', '', i_tips_val))
+                            
+                            chosen_val = r_val if r_val < 99.0 else i_val
+                            
+                            if chosen_val < 99.0:
+                                # Convert: lower index is better. Map to a positive score (e.g. 15.0 - index)
+                                score = max(0.0, 15.0 - chosen_val)
+                                race_tips[h_no] = round(score, 1)
+                            else:
+                                race_tips[h_no] = 0.0
+                        except:
+                            pass
+                    break # Found the correct table
+            
+            if race_tips:
+                tips_data[race_no] = race_tips
+        except Exception as e:
+            print(f"Failed to scrape tips index for race {race_no}: {e}")
+            pass
+            
     return tips_data
 
 if __name__ == "__main__":
