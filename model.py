@@ -271,7 +271,8 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         'A BADEL': 0.10, 'L HEWITSON': 0.09, 'A ATZENI': 0.09, 'L FERRARIS': 0.08,
         'B AVDULLA': 0.08, 'E C W WONG': 0.09, 'M CHADWICK': 0.07, 'Y L CHUNG': 0.07,
         'C L CHAU': 0.07, 'H BENTLEY': 0.08, 'K C LEUNG': 0.07, 'M F POON': 0.06,
-        'H T MO': 0.04, 'A HAMELIN': 0.06, 'M L YEUNG': 0.04, 'K DE MELO': 0.08
+        'H T MO': 0.04, 'A HAMELIN': 0.06, 'M L YEUNG': 0.04, 'K DE MELO': 0.08,
+        'J ORMAN': 0.10, 'E BROWN': 0.10, 'P N WONG': 0.05
     }
     
     FALLBACK_TRAINER_RATES = {
@@ -279,7 +280,8 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         'C S SHUM': 0.11, 'C FOWNES': 0.11, 'A S CRUZ': 0.10, 'P F YIU': 0.10,
         'D A HAYES': 0.10, 'M NEWNHAM': 0.10, 'D J WHYTE': 0.09, 'J RICHARDS': 0.08,
         'T P YUNG': 0.07, 'K L MAN': 0.08, 'W Y SO': 0.07, 'Y S TSUI': 0.05,
-        'C W CHANG': 0.05, 'K H TING': 0.04, 'W K MO': 0.06, 'M NEWMAN': 0.10
+        'C W CHANG': 0.05, 'K H TING': 0.04, 'W K MO': 0.06, 'M NEWMAN': 0.10,
+        'D EUSTACE': 0.11, 'B CRAWFORD': 0.08
     }
 
     if os.path.exists('data/jockey_win_rates.csv') and 'jockey' in live_df.columns:
