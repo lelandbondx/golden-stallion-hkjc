@@ -1,0 +1,15 @@
+{
+  "raceday_metadata": {
+    "date": "2026-06-03",
+    "venue": "Happy Valley",
+    "total_races": 9
+  },
+  "key_runners": [],
+  "first_time_starters": [],
+  "trainers_championship_standings": {
+    "1": {"trainer": "C Fownes", "wins": 36},
+    "2": {"trainer": "D Hayes", "wins": 36},
+    "3": {"trainer": "F Lui", "wins": 35},
+    "4": {"trainer": "D Shum", "wins": 32}
+  }
+}
