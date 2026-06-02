@@ -191,7 +191,7 @@ def get_horse_profile_stats(horse_code):
                         if any(k in details for k in vet_keywords):
                             try:
                                 date = pd.to_datetime(date_str, format="%d/%m/%y")
-                                today = pd.to_datetime("2026-05-26")
+                                today = pd.to_datetime(datetime.now().date())
                                 days_diff = (today - date).days
                                 if days_diff <= 180:
                                     prev_run_vet_finding = 1
