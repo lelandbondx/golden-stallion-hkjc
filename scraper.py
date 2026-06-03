@@ -192,6 +192,44 @@ query raceMeetings($date: String, $venueCode: String) {
 }
 """.strip()
 
+ODDS_GRAPHQL_QUERY = """
+query racing($date: String, $venueCode: String, $oddsTypes: [OddsType], $raceNo: Int) {
+  raceMeetings(date: $date, venueCode: $venueCode) {
+    pmPools(oddsTypes: $oddsTypes, raceNo: $raceNo) {
+      id
+      status
+      sellStatus
+      oddsType
+      lastUpdateTime
+      guarantee
+      minTicketCost
+      name_en
+      name_ch
+      leg {
+        number
+        races
+      }
+      cWinSelections {
+        composite
+        name_ch
+        name_en
+        starters
+      }
+      oddsNodes {
+        combString
+        oddsValue
+        hotFavourite
+        oddsDropValue
+        bankerOdds {
+          combString
+          oddsValue
+        }
+      }
+    }
+  }
+}
+""".strip()
+
 def get_live_meeting_data():
     url = "https://info.cld.hkjc.com/graphql/base/"
     headers = {
@@ -225,6 +263,36 @@ def get_live_meeting_data():
                     meeting_detail = detail_data.get("data", {}).get("raceMeetings", [{}])[0]
                     races = meeting_detail.get("races", [])
                     
+                    # Fetch live win odds for this meeting using the whitelisted odds query
+                    odds_variables = {
+                        "date": m.get("date"),
+                        "venueCode": m.get("venueCode"),
+                        "oddsTypes": ["WIN"]
+                    }
+                    odds_lookup = {}
+                    try:
+                        odds_res = requests.post(url, json={"query": ODDS_GRAPHQL_QUERY, "variables": odds_variables}, headers=headers, timeout=10)
+                        if odds_res.status_code == 200:
+                            odds_data = odds_res.json()
+                            if "errors" not in odds_data and "data" in odds_data:
+                                pools = odds_data["data"].get("raceMeetings", [{}])[0].get("pmPools", [])
+                                for p in pools:
+                                    if p.get("oddsType") == "WIN":
+                                        leg_races = p.get("leg", {}).get("races")
+                                        if leg_races:
+                                            race_no = leg_races[0]
+                                            for node in p.get("oddsNodes", []):
+                                                comb = node.get("combString")
+                                                val_str = node.get("oddsValue")
+                                                if comb and val_str:
+                                                    try:
+                                                        runner_no = int(comb)
+                                                        odds_lookup[(race_no, runner_no)] = float(val_str)
+                                                    except ValueError:
+                                                        pass
+                    except Exception as e:
+                        print("Failed to fetch live odds:", e)
+                    
                     meeting_out = {
                         "venue": venue,
                         "date": m.get("date"),
@@ -235,8 +303,9 @@ def get_live_meeting_data():
                     }
 
                     for r in races:
+                        race_no = int(r.get("no"))
                         race_obj = {
-                            "race_no": int(r.get("no")),
+                            "race_no": race_no,
                             "time": r.get("postTime"),
                             "class_dist": f'{r.get("raceClass_en") or "Class ?"} - {r.get("distance")}m',
                             "runners": []
@@ -252,8 +321,16 @@ def get_live_meeting_data():
                             jockey_name = jockey_dict.get("name_en") or "Unknown"
                             trainer_name = trainer_dict.get("name_en") or "Unknown"
                             
+                            runner_no = int(runner.get("no") or 0)
+                            win_odds_val = odds_lookup.get((race_no, runner_no), 0.0)
+                            if win_odds_val == 0.0:
+                                try:
+                                    win_odds_val = float(runner.get("winOdds") or 0.0)
+                                except ValueError:
+                                    win_odds_val = 0.0
+                            
                             race_obj["runners"].append({
-                                "no": int(runner.get("no") or 0),
+                                "no": runner_no,
                                 "name": runner.get("name_en") or horse_dict.get("name_en") or "Unknown",
                                 "code": horse_dict.get("code"),
                                 "jockey": jockey_name,
@@ -262,7 +339,7 @@ def get_live_meeting_data():
                                 "actual_weight": int(runner.get("handicapWeight") or 0),
                                 "declared_weight": int(runner.get("currentWeight") or 0),
                                 "rtg": int(runner.get("currentRating") or 0),
-                                "win_odds": float(runner.get("winOdds") or 0.0),
+                                "win_odds": win_odds_val,
                                 "final_position": runner.get("finalPosition"),
                                 "horse_gear": runner.get("gearInfo", "")
                             })
