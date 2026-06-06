@@ -304,10 +304,14 @@ def get_live_meeting_data():
 
                     for r in races:
                         race_no = int(r.get("no"))
+                        track_desc = r.get("raceTrack", {}).get("description_en") or "TURF"
+                        going_desc = r.get("go_en") or "GOOD"
                         race_obj = {
                             "race_no": race_no,
                             "time": r.get("postTime"),
                             "class_dist": f'{r.get("raceClass_en") or "Class ?"} - {r.get("distance")}m',
+                            "track": track_desc,
+                            "going": going_desc,
                             "runners": []
                         }
                         for runner in r.get("runners", []):

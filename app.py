@@ -483,6 +483,26 @@ with tab1:
         best.update({"race_no": race.get("race_no")})
         global_best_bets.append(best)
 
+    # Collect market steam alerts
+    steam_alerts = []
+    for r in races:
+        if 'processed_runners' not in r: continue
+        for _, row in r['processed_runners'].iterrows():
+            base_odds = float(row.get('baseline_odds', 0.0))
+            curr_odds = float(row.get('win_odds', 0.0))
+            if base_odds > 0 and curr_odds > 0:
+                shift_pct = (curr_odds - base_odds) / base_odds
+                if shift_pct < -0.15: # dropped by more than 15%
+                    steam_alerts.append({
+                        "race_no": r.get("race_no"),
+                        "no": row['no'],
+                        "name": row['name'],
+                        "jockey": row['jockey'],
+                        "base": base_odds,
+                        "curr": curr_odds,
+                        "pct": shift_pct
+                    })
+
     global_best_bets = sorted(global_best_bets, key=lambda x: x.get('gs_score', 0), reverse=True)
     top_pick_today = global_best_bets[0] if global_best_bets else None
 
@@ -497,8 +517,36 @@ with tab1:
             ''', unsafe_allow_html=True)
             parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in global_best_bets[:3]])
             st.markdown(f"<div style='margin-top:10px; font-family:\"Inter\"; font-size:1.15rem;'><b>Optimized Multi-Leg Sequence:</b> <span style='color:#ef4444; font-weight:700;'>{parlay_str}</span></div>", unsafe_allow_html=True)
+            
+            # Display Steam Alerts inside expander
+            if steam_alerts:
+                steam_html = '<div style="margin-top:20px; font-family:\'Montserrat\'; font-weight:700; font-size:1.1rem; color:#ffffff; letter-spacing:0.5px;">🔥 LIVE MARKET STEAM ALERTS (SMART MONEY ACTION)</div>'
+                steam_html += '<div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;">'
+                sorted_steam = sorted(steam_alerts, key=lambda x: x['pct'])
+                for alert in sorted_steam[:6]: # Show top 6
+                    pct_str = f"{alert['pct'] * 100:.0f}%"
+                    steam_html += f'''
+                    <div style="background: rgba(239, 68, 68, 0.12); padding: 8px 14px; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.4); font-size:0.95rem; color:#ffffff; line-height:1.4;">
+                        <b>R{alert['race_no']} #{alert['no']} {alert['name']}</b><br>
+                        <span style="color:#ef4444; font-weight:700;">Steam: {pct_str}</span> ({alert['base']:.1f} → {alert['curr']:.1f}) | <i>{alert['jockey']}</i>
+                    </div>
+                    '''
+                steam_html += '</div>'
+                st.markdown(steam_html, unsafe_allow_html=True)
     
     st.markdown("---")
+    
+    def get_shift_badge(row):
+        base = float(row.get('baseline_odds', 0.0))
+        curr = float(row.get('win_odds', 0.0))
+        if base > 0 and curr > 0:
+            pct = (curr - base) / base
+            if pct < -0.15:
+                return f' <span style="background:#ef4444; color:#ffffff; padding:2px 6px; border-radius:4px; font-size:0.75rem; font-weight:bold; vertical-align:middle;">🔥 STEAM {pct*100:.0f}%</span>'
+            elif pct > 0.25:
+                return f' <span style="background:#4b5563; color:#ffffff; padding:2px 6px; border-radius:4px; font-size:0.75rem; font-weight:bold; vertical-align:middle;">💨 DRIFT +{pct*100:.0f}%</span>'
+        return ''
+
     st.markdown("<h3 style='font-family:\"Montserrat\"; letter-spacing:1px; color:#ffffff; font-weight:700;'>AI RACE-BY-RACE PREDICTIONS</h3>", unsafe_allow_html=True)
 
     for race in races:
@@ -524,10 +572,13 @@ with tab1:
             elif "Griffin" in class_dist: c_val = "Griffin"
             
             venue_str = meeting.get('venue', 'Sha Tin')
-            if "Happy Valley" in venue_str:
+            race_track_type = str(race.get('track', 'TURF')).upper()
+            race_going_type = str(race.get('going', 'GOOD')).upper()
+            
+            if "HAPPY VALLEY" in venue_str.upper():
                 target_venue = "Happy Valley Turf Track"
             else:
-                if "AWT" in str(meeting.get('going')).upper() or "ALL WEATHER" in str(meeting.get('going')).upper():
+                if "ALL WEATHER" in race_track_type or "AWT" in race_track_type:
                     target_venue = "Sha Tin All Weather Track"
                 else:
                     target_venue = "Sha Tin Turf Track"
@@ -563,6 +614,22 @@ with tab1:
             </div>
             ''', unsafe_allow_html=True)
             
+            # Show Track Bias Warning Alerts
+            if "ALL WEATHER" in race_track_type or "AWT" in race_track_type:
+                if "SEALED" in race_going_type:
+                    st.markdown('''
+                    <div style="background: rgba(255, 215, 0, 0.08); padding: 10px 16px; border-radius: 6px; border: 1px dashed rgba(255, 215, 0, 0.5); margin-bottom: 15px; font-size:0.95rem; color:#FFD700; font-family:'Inter', sans-serif;">
+                        ⚡ <b>TRACK BIAS ALERT (AWT SEALED)</b>: The dirt track is compacted/sealed due to wet weather. Expect strong speed bias favoring low draws and on-speed runners.
+                    </div>
+                    ''', unsafe_allow_html=True)
+            else:
+                if race_going_type in ["YIELDING", "SOFT", "HEAVY"]:
+                    st.markdown(f'''
+                    <div style="background: rgba(239, 68, 68, 0.08); padding: 10px 16px; border-radius: 6px; border: 1px dashed rgba(239, 68, 68, 0.5); margin-bottom: 15px; font-size:0.95rem; color:#ef4444; font-family:'Inter', sans-serif;">
+                        🌧️ <b>TRACK BIAS ALERT (WET TURF - {race_going_type})</b>: Turf track has degraded. On-speed runners (leaders) are highly favored; off-pace closers may struggle to make ground.
+                    </div>
+                    ''', unsafe_allow_html=True)
+            
             race_picks = df_runners.sort_values(by='gs_score', ascending=False)
             
             # Ensure we have at least 5 runners
@@ -583,7 +650,7 @@ with tab1:
                     <div class="data-value" style="font-size:1.35rem;">{best['no']}. {best['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
                         J: <span style="color:#ffffff;">{best['jockey']}</span> | T: <span style="color:#ffffff;">{best['trainer']}</span>
-                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{best['win_odds']:.0f}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{best['win_odds']:.1f}</span>{get_shift_badge(best)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#FFD700; font-weight:700;">AI Conf: {best['confidence']}% &nbsp;|&nbsp; Tip Pts: {best.get('consensus_score', 0)}</div>
                 </div>
@@ -595,7 +662,7 @@ with tab1:
                     <div class="data-value" style="font-size:1.25rem;">{second['no']}. {second['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
                         J: <span style="color:#ffffff;">{second['jockey']}</span> | T: <span style="color:#ffffff;">{second['trainer']}</span>
-                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{second['win_odds']:.0f}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{second['win_odds']:.1f}</span>{get_shift_badge(second)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Conf: {second['confidence']}% &nbsp;|&nbsp; Tip Pts: {second.get('consensus_score', 0)}</div>
                 </div>
@@ -607,7 +674,7 @@ with tab1:
                     <div class="data-value" style="font-size:1.25rem;">{third['no']}. {third['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
                         J: <span style="color:#ffffff;">{third['jockey']}</span> | T: <span style="color:#ffffff;">{third['trainer']}</span>
-                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{third['win_odds']:.0f}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{third['win_odds']:.1f}</span>{get_shift_badge(third)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {third['confidence']}% &nbsp;|&nbsp; Tip Pts: {third.get('consensus_score', 0)}</div>
                 </div>
@@ -619,7 +686,7 @@ with tab1:
                     <div class="data-value" style="font-size:1.25rem;">{fourth['no']}. {fourth['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
                         J: <span style="color:#ffffff;">{fourth['jockey']}</span> | T: <span style="color:#ffffff;">{fourth['trainer']}</span>
-                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{fourth['win_odds']:.0f}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{fourth['win_odds']:.1f}</span>{get_shift_badge(fourth)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {fourth['confidence']}%</div>
                 </div>
@@ -631,7 +698,7 @@ with tab1:
                     <div class="data-value" style="font-size:1.25rem;">{fifth['no']}. {fifth['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
                         J: <span style="color:#ffffff;">{fifth['jockey']}</span> | T: <span style="color:#ffffff;">{fifth['trainer']}</span>
-                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{fifth['win_odds']:.0f}</span>
+                        <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{fifth['win_odds']:.1f}</span>{get_shift_badge(fifth)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {fifth['confidence']}%</div>
                 </div>
