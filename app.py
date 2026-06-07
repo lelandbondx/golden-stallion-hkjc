@@ -9,6 +9,11 @@ import threading
 import time
 import requests
 import odds_tracker
+import textwrap
+
+def clean_html(html_str):
+    return "\n".join(line.lstrip() for line in html_str.split("\n"))
+
 
 def keep_alive():
     while True:
@@ -241,12 +246,35 @@ def fetch_horse_stats():
 def fetch_tips():
     return get_live_tips_index()
 
+@st.cache_data(ttl=86400)
+def fetch_running_styles():
+    try:
+        df = pd.read_csv('data/results.csv', usecols=['horse', 'runningpos'])
+        df['clean_name'] = df['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
+        
+        def parse_first_pos(x):
+            if not isinstance(x, str): return np.nan
+            parts = x.strip().split()
+            if not parts: return np.nan
+            try:
+                return float(parts[0])
+            except:
+                return np.nan
+                
+        df['first_pos'] = df['runningpos'].apply(parse_first_pos)
+        style_series = df.groupby('clean_name')['first_pos'].mean()
+        return style_series.to_dict()
+    except Exception as e:
+        print("Error fetching running styles:", e)
+        return {}
+
 # Initialize variables
 data = fetch_data()
 historical_df = fetch_historical_comments()
 std_times_df = fetch_standard_times()
 horse_stats_df = fetch_horse_stats()
 tips_data = fetch_tips()
+running_styles = fetch_running_styles()
 meetings = data.get('meetings', [])
 
 try:
@@ -352,7 +380,9 @@ with tab1:
             elif "Class 5" in class_str: class_int = 5
             elif "Group" in class_str or "G" in class_str: class_int = 0
             
-            probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=meeting.get('going'), race_date=meeting.get('date'), race_class_int=class_int)
+            # Use race-specific going
+            race_going = race.get('going', meeting.get('going', 'GOOD'))
+            probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=race_going, race_date=meeting.get('date'), race_class_int=class_int)
         except Exception as e:
             print(f"Prediction Error for race {race.get('race_no')}: {e}")
             probs = np.ones(len(df_runners)) / len(df_runners)
@@ -366,7 +396,7 @@ with tab1:
         # Targeted Standout Boost Logic (replaces blind point additions)
         recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
         track_match = (df_runners.get('ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
-        going_match = (df_runners.get('last_form_going', 'Unknown') == meeting.get('going', 'UNKNOWN')).astype(int)
+        going_match = (df_runners.get('last_form_going', 'Unknown') == race_going).astype(int)
         vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
         class_drop = pd.to_numeric(df_runners.get('class_diff', 0), errors='coerce').fillna(0)
         
@@ -392,7 +422,26 @@ with tab1:
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
         
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty
+        # Smart Wet Turf Adjustments
+        race_track_type = str(race.get('track', 'TURF')).upper()
+        is_wet_turf = (str(race_going).upper() in ["YIELDING", "GOOD TO YIELDING", "SOFT", "HEAVY"]) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
+        
+        on_speed_wet_boost = 0.0
+        yielding_form_boost = 0.0
+        
+        if is_wet_turf:
+            if 'clean_name' not in df_runners.columns:
+                df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+            df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
+            
+            # 4% boost for on-speed/front-runners (avg first pos <= 4.5)
+            on_speed_wet_boost = np.where(df_runners['avg_first_pos'] <= 4.5, 0.04, 0.0)
+            
+            # 3% boost for yielding/wet-track specialists
+            has_yielding_form = df_runners['last_form_going'].astype(str).str.upper().str.contains("YIELD|SOFT|HEAVY|WET")
+            yielding_form_boost = np.where(has_yielding_form, 0.03, 0.0)
+            
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
@@ -503,19 +552,20 @@ with tab1:
                         "pct": shift_pct
                     })
 
-    global_best_bets = sorted(global_best_bets, key=lambda x: x.get('gs_score', 0), reverse=True)
-    top_pick_today = global_best_bets[0] if global_best_bets else None
+    global_best_bets_sorted_by_gs = sorted(global_best_bets, key=lambda x: x.get('gs_score', 0), reverse=True)
+    global_best_bets_sorted_by_ev = sorted(global_best_bets, key=lambda x: x.get('value_diff', 0), reverse=True)
+    top_pick_today = global_best_bets_sorted_by_ev[0] if global_best_bets_sorted_by_ev else None
 
     with st.expander("Macro Insights & Global Best Bets", expanded=True):
         if top_pick_today:
-            st.markdown(f'''
+            st.markdown(clean_html(f'''
             <div class="tech-panel border-accent-gold" style="background: linear-gradient(145deg, rgba(30,20,5, 0.9), rgba(15, 8, 10, 0.9));">
                 <div class="data-label" style="color:#FFD700; font-size:0.95rem;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
                 <div class="data-value" style="font-size:2.4rem; font-family:'Montserrat'; font-weight:800; margin-bottom: 5px; color:#FFDF00; text-shadow: 0 4px 10px rgba(255,215,0,0.4);">Race {top_pick_today['race_no']} – #{top_pick_today['no']} {top_pick_today['name']}</div>
                 <div class="data-value" style="font-size:1.1rem; color:#f8fafc;">Live Odds: <b>{top_pick_today['win_odds']:.0f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#ef4444;">{top_pick_today['confidence']}%</b></div>
             </div>
-            ''', unsafe_allow_html=True)
-            parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in global_best_bets[:3]])
+            '''), unsafe_allow_html=True)
+            parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in global_best_bets_sorted_by_gs[:3]])
             st.markdown(f"<div style='margin-top:10px; font-family:\"Inter\"; font-size:1.15rem;'><b>Optimized Multi-Leg Sequence:</b> <span style='color:#ef4444; font-weight:700;'>{parlay_str}</span></div>", unsafe_allow_html=True)
             
             # Display Steam Alerts inside expander
@@ -525,12 +575,12 @@ with tab1:
                 sorted_steam = sorted(steam_alerts, key=lambda x: x['pct'])
                 for alert in sorted_steam[:6]: # Show top 6
                     pct_str = f"{alert['pct'] * 100:.0f}%"
-                    steam_html += f'''
+                    steam_html += clean_html(f'''
                     <div style="background: rgba(239, 68, 68, 0.12); padding: 8px 14px; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.4); font-size:0.95rem; color:#ffffff; line-height:1.4;">
                         <b>R{alert['race_no']} #{alert['no']} {alert['name']}</b><br>
                         <span style="color:#ef4444; font-weight:700;">Steam: {pct_str}</span> ({alert['base']:.1f} → {alert['curr']:.1f}) | <i>{alert['jockey']}</i>
                     </div>
-                    '''
+                    ''')
                 steam_html += '</div>'
                 st.markdown(steam_html, unsafe_allow_html=True)
     
@@ -598,7 +648,7 @@ with tab1:
                     if pd.isna(match.iloc[0]['Record_Time']): rec_time = "N/A"
                     if pd.isna(match.iloc[0]['Record_Horse']): rec_horse = "-"
 
-            st.markdown(f'''
+            st.markdown(clean_html(f'''
             <div style="font-family:'Montserrat'; font-size:1.6rem; font-weight:800; color:#ef4444; margin-top:30px; margin-bottom:5px; text-shadow: 0 2px 5px rgba(239,68,68,0.4);">
                 RACE {race.get("race_no", "")} – <span style="font-family:'Inter'; font-weight:500; font-size:1.2rem; color:#d1d5db;">{class_dist}</span>
             </div>
@@ -612,23 +662,23 @@ with tab1:
                     <span style="font-size:0.95rem; color:#ffffff; font-weight:700; margin-left:5px;">{rec_time} ({rec_horse})</span>
                 </div>
             </div>
-            ''', unsafe_allow_html=True)
+            '''), unsafe_allow_html=True)
             
             # Show Track Bias Warning Alerts
             if "ALL WEATHER" in race_track_type or "AWT" in race_track_type:
                 if "SEALED" in race_going_type:
-                    st.markdown('''
+                    st.markdown(clean_html('''
                     <div style="background: rgba(255, 215, 0, 0.08); padding: 10px 16px; border-radius: 6px; border: 1px dashed rgba(255, 215, 0, 0.5); margin-bottom: 15px; font-size:0.95rem; color:#FFD700; font-family:'Inter', sans-serif;">
                         ⚡ <b>TRACK BIAS ALERT (AWT SEALED)</b>: The dirt track is compacted/sealed due to wet weather. Expect strong speed bias favoring low draws and on-speed runners.
                     </div>
-                    ''', unsafe_allow_html=True)
+                    '''), unsafe_allow_html=True)
             else:
                 if race_going_type in ["YIELDING", "SOFT", "HEAVY"]:
-                    st.markdown(f'''
+                    st.markdown(clean_html(f'''
                     <div style="background: rgba(239, 68, 68, 0.08); padding: 10px 16px; border-radius: 6px; border: 1px dashed rgba(239, 68, 68, 0.5); margin-bottom: 15px; font-size:0.95rem; color:#ef4444; font-family:'Inter', sans-serif;">
                         🌧️ <b>TRACK BIAS ALERT (WET TURF - {race_going_type})</b>: Turf track has degraded. On-speed runners (leaders) are highly favored; off-pace closers may struggle to make ground.
                     </div>
-                    ''', unsafe_allow_html=True)
+                    '''), unsafe_allow_html=True)
             
             race_picks = df_runners.sort_values(by='gs_score', ascending=False)
             
@@ -644,7 +694,7 @@ with tab1:
             
             pc1, pc2, pc3, pc4, pc5 = st.columns(5)
             with pc1:
-                st.markdown(f'''
+                st.markdown(clean_html(f'''
                 <div class="tech-panel border-accent-gold">
                     <div class="data-label" style="color:#FFD700; font-size:0.85rem;">⭐ PRIMARY WIN PROBABILITY</div>
                     <div class="data-value" style="font-size:1.35rem;">{best['no']}. {best['name']}</div>
@@ -654,9 +704,9 @@ with tab1:
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#FFD700; font-weight:700;">AI Conf: {best['confidence']}% &nbsp;|&nbsp; Tip Pts: {best.get('consensus_score', 0)}</div>
                 </div>
-                ''', unsafe_allow_html=True)
+                '''), unsafe_allow_html=True)
             with pc2:
-                st.markdown(f'''
+                st.markdown(clean_html(f'''
                 <div class="tech-panel border-accent-red">
                     <div class="data-label" style="font-size:0.85rem;">🎯 OPTIMAL EXACTA</div>
                     <div class="data-value" style="font-size:1.25rem;">{second['no']}. {second['name']}</div>
@@ -666,9 +716,9 @@ with tab1:
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">AI Conf: {second['confidence']}% &nbsp;|&nbsp; Tip Pts: {second.get('consensus_score', 0)}</div>
                 </div>
-                ''', unsafe_allow_html=True)
+                '''), unsafe_allow_html=True)
             with pc3:
-                st.markdown(f'''
+                st.markdown(clean_html(f'''
                 <div class="tech-panel" style="border-left: 5px solid #4b5563;">
                     <div class="data-label" style="font-size:0.85rem;">💠 TRIFECTA CONSIDERATION</div>
                     <div class="data-value" style="font-size:1.25rem;">{third['no']}. {third['name']}</div>
@@ -678,9 +728,9 @@ with tab1:
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {third['confidence']}% &nbsp;|&nbsp; Tip Pts: {third.get('consensus_score', 0)}</div>
                 </div>
-                ''', unsafe_allow_html=True)
+                '''), unsafe_allow_html=True)
             with pc4:
-                st.markdown(f'''
+                st.markdown(clean_html(f'''
                 <div class="tech-panel" style="border-left: 5px solid #4b5563;">
                     <div class="data-label" style="font-size:0.85rem;">4TH PREDICTION</div>
                     <div class="data-value" style="font-size:1.25rem;">{fourth['no']}. {fourth['name']}</div>
@@ -690,9 +740,9 @@ with tab1:
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {fourth['confidence']}%</div>
                 </div>
-                ''', unsafe_allow_html=True)
+                '''), unsafe_allow_html=True)
             with pc5:
-                st.markdown(f'''
+                st.markdown(clean_html(f'''
                 <div class="tech-panel" style="border-left: 5px solid #4b5563;">
                     <div class="data-label" style="font-size:0.85rem;">5TH PREDICTION</div>
                     <div class="data-value" style="font-size:1.25rem;">{fifth['no']}. {fifth['name']}</div>
@@ -702,14 +752,14 @@ with tab1:
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">AI Conf: {fifth['confidence']}%</div>
                 </div>
-                ''', unsafe_allow_html=True)
+                '''), unsafe_allow_html=True)
                 
             # Prevent the outlier from being the exact same horse as the primary leader
             longshots = df_runners[(df_runners['win_odds'] >= 12.0) & (df_runners['no'] != best['no'])].sort_values(by='value_diff', ascending=False)
             if not longshots.empty:
                 bold_pick = longshots.iloc[0]
                 with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=True):
-                    st.markdown(f'''
+                    st.markdown(clean_html(f'''
                     <div style="background: rgba(239, 68, 68, 0.08); padding: 20px; border-radius: 8px; border: 1px dashed rgba(239, 68, 68, 0.4); margin-bottom: 5px;">
                         <div style="color:#ef4444; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: #{bold_pick['no']} {bold_pick['name']}</div>
                         <div style="color:#f8fafc; font-size:1rem; margin-bottom: 15px; line-height:1.5;">
@@ -720,7 +770,7 @@ with tab1:
                         <div style="color:#FFD700; font-size:1rem; margin-top:8px;">⭐ <b>Trifecta Structure:</b> Use <b>#{best['no']}</b> and <b>#{bold_pick['no']}</b> as dual bankers, combined with <b>#{second['no']}</b> and <b>#{third['no']}</b> for the remaining legs.</div>
                         <div style="color:#FFD700; font-size:1rem; margin-top:8px;">⭐ <b>Cross-Race Leverage Target:</b> Deploy <b>#{bold_pick['no']}</b> strictly as a <u>Place (To Finish Top 3)</u> anchor in sequential combinations to compound probabilistic edge.</div>
                     </div>
-                    ''', unsafe_allow_html=True)
+                    '''), unsafe_allow_html=True)
 
             with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=True):
                 # Ensure missing columns exist
@@ -745,7 +795,7 @@ with tab1:
                         "trainer": st.column_config.TextColumn("Trainer", width="medium"),
                         "draw": st.column_config.NumberColumn("Draw", width="small"),
                         "rtg": st.column_config.NumberColumn("Rating", width="small"),
-                        "win_odds": st.column_config.NumberColumn("Odds", format="%.0f", width="small"),
+                        "win_odds": st.column_config.NumberColumn("Odds", format="%.1f", width="small"),
                         "consensus_score": st.column_config.NumberColumn("Tipster Pts", width="small"),
                         "class_diff": st.column_config.NumberColumn("Class Diff", width="small"),
                         "rating_diff": st.column_config.NumberColumn("Rtg Diff", width="small"),
@@ -815,12 +865,12 @@ with tab3:
     news_items = fetch_news()
     if news_items:
         for news in news_items:
-            st.markdown(f'''
+            st.markdown(clean_html(f'''
             <div class="tech-panel hover-effect border-accent-red" style="padding:22px; margin-bottom:20px;">
                 <div style="font-size:1.3rem; font-weight:700; font-family:'Montserrat'; margin-bottom: 12px;"><a href='{news['link']}' style='color: #ffffff; text-decoration: none;'>{news['title']}</a></div>
                 <div><a href='{news['link']}' style='color: #FFD700; font-family:"Inter", sans-serif; font-weight:600; font-size:0.95rem; text-decoration:none;'>[ Read Full Article &rarr; ]</a></div>
             </div>
-            ''', unsafe_allow_html=True)
+            '''), unsafe_allow_html=True)
     else:
         st.info("News feed temporarily unavailable.")
         

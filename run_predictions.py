@@ -30,6 +30,22 @@ def run():
     # Load model
     load_model()
     
+    # Load running styles once outside the loop
+    running_styles = {}
+    try:
+        df_styles = pd.read_csv('data/results.csv', usecols=['horse', 'runningpos'])
+        df_styles['clean_name'] = df_styles['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
+        def parse_first_pos(x):
+            if not isinstance(x, str): return np.nan
+            parts = x.strip().split()
+            if not parts: return np.nan
+            try: return float(parts[0])
+            except: return np.nan
+        df_styles['first_pos'] = df_styles['runningpos'].apply(parse_first_pos)
+        running_styles = df_styles.groupby('clean_name')['first_pos'].mean().to_dict()
+    except Exception as e:
+        print("Error parsing running styles:", e)
+
     global_best_bets = []
     
     for race in meeting.get('races', []):
@@ -55,7 +71,8 @@ def run():
         elif "Class 5" in class_str: class_int = 5
         elif "Group" in class_str or "G" in class_str: class_int = 0
             
-        probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=meeting.get('going'), race_date=meeting.get('date'), race_class_int=class_int)
+        race_going = race.get('going', meeting.get('going', 'GOOD'))
+        probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=race_going, race_date=meeting.get('date'), race_class_int=class_int)
         
         df_runners['model_prob'] = probs
         df_runners['implied_raw'] = 1 / df_runners['win_odds'].replace(0, 1.0)
@@ -66,7 +83,7 @@ def run():
         recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
         recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
         track_match = (df_runners.get('ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
-        going_match = (df_runners.get('last_form_going', 'Unknown') == meeting.get('going', 'UNKNOWN')).astype(int)
+        going_match = (df_runners.get('last_form_going', 'Unknown') == race_going).astype(int)
         vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
         class_drop = pd.to_numeric(df_runners.get('class_diff', 0), errors='coerce').fillna(0)
         
@@ -91,7 +108,22 @@ def run():
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
         
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty
+        # Smart Wet Turf Adjustments
+        race_track_type = str(race.get('track', 'TURF')).upper()
+        is_wet_turf = (str(race_going).upper() in ["YIELDING", "GOOD TO YIELDING", "SOFT", "HEAVY"]) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
+        
+        on_speed_wet_boost = 0.0
+        yielding_form_boost = 0.0
+        
+        if is_wet_turf:
+            if 'clean_name' not in df_runners.columns:
+                df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+            df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
+            on_speed_wet_boost = np.where(df_runners['avg_first_pos'] <= 4.5, 0.04, 0.0)
+            has_yielding_form = df_runners['last_form_going'].astype(str).str.upper().str.contains("YIELD|SOFT|HEAVY|WET")
+            yielding_form_boost = np.where(has_yielding_form, 0.03, 0.0)
+            
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
