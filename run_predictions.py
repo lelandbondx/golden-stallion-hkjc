@@ -27,6 +27,12 @@ def run():
     meeting = data['meetings'][0]
     print(f"Meeting: {meeting['venue']} - {meeting['date']} - Going: {meeting['going']}")
     
+    # Cache live odds for this meeting (if any are scraped/positive)
+    try:
+        odds_tracker.cache_live_odds(meeting.get('date'), meeting.get('venue'), meeting.get('races', []))
+    except Exception as e:
+        print("Failed to cache live odds:", e)
+        
     # Load model
     load_model()
     
@@ -52,16 +58,35 @@ def run():
         if not race.get('runners'): continue
         
         df_runners = pd.DataFrame(race['runners'])
+        # Load win_odds from cache if the scraper returns 0.0 (completed races)
         if 'win_odds' in df_runners.columns:
+            df_runners['win_odds'] = df_runners.apply(
+                lambda row: odds_tracker.get_cached_odds(
+                    meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['win_odds']
+                ), axis=1
+            )
             df_runners['scraped_win_odds'] = df_runners['win_odds'].copy()
         else:
-            df_runners['scraped_win_odds'] = 0.0
+            df_runners['win_odds'] = 20.0
+            df_runners['scraped_win_odds'] = 20.0
         
         current_race_tips = tips_data.get(race.get('race_no', 0), {})
         df_runners['consensus_score'] = df_runners['no'].map(lambda x: current_race_tips.get(x, 0))
         if key_runners:
             df_runners['consensus_score'] += np.where(df_runners['name'].str.upper().isin(key_runners), 10, 0)
         
+        # Check time to post for this race
+        minutes_to_post = 999.0
+        from datetime import datetime, timezone, timedelta
+        try:
+            post_time_str = race.get('time')
+            if post_time_str:
+                post_time = datetime.fromisoformat(post_time_str)
+                now_hkt = datetime.now(timezone(timedelta(hours=8)))
+                minutes_to_post = (post_time - now_hkt).total_seconds() / 60.0
+        except Exception as e:
+            print(f"Error parsing post time for race {race.get('race_no')}: {e}")
+            
         class_str = race.get("class_dist", "")
         class_int = 4
         if "Class 1" in class_str: class_int = 1
@@ -141,7 +166,13 @@ def run():
             row['baseline_odds'], row['scraped_win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
             pd.to_numeric(row.get('prev_run_vet_finding', 0))), axis=1)
 
-        df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 20, 0) + df_runners['shift_bonus']
+        # Time-Based Liquidity Check: Only apply smart money shifts if within 30 minutes of post time
+        if minutes_to_post > 30:
+            # Lock to core structural probability
+            df_runners['gs_score'] = df_runners['model_prob'] * 100
+        else:
+            # Unlock smart money shifts (using dampened value multiplier of 10)
+            df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 10, 0) + df_runners['shift_bonus']
         
         p_min = df_runners['model_prob'].min()
         p_max = df_runners['model_prob'].max()

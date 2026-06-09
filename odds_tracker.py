@@ -49,15 +49,69 @@ def calculate_odds_shift_bonus(baseline_odds, current_odds, recent_pos, vet_issu
     bonus = 0.0
     
     # SMART STEAM: Odds drop by > 15%, horse has elite form (recent pos <= 4.0)
+    # Dampened from 4.0 to 1.5
     if shift_pct < -0.15 and recent_pos <= 4.0:
-        bonus += 4.0  # Proportionate intelligent promotion
+        bonus += 1.5
         
     # RED FLAG DRIFT: Odds rise by > 30%, horse has a known vet issue
+    # Dampened from -3.0 to -1.5
     if shift_pct > 0.30 and vet_issue > 0:
-        bonus -= 3.0  # Proportionate demotion (insiders are abandoning)
+        bonus -= 1.5
         
     # VALUE DRIFT: Odds rise by > 25%, horse has elite form and NO vet issues
+    # Dampened from 2.0 to 0.75
     if shift_pct > 0.25 and recent_pos <= 3.5 and vet_issue == 0:
-        bonus += 2.0  # Slight bump for unexpected overlay value
+        bonus += 0.75
         
     return bonus
+
+def cache_live_odds(date_str, venue, races):
+    """
+    Saves the scraped win odds of all runners if they are > 0.
+    """
+    filename = f"data/odds_cache_{date_str.replace('-', '')}.json"
+    cache = {}
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                cache = json.load(f)
+        except:
+            pass
+    
+    updated = False
+    for race in races:
+        race_no = race.get('race_no')
+        for runner in race.get('runners', []):
+            horse_no = runner.get('no')
+            win_odds = runner.get('win_odds', 0.0)
+            if win_odds > 0:
+                key = f"{venue}_R{race_no}_H{horse_no}"
+                cache[key] = win_odds
+                updated = True
+                
+    if updated:
+        try:
+            os.makedirs(os.path.dirname(filename), exist_ok=True)
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(cache, f, indent=4)
+        except Exception as e:
+            print(f"[WARNING] Failed to write odds cache: {e}")
+
+def get_cached_odds(date_str, venue, race_no, horse_no, current_odds):
+    """
+    Returns the cached odds if current_odds is 0 or invalid, else returns current_odds.
+    """
+    if current_odds > 0:
+        return current_odds
+        
+    filename = f"data/odds_cache_{date_str.replace('-', '')}.json"
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                cache = json.load(f)
+                key = f"{venue}_R{race_no}_H{horse_no}"
+                if key in cache and cache[key] > 0:
+                    return cache[key]
+        except:
+            pass
+    return 20.0 # Fallback
