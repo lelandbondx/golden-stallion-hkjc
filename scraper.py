@@ -518,8 +518,11 @@ def get_live_tips_index():
                             r_tips_val = cells[8].get_text(strip=True)
                             i_tips_val = cells[7].get_text(strip=True)
                             
-                            r_val = float(re.sub(r'[^\d\.]', '', r_tips_val))
-                            i_val = float(re.sub(r'[^\d\.]', '', i_tips_val))
+                            r_clean = re.sub(r'[^\d\.]', '', r_tips_val)
+                            i_clean = re.sub(r'[^\d\.]', '', i_tips_val)
+                            
+                            r_val = float(r_clean) if r_clean else 99.0
+                            i_val = float(i_clean) if i_clean else 99.0
                             
                             chosen_val = r_val if r_val < 99.0 else i_val
                             
@@ -529,7 +532,7 @@ def get_live_tips_index():
                                 race_tips[h_no] = round(score, 1)
                             else:
                                 race_tips[h_no] = 0.0
-                        except:
+                        except Exception as e:
                             pass
                     break # Found the correct table
             
