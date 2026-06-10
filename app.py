@@ -418,7 +418,7 @@ with tab1:
             
         # Check if we have a frozen prediction for this race
         frozen_runners = odds_tracker.get_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'))
-        if minutes_to_post <= 0 and frozen_runners is not None:
+        if minutes_to_post <= 60 and frozen_runners is not None:
             df_runners = pd.DataFrame(frozen_runners)
             if 'clean_name' not in df_runners.columns:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
@@ -606,9 +606,9 @@ with tab1:
         
         race['processed_runners'] = df_runners
         
-        # If the race is within 15 minutes of post time, or is already running/completed,
+        # If the race is within 60 minutes of post time, or is already running/completed,
         # freeze the predictions so they never shift again.
-        if minutes_to_post <= 15:
+        if minutes_to_post <= 60:
             try:
                 odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))
             except Exception as e:
