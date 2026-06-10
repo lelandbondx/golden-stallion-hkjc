@@ -205,8 +205,8 @@ def run():
             # Lock to core structural probability
             df_runners['gs_score'] = df_runners['model_prob'] * 100
         else:
-            # Unlock smart money shifts (using dampened value multiplier of 10)
-            df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 10, 0) + df_runners['shift_bonus']
+            # Unlock smart money shifts (incorporating shift_bonus, excluding raw value bias)
+            df_runners['gs_score'] = (df_runners['model_prob'] * 100) + df_runners['shift_bonus']
         
         p_min = df_runners['model_prob'].min()
         p_max = df_runners['model_prob'].max()

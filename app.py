@@ -381,6 +381,7 @@ with tab1:
                 pass 
 
     global_best_bets = []
+    parlay_candidates = []
     
     # Process models
     for race in races:
@@ -423,10 +424,19 @@ with tab1:
             if 'clean_name' not in df_runners.columns:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
             race['processed_runners'] = df_runners
-            race_picks = df_runners.sort_values(by='value_diff', ascending=False)
-            best = race_picks.iloc[0].to_dict()
-            best.update({"race_no": race.get("race_no")})
-            global_best_bets.append(best)
+            
+            # Add all runners to global pool for summaries
+            for _, row in df_runners.iterrows():
+                r_dict = row.to_dict()
+                r_dict.update({"race_no": race.get("race_no")})
+                global_best_bets.append(r_dict)
+                
+            # Parlay candidate is the 1st Pick of this race
+            race_picks_gs = df_runners.sort_values(by='gs_score', ascending=False)
+            if not race_picks_gs.empty:
+                best_gs = race_picks_gs.iloc[0].to_dict()
+                best_gs.update({"race_no": race.get("race_no")})
+                parlay_candidates.append(best_gs)
             continue
             
         try:
@@ -548,8 +558,8 @@ with tab1:
             # Lock to core structural probability
             df_runners['gs_score'] = df_runners['model_prob'] * 100
         else:
-            # Unlock smart money shifts (using dampened value multiplier of 10)
-            df_runners['gs_score'] = (df_runners['model_prob'] * 100) + np.where(df_runners['value_diff'] > 0, df_runners['value_diff'] * 10, 0) + df_runners['shift_bonus']
+            # Unlock smart money shifts (incorporating shift_bonus, excluding raw value bias)
+            df_runners['gs_score'] = (df_runners['model_prob'] * 100) + df_runners['shift_bonus']
         
         # Scale to a realistically solid 15-85% range. Round to nearest integer.
         p_min = df_runners['model_prob'].min()
@@ -614,10 +624,18 @@ with tab1:
             except Exception as e:
                 print("Failed to save frozen predictions:", e)
         
-        race_picks = df_runners.sort_values(by='value_diff', ascending=False)
-        best = race_picks.iloc[0].to_dict()
-        best.update({"race_no": race.get("race_no")})
-        global_best_bets.append(best)
+        # Add all runners of this race to global pool for summaries
+        for _, row in df_runners.iterrows():
+            r_dict = row.to_dict()
+            r_dict.update({"race_no": race.get("race_no")})
+            global_best_bets.append(r_dict)
+            
+        # Parlay candidate is the 1st Pick of this race
+        race_picks_gs = df_runners.sort_values(by='gs_score', ascending=False)
+        if not race_picks_gs.empty:
+            best_gs = race_picks_gs.iloc[0].to_dict()
+            best_gs.update({"race_no": race.get("race_no")})
+            parlay_candidates.append(best_gs)
 
     # Collect market steam alerts
     steam_alerts = []
@@ -642,6 +660,9 @@ with tab1:
     global_best_bets_sorted_by_gs = sorted(global_best_bets, key=lambda x: x.get('gs_score', 0), reverse=True)
     global_best_bets_sorted_by_ev = sorted(global_best_bets, key=lambda x: x.get('value_diff', 0), reverse=True)
     top_pick_today = global_best_bets_sorted_by_ev[0] if global_best_bets_sorted_by_ev else None
+    
+    # Sort parlay candidates strictly from the 1st Picks of each race
+    parlay_sorted = sorted(parlay_candidates, key=lambda x: x.get('gs_score', 0), reverse=True)
 
     with st.expander("Macro Insights & Global Best Bets", expanded=True):
         if top_pick_today:
@@ -666,7 +687,7 @@ with tab1:
                         <div class="data-value" style="font-size:1.0rem; color:#f8fafc; margin-top: 5px;">Live Odds: <b>{top_gs_pick['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#FFD700;">{top_gs_pick['confidence']}%</b></div>
                     </div>
                     '''), unsafe_allow_html=True)
-            parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in global_best_bets_sorted_by_gs[:3]])
+            parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in parlay_sorted[:3]])
             st.markdown(f"<div style='margin-top:10px; font-family:\"Inter\"; font-size:1.15rem;'><b>Optimized Multi-Leg Sequence:</b> <span style='color:#ef4444; font-weight:700;'>{parlay_str}</span></div>", unsafe_allow_html=True)
             
             # Display Steam Alerts inside expander
