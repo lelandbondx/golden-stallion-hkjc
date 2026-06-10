@@ -102,6 +102,17 @@ def run():
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
         
+        if 'clean_name' not in df_runners.columns:
+            df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+        df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
+
+        # Pace Pressure Index: Count runners with avg_first_pos <= 3.5 (true speed horses)
+        speed_count = (df_runners['avg_first_pos'] <= 3.5).sum()
+        
+        closer_pace_boost = 0.0
+        closer_pace_penalty = 0.0
+        lone_speed_boost = 0.0
+        
         # Smart Wet Turf Adjustments
         race_track_type = str(race.get('track', 'TURF')).upper()
         is_wet_turf = (str(race_going).upper() in ["YIELDING", "GOOD TO YIELDING", "SOFT", "HEAVY"]) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
@@ -110,14 +121,21 @@ def run():
         yielding_form_boost = 0.0
         
         if is_wet_turf:
-            if 'clean_name' not in df_runners.columns:
-                df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
-            df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
             on_speed_wet_boost = np.where(df_runners['avg_first_pos'] <= 4.5, 0.04, 0.0)
             has_yielding_form = df_runners['last_form_going'].astype(str).str.upper().str.contains("YIELD|SOFT|HEAVY|WET")
             yielding_form_boost = np.where(has_yielding_form, 0.03, 0.0)
             
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost
+        # Apply Pace Pressure Refinements
+        if speed_count >= 3:
+            # High Pace Pressure: pace collapse likely. Boost closers, neutralize on-speed wet boost.
+            on_speed_wet_boost = 0.0
+            closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.04, 0.0)
+        elif speed_count <= 1:
+            # Low Pace Pressure: speed bias highly likely. Boost lone speed, penalize deep closers.
+            lone_speed_boost = np.where(df_runners['avg_first_pos'] <= 3.5, 0.04, 0.0)
+            closer_pace_penalty = np.where(df_runners['avg_first_pos'] > 6.0, -0.04, 0.0)
+            
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
             

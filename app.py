@@ -201,7 +201,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Central Banner
-st.image("golden_stallion_banner.png", use_container_width=True)
+col_b1, col_b2, col_b3 = st.columns([1.2, 2, 1.2])
+with col_b2:
+    st.image("golden_stallion_banner.png", use_container_width=True)
 
 st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">金金驹AI__香港赛马会预测</div>', unsafe_allow_html=True)
@@ -321,6 +323,26 @@ try:
 except Exception as e:
     print("Failed to cache live odds:", e)
 
+def check_highlight(runner, search_term):
+    if not search_term:
+        return ""
+    jockey_str = str(runner.get('jockey', '')).upper()
+    trainer_str = str(runner.get('trainer', '')).upper()
+    if search_term in jockey_str or search_term in trainer_str:
+        return "border: 2px solid #22c55e !important; box-shadow: 0 0 15px rgba(34, 197, 94, 0.5) !important;"
+    return ""
+
+def get_match_badge(runner, search_term):
+    if not search_term:
+        return ""
+    jockey_str = str(runner.get('jockey', '')).upper()
+    trainer_str = str(runner.get('trainer', '')).upper()
+    if search_term in jockey_str or search_term in trainer_str:
+        return '<span style="background:#22c55e; color:#ffffff; padding:2px 6px; border-radius:4px; font-size:0.75rem; font-weight:bold; float:right;">🔍 MATCH</span>'
+    return ""
+
+search_term = st.text_input("🔍 Highlight Jockey or Trainer (e.g., PURTON, FOWNES)", "").strip().upper()
+
 # TABS
 tab1, tab2, tab3 = st.tabs(["🔴 Live Matrix", "📊 Archive", "📰 HKJC News"])
 
@@ -394,6 +416,19 @@ with tab1:
         except Exception as e:
             print(f"Error parsing post time for race {race.get('race_no')}: {e}")
             
+        # Check if we have a frozen prediction for this race
+        frozen_runners = odds_tracker.get_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'))
+        if minutes_to_post <= 0 and frozen_runners is not None:
+            df_runners = pd.DataFrame(frozen_runners)
+            if 'clean_name' not in df_runners.columns:
+                df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+            race['processed_runners'] = df_runners
+            race_picks = df_runners.sort_values(by='value_diff', ascending=False)
+            best = race_picks.iloc[0].to_dict()
+            best.update({"race_no": race.get("race_no")})
+            global_best_bets.append(best)
+            continue
+            
         try:
             # Parse class_int from race
             class_str = race.get("class_dist", "")
@@ -447,6 +482,17 @@ with tab1:
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
         
+        if 'clean_name' not in df_runners.columns:
+            df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+        df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
+
+        # Pace Pressure Index: Count runners with avg_first_pos <= 3.5 (true speed horses)
+        speed_count = (df_runners['avg_first_pos'] <= 3.5).sum()
+        
+        closer_pace_boost = 0.0
+        closer_pace_penalty = 0.0
+        lone_speed_boost = 0.0
+        
         # Smart Wet Turf Adjustments
         race_track_type = str(race.get('track', 'TURF')).upper()
         is_wet_turf = (str(race_going).upper() in ["YIELDING", "GOOD TO YIELDING", "SOFT", "HEAVY"]) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
@@ -455,18 +501,21 @@ with tab1:
         yielding_form_boost = 0.0
         
         if is_wet_turf:
-            if 'clean_name' not in df_runners.columns:
-                df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
-            df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
-            
-            # 4% boost for on-speed/front-runners (avg first pos <= 4.5)
             on_speed_wet_boost = np.where(df_runners['avg_first_pos'] <= 4.5, 0.04, 0.0)
-            
-            # 3% boost for yielding/wet-track specialists
             has_yielding_form = df_runners['last_form_going'].astype(str).str.upper().str.contains("YIELD|SOFT|HEAVY|WET")
             yielding_form_boost = np.where(has_yielding_form, 0.03, 0.0)
             
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost
+        # Apply Pace Pressure Refinements
+        if speed_count >= 3:
+            # High Pace Pressure: pace collapse likely. Boost closers, neutralize on-speed wet boost.
+            on_speed_wet_boost = 0.0
+            closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.04, 0.0)
+        elif speed_count <= 1:
+            # Low Pace Pressure: speed bias highly likely. Boost lone speed, penalize deep closers.
+            lone_speed_boost = np.where(df_runners['avg_first_pos'] <= 3.5, 0.04, 0.0)
+            closer_pace_penalty = np.where(df_runners['avg_first_pos'] > 6.0, -0.04, 0.0)
+            
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
@@ -494,8 +543,8 @@ with tab1:
             row['baseline_odds'], row['scraped_win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
             pd.to_numeric(row.get('prev_run_vet_finding', 0))), axis=1)
         
-        # Time-Based Liquidity Check: Only apply smart money shifts if within 30 minutes of post time
-        if minutes_to_post > 30:
+        # Time-Based Liquidity Check: Only apply smart money shifts if within 60 minutes of post time
+        if minutes_to_post > 60:
             # Lock to core structural probability
             df_runners['gs_score'] = df_runners['model_prob'] * 100
         else:
@@ -557,6 +606,14 @@ with tab1:
         
         race['processed_runners'] = df_runners
         
+        # If the race is within 15 minutes of post time, or is already running/completed,
+        # freeze the predictions so they never shift again.
+        if minutes_to_post <= 15:
+            try:
+                odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))
+            except Exception as e:
+                print("Failed to save frozen predictions:", e)
+        
         race_picks = df_runners.sort_values(by='value_diff', ascending=False)
         best = race_picks.iloc[0].to_dict()
         best.update({"race_no": race.get("race_no")})
@@ -588,13 +645,27 @@ with tab1:
 
     with st.expander("Macro Insights & Global Best Bets", expanded=True):
         if top_pick_today:
-            st.markdown(clean_html(f'''
-            <div class="tech-panel border-accent-gold" style="background: linear-gradient(145deg, rgba(30,20,5, 0.9), rgba(15, 8, 10, 0.9));">
-                <div class="data-label" style="color:#FFD700; font-size:0.95rem;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
-                <div class="data-value" style="font-size:2.4rem; font-family:'Montserrat'; font-weight:800; margin-bottom: 5px; color:#FFDF00; text-shadow: 0 4px 10px rgba(255,215,0,0.4);">Race {top_pick_today['race_no']} – #{top_pick_today['no']} {top_pick_today['name']}</div>
-                <div class="data-value" style="font-size:1.1rem; color:#f8fafc;">Live Odds: <b>{top_pick_today['win_odds']:.0f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#ef4444;">{top_pick_today['confidence']}%</b></div>
-            </div>
-            '''), unsafe_allow_html=True)
+            col_bb1, col_bb2 = st.columns(2)
+            with col_bb1:
+                st.markdown(clean_html(f'''
+                <div class="tech-panel border-accent-gold" style="background: linear-gradient(145deg, rgba(30,20,5, 0.9), rgba(15, 8, 10, 0.9)); min-height: 160px; {check_highlight(top_pick_today, search_term)}">
+                    {get_match_badge(top_pick_today, search_term)}
+                    <div class="data-label" style="color:#FFD700; font-size:0.90rem;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
+                    <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#FFDF00; text-shadow: 0 4px 10px rgba(255,215,0,0.4);">Race {top_pick_today['race_no']} – #{top_pick_today['no']} {top_pick_today['name']}</div>
+                    <div class="data-value" style="font-size:1.0rem; color:#f8fafc; margin-top: 5px;">Live Odds: <b>{top_pick_today['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#ef4444;">{top_pick_today['confidence']}%</b></div>
+                </div>
+                '''), unsafe_allow_html=True)
+            with col_bb2:
+                top_gs_pick = global_best_bets_sorted_by_gs[0] if global_best_bets_sorted_by_gs else None
+                if top_gs_pick:
+                    st.markdown(clean_html(f'''
+                    <div class="tech-panel border-accent-red" style="background: linear-gradient(145deg, rgba(40,10,15, 0.9), rgba(15, 8, 10, 0.9)); min-height: 160px; {check_highlight(top_gs_pick, search_term)}">
+                        {get_match_badge(top_gs_pick, search_term)}
+                        <div class="data-label" style="color:#ef4444; font-size:0.90rem;">🔥 AI STRONGEST CONFIDENCE (BEST BET)</div>
+                        <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff; text-shadow: 0 4px 10px rgba(239,68,68,0.4);">Race {top_gs_pick['race_no']} – #{top_gs_pick['no']} {top_gs_pick['name']}</div>
+                        <div class="data-value" style="font-size:1.0rem; color:#f8fafc; margin-top: 5px;">Live Odds: <b>{top_gs_pick['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#FFD700;">{top_gs_pick['confidence']}%</b></div>
+                    </div>
+                    '''), unsafe_allow_html=True)
             parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in global_best_bets_sorted_by_gs[:3]])
             st.markdown(f"<div style='margin-top:10px; font-family:\"Inter\"; font-size:1.15rem;'><b>Optimized Multi-Leg Sequence:</b> <span style='color:#ef4444; font-weight:700;'>{parlay_str}</span></div>", unsafe_allow_html=True)
             
@@ -725,7 +796,8 @@ with tab1:
             pc1, pc2, pc3, pc4, pc5 = st.columns(5)
             with pc1:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel border-accent-gold">
+                <div class="tech-panel border-accent-gold" style="{check_highlight(best, search_term)}">
+                    {get_match_badge(best, search_term)}
                     <div class="data-label" style="color:#FFD700; font-size:0.85rem;">⭐ PRIMARY WIN PROBABILITY</div>
                     <div class="data-value" style="font-size:1.35rem;">{best['no']}. {best['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
@@ -737,7 +809,8 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc2:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel border-accent-red">
+                <div class="tech-panel border-accent-red" style="{check_highlight(second, search_term)}">
+                    {get_match_badge(second, search_term)}
                     <div class="data-label" style="font-size:0.85rem;">🎯 OPTIMAL EXACTA</div>
                     <div class="data-value" style="font-size:1.25rem;">{second['no']}. {second['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
@@ -749,7 +822,8 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc3:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel" style="border-left: 5px solid #4b5563;">
+                <div class="tech-panel" style="border-left: 5px solid #4b5563; {check_highlight(third, search_term)}">
+                    {get_match_badge(third, search_term)}
                     <div class="data-label" style="font-size:0.85rem;">💠 TRIFECTA CONSIDERATION</div>
                     <div class="data-value" style="font-size:1.25rem;">{third['no']}. {third['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
@@ -761,7 +835,8 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc4:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel" style="border-left: 5px solid #4b5563;">
+                <div class="tech-panel" style="border-left: 5px solid #4b5563; {check_highlight(fourth, search_term)}">
+                    {get_match_badge(fourth, search_term)}
                     <div class="data-label" style="font-size:0.85rem;">4TH PREDICTION</div>
                     <div class="data-value" style="font-size:1.25rem;">{fourth['no']}. {fourth['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
@@ -773,7 +848,8 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc5:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel" style="border-left: 5px solid #4b5563;">
+                <div class="tech-panel" style="border-left: 5px solid #4b5563; {check_highlight(fifth, search_term)}">
+                    {get_match_badge(fifth, search_term)}
                     <div class="data-label" style="font-size:0.85rem;">5TH PREDICTION</div>
                     <div class="data-value" style="font-size:1.25rem;">{fifth['no']}. {fifth['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">

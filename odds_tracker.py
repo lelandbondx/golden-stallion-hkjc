@@ -115,3 +115,42 @@ def get_cached_odds(date_str, venue, race_no, horse_no, current_odds):
         except:
             pass
     return 20.0 # Fallback
+
+def save_frozen_predictions(date_str, venue, race_no, runners_list):
+    """
+    Saves predictions (runners list) to data/frozen_predictions_{date}.json to preserve the final ratings state.
+    """
+    filename = f"data/frozen_predictions_{date_str.replace('-', '')}.json"
+    cache = {}
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                cache = json.load(f)
+        except:
+            pass
+            
+    key = f"{venue}_R{race_no}"
+    cache[key] = runners_list
+    
+    try:
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        with open(filename, 'w', encoding='utf-8') as f:
+            json.dump(cache, f, indent=4)
+    except Exception as e:
+        print(f"[WARNING] Failed to write frozen predictions: {e}")
+
+def get_frozen_predictions(date_str, venue, race_no):
+    """
+    Returns frozen predictions if they exist, otherwise None.
+    """
+    filename = f"data/frozen_predictions_{date_str.replace('-', '')}.json"
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                cache = json.load(f)
+                key = f"{venue}_R{race_no}"
+                if key in cache:
+                    return cache[key]
+        except:
+            pass
+    return None

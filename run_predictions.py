@@ -88,6 +88,22 @@ def run():
             print(f"Error parsing post time for race {race.get('race_no')}: {e}")
             
         class_str = race.get("class_dist", "")
+        
+        # Check if we have a frozen prediction for this race
+        frozen_runners = odds_tracker.get_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'))
+        if minutes_to_post <= 0 and frozen_runners is not None:
+            df_runners = pd.DataFrame(frozen_runners)
+            # Print picks as normal from the frozen cache
+            race_picks = df_runners.sort_values(by='gs_score', ascending=False)
+            print(f"\n--- RACE {race.get('race_no')} : {class_str} ---")
+            for i in range(min(5, len(race_picks))):
+                pick = race_picks.iloc[i]
+                print(f"{i+1}st Pick: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
+                
+            best = race_picks.iloc[0].to_dict()
+            best.update({"race_no": race.get("race_no"), "class_dist": class_str})
+            global_best_bets.append(best)
+            continue
         class_int = 4
         if "Class 1" in class_str: class_int = 1
         elif "Class 2" in class_str: class_int = 2
@@ -133,6 +149,17 @@ def run():
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
         
+        if 'clean_name' not in df_runners.columns:
+            df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+        df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
+
+        # Pace Pressure Index: Count runners with avg_first_pos <= 3.5 (true speed horses)
+        speed_count = (df_runners['avg_first_pos'] <= 3.5).sum()
+        
+        closer_pace_boost = 0.0
+        closer_pace_penalty = 0.0
+        lone_speed_boost = 0.0
+        
         # Smart Wet Turf Adjustments
         race_track_type = str(race.get('track', 'TURF')).upper()
         is_wet_turf = (str(race_going).upper() in ["YIELDING", "GOOD TO YIELDING", "SOFT", "HEAVY"]) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
@@ -141,14 +168,21 @@ def run():
         yielding_form_boost = 0.0
         
         if is_wet_turf:
-            if 'clean_name' not in df_runners.columns:
-                df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
-            df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
             on_speed_wet_boost = np.where(df_runners['avg_first_pos'] <= 4.5, 0.04, 0.0)
             has_yielding_form = df_runners['last_form_going'].astype(str).str.upper().str.contains("YIELD|SOFT|HEAVY|WET")
             yielding_form_boost = np.where(has_yielding_form, 0.03, 0.0)
             
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost
+        # Apply Pace Pressure Refinements
+        if speed_count >= 3:
+            # High Pace Pressure: pace collapse likely. Boost closers, neutralize on-speed wet boost.
+            on_speed_wet_boost = 0.0
+            closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.04, 0.0)
+        elif speed_count <= 1:
+            # Low Pace Pressure: speed bias highly likely. Boost lone speed, penalize deep closers.
+            lone_speed_boost = np.where(df_runners['avg_first_pos'] <= 3.5, 0.04, 0.0)
+            closer_pace_penalty = np.where(df_runners['avg_first_pos'] > 6.0, -0.04, 0.0)
+            
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
@@ -166,8 +200,8 @@ def run():
             row['baseline_odds'], row['scraped_win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
             pd.to_numeric(row.get('prev_run_vet_finding', 0))), axis=1)
 
-        # Time-Based Liquidity Check: Only apply smart money shifts if within 30 minutes of post time
-        if minutes_to_post > 30:
+        # Time-Based Liquidity Check: Only apply smart money shifts if within 60 minutes of post time
+        if minutes_to_post > 60:
             # Lock to core structural probability
             df_runners['gs_score'] = df_runners['model_prob'] * 100
         else:
@@ -191,6 +225,14 @@ def run():
         best = race_picks.iloc[0].to_dict()
         best.update({"race_no": race.get("race_no"), "class_dist": class_str})
         global_best_bets.append(best)
+        
+        # If the race is within 15 minutes of post time, or is already running/completed,
+        # freeze the predictions so they never shift again.
+        if minutes_to_post <= 15:
+            try:
+                odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))
+            except Exception as e:
+                print("Failed to save frozen predictions:", e)
 
     global_best_bets = sorted(global_best_bets, key=lambda x: x.get('gs_score', 0), reverse=True)
     
