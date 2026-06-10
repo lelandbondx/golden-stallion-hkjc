@@ -154,3 +154,44 @@ def get_frozen_predictions(date_str, venue, race_no):
         except:
             pass
     return None
+
+def should_defrost_predictions(frozen_runners, live_runners, frozen_going, live_going):
+    """
+    Checks if frozen predictions should be defrosted and recalculated.
+    Triggers:
+    1. Scratches: A horse in frozen predictions is missing from live runners.
+    2. Track rating changed: Going changed.
+    3. Jockey changes: A jockey has been substituted.
+    """
+    if not frozen_runners or not live_runners:
+        return False
+        
+    # Check scratches
+    frozen_nos = set(r.get('no') for r in frozen_runners if r.get('no') is not None)
+    live_nos = set(r.get('no') for r in live_runners if r.get('no') is not None)
+    
+    # If a runner that was in the frozen predictions is now missing (scratched)
+    if not frozen_nos.issubset(live_nos):
+        scratched_nos = frozen_nos - live_nos
+        print(f"[DEFROST] Triggered due to scratched runner(s): {scratched_nos}")
+        return True
+        
+    # Check going change
+    if frozen_going and live_going:
+        if str(frozen_going).strip().upper() != str(live_going).strip().upper():
+            print(f"[DEFROST] Triggered due to going change: '{frozen_going}' -> '{live_going}'")
+            return True
+            
+    # Check jockey changes
+    frozen_jockeys = {r.get('no'): r.get('jockey', '').strip().upper() for r in frozen_runners if r.get('no') is not None}
+    for live_r in live_runners:
+        l_no = live_r.get('no')
+        if l_no in frozen_jockeys:
+            live_jockey = live_r.get('jockey', '').strip().upper()
+            frozen_jockey = frozen_jockeys[l_no]
+            # Ignore empty/missing jockey strings
+            if live_jockey and frozen_jockey and live_jockey != frozen_jockey:
+                print(f"[DEFROST] Triggered due to jockey change on Horse #{l_no}: '{frozen_jockey}' -> '{live_jockey}'")
+                return True
+                
+    return False

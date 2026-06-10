@@ -419,7 +419,15 @@ with tab1:
             
         # Check if we have a frozen prediction for this race
         frozen_runners = odds_tracker.get_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'))
-        if minutes_to_post <= 60 and frozen_runners is not None:
+        
+        # Determine if we should defrost (recalculate) due to scratches or track change
+        is_defrost = False
+        if frozen_runners is not None:
+            live_going = race.get('going', meeting.get('going', 'GOOD'))
+            frozen_going = frozen_runners[0].get('current_going', 'GOOD') if len(frozen_runners) > 0 else 'GOOD'
+            is_defrost = odds_tracker.should_defrost_predictions(frozen_runners, race.get('runners', []), frozen_going, live_going)
+            
+        if minutes_to_post <= 60 and frozen_runners is not None and not is_defrost:
             df_runners = pd.DataFrame(frozen_runners)
             if 'clean_name' not in df_runners.columns:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
