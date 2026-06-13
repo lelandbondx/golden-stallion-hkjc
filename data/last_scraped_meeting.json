@@ -4,8 +4,8 @@
     {
       "venue": "Sha Tin",
       "date": "2026-06-13",
-      "status": "DEFINED",
-      "going": "YIELDING",
+      "status": "STARTED",
+      "going": "GOOD TO YIELDING",
       "weather": "Live Feed Connected",
       "races": [
         {
@@ -13,7 +13,7 @@
           "time": "2026-06-13T16:00:00+08:00",
           "class_dist": "Griffin Race - 1000m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -25,8 +25,8 @@
               "actual_weight": 126,
               "declared_weight": 1026,
               "rtg": 0,
-              "win_odds": 7.4,
-              "final_position": 0,
+              "win_odds": 10.0,
+              "final_position": 2,
               "horse_gear": ""
             },
             {
@@ -39,8 +39,8 @@
               "actual_weight": 126,
               "declared_weight": 1097,
               "rtg": 0,
-              "win_odds": 14.0,
-              "final_position": 0,
+              "win_odds": 21.0,
+              "final_position": 5,
               "horse_gear": "TT1"
             },
             {
@@ -53,8 +53,8 @@
               "actual_weight": 126,
               "declared_weight": 1006,
               "rtg": 0,
-              "win_odds": 19.0,
-              "final_position": 0,
+              "win_odds": 35.0,
+              "final_position": 7,
               "horse_gear": "XB1"
             },
             {
@@ -67,8 +67,8 @@
               "actual_weight": 126,
               "declared_weight": 1129,
               "rtg": 0,
-              "win_odds": 8.2,
-              "final_position": 0,
+              "win_odds": 9.3,
+              "final_position": 6,
               "horse_gear": "B1/TT"
             },
             {
@@ -81,8 +81,8 @@
               "actual_weight": 126,
               "declared_weight": 1085,
               "rtg": 0,
-              "win_odds": 21.0,
-              "final_position": 0,
+              "win_odds": 37.0,
+              "final_position": 4,
               "horse_gear": "CP1"
             },
             {
@@ -95,8 +95,8 @@
               "actual_weight": 121,
               "declared_weight": 1131,
               "rtg": 0,
-              "win_odds": 1.8,
-              "final_position": 0,
+              "win_odds": 1.6,
+              "final_position": 1,
               "horse_gear": ""
             },
             {
@@ -109,8 +109,8 @@
               "actual_weight": 121,
               "declared_weight": 1043,
               "rtg": 0,
-              "win_odds": 4.4,
-              "final_position": 0,
+              "win_odds": 3.5,
+              "final_position": 3,
               "horse_gear": "TT"
             }
           ]
@@ -120,7 +120,7 @@
           "time": "2026-06-13T16:30:00+08:00",
           "class_dist": "Class 5 - 1200m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -132,8 +132,8 @@
               "actual_weight": 130,
               "declared_weight": 1191,
               "rtg": 39,
-              "win_odds": 21.0,
-              "final_position": 0,
+              "win_odds": 34.0,
+              "final_position": 7,
               "horse_gear": "B1/TT"
             },
             {
@@ -146,8 +146,8 @@
               "actual_weight": 130,
               "declared_weight": 1151,
               "rtg": 39,
-              "win_odds": 29.0,
-              "final_position": 0,
+              "win_odds": 56.0,
+              "final_position": 11,
               "horse_gear": ""
             },
             {
@@ -160,8 +160,8 @@
               "actual_weight": 130,
               "declared_weight": 1109,
               "rtg": 39,
-              "win_odds": 5.6,
-              "final_position": 0,
+              "win_odds": 4.2,
+              "final_position": 8,
               "horse_gear": "B/TT"
             },
             {
@@ -174,23 +174,9 @@
               "actual_weight": 129,
               "declared_weight": 1095,
               "rtg": 38,
-              "win_odds": 6.3,
-              "final_position": 0,
+              "win_odds": 5.9,
+              "final_position": 2,
               "horse_gear": "B/H/TT"
-            },
-            {
-              "no": 5,
-              "name": "CIRRUS SPEED",
-              "code": "K279",
-              "jockey": "H Bowman",
-              "trainer": "D J Hall",
-              "draw": 12,
-              "actual_weight": 129,
-              "declared_weight": 1112,
-              "rtg": 38,
-              "win_odds": 14.0,
-              "final_position": 0,
-              "horse_gear": ""
             },
             {
               "no": 6,
@@ -202,8 +188,8 @@
               "actual_weight": 129,
               "declared_weight": 1100,
               "rtg": 38,
-              "win_odds": 12.0,
-              "final_position": 0,
+              "win_odds": 15.0,
+              "final_position": 6,
               "horse_gear": "B"
             },
             {
@@ -216,8 +202,8 @@
               "actual_weight": 128,
               "declared_weight": 1058,
               "rtg": 37,
-              "win_odds": 6.4,
-              "final_position": 0,
+              "win_odds": 9.4,
+              "final_position": 4,
               "horse_gear": "PC"
             },
             {
@@ -230,8 +216,8 @@
               "actual_weight": 125,
               "declared_weight": 1171,
               "rtg": 34,
-              "win_odds": 8.6,
-              "final_position": 0,
+              "win_odds": 8.9,
+              "final_position": 1,
               "horse_gear": "E"
             },
             {
@@ -244,8 +230,8 @@
               "actual_weight": 124,
               "declared_weight": 1084,
               "rtg": 33,
-              "win_odds": 8.3,
-              "final_position": 0,
+              "win_odds": 8.2,
+              "final_position": 5,
               "horse_gear": "B/TT"
             },
             {
@@ -258,8 +244,8 @@
               "actual_weight": 124,
               "declared_weight": 1146,
               "rtg": 33,
-              "win_odds": 8.5,
-              "final_position": 0,
+              "win_odds": 10.0,
+              "final_position": 10,
               "horse_gear": "B/TT"
             },
             {
@@ -272,8 +258,8 @@
               "actual_weight": 122,
               "declared_weight": 1091,
               "rtg": 31,
-              "win_odds": 32.0,
-              "final_position": 0,
+              "win_odds": 34.0,
+              "final_position": 9,
               "horse_gear": "B-/E"
             },
             {
@@ -286,18 +272,18 @@
               "actual_weight": 120,
               "declared_weight": 1251,
               "rtg": 29,
-              "win_odds": 9.7,
-              "final_position": 0,
+              "win_odds": 4.3,
+              "final_position": 3,
               "horse_gear": "B-/TT-"
             }
           ]
         },
         {
           "race_no": 3,
-          "time": "2026-06-13T17:00:00+08:00",
+          "time": "2026-06-13T17:05:00+08:00",
           "class_dist": "Class 4 - 1400m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -309,8 +295,8 @@
               "actual_weight": 135,
               "declared_weight": 1032,
               "rtg": 59,
-              "win_odds": 6.1,
-              "final_position": 0,
+              "win_odds": 11.0,
+              "final_position": 12,
               "horse_gear": "TT"
             },
             {
@@ -323,8 +309,8 @@
               "actual_weight": 134,
               "declared_weight": 1136,
               "rtg": 58,
-              "win_odds": 23.0,
-              "final_position": 0,
+              "win_odds": 45.0,
+              "final_position": 5,
               "horse_gear": ""
             },
             {
@@ -337,8 +323,8 @@
               "actual_weight": 134,
               "declared_weight": 1036,
               "rtg": 58,
-              "win_odds": 30.0,
-              "final_position": 0,
+              "win_odds": 68.0,
+              "final_position": 10,
               "horse_gear": ""
             },
             {
@@ -351,8 +337,8 @@
               "actual_weight": 134,
               "declared_weight": 1247,
               "rtg": 58,
-              "win_odds": 11.0,
-              "final_position": 0,
+              "win_odds": 15.0,
+              "final_position": 2,
               "horse_gear": "V-/XB/PC1"
             },
             {
@@ -365,8 +351,8 @@
               "actual_weight": 133,
               "declared_weight": 1095,
               "rtg": 57,
-              "win_odds": 12.0,
-              "final_position": 0,
+              "win_odds": 3.1,
+              "final_position": 3,
               "horse_gear": "TT"
             },
             {
@@ -379,8 +365,8 @@
               "actual_weight": 129,
               "declared_weight": 1187,
               "rtg": 53,
-              "win_odds": 55.0,
-              "final_position": 0,
+              "win_odds": 118.0,
+              "final_position": 14,
               "horse_gear": "B2"
             },
             {
@@ -393,8 +379,8 @@
               "actual_weight": 128,
               "declared_weight": 1147,
               "rtg": 52,
-              "win_odds": 49.0,
-              "final_position": 0,
+              "win_odds": 59.0,
+              "final_position": 11,
               "horse_gear": ""
             },
             {
@@ -407,8 +393,8 @@
               "actual_weight": 128,
               "declared_weight": 1160,
               "rtg": 52,
-              "win_odds": 34.0,
-              "final_position": 0,
+              "win_odds": 69.0,
+              "final_position": 13,
               "horse_gear": "H-/SR-/CP1/TT"
             },
             {
@@ -421,8 +407,8 @@
               "actual_weight": 127,
               "declared_weight": 1092,
               "rtg": 51,
-              "win_odds": 3.5,
-              "final_position": 0,
+              "win_odds": 4.0,
+              "final_position": 6,
               "horse_gear": "TT"
             },
             {
@@ -435,8 +421,8 @@
               "actual_weight": 126,
               "declared_weight": 1097,
               "rtg": 50,
-              "win_odds": 37.0,
-              "final_position": 0,
+              "win_odds": 57.0,
+              "final_position": 4,
               "horse_gear": "CP-/TT"
             },
             {
@@ -449,8 +435,8 @@
               "actual_weight": 125,
               "declared_weight": 1138,
               "rtg": 49,
-              "win_odds": 5.0,
-              "final_position": 0,
+              "win_odds": 5.9,
+              "final_position": 8,
               "horse_gear": "TT"
             },
             {
@@ -463,8 +449,8 @@
               "actual_weight": 125,
               "declared_weight": 1091,
               "rtg": 49,
-              "win_odds": 9.2,
-              "final_position": 0,
+              "win_odds": 7.9,
+              "final_position": 1,
               "horse_gear": "H/P/TT"
             },
             {
@@ -477,8 +463,8 @@
               "actual_weight": 124,
               "declared_weight": 1277,
               "rtg": 48,
-              "win_odds": 9.2,
-              "final_position": 0,
+              "win_odds": 10.0,
+              "final_position": 9,
               "horse_gear": "B/TT"
             },
             {
@@ -491,18 +477,18 @@
               "actual_weight": 118,
               "declared_weight": 1017,
               "rtg": 42,
-              "win_odds": 50.0,
-              "final_position": 0,
+              "win_odds": 105.0,
+              "final_position": 7,
               "horse_gear": "H/TT"
             }
           ]
         },
         {
           "race_no": 4,
-          "time": "2026-06-13T17:30:00+08:00",
+          "time": "2026-06-13T17:35:00+08:00",
           "class_dist": "Class 4 - 1800m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -514,8 +500,8 @@
               "actual_weight": 135,
               "declared_weight": 1051,
               "rtg": 57,
-              "win_odds": 33.0,
-              "final_position": 0,
+              "win_odds": 52.0,
+              "final_position": 13,
               "horse_gear": "B/TT"
             },
             {
@@ -528,8 +514,8 @@
               "actual_weight": 134,
               "declared_weight": 1057,
               "rtg": 56,
-              "win_odds": 3.9,
-              "final_position": 0,
+              "win_odds": 5.2,
+              "final_position": 3,
               "horse_gear": ""
             },
             {
@@ -542,8 +528,8 @@
               "actual_weight": 134,
               "declared_weight": 1212,
               "rtg": 56,
-              "win_odds": 26.0,
-              "final_position": 0,
+              "win_odds": 49.0,
+              "final_position": 1,
               "horse_gear": "B/TT"
             },
             {
@@ -556,8 +542,8 @@
               "actual_weight": 133,
               "declared_weight": 1070,
               "rtg": 55,
-              "win_odds": 54.0,
-              "final_position": 0,
+              "win_odds": 107.0,
+              "final_position": 11,
               "horse_gear": "B/TT"
             },
             {
@@ -570,8 +556,8 @@
               "actual_weight": 131,
               "declared_weight": 1127,
               "rtg": 53,
-              "win_odds": 19.0,
-              "final_position": 0,
+              "win_odds": 38.0,
+              "final_position": 10,
               "horse_gear": "B/TT"
             },
             {
@@ -584,8 +570,8 @@
               "actual_weight": 130,
               "declared_weight": 1139,
               "rtg": 52,
-              "win_odds": 4.7,
-              "final_position": 0,
+              "win_odds": 4.5,
+              "final_position": 4,
               "horse_gear": ""
             },
             {
@@ -598,8 +584,8 @@
               "actual_weight": 128,
               "declared_weight": 1017,
               "rtg": 50,
-              "win_odds": 74.0,
-              "final_position": 0,
+              "win_odds": 113.0,
+              "final_position": 5,
               "horse_gear": "H/TT"
             },
             {
@@ -612,8 +598,8 @@
               "actual_weight": 128,
               "declared_weight": 1075,
               "rtg": 50,
-              "win_odds": 23.0,
-              "final_position": 0,
+              "win_odds": 42.0,
+              "final_position": 12,
               "horse_gear": "PC-/B2/SR2"
             },
             {
@@ -626,8 +612,8 @@
               "actual_weight": 126,
               "declared_weight": 1104,
               "rtg": 48,
-              "win_odds": 9.7,
-              "final_position": 0,
+              "win_odds": 6.7,
+              "final_position": 6,
               "horse_gear": "B"
             },
             {
@@ -640,8 +626,8 @@
               "actual_weight": 125,
               "declared_weight": 1068,
               "rtg": 47,
-              "win_odds": 13.0,
-              "final_position": 0,
+              "win_odds": 12.0,
+              "final_position": 7,
               "horse_gear": "TT"
             },
             {
@@ -654,8 +640,8 @@
               "actual_weight": 123,
               "declared_weight": 1162,
               "rtg": 45,
-              "win_odds": 21.0,
-              "final_position": 0,
+              "win_odds": 25.0,
+              "final_position": 8,
               "horse_gear": ""
             },
             {
@@ -668,8 +654,8 @@
               "actual_weight": 123,
               "declared_weight": 1206,
               "rtg": 45,
-              "win_odds": 5.3,
-              "final_position": 0,
+              "win_odds": 3.7,
+              "final_position": 2,
               "horse_gear": "H/P/TT"
             },
             {
@@ -682,8 +668,8 @@
               "actual_weight": 122,
               "declared_weight": 1052,
               "rtg": 44,
-              "win_odds": 26.0,
-              "final_position": 0,
+              "win_odds": 37.0,
+              "final_position": 14,
               "horse_gear": "B"
             },
             {
@@ -696,15 +682,15 @@
               "actual_weight": 120,
               "declared_weight": 1204,
               "rtg": 42,
-              "win_odds": 10.0,
-              "final_position": 0,
+              "win_odds": 7.6,
+              "final_position": 9,
               "horse_gear": "B/TT"
             }
           ]
         },
         {
           "race_no": 5,
-          "time": "2026-06-13T18:00:00+08:00",
+          "time": "2026-06-13T18:05:00+08:00",
           "class_dist": "Class 4 - 1200m",
           "track": "ALL WEATHER TRACK",
           "going": "SEALED",
@@ -719,8 +705,8 @@
               "actual_weight": 135,
               "declared_weight": 1090,
               "rtg": 60,
-              "win_odds": 6.1,
-              "final_position": 0,
+              "win_odds": 6.9,
+              "final_position": 4,
               "horse_gear": "V"
             },
             {
@@ -733,8 +719,8 @@
               "actual_weight": 135,
               "declared_weight": 1160,
               "rtg": 60,
-              "win_odds": 7.0,
-              "final_position": 0,
+              "win_odds": 6.2,
+              "final_position": 2,
               "horse_gear": "PC/TT"
             },
             {
@@ -747,8 +733,8 @@
               "actual_weight": 133,
               "declared_weight": 1255,
               "rtg": 58,
-              "win_odds": 5.3,
-              "final_position": 0,
+              "win_odds": 6.3,
+              "final_position": 3,
               "horse_gear": "TT"
             },
             {
@@ -761,8 +747,8 @@
               "actual_weight": 131,
               "declared_weight": 1195,
               "rtg": 56,
-              "win_odds": 43.0,
-              "final_position": 0,
+              "win_odds": 74.0,
+              "final_position": 8,
               "horse_gear": "B-/TT2"
             },
             {
@@ -775,8 +761,8 @@
               "actual_weight": 130,
               "declared_weight": 1194,
               "rtg": 55,
-              "win_odds": 4.0,
-              "final_position": 0,
+              "win_odds": 4.1,
+              "final_position": 11,
               "horse_gear": "CP/XB/TT"
             },
             {
@@ -789,8 +775,8 @@
               "actual_weight": 127,
               "declared_weight": 1067,
               "rtg": 52,
-              "win_odds": 15.0,
-              "final_position": 0,
+              "win_odds": 11.0,
+              "final_position": 5,
               "horse_gear": "V/TT"
             },
             {
@@ -803,8 +789,8 @@
               "actual_weight": 127,
               "declared_weight": 1199,
               "rtg": 52,
-              "win_odds": 6.0,
-              "final_position": 0,
+              "win_odds": 7.1,
+              "final_position": 1,
               "horse_gear": "H1/TT"
             },
             {
@@ -817,8 +803,8 @@
               "actual_weight": 125,
               "declared_weight": 1164,
               "rtg": 50,
-              "win_odds": 10.0,
-              "final_position": 0,
+              "win_odds": 7.6,
+              "final_position": 10,
               "horse_gear": ""
             },
             {
@@ -831,8 +817,8 @@
               "actual_weight": 121,
               "declared_weight": 1101,
               "rtg": 46,
-              "win_odds": 19.0,
-              "final_position": 0,
+              "win_odds": 20.0,
+              "final_position": 9,
               "horse_gear": "B-/PC1/TT"
             },
             {
@@ -845,8 +831,8 @@
               "actual_weight": 121,
               "declared_weight": 1160,
               "rtg": 46,
-              "win_odds": 55.0,
-              "final_position": 0,
+              "win_odds": 99.0,
+              "final_position": 7,
               "horse_gear": "B-/XB-/P1"
             },
             {
@@ -859,8 +845,8 @@
               "actual_weight": 121,
               "declared_weight": 1034,
               "rtg": 46,
-              "win_odds": 57.0,
-              "final_position": 0,
+              "win_odds": 98.0,
+              "final_position": 12,
               "horse_gear": "XB"
             },
             {
@@ -873,18 +859,18 @@
               "actual_weight": 117,
               "declared_weight": 1082,
               "rtg": 42,
-              "win_odds": 31.0,
-              "final_position": 0,
+              "win_odds": 15.0,
+              "final_position": 6,
               "horse_gear": "B2/TT"
             }
           ]
         },
         {
           "race_no": 6,
-          "time": "2026-06-13T18:30:00+08:00",
+          "time": "2026-06-13T18:35:00+08:00",
           "class_dist": "Class 4 - 1400m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -896,8 +882,8 @@
               "actual_weight": 135,
               "declared_weight": 1216,
               "rtg": 60,
-              "win_odds": 8.5,
-              "final_position": 0,
+              "win_odds": 13.0,
+              "final_position": 1,
               "horse_gear": "B"
             },
             {
@@ -910,8 +896,8 @@
               "actual_weight": 133,
               "declared_weight": 1100,
               "rtg": 58,
-              "win_odds": 5.1,
-              "final_position": 0,
+              "win_odds": 10.0,
+              "final_position": 5,
               "horse_gear": "H/TT"
             },
             {
@@ -924,8 +910,8 @@
               "actual_weight": 133,
               "declared_weight": 1064,
               "rtg": 58,
-              "win_odds": 20.0,
-              "final_position": 0,
+              "win_odds": 40.0,
+              "final_position": 8,
               "horse_gear": "B/TT"
             },
             {
@@ -938,8 +924,8 @@
               "actual_weight": 129,
               "declared_weight": 1084,
               "rtg": 54,
-              "win_odds": 22.0,
-              "final_position": 0,
+              "win_odds": 34.0,
+              "final_position": 9,
               "horse_gear": ""
             },
             {
@@ -952,8 +938,8 @@
               "actual_weight": 129,
               "declared_weight": 1012,
               "rtg": 54,
-              "win_odds": 69.0,
-              "final_position": 0,
+              "win_odds": 162.0,
+              "final_position": 10,
               "horse_gear": "CP/TT"
             },
             {
@@ -966,8 +952,8 @@
               "actual_weight": 128,
               "declared_weight": 1166,
               "rtg": 53,
-              "win_odds": 23.0,
-              "final_position": 0,
+              "win_odds": 30.0,
+              "final_position": 7,
               "horse_gear": "CP/TT"
             },
             {
@@ -980,8 +966,8 @@
               "actual_weight": 124,
               "declared_weight": 1220,
               "rtg": 49,
-              "win_odds": 8.0,
-              "final_position": 0,
+              "win_odds": 12.0,
+              "final_position": 4,
               "horse_gear": "B/TT"
             },
             {
@@ -994,8 +980,8 @@
               "actual_weight": 122,
               "declared_weight": 1033,
               "rtg": 47,
-              "win_odds": 74.0,
-              "final_position": 0,
+              "win_odds": 191.0,
+              "final_position": 13,
               "horse_gear": "H/TT2"
             },
             {
@@ -1008,8 +994,8 @@
               "actual_weight": 122,
               "declared_weight": 1132,
               "rtg": 47,
-              "win_odds": 7.9,
-              "final_position": 0,
+              "win_odds": 4.8,
+              "final_position": 3,
               "horse_gear": "B"
             },
             {
@@ -1022,8 +1008,8 @@
               "actual_weight": 121,
               "declared_weight": 1088,
               "rtg": 46,
-              "win_odds": 58.0,
-              "final_position": 0,
+              "win_odds": 116.0,
+              "final_position": 6,
               "horse_gear": ""
             },
             {
@@ -1036,8 +1022,8 @@
               "actual_weight": 119,
               "declared_weight": 1033,
               "rtg": 44,
-              "win_odds": 3.4,
-              "final_position": 0,
+              "win_odds": 1.8,
+              "final_position": 2,
               "horse_gear": "TT"
             },
             {
@@ -1050,8 +1036,8 @@
               "actual_weight": 119,
               "declared_weight": 1162,
               "rtg": 44,
-              "win_odds": 46.0,
-              "final_position": 0,
+              "win_odds": 73.0,
+              "final_position": 12,
               "horse_gear": ""
             },
             {
@@ -1064,8 +1050,8 @@
               "actual_weight": 117,
               "declared_weight": 1118,
               "rtg": 42,
-              "win_odds": 9.6,
-              "final_position": 0,
+              "win_odds": 19.0,
+              "final_position": 11,
               "horse_gear": "H1/P1/TT1"
             },
             {
@@ -1078,7 +1064,7 @@
               "actual_weight": 116,
               "declared_weight": 1117,
               "rtg": 41,
-              "win_odds": 18.0,
+              "win_odds": 35.0,
               "final_position": 0,
               "horse_gear": "B"
             }
@@ -1089,7 +1075,7 @@
           "time": "2026-06-13T19:05:00+08:00",
           "class_dist": "Class 4 - 1200m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -1101,8 +1087,8 @@
               "actual_weight": 135,
               "declared_weight": 1173,
               "rtg": 59,
-              "win_odds": 7.3,
-              "final_position": 0,
+              "win_odds": 8.7,
+              "final_position": 3,
               "horse_gear": "CP"
             },
             {
@@ -1115,8 +1101,8 @@
               "actual_weight": 135,
               "declared_weight": 1165,
               "rtg": 59,
-              "win_odds": 15.0,
-              "final_position": 0,
+              "win_odds": 28.0,
+              "final_position": 12,
               "horse_gear": "H/TT"
             },
             {
@@ -1129,8 +1115,8 @@
               "actual_weight": 135,
               "declared_weight": 1145,
               "rtg": 59,
-              "win_odds": 2.8,
-              "final_position": 0,
+              "win_odds": 1.7,
+              "final_position": 1,
               "horse_gear": "XB"
             },
             {
@@ -1143,8 +1129,8 @@
               "actual_weight": 134,
               "declared_weight": 1125,
               "rtg": 58,
-              "win_odds": 24.0,
-              "final_position": 0,
+              "win_odds": 12.0,
+              "final_position": 8,
               "horse_gear": "TT"
             },
             {
@@ -1157,8 +1143,8 @@
               "actual_weight": 133,
               "declared_weight": 1298,
               "rtg": 57,
-              "win_odds": 9.6,
-              "final_position": 0,
+              "win_odds": 15.0,
+              "final_position": 9,
               "horse_gear": "TT"
             },
             {
@@ -1171,8 +1157,8 @@
               "actual_weight": 131,
               "declared_weight": 1104,
               "rtg": 55,
-              "win_odds": 4.3,
-              "final_position": 0,
+              "win_odds": 5.5,
+              "final_position": 2,
               "horse_gear": "TT"
             },
             {
@@ -1185,22 +1171,22 @@
               "actual_weight": 129,
               "declared_weight": 1065,
               "rtg": 53,
-              "win_odds": 19.0,
-              "final_position": 0,
+              "win_odds": 29.0,
+              "final_position": 6,
               "horse_gear": ""
             },
             {
               "no": 8,
               "name": "LEAN FLYER",
               "code": "L386",
-              "jockey": "H Bentley",
+              "jockey": "E Brown",
               "trainer": "C H Yip",
               "draw": 3,
               "actual_weight": 128,
               "declared_weight": 1082,
               "rtg": 52,
-              "win_odds": 11.0,
-              "final_position": 0,
+              "win_odds": 23.0,
+              "final_position": 10,
               "horse_gear": ""
             },
             {
@@ -1213,8 +1199,8 @@
               "actual_weight": 128,
               "declared_weight": 971,
               "rtg": 52,
-              "win_odds": 39.0,
-              "final_position": 0,
+              "win_odds": 147.0,
+              "final_position": 5,
               "horse_gear": ""
             },
             {
@@ -1227,8 +1213,8 @@
               "actual_weight": 121,
               "declared_weight": 1036,
               "rtg": 45,
-              "win_odds": 18.0,
-              "final_position": 0,
+              "win_odds": 29.0,
+              "final_position": 7,
               "horse_gear": "B-/TT"
             },
             {
@@ -1241,8 +1227,8 @@
               "actual_weight": 120,
               "declared_weight": 1032,
               "rtg": 44,
-              "win_odds": 27.0,
-              "final_position": 0,
+              "win_odds": 34.0,
+              "final_position": 11,
               "horse_gear": "TT"
             },
             {
@@ -1255,8 +1241,8 @@
               "actual_weight": 120,
               "declared_weight": 1015,
               "rtg": 44,
-              "win_odds": 47.0,
-              "final_position": 0,
+              "win_odds": 144.0,
+              "final_position": 4,
               "horse_gear": "H/TT"
             }
           ]
@@ -1266,7 +1252,7 @@
           "time": "2026-06-13T19:35:00+08:00",
           "class_dist": "Class 2 - 1600m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -1278,8 +1264,8 @@
               "actual_weight": 135,
               "declared_weight": 1041,
               "rtg": 97,
-              "win_odds": 6.6,
-              "final_position": 0,
+              "win_odds": 9.8,
+              "final_position": 3,
               "horse_gear": "TT"
             },
             {
@@ -1292,8 +1278,8 @@
               "actual_weight": 134,
               "declared_weight": 1109,
               "rtg": 96,
-              "win_odds": 11.0,
-              "final_position": 0,
+              "win_odds": 12.0,
+              "final_position": 1,
               "horse_gear": "TT"
             },
             {
@@ -1306,8 +1292,8 @@
               "actual_weight": 131,
               "declared_weight": 1091,
               "rtg": 93,
-              "win_odds": 3.2,
-              "final_position": 0,
+              "win_odds": 4.1,
+              "final_position": 6,
               "horse_gear": "XB"
             },
             {
@@ -1320,8 +1306,8 @@
               "actual_weight": 131,
               "declared_weight": 1072,
               "rtg": 93,
-              "win_odds": 17.0,
-              "final_position": 0,
+              "win_odds": 27.0,
+              "final_position": 5,
               "horse_gear": "CP/TT"
             },
             {
@@ -1334,8 +1320,8 @@
               "actual_weight": 124,
               "declared_weight": 1120,
               "rtg": 86,
-              "win_odds": 6.8,
-              "final_position": 0,
+              "win_odds": 7.7,
+              "final_position": 4,
               "horse_gear": "TT"
             },
             {
@@ -1348,8 +1334,8 @@
               "actual_weight": 123,
               "declared_weight": 1080,
               "rtg": 85,
-              "win_odds": 8.0,
-              "final_position": 0,
+              "win_odds": 9.1,
+              "final_position": 9,
               "horse_gear": ""
             },
             {
@@ -1362,8 +1348,8 @@
               "actual_weight": 122,
               "declared_weight": 1232,
               "rtg": 84,
-              "win_odds": 14.0,
-              "final_position": 0,
+              "win_odds": 7.0,
+              "final_position": 2,
               "horse_gear": ""
             },
             {
@@ -1376,8 +1362,8 @@
               "actual_weight": 122,
               "declared_weight": 1147,
               "rtg": 84,
-              "win_odds": 4.2,
-              "final_position": 0,
+              "win_odds": 2.8,
+              "final_position": 8,
               "horse_gear": "XB/TT"
             },
             {
@@ -1390,8 +1376,8 @@
               "actual_weight": 119,
               "declared_weight": 1080,
               "rtg": 81,
-              "win_odds": 27.0,
-              "final_position": 0,
+              "win_odds": 52.0,
+              "final_position": 7,
               "horse_gear": ""
             }
           ]
@@ -1413,7 +1399,7 @@
               "actual_weight": 135,
               "declared_weight": 1148,
               "rtg": 85,
-              "win_odds": 4.7,
+              "win_odds": 5.2,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1427,7 +1413,7 @@
               "actual_weight": 133,
               "declared_weight": 1278,
               "rtg": 83,
-              "win_odds": 5.6,
+              "win_odds": 4.3,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -1441,7 +1427,7 @@
               "actual_weight": 131,
               "declared_weight": 1064,
               "rtg": 81,
-              "win_odds": 6.8,
+              "win_odds": 5.3,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1455,7 +1441,7 @@
               "actual_weight": 130,
               "declared_weight": 1237,
               "rtg": 80,
-              "win_odds": 9.6,
+              "win_odds": 11.0,
               "final_position": 0,
               "horse_gear": "V-/B2/TT"
             },
@@ -1469,7 +1455,7 @@
               "actual_weight": 125,
               "declared_weight": 1083,
               "rtg": 75,
-              "win_odds": 27.0,
+              "win_odds": 34.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -1483,7 +1469,7 @@
               "actual_weight": 125,
               "declared_weight": 1072,
               "rtg": 75,
-              "win_odds": 17.0,
+              "win_odds": 19.0,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1497,7 +1483,7 @@
               "actual_weight": 124,
               "declared_weight": 1074,
               "rtg": 74,
-              "win_odds": 10.0,
+              "win_odds": 11.0,
               "final_position": 0,
               "horse_gear": "XB1/TT"
             },
@@ -1511,7 +1497,7 @@
               "actual_weight": 121,
               "declared_weight": 1126,
               "rtg": 71,
-              "win_odds": 14.0,
+              "win_odds": 16.0,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -1525,7 +1511,7 @@
               "actual_weight": 120,
               "declared_weight": 1190,
               "rtg": 70,
-              "win_odds": 18.0,
+              "win_odds": 15.0,
               "final_position": 0,
               "horse_gear": "E/PC/TT"
             },
@@ -1539,7 +1525,7 @@
               "actual_weight": 117,
               "declared_weight": 1196,
               "rtg": 67,
-              "win_odds": 7.2,
+              "win_odds": 7.6,
               "final_position": 0,
               "horse_gear": "B-/TT-"
             },
@@ -1553,7 +1539,7 @@
               "actual_weight": 116,
               "declared_weight": 1094,
               "rtg": 66,
-              "win_odds": 11.0,
+              "win_odds": 14.0,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1567,7 +1553,7 @@
               "actual_weight": 115,
               "declared_weight": 1175,
               "rtg": 65,
-              "win_odds": 28.0,
+              "win_odds": 43.0,
               "final_position": 0,
               "horse_gear": "B"
             }
@@ -1578,7 +1564,7 @@
           "time": "2026-06-13T20:40:00+08:00",
           "class_dist": "Class 3 - 1600m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -1590,7 +1576,7 @@
               "actual_weight": 135,
               "declared_weight": 1058,
               "rtg": 80,
-              "win_odds": 11.0,
+              "win_odds": 12.0,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -1604,7 +1590,7 @@
               "actual_weight": 132,
               "declared_weight": 1162,
               "rtg": 77,
-              "win_odds": 7.1,
+              "win_odds": 5.8,
               "final_position": 0,
               "horse_gear": "E/TT"
             },
@@ -1618,7 +1604,7 @@
               "actual_weight": 128,
               "declared_weight": 1144,
               "rtg": 73,
-              "win_odds": 7.0,
+              "win_odds": 6.7,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1632,7 +1618,7 @@
               "actual_weight": 128,
               "declared_weight": 1095,
               "rtg": 73,
-              "win_odds": 6.6,
+              "win_odds": 6.7,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1646,7 +1632,7 @@
               "actual_weight": 122,
               "declared_weight": 1113,
               "rtg": 67,
-              "win_odds": 29.0,
+              "win_odds": 35.0,
               "final_position": 0,
               "horse_gear": "B/XB"
             },
@@ -1660,7 +1646,7 @@
               "actual_weight": 121,
               "declared_weight": 1231,
               "rtg": 66,
-              "win_odds": 22.0,
+              "win_odds": 28.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1674,7 +1660,7 @@
               "actual_weight": 121,
               "declared_weight": 1182,
               "rtg": 66,
-              "win_odds": 64.0,
+              "win_odds": 46.0,
               "final_position": 0,
               "horse_gear": "TT2"
             },
@@ -1688,7 +1674,7 @@
               "actual_weight": 119,
               "declared_weight": 1108,
               "rtg": 64,
-              "win_odds": 7.0,
+              "win_odds": 6.0,
               "final_position": 0,
               "horse_gear": "H/TT"
             },
@@ -1702,7 +1688,7 @@
               "actual_weight": 119,
               "declared_weight": 1266,
               "rtg": 64,
-              "win_odds": 12.0,
+              "win_odds": 13.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1710,13 +1696,13 @@
               "no": 10,
               "name": "TRINITY TREASURE",
               "code": "L167",
-              "jockey": "H Bentley",
+              "jockey": "R Kingscote",
               "trainer": "D Eustace",
               "draw": 10,
               "actual_weight": 119,
               "declared_weight": 1159,
               "rtg": 64,
-              "win_odds": 23.0,
+              "win_odds": 30.0,
               "final_position": 0,
               "horse_gear": "CP/TT1"
             },
@@ -1730,7 +1716,7 @@
               "actual_weight": 118,
               "declared_weight": 1127,
               "rtg": 63,
-              "win_odds": 8.7,
+              "win_odds": 9.2,
               "final_position": 0,
               "horse_gear": "CP/TT"
             },
@@ -1744,7 +1730,7 @@
               "actual_weight": 118,
               "declared_weight": 1094,
               "rtg": 63,
-              "win_odds": 13.0,
+              "win_odds": 16.0,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -1758,7 +1744,7 @@
               "actual_weight": 117,
               "declared_weight": 1083,
               "rtg": 62,
-              "win_odds": 25.0,
+              "win_odds": 34.0,
               "final_position": 0,
               "horse_gear": "B-/H1/P1/TT"
             },
@@ -1772,7 +1758,7 @@
               "actual_weight": 115,
               "declared_weight": 1219,
               "rtg": 60,
-              "win_odds": 9.1,
+              "win_odds": 9.4,
               "final_position": 0,
               "horse_gear": "B/XB"
             }
@@ -1783,7 +1769,7 @@
           "time": "2026-06-13T21:15:00+08:00",
           "class_dist": "Class 3 - 1400m",
           "track": "TURF",
-          "going": "YIELDING",
+          "going": "GOOD TO YIELDING",
           "runners": [
             {
               "no": 1,
@@ -1795,7 +1781,7 @@
               "actual_weight": 135,
               "declared_weight": 1063,
               "rtg": 79,
-              "win_odds": 31.0,
+              "win_odds": 36.0,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1809,7 +1795,7 @@
               "actual_weight": 133,
               "declared_weight": 1105,
               "rtg": 77,
-              "win_odds": 19.0,
+              "win_odds": 24.0,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -1823,7 +1809,7 @@
               "actual_weight": 133,
               "declared_weight": 1122,
               "rtg": 77,
-              "win_odds": 3.4,
+              "win_odds": 3.0,
               "final_position": 0,
               "horse_gear": "B-/P1/TT"
             },
@@ -1837,7 +1823,7 @@
               "actual_weight": 132,
               "declared_weight": 1149,
               "rtg": 76,
-              "win_odds": 14.0,
+              "win_odds": 15.0,
               "final_position": 0,
               "horse_gear": "H/P/TT"
             },
@@ -1851,7 +1837,7 @@
               "actual_weight": 131,
               "declared_weight": 1077,
               "rtg": 75,
-              "win_odds": 44.0,
+              "win_odds": 45.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -1865,7 +1851,7 @@
               "actual_weight": 130,
               "declared_weight": 1111,
               "rtg": 74,
-              "win_odds": 29.0,
+              "win_odds": 39.0,
               "final_position": 0,
               "horse_gear": "B-"
             },
@@ -1879,7 +1865,7 @@
               "actual_weight": 129,
               "declared_weight": 1130,
               "rtg": 73,
-              "win_odds": 6.0,
+              "win_odds": 6.4,
               "final_position": 0,
               "horse_gear": "CP"
             },
@@ -1893,7 +1879,7 @@
               "actual_weight": 129,
               "declared_weight": 1133,
               "rtg": 73,
-              "win_odds": 31.0,
+              "win_odds": 35.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1907,7 +1893,7 @@
               "actual_weight": 129,
               "declared_weight": 1085,
               "rtg": 73,
-              "win_odds": 11.0,
+              "win_odds": 10.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -1921,7 +1907,7 @@
               "actual_weight": 129,
               "declared_weight": 1152,
               "rtg": 73,
-              "win_odds": 31.0,
+              "win_odds": 39.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -1935,7 +1921,7 @@
               "actual_weight": 127,
               "declared_weight": 1220,
               "rtg": 71,
-              "win_odds": 24.0,
+              "win_odds": 19.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1949,7 +1935,7 @@
               "actual_weight": 124,
               "declared_weight": 1165,
               "rtg": 68,
-              "win_odds": 4.5,
+              "win_odds": 4.2,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1963,7 +1949,7 @@
               "actual_weight": 122,
               "declared_weight": 1083,
               "rtg": 66,
-              "win_odds": 16.0,
+              "win_odds": 20.0,
               "final_position": 0,
               "horse_gear": "CP-/B1/TT"
             },
@@ -1977,7 +1963,7 @@
               "actual_weight": 120,
               "declared_weight": 1169,
               "rtg": 64,
-              "win_odds": 14.0,
+              "win_odds": 17.0,
               "final_position": 0,
               "horse_gear": "CP/TT"
             }
