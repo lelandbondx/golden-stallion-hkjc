@@ -273,6 +273,12 @@ def fetch_running_styles():
 # Initialize variables
 data = fetch_data()
 historical_df = fetch_historical_comments()
+last_comments = {}
+if not historical_df.empty:
+    try:
+        last_comments = historical_df.drop_duplicates(subset=['clean_name'], keep='first').set_index('clean_name')['comment'].to_dict()
+    except Exception as e:
+        print("Error compiling last comments lookup:", e)
 std_times_df = fetch_standard_times()
 horse_stats_df = fetch_horse_stats()
 tips_data = fetch_tips()
@@ -466,6 +472,18 @@ with tab1:
             probs = np.ones(len(df_runners)) / len(df_runners)
             df_runners = df_runners
             
+        if 'clean_name' not in df_runners.columns:
+            df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+            
+        # Parse distance
+        dist_match = re.search(r'(\d+)m', class_str, re.IGNORECASE)
+        distance = int(dist_match.group(1)) if dist_match else 0
+        
+        # Map last comments and check for troubled runs (interference, etc.)
+        df_runners['last_comment'] = df_runners['clean_name'].map(last_comments).fillna("").str.lower()
+        trouble_keywords = ['interference', 'blocked', 'held up', 'checked', 'crowded', 'hampered', 'stumble', 'clipt', 'clip ', 'check ']
+        df_runners['had_trouble'] = df_runners['last_comment'].apply(lambda c: any(kw in c for kw in trouble_keywords)).astype(int)
+
         df_runners['model_prob'] = probs
         df_runners['implied_raw'] = 1 / df_runners['win_odds'].replace(0, 1.0)
         sum_implied = df_runners['implied_raw'].sum()
@@ -473,6 +491,7 @@ with tab1:
         
         # Targeted Standout Boost Logic (replaces blind point additions)
         recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
+        recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
         track_match = (df_runners.get('ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
         going_match = (df_runners.get('last_form_going', 'Unknown') == race_going).astype(int)
         vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
@@ -488,20 +507,36 @@ with tab1:
         standout_boost = np.where(is_super_standout, 0.08, 0.0) # 8% boost for true standouts
         standout_boost += np.where(is_class_dropper_standout, 0.05, 0.0) # 5% boost for dangerous class droppers
         
-        # Moderate debutant penalty
-        recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
+        # Scale debutant penalty:
         is_debutant = (recent_pos == 7.0) & (recent_win == 0.0)
-        debutant_penalty = np.where(is_debutant, -0.05, 0.0)
+        debutant_penalty_val = np.where(is_debutant, -0.05, 0.0)
+        if class_int == 5:
+            debutant_penalty_val = debutant_penalty_val * 0.5
+        # If consensus from trials is strong, waive it
+        consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
+        debutant_penalty = np.where(consensus > 5.0, 0.0, debutant_penalty_val)
+        
+        # First-Time Gear Boost (Blinkers B1 / Visor V1):
+        if 'horse_gear' in df_runners.columns:
+            has_first_time_gear = df_runners['horse_gear'].astype(str).str.contains('B1|V1')
+            first_time_gear_boost = np.where(has_first_time_gear, 0.04, 0.0)
+        else:
+            first_time_gear_boost = 0.0
         
         # False Favorite Penalty: If a horse is favored (implied prob > 20%) but has terrible recent form (avg pos > 6)
-        false_fav_penalty = np.where((df_runners['implied_prob'] > 0.20) & (recent_pos > 6.0), -0.15, 0.0)
+        # EXEMPTION: Class droppers (class_drop > 0) and horses with trouble/interference (had_trouble == 1)
+        false_fav_penalty = np.where(
+            (df_runners['implied_prob'] > 0.20) & 
+            (recent_pos > 6.0) & 
+            (class_drop <= 0) & 
+            (df_runners['had_trouble'] == 0), 
+            -0.15, 
+            0.0
+        )
         
         # Consensus intel boost (gentle tie breaker)
-        consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
         
-        if 'clean_name' not in df_runners.columns:
-            df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
         df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
 
         # Pace Pressure Index: Count runners with avg_first_pos <= 3.5 (true speed horses)
@@ -524,16 +559,19 @@ with tab1:
             yielding_form_boost = np.where(has_yielding_form, 0.03, 0.0)
             
         # Apply Pace Pressure Refinements
-        if speed_count >= 3:
+        # 1. Pace collapse trigger raised to 4+ speed horses
+        if speed_count >= 4:
             # High Pace Pressure: pace collapse likely. Boost closers, neutralize on-speed wet boost.
             on_speed_wet_boost = 0.0
             closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.04, 0.0)
         elif speed_count <= 1:
-            # Low Pace Pressure: speed bias highly likely. Boost lone speed, penalize deep closers.
-            lone_speed_boost = np.where(df_runners['avg_first_pos'] <= 3.5, 0.04, 0.0)
-            closer_pace_penalty = np.where(df_runners['avg_first_pos'] > 6.0, -0.04, 0.0)
+            # Low Pace Pressure: speed bias highly likely. Boost lone speed (if in decent form), penalize deep closers (only in sprints, exempt elite closers)
+            # Lone leader boost limited to competitive horses (recent_pos <= 5.0)
+            lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & (recent_pos <= 5.0), 0.04, 0.0)
+            # Closer penalty limited to sprints (<=1200m) and non-elite closers (recent_pos > 4.0)
+            closer_pace_penalty = np.where((df_runners['avg_first_pos'] > 6.0) & (distance <= 1200) & (recent_pos > 4.0), -0.04, 0.0)
             
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
