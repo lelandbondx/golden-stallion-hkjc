@@ -1,4 +1,11 @@
 import requests
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+_orig_get = requests.get
+_orig_post = requests.post
+requests.get = lambda *args, **kwargs: _orig_get(*args, **{**kwargs, 'verify': False})
+requests.post = lambda *args, **kwargs: _orig_post(*args, **{**kwargs, 'verify': False})
+
 import json
 from datetime import datetime
 import pandas as pd
