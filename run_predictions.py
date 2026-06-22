@@ -276,13 +276,11 @@ def run():
         best.update({"race_no": race.get("race_no"), "class_dist": class_str})
         global_best_bets.append(best)
         
-        # If the race is within 60 minutes of post time, or is already running/completed,
-        # freeze the predictions so they never shift again.
-        if minutes_to_post <= 60:
-            try:
-                odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))
-            except Exception as e:
-                print("Failed to save frozen predictions:", e)
+        # Always freeze predictions once they are generated, so they don't change overnight
+        try:
+            odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))
+        except Exception as e:
+            print("Failed to save frozen predictions:", e)
 
     global_best_bets = sorted(global_best_bets, key=lambda x: x.get('gs_score', 0), reverse=True)
     

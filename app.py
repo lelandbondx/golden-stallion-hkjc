@@ -433,8 +433,44 @@ with tab1:
             frozen_going = frozen_runners[0].get('current_going', 'GOOD') if len(frozen_runners) > 0 else 'GOOD'
             is_defrost = odds_tracker.should_defrost_predictions(frozen_runners, race.get('runners', []), frozen_going, live_going)
             
-        if minutes_to_post <= 60 and frozen_runners is not None and not is_defrost:
+        if frozen_runners is not None and not is_defrost:
             df_runners = pd.DataFrame(frozen_runners)
+            
+            # Map latest live odds from race['runners'] and update dynamically
+            if 'runners' in race and isinstance(race['runners'], list):
+                live_odds_dict = {r.get('no'): r.get('win_odds', 0.0) for r in race['runners'] if r.get('no') is not None}
+                
+                if 'no' in df_runners.columns:
+                    df_runners['scraped_win_odds'] = df_runners['no'].map(live_odds_dict).fillna(df_runners.get('win_odds', 20.0))
+                    df_runners['win_odds'] = df_runners['scraped_win_odds'].copy()
+                    
+                    # Recalculate implied probability and EV
+                    df_runners['implied_raw'] = 1 / df_runners['win_odds'].replace(0, 1.0)
+                    sum_implied = df_runners['implied_raw'].sum()
+                    df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
+                    
+                    if 'model_prob' in df_runners.columns:
+                        df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
+                        
+                        # Recalculate Kelly stake
+                        b = df_runners['win_odds'] - 1
+                        p = df_runners['model_prob']
+                        q = 1.0 - p
+                        f = np.where(b > 0, (b * p - q) / b, 0)
+                        df_runners['kelly_stake'] = np.clip(f * 0.25, 0, 1)
+                        
+                        # Recalculate gs_score incorporating dynamic shift_bonus
+                        if 'baseline_odds' in df_runners.columns:
+                            df_runners['shift_bonus'] = df_runners.apply(
+                                lambda row: odds_tracker.calculate_odds_shift_bonus(
+                                    row['baseline_odds'], row['scraped_win_odds'], 
+                                    pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
+                                    pd.to_numeric(row.get('prev_run_vet_finding', 0))
+                                ), axis=1
+                            )
+                            # Keep core score stable, just update with dynamic shift bonus
+                            df_runners['gs_score'] = (df_runners['model_prob'] * 100) + df_runners['shift_bonus']
+            
             if 'clean_name' not in df_runners.columns:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
             race['processed_runners'] = df_runners
@@ -662,13 +698,11 @@ with tab1:
         
         race['processed_runners'] = df_runners
         
-        # If the race is within 60 minutes of post time, or is already running/completed,
-        # freeze the predictions so they never shift again.
-        if minutes_to_post <= 60:
-            try:
-                odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))
-            except Exception as e:
-                print("Failed to save frozen predictions:", e)
+        # Always freeze predictions once they are generated, so they don't change overnight
+        try:
+            odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))
+        except Exception as e:
+            print("Failed to save frozen predictions:", e)
         
         # Add all runners of this race to global pool for summaries
         for _, row in df_runners.iterrows():
