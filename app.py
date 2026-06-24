@@ -442,6 +442,11 @@ with tab1:
                 
                 if 'no' in df_runners.columns:
                     df_runners['scraped_win_odds'] = df_runners['no'].map(live_odds_dict).fillna(df_runners.get('win_odds', 20.0))
+                    df_runners['scraped_win_odds'] = df_runners.apply(
+                        lambda row: odds_tracker.get_cached_odds(
+                            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['scraped_win_odds']
+                        ), axis=1
+                    )
                     df_runners['win_odds'] = df_runners['scraped_win_odds'].copy()
                     
                     # Recalculate implied probability and EV
