@@ -61,6 +61,29 @@ def run():
     except Exception as e:
         print("Error parsing running styles or comments:", e)
 
+    # Load sectional bursts
+    sectional_bursts = {}
+    try:
+        if os.path.exists('data/runs.csv') and os.path.exists('data/horse_info.csv'):
+            runs_df = pd.read_csv('data/runs.csv', usecols=['horse_id', 'time1', 'time2', 'time3', 'time4', 'time5', 'time6'])
+            h_info = pd.read_csv('data/horse_info.csv', usecols=['Unnamed: 0', 'horse'])
+            h_info['clean_name'] = h_info['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
+            h_map = h_info[['Unnamed: 0', 'clean_name']].rename(columns={'Unnamed: 0': 'horse_id'}).drop_duplicates()
+            m_df = pd.merge(runs_df, h_map, on='horse_id', how='inner')
+            
+            def parse_last_sec(row):
+                for col in ['time6', 'time5', 'time4', 'time3', 'time2']:
+                    val = pd.to_numeric(row[col], errors='coerce')
+                    if not pd.isna(val) and val > 0:
+                        return val
+                return pd.to_numeric(row['time1'], errors='coerce')
+                
+            m_df['last_sec_val'] = m_df.apply(parse_last_sec, axis=1)
+            m_df = m_df[m_df['last_sec_val'] > 10.0]
+            sectional_bursts = m_df.groupby('clean_name')['last_sec_val'].min().to_dict()
+    except Exception as e:
+        print("Error loading sectional bursts:", e)
+
     global_best_bets = []
     
     for race in meeting.get('races', []):
@@ -177,21 +200,25 @@ def run():
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         debutant_penalty = np.where(consensus > 5.0, 0.0, debutant_penalty_val)
         
-        # First-Time Gear Boost (Blinkers B1 / Visor V1):
+        # Map sectional times and find fastest last sectional
+        df_runners['best_last_sec'] = df_runners['clean_name'].map(sectional_bursts).fillna(99.0)
+
+        # First-Time Gear Boost (Blinkers B1 / Visor V1 split):
         if 'horse_gear' in df_runners.columns:
-            has_first_time_gear = df_runners['horse_gear'].astype(str).str.contains('B1|V1')
-            first_time_gear_boost = np.where(has_first_time_gear, 0.04, 0.0)
+            has_B1 = df_runners['horse_gear'].astype(str).str.contains('B1')
+            has_V1 = df_runners['horse_gear'].astype(str).str.contains('V1')
+            first_time_gear_boost = np.where(has_B1, 0.04, np.where(has_V1, 0.03, 0.0))
         else:
             first_time_gear_boost = 0.0
         
-        # False Favorite Penalty: If a horse is favored (implied prob > 20%) but has terrible recent form (avg pos > 6)
+        # False Favorite Penalty: Reduced to 5% penalty (-0.05) based on Ronan's feedback
         # EXEMPTION: Class droppers (class_drop > 0) and horses with trouble/interference (had_trouble == 1)
         false_fav_penalty = np.where(
             (df_runners['implied_prob'] > 0.20) & 
             (recent_pos > 6.0) & 
             (class_drop <= 0) & 
             (df_runners['had_trouble'] == 0), 
-            -0.15, 
+            -0.05, 
             0.0
         )
         
@@ -207,6 +234,10 @@ def run():
         closer_pace_penalty = 0.0
         lone_speed_boost = 0.0
         
+        # Late-Closer Boost: Closers who have a proven elite sectional burst (< 22.5s)
+        is_elite_closer = (df_runners['avg_first_pos'] > 5.5) & (df_runners['best_last_sec'] < 22.5)
+        late_closer_boost = np.where(is_elite_closer, 0.02, 0.0)
+        
         # Smart Wet Turf Adjustments
         race_track_type = str(race.get('track', 'TURF')).upper()
         is_wet_turf = (str(race_going).upper() in ["YIELDING", "GOOD TO YIELDING", "SOFT", "HEAVY"]) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
@@ -215,24 +246,31 @@ def run():
         yielding_form_boost = 0.0
         
         if is_wet_turf:
-            on_speed_wet_boost = np.where(df_runners['avg_first_pos'] <= 4.5, 0.04, 0.0)
+            on_speed_wet_boost = np.where(df_runners['avg_first_pos'] <= 4.5, 0.03, 0.0)
             has_yielding_form = df_runners['last_form_going'].astype(str).str.upper().str.contains("YIELD|SOFT|HEAVY|WET")
-            yielding_form_boost = np.where(has_yielding_form, 0.03, 0.0)
+            yielding_form_boost = np.where(has_yielding_form, 0.02, 0.0)
             
-        # Apply Pace Pressure Refinements
+        # Apply Pace Pressure Refinements (Tuned down to 2% to ensure balanced split)
         # 1. Pace collapse trigger raised to 4+ speed horses
         if speed_count >= 4:
             # High Pace Pressure: pace collapse likely. Boost closers, neutralize on-speed wet boost.
             on_speed_wet_boost = 0.0
-            closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.04, 0.0)
+            closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.02, 0.0)
         elif speed_count <= 1:
             # Low Pace Pressure: speed bias highly likely. Boost lone speed (if in decent form), penalize deep closers (only in sprints, exempt elite closers)
             # Lone leader boost limited to competitive horses (recent_pos <= 5.0)
-            lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & (recent_pos <= 5.0), 0.04, 0.0)
-            # Closer penalty limited to sprints (<=1200m) and non-elite closers (recent_pos > 4.0)
-            closer_pace_penalty = np.where((df_runners['avg_first_pos'] > 6.0) & (distance <= 1200) & (recent_pos > 4.0), -0.04, 0.0)
+            lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & (recent_pos <= 5.0), 0.02, 0.0)
+            # Closer penalty limited to sprints (<=1200m) and non-elite closers (recent_pos > 4.0, no elite sectional burst)
+            closer_pace_penalty = np.where(
+                (df_runners['avg_first_pos'] > 6.0) & 
+                (distance <= 1200) & 
+                (recent_pos > 4.0) & 
+                (df_runners['best_last_sec'] >= 22.5), 
+                -0.02, 
+                0.0
+            )
             
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
@@ -244,7 +282,7 @@ def run():
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
         
         df_runners['baseline_odds'] = df_runners.apply(lambda row: odds_tracker.get_baseline_odds(
-            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['scraped_win_odds']), axis=1)
+            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['scraped_win_odds'], minutes_to_post), axis=1)
 
         df_runners['shift_bonus'] = df_runners.apply(lambda row: odds_tracker.calculate_odds_shift_bonus(
             row['baseline_odds'], row['scraped_win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 

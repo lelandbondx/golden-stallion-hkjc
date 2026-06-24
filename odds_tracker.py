@@ -1,9 +1,10 @@
 import os
 import json
 
-def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds):
+def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds, minutes_to_post=999.0):
     """
     Loads baseline odds from file. If not found, saves current odds as baseline.
+    If minutes_to_post > 120.0, keeps updating the baseline to match the latest live odds.
     Returns the baseline odds.
     """
     filename = f"data/baseline_odds_{date_str.replace('-', '')}.json"
@@ -20,7 +21,19 @@ def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds):
         
     key = f"{venue}_R{race_no}_H{horse_no}"
     
-    # If the horse is missing from baseline, or baseline odds are 0 (invalid), set it to current
+    # If more than 2 hours before post time, always update baseline to current
+    if minutes_to_post > 120.0:
+        if current_odds > 0:
+            baseline_data[key] = current_odds
+            try:
+                os.makedirs(os.path.dirname(filename), exist_ok=True)
+                with open(filename, 'w') as f:
+                    json.dump(baseline_data, f)
+            except Exception as e:
+                print(f"[WARNING] Could not save baseline odds to file: {e}")
+            return current_odds
+            
+    # If within 2 hours, load baseline or initialize it
     if key not in baseline_data or baseline_data[key] <= 0:
         if current_odds > 0:
             baseline_data[key] = current_odds
