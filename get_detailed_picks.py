@@ -135,7 +135,14 @@ def run():
             lone_speed_boost = np.where(df_runners['avg_first_pos'] <= 3.5, 0.04, 0.0)
             closer_pace_penalty = np.where(df_runners['avg_first_pos'] > 6.0, -0.04, 0.0)
             
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost
+        # First-Time Gear Boost (Blinkers B1 / Visor V1):
+        if 'horse_gear' in df_runners.columns:
+            has_first_time_gear = df_runners['horse_gear'].astype(str).str.contains('B1|V1')
+            first_time_gear_boost = np.where(has_first_time_gear, 0.04, 0.0)
+        else:
+            first_time_gear_boost = 0.0
+            
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
             
