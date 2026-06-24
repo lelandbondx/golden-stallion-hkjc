@@ -468,8 +468,11 @@ with tab1:
                                     pd.to_numeric(row.get('prev_run_vet_finding', 0))
                                 ), axis=1
                             )
-                            # Keep core score stable, just update with dynamic shift bonus
-                            df_runners['gs_score'] = (df_runners['model_prob'] * 100) + df_runners['shift_bonus']
+                            # Keep core score stable, just update with dynamic shift bonus if within 60 minutes of post time
+                            if minutes_to_post > 60:
+                                df_runners['gs_score'] = df_runners['model_prob'] * 100
+                            else:
+                                df_runners['gs_score'] = (df_runners['model_prob'] * 100) + df_runners['shift_bonus']
             
             if 'clean_name' not in df_runners.columns:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
