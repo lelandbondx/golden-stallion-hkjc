@@ -943,17 +943,17 @@ with tab1:
                     # Show dynamic pace summaries
                     speed_count = (df_runners['avg_first_pos'] <= 3.5).sum()
                     if speed_count >= 4:
-                        pace_summary = "⚡ <b>HIGH PACE PRESSURE</b>: A large speed contingent is present. Closers may fly home; be cautious of front-runners tiring late."
+                        pace_summary = "⚡ <b>HIGH PACE</b>: We assess this race to have a lot of speed. Front-runners may tire late, but they can still hold on based on form. Be wary of back-markers unless they have elite acceleration."
                         pace_color = "rgba(239, 68, 68, 0.08)"
                         border_color = "rgba(239, 68, 68, 0.4)"
                         text_color = "#ef4444"
                     elif speed_count <= 1:
-                        pace_summary = "🐌 <b>LOW PACE PRESSURE</b>: Weak pace expected. Speed bias favors leaders; closers may struggle to make up ground."
+                        pace_summary = "🐌 <b>ON SPEED</b>: Slow pace expected. Speed bias favors front-runners/leaders who can take off. Closers and late finishers may struggle to make up ground."
                         pace_color = "rgba(255, 215, 0, 0.08)"
                         border_color = "rgba(255, 215, 0, 0.4)"
                         text_color = "#FFD700"
                     else:
-                        pace_summary = "⚖️ <b>BALANCED PACE</b>: Moderate pace expected. Fair track conditions; both speed and closers have equal opportunity."
+                        pace_summary = "⚖️ <b>GOOD PACE</b>: Balanced pace expected. Fair conditions; both speed horses and late finishers have equal opportunity based on form and odds."
                         pace_color = "rgba(255, 255, 255, 0.05)"
                         border_color = "rgba(255, 255, 255, 0.2)"
                         text_color = "#ffffff"
