@@ -964,11 +964,13 @@ with tab1:
                     </div>
                     '''), unsafe_allow_html=True)
                     
-                    # Special Exotic Sleeper Alert for Race 8 (Do You Just)
-                    if race.get("race_no") == 8:
-                        st.markdown(clean_html('''
+                    # Special Exotic Sleeper Alert for DO YOU JUST (L094)
+                    has_do_you_just = any(str(r.get('code', '')).upper() == 'L094' for r in race.get('runners', []))
+                    if has_do_you_just:
+                        do_you_just_no = next((r.get('no') for r in race.get('runners', []) if str(r.get('code', '')).upper() == 'L094'), 12)
+                        st.markdown(clean_html(f'''
                         <div style="background: rgba(239, 68, 68, 0.12); padding: 12px 18px; border-radius: 8px; border: 2px solid #ef4444; margin-bottom: 15px; font-size:0.95rem; color:#ffffff; font-family:'Inter', sans-serif;">
-                            🚨 <b>EXOTIC SLEEPER ALERT (RONAN'S PICK)</b>: <b>#12 DO YOU JUST</b> (Code L094) has won his last 2 races. Form indicates high effectiveness when putting Cheek Pieces (CP) back on and removing the Hood. Crucial exotic addition for exotic ticket structures!
+                            🚨 <b>EXOTIC SLEEPER ALERT (RONAN'S PICK)</b>: <b>#{do_you_just_no} DO YOU JUST</b> (Code L094) has won his last 2 races. Form indicates high effectiveness when putting Cheek Pieces (CP) back on and removing the Hood. Crucial exotic addition for exotic ticket structures!
                         </div>
                         '''), unsafe_allow_html=True)
             
@@ -1051,8 +1053,8 @@ with tab1:
                 </div>
                 '''), unsafe_allow_html=True)
                 
-            # Prevent the outlier from being the exact same horse as the primary leader
-            longshots = df_runners[(df_runners['win_odds'] >= 12.0) & (df_runners['no'] != best['no'])].sort_values(by='value_diff', ascending=False)
+            # Prevent the outlier from being the exact same horse as the primary leader, and require positive edge
+            longshots = df_runners[(df_runners['win_odds'] >= 12.0) & (df_runners['no'] != best['no']) & (df_runners['value_diff'] > 0.0)].sort_values(by='value_diff', ascending=False)
             if not longshots.empty:
                 bold_pick = longshots.iloc[0]
                 with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=True):
