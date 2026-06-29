@@ -492,6 +492,19 @@ with tab1:
                         f = np.where(b > 0, (b * p - q) / b, 0)
                         df_runners['kelly_stake'] = np.clip(f * 0.25, 0, 1)
                         
+                        # Parse class_int to apply Class 5 Volatility Guard
+                        class_str_frozen = race.get("class_dist", "")
+                        class_int_frozen = 4
+                        if "Class 1" in class_str_frozen: class_int_frozen = 1
+                        elif "Class 2" in class_str_frozen: class_int_frozen = 2
+                        elif "Class 3" in class_str_frozen: class_int_frozen = 3
+                        elif "Class 4" in class_str_frozen: class_int_frozen = 4
+                        elif "Class 5" in class_str_frozen: class_int_frozen = 5
+                        elif "Group" in class_str_frozen or "G" in class_str_frozen: class_int_frozen = 0
+                        
+                        if class_int_frozen == 5:
+                            df_runners['kelly_stake'] = df_runners['kelly_stake'] * 0.5
+                        
                         # Recalculate baseline odds dynamically if the race is still early (>120 mins out)
                         df_runners['baseline_odds'] = df_runners.apply(
                             lambda row: odds_tracker.get_baseline_odds(
@@ -567,6 +580,24 @@ with tab1:
         df_runners['implied_raw'] = 1 / df_runners['win_odds'].replace(0, 1.0)
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
+        
+        # Stable Sentiment Floor: Enforce a minimum model probability for heavily backed elite trainer/jockey combinations in Class 4/5
+        if class_int in [4, 5]:
+            is_elite_conn = (
+                (df_runners['jockey'].astype(str).str.upper().str.contains('MOREIRA|PURTON|BOWMAN', na=False)) |
+                (df_runners['trainer'].astype(str).str.upper().str.contains('FOWNES|SIZE|LUI|NG', na=False))
+            )
+            # Heavily backed: implied probability >= 20% (odds <= 5.0)
+            is_heavily_backed = (df_runners['implied_prob'] >= 0.20)
+            
+            # Floor = 0.40 * implied_prob
+            sentiment_floor = df_runners['implied_prob'] * 0.40
+            df_runners['model_prob'] = np.where(
+                is_elite_conn & is_heavily_backed, 
+                np.maximum(df_runners['model_prob'], sentiment_floor), 
+                df_runners['model_prob']
+            )
+        
         
         # Targeted Standout Boost Logic (replaces blind point additions)
         recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
@@ -684,6 +715,10 @@ with tab1:
         f = np.where(b > 0, (b * p - q) / b, 0)
         df_runners['kelly_stake'] = np.clip(f * 0.25, 0, 1) 
         
+        # Apply Class 5 Volatility Guard: scale down recommended Kelly stakes on low-grade Class 5 races to protect capital
+        if class_int == 5:
+            df_runners['kelly_stake'] = df_runners['kelly_stake'] * 0.5
+            
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
         
         df_runners['baseline_odds'] = df_runners.apply(lambda row: odds_tracker.get_baseline_odds(
