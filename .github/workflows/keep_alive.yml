@@ -1,0 +1,15 @@
+name: Keep Streamlit Alive
+
+on:
+  schedule:
+    # Run every 5 minutes (GitHub cron can sometimes have a few minutes delay, but it will keep the app warm)
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  ping-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send keep-alive ping
+        run: |
+          curl -s -I -o /dev/null -w "%{http_code}" https://hkjcbotlee.streamlit.app/
