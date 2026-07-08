@@ -556,6 +556,7 @@ with tab1:
             elif "Class 5" in class_str: class_int = 5
             elif "Group" in class_str or "G" in class_str: class_int = 0
             
+            race_going = race.get('going', meeting.get('going', 'GOOD'))
             probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=race_going, race_date=meeting.get('date'), race_class_int=class_int, track_type=race.get('track', 'TURF'))
         except Exception as e:
             print(f"Prediction Error for race {race.get('race_no')}: {e}")
