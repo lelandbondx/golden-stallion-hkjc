@@ -91,22 +91,39 @@ def build_features():
     df['won_HV'] = ((df['venue'].isin(['Happy Valley', 'HV'])) & (df['won'] == 1)).astype(int)
     df['placed'] = (df['result_num'] <= 3).astype(int)
     
+    # Track Surface (AWT / Turf) Prefs
+    df['is_AWT'] = (df['surface'] == 1).astype(int)
+    df['is_Turf'] = (df['surface'] == 0).astype(int)
+    df['won_AWT'] = ((df['surface'] == 1) & (df['won'] == 1)).astype(int)
+    df['won_Turf'] = ((df['surface'] == 0) & (df['won'] == 1)).astype(int)
+    
     df['cum_ST_runs'] = df.groupby('horse_id')['is_ST'].cumsum().shift(1).fillna(0)
     df['cum_HV_runs'] = df.groupby('horse_id')['is_HV'].cumsum().shift(1).fillna(0)
     df['cum_ST_wins'] = df.groupby('horse_id')['won_ST'].cumsum().shift(1).fillna(0)
     df['cum_HV_wins'] = df.groupby('horse_id')['won_HV'].cumsum().shift(1).fillna(0)
     
+    df['cum_AWT_runs'] = df.groupby('horse_id')['is_AWT'].cumsum().shift(1).fillna(0)
+    df['cum_Turf_runs'] = df.groupby('horse_id')['is_Turf'].cumsum().shift(1).fillna(0)
+    df['cum_AWT_wins'] = df.groupby('horse_id')['won_AWT'].cumsum().shift(1).fillna(0)
+    df['cum_Turf_wins'] = df.groupby('horse_id')['won_Turf'].cumsum().shift(1).fillna(0)
+    
     # Reset cum counts to 0 where horse_id changes due to shift
     df['prev_horse_id'] = df['horse_id'].shift(1)
     mask = (df['horse_id'] != df['prev_horse_id'])
-    df.loc[mask, ['cum_ST_runs', 'cum_HV_runs', 'cum_ST_wins', 'cum_HV_wins']] = 0
+    df.loc[mask, ['cum_ST_runs', 'cum_HV_runs', 'cum_ST_wins', 'cum_HV_wins', 'cum_AWT_runs', 'cum_Turf_runs', 'cum_AWT_wins', 'cum_Turf_wins']] = 0
     
     df['ST_win_rate'] = np.where(df['cum_ST_runs'] > 0, df['cum_ST_wins'] / df['cum_ST_runs'], 0)
     df['HV_win_rate'] = np.where(df['cum_HV_runs'] > 0, df['cum_HV_wins'] / df['cum_HV_runs'], 0)
+    df['AWT_win_rate'] = np.where(df['cum_AWT_runs'] > 0, df['cum_AWT_wins'] / df['cum_AWT_runs'], 0)
+    df['Turf_win_rate'] = np.where(df['cum_Turf_runs'] > 0, df['cum_Turf_wins'] / df['cum_Turf_runs'], 0)
     
     df['ST_vs_HV_pref'] = np.where(
         df['ST_win_rate'] > df['HV_win_rate'], 'Sha Tin',
         np.where(df['HV_win_rate'] > df['ST_win_rate'], 'Happy Valley', 'Neutral')
+    )
+    df['AWT_vs_Turf_pref'] = np.where(
+        df['AWT_win_rate'] > df['Turf_win_rate'], 'AWT',
+        np.where(df['Turf_win_rate'] > df['AWT_win_rate'], 'Turf', 'Neutral')
     )
     
     # Distance win rate
@@ -152,11 +169,23 @@ def build_features():
     latest['cum_ST_wins'] += latest['won_ST']
     latest['cum_HV_wins'] += latest['won_HV']
     
+    latest['cum_AWT_runs'] += latest['is_AWT']
+    latest['cum_Turf_runs'] += latest['is_Turf']
+    latest['cum_AWT_wins'] += latest['won_AWT']
+    latest['cum_Turf_wins'] += latest['won_Turf']
+    
     latest['ST_win_rate'] = np.where(latest['cum_ST_runs'] > 0, latest['cum_ST_wins'] / latest['cum_ST_runs'], 0)
     latest['HV_win_rate'] = np.where(latest['cum_HV_runs'] > 0, latest['cum_HV_wins'] / latest['cum_HV_runs'], 0)
+    latest['AWT_win_rate'] = np.where(latest['cum_AWT_runs'] > 0, latest['cum_AWT_wins'] / latest['cum_AWT_runs'], 0)
+    latest['Turf_win_rate'] = np.where(latest['cum_Turf_runs'] > 0, latest['cum_Turf_wins'] / latest['cum_Turf_runs'], 0)
+    
     latest['ST_vs_HV_pref'] = np.where(
         latest['ST_win_rate'] > latest['HV_win_rate'], 'Sha Tin',
         np.where(latest['HV_win_rate'] > latest['ST_win_rate'], 'Happy Valley', 'Neutral')
+    )
+    latest['AWT_vs_Turf_pref'] = np.where(
+        latest['AWT_win_rate'] > latest['Turf_win_rate'], 'AWT',
+        np.where(latest['Turf_win_rate'] > latest['AWT_win_rate'], 'Turf', 'Neutral')
     )
     
     latest['last_win_rating'] = np.where(latest['won'] == 1, latest['horse_rating'], latest['last_win_rating'])
@@ -170,7 +199,8 @@ def build_features():
     latest['last_horse_rating'] = latest['horse_rating']
     latest['last_gear'] = latest['horse_gear']
     
-    live_stats = latest[['clean_name', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'ST_vs_HV_pref', 'last_form_going', 
+    live_stats = latest[['clean_name', 'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'ST_vs_HV_pref', 
+                         'AWT_win_rate', 'Turf_win_rate', 'AWT_vs_Turf_pref', 'last_form_going', 
                          'recent_avg_pos', 'recent_win_rate', 'last_run_date', 'last_race_class_int', 'last_horse_rating', 'last_gear', 'distance_win_rate', 'prev_run_vet_finding']]
     live_stats = live_stats.dropna(subset=['clean_name'])
     
@@ -218,6 +248,7 @@ def build_features():
 
     features_to_keep = ['race_id', 'horse_id', 'clean_name', 'won', 'draw', 'actual_weight', 'declared_weight', 'horse_rating', 
                         'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'last_form_going', 'ST_vs_HV_pref',
+                        'AWT_win_rate', 'Turf_win_rate', 'AWT_vs_Turf_pref', 'surface',
                         'days_since_last_run', 'class_diff', 'rating_diff', 'gear_changed', 'recent_avg_pos', 'recent_win_rate',
                         'distance_win_rate', 'gear_win_rate', 'jockey_win_rate', 'trainer_win_rate', 'venue', 'going', 'config', 'norm_implied_prob', 'prev_run_vet_finding']
     

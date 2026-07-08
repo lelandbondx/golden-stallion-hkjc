@@ -64,6 +64,18 @@ def run():
     except Exception as e:
         print("Error loading sectional bursts:", e)
 
+    # Load historical comments to check for troubled runs
+    last_comments = {}
+    try:
+        results = pd.read_csv('data/results.csv', usecols=['date', 'raceno', 'horseno', 'horse'])
+        comments = pd.read_csv('data/comments.csv', usecols=['date', 'raceno', 'horseno', 'comment'])
+        df_comm = pd.merge(comments, results, on=['date', 'raceno', 'horseno'], how='inner')
+        df_comm['clean_name'] = df_comm['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
+        df_comm = df_comm.sort_values(by='date', ascending=False)
+        last_comments = df_comm.drop_duplicates(subset=['clean_name'], keep='first').set_index('clean_name')['comment'].to_dict()
+    except Exception as e:
+        print("Error loading comments:", e)
+
     global_best_bets = []
     
     for race in meeting.get('races', []):
@@ -75,6 +87,18 @@ def run():
         else:
             df_runners['scraped_win_odds'] = 0.0
         
+        # Check time to post for this race
+        minutes_to_post = 999.0
+        from datetime import datetime, timezone, timedelta
+        try:
+            post_time_str = race.get('time')
+            if post_time_str:
+                post_time = datetime.fromisoformat(post_time_str)
+                now_hkt = datetime.now(timezone(timedelta(hours=8)))
+                minutes_to_post = (post_time - now_hkt).total_seconds() / 60.0
+        except Exception as e:
+            print(f"Error parsing post time for race {race.get('race_no')}: {e}")
+
         current_race_tips = tips_data.get(race.get('race_no', 0), {})
         df_runners['consensus_score'] = df_runners['no'].map(lambda x: current_race_tips.get(x, 0))
         
@@ -87,13 +111,43 @@ def run():
         elif "Class 5" in class_str: class_int = 5
         elif "Group" in class_str or "G" in class_str: class_int = 0
             
+        # Parse distance
+        import re
+        dist_match = re.search(r'(\d+)m', class_str, re.IGNORECASE)
+        distance = int(dist_match.group(1)) if dist_match else 0
+
         race_going = race.get('going', meeting.get('going', 'GOOD'))
-        probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=race_going, race_date=meeting.get('date'), race_class_int=class_int)
+        probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=race_going, race_date=meeting.get('date'), race_class_int=class_int, track_type=race.get('track', 'TURF'))
         
+        if 'clean_name' not in df_runners.columns:
+            df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+            
+        # Map last comments and check for troubled runs (interference, etc.)
+        df_runners['last_comment'] = df_runners['clean_name'].map(last_comments).fillna("").str.lower()
+        trouble_keywords = ['interference', 'blocked', 'held up', 'checked', 'crowded', 'hampered', 'stumble', 'clipt', 'clip ', 'check ']
+        df_runners['had_trouble'] = df_runners['last_comment'].apply(lambda c: any(kw in c for kw in trouble_keywords)).astype(int)
+
         df_runners['model_prob'] = probs
         df_runners['implied_raw'] = 1 / df_runners['win_odds'].replace(0, 1.0)
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
+        
+        # Stable Sentiment Floor: Enforce a minimum model probability for heavily backed elite trainer/jockey combinations in Class 4/5
+        if class_int in [4, 5]:
+            is_elite_conn = (
+                (df_runners['jockey'].astype(str).str.upper().str.contains('MOREIRA|PURTON|BOWMAN', na=False)) |
+                (df_runners['trainer'].astype(str).str.upper().str.contains('FOWNES|SIZE|LUI|NG', na=False))
+            )
+            # Heavily backed: implied probability >= 20% (odds <= 5.0)
+            is_heavily_backed = (df_runners['implied_prob'] >= 0.20)
+            
+            # Floor = 0.40 * implied_prob
+            sentiment_floor = df_runners['implied_prob'] * 0.40
+            df_runners['model_prob'] = np.where(
+                is_elite_conn & is_heavily_backed, 
+                np.maximum(df_runners['model_prob'], sentiment_floor), 
+                df_runners['model_prob']
+            )
         
         if key_runners:
             df_runners['consensus_score'] += np.where(df_runners['name'].str.upper().isin(key_runners), 10, 0)
@@ -205,15 +259,20 @@ def run():
             
         df_runners['value_diff'] = df_runners['model_prob'] - df_runners['implied_prob']
         
-        # Pass dummy minutes_to_post=999.0 for get_baseline_odds call in get_detailed_picks since it is manual run
         df_runners['baseline_odds'] = df_runners.apply(lambda row: odds_tracker.get_baseline_odds(
-            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['scraped_win_odds'], 999.0), axis=1)
+            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['scraped_win_odds'], minutes_to_post), axis=1)
 
         df_runners['shift_bonus'] = df_runners.apply(lambda row: odds_tracker.calculate_odds_shift_bonus(
             row['baseline_odds'], row['scraped_win_odds'], pd.to_numeric(row.get('recent_avg_pos', 7.0)), 
             pd.to_numeric(row.get('prev_run_vet_finding', 0))), axis=1)
 
-        df_runners['gs_score'] = (df_runners['model_prob'] * 100) + df_runners['shift_bonus']
+        # Time-Based Liquidity Check: Only apply smart money shifts if within 60 minutes of post time
+        if minutes_to_post > 60:
+            # Lock to core structural probability
+            df_runners['gs_score'] = df_runners['model_prob'] * 100
+        else:
+            # Unlock smart money shifts (incorporating shift_bonus, excluding raw value bias)
+            df_runners['gs_score'] = (df_runners['model_prob'] * 100) + df_runners['shift_bonus']
         
         p_min = df_runners['model_prob'].min()
         p_max = df_runners['model_prob'].max()

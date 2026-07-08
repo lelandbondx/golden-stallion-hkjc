@@ -153,7 +153,7 @@ def run():
         elif "Group" in class_str or "G" in class_str: class_int = 0
             
         race_going = race.get('going', meeting.get('going', 'GOOD'))
-        probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=race_going, race_date=meeting.get('date'), race_class_int=class_int)
+        probs, df_runners = predict_probabilities(df_runners, venue=meeting.get('venue'), going=race_going, race_date=meeting.get('date'), race_class_int=class_int, track_type=race.get('track', 'TURF'))
         
         if 'clean_name' not in df_runners.columns:
             df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()

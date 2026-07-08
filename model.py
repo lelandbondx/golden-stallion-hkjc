@@ -10,13 +10,13 @@ MODEL_PATH = 'model.joblib'
 # The complete list of features for XGBoost
 ALL_FEATURES = [
     'draw', 'actual_weight', 'declared_weight', 'horse_rating', 'weight_rank', 'rating_rank', 
-    'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'track_pref_match', 'going_pref_match', 
+    'last_win_rating', 'ST_win_rate', 'HV_win_rate', 'AWT_win_rate', 'Turf_win_rate', 'track_pref_match', 'going_pref_match', 'surface_pref_match',
     'days_since_last_run', 'class_diff', 'rating_diff', 'gear_changed', 
     'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'gear_win_rate', 'jockey_win_rate', 'trainer_win_rate',
     'norm_implied_prob', 'prev_run_vet_finding'
 ]
 
-def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, race_class_int=None):
+def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, race_class_int=None, track_type=None):
     """
     Computes advanced relative features.
     If is_live is True, we assume df contains runners for a single race.
@@ -51,6 +51,10 @@ def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, 
         
         df['current_venue'] = venue
         df['current_going'] = going
+        
+        # Track surface extraction (0: Turf, 1: AWT)
+        track_str = str(track_type or 'TURF').upper()
+        df['current_surface'] = 1 if ('ALL WEATHER' in track_str or 'AWT' in track_str) else 0
         
         # Calculate dynamic features
         # days_since_last_run
@@ -93,6 +97,7 @@ def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, 
             
         df['current_venue'] = df.get('venue', 'Unknown')
         df['current_going'] = df.get('going', 'Unknown')
+        df['current_surface'] = df.get('surface', 0)
 
     df['ST_vs_HV_pref'] = df.get('ST_vs_HV_pref', 'Neutral').fillna('Neutral')
     df['last_form_going'] = df.get('last_form_going', 'Unknown').fillna('Unknown')
@@ -120,6 +125,16 @@ def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, 
         1, 0
     )
     
+    df['AWT_vs_Turf_pref'] = df.get('AWT_vs_Turf_pref', 'Neutral').fillna('Neutral')
+    df['AWT_win_rate'] = pd.to_numeric(df.get('AWT_win_rate', 0.0), errors='coerce').fillna(0.0)
+    df['Turf_win_rate'] = pd.to_numeric(df.get('Turf_win_rate', 0.0), errors='coerce').fillna(0.0)
+    
+    df['surface_pref_match'] = np.where(
+        ((df['current_surface'] == 1) & (df['AWT_vs_Turf_pref'] == 'AWT')) |
+        ((df['current_surface'] == 0) & (df['AWT_vs_Turf_pref'] == 'Turf')),
+        1, 0
+    )
+    
     if 'consensus_score' not in df.columns:
         df['consensus_score'] = 0.0
     df['consensus_score'] = pd.to_numeric(df['consensus_score'], errors='coerce').fillna(0)
@@ -140,7 +155,10 @@ def train_and_save_model():
             runs['last_win_rating'] = runs['last_win_rating'].fillna(runs['horse_rating'])
             runs['ST_win_rate'] = runs['ST_win_rate'].fillna(0)
             runs['HV_win_rate'] = runs['HV_win_rate'].fillna(0)
+            runs['AWT_win_rate'] = runs['AWT_win_rate'].fillna(0)
+            runs['Turf_win_rate'] = runs['Turf_win_rate'].fillna(0)
             runs['ST_vs_HV_pref'] = runs['ST_vs_HV_pref'].fillna('Neutral')
+            runs['AWT_vs_Turf_pref'] = runs['AWT_vs_Turf_pref'].fillna('Neutral')
             runs['last_form_going'] = runs['last_form_going'].fillna('Unknown')
             
             runs['days_since_last_run'] = runs['days_since_last_run'].fillna(30)
@@ -212,7 +230,7 @@ def load_model():
             _model_mtime = os.path.getmtime(MODEL_PATH)
         return _loaded_model
 
-def predict_probabilities(df, venue=None, going=None, race_date=None, race_class_int=None):
+def predict_probabilities(df, venue=None, going=None, race_date=None, race_class_int=None, track_type=None):
     """
     Given a dataframe with current race cards, predict win probabilities.
     df must be a single race's runners.
@@ -234,18 +252,22 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         live_df['last_win_rating'] = live_df['last_win_rating'].fillna(rating_col)
         live_df['ST_win_rate'] = live_df['ST_win_rate'].fillna(0)
         live_df['HV_win_rate'] = live_df['HV_win_rate'].fillna(0)
+        live_df['AWT_win_rate'] = live_df['AWT_win_rate'].fillna(0)
+        live_df['Turf_win_rate'] = live_df['Turf_win_rate'].fillna(0)
         live_df['ST_vs_HV_pref'] = live_df['ST_vs_HV_pref'].fillna('Neutral')
+        live_df['AWT_vs_Turf_pref'] = live_df['AWT_vs_Turf_pref'].fillna('Neutral')
         live_df['last_form_going'] = live_df['last_form_going'].fillna('Unknown')
         live_df['recent_avg_pos'] = live_df['recent_avg_pos'].fillna(7)
         live_df['recent_win_rate'] = live_df['recent_win_rate'].fillna(0)
         live_df['distance_win_rate'] = live_df['distance_win_rate'].fillna(0)
         live_df['prev_run_vet_finding'] = live_df.get('prev_run_vet_finding', 0).fillna(0)
     else:
-        for col in ['last_win_rating', 'ST_win_rate', 'HV_win_rate', 'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'prev_run_vet_finding']:
+        for col in ['last_win_rating', 'ST_win_rate', 'HV_win_rate', 'AWT_win_rate', 'Turf_win_rate', 'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'prev_run_vet_finding']:
             live_df[col] = 0.0
         rating_col = live_df['horse_rating'] if 'horse_rating' in live_df.columns else live_df.get('rtg', 40)
         live_df['last_win_rating'] = rating_col
         live_df['ST_vs_HV_pref'] = 'Neutral'
+        live_df['AWT_vs_Turf_pref'] = 'Neutral'
         live_df['last_form_going'] = 'Unknown'
         
     if os.path.exists('data/gear_win_rates.csv') and 'horse_gear' in live_df.columns:
@@ -267,21 +289,22 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
 
     # Fallback dictionaries for modern jockeys/trainers not present in historical results.csv (post-2017)
     FALLBACK_JOCKEY_RATES = {
-        'Z PURTON': 0.25, 'H BOWMAN': 0.18, 'K TEETAN': 0.12, 'C Y HO': 0.11,
-        'A BADEL': 0.10, 'L HEWITSON': 0.09, 'A ATZENI': 0.09, 'L FERRARIS': 0.08,
-        'B AVDULLA': 0.08, 'E C W WONG': 0.09, 'M CHADWICK': 0.07, 'Y L CHUNG': 0.07,
-        'C L CHAU': 0.07, 'H BENTLEY': 0.08, 'K C LEUNG': 0.07, 'M F POON': 0.06,
+        'Z PURTON': 0.21, 'H BOWMAN': 0.11, 'K TEETAN': 0.08, 'C Y HO': 0.08,
+        'A BADEL': 0.07, 'L HEWITSON': 0.06, 'A ATZENI': 0.11, 'L FERRARIS': 0.08,
+        'B AVDULLA': 0.05, 'E C W WONG': 0.07, 'M CHADWICK': 0.07, 'Y L CHUNG': 0.06,
+        'C L CHAU': 0.09, 'H BENTLEY': 0.08, 'K C LEUNG': 0.08, 'M F POON': 0.06,
         'H T MO': 0.04, 'A HAMELIN': 0.06, 'M L YEUNG': 0.04, 'K DE MELO': 0.08,
-        'J ORMAN': 0.10, 'E BROWN': 0.10, 'P N WONG': 0.05
+        'J ORMAN': 0.07, 'E BROWN': 0.10, 'P N WONG': 0.05, 'J MOREIRA': 0.17,
+        'R KINGSCOTE': 0.03
     }
     
     FALLBACK_TRAINER_RATES = {
-        'J SIZE': 0.15, 'P C NG': 0.13, 'F C LOR': 0.13, 'K W LUI': 0.12,
-        'C S SHUM': 0.11, 'C FOWNES': 0.11, 'A S CRUZ': 0.10, 'P F YIU': 0.10,
-        'D A HAYES': 0.10, 'M NEWNHAM': 0.10, 'D J WHYTE': 0.09, 'J RICHARDS': 0.08,
-        'T P YUNG': 0.07, 'K L MAN': 0.08, 'W Y SO': 0.07, 'Y S TSUI': 0.05,
-        'C W CHANG': 0.05, 'K H TING': 0.04, 'W K MO': 0.06, 'M NEWMAN': 0.10,
-        'D EUSTACE': 0.11, 'B CRAWFORD': 0.08
+        'J SIZE': 0.09, 'P C NG': 0.05, 'F C LOR': 0.07, 'K W LUI': 0.11,
+        'C S SHUM': 0.12, 'C FOWNES': 0.12, 'A S CRUZ': 0.08, 'P F YIU': 0.10,
+        'D A HAYES': 0.08, 'M NEWNHAM': 0.11, 'D J WHYTE': 0.06, 'J RICHARDS': 0.07,
+        'T P YUNG': 0.07, 'K L MAN': 0.09, 'W Y SO': 0.06, 'Y S TSUI': 0.06,
+        'C W CHANG': 0.04, 'K H TING': 0.06, 'W K MO': 0.09, 'M NEWMAN': 0.11,
+        'D EUSTACE': 0.07, 'B CRAWFORD': 0.08
     }
 
     if os.path.exists('data/jockey_win_rates.csv') and 'jockey' in live_df.columns:
@@ -304,7 +327,7 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         live_df['trainer_clean'] = live_df.get('trainer', '').str.upper().str.strip()
         live_df['trainer_win_rate'] = live_df['trainer_clean'].map(FALLBACK_TRAINER_RATES).fillna(0.08)
 
-    live_df = prepare_features(live_df, is_live=True, venue=venue, going=going, race_date=race_date, race_class_int=race_class_int)
+    live_df = prepare_features(live_df, is_live=True, venue=venue, going=going, race_date=race_date, race_class_int=race_class_int, track_type=track_type)
     
     for f in ALL_FEATURES:
         if f not in live_df.columns:
