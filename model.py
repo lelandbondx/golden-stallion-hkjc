@@ -261,8 +261,9 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         live_df['recent_win_rate'] = live_df['recent_win_rate'].fillna(0)
         live_df['distance_win_rate'] = live_df['distance_win_rate'].fillna(0)
         live_df['prev_run_vet_finding'] = live_df.get('prev_run_vet_finding', 0).fillna(0)
+        live_df['has_overseas_form'] = live_df.get('has_overseas_form', 0).fillna(0)
     else:
-        for col in ['last_win_rating', 'ST_win_rate', 'HV_win_rate', 'AWT_win_rate', 'Turf_win_rate', 'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'prev_run_vet_finding']:
+        for col in ['last_win_rating', 'ST_win_rate', 'HV_win_rate', 'AWT_win_rate', 'Turf_win_rate', 'recent_avg_pos', 'recent_win_rate', 'distance_win_rate', 'prev_run_vet_finding', 'has_overseas_form']:
             live_df[col] = 0.0
         rating_col = live_df['horse_rating'] if 'horse_rating' in live_df.columns else live_df.get('rtg', 40)
         live_df['last_win_rating'] = rating_col

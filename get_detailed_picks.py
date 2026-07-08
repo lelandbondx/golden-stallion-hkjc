@@ -233,7 +233,44 @@ def run():
                 0.0
             )
             
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost
+        # Jockey/Trainer Combo Partnership Boost (Ronan's conservative 3% boost):
+        jockey_trainer_boost = 0.0
+        try:
+            if os.path.exists('data/jockey_trainer_partnerships.csv') and 'jockey' in df_runners.columns and 'trainer' in df_runners.columns:
+                jt_df = pd.read_csv('data/jockey_trainer_partnerships.csv')
+                jt_df['jockey_clean'] = jt_df['jockey'].astype(str).str.strip().str.upper()
+                jt_df['trainer_clean'] = jt_df['trainer'].astype(str).str.strip().str.upper()
+                
+                df_runners['jockey_clean'] = df_runners['jockey'].astype(str).str.strip().str.upper()
+                df_runners['trainer_clean'] = df_runners['trainer'].astype(str).str.strip().str.upper()
+                
+                # Check for existing column before merging to avoid duplicate columns
+                if 'win_rate_jt' in df_runners.columns:
+                    df_runners = df_runners.drop(columns=['win_rate_jt'])
+                df_runners = pd.merge(df_runners, jt_df[['jockey_clean', 'trainer_clean', 'win_rate']], on=['jockey_clean', 'trainer_clean'], how='left')
+                df_runners = df_runners.rename(columns={'win_rate': 'win_rate_jt'})
+                df_runners['win_rate_jt'] = df_runners['win_rate_jt'].fillna(0.0)
+            else:
+                df_runners['win_rate_jt'] = 0.0
+        except Exception as e:
+            print(f"Error loading partnerships: {e}")
+            df_runners['win_rate_jt'] = 0.0
+            
+        MODERN_ELITE = {
+            ('Z PURTON', 'C S SHUM'), ('Z PURTON', 'K W LUI'), ('Z PURTON', 'J SIZE'),
+            ('Z PURTON', 'P C NG'), ('Z PURTON', 'C FOWNES'), ('H BOWMAN', 'C FOWNES'),
+            ('H BOWMAN', 'C S SHUM'), ('C Y HO', 'K W LUI'), ('K TEETAN', 'P C NG'),
+            ('J MOREIRA', 'J SIZE'), ('J MOREIRA', 'C FOWNES'), ('J MOREIRA', 'C S SHUM'),
+            ('A ATZENI', 'P C NG')
+        }
+        
+        is_elite_jt = (
+            (df_runners['win_rate_jt'] >= 0.18) | 
+            df_runners.apply(lambda r: (str(r.get('jockey', '')).strip().upper(), str(r.get('trainer', '')).strip().upper()) in MODERN_ELITE, axis=1)
+        )
+        jockey_trainer_boost = np.where(is_elite_jt, 0.03, 0.0)
+        
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
             
@@ -280,6 +317,8 @@ def run():
         for k in ['no', 'name', 'jockey', 'trainer', 'draw', 'actual_weight', 'horse_rating', 'win_odds', 'confidence', 'value_diff', 'jockey_win_rate', 'trainer_win_rate', 'recent_avg_pos', 'ST_vs_HV_pref', 'last_form_going', 'track_pref_match', 'going_pref_match']:
             if k in bb:
                 print(f"{k}: {bb[k]}")
+        if bb.get('has_overseas_form') == 1:
+            print("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
 
 if __name__ == '__main__':
     run()

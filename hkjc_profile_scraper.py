@@ -209,6 +209,8 @@ def get_horse_profile_stats(horse_code):
             except Exception as e:
                 print(f"Error parsing vet history for {horse_code}: {e}")
                 
+        has_overseas_form = 1 if 'pre-import formrecords' in res.text.lower() or 'fse_' in res.text.lower() else 0
+        
         return {
             "last_win_rating": last_win_rating,
             "ST_win_rate": ST_win_rate,
@@ -223,7 +225,8 @@ def get_horse_profile_stats(horse_code):
             "last_gear": last_gear,
             "gear_win_rate": gear_win_rate,
             "distance_win_rate": distance_win_rate,
-            "prev_run_vet_finding": prev_run_vet_finding
+            "prev_run_vet_finding": prev_run_vet_finding,
+            "has_overseas_form": has_overseas_form
         }
         
     except Exception as e:
