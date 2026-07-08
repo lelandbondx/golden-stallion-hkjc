@@ -43,6 +43,28 @@ def run():
 
     # Load sectional bursts
     sectional_bursts = {}
+    
+    # Compile winning gears from results database
+    winning_gears = {}
+    try:
+        if os.path.exists('data/results.csv') and os.path.exists('data/comments.csv'):
+            results = pd.read_csv('data/results.csv', usecols=['date', 'raceno', 'horseno', 'horse'])
+            comments = pd.read_csv('data/comments.csv', usecols=['date', 'raceno', 'horseno', 'plc', 'gear'])
+            parse_won = lambda x: 1 if str(x).strip() in ['1', '1.0', '1 DH'] or '1 DH' in str(x) else 0
+            comments['won_calc'] = comments['plc'].apply(parse_won)
+            wins_comments = comments[comments['won_calc'] == 1]
+            wins_df = pd.merge(wins_comments, results, on=['date', 'raceno', 'horseno'], how='inner')
+            
+            if wins_df['horse'].str.contains(r'\(', na=False).any():
+                wins_df['clean_name'] = wins_df['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
+            else:
+                wins_df['clean_name'] = wins_df['horse'].astype(str).str.strip().str.upper()
+            wins_df['clean_gear'] = wins_df['gear'].fillna('').astype(str).str.strip().str.upper()
+            wins_df.loc[wins_df['clean_gear'] == '-', 'clean_gear'] = ''
+            for name, group in wins_df.groupby('clean_name'):
+                winning_gears[name] = set(group['clean_gear'].unique())
+    except Exception as e:
+        print("Error compiling winning gears:", e)
     try:
         if os.path.exists('data/runs.csv') and os.path.exists('data/horse_info.csv'):
             runs_df = pd.read_csv('data/runs.csv', usecols=['horse_id', 'time1', 'time2', 'time3', 'time4', 'time5', 'time6'])
@@ -317,7 +339,14 @@ def run():
         for k in ['no', 'name', 'jockey', 'trainer', 'draw', 'actual_weight', 'horse_rating', 'win_odds', 'confidence', 'value_diff', 'jockey_win_rate', 'trainer_win_rate', 'recent_avg_pos', 'ST_vs_HV_pref', 'last_form_going', 'track_pref_match', 'going_pref_match']:
             if k in bb:
                 print(f"{k}: {bb[k]}")
-        if bb.get('has_overseas_form') == 1:
+        # Check overseas gear consistent win comment
+        tonight_gear = str(bb.get('horse_gear', '')).strip().upper()
+        if tonight_gear in ['', '-']:
+            tonight_gear = ''
+        horse_win_gears = winning_gears.get(str(bb.get('clean_name', bb.get('name', ''))).strip().upper(), set())
+        is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
+        
+        if bb.get('has_overseas_form') == 1 and is_gear_matched:
             print("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
 
 if __name__ == '__main__':

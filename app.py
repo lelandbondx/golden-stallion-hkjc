@@ -229,6 +229,32 @@ def fetch_historical_comments():
         return pd.DataFrame()
 
 @st.cache_data(ttl=86400)
+def fetch_winning_gears():
+    winning_gears = {}
+    try:
+        if os.path.exists('data/results.csv') and os.path.exists('data/comments.csv'):
+            results = pd.read_csv('data/results.csv', usecols=['date', 'raceno', 'horseno', 'horse'])
+            comments = pd.read_csv('data/comments.csv', usecols=['date', 'raceno', 'horseno', 'plc', 'gear'])
+            parse_won = lambda x: 1 if str(x).strip() in ['1', '1.0', '1 DH'] or '1 DH' in str(x) else 0
+            comments['won_calc'] = comments['plc'].apply(parse_won)
+            wins_comments = comments[comments['won_calc'] == 1]
+            wins_df = pd.merge(wins_comments, results, on=['date', 'raceno', 'horseno'], how='inner')
+            
+            if wins_df['horse'].str.contains(r'\(', na=False).any():
+                wins_df['clean_name'] = wins_df['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
+            else:
+                wins_df['clean_name'] = wins_df['horse'].astype(str).str.strip().str.upper()
+                
+            wins_df['clean_gear'] = wins_df['gear'].fillna('').astype(str).str.strip().str.upper()
+            wins_df.loc[wins_df['clean_gear'] == '-', 'clean_gear'] = ''
+            
+            for name, group in wins_df.groupby('clean_name'):
+                winning_gears[name] = set(group['clean_gear'].unique())
+    except Exception as e:
+        print("Error compiling winning gears:", e)
+    return winning_gears
+
+@st.cache_data(ttl=86400)
 def fetch_standard_times():
     try:
         return pd.read_csv('data/course_standard_times.csv')
@@ -308,6 +334,7 @@ if not historical_df.empty:
         print("Error compiling last comments lookup:", e)
 std_times_df = fetch_standard_times()
 horse_stats_df = fetch_horse_stats()
+winning_gears = fetch_winning_gears()
 tips_data = fetch_tips()
 running_styles = fetch_running_styles()
 sectional_bursts = fetch_sectional_bursts()
@@ -792,7 +819,14 @@ with tab1:
                             else:
                                 vet = "No Findings"
                     
-                    if row.get('has_overseas_form') == 1 and row.get('gear_win_rate', 0.0) > 0.0:
+                    # Check overseas gear consistent win comment
+                    tonight_gear = str(row.get('horse_gear', '')).strip().upper()
+                    if tonight_gear in ['', '-']:
+                        tonight_gear = ''
+                    horse_win_gears = winning_gears.get(row['clean_name'], set())
+                    is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
+                    
+                    if row.get('has_overseas_form') == 1 and is_gear_matched:
                         steward = f"Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment. | {steward}"
                     
                     vet_notes.append(vet)
@@ -800,14 +834,28 @@ with tab1:
                     photo_hist.append(photo)
                 else:
                     vet_notes.append("No active findings")
-                    if row.get('has_overseas_form') == 1:
+                    # Check overseas gear consistency for new/unmatched horses
+                    tonight_gear = str(row.get('horse_gear', '')).strip().upper()
+                    if tonight_gear in ['', '-']:
+                        tonight_gear = ''
+                    horse_win_gears = winning_gears.get(row['clean_name'], set())
+                    is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
+                    
+                    if row.get('has_overseas_form') == 1 and is_gear_matched:
                         steward_notes.append("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
                     else:
                         steward_notes.append("Clear Record")
                     photo_hist.append("None")
             else:
                 vet_notes.append("No active findings")
-                if row.get('has_overseas_form') == 1:
+                # Check overseas gear consistency for DB connection fallback
+                tonight_gear = str(row.get('horse_gear', '')).strip().upper()
+                if tonight_gear in ['', '-']:
+                    tonight_gear = ''
+                horse_win_gears = winning_gears.get(row['clean_name'], set())
+                is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
+                
+                if row.get('has_overseas_form') == 1 and is_gear_matched:
                     steward_notes.append("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
                 else:
                     steward_notes.append("No DB connection")
