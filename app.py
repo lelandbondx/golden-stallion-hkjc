@@ -580,22 +580,6 @@ with tab1:
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
         
-        # Stable Sentiment Floor: Enforce a minimum model probability for heavily backed elite trainer/jockey combinations in Class 4/5
-        if class_int in [4, 5]:
-            is_elite_conn = (
-                (df_runners['jockey'].astype(str).str.upper().str.contains('MOREIRA|PURTON|BOWMAN', na=False)) |
-                (df_runners['trainer'].astype(str).str.upper().str.contains('FOWNES|SIZE|LUI|NG', na=False))
-            )
-            # Heavily backed: implied probability >= 20% (odds <= 5.0)
-            is_heavily_backed = (df_runners['implied_prob'] >= 0.20)
-            
-            # Floor = 0.40 * implied_prob
-            sentiment_floor = df_runners['implied_prob'] * 0.40
-            df_runners['model_prob'] = np.where(
-                is_elite_conn & is_heavily_backed, 
-                np.maximum(df_runners['model_prob'], sentiment_floor), 
-                df_runners['model_prob']
-            )
         
         
         # Targeted Standout Boost Logic (replaces blind point additions)
