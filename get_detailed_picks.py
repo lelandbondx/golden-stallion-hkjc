@@ -25,78 +25,20 @@ def run():
     meeting = data['meetings'][0]
     load_model()
     
-    # Load running styles once outside the loop
+    # Load precomputed running styles, winning gears, comments, and sectional bursts
     running_styles = {}
-    try:
-        df_styles = pd.read_csv('data/results.csv', usecols=['horse', 'runningpos'])
-        df_styles['clean_name'] = df_styles['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
-        def parse_first_pos(x):
-            if not isinstance(x, str): return np.nan
-            parts = x.strip().split()
-            if not parts: return np.nan
-            try: return float(parts[0])
-            except: return np.nan
-        df_styles['first_pos'] = df_styles['runningpos'].apply(parse_first_pos)
-        running_styles = df_styles.groupby('clean_name')['first_pos'].mean().to_dict()
-    except Exception as e:
-        print("Error parsing running styles:", e)
-
-    # Load sectional bursts
-    sectional_bursts = {}
-    
-    # Compile winning gears from results database
     winning_gears = {}
-    try:
-        if os.path.exists('data/results.csv') and os.path.exists('data/comments.csv'):
-            results = pd.read_csv('data/results.csv', usecols=['date', 'raceno', 'horseno', 'horse'])
-            comments = pd.read_csv('data/comments.csv', usecols=['date', 'raceno', 'horseno', 'plc', 'gear'])
-            parse_won = lambda x: 1 if str(x).strip() in ['1', '1.0', '1 DH'] or '1 DH' in str(x) else 0
-            comments['won_calc'] = comments['plc'].apply(parse_won)
-            wins_comments = comments[comments['won_calc'] == 1]
-            wins_df = pd.merge(wins_comments, results, on=['date', 'raceno', 'horseno'], how='inner')
-            
-            if wins_df['horse'].str.contains(r'\(', na=False).any():
-                wins_df['clean_name'] = wins_df['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
-            else:
-                wins_df['clean_name'] = wins_df['horse'].astype(str).str.strip().str.upper()
-            wins_df['clean_gear'] = wins_df['gear'].fillna('').astype(str).str.strip().str.upper()
-            wins_df.loc[wins_df['clean_gear'] == '-', 'clean_gear'] = ''
-            for name, group in wins_df.groupby('clean_name'):
-                winning_gears[name] = set(group['clean_gear'].unique())
-    except Exception as e:
-        print("Error compiling winning gears:", e)
-    try:
-        if os.path.exists('data/runs.csv') and os.path.exists('data/horse_info.csv'):
-            runs_df = pd.read_csv('data/runs.csv', usecols=['horse_id', 'time1', 'time2', 'time3', 'time4', 'time5', 'time6'])
-            h_info = pd.read_csv('data/horse_info.csv', usecols=['Unnamed: 0', 'horse'])
-            h_info['clean_name'] = h_info['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
-            h_map = h_info[['Unnamed: 0', 'clean_name']].rename(columns={'Unnamed: 0': 'horse_id'}).drop_duplicates()
-            m_df = pd.merge(runs_df, h_map, on='horse_id', how='inner')
-            
-            def parse_last_sec(row):
-                for col in ['time6', 'time5', 'time4', 'time3', 'time2']:
-                    val = pd.to_numeric(row[col], errors='coerce')
-                    if not pd.isna(val) and val > 0:
-                        return val
-                return pd.to_numeric(row['time1'], errors='coerce')
-                
-            m_df['last_sec_val'] = m_df.apply(parse_last_sec, axis=1)
-            m_df = m_df[m_df['last_sec_val'] > 10.0]
-            sectional_bursts = m_df.groupby('clean_name')['last_sec_val'].min().to_dict()
-    except Exception as e:
-        print("Error loading sectional bursts:", e)
-
-    # Load historical comments to check for troubled runs
+    sectional_bursts = {}
     last_comments = {}
     try:
-        results = pd.read_csv('data/results.csv', usecols=['date', 'raceno', 'horseno', 'horse'])
-        comments = pd.read_csv('data/comments.csv', usecols=['date', 'raceno', 'horseno', 'comment'])
-        df_comm = pd.merge(comments, results, on=['date', 'raceno', 'horseno'], how='inner')
-        df_comm['clean_name'] = df_comm['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
-        df_comm = df_comm.sort_values(by='date', ascending=False)
-        last_comments = df_comm.drop_duplicates(subset=['clean_name'], keep='first').set_index('clean_name')['comment'].to_dict()
+        with open('data/precomputed_features.json', 'r', encoding='utf-8') as f:
+            precomputed = json.load(f)
+            running_styles = precomputed.get('running_styles', {})
+            winning_gears = {k: set(v) for k, v in precomputed.get('winning_gears', {}).items()}
+            sectional_bursts = precomputed.get('sectional_bursts', {})
+            last_comments = precomputed.get('last_comments', {})
     except Exception as e:
-        print("Error loading comments:", e)
+        print("Error loading precomputed features:", e)
 
     global_best_bets = []
     

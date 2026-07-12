@@ -216,43 +216,14 @@ def fetch_data():
 def fetch_news():
     return get_hkjc_news()
 
-@st.cache_data(ttl=3600)
-def fetch_historical_comments():
-    try:
-        results = pd.read_csv('data/results.csv', usecols=['date', 'raceno', 'horseno', 'horse'])
-        comments = pd.read_csv('data/comments.csv', usecols=['date', 'raceno', 'horseno', 'comment'])
-        df = pd.merge(comments, results, on=['date', 'raceno', 'horseno'], how='inner')
-        df['clean_name'] = df['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
-        df = df.sort_values(by='date', ascending=False)
-        return df
-    except Exception as e:
-        return pd.DataFrame()
-
 @st.cache_data(ttl=86400)
-def fetch_winning_gears():
-    winning_gears = {}
+def load_precomputed_data():
     try:
-        if os.path.exists('data/results.csv') and os.path.exists('data/comments.csv'):
-            results = pd.read_csv('data/results.csv', usecols=['date', 'raceno', 'horseno', 'horse'])
-            comments = pd.read_csv('data/comments.csv', usecols=['date', 'raceno', 'horseno', 'plc', 'gear'])
-            parse_won = lambda x: 1 if str(x).strip() in ['1', '1.0', '1 DH'] or '1 DH' in str(x) else 0
-            comments['won_calc'] = comments['plc'].apply(parse_won)
-            wins_comments = comments[comments['won_calc'] == 1]
-            wins_df = pd.merge(wins_comments, results, on=['date', 'raceno', 'horseno'], how='inner')
-            
-            if wins_df['horse'].str.contains(r'\(', na=False).any():
-                wins_df['clean_name'] = wins_df['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
-            else:
-                wins_df['clean_name'] = wins_df['horse'].astype(str).str.strip().str.upper()
-                
-            wins_df['clean_gear'] = wins_df['gear'].fillna('').astype(str).str.strip().str.upper()
-            wins_df.loc[wins_df['clean_gear'] == '-', 'clean_gear'] = ''
-            
-            for name, group in wins_df.groupby('clean_name'):
-                winning_gears[name] = set(group['clean_gear'].unique())
+        with open('data/precomputed_features.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
     except Exception as e:
-        print("Error compiling winning gears:", e)
-    return winning_gears
+        print("Error loading precomputed features:", e)
+        return {}
 
 @st.cache_data(ttl=86400)
 def fetch_standard_times():
@@ -274,70 +245,17 @@ def fetch_horse_stats():
 def fetch_tips():
     return get_live_tips_index()
 
-@st.cache_data(ttl=86400)
-def fetch_running_styles():
-    try:
-        df = pd.read_csv('data/results.csv', usecols=['horse', 'runningpos'])
-        df['clean_name'] = df['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
-        
-        def parse_first_pos(x):
-            if not isinstance(x, str): return np.nan
-            parts = x.strip().split()
-            if not parts: return np.nan
-            try:
-                return float(parts[0])
-            except:
-                return np.nan
-                
-        df['first_pos'] = df['runningpos'].apply(parse_first_pos)
-        style_series = df.groupby('clean_name')['first_pos'].mean()
-        return style_series.to_dict()
-    except Exception as e:
-        print("Error fetching running styles:", e)
-        return {}
-
-@st.cache_data(ttl=86400)
-def fetch_sectional_bursts():
-    try:
-        if not os.path.exists('data/runs.csv') or not os.path.exists('data/horse_info.csv'):
-            return {}
-        runs = pd.read_csv('data/runs.csv', usecols=['horse_id', 'time1', 'time2', 'time3', 'time4', 'time5', 'time6'])
-        horse_info = pd.read_csv('data/horse_info.csv', usecols=['Unnamed: 0', 'horse'])
-        horse_info['clean_name'] = horse_info['horse'].str.extract(r'^(.*?)\(')[0].str.strip().str.upper()
-        horse_map = horse_info[['Unnamed: 0', 'clean_name']].rename(columns={'Unnamed: 0': 'horse_id'}).drop_duplicates()
-        df = pd.merge(runs, horse_map, on='horse_id', how='inner')
-        
-        def parse_last_sec(row):
-            for col in ['time6', 'time5', 'time4', 'time3', 'time2']:
-                val = pd.to_numeric(row[col], errors='coerce')
-                if not pd.isna(val) and val > 0:
-                    return val
-            return pd.to_numeric(row['time1'], errors='coerce')
-            
-        df['last_sec_val'] = df.apply(parse_last_sec, axis=1)
-        df = df[df['last_sec_val'] > 10.0]
-        
-        best_secs = df.groupby('clean_name')['last_sec_val'].min().to_dict()
-        return best_secs
-    except Exception as e:
-        print("Error fetching sectional bursts:", e)
-        return {}
-
 # Initialize variables
 data = fetch_data()
-historical_df = fetch_historical_comments()
-last_comments = {}
-if not historical_df.empty:
-    try:
-        last_comments = historical_df.drop_duplicates(subset=['clean_name'], keep='first').set_index('clean_name')['comment'].to_dict()
-    except Exception as e:
-        print("Error compiling last comments lookup:", e)
+precomputed = load_precomputed_data()
+last_comments = precomputed.get('last_comments', {})
+winning_gears = {k: set(v) for k, v in precomputed.get('winning_gears', {}).items()}
+running_styles = precomputed.get('running_styles', {})
+sectional_bursts = precomputed.get('sectional_bursts', {})
+
 std_times_df = fetch_standard_times()
 horse_stats_df = fetch_horse_stats()
-winning_gears = fetch_winning_gears()
 tips_data = fetch_tips()
-running_styles = fetch_running_styles()
-sectional_bursts = fetch_sectional_bursts()
 meetings = data.get('meetings', [])
 
 try:
@@ -800,65 +718,40 @@ with tab1:
         photo_hist = []
         
         for _, row in df_runners.iterrows():
-            if not historical_df.empty:
-                horse_hist = historical_df[historical_df['clean_name'] == row['clean_name']]
-                if not horse_hist.empty:
-                    last_run = horse_hist.iloc[0]
-                    comment = str(last_run['comment']).strip()
-                    
-                    photo = "✅ Yes" if any(x in comment.lower() for x in ["photo", "nose", "short head"]) else "❌ No"
-                    
-                    vet = "No Findings"
-                    steward = comment
-                    if "(" in comment and ")" in comment:
-                        matches = re.findall(r'\((.*?)\)', comment)
-                        if matches:
-                            last_match = matches[-1]
-                            if "vet" in last_match.lower() or "finding" in last_match.lower():
-                                vet = last_match
-                            else:
-                                vet = "No Findings"
-                    
-                    # Check overseas gear consistent win comment
-                    tonight_gear = str(row.get('horse_gear', '')).strip().upper()
-                    if tonight_gear in ['', '-']:
-                        tonight_gear = ''
-                    horse_win_gears = winning_gears.get(row['clean_name'], set())
-                    is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
-                    
-                    if row.get('has_overseas_form') == 1 and is_gear_matched:
-                        steward = f"Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment. | {steward}"
-                    
-                    vet_notes.append(vet)
-                    steward_notes.append(steward)
-                    photo_hist.append(photo)
-                else:
-                    vet_notes.append("No active findings")
-                    # Check overseas gear consistency for new/unmatched horses
-                    tonight_gear = str(row.get('horse_gear', '')).strip().upper()
-                    if tonight_gear in ['', '-']:
-                        tonight_gear = ''
-                    horse_win_gears = winning_gears.get(row['clean_name'], set())
-                    is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
-                    
-                    if row.get('has_overseas_form') == 1 and is_gear_matched:
-                        steward_notes.append("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
-                    else:
-                        steward_notes.append("Clear Record")
-                    photo_hist.append("None")
+            c_name = row['clean_name']
+            comment = last_comments.get(c_name, '').strip()
+            
+            tonight_gear = str(row.get('horse_gear', '')).strip().upper()
+            if tonight_gear in ['', '-']:
+                tonight_gear = ''
+            horse_win_gears = winning_gears.get(c_name, set())
+            is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
+            
+            if comment:
+                photo = "✅ Yes" if any(x in comment.lower() for x in ["photo", "nose", "short head"]) else "❌ No"
+                vet = "No Findings"
+                steward = comment
+                if "(" in comment and ")" in comment:
+                    matches = re.findall(r'\((.*?)\)', comment)
+                    if matches:
+                        last_match = matches[-1]
+                        if "vet" in last_match.lower() or "finding" in last_match.lower():
+                            vet = last_match
+                        else:
+                            vet = "No Findings"
+                
+                if row.get('has_overseas_form') == 1 and is_gear_matched:
+                    steward = f"Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment. | {steward}"
+                
+                vet_notes.append(vet)
+                steward_notes.append(steward)
+                photo_hist.append(photo)
             else:
                 vet_notes.append("No active findings")
-                # Check overseas gear consistency for DB connection fallback
-                tonight_gear = str(row.get('horse_gear', '')).strip().upper()
-                if tonight_gear in ['', '-']:
-                    tonight_gear = ''
-                horse_win_gears = winning_gears.get(row['clean_name'], set())
-                is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
-                
                 if row.get('has_overseas_form') == 1 and is_gear_matched:
                     steward_notes.append("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
                 else:
-                    steward_notes.append("No DB connection")
+                    steward_notes.append("Clear Record")
                 photo_hist.append("None")
 
                 
@@ -1252,15 +1145,18 @@ with tab2:
     st.markdown("---")
     
     try:
-        if os.path.exists('data/runs.csv'):
-            df_runs = pd.read_csv('data/runs.csv', nrows=1000) 
+        runs_file = 'data/runs_slice.csv' if os.path.exists('data/runs_slice.csv') else 'data/runs.csv'
+        races_file = 'data/races_slice.csv' if os.path.exists('data/races_slice.csv') else 'data/races.csv'
+        
+        if os.path.exists(runs_file):
+            df_runs = pd.read_csv(runs_file, nrows=1000) 
             st.markdown('<div class="tech-panel border-accent-red">', unsafe_allow_html=True)
             st.write("##### INDIVIDUAL RUNS LOG")
             st.dataframe(df_runs, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
             
-            if os.path.exists('data/races.csv'):
-                df_races = pd.read_csv('data/races.csv', nrows=250)
+            if os.path.exists(races_file):
+                df_races = pd.read_csv(races_file, nrows=250)
                 st.markdown('<div class="tech-panel border-accent-gold">', unsafe_allow_html=True)
                 st.write("##### RACE CONDITIONS LOG")
                 st.dataframe(df_races, use_container_width=True)
