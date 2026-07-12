@@ -41,6 +41,7 @@ def run():
         print("Error loading precomputed features:", e)
 
     global_best_bets = []
+    dual_staking_wagers = []
     
     for race in meeting.get('races', []):
         if not race.get('runners'): continue
@@ -268,6 +269,20 @@ def run():
             
         race_picks = df_runners.sort_values(by='gs_score', ascending=False)
         
+        # Compile dual-staking wagers for this race: Rank 1 + Rank 5
+        if len(race_picks) > 4:
+            p1 = race_picks.iloc[0]
+            p5 = race_picks.iloc[4]
+            dual_staking_wagers.append({
+                "race_no": race.get("race_no"),
+                "p1_no": p1['no'],
+                "p1_name": p1['name'],
+                "p1_odds": float(p1['win_odds']),
+                "p5_no": p5['no'],
+                "p5_name": p5['name'],
+                "p5_odds": float(p5['win_odds'])
+            })
+            
         best = race_picks.iloc[0].to_dict()
         best.update({"race_no": race.get("race_no"), "class_dist": class_str})
         global_best_bets.append(best)
@@ -290,6 +305,10 @@ def run():
         
         if bb.get('has_overseas_form') == 1 and is_gear_matched:
             print("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
+
+    print("\n\n--- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---")
+    for bet in dual_staking_wagers:
+        print(f"Race {bet['race_no']} Bet Selection: Anchor #{bet['p1_no']} {bet['p1_name']} ({bet['p1_odds']:.1f}) | Sleeper #{bet['p5_no']} {bet['p5_name']} ({bet['p5_odds']:.1f})")
 
 if __name__ == '__main__':
     run()

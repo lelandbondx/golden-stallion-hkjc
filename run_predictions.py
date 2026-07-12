@@ -50,6 +50,7 @@ def run():
         print("Error loading precomputed features:", e)
 
     global_best_bets = []
+    dual_staking_wagers = []
     
     for race in meeting.get('races', []):
         if not race.get('runners'): continue
@@ -105,6 +106,19 @@ def run():
                 pick = race_picks.iloc[i]
                 print(f"{i+1}st Pick: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
                 
+            if len(race_picks) > 4:
+                p1 = race_picks.iloc[0]
+                p5 = race_picks.iloc[4]
+                dual_staking_wagers.append({
+                    "race_no": race.get("race_no"),
+                    "p1_no": p1['no'],
+                    "p1_name": p1['name'],
+                    "p1_odds": float(p1.get('win_odds', 20.0)),
+                    "p5_no": p5['no'],
+                    "p5_name": p5['name'],
+                    "p5_odds": float(p5.get('win_odds', 20.0))
+                })
+            
             best = race_picks.iloc[0].to_dict()
             best.update({"race_no": race.get("race_no"), "class_dist": class_str})
             global_best_bets.append(best)
@@ -314,6 +328,20 @@ def run():
             pick = race_picks.iloc[i]
             print(f"{i+1}st Pick: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
             
+        # Compile dual-staking wagers for this race: Rank 1 + Rank 5
+        if len(race_picks) > 4:
+            p1 = race_picks.iloc[0]
+            p5 = race_picks.iloc[4]
+            dual_staking_wagers.append({
+                "race_no": race.get("race_no"),
+                "p1_no": p1['no'],
+                "p1_name": p1['name'],
+                "p1_odds": float(p1['win_odds']),
+                "p5_no": p5['no'],
+                "p5_name": p5['name'],
+                "p5_odds": float(p5['win_odds'])
+            })
+            
         best = race_picks.iloc[0].to_dict()
         best.update({"race_no": race.get("race_no"), "class_dist": class_str})
         global_best_bets.append(best)
@@ -330,6 +358,10 @@ def run():
     for i in range(min(3, len(global_best_bets))):
         bb = global_best_bets[i]
         print(f"Top Pick {i+1}: Race {bb['race_no']} - #{bb['no']} {bb['name']} (Odds: {bb['win_odds']:.1f}, Conf: {bb['confidence']}%, EV: {bb['value_diff']:.3f})")
+
+    print("\n\n--- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---")
+    for bet in dual_staking_wagers:
+        print(f"Race {bet['race_no']} Bet Selection: Anchor #{bet['p1_no']} {bet['p1_name']} ({bet['p1_odds']:.1f}) | Sleeper #{bet['p5_no']} {bet['p5_name']} ({bet['p5_odds']:.1f})")
 
 if __name__ == '__main__':
     run()

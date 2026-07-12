@@ -806,6 +806,24 @@ with tab1:
     
     # Sort parlay candidates strictly from the 1st Picks of each race
     parlay_sorted = sorted(parlay_candidates, key=lambda x: x.get('gs_score', 0), reverse=True)
+    
+    dual_staking_bets = []
+    for r in races:
+        if 'processed_runners' not in r: continue
+        df_p = r['processed_runners']
+        if len(df_p) > 4:
+            df_p_sorted = df_p.sort_values(by='gs_score', ascending=False).reset_index(drop=True)
+            p1 = df_p_sorted.iloc[0]
+            p5 = df_p_sorted.iloc[4]
+            dual_staking_bets.append({
+                "race_no": r.get("race_no"),
+                "p1_no": p1['no'],
+                "p1_name": p1['name'],
+                "p1_odds": float(p1.get('win_odds', 20.0)),
+                "p5_no": p5['no'],
+                "p5_name": p5['name'],
+                "p5_odds": float(p5.get('win_odds', 20.0))
+            })
 
     with st.expander("Macro Insights & Global Best Bets", expanded=True):
         if top_pick_today:
@@ -832,6 +850,20 @@ with tab1:
                     '''), unsafe_allow_html=True)
             parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in parlay_sorted[:3]])
             st.markdown(f"<div style='margin-top:10px; font-family:\"Inter\"; font-size:1.15rem;'><b>Optimized Multi-Leg Sequence:</b> <span style='color:#ef4444; font-weight:700;'>{parlay_str}</span></div>", unsafe_allow_html=True)
+            
+            if dual_staking_bets:
+                st.markdown("<div style='margin-top:15px; font-family:\"Montserrat\"; font-weight:700; font-size:1.15rem; color:#ffffff;'>🐎 RECOMMENDED DUAL-STAKING BETS (WIN/PLACE)</div>", unsafe_allow_html=True)
+                dual_html = '<div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;">'
+                for bet in dual_staking_bets:
+                    dual_html += clean_html(f'''
+                    <div style="background: rgba(255, 215, 0, 0.08); padding: 8px 14px; border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.4); font-size:0.95rem; color:#ffffff; line-height:1.4; min-width: 250px;">
+                        <b>Race {bet['race_no']} Bet Selection:</b><br>
+                        🎯 Anchor (Rank 1): <span style="color:#FFD700; font-weight:700;">#{bet['p1_no']} {bet['p1_name']}</span> ({bet['p1_odds']:.1f})<br>
+                        💣 Sleeper (Rank 5): <span style="color:#ef4444; font-weight:700;">#{bet['p5_no']} {bet['p5_name']}</span> ({bet['p5_odds']:.1f})
+                    </div>
+                    ''')
+                dual_html += '</div>'
+                st.markdown(dual_html, unsafe_allow_html=True)
             
             # Display Steam Alerts inside expander
             if steam_alerts:
