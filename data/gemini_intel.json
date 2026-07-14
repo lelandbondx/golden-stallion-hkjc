@@ -1,15 +1,26 @@
 {
   "raceday_metadata": {
-    "date": "2026-07-12",
-    "venue": "Sha Tin",
-    "total_races": 11
+    "date": "2026-07-15",
+    "venue": "Happy Valley",
+    "total_races": 9
   },
-  "key_runners": [],
+  "key_runners": [
+    {"horse_name": "CONRAD THE GREAT"},
+    {"horse_name": "I AM BACK"},
+    {"horse_name": "CASA ROCHESTER"},
+    {"horse_name": "LIGHT YEARS GLORY"},
+    {"horse_name": "PEJIBAYE"},
+    {"horse_name": "DOUBLE ALPHA"},
+    {"horse_name": "SOMELOVEFROMABOVE"},
+    {"horse_name": "BOTTOMUPTOGETHER"},
+    {"horse_name": "THUNDER KIT"}
+  ],
   "first_time_starters": [],
   "trainers_championship_standings": {
-    "1": {"trainer": "C Fownes", "wins": 36},
-    "2": {"trainer": "D Hayes", "wins": 36},
-    "3": {"trainer": "F Lui", "wins": 35},
-    "4": {"trainer": "D Shum", "wins": 32}
+    "1": {"trainer": "C Fownes", "wins": 69},
+    "2": {"trainer": "C S Shum", "wins": 63},
+    "3": {"trainer": "M Newnham", "wins": 60},
+    "4": {"trainer": "K W Lui", "wins": 56},
+    "5": {"trainer": "D A Hayes", "wins": 54}
   }
 }

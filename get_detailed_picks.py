@@ -48,9 +48,15 @@ def run():
         
         df_runners = pd.DataFrame(race['runners'])
         if 'win_odds' in df_runners.columns:
+            df_runners['win_odds'] = df_runners.apply(
+                lambda row: odds_tracker.get_cached_odds(
+                    meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['win_odds']
+                ), axis=1
+            )
             df_runners['scraped_win_odds'] = df_runners['win_odds'].copy()
         else:
-            df_runners['scraped_win_odds'] = 0.0
+            df_runners['win_odds'] = 20.0
+            df_runners['scraped_win_odds'] = 20.0
         
         # Check time to post for this race
         minutes_to_post = 999.0
@@ -63,6 +69,38 @@ def run():
                 minutes_to_post = (post_time - now_hkt).total_seconds() / 60.0
         except Exception as e:
             print(f"Error parsing post time for race {race.get('race_no')}: {e}")
+
+        # Check if we have a frozen prediction for this race
+        frozen_runners = odds_tracker.get_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'))
+        
+        # Determine if we should defrost (recalculate) due to scratches or track change
+        is_defrost = False
+        if frozen_runners is not None:
+            live_going = race.get('going', meeting.get('going', 'GOOD'))
+            frozen_going = frozen_runners[0].get('current_going', 'GOOD') if len(frozen_runners) > 0 else 'GOOD'
+            is_defrost = odds_tracker.should_defrost_predictions(frozen_runners, race.get('runners', []), frozen_going, live_going)
+            
+        class_str = race.get("class_dist", "")
+        if minutes_to_post <= 60 and frozen_runners is not None and not is_defrost:
+            df_runners = pd.DataFrame(frozen_runners)
+            race_picks = df_runners.sort_values(by='gs_score', ascending=False)
+            if len(race_picks) > 4:
+                p1 = race_picks.iloc[0]
+                p5 = race_picks.iloc[4]
+                dual_staking_wagers.append({
+                    "race_no": race.get("race_no"),
+                    "p1_no": p1['no'],
+                    "p1_name": p1['name'],
+                    "p1_odds": float(p1.get('win_odds', 20.0)),
+                    "p5_no": p5['no'],
+                    "p5_name": p5['name'],
+                    "p5_odds": float(p5.get('win_odds', 20.0))
+                })
+            
+            best = race_picks.iloc[0].to_dict()
+            best.update({"race_no": race.get("race_no"), "class_dist": class_str})
+            global_best_bets.append(best)
+            continue
 
         current_race_tips = tips_data.get(race.get('race_no', 0), {})
         df_runners['consensus_score'] = df_runners['no'].map(lambda x: current_race_tips.get(x, 0))
@@ -122,9 +160,31 @@ def run():
         debutant_penalty_val = np.where(is_debutant, -0.05, 0.0)
         if class_int == 5:
             debutant_penalty_val = debutant_penalty_val * 0.5
-        # If consensus from trials is strong, waive it
+            
+        # Load engineered trials
+        trial_features = {}
+        if os.path.exists('data/engineered_trial_features.json'):
+            try:
+                with open('data/engineered_trial_features.json', 'r', encoding='utf-8') as f:
+                    trial_features = json.load(f)
+            except Exception as e:
+                print(f"Error loading engineered trial features: {e}")
+                
+        # Determine if debutant has strong trials
+        has_strong_trial = []
+        for name in df_runners['clean_name'].astype(str).str.upper().str.strip():
+            strong = False
+            if name in trial_features:
+                t_pos = trial_features[name].get('best_trial_pos_ratio', 1.0)
+                t_speed = trial_features[name].get('best_trial_speed_diff', 0.0)
+                if t_pos <= 0.35 or t_speed > 0.0:
+                    strong = True
+            has_strong_trial.append(strong)
+        has_strong_trial = np.array(has_strong_trial)
+            
+        # If consensus from trials is strong OR we have a strong trial, waive it
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
-        debutant_penalty = np.where(consensus > 5.0, 0.0, debutant_penalty_val)
+        debutant_penalty = np.where((consensus > 5.0) | has_strong_trial, 0.0, debutant_penalty_val)
 
         # First-Time Gear Boost (Blinkers B1 / Visor V1 split):
         if 'horse_gear' in df_runners.columns:
@@ -235,7 +295,56 @@ def run():
         )
         jockey_trainer_boost = np.where(is_elite_jt, 0.03, 0.0)
         
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost
+        # Happy Valley C-Course Draw Bias Adjustments
+        is_hv = meeting.get('venue') == 'Happy Valley'
+        hv_c_course_boost = 0.0
+        hv_c_course_penalty = 0.0
+        if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
+            # Inside gate speed bias: Front runners (avg_first_pos <= 3.5) drawn 1-4
+            is_inside_speed = (df_runners['avg_first_pos'] <= 3.5) & (df_runners['draw'] <= 4)
+            hv_c_course_boost = np.where(is_inside_speed, 0.03, 0.0)
+            
+            # Wide draw penalty in sprints (<= 1200m) for gates 9-12
+            is_wide_sprinter = (distance <= 1200) & (df_runners['draw'] >= 9)
+            hv_c_course_penalty = np.where(is_wide_sprinter, -0.04, 0.0)
+            
+        # Quantitative Barrier Trial Multipliers
+        trial_boost = []
+        trial_penalty = []
+        
+        for idx, r in df_runners.iterrows():
+            clean_name = str(r.get('clean_name', '')).strip().upper()
+            t_boost = 0.0
+            t_penalty = 0.0
+            
+            if clean_name in trial_features:
+                t_data = trial_features[clean_name]
+                t_pos = t_data.get('best_trial_pos_ratio', 1.0)
+                t_speed = t_data.get('best_trial_speed_diff', 0.0)
+                t_jockeys = [j.upper() for j in t_data.get('trial_jockeys', [])]
+                r_jockey = str(r.get('jockey', '')).strip().upper()
+                
+                jockey_match = r_jockey in t_jockeys
+                
+                # 1. Elite trial (placed top 35% with raceday jockey commitment)
+                if t_pos <= 0.35 and jockey_match:
+                    t_boost += 0.03
+                    
+                # 2. Raw speed trial (speed diff >= 0.5s faster than standard)
+                if t_speed >= 0.5:
+                    t_boost += 0.02
+                    
+                # 3. Poor trial (bottom 10% and slow)
+                if t_pos >= 0.90 and t_speed <= -1.0:
+                    t_penalty -= 0.03
+                    
+            trial_boost.append(t_boost)
+            trial_penalty.append(t_penalty)
+            
+        trial_boost = np.array(trial_boost)
+        trial_penalty = np.array(trial_penalty)
+        
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + trial_boost + trial_penalty
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
             

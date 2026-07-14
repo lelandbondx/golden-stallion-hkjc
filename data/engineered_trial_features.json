@@ -1,0 +1,206 @@
+{
+    "A AMERIC TE SPECSO": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.25,
+        "best_trial_speed_diff": -0.4200000000000017,
+        "trial_jockeys": [
+            "A ATZENI",
+            "A ATZENI"
+        ]
+    },
+    "CALL ME TOPSEED": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5555555555555556,
+        "best_trial_speed_diff": 0.9099999999999966,
+        "trial_jockeys": [
+            "P N WONG"
+        ]
+    },
+    "CELESTIAL HARMONY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7142857142857143,
+        "best_trial_speed_diff": 1.7000000000000028,
+        "trial_jockeys": [
+            "S SHAFRIZAL"
+        ]
+    },
+    "COPARTNER FLEET": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6666666666666666,
+        "best_trial_speed_diff": 0.4300000000000068,
+        "trial_jockeys": [
+            "C Y HO"
+        ]
+    },
+    "EXCEPTIONAL SANTOS": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": 0.6800000000000068,
+        "trial_jockeys": [
+            "Y L CHUNG",
+            "Y L CHUNG"
+        ]
+    },
+    "FIND MY LOVE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.875,
+        "best_trial_speed_diff": -1.0499999999999972,
+        "trial_jockeys": [
+            "L FERRARIS"
+        ]
+    },
+    "FLYING WROTE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6666666666666666,
+        "best_trial_speed_diff": 0.9099999999999966,
+        "trial_jockeys": [
+            "Y L CHUNG"
+        ]
+    },
+    "GORGEOUS VICTORY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5,
+        "best_trial_speed_diff": 0.6800000000000068,
+        "trial_jockeys": [
+            "Z PURTON"
+        ]
+    },
+    "HAPPY TERCENTENARY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7777777777777778,
+        "best_trial_speed_diff": -0.06999999999999318,
+        "trial_jockeys": [
+            "K TEETAN"
+        ]
+    },
+    "HARMONY GALAXY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.8888888888888888,
+        "best_trial_speed_diff": 0.4300000000000068,
+        "trial_jockeys": [
+            "B AVDULLA"
+        ]
+    },
+    "I AM BACK": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.3333333333333333,
+        "best_trial_speed_diff": -0.06999999999999318,
+        "trial_jockeys": [
+            "J MOREIRA",
+            "J MOREIRA"
+        ]
+    },
+    "I CAN": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
+        "best_trial_speed_diff": 0.4300000000000068,
+        "trial_jockeys": [
+            "K C LEUNG"
+        ]
+    },
+    "JOLLY BONUS": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
+        "best_trial_speed_diff": 0.259999999999998,
+        "trial_jockeys": [
+            "D J YANG"
+        ]
+    },
+    "LUCKY BID": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5714285714285714,
+        "best_trial_speed_diff": -0.9500000000000028,
+        "trial_jockeys": [
+            "E BROWN"
+        ]
+    },
+    "MY TRIUMPH": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2857142857142857,
+        "best_trial_speed_diff": -1.9000000000000057,
+        "trial_jockeys": [
+            "L FERRARIS"
+        ]
+    },
+    "PASS LINE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7777777777777778,
+        "best_trial_speed_diff": 0.9099999999999966,
+        "trial_jockeys": [
+            "J ORMAN"
+        ]
+    },
+    "REAL GENTLEMAN": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.875,
+        "best_trial_speed_diff": -1.0400000000000063,
+        "trial_jockeys": [
+            "K C LEUNG"
+        ]
+    },
+    "SHOTGUN": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": 0.0,
+        "trial_jockeys": [
+            "P N WONG"
+        ]
+    },
+    "SOMELOVEFROMABOVE": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.3333333333333333,
+        "best_trial_speed_diff": -0.4200000000000017,
+        "trial_jockeys": [
+            "J MOREIRA",
+            "E C W WONG"
+        ]
+    },
+    "SON PAK FU": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
+        "best_trial_speed_diff": 0.9899999999999949,
+        "trial_jockeys": [
+            "Y SALIM"
+        ]
+    },
+    "STARRY SHOW": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.42857142857142855,
+        "best_trial_speed_diff": -0.9500000000000028,
+        "trial_jockeys": [
+            "K TEETAN"
+        ]
+    },
+    "STORMY KNIGHT": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7777777777777778,
+        "best_trial_speed_diff": 0.4300000000000068,
+        "trial_jockeys": [
+            "M L YEUNG"
+        ]
+    },
+    "TAKE ACTION": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6666666666666666,
+        "best_trial_speed_diff": -0.4200000000000017,
+        "trial_jockeys": [
+            "B AVDULLA"
+        ]
+    },
+    "TO INFINITY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
+        "best_trial_speed_diff": -0.9500000000000028,
+        "trial_jockeys": [
+            "A BADEL"
+        ]
+    },
+    "WINNING BUDDIES": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": -0.8799999999999955,
+        "trial_jockeys": [
+            "M L YEUNG"
+        ]
+    }
+}

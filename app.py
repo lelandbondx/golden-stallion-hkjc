@@ -550,9 +550,31 @@ with tab1:
         debutant_penalty_val = np.where(is_debutant, -0.05, 0.0)
         if class_int == 5:
             debutant_penalty_val = debutant_penalty_val * 0.5
-        # If consensus from trials is strong, waive it
+            
+        # Load engineered trials
+        trial_features = {}
+        if os.path.exists('data/engineered_trial_features.json'):
+            try:
+                with open('data/engineered_trial_features.json', 'r', encoding='utf-8') as f:
+                    trial_features = json.load(f)
+            except Exception as e:
+                print(f"Error loading engineered trial features: {e}")
+                
+        # Determine if debutant has strong trials
+        has_strong_trial = []
+        for name in df_runners['clean_name'].astype(str).str.upper().str.strip():
+            strong = False
+            if name in trial_features:
+                t_pos = trial_features[name].get('best_trial_pos_ratio', 1.0)
+                t_speed = trial_features[name].get('best_trial_speed_diff', 0.0)
+                if t_pos <= 0.35 or t_speed > 0.0:
+                    strong = True
+            has_strong_trial.append(strong)
+        has_strong_trial = np.array(has_strong_trial)
+            
+        # If consensus from trials is strong OR we have a strong trial, waive it
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
-        debutant_penalty = np.where(consensus > 5.0, 0.0, debutant_penalty_val)
+        debutant_penalty = np.where((consensus > 5.0) | has_strong_trial, 0.0, debutant_penalty_val)
         
         # Map sectional times and find fastest last sectional
         df_runners['best_last_sec'] = df_runners['clean_name'].map(sectional_bursts).fillna(99.0)
@@ -661,7 +683,56 @@ with tab1:
         )
         jockey_trainer_boost = np.where(is_elite_jt, 0.03, 0.0)
         
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost
+        # Happy Valley C-Course Draw Bias Adjustments
+        is_hv = meeting.get('venue') == 'Happy Valley'
+        hv_c_course_boost = 0.0
+        hv_c_course_penalty = 0.0
+        if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
+            # Inside gate speed bias: Front runners (avg_first_pos <= 3.5) drawn 1-4
+            is_inside_speed = (df_runners['avg_first_pos'] <= 3.5) & (df_runners['draw'] <= 4)
+            hv_c_course_boost = np.where(is_inside_speed, 0.03, 0.0)
+            
+            # Wide draw penalty in sprints (<= 1200m) for gates 9-12
+            is_wide_sprinter = (distance <= 1200) & (df_runners['draw'] >= 9)
+            hv_c_course_penalty = np.where(is_wide_sprinter, -0.04, 0.0)
+            
+        # Quantitative Barrier Trial Multipliers
+        trial_boost = []
+        trial_penalty = []
+        
+        for idx, r in df_runners.iterrows():
+            clean_name = str(r.get('clean_name', '')).strip().upper()
+            t_boost = 0.0
+            t_penalty = 0.0
+            
+            if clean_name in trial_features:
+                t_data = trial_features[clean_name]
+                t_pos = t_data.get('best_trial_pos_ratio', 1.0)
+                t_speed = t_data.get('best_trial_speed_diff', 0.0)
+                t_jockeys = [j.upper() for j in t_data.get('trial_jockeys', [])]
+                r_jockey = str(r.get('jockey', '')).strip().upper()
+                
+                jockey_match = r_jockey in t_jockeys
+                
+                # 1. Elite trial (placed top 35% with raceday jockey commitment)
+                if t_pos <= 0.35 and jockey_match:
+                    t_boost += 0.03
+                    
+                # 2. Raw speed trial (speed diff >= 0.5s faster than standard)
+                if t_speed >= 0.5:
+                    t_boost += 0.02
+                    
+                # 3. Poor trial (bottom 10% and slow)
+                if t_pos >= 0.90 and t_speed <= -1.0:
+                    t_penalty -= 0.03
+                    
+            trial_boost.append(t_boost)
+            trial_penalty.append(t_penalty)
+            
+        trial_boost = np.array(trial_boost)
+        trial_penalty = np.array(trial_penalty)
+        
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + trial_boost + trial_penalty
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier

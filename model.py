@@ -290,21 +290,21 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
 
     # Fallback dictionaries for modern jockeys/trainers not present in historical results.csv (post-2017)
     FALLBACK_JOCKEY_RATES = {
-        'Z PURTON': 0.21, 'H BOWMAN': 0.11, 'K TEETAN': 0.08, 'C Y HO': 0.08,
-        'A BADEL': 0.07, 'L HEWITSON': 0.06, 'A ATZENI': 0.11, 'L FERRARIS': 0.08,
+        'Z PURTON': 0.207, 'H BOWMAN': 0.109, 'K TEETAN': 0.08, 'C Y HO': 0.087,
+        'A BADEL': 0.075, 'L HEWITSON': 0.06, 'A ATZENI': 0.105, 'L FERRARIS': 0.079,
         'B AVDULLA': 0.05, 'E C W WONG': 0.07, 'M CHADWICK': 0.07, 'Y L CHUNG': 0.06,
-        'C L CHAU': 0.09, 'H BENTLEY': 0.08, 'K C LEUNG': 0.08, 'M F POON': 0.06,
+        'C L CHAU': 0.093, 'H BENTLEY': 0.077, 'K C LEUNG': 0.074, 'M F POON': 0.06,
         'H T MO': 0.04, 'A HAMELIN': 0.06, 'M L YEUNG': 0.04, 'K DE MELO': 0.08,
-        'J ORMAN': 0.07, 'E BROWN': 0.10, 'P N WONG': 0.05, 'J MOREIRA': 0.17,
+        'J ORMAN': 0.068, 'E BROWN': 0.10, 'P N WONG': 0.05, 'J MOREIRA': 0.17,
         'R KINGSCOTE': 0.03
     }
     
     FALLBACK_TRAINER_RATES = {
-        'J SIZE': 0.09, 'P C NG': 0.05, 'F C LOR': 0.07, 'K W LUI': 0.11,
-        'C S SHUM': 0.12, 'C FOWNES': 0.12, 'A S CRUZ': 0.08, 'P F YIU': 0.10,
-        'D A HAYES': 0.08, 'M NEWNHAM': 0.11, 'D J WHYTE': 0.06, 'J RICHARDS': 0.07,
-        'T P YUNG': 0.07, 'K L MAN': 0.09, 'W Y SO': 0.06, 'Y S TSUI': 0.06,
-        'C W CHANG': 0.04, 'K H TING': 0.06, 'W K MO': 0.09, 'M NEWMAN': 0.11,
+        'J SIZE': 0.0897, 'P C NG': 0.08, 'F C LOR': 0.09, 'K W LUI': 0.1051,
+        'C S SHUM': 0.1214, 'C FOWNES': 0.1228, 'A S CRUZ': 0.0754, 'P F YIU': 0.0952,
+        'D A HAYES': 0.0819, 'M NEWNHAM': 0.1085, 'D J WHYTE': 0.06, 'J RICHARDS': 0.07,
+        'T P YUNG': 0.07, 'K L MAN': 0.0877, 'W Y SO': 0.06, 'Y S TSUI': 0.06,
+        'C W CHANG': 0.04, 'K H TING': 0.06, 'W K MO': 0.0895, 'M NEWMAN': 0.11,
         'D EUSTACE': 0.07, 'B CRAWFORD': 0.08
     }
 
