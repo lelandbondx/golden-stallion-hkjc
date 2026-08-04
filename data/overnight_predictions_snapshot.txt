@@ -1,0 +1,96 @@
+Loading data...
+Meeting: Sha Tin - 2026-07-12 - Going: GOOD TO FIRM
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 1 : Class 5 - 1800m ---
+1st Pick: #1 BEAUTY MISSILE (Odds: 20.0) - Conf: 85% - EV: 0.076 - Jockey: A Badel
+2st Pick: #2 HAILTOTHEVICTORS (Odds: 20.0) - Conf: 79% - EV: 0.065 - Jockey: L Ferraris
+3st Pick: #10 SMILING EMPEROR (Odds: 20.0) - Conf: 68% - EV: 0.044 - Jockey: M L Yeung
+4st Pick: #5 CARRYON SMILING (Odds: 20.0) - Conf: 52% - EV: 0.015 - Jockey: H Y Yuen
+5st Pick: #8 MEGA FORCE (Odds: 20.0) - Conf: 52% - EV: 0.014 - Jockey: C Y Ho
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 2 : Class 5 - 1400m ---
+1st Pick: #2 DAILY TROPHY (Odds: 20.0) - Conf: 85% - EV: 0.043 - Jockey: J Moreira
+2st Pick: #3 WIN SPEED (Odds: 20.0) - Conf: 78% - EV: 0.033 - Jockey: L Hewitson
+3st Pick: #4 AQUAMAN (Odds: 20.0) - Conf: 75% - EV: 0.029 - Jockey: J Orman
+4st Pick: #1 DERRYNBLUE (Odds: 20.0) - Conf: 70% - EV: 0.023 - Jockey: M F Poon
+5st Pick: #5 IRON LEGION (Odds: 20.0) - Conf: 70% - EV: 0.022 - Jockey: Y L Chung
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 3 : Class 4 - 1400m ---
+1st Pick: #1 FLYING HUNTER (Odds: 20.0) - Conf: 85% - EV: 0.032 - Jockey: H T Mo
+2st Pick: #10 VOYAGE BOSS (Odds: 20.0) - Conf: 82% - EV: 0.029 - Jockey: H Y Yuen
+3st Pick: #7 HOT AIR BALLON (Odds: 20.0) - Conf: 70% - EV: 0.018 - Jockey: B Avdulla
+4st Pick: #4 AETHELWIND (Odds: 20.0) - Conf: 67% - EV: 0.015 - Jockey: K C Leung
+5st Pick: #2 FLASH CURRENT (Odds: 20.0) - Conf: 64% - EV: 0.012 - Jockey: E Brown
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 4 : Class 4 - 1400m ---
+1st Pick: #1 HAROLD WIN (Odds: 20.0) - Conf: 85% - EV: 0.044 - Jockey: E Brown
+2st Pick: #2 RISING PHOENIX (Odds: 20.0) - Conf: 80% - EV: 0.039 - Jockey: Z Purton
+3st Pick: #5 LUCKY MAN (Odds: 20.0) - Conf: 60% - EV: 0.017 - Jockey: L Ferraris
+4st Pick: #6 SUPER LOVE (Odds: 20.0) - Conf: 56% - EV: 0.012 - Jockey: H Bowman
+5st Pick: #3 BUCEPHALAS (Odds: 20.0) - Conf: 51% - EV: 0.008 - Jockey: K C Leung
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 5 : Class 4 - 1200m ---
+1st Pick: #1 LUNAR DASH (Odds: 20.0) - Conf: 85% - EV: 0.055 - Jockey: Z Purton
+2st Pick: #4 HERE COMES PLUTUS (Odds: 20.0) - Conf: 62% - EV: 0.026 - Jockey: E Brown
+3st Pick: #6 MIGHTY PROFIT (Odds: 20.0) - Conf: 59% - EV: 0.023 - Jockey: C L Chau
+4st Pick: #2 HAYDAY (Odds: 20.0) - Conf: 52% - EV: 0.014 - Jockey: H Y Yuen
+5st Pick: #3 KA YING RESILIENCE (Odds: 20.0) - Conf: 50% - EV: 0.012 - Jockey: K Teetan
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 6 : Class 4 - 1200m ---
+1st Pick: #1 OLDTOWN (Odds: 20.0) - Conf: 85% - EV: 0.052 - Jockey: Z Purton
+2st Pick: #10 SPIRITED STEED (Odds: 20.0) - Conf: 59% - EV: 0.016 - Jockey: E Brown
+3st Pick: #5 PRIME WINISTER (Odds: 20.0) - Conf: 58% - EV: 0.014 - Jockey: H Bowman
+4st Pick: #11 MONTA FRUTTA (Odds: 20.0) - Conf: 56% - EV: 0.012 - Jockey: Y L Chung
+5st Pick: #9 KING'S ARROW (Odds: 20.0) - Conf: 56% - EV: 0.011 - Jockey: L Hewitson
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 7 : Class 4 - 1600m ---
+1st Pick: #3 PACKING FIGHTER (Odds: 20.0) - Conf: 85% - EV: 0.070 - Jockey: Z Purton
+2st Pick: #5 ABSOLUTE HONOUR (Odds: 20.0) - Conf: 62% - EV: 0.034 - Jockey: A Atzeni
+3st Pick: #4 VIVACIOUS WIN (Odds: 20.0) - Conf: 54% - EV: 0.023 - Jockey: E Brown
+4st Pick: #2 SO YOU WILL (Odds: 20.0) - Conf: 49% - EV: 0.016 - Jockey: J Moreira
+5st Pick: #8 LOVELY MILES (Odds: 20.0) - Conf: 37% - EV: -0.003 - Jockey: H Y Yuen
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 8 : Class 1 - 1600m ---
+1st Pick: #3 MASSIVE SOVEREIGN (Odds: 20.0) - Conf: 85% - EV: 0.096 - Jockey: A Atzeni
+2st Pick: #4 SOLEIL FIGHTER (Odds: 20.0) - Conf: 67% - EV: 0.056 - Jockey: H Y Yuen
+3st Pick: #8 PACKING ANGEL (Odds: 20.0) - Conf: 46% - EV: 0.011 - Jockey: K Teetan
+4st Pick: #1 CAP FERRAT (Odds: 20.0) - Conf: 45% - EV: 0.010 - Jockey: E Brown
+5st Pick: #5 SAGACIOUS LIFE (Odds: 20.0) - Conf: 44% - EV: 0.007 - Jockey: J Moreira
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 9 : Class 3 - 1200m ---
+1st Pick: #1 CROSSBORDERPEGASUS (Odds: 20.0) - Conf: 85% - EV: 0.064 - Jockey: H Bowman
+2st Pick: #4 GOLD PATCH (Odds: 20.0) - Conf: 69% - EV: 0.038 - Jockey: Z Purton
+3st Pick: #3 LADY'S CHOICE (Odds: 20.0) - Conf: 66% - EV: 0.033 - Jockey: H Y Yuen
+4st Pick: #5 PI LEGEND (Odds: 20.0) - Conf: 63% - EV: 0.029 - Jockey: K Teetan
+5st Pick: #2 AURORA PATCH (Odds: 20.0) - Conf: 59% - EV: 0.022 - Jockey: C Y Ho
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 10 : Class 3 - 1600m ---
+1st Pick: #4 LUCKY SAM GOR (Odds: 20.0) - Conf: 85% - EV: 0.034 - Jockey: H Bowman
+2st Pick: #3 SKY VINO (Odds: 20.0) - Conf: 85% - EV: 0.033 - Jockey: J Moreira
+3st Pick: #2 GALACTIC VOYAGE (Odds: 20.0) - Conf: 82% - EV: 0.031 - Jockey: C L Chau
+4st Pick: #5 SMART AVENUE (Odds: 20.0) - Conf: 66% - EV: 0.018 - Jockey: Z Purton
+5st Pick: #8 AEROVOLANIC (Odds: 20.0) - Conf: 59% - EV: 0.011 - Jockey: A Atzeni
+[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+
+--- RACE 11 : Class 3 - 1400m ---
+1st Pick: #1 SUPER EXPRESS (Odds: 20.0) - Conf: 85% - EV: 0.052 - Jockey: H Bowman
+2st Pick: #4 TITAN PEGASUS (Odds: 20.0) - Conf: 73% - EV: 0.037 - Jockey: E Brown
+3st Pick: #3 PERFECTDAY (Odds: 20.0) - Conf: 68% - EV: 0.030 - Jockey: J Orman
+4st Pick: #2 LOVERO (Odds: 20.0) - Conf: 67% - EV: 0.029 - Jockey: L Hewitson
+5st Pick: #5 FORTUNE LINK (Odds: 20.0) - Conf: 54% - EV: 0.011 - Jockey: H Y Yuen
+
+
+--- OVERALL GLOBAL BEST BETS ---
+Top Pick 1: Race 8 - #3 MASSIVE SOVEREIGN (Odds: 20.0, Conf: 85%, EV: 0.096)
+Top Pick 2: Race 1 - #1 BEAUTY MISSILE (Odds: 20.0, Conf: 85%, EV: 0.076)
+Top Pick 3: Race 7 - #3 PACKING FIGHTER (Odds: 20.0, Conf: 85%, EV: 0.070)

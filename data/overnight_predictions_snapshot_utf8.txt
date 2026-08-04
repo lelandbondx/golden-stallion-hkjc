@@ -1,0 +1,85 @@
+﻿Loading data...
+Meeting: Sha Tin - 2026-05-17 - Going: GOOD TO YIELDING
+
+--- RACE 1 : Class 5 - 1800m ---
+1st Pick: #1 HAILTOTHEVICTORS (Odds: 20.0) - Conf: 85% - EV: 0.140 - Jockey: L Ferraris
+2st Pick: #3 MATSU VICTOR (Odds: 20.0) - Conf: 73% - EV: 0.104 - Jockey: C Y Ho
+3st Pick: #8 ALL ARE MINE (Odds: 20.0) - Conf: 64% - EV: 0.079 - Jockey: Z Purton
+4st Pick: #6 ON THE LASH (Odds: 20.0) - Conf: 59% - EV: 0.062 - Jockey: H Y Yuen
+5st Pick: #10 ROSEWOOD FLEETFOOT (Odds: 20.0) - Conf: 39% - EV: 0.003 - Jockey: K Teetan
+
+--- RACE 2 : Class 4 - 1000m ---
+1st Pick: #4 COUNTRY PRIDE (Odds: 20.0) - Conf: 85% - EV: 0.082 - Jockey: H Bowman
+2st Pick: #1 RUN RUN SUNRISE (Odds: 20.0) - Conf: 81% - EV: 0.074 - Jockey: H Y Yuen
+3st Pick: #7 HERO RISING (Odds: 20.0) - Conf: 76% - EV: 0.063 - Jockey: K Teetan
+4st Pick: #2 MABUBU (Odds: 20.0) - Conf: 54% - EV: 0.015 - Jockey: J Orman
+5st Pick: #8 KINGDOM (Odds: 20.0) - Conf: 53% - EV: 0.013 - Jockey: J Moreira
+
+--- RACE 3 : Class 5 - 1200m ---
+1st Pick: #9 TRIUMPHANT WARRIOR (Odds: 20.0) - Conf: 85% - EV: 0.104 - Jockey: H Y Yuen
+2st Pick: #4 MAJESTIC DELIGHT (Odds: 20.0) - Conf: 70% - EV: 0.064 - Jockey: H Bowman
+3st Pick: #3 ENJOY GOLF (Odds: 20.0) - Conf: 62% - EV: 0.044 - Jockey: H Bentley
+4st Pick: #8 DASH (Odds: 20.0) - Conf: 56% - EV: 0.028 - Jockey: E Brown
+5st Pick: #1 ALWAYS FLUKE (Odds: 20.0) - Conf: 47% - EV: 0.007 - Jockey: J Orman
+
+--- RACE 4 : Class 4 - 1200m ---
+1st Pick: #1 PAPAYA BROSE (Odds: 20.0) - Conf: 85% - EV: 0.093 - Jockey: J Moreira
+2st Pick: #4 NAVAS G (Odds: 20.0) - Conf: 68% - EV: 0.053 - Jockey: H Y Yuen
+3st Pick: #10 BETTER AND BETTER (Odds: 20.0) - Conf: 62% - EV: 0.036 - Jockey: A Badel
+4st Pick: #2 A TIME FOR US (Odds: 20.0) - Conf: 61% - EV: 0.033 - Jockey: C Y Ho
+5st Pick: #6 SPEEDY POWER (Odds: 20.0) - Conf: 57% - EV: 0.023 - Jockey: M Chadwick
+
+--- RACE 5 : Class 4 - 1200m ---
+1st Pick: #3 LUCRATIVE EIGHT (Odds: 20.0) - Conf: 85% - EV: 0.077 - Jockey: K Teetan
+2st Pick: #7 SUPERB SPIRIT (Odds: 20.0) - Conf: 75% - EV: 0.059 - Jockey: Z Purton
+3st Pick: #2 ISLAND BUDDY (Odds: 20.0) - Conf: 72% - EV: 0.054 - Jockey: L Ferraris
+4st Pick: #6 DANCING BLAZE (Odds: 20.0) - Conf: 58% - EV: 0.027 - Jockey: J Moreira
+5st Pick: #5 INCREDIBLE MOMENT (Odds: 20.0) - Conf: 49% - EV: 0.011 - Jockey: R Kingscote
+
+--- RACE 6 : Class 3 - 1200m ---
+1st Pick: #2 CELESTIAL HERO (Odds: 20.0) - Conf: 85% - EV: 0.121 - Jockey: H Bowman
+2st Pick: #10 THUNDER KIT (Odds: 20.0) - Conf: 65% - EV: 0.066 - Jockey: C Y Ho
+3st Pick: #6 KING EQUINE (Odds: 20.0) - Conf: 45% - EV: 0.012 - Jockey: E Brown
+4st Pick: #9 GLORIOUS DYNASTY (Odds: 20.0) - Conf: 43% - EV: 0.006 - Jockey: L Hewitson
+5st Pick: #3 LIFELINE EXPRESS (Odds: 20.0) - Conf: 42% - EV: 0.003 - Jockey: A Atzeni
+
+--- RACE 7 : Class 4 - 1400m ---
+1st Pick: #2 FORZA TORO (Odds: 20.0) - Conf: 85% - EV: 0.111 - Jockey: J Moreira
+2st Pick: #12 NINJA DERBY (Odds: 20.0) - Conf: 79% - EV: 0.097 - Jockey: K Teetan
+3st Pick: #4 SOLID CAR (Odds: 20.0) - Conf: 50% - EV: 0.027 - Jockey: J Orman
+4st Pick: #1 RUN RUN SMART (Odds: 20.0) - Conf: 45% - EV: 0.015 - Jockey: H Y Yuen
+5st Pick: #6 NEXT FORTUNE (Odds: 20.0) - Conf: 43% - EV: 0.009 - Jockey: L Hewitson
+
+--- RACE 8 : Class 4 - 1800m ---
+1st Pick: #5 ABSOLUTE HONOUR (Odds: 20.0) - Conf: 85% - EV: 0.130 - Jockey: Z Purton
+2st Pick: #14 ROMANTIC FANTASY (Odds: 20.0) - Conf: 67% - EV: 0.082 - Jockey: A Badel
+3st Pick: #1 PACKING FIGHTER (Odds: 20.0) - Conf: 53% - EV: 0.045 - Jockey: A Atzeni
+4st Pick: #7 SUPER GOLDENDRAGON (Odds: 20.0) - Conf: 43% - EV: 0.018 - Jockey: K C Leung
+5st Pick: #4 VERMILION TEMPEST (Odds: 20.0) - Conf: 35% - EV: -0.001 - Jockey: J Moreira
+
+--- RACE 9 : Class 4 - 1400m ---
+1st Pick: #10 VOYAGE BOSS (Odds: 20.0) - Conf: 85% - EV: 0.097 - Jockey: A Atzeni
+2st Pick: #11 ACE (Odds: 20.0) - Conf: 76% - EV: 0.076 - Jockey: C L Chau
+3st Pick: #6 HIGH RISE VICTORY (Odds: 20.0) - Conf: 63% - EV: 0.047 - Jockey: C Y Ho
+4st Pick: #8 PRESTIGE RICKY (Odds: 20.0) - Conf: 48% - EV: 0.012 - Jockey: J Orman
+5st Pick: #5 MEANINGFUL DRAGON (Odds: 20.0) - Conf: 44% - EV: 0.004 - Jockey: L Ferraris
+
+--- RACE 10 : Class 3 - 1400m ---
+1st Pick: #4 CITY GOLD BANNER (Odds: 20.0) - Conf: 85% - EV: 0.162 - Jockey: B Avdulla
+2st Pick: #6 THE UNIQUE STAR (Odds: 20.0) - Conf: 46% - EV: 0.036 - Jockey: K Teetan
+3st Pick: #8 CHILL EASY (Odds: 20.0) - Conf: 45% - EV: 0.034 - Jockey: C L Chau
+4st Pick: #1 MAKE YOU SMILE (Odds: 20.0) - Conf: 42% - EV: 0.024 - Jockey: L Ferraris
+5st Pick: #3 MR ENERGIA (Odds: 20.0) - Conf: 39% - EV: 0.015 - Jockey: M F Poon
+
+--- RACE 11 : Class 3 - 1400m ---
+1st Pick: #8 HAPPY BOSS (Odds: 20.0) - Conf: 85% - EV: 0.074 - Jockey: L Ferraris
+2st Pick: #1 EVERYONE'S STAR (Odds: 20.0) - Conf: 78% - EV: 0.062 - Jockey: J Moreira
+3st Pick: #7 ALL'S WELL (Odds: 20.0) - Conf: 61% - EV: 0.032 - Jockey: C Y Ho
+4st Pick: #2 AEROVOLANIC (Odds: 20.0) - Conf: 51% - EV: 0.015 - Jockey: Z Purton
+5st Pick: #11 WELL ENOUGH (Odds: 20.0) - Conf: 50% - EV: 0.013 - Jockey: H Bentley
+
+
+--- OVERALL GLOBAL BEST BETS ---
+Top Pick 1: Race 10 - #4 CITY GOLD BANNER (Odds: 20.0, Conf: 85%, EV: 0.162)
+Top Pick 2: Race 1 - #1 HAILTOTHEVICTORS (Odds: 20.0, Conf: 85%, EV: 0.140)
+Top Pick 3: Race 8 - #5 ABSOLUTE HONOUR (Odds: 20.0, Conf: 85%, EV: 0.130)
