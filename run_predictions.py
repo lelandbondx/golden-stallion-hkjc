@@ -403,10 +403,14 @@ def run():
             pick = race_picks.iloc[i]
             print(f"{i+1}st Pick: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
             
-        # Compile dual-staking wagers for this race: Rank 1 + Rank 5
+        # Compile high-ROI dual-staking wagers: Rank 1 Anchor + Highest EV Sleeper in Top 5
         if len(race_picks) > 4:
             p1 = race_picks.iloc[0]
-            p5 = race_picks.iloc[4]
+            # Find candidate with highest positive value_diff among picks 2..5
+            top5_candidates = race_picks.iloc[1:5].copy()
+            high_ev_sleepers = top5_candidates.sort_values(by='value_diff', ascending=False)
+            p5 = high_ev_sleepers.iloc[0]
+            
             dual_staking_wagers.append({
                 "race_no": race.get("race_no"),
                 "p1_no": p1['no'],
@@ -414,7 +418,8 @@ def run():
                 "p1_odds": float(p1['win_odds']),
                 "p5_no": p5['no'],
                 "p5_name": p5['name'],
-                "p5_odds": float(p5['win_odds'])
+                "p5_odds": float(p5['win_odds']),
+                "p5_ev": float(p5['value_diff'])
             })
             
         best = race_picks.iloc[0].to_dict()
