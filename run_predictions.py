@@ -349,7 +349,11 @@ def run():
                 if t_speed >= 0.5:
                     t_boost += 0.02
                     
-                # 3. Poor trial (bottom 10% and slow)
+                # 3. High quality trial vs top competition
+                if t_data.get('high_quality_trial', False):
+                    t_boost += 0.02
+                    
+                # 4. Poor trial (bottom 10% and slow)
                 if t_pos >= 0.90 and t_speed <= -1.0:
                     t_penalty -= 0.03
                     

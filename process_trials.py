@@ -89,11 +89,16 @@ def process_trials(meeting_date_str="2026-07-15"):
             if std_time and trial_sec:
                 speed_diff = std_time - trial_sec
                 
+            jockey_name = str(row["jockey"]).strip().upper()
+            top_jockeys = ['Z PURTON', 'H BOWMAN', 'J MOREIRA', 'C Y HO', 'K TEETAN', 'A ATZENI']
+            is_elite_jockey_trial = any(tj in jockey_name for tj in top_jockeys)
+            
             trials_list.append({
                 "days_since": days_since,
                 "pos_ratio": pos_ratio,
                 "speed_diff": speed_diff,
-                "jockey": str(row["jockey"]).strip().upper()
+                "jockey": jockey_name,
+                "is_elite_jockey": is_elite_jockey_trial
             })
             
         if not trials_list:
@@ -113,11 +118,15 @@ def process_trials(meeting_date_str="2026-07-15"):
         # 4. Trial jockeys list
         trial_jockeys = [t["jockey"] for t in trials_30d]
         
+        # 5. Elite trial flag: Top 30% position, positive speed diff, ridden by elite jockey
+        high_quality_trial = any(t["pos_ratio"] <= 0.35 and t["is_elite_jockey"] for t in trials_30d)
+        
         horse_features[horse_name.strip().upper()] = {
             "trial_count_30d": trial_count_30d,
             "best_trial_pos_ratio": float(best_pos_ratio),
             "best_trial_speed_diff": float(best_speed_diff),
-            "trial_jockeys": trial_jockeys
+            "trial_jockeys": trial_jockeys,
+            "high_quality_trial": high_quality_trial
         }
         
     # Save to file
