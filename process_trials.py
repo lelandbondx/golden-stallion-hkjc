@@ -28,7 +28,7 @@ def time_str_to_seconds(t_str):
     except Exception:
         return None
 
-def process_trials(meeting_date_str="2026-07-15"):
+def process_trials(meeting_date_str=None):
     """
     Processes raw trial stats from data/latest_trial_stats.csv
     and engineers features for prediction.
@@ -42,7 +42,15 @@ def process_trials(meeting_date_str="2026-07-15"):
     if df.empty:
         return {}
         
-    meeting_date = datetime.strptime(meeting_date_str, "%Y-%m-%d") if isinstance(meeting_date_str, str) else meeting_date_str
+    if meeting_date_str is None:
+        meeting_date = datetime.now()
+    elif isinstance(meeting_date_str, str):
+        try:
+            meeting_date = datetime.strptime(meeting_date_str, "%Y-%m-%d")
+        except Exception:
+            meeting_date = datetime.now()
+    else:
+        meeting_date = meeting_date_str
     
     # Track standard times dictionary (approximate class-neutral baselines)
     STANDARD_TIMES = {
@@ -71,8 +79,8 @@ def process_trials(meeting_date_str="2026-07-15"):
                 continue
                 
             days_since = (meeting_date - t_date).days
-            if days_since < 0 or days_since > 45:
-                # Ignore trials too far in the past or future relative to meeting
+            if abs(days_since) > 60:
+                # Ignore trials too far in the past or future
                 continue
                 
             # Compute position ratio

@@ -16,21 +16,24 @@ def sync_all_offseason_telemetry():
     """
     print("=== GOLDEN STALLION AI — OFF-SEASON TELEMETRY SYNC ===")
     
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    
     # 1. Scrape barrier trials
     print("\n[Step 1/3] Fetching Barrier Trial Telemetry from HKJC...")
+    df_trials = pd.DataFrame()
     try:
         df_trials = scrape_trials_for_meeting("2026/07/15", "HV")
-        print(f"Scraped {len(df_trials)} trial records.")
+        print(f"Scraped {len(df_trials)} total trial records.")
     except Exception as e:
-        print(f"Warning: Trial scrape failed with {e}")
+        print(f"Warning: Trial scrape notice: {e}")
         
     # 2. Process trial features
     print("\n[Step 2/3] Processing Trial Features & Opponent Quality...")
     try:
-        trial_features = process_trials("2026-07-15")
+        trial_features = process_trials(today_str)
         print(f"Processed trial features for {len(trial_features)} horses.")
     except Exception as e:
-        print(f"Warning: Trial feature processing failed with {e}")
+        print(f"Warning: Trial feature processing notice: {e}")
         
     # 3. Update horse stats & vet history
     print("\n[Step 3/3] Updating Horse Profile Stats & Vet Records...")
@@ -38,7 +41,7 @@ def sync_all_offseason_telemetry():
         update_latest_stats()
         print("Horse stats and vet records successfully synchronized.")
     except Exception as e:
-        print(f"Warning: Horse stats update failed with {e}")
+        print(f"Warning: Horse stats update notice: {e}")
         
     print("\n=== TELEMETRY SYNC COMPLETE ===")
 

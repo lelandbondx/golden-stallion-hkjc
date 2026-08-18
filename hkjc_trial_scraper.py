@@ -68,11 +68,15 @@ def scrape_trials_for_meeting(racedate="2026/07/15", venue="HV"):
     print(f"Scraping barrier trials for meeting: {racedate} at {venue_code}...")
     
     # Query up to 12 races (standard meeting sizes)
+    consecutive_failures = 0
     for race_no in range(1, 13):
         url = f"https://racing.hkjc.com/en-us/local/information/localtrackwork?racedate={racedate}&Racecourse={venue_code}&RaceNo={race_no}"
         try:
-            res = requests.get(url, headers=headers, timeout=15)
+            res = requests.get(url, headers=headers, timeout=5)
             if res.status_code != 200:
+                consecutive_failures += 1
+                if consecutive_failures >= 2:
+                    break
                 continue
                 
             dfs = pd.read_html(res.content)
@@ -85,8 +89,12 @@ def scrape_trials_for_meeting(racedate="2026/07/15", venue="HV"):
                     break
                     
             if trackwork_df is None:
+                consecutive_failures += 1
+                if consecutive_failures >= 2:
+                    break
                 continue
-                
+            
+            consecutive_failures = 0
             print(f"Race {race_no}: Found trackwork table with {len(trackwork_df)} runners.")
             
             # Find the correct column names

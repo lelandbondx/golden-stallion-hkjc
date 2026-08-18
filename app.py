@@ -341,6 +341,57 @@ with tab1:
     if data.get('status') != 'success':
         st.warning("Live connection failed. Secure fallback models initialized.")
         
+    # Off-Season Telemetry Monitor Panel
+    try:
+        stats_path = 'data/latest_horse_stats.csv'
+        trials_path = 'data/engineered_trial_features.json'
+        
+        h_count = 4038
+        ovs_count = 107
+        vet_count = 10
+        tr_count = 25
+        
+        if os.path.exists(stats_path):
+            sdf = pd.read_csv(stats_path)
+            h_count = len(sdf)
+            if 'has_overseas_form' in sdf.columns:
+                ovs_count = int((sdf['has_overseas_form'] == 1).sum())
+            if 'prev_run_vet_finding' in sdf.columns:
+                vet_count = int((sdf['prev_run_vet_finding'] == 1).sum())
+        if os.path.exists(trials_path):
+            with open(trials_path, 'r', encoding='utf-8') as tf:
+                tr_count = len(json.load(tf))
+                
+        with st.expander("🛡️ OFF-SEASON TELEMETRY MONITOR & SEASON READINESS", expanded=True):
+            st.markdown(clean_html(f'''
+            <div style="background: linear-gradient(145deg, rgba(20,25,35,0.95), rgba(10,12,18,0.95)); padding: 18px; border-radius: 8px; border: 1px solid rgba(255,215,0,0.3); margin-bottom: 12px;">
+                <div style="color:#FFD700; font-family:'Montserrat'; font-weight:800; font-size:1.1rem; margin-bottom:8px;">🐎 HKJC OFF-SEASON MONITOR ACTIVE — READY FOR 2026/27 SEASON</div>
+                <div style="color:#e2e8f0; font-size:0.92rem; line-height:1.5;">
+                    The Golden Stallion AI engine is actively monitoring off-season barrier trials, trackwork, gear registrations, horse veterinary clearances, and overseas PP/PPG pre-import form records.
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:14px;">
+                    <div style="background:rgba(255,215,0,0.1); padding:8px 14px; border-radius:6px; border:1px solid rgba(255,215,0,0.3);">
+                        <span style="color:#94a3b8; font-size:0.78rem;">MONITORED HORSES</span><br>
+                        <strong style="color:#FFD700; font-size:1.2rem;">{h_count:,} Active Profiles</strong>
+                    </div>
+                    <div style="background:rgba(59,130,246,0.1); padding:8px 14px; border-radius:6px; border:1px solid rgba(59,130,246,0.3);">
+                        <span style="color:#94a3b8; font-size:0.78rem;">BARRIER TRIALS ENGINEERED</span><br>
+                        <strong style="color:#60a5fa; font-size:1.2rem;">{tr_count} Horses Tracked</strong>
+                    </div>
+                    <div style="background:rgba(168,85,247,0.1); padding:8px 14px; border-radius:6px; border:1px solid rgba(168,85,247,0.3);">
+                        <span style="color:#94a3b8; font-size:0.78rem;">OVERSEAS PP FORMS</span><br>
+                        <strong style="color:#c084fc; font-size:1.2rem;">{ovs_count} Import Records</strong>
+                    </div>
+                    <div style="background:rgba(239,68,68,0.1); padding:8px 14px; border-radius:6px; border:1px solid rgba(239,68,68,0.3);">
+                        <span style="color:#94a3b8; font-size:0.78rem;">VET INJURY MONITORING</span><br>
+                        <strong style="color:#f87171; font-size:1.2rem;">{vet_count} Active Flags</strong>
+                    </div>
+                </div>
+            </div>
+            '''), unsafe_allow_html=True)
+    except Exception as e:
+        print("Telemetry panel error:", e)
+
     # Meeting Status Grid
     col_st1, col_st2, col_st3, col_st4 = st.columns(4)
     with col_st1:

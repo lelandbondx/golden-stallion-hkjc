@@ -34,6 +34,7 @@ jobs:
           python build_db.py
           python build_features.py
           python build_features_results.py
+          python sync_offseason_data.py
           python hkjc_profile_scraper.py
           python initialize_baseline_odds.py
           python scratch_train.py

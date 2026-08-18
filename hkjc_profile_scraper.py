@@ -20,7 +20,7 @@ def get_horse_profile_stats(horse_code):
     headers = {"User-Agent": "Mozilla/5.0"}
     
     try:
-        res = requests.get(url, headers=headers, timeout=10)
+        res = requests.get(url, headers=headers, timeout=5)
         dfs = pd.read_html(res.content)
         
         # Find the table with race history
@@ -176,7 +176,7 @@ def get_horse_profile_stats(horse_code):
         if horse_id:
             try:
                 vet_url = f"https://racing.hkjc.com/racing/information/English/Horse/ovehorse.aspx?horseid={horse_id}"
-                vet_res = requests.get(vet_url, headers=headers, timeout=10)
+                vet_res = requests.get(vet_url, headers=headers, timeout=5)
                 if vet_res.status_code == 200:
                     vet_dfs = pd.read_html(vet_res.content)
                     vet_history = []
@@ -247,6 +247,26 @@ def update_latest_stats():
                     name = runner.get('name', '').strip().upper()
                     if code and name:
                         horses_to_update[code] = name
+
+    # If in off-season (no live meeting runners), fallback to updating active horses in horse_info / latest_horse_stats
+    if not horses_to_update:
+        print("[Off-Season Mode] No live meeting card found. Refreshing recent active horses...")
+        try:
+            import os
+            if os.path.exists('data/horse_info.csv'):
+                h_df = pd.read_csv('data/horse_info.csv')
+                # Prioritize latest entries/active horses, take up to 25 per off-season sync run
+                h_df_recent = h_df.tail(25)
+                for _, row in h_df_recent.iterrows():
+                    raw_h = str(row.get('horse', ''))
+                    m = re.search(r'^(.*?)\(([A-Z0-9]+)\)', raw_h)
+                    if m:
+                        h_name = m.group(1).strip().upper()
+                        h_code = m.group(2).strip().upper()
+                        if h_name and h_code:
+                            horses_to_update[h_code] = h_name
+        except Exception as e:
+            print(f"Off-season database fallback notice: {e}")
                         
     print(f"Found {len(horses_to_update)} horses to update.")
     
