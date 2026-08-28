@@ -307,24 +307,29 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
         'D EUSTACE': 0.07, 'B CRAWFORD': 0.08
     }
 
-    if os.path.exists('data/jockey_win_rates.csv') and 'jockey' in live_df.columns:
+    if 'jockey' not in live_df.columns:
+        live_df['jockey'] = ''
+    if 'trainer' not in live_df.columns:
+        live_df['trainer'] = ''
+
+    if os.path.exists('data/jockey_win_rates.csv'):
         jockey_df = pd.read_csv('data/jockey_win_rates.csv')
-        jockey_df['jockey_clean'] = jockey_df['jockey'].str.upper().str.strip()
-        live_df['jockey_clean'] = live_df['jockey'].str.upper().str.strip()
+        jockey_df['jockey_clean'] = jockey_df['jockey'].astype(str).str.upper().str.strip()
+        live_df['jockey_clean'] = live_df['jockey'].astype(str).str.upper().str.strip()
         live_df = pd.merge(live_df, jockey_df[['jockey_clean', 'jockey_win_rate']], on='jockey_clean', how='left')
         live_df['jockey_win_rate'] = live_df['jockey_win_rate'].fillna(live_df['jockey_clean'].map(FALLBACK_JOCKEY_RATES)).fillna(0.08)
     else:
-        live_df['jockey_clean'] = live_df.get('jockey', '').str.upper().str.strip()
+        live_df['jockey_clean'] = live_df['jockey'].astype(str).str.upper().str.strip()
         live_df['jockey_win_rate'] = live_df['jockey_clean'].map(FALLBACK_JOCKEY_RATES).fillna(0.08)
         
-    if os.path.exists('data/trainer_win_rates.csv') and 'trainer' in live_df.columns:
+    if os.path.exists('data/trainer_win_rates.csv'):
         trainer_df = pd.read_csv('data/trainer_win_rates.csv')
-        trainer_df['trainer_clean'] = trainer_df['trainer'].str.upper().str.strip()
-        live_df['trainer_clean'] = live_df['trainer'].str.upper().str.strip()
+        trainer_df['trainer_clean'] = trainer_df['trainer'].astype(str).str.upper().str.strip()
+        live_df['trainer_clean'] = live_df['trainer'].astype(str).str.upper().str.strip()
         live_df = pd.merge(live_df, trainer_df[['trainer_clean', 'trainer_win_rate']], on='trainer_clean', how='left')
         live_df['trainer_win_rate'] = live_df['trainer_win_rate'].fillna(live_df['trainer_clean'].map(FALLBACK_TRAINER_RATES)).fillna(0.08)
     else:
-        live_df['trainer_clean'] = live_df.get('trainer', '').str.upper().str.strip()
+        live_df['trainer_clean'] = live_df['trainer'].astype(str).str.upper().str.strip()
         live_df['trainer_win_rate'] = live_df['trainer_clean'].map(FALLBACK_TRAINER_RATES).fillna(0.08)
 
     live_df = prepare_features(live_df, is_live=True, venue=venue, going=going, race_date=race_date, race_class_int=race_class_int, track_type=track_type)
