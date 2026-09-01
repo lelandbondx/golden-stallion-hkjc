@@ -13,13 +13,6 @@
         "trial_jockeys": [],
         "high_quality_trial": false
     },
-    "CELESTIAL HARMONY": {
-        "trial_count_30d": 0,
-        "best_trial_pos_ratio": 1.0,
-        "best_trial_speed_diff": 0.0,
-        "trial_jockeys": [],
-        "high_quality_trial": false
-    },
     "COPARTNER FLEET": {
         "trial_count_30d": 0,
         "best_trial_pos_ratio": 1.0,
@@ -77,13 +70,6 @@
         "high_quality_trial": false
     },
     "PASS LINE": {
-        "trial_count_30d": 0,
-        "best_trial_pos_ratio": 1.0,
-        "best_trial_speed_diff": 0.0,
-        "trial_jockeys": [],
-        "high_quality_trial": false
-    },
-    "SHOTGUN": {
         "trial_count_30d": 0,
         "best_trial_pos_ratio": 1.0,
         "best_trial_speed_diff": 0.0,
