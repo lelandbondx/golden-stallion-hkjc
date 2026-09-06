@@ -1115,3 +1115,34 @@
 [2026-09-06 00:29:59] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
 [2026-09-06 00:32:01] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
 [2026-09-06 00:34:02] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:36:04] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:38:06] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:40:08] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:42:10] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:44:12] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:46:13] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:48:15] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:50:17] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:52:19] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:54:21] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:56:23] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 00:58:24] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 01:00:27] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 01:02:29] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 01:04:31] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 01:06:34] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 01:08:35] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 01:10:37] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 01:12:39] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 01:14:41] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD. No changes.
+[2026-09-06 10:25:37] 🚨 ALERT: Race 3 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-06 10:25:37] 🚨 ALERT: Race 4 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-06 10:25:37] 🚨 ALERT: Race 5 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-06 10:25:37] 🚨 ALERT: Race 6 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-06 10:25:37] 🚨 ALERT: Race 7 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-06 10:25:37] 🚨 ALERT: Race 8 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-06 10:25:37] 🚨 ALERT: Race 9 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-06 10:25:37] 🚨 ALERT: Race 10 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-06 10:25:37] 🔄 Triggering prediction update...
+[2026-09-06 10:25:53] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
+[2026-09-06 10:25:53] 📡 Auto-syncing updated data to origin main...
