@@ -53,6 +53,20 @@ def run_prediction_update():
             f.write(res.stdout)
             
         log_message(f"✅ Predictions successfully updated. Selections written to {PREDICTIONS_SNAPSHOT}")
+        
+        # Immediate Git Push Protocol to sync live Streamlit app
+        try:
+            log_message("📡 Auto-syncing updated data to origin main...")
+            subprocess.run(["git", "add", "data/"], check=True, capture_output=True)
+            subprocess.run(["git", "commit", "-m", "Auto-sync live race day predictions and going state"], check=False, capture_output=True)
+            subprocess.run(["git", "pull", "origin", "main", "-X", "ours"], check=False, capture_output=True)
+            push_res = subprocess.run(["git", "push", "origin", "main"], check=False, capture_output=True, text=True)
+            if push_res.returncode == 0:
+                log_message("🚀 Live Streamlit app successfully synchronized with origin main.")
+            else:
+                log_message(f"⚠️ Git push note: {push_res.stderr.strip()}")
+        except Exception as git_err:
+            log_message(f"⚠️ Git auto-sync exception: {git_err}")
     except subprocess.CalledProcessError as e:
         log_message(f"❌ Error running predictions script: {e.stderr}")
     except Exception as e:
