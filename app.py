@@ -793,7 +793,18 @@ with tab1:
         trial_boost = np.array(trial_boost)
         trial_penalty = np.array(trial_penalty)
         
-        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + trial_boost + trial_penalty
+        # Non-First Start for New Trainer with Good Rating (1.5% Boost)
+        good_rating_thresh = 38 if class_int == 5 else 50
+        is_good_rating = (df_runners.get('rtg', 40) >= good_rating_thresh) | (pd.to_numeric(df_runners.get('horse_rating', 40), errors='coerce').fillna(40) >= good_rating_thresh)
+        is_settled_stable_horse = is_good_rating & (recent_pos <= 6.0) & (vet_issue == 0) & (~is_debutant)
+        trainer_transfer_2nd_up_boost = np.where(is_settled_stable_horse, 0.015, 0.0)
+
+        # Fresh Horses First Mile / Middle Distance with Fitness (1.5% Boost)
+        is_mile_or_distance = distance >= 1400
+        is_fit_fresh = is_mile_or_distance & (recent_pos <= 5.0) & (vet_issue == 0)
+        fresh_mile_fitness_boost = np.where(is_fit_fresh, 0.015, 0.0)
+
+        multiplier = 1.0 + standout_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_mile_fitness_boost
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier

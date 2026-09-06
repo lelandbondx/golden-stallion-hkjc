@@ -2,90 +2,90 @@ Loading data...
 Meeting: Sha Tin - 2026-09-06 - Going: GOOD
 
 --- RACE 1 : Class 5 - 1200m ---
-1st Pick: #4 SUNNY Q (Odds: 2.6) - Conf: 85% - EV: -0.184 - Jockey: Z Purton
-2st Pick: #2 FOREVER FANCY (Odds: 6.2) - Conf: 82% - EV: -0.011 - Jockey: C Y Ho
-3st Pick: #3 POWER PATCH (Odds: 11.0) - Conf: 75% - EV: 0.034 - Jockey: P N Wong
-4st Pick: #11 YEE CHEONG RAIDER (Odds: 10.0) - Conf: 74% - EV: 0.026 - Jockey: A Badel
-5st Pick: #7 SO MY FOLKS (Odds: 10.0) - Conf: 71% - EV: 0.019 - Jockey: H Bowman
+1st Pick: #4 SUNNY Q (Odds: 2.6) - Conf: 85% - EV: -0.132 - Jockey: Z Purton
+2st Pick: #11 YEE CHEONG RAIDER (Odds: 10.0) - Conf: 65% - EV: 0.047 - Jockey: A Badel
+3st Pick: #3 POWER PATCH (Odds: 11.0) - Conf: 65% - EV: 0.055 - Jockey: P N Wong
+4st Pick: #2 FOREVER FANCY (Odds: 6.0) - Conf: 62% - EV: -0.012 - Jockey: C Y Ho
+5st Pick: #5 RISING ELITE (Odds: 11.0) - Conf: 59% - EV: 0.040 - Jockey: K Teetan
 
 --- RACE 2 : Class 4 - 1000m ---
-1st Pick: #1 LIGHTNESS OF MUSIC (Odds: 3.8) - Conf: 85% - EV: -0.068 - Jockey: Z Purton
-2st Pick: #4 RUN RUN SUNRISE (Odds: 8.1) - Conf: 75% - EV: 0.029 - Jockey: K C Leung
-3st Pick: #2 RAPID PHANTOM (Odds: 4.0) - Conf: 68% - EV: -0.087 - Jockey: H Y Yuen
-4st Pick: #8 RUBY THRIVE (Odds: 9.0) - Conf: 63% - EV: 0.017 - Jockey: P N Wong
-5st Pick: #3 ONESHOT (Odds: 15.0) - Conf: 59% - EV: 0.048 - Jockey: K Teetan
+1st Pick: #1 LIGHTNESS OF MUSIC (Odds: 3.8) - Conf: 85% - EV: -0.050 - Jockey: Z Purton
+2st Pick: #2 RAPID PHANTOM (Odds: 4.1) - Conf: 74% - EV: -0.055 - Jockey: H Y Yuen
+3st Pick: #4 RUN RUN SUNRISE (Odds: 8.0) - Conf: 62% - EV: 0.016 - Jockey: K C Leung
+4st Pick: #8 RUBY THRIVE (Odds: 9.1) - Conf: 57% - EV: 0.021 - Jockey: P N Wong
+5st Pick: #3 ONESHOT (Odds: 14.0) - Conf: 51% - EV: 0.040 - Jockey: K Teetan
 
 --- RACE 3 : Group Three - 1200m ---
-1st Pick: #5 LUCKY WITH YOU (Odds: 238.0) - Conf: 85% - EV: 0.365 - Jockey: M F Poon
-2st Pick: #6 MAGIC CONTROL (Odds: 278.0) - Conf: 43% - EV: 0.171 - Jockey: M Chadwick
-3st Pick: #4 TOMODACHI KOKOROE (Odds: 297.0) - Conf: 38% - EV: 0.149 - Jockey: H Bentley
-4st Pick: #3 PATCH OF STARS (Odds: 139.0) - Conf: 37% - EV: 0.141 - Jockey: K Teetan
-5st Pick: #2 COPARTNER PRANCE (Odds: 277.0) - Conf: 29% - EV: 0.106 - Jockey: M L Yeung
+1st Pick: #5 LUCKY WITH YOU (Odds: 238.0) - Conf: 85% - EV: 0.326 - Jockey: M F Poon
+2st Pick: #3 PATCH OF STARS (Odds: 139.0) - Conf: 54% - EV: 0.191 - Jockey: K Teetan
+3st Pick: #6 MAGIC CONTROL (Odds: 279.0) - Conf: 45% - EV: 0.153 - Jockey: M Chadwick
+4st Pick: #4 TOMODACHI KOKOROE (Odds: 295.0) - Conf: 44% - EV: 0.149 - Jockey: H Bentley
+5st Pick: #2 COPARTNER PRANCE (Odds: 273.0) - Conf: 40% - EV: 0.130 - Jockey: M L Yeung
 
 --- RACE 4 : Class 5 - 1600m ---
-1st Pick: #5 FIGHTING MACHINE (Odds: 8.7) - Conf: 85% - EV: 0.034 - Jockey: B Avdulla
-2st Pick: #10 GENERAL SMART (Odds: 4.7) - Conf: 82% - EV: -0.052 - Jockey: A Atzeni
-3st Pick: #1 AMAZING DUCK (Odds: 4.0) - Conf: 81% - EV: -0.082 - Jockey: Z Purton
-4st Pick: #2 HAILTOTHEVICTORS (Odds: 14.0) - Conf: 78% - EV: 0.057 - Jockey: L Ferraris
-5st Pick: #3 SOARING BRONCO (Odds: 14.0) - Conf: 77% - EV: 0.055 - Jockey: J Orman
+1st Pick: #10 GENERAL SMART (Odds: 4.6) - Conf: 85% - EV: -0.027 - Jockey: A Atzeni
+2st Pick: #1 AMAZING DUCK (Odds: 4.1) - Conf: 84% - EV: -0.050 - Jockey: Z Purton
+3st Pick: #2 HAILTOTHEVICTORS (Odds: 14.0) - Conf: 71% - EV: 0.062 - Jockey: L Ferraris
+4st Pick: #5 FIGHTING MACHINE (Odds: 8.8) - Conf: 66% - EV: 0.017 - Jockey: B Avdulla
+5st Pick: #4 I EXCELLE (Odds: 17.0) - Conf: 64% - EV: 0.057 - Jockey: Y L Chung
 
 --- RACE 5 : Class 4 - 1200m ---
-1st Pick: #1 ISLAND BUDDY (Odds: 6.8) - Conf: 85% - EV: 0.016 - Jockey: K Teetan
-2st Pick: #8 NEXT FORTUNE (Odds: 9.0) - Conf: 78% - EV: 0.034 - Jockey: C Y Ho
-3st Pick: #7 LIGHT YEARS GLORY (Odds: 6.1) - Conf: 69% - EV: -0.023 - Jockey: L Ferraris
-4st Pick: #3 CAVA PIONEER (Odds: 5.7) - Conf: 63% - EV: -0.042 - Jockey: M F Poon
-5st Pick: #4 STUNNING BUNDLE (Odds: 7.3) - Conf: 59% - EV: -0.017 - Jockey: H Bowman
+1st Pick: #1 ISLAND BUDDY (Odds: 6.7) - Conf: 85% - EV: 0.034 - Jockey: K Teetan
+2st Pick: #8 NEXT FORTUNE (Odds: 8.7) - Conf: 81% - EV: 0.053 - Jockey: C Y Ho
+3st Pick: #4 STUNNING BUNDLE (Odds: 7.3) - Conf: 70% - EV: 0.013 - Jockey: H Bowman
+4st Pick: #5 VIRTUS GLORY (Odds: 8.0) - Conf: 68% - EV: 0.018 - Jockey: H Y Yuen
+5st Pick: #7 LIGHT YEARS GLORY (Odds: 6.2) - Conf: 64% - EV: -0.021 - Jockey: L Ferraris
 
 --- RACE 6 : Class 4 - 1200m ---
-1st Pick: #3 MATZDEN (Odds: 5.9) - Conf: 85% - EV: -0.001 - Jockey: Z Purton
-2st Pick: #1 SPICY STANDARD (Odds: 10.0) - Conf: 80% - EV: 0.048 - Jockey: A Atzeni
-3st Pick: #2 HAROLD WIN (Odds: 3.6) - Conf: 79% - EV: -0.098 - Jockey: H Bowman
-4st Pick: #4 KA YING RESILIENCE (Odds: 7.5) - Conf: 61% - EV: -0.010 - Jockey: K Teetan
-5st Pick: #6 BLAZING METEOR (Odds: 29.0) - Conf: 58% - EV: 0.066 - Jockey: M F Poon
+1st Pick: #3 MATZDEN (Odds: 5.9) - Conf: 85% - EV: 0.022 - Jockey: Z Purton
+2st Pick: #2 HAROLD WIN (Odds: 3.7) - Conf: 84% - EV: -0.061 - Jockey: H Bowman
+3st Pick: #7 GROUPER (Odds: 7.6) - Conf: 62% - EV: 0.002 - Jockey: E C W Wong
+4st Pick: #1 SPICY STANDARD (Odds: 10.0) - Conf: 58% - EV: 0.020 - Jockey: A Atzeni
+5st Pick: #4 KA YING RESILIENCE (Odds: 7.4) - Conf: 57% - EV: -0.013 - Jockey: K Teetan
 
 --- RACE 7 : Class 2 - 1400m ---
-1st Pick: #2 INVINCIBLE SHIELD (Odds: 12.0) - Conf: 85% - EV: 0.123 - Jockey: C Y Ho
-2st Pick: #3 WINNING OVATION (Odds: 2.3) - Conf: 76% - EV: -0.184 - Jockey: Z Purton
-3st Pick: #5 MAX QUE (Odds: 8.8) - Conf: 64% - EV: 0.051 - Jockey: A Badel
-4st Pick: #9 INFINITE RESOLVE (Odds: 7.5) - Conf: 53% - EV: 0.011 - Jockey: A Atzeni
-5st Pick: #4 SIX PACK (Odds: 5.1) - Conf: 46% - EV: -0.058 - Jockey: K Teetan
+1st Pick: #2 INVINCIBLE SHIELD (Odds: 11.0) - Conf: 85% - EV: 0.142 - Jockey: C Y Ho
+2st Pick: #3 WINNING OVATION (Odds: 2.3) - Conf: 65% - EV: -0.192 - Jockey: Z Purton
+3st Pick: #4 SIX PACK (Odds: 5.2) - Conf: 62% - EV: -0.003 - Jockey: K Teetan
+4st Pick: #5 MAX QUE (Odds: 8.7) - Conf: 58% - EV: 0.050 - Jockey: A Badel
+5st Pick: #8 DROMBEG BANNER (Odds: 9.6) - Conf: 40% - EV: 0.009 - Jockey: Y L Chung
 
 --- RACE 8 : Class 4 - 1400m ---
-1st Pick: #1 JOYFUL JOY (Odds: 4.0) - Conf: 85% - EV: -0.016 - Jockey: H Bowman
-2st Pick: #2 MASTER LUCKY (Odds: 14.0) - Conf: 55% - EV: 0.059 - Jockey: A Atzeni
-3st Pick: #5 GALLANT EPOCH (Odds: 35.0) - Conf: 50% - EV: 0.081 - Jockey: L Ferraris
-4st Pick: #3 ANOTHER WORLD (Odds: 13.0) - Conf: 48% - EV: 0.038 - Jockey: K Teetan
-5st Pick: #6 GRAND PATCH (Odds: 5.1) - Conf: 43% - EV: -0.070 - Jockey: C Y Ho
+1st Pick: #1 JOYFUL JOY (Odds: 4.0) - Conf: 85% - EV: -0.011 - Jockey: H Bowman
+2st Pick: #2 MASTER LUCKY (Odds: 14.0) - Conf: 57% - EV: 0.061 - Jockey: A Atzeni
+3st Pick: #6 GRAND PATCH (Odds: 5.1) - Conf: 50% - EV: -0.058 - Jockey: C Y Ho
+4st Pick: #7 NOBLE PATCH (Odds: 18.0) - Conf: 45% - EV: 0.043 - Jockey: K C Leung
+5st Pick: #5 GALLANT EPOCH (Odds: 35.0) - Conf: 43% - EV: 0.060 - Jockey: L Ferraris
 
 --- RACE 9 : Class 3 - 1400m ---
-1st Pick: #1 LUCKY SAM GOR (Odds: 11.0) - Conf: 85% - EV: 0.098 - Jockey: H Bowman
-2st Pick: #6 CIRCUIT CHAMPION (Odds: 3.6) - Conf: 80% - EV: -0.066 - Jockey: Z Purton
-3st Pick: #2 THE RED HARE (Odds: 15.0) - Conf: 75% - EV: 0.097 - Jockey: M F Poon
-4st Pick: #4 AEROINVINCIBLE (Odds: 5.8) - Conf: 74% - EV: 0.007 - Jockey: A Atzeni
-5st Pick: #5 BABY SAKURA (Odds: 2.8) - Conf: 72% - EV: -0.148 - Jockey: C Y Ho
+1st Pick: #4 AEROINVINCIBLE (Odds: 5.8) - Conf: 85% - EV: 0.060 - Jockey: A Atzeni
+2st Pick: #2 THE RED HARE (Odds: 15.0) - Conf: 75% - EV: 0.117 - Jockey: M F Poon
+3st Pick: #1 LUCKY SAM GOR (Odds: 10.0) - Conf: 72% - EV: 0.081 - Jockey: H Bowman
+4st Pick: #5 BABY SAKURA (Odds: 2.7) - Conf: 72% - EV: -0.139 - Jockey: C Y Ho
+5st Pick: #6 CIRCUIT CHAMPION (Odds: 3.7) - Conf: 69% - EV: -0.064 - Jockey: Z Purton
 
 --- RACE 10 : Class 3 - 1200m ---
-1st Pick: #1 PUBLIC ATTENTION (Odds: 5.3) - Conf: 85% - EV: 0.004 - Jockey: K Teetan
-2st Pick: #2 JUMBO TREASURE (Odds: 10.0) - Conf: 70% - EV: 0.046 - Jockey: K C Leung
-3st Pick: #4 GUSTOSISIMO (Odds: 13.0) - Conf: 69% - EV: 0.063 - Jockey: H Bowman
-4st Pick: #6 GOLD PATCH (Odds: 8.7) - Conf: 60% - EV: 0.015 - Jockey: C Y Ho
-5st Pick: #8 SUPER STRONG KID (Odds: 6.0) - Conf: 59% - EV: -0.030 - Jockey: A Atzeni
+1st Pick: #1 PUBLIC ATTENTION (Odds: 5.3) - Conf: 85% - EV: 0.027 - Jockey: K Teetan
+2st Pick: #8 SUPER STRONG KID (Odds: 6.0) - Conf: 70% - EV: 0.008 - Jockey: A Atzeni
+3st Pick: #4 GUSTOSISIMO (Odds: 13.0) - Conf: 68% - EV: 0.075 - Jockey: H Bowman
+4st Pick: #6 GOLD PATCH (Odds: 8.6) - Conf: 62% - EV: 0.030 - Jockey: C Y Ho
+5st Pick: #12 MASTER PAYMENT (Odds: 3.9) - Conf: 61% - EV: -0.087 - Jockey: Z Purton
 
 
 --- OVERALL GLOBAL BEST BETS ---
-Top Pick 1: Race 3 - #5 LUCKY WITH YOU (Odds: 238.0, Conf: 85%, EV: 0.365)
-Top Pick 2: Race 7 - #2 INVINCIBLE SHIELD (Odds: 12.0, Conf: 85%, EV: 0.123)
-Top Pick 3: Race 8 - #1 JOYFUL JOY (Odds: 4.0, Conf: 85%, EV: -0.016)
+Top Pick 1: Race 3 - #5 LUCKY WITH YOU (Odds: 238.0, Conf: 85%, EV: 0.326)
+Top Pick 2: Race 7 - #2 INVINCIBLE SHIELD (Odds: 11.0, Conf: 85%, EV: 0.142)
+Top Pick 3: Race 9 - #4 AEROINVINCIBLE (Odds: 5.8, Conf: 85%, EV: 0.060)
 
 
 --- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---
 Race 1 Bet Selection: Anchor #4 SUNNY Q (2.6) | Sleeper #3 POWER PATCH (11.0)
-Race 2 Bet Selection: Anchor #1 LIGHTNESS OF MUSIC (3.8) | Sleeper #3 ONESHOT (15.0)
-Race 3 Bet Selection: Anchor #5 LUCKY WITH YOU (238.0) | Sleeper #6 MAGIC CONTROL (278.0)
-Race 4 Bet Selection: Anchor #5 FIGHTING MACHINE (8.7) | Sleeper #2 HAILTOTHEVICTORS (14.0)
-Race 5 Bet Selection: Anchor #1 ISLAND BUDDY (6.8) | Sleeper #8 NEXT FORTUNE (9.0)
-Race 6 Bet Selection: Anchor #3 MATZDEN (5.9) | Sleeper #6 BLAZING METEOR (29.0)
-Race 7 Bet Selection: Anchor #2 INVINCIBLE SHIELD (12.0) | Sleeper #5 MAX QUE (8.8)
-Race 8 Bet Selection: Anchor #1 JOYFUL JOY (4.0) | Sleeper #5 GALLANT EPOCH (35.0)
-Race 9 Bet Selection: Anchor #1 LUCKY SAM GOR (11.0) | Sleeper #2 THE RED HARE (15.0)
+Race 2 Bet Selection: Anchor #1 LIGHTNESS OF MUSIC (3.8) | Sleeper #3 ONESHOT (14.0)
+Race 3 Bet Selection: Anchor #5 LUCKY WITH YOU (238.0) | Sleeper #3 PATCH OF STARS (139.0)
+Race 4 Bet Selection: Anchor #10 GENERAL SMART (4.6) | Sleeper #2 HAILTOTHEVICTORS (14.0)
+Race 5 Bet Selection: Anchor #1 ISLAND BUDDY (6.7) | Sleeper #8 NEXT FORTUNE (8.7)
+Race 6 Bet Selection: Anchor #3 MATZDEN (5.9) | Sleeper #1 SPICY STANDARD (10.0)
+Race 7 Bet Selection: Anchor #2 INVINCIBLE SHIELD (11.0) | Sleeper #5 MAX QUE (8.7)
+Race 8 Bet Selection: Anchor #1 JOYFUL JOY (4.0) | Sleeper #2 MASTER LUCKY (14.0)
+Race 9 Bet Selection: Anchor #4 AEROINVINCIBLE (5.8) | Sleeper #2 THE RED HARE (15.0)
 Race 10 Bet Selection: Anchor #1 PUBLIC ATTENTION (5.3) | Sleeper #4 GUSTOSISIMO (13.0)
