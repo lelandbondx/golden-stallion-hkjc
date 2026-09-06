@@ -1120,39 +1120,39 @@ with tab1:
                     </div>
                     '''), unsafe_allow_html=True)
             
-                    # Show dynamic pace summaries
-                    speed_count = (df_runners['avg_first_pos'] <= 3.5).sum()
-                    if speed_count >= 4:
-                        pace_summary = "⚡ <b>HIGH PACE</b>: We assess this race to have a lot of speed. Front-runners may tire late, but they can still hold on based on form. Be wary of back-markers unless they have elite acceleration."
-                        pace_color = "rgba(239, 68, 68, 0.08)"
-                        border_color = "rgba(239, 68, 68, 0.4)"
-                        text_color = "#ef4444"
-                    elif speed_count <= 1:
-                        pace_summary = "🐌 <b>ON SPEED</b>: Slow pace expected. Speed bias favors front-runners/leaders who can take off. Closers and late finishers may struggle to make up ground."
-                        pace_color = "rgba(255, 215, 0, 0.08)"
-                        border_color = "rgba(255, 215, 0, 0.4)"
-                        text_color = "#FFD700"
-                    else:
-                        pace_summary = "⚖️ <b>GOOD PACE</b>: Balanced pace expected. Fair conditions; both speed horses and late finishers have equal opportunity based on form and odds."
-                        pace_color = "rgba(255, 255, 255, 0.05)"
-                        border_color = "rgba(255, 255, 255, 0.2)"
-                        text_color = "#ffffff"
-                        
-                    st.markdown(clean_html(f'''
-                    <div style="background: {pace_color}; padding: 10px 16px; border-radius: 6px; border: 1px solid {border_color}; margin-bottom: 15px; font-size:0.95rem; color:{text_color}; font-family:'Inter', sans-serif;">
-                        {pace_summary}
-                    </div>
-                    '''), unsafe_allow_html=True)
-                    
-                    # Special Exotic Sleeper Alert for DO YOU JUST (L094)
-                    has_do_you_just = any(str(r.get('code', '')).upper() == 'L094' for r in race.get('runners', []))
-                    if has_do_you_just:
-                        do_you_just_no = next((r.get('no') for r in race.get('runners', []) if str(r.get('code', '')).upper() == 'L094'), 12)
-                        st.markdown(clean_html(f'''
-                        <div style="background: rgba(239, 68, 68, 0.12); padding: 12px 18px; border-radius: 8px; border: 2px solid #ef4444; margin-bottom: 15px; font-size:0.95rem; color:#ffffff; font-family:'Inter', sans-serif;">
-                            🚨 <b>EXOTIC SLEEPER ALERT (RONAN'S PICK)</b>: <b>#{do_you_just_no} DO YOU JUST</b> (Code L094) has won his last 2 races. Form indicates high effectiveness when putting Cheek Pieces (CP) back on and removing the Hood. Crucial exotic addition for exotic ticket structures!
-                        </div>
-                        '''), unsafe_allow_html=True)
+            # Show dynamic pace summaries
+            speed_count = (df_runners['avg_first_pos'] <= 3.5).sum()
+            if speed_count >= 4:
+                pace_summary = "⚡ <b>HIGH PACE</b>: We assess this race to have a lot of speed. Front-runners may tire late, but they can still hold on based on form. Be wary of back-markers unless they have elite acceleration."
+                pace_color = "rgba(239, 68, 68, 0.08)"
+                border_color = "rgba(239, 68, 68, 0.4)"
+                text_color = "#ef4444"
+            elif speed_count <= 1:
+                pace_summary = "🐌 <b>ON SPEED</b>: Slow pace expected. Speed bias favors front-runners/leaders who can take off. Closers and late finishers may struggle to make up ground."
+                pace_color = "rgba(255, 215, 0, 0.08)"
+                border_color = "rgba(255, 215, 0, 0.4)"
+                text_color = "#FFD700"
+            else:
+                pace_summary = "⚖️ <b>GOOD PACE</b>: Balanced pace expected. Fair conditions; both speed horses and late finishers have equal opportunity based on form and odds."
+                pace_color = "rgba(255, 255, 255, 0.05)"
+                border_color = "rgba(255, 255, 255, 0.2)"
+                text_color = "#ffffff"
+                
+            st.markdown(clean_html(f'''
+            <div style="background: {pace_color}; padding: 10px 16px; border-radius: 6px; border: 1px solid {border_color}; margin-bottom: 15px; font-size:0.95rem; color:{text_color}; font-family:'Inter', sans-serif;">
+                {pace_summary}
+            </div>
+            '''), unsafe_allow_html=True)
+            
+            # Special Exotic Sleeper Alert for DO YOU JUST (L094)
+            has_do_you_just = any(str(r.get('code', '')).upper() == 'L094' for r in race.get('runners', []))
+            if has_do_you_just:
+                do_you_just_no = next((r.get('no') for r in race.get('runners', []) if str(r.get('code', '')).upper() == 'L094'), 12)
+                st.markdown(clean_html(f'''
+                <div style="background: rgba(239, 68, 68, 0.12); padding: 12px 18px; border-radius: 8px; border: 2px solid #ef4444; margin-bottom: 15px; font-size:0.95rem; color:#ffffff; font-family:'Inter', sans-serif;">
+                    🚨 <b>EXOTIC SLEEPER ALERT (RONAN'S PICK)</b>: <b>#{do_you_just_no} DO YOU JUST</b> (Code L094) has won his last 2 races. Form indicates high effectiveness when putting Cheek Pieces (CP) back on and removing the Hood. Crucial exotic addition for exotic ticket structures!
+                </div>
+                '''), unsafe_allow_html=True)
             
             race_picks = df_runners.sort_values(by='gs_score', ascending=False)
             
