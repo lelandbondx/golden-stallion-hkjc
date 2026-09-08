@@ -17,6 +17,20 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 def get_active_horses(limit=100):
     horses = {}
+    try:
+        from scraper import get_live_meeting_data
+        live_data = get_live_meeting_data()
+        if live_data and 'meetings' in live_data:
+            for meeting in live_data['meetings']:
+                for race in meeting.get('races', []):
+                    for runner in race.get('runners', []):
+                        code = runner.get('code')
+                        name = runner.get('name', '').strip().upper()
+                        if code and name:
+                            horses[code] = name
+    except Exception as e:
+        print(f"Notice getting live meeting runners: {e}")
+
     if os.path.exists('data/horse_info.csv'):
         h_df = pd.read_csv('data/horse_info.csv')
         for _, r in h_df.iterrows():
@@ -26,7 +40,8 @@ def get_active_horses(limit=100):
                 name = m.group(1).strip().upper()
                 code = m.group(2).strip().upper()
                 if code and code[0] in ['G', 'H', 'J', 'K', 'L']:
-                    horses[code] = name
+                    if code not in horses:
+                        horses[code] = name
                     
     active_list = list(horses.items())
     return active_list[:limit] if limit else active_list

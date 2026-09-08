@@ -2139,6 +2139,144 @@
         ],
         "ZACHARY": [
             "CP-/B2/TT"
+        ],
+        "FLASH STAR": [
+            "H/TT"
+        ],
+        "NOBLE FANS": [
+            "B/TT"
+        ],
+        "STURDY RUBY": [
+            "B/TT"
+        ],
+        "THE AZURE": [
+            "CP1"
+        ],
+        "LAKESHORE HERO": [
+            "CP-"
+        ],
+        "MIGHTY STEED": [
+            "CP"
+        ],
+        "FIREFOOT": [
+            "V-/B2/TT"
+        ],
+        "MACANESE MASTER": [
+            "V"
+        ],
+        "CALIFORNIA MOXIE": [
+            "B/TT"
+        ],
+        "DECISION LINK": [
+            "V/TT",
+            "V1/TT"
+        ],
+        "VIGOR ELLEEGANT": [
+            "TT"
+        ],
+        "SKY DEEP": [
+            "V/XB"
+        ],
+        "INNO SUPER": [
+            "SR/TT"
+        ],
+        "SHAMZ": [
+            "TT"
+        ],
+        "SHOOTING TO TOP": [
+            "B/TT"
+        ],
+        "MR GOOD VIBES": [
+            "B/TT-"
+        ],
+        "DEFINITIVE": [
+            "B/TT"
+        ],
+        "CHINA WIN": [
+            "B-"
+        ],
+        "SOLID WIN": [
+            "BR",
+            "BR1/TT-"
+        ],
+        "ANOTHER ZONDA": [
+            "B"
+        ],
+        "BLUE ILLUSION": [
+            "B"
+        ],
+        "DO YOUR PART": [
+            "XB/TT"
+        ],
+        "GENERAL REDWOOD": [
+            "CP/TT"
+        ],
+        "VIOLET STAR": [
+            "SR/TT"
+        ],
+        "FORTUNATE SON": [
+            "TT"
+        ],
+        "JUMBO BLESSING": [
+            "TT"
+        ],
+        "SAMARKAND": [
+            "CP/TT"
+        ],
+        "LEADING DRAGON": [
+            "TT"
+        ],
+        "KING OBERON": [
+            "B"
+        ],
+        "HARMONY FIRE": [
+            "B/TT"
+        ],
+        "THE PERFECT MATCH": [
+            "TT"
+        ],
+        "HARMONY N BLESSED": [
+            "B/TT"
+        ],
+        "TYCOON RESOURCES": [
+            "TT",
+            "TT1"
+        ],
+        "COPARTNER FLEET": [
+            "CP-/XB1"
+        ],
+        "NORTHERN FIRE BALL": [
+            "CP-/TT",
+            "TT"
+        ],
+        "AURIO": [
+            "SR/TT"
+        ],
+        "FORERUNNER": [
+            "CP/TT"
+        ],
+        "POWER KOEPP": [
+            "B"
+        ],
+        "KING MILES": [
+            "B/TT",
+            "CP-/H-/B1/TT"
+        ],
+        "MATTERS MOST": [
+            "B/TT"
+        ],
+        "STORMING DRAGON": [
+            "B2/TT"
+        ],
+        "DEVAS TWELVE": [
+            "TT"
+        ],
+        "MOTOR": [
+            "B/TT",
+            "CP-/B1/TT"
+        ],
+        "WARRIORS DREAM": [
+            "H-/XB/TT2"
         ]
     },
     "running_styles": {
@@ -3938,7 +4076,100 @@
         "ZACHARY": 8.076923076923077,
         "ZERO ENERGY ACT": 10.625,
         "ZERO HEDGE": 6.0,
-        "ZOOMOOL": 10.5
+        "ZOOMOOL": 10.5,
+        "AUTUMN VIBES": 6.5,
+        "STORMY KNIGHT": 10.375,
+        "MARVEL AND GOLD": 8.083333333333334,
+        "DASH": 7.666666666666667,
+        "FLASH STAR": 7.090909090909091,
+        "TEAM HAPPY": 6.083333333333333,
+        "NOBLE FANS": 7.166666666666667,
+        "ALWAYS FLUKE": 5.666666666666667,
+        "STURDY RUBY": 9.166666666666666,
+        "TELECOM POWER": 6.666666666666667,
+        "SOLAR RIVER": 4.416666666666667,
+        "THE AZURE": 9.5,
+        "FRANCIS MEYNELL": 4.833333333333333,
+        "LAKESHORE HERO": 6.833333333333333,
+        "PRECISION HOPE": 9.444444444444445,
+        "MIGHTY STEED": 3.0833333333333335,
+        "FIREFOOT": 6.0,
+        "FORTUNE SUPERNOVA": 7.666666666666667,
+        "CASA ROCHESTER": 8.75,
+        "MACANESE MASTER": 2.75,
+        "CALIFORNIA MOXIE": 10.083333333333334,
+        "NO OTHER CHOICE": 6.083333333333333,
+        "THOUSAND CUPS": 2.1666666666666665,
+        "CONRAD THE GREAT": 6.916666666666667,
+        "VON BAER": 7.5,
+        "DECISION LINK": 6.75,
+        "CIRCUIT CENTURY": 6.6,
+        "VIGOR ELLEEGANT": 6.75,
+        "SWAGGER BRO": 7.7272727272727275,
+        "LEAN MASTER": 3.5,
+        "ORIENTAL SURPRISE": 6.5,
+        "WINNING DIAMOND": 9.083333333333334,
+        "SKY DEEP": 4.2,
+        "INNO SUPER": 8.0,
+        "SHAMZ": 7.818181818181818,
+        "TURF PHOENIX": 6.166666666666667,
+        "SHOOTING TO TOP": 5.166666666666667,
+        "MR GOOD VIBES": 9.333333333333334,
+        "COLOURFUL GAN": 6.777777777777778,
+        "DEFINITIVE": 4.5,
+        "CHINA WIN": 7.3,
+        "MISSION GIANT": 7.4,
+        "JOLTIN": 10.571428571428571,
+        "THE LION KING": 4.583333333333333,
+        "SOLID WIN": 8.666666666666666,
+        "ROMANTIC LAOS": 6.583333333333333,
+        "AMAZING GAZE": 6.083333333333333,
+        "SUNDAY'S SERENADE": 8.75,
+        "WINDLORD": 6.333333333333333,
+        "ANOTHER ZONDA": 4.416666666666667,
+        "BLUE ILLUSION": 7.181818181818182,
+        "DO YOUR PART": 3.0833333333333335,
+        "GENERAL REDWOOD": 5.571428571428571,
+        "BEAUTY SHOW": 1.2,
+        "DREAMING TOGETHER": 9.4,
+        "KEEFY": 5.916666666666667,
+        "VIOLET STAR": 7.0,
+        "FORTUNATE SON": 7.181818181818182,
+        "SUPERB KING": 2.1666666666666665,
+        "JUMBO BLESSING": 7.142857142857143,
+        "GIANT SPIRIT": 3.857142857142857,
+        "GEORGIAN SIGMA": 2.5,
+        "SAMARKAND": 2.727272727272727,
+        "DOUBLE ALPHA": 2.3333333333333335,
+        "ZETA HEDGE": 2.5,
+        "LEADING DRAGON": 1.375,
+        "TURBO JEFFERIES": 9.6,
+        "KING OBERON": 4.333333333333333,
+        "ROBOT LUCKY STAR": 6.5,
+        "HARMONY FIRE": 5.416666666666667,
+        "PRESTIGE WIN": 7.4,
+        "THE PERFECT MATCH": 7.333333333333333,
+        "LUCKY TWENTY": 4.111111111111111,
+        "DAY DAY VICTORY": 7.083333333333333,
+        "HARMONY N BLESSED": 2.75,
+        "BITS SUPERSTAR": 4.0,
+        "TYCOON RESOURCES": 4.0,
+        "COPARTNER FLEET": 5.333333333333333,
+        "NORTHERN FIRE BALL": 2.090909090909091,
+        "FORZA LEADER": 9.416666666666666,
+        "GOOD LUCK HAPPY": 4.833333333333333,
+        "AURIO": 8.727272727272727,
+        "FORERUNNER": 7.5,
+        "POWER KOEPP": 5.5,
+        "KING MILES": 6.916666666666667,
+        "MATTERS MOST": 2.0833333333333335,
+        "STORMING DRAGON": 8.916666666666666,
+        "ACE CHAMPION": 8.5,
+        "DEVAS TWELVE": 2.8333333333333335,
+        "TANG HEART": 7.333333333333333,
+        "RYUI KOKOROE": 10.454545454545455,
+        "MOTOR": 6.083333333333333,
+        "WARRIORS DREAM": 6.333333333333333
     },
     "last_comments": {
         "BABA MAMA": "Began well, raced 2 wide in midfield, slightly improved     from 600M, finished off strongly to get 2nd.                                                                                                                                        ",

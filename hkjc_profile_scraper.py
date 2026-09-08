@@ -1,3 +1,5 @@
+import os
+import re
 import requests
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -34,11 +36,12 @@ def get_horse_profile_stats(horse_code):
             return None
             
         # The first row is usually headers, let's clean it up
-        race_df.columns = race_df.iloc[0]
+        race_df.columns = [str(c).strip() for c in race_df.iloc[0]]
         race_df = race_df.drop(0)
         
-        # Filter out season headers
-        race_df = race_df[~race_df['Race Index'].str.contains('Season', na=False)]
+        # Filter out season headers and rows with "No Running Records"
+        race_df = race_df[~race_df['Race Index'].astype(str).str.contains('Season|No Running', na=False, case=False)]
+        race_df = race_df[race_df['Date'].astype(str).str.match(r'^\d{2}/\d{2}/\d{2}$')]
         
         # Enforce "Current Form" constraint: Only look at the horse's last 12 runs
         race_df = race_df.head(12)
@@ -62,6 +65,7 @@ def get_horse_profile_stats(horse_code):
         
         # Track
         race_df['Track'] = race_df['RC/Track/ Course'].astype(str).apply(lambda x: 'Sha Tin' if 'ST' in x else ('Happy Valley' if 'HV' in x else 'Unknown'))
+        race_df['Surface'] = race_df['RC/Track/ Course'].astype(str).apply(lambda x: 'AWT' if ('AWT' in x or 'ALL WEATHER' in x) else 'TURF')
         
         # Rating
         race_df['Rtg.'] = pd.to_numeric(race_df['Rtg.'], errors='coerce')
@@ -85,6 +89,36 @@ def get_horse_profile_stats(horse_code):
             ST_vs_HV_pref = 'Happy Valley'
         else:
             ST_vs_HV_pref = 'Neutral'
+            
+        AWT_runs = len(race_df[race_df['Surface'] == 'AWT'])
+        AWT_wins = len(wins[wins['Surface'] == 'AWT'])
+        Turf_runs = len(race_df[race_df['Surface'] == 'TURF'])
+        Turf_wins = len(wins[wins['Surface'] == 'TURF'])
+        AWT_win_rate = AWT_wins / AWT_runs if AWT_runs > 0 else 0
+        Turf_win_rate = Turf_wins / Turf_runs if Turf_runs > 0 else 0
+        if AWT_win_rate > Turf_win_rate:
+            AWT_vs_Turf_pref = 'AWT'
+        elif Turf_win_rate > AWT_win_rate:
+            AWT_vs_Turf_pref = 'TURF'
+        else:
+            AWT_vs_Turf_pref = 'Neutral'
+
+        # Running style from Running Position
+        def parse_fp(pos_str):
+            pos_str = str(pos_str).strip()
+            parts = pos_str.split()
+            if parts:
+                try:
+                    return float(parts[0])
+                except:
+                    return None
+            return None
+
+        if 'Running Position' in race_df.columns:
+            first_positions = race_df['Running Position'].apply(parse_fp).dropna()
+            avg_first_pos = float(first_positions.mean()) if not first_positions.empty else 6.0
+        else:
+            avg_first_pos = 6.0
             
         # Fav going
         places = race_df[race_df['is_place'] == 1]
@@ -133,6 +167,8 @@ def get_horse_profile_stats(horse_code):
         last_gear = None
         if not race_df.empty:
             last_gear = str(race_df.iloc[0].get('Gear', ''))
+            if last_gear.strip() in ['-', '--', 'nan']:
+                last_gear = ''
             
         # Gear Win Rate
         gear_win_rate = 0.0
@@ -211,11 +247,20 @@ def get_horse_profile_stats(horse_code):
                 
         has_overseas_form = 1 if 'pre-import formrecords' in res.text.lower() or 'fse_' in res.text.lower() else 0
         
+        # Winning gears list
+        winning_gears = sorted(list(set(wins['Gear'].astype(str).str.strip().str.upper().tolist()))) if not wins.empty else []
+        winning_gears = [g for g in winning_gears if g and g not in ['-', '--', 'NAN']]
+
         return {
+            "horse_code": horse_code,
             "last_win_rating": last_win_rating,
             "ST_win_rate": ST_win_rate,
             "HV_win_rate": HV_win_rate,
             "ST_vs_HV_pref": ST_vs_HV_pref,
+            "AWT_win_rate": AWT_win_rate,
+            "Turf_win_rate": Turf_win_rate,
+            "AWT_vs_Turf_pref": AWT_vs_Turf_pref,
+            "avg_first_pos": avg_first_pos,
             "last_form_going": last_form_going,
             "recent_avg_pos": recent_avg_pos,
             "recent_win_rate": recent_win_rate,
@@ -226,7 +271,8 @@ def get_horse_profile_stats(horse_code):
             "gear_win_rate": gear_win_rate,
             "distance_win_rate": distance_win_rate,
             "prev_run_vet_finding": prev_run_vet_finding,
-            "has_overseas_form": has_overseas_form
+            "has_overseas_form": has_overseas_form,
+            "winning_gears": winning_gears
         }
         
     except Exception as e:
@@ -252,7 +298,6 @@ def update_latest_stats():
     if not horses_to_update:
         print("[Off-Season Mode] No live meeting card found. Refreshing recent active horses...")
         try:
-            import os
             if os.path.exists('data/horse_info.csv'):
                 h_df = pd.read_csv('data/horse_info.csv')
                 # Prioritize latest entries/active horses, take up to 25 per off-season sync run
@@ -304,8 +349,36 @@ def update_latest_stats():
         combined = combined.drop_duplicates(subset=['clean_name'], keep='last')
         combined.to_csv('data/latest_horse_stats.csv', index=False)
         print(f"Added {len(new_rows)} new horse stats and saved.")
+        
+        # Sync running styles and winning gears to precomputed_features.json
+        try:
+            precomputed_file = 'data/precomputed_features.json'
+            precomputed_data = {
+                "winning_gears": {},
+                "running_styles": {},
+                "last_comments": {},
+                "sectional_bursts": {}
+            }
+            if os.path.exists(precomputed_file):
+                with open(precomputed_file, 'r', encoding='utf-8') as pf:
+                    precomputed_data = json.load(pf)
+            
+            for r in new_rows:
+                c_name = str(r.get('clean_name', '')).strip().upper()
+                if not c_name: continue
+                if 'avg_first_pos' in r and pd.notnull(r['avg_first_pos']):
+                    precomputed_data.setdefault('running_styles', {})[c_name] = float(r['avg_first_pos'])
+                if 'winning_gears' in r and r['winning_gears']:
+                    precomputed_data.setdefault('winning_gears', {})[c_name] = r['winning_gears']
+                    
+            with open(precomputed_file, 'w', encoding='utf-8') as pf:
+                json.dump(precomputed_data, pf, indent=4)
+            print(f"Synced {len(new_rows)} horses to {precomputed_file}")
+        except Exception as sync_e:
+            print(f"Warning: Failed to sync to precomputed_features.json: {sync_e}")
     else:
         print("No new horses to add.")
 
 if __name__ == '__main__':
     update_latest_stats()
+

@@ -1,1 +1,805 @@
-{}
+{
+    "ACE CHAMPION": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2222222222222222,
+        "best_trial_speed_diff": -1.9300000000000068,
+        "trial_jockeys": [
+            "C Y HO"
+        ],
+        "high_quality_trial": true
+    },
+    "ALWAYS FLUKE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6666666666666666,
+        "best_trial_speed_diff": -1.75,
+        "trial_jockeys": [
+            "H BENTLEY"
+        ],
+        "high_quality_trial": false
+    },
+    "AMAZING GAZE": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.25,
+        "best_trial_speed_diff": -0.23999999999999488,
+        "trial_jockeys": [
+            "K TEETAN",
+            "Y SALIM"
+        ],
+        "high_quality_trial": true
+    },
+    "ANOTHER ZONDA": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.25,
+        "best_trial_speed_diff": -0.6300000000000026,
+        "trial_jockeys": [
+            "P N WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "AURIO": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3,
+        "best_trial_speed_diff": -1.1700000000000017,
+        "trial_jockeys": [
+            "H Y YUEN"
+        ],
+        "high_quality_trial": false
+    },
+    "AUTUMN VIBES": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6,
+        "best_trial_speed_diff": 1.2100000000000009,
+        "trial_jockeys": [
+            "S SHAFRIZAL"
+        ],
+        "high_quality_trial": false
+    },
+    "BEAUTY SHOW": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.25,
+        "best_trial_speed_diff": -0.9099999999999966,
+        "trial_jockeys": [
+            "Z PURTON"
+        ],
+        "high_quality_trial": true
+    },
+    "BITS SUPERSTAR": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3333333333333333,
+        "best_trial_speed_diff": 0.5600000000000023,
+        "trial_jockeys": [
+            "P N WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "BLUE ILLUSION": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5,
+        "best_trial_speed_diff": 0.9600000000000009,
+        "trial_jockeys": [
+            "J ORMAN"
+        ],
+        "high_quality_trial": false
+    },
+    "CALIFORNIA MOXIE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
+        "best_trial_speed_diff": -1.75,
+        "trial_jockeys": [
+            "H BOWMAN"
+        ],
+        "high_quality_trial": false
+    },
+    "CASA ROCHESTER": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7777777777777778,
+        "best_trial_speed_diff": -1.9300000000000068,
+        "trial_jockeys": [
+            "H BOWMAN"
+        ],
+        "high_quality_trial": false
+    },
+    "CHINA WIN": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.25,
+        "best_trial_speed_diff": -0.45999999999999375,
+        "trial_jockeys": [
+            "M L YEUNG",
+            "M L YEUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "CIRCUIT CENTURY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.8,
+        "best_trial_speed_diff": 0.5,
+        "trial_jockeys": [
+            "E C W WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "COLOURFUL GAN": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.4444444444444444,
+        "best_trial_speed_diff": 0.8199999999999932,
+        "trial_jockeys": [
+            "R THOMAS"
+        ],
+        "high_quality_trial": false
+    },
+    "CONRAD THE GREAT": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2222222222222222,
+        "best_trial_speed_diff": -1.4099999999999966,
+        "trial_jockeys": [
+            "L HEWITSON"
+        ],
+        "high_quality_trial": false
+    },
+    "COPARTNER FLEET": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.4444444444444444,
+        "best_trial_speed_diff": -2.180000000000007,
+        "trial_jockeys": [
+            "M L YEUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "DASH": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": -1.3199999999999932,
+        "trial_jockeys": [
+            "L HEWITSON"
+        ],
+        "high_quality_trial": false
+    },
+    "DAY DAY VICTORY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.4,
+        "best_trial_speed_diff": -1.2700000000000031,
+        "trial_jockeys": [
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "DECISION LINK": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.9,
+        "best_trial_speed_diff": -0.12000000000000455,
+        "trial_jockeys": [
+            "E C W WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "DEFINITIVE": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.8,
+        "best_trial_speed_diff": 1.7800000000000011,
+        "trial_jockeys": [
+            "K L CHUI",
+            "S MUTAZA"
+        ],
+        "high_quality_trial": false
+    },
+    "DEVAS TWELVE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7,
+        "best_trial_speed_diff": 0.9600000000000009,
+        "trial_jockeys": [
+            "C M THABANA"
+        ],
+        "high_quality_trial": false
+    },
+    "DO YOUR PART": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.1,
+        "best_trial_speed_diff": -0.45999999999999375,
+        "trial_jockeys": [
+            "C M THABANA"
+        ],
+        "high_quality_trial": false
+    },
+    "DOUBLE ALPHA": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7777777777777778,
+        "best_trial_speed_diff": 0.20000000000000284,
+        "trial_jockeys": [
+            "M F POON"
+        ],
+        "high_quality_trial": false
+    },
+    "DREAMING TOGETHER": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2222222222222222,
+        "best_trial_speed_diff": -1.1299999999999955,
+        "trial_jockeys": [
+            "L HEWITSON"
+        ],
+        "high_quality_trial": false
+    },
+    "FIREFOOT": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.1111111111111111,
+        "best_trial_speed_diff": -1.9300000000000068,
+        "trial_jockeys": [
+            "K TEETAN"
+        ],
+        "high_quality_trial": true
+    },
+    "FLASH STAR": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6,
+        "best_trial_speed_diff": 0.5,
+        "trial_jockeys": [
+            "R KINGSCOTE"
+        ],
+        "high_quality_trial": false
+    },
+    "FORERUNNER": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7,
+        "best_trial_speed_diff": -1.9599999999999937,
+        "trial_jockeys": [
+            "L FERRARIS"
+        ],
+        "high_quality_trial": false
+    },
+    "FORTUNATE SON": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6,
+        "best_trial_speed_diff": -1.3299999999999983,
+        "trial_jockeys": [
+            "K TEETAN"
+        ],
+        "high_quality_trial": false
+    },
+    "FORTUNE SUPERNOVA": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
+        "best_trial_speed_diff": -0.9799999999999969,
+        "trial_jockeys": [
+            "J ORMAN"
+        ],
+        "high_quality_trial": false
+    },
+    "FRANCIS MEYNELL": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7,
+        "best_trial_speed_diff": -2.5799999999999983,
+        "trial_jockeys": [
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "GENERAL REDWOOD": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7777777777777778,
+        "best_trial_speed_diff": -2.180000000000007,
+        "trial_jockeys": [
+            "Y L CHUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "GEORGIAN SIGMA": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6,
+        "best_trial_speed_diff": -1.2700000000000031,
+        "trial_jockeys": [
+            "H BOWMAN"
+        ],
+        "high_quality_trial": false
+    },
+    "GOOD LUCK HAPPY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.8181818181818182,
+        "best_trial_speed_diff": -0.9799999999999969,
+        "trial_jockeys": [
+            "H BOWMAN"
+        ],
+        "high_quality_trial": false
+    },
+    "HARMONY FIRE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5,
+        "best_trial_speed_diff": 0.8100000000000023,
+        "trial_jockeys": [
+            "P N WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "HARMONY N BLESSED": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.09090909090909091,
+        "best_trial_speed_diff": 0.3400000000000034,
+        "trial_jockeys": [
+            "H Y YUEN",
+            "H Y YUEN"
+        ],
+        "high_quality_trial": false
+    },
+    "INNO SUPER": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.9,
+        "best_trial_speed_diff": -0.6599999999999966,
+        "trial_jockeys": [
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "JOLTIN": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": -1.75,
+        "trial_jockeys": [
+            "M L YEUNG",
+            "M L YEUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "KEEFY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.4,
+        "best_trial_speed_diff": -1.75,
+        "trial_jockeys": [
+            "M F POON"
+        ],
+        "high_quality_trial": false
+    },
+    "KING MILES": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3333333333333333,
+        "best_trial_speed_diff": -1.1299999999999955,
+        "trial_jockeys": [
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "KING OBERON": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2222222222222222,
+        "best_trial_speed_diff": -2.180000000000007,
+        "trial_jockeys": [
+            "L FERRARIS"
+        ],
+        "high_quality_trial": false
+    },
+    "LAKESHORE HERO": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5,
+        "best_trial_speed_diff": -1.3199999999999932,
+        "trial_jockeys": [
+            "P N WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "LEADING DRAGON": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3,
+        "best_trial_speed_diff": -1.8299999999999983,
+        "trial_jockeys": [
+            "H Y YUEN"
+        ],
+        "high_quality_trial": false
+    },
+    "LEAN MASTER": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.1111111111111111,
+        "best_trial_speed_diff": 0.20000000000000284,
+        "trial_jockeys": [
+            "H Y YUEN"
+        ],
+        "high_quality_trial": false
+    },
+    "MACANESE MASTER": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5,
+        "best_trial_speed_diff": -1.269999999999996,
+        "trial_jockeys": [
+            "K TEETAN"
+        ],
+        "high_quality_trial": false
+    },
+    "MARVEL AND GOLD": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3333333333333333,
+        "best_trial_speed_diff": 0.20000000000000284,
+        "trial_jockeys": [
+            "H BOWMAN"
+        ],
+        "high_quality_trial": true
+    },
+    "MATTERS MOST": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.16666666666666666,
+        "best_trial_speed_diff": -0.0799999999999983,
+        "trial_jockeys": [
+            "E C W WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "MIGHTY STEED": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5454545454545454,
+        "best_trial_speed_diff": -0.9799999999999969,
+        "trial_jockeys": [
+            "L FERRARIS"
+        ],
+        "high_quality_trial": false
+    },
+    "MISSION GIANT": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.625,
+        "best_trial_speed_diff": -0.9899999999999949,
+        "trial_jockeys": [
+            "K TEETAN"
+        ],
+        "high_quality_trial": false
+    },
+    "MOTOR": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": -0.45999999999999375,
+        "trial_jockeys": [
+            "K TEETAN"
+        ],
+        "high_quality_trial": true
+    },
+    "MR GOOD VIBES": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3333333333333333,
+        "best_trial_speed_diff": -1.75,
+        "trial_jockeys": [
+            "K TEETAN"
+        ],
+        "high_quality_trial": true
+    },
+    "NO OTHER CHOICE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5555555555555556,
+        "best_trial_speed_diff": -1.1299999999999955,
+        "trial_jockeys": [
+            "J ORMAN"
+        ],
+        "high_quality_trial": false
+    },
+    "NOBLE FANS": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7,
+        "best_trial_speed_diff": -0.14000000000000057,
+        "trial_jockeys": [
+            "R THOMAS"
+        ],
+        "high_quality_trial": false
+    },
+    "ORIENTAL SURPRISE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.1,
+        "best_trial_speed_diff": -2.5400000000000063,
+        "trial_jockeys": [
+            "H Y YUEN"
+        ],
+        "high_quality_trial": false
+    },
+    "POWER KOEPP": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.9,
+        "best_trial_speed_diff": 1.7800000000000011,
+        "trial_jockeys": [
+            "A BADEL"
+        ],
+        "high_quality_trial": false
+    },
+    "PRECISION HOPE": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.625,
+        "best_trial_speed_diff": -1.3199999999999932,
+        "trial_jockeys": [
+            "A BADEL",
+            "H Y YUEN"
+        ],
+        "high_quality_trial": false
+    },
+    "PRESTIGE WIN": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.8,
+        "best_trial_speed_diff": 1.2100000000000009,
+        "trial_jockeys": [
+            "J ORMAN"
+        ],
+        "high_quality_trial": false
+    },
+    "ROBOT LUCKY STAR": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.08333333333333333,
+        "best_trial_speed_diff": -0.740000000000002,
+        "trial_jockeys": [
+            "Z PURTON"
+        ],
+        "high_quality_trial": true
+    },
+    "ROMANTIC LAOS": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.875,
+        "best_trial_speed_diff": -0.9899999999999949,
+        "trial_jockeys": [
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "RYUI KOKOROE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3,
+        "best_trial_speed_diff": -2.0,
+        "trial_jockeys": [
+            "H BENTLEY"
+        ],
+        "high_quality_trial": false
+    },
+    "SAMARKAND": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.5555555555555556,
+        "best_trial_speed_diff": -1.1299999999999955,
+        "trial_jockeys": [
+            "Z PURTON",
+            "B AVDULLA"
+        ],
+        "high_quality_trial": false
+    },
+    "SHAMZ": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.8,
+        "best_trial_speed_diff": -1.3299999999999983,
+        "trial_jockeys": [
+            "L FERRARIS"
+        ],
+        "high_quality_trial": false
+    },
+    "SHOOTING TO TOP": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
+        "best_trial_speed_diff": -2.180000000000007,
+        "trial_jockeys": [
+            "K C LEUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "SKY DEEP": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3,
+        "best_trial_speed_diff": 1.5600000000000023,
+        "trial_jockeys": [
+            "E C W WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "SOLAR RIVER": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.8333333333333334,
+        "best_trial_speed_diff": -0.9099999999999966,
+        "trial_jockeys": [
+            "L FERRARIS"
+        ],
+        "high_quality_trial": false
+    },
+    "SOLID WIN": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5,
+        "best_trial_speed_diff": 1.5600000000000023,
+        "trial_jockeys": [
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "STORMING DRAGON": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.7,
+        "best_trial_speed_diff": 1.7800000000000011,
+        "trial_jockeys": [
+            "B AVDULLA",
+            "C M THABANA"
+        ],
+        "high_quality_trial": false
+    },
+    "STORMY KNIGHT": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6,
+        "best_trial_speed_diff": -1.25,
+        "trial_jockeys": [
+            "Z PURTON"
+        ],
+        "high_quality_trial": false
+    },
+    "STURDY RUBY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.9,
+        "best_trial_speed_diff": -1.8299999999999983,
+        "trial_jockeys": [
+            "P N WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "SUNDAY'S SERENADE": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.3333333333333333,
+        "best_trial_speed_diff": -1.9300000000000068,
+        "trial_jockeys": [
+            "Z PURTON",
+            "P N WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "SUPERB KING": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.1111111111111111,
+        "best_trial_speed_diff": 0.8199999999999932,
+        "trial_jockeys": [
+            "C M THABANA"
+        ],
+        "high_quality_trial": false
+    },
+    "SWAGGER BRO": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.5555555555555556,
+        "best_trial_speed_diff": 0.3400000000000034,
+        "trial_jockeys": [
+            "A BADEL",
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "TANG HEART": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.7,
+        "best_trial_speed_diff": -1.75,
+        "trial_jockeys": [
+            "L FERRARIS"
+        ],
+        "high_quality_trial": false
+    },
+    "TEAM HAPPY": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.6666666666666666,
+        "best_trial_speed_diff": 0.03999999999999915,
+        "trial_jockeys": [
+            "M F POON"
+        ],
+        "high_quality_trial": false
+    },
+    "TELECOM POWER": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.8888888888888888,
+        "best_trial_speed_diff": -1.4099999999999966,
+        "trial_jockeys": [
+            "H BENTLEY"
+        ],
+        "high_quality_trial": false
+    },
+    "THE AZURE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.4,
+        "best_trial_speed_diff": -1.3299999999999983,
+        "trial_jockeys": [
+            "M F POON"
+        ],
+        "high_quality_trial": false
+    },
+    "THE LION KING": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.8888888888888888,
+        "best_trial_speed_diff": -2.180000000000007,
+        "trial_jockeys": [
+            "M F POON"
+        ],
+        "high_quality_trial": false
+    },
+    "THE PERFECT MATCH": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
+        "best_trial_speed_diff": -1.9599999999999937,
+        "trial_jockeys": [
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "THOUSAND CUPS": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": -1.2700000000000031,
+        "trial_jockeys": [
+            "Y L CHUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "TURBO JEFFERIES": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.1,
+        "best_trial_speed_diff": 0.38000000000000256,
+        "trial_jockeys": [
+            "M L YEUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "TURF PHOENIX": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": -2.5400000000000063,
+        "trial_jockeys": [
+            "M L YEUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "TYCOON RESOURCES": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.1,
+        "best_trial_speed_diff": -1.3299999999999983,
+        "trial_jockeys": [
+            "Y L CHUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "VIGOR ELLEEGANT": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.1,
+        "best_trial_speed_diff": -1.3199999999999932,
+        "trial_jockeys": [
+            "C L CHAU"
+        ],
+        "high_quality_trial": false
+    },
+    "VIOLET STAR": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": 0.9300000000000068,
+        "trial_jockeys": [
+            "R THOMAS"
+        ],
+        "high_quality_trial": false
+    },
+    "VON BAER": {
+        "trial_count_30d": 2,
+        "best_trial_pos_ratio": 0.16666666666666666,
+        "best_trial_speed_diff": 0.38000000000000256,
+        "trial_jockeys": [
+            "M F POON",
+            "M F POON"
+        ],
+        "high_quality_trial": false
+    },
+    "WARRIORS DREAM": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5555555555555556,
+        "best_trial_speed_diff": 0.030000000000001137,
+        "trial_jockeys": [
+            "E C W WONG"
+        ],
+        "high_quality_trial": false
+    },
+    "WINDLORD": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.3,
+        "best_trial_speed_diff": -1.9599999999999937,
+        "trial_jockeys": [
+            "Y L CHUNG"
+        ],
+        "high_quality_trial": false
+    },
+    "WINNING DIAMOND": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.2,
+        "best_trial_speed_diff": -2.0,
+        "trial_jockeys": [
+            "Z PURTON"
+        ],
+        "high_quality_trial": true
+    },
+    "ZETA HEDGE": {
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.5555555555555556,
+        "best_trial_speed_diff": 0.5600000000000023,
+        "trial_jockeys": [
+            "H T MO"
+        ],
+        "high_quality_trial": false
+    }
+}
