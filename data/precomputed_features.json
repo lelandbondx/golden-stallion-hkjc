@@ -2280,6 +2280,181 @@
         ],
         "TEAM HAPPY": [
             "B"
+        ],
+        "THE CONCENTRATION": [
+            "B"
+        ],
+        "SUPREME WINNER": [
+            "CP/SR/TT"
+        ],
+        "MANYTHANKS FOREVER": [
+            "V/TT"
+        ],
+        "CHARMING BABE": [
+            "BR"
+        ],
+        "GLORIOUS RYDER": [
+            "B/TT"
+        ],
+        "VERBIER": [
+            "B/TT"
+        ],
+        "THUNDER PRINCE": [
+            "CP-"
+        ],
+        "DOUBLE BINGO": [
+            "P"
+        ],
+        "HE WAS ME": [
+            "B/TT"
+        ],
+        "BRIGHT MORTAR": [
+            "B/TT1"
+        ],
+        "PERFECT PEACH": [
+            "B/TT"
+        ],
+        "LITTLE MONSTER": [
+            "H/TT"
+        ],
+        "HAPPY SHOOTER": [
+            "TT"
+        ],
+        "ENJOY GOLF": [
+            "B"
+        ],
+        "KEMPES": [
+            "H-/XB"
+        ],
+        "LUNAR DASH": [
+            "B-"
+        ],
+        "VICTOR SUPREME": [
+            "V"
+        ],
+        "BETTER AND BETTER": [
+            "H/P/TT"
+        ],
+        "VIEW ALL THINGS": [
+            "XB/TT"
+        ],
+        "FLYING BOOM": [
+            "XB1/TT-"
+        ],
+        "BEAUTY VIVA": [
+            "TT"
+        ],
+        "ETALON OR": [
+            "B"
+        ],
+        "GOOD GOOD": [
+            "V-/B2"
+        ],
+        "BEAUTY MISSILE": [
+            "V"
+        ],
+        "MEGA MASTERMIND": [
+            "V/TT"
+        ],
+        "STRATHPEFFER": [
+            "B"
+        ],
+        "ACE": [
+            "B1/TT",
+            "BO-/TT"
+        ],
+        "PEARL OF PANG'S": [
+            "B/TT"
+        ],
+        "SOLID STATE": [
+            "CP-/XB-/TT"
+        ],
+        "ABSOLUTE AWAKENED": [
+            "H/TT"
+        ],
+        "TOP TO SKY": [
+            "B/TT"
+        ],
+        "LA FORZA": [
+            "B/TT",
+            "CP-/B1/TT"
+        ],
+        "FAST RESPONDER": [
+            "B"
+        ],
+        "STRAIGHT TO GLORY": [
+            "H/TT"
+        ],
+        "DRAGON AIR FORCE": [
+            "TT"
+        ],
+        "ALPHA STRIKE": [
+            "TT1"
+        ],
+        "KYRUS DRAGON": [
+            "H-/XB",
+            "H/XB"
+        ],
+        "EVER LUCK": [
+            "CP-/B1"
+        ],
+        "FIT FOR BEAUTY": [
+            "H",
+            "H1"
+        ],
+        "CELESTIAL HERO": [
+            "CP"
+        ],
+        "CHILL BUDDY": [
+            "TT"
+        ],
+        "AURORA PATCH": [
+            "V/TT"
+        ],
+        "THUNDER KIT": [
+            "H"
+        ],
+        "MIGHTY COMMANDER": [
+            "TT"
+        ],
+        "FLOW WATER FLOW": [
+            "B"
+        ],
+        "ANODE": [
+            "B/TT"
+        ],
+        "RUN RUN SMART": [
+            "TT"
+        ],
+        "MEANINGFUL DRAGON": [
+            "B"
+        ],
+        "AEROVOLANIC": [
+            "CP"
+        ],
+        "SOVEREIGN FUND": [
+            "B-/TT-",
+            "CP"
+        ],
+        "BIG RETURN": [
+            "H/TT"
+        ],
+        "NYX GLUCK": [
+            "CP-"
+        ],
+        "FLYING KNIGHT": [
+            "B/TT"
+        ],
+        "MONARCH COUNTY": [
+            "B-/TT",
+            "B/TT"
+        ],
+        "RISING PHOENIX": [
+            "B"
+        ],
+        "OLDTOWN": [
+            "B/XB",
+            "TT"
         ]
     },
     "running_styles": {
@@ -2886,7 +3061,7 @@
         "GLORIOUS AVENUE": 8.4,
         "GLORIOUS LAD": 6.0,
         "GLORIOUS PARTNERS": 11.0,
-        "GLORIOUS RYDER": 12.0,
+        "GLORIOUS RYDER": 10.083333333333334,
         "GLORIOUS SUN": 8.4,
         "GLORIOUS VICTORY": 7.0,
         "GLORY BOY": 6.777777777777778,
@@ -3290,7 +3465,7 @@
         "LUCKY SEVEN STARS": 10.2,
         "LUCKY STRYKER": 7.0,
         "LUCKY WAN FENG": 7.333333333333333,
-        "LUCKY YEAR": 6.181818181818182,
+        "LUCKY YEAR": 6.0,
         "LUCOBLU": 5.333333333333333,
         "LUGER": 4.0,
         "LUNAR ZEPHYR": 1.6666666666666667,
@@ -4172,7 +4347,144 @@
         "TANG HEART": 7.333333333333333,
         "RYUI KOKOROE": 10.454545454545455,
         "MOTOR": 6.083333333333333,
-        "WARRIORS DREAM": 6.333333333333333
+        "WARRIORS DREAM": 6.333333333333333,
+        "GOR GOR": 8.833333333333334,
+        "MULTISUPERSTAR": 9.4,
+        "THE ALL ROUNDER": 8.333333333333334,
+        "LEGENDARY IMPACT": 6.636363636363637,
+        "LIGHTNING ACE": 9.142857142857142,
+        "PERIDOT": 8.333333333333334,
+        "YOUNG FIGHTER": 6.666666666666667,
+        "SEA DIAMOND": 7.833333333333333,
+        "RATTAN GALAXY": 7.333333333333333,
+        "HANDSOME HERO": 6.0,
+        "HIGH PRAISE": 7.0,
+        "THE CONCENTRATION": 6.333333333333333,
+        "GOLDEN ELITE": 6.0,
+        "LOOKING BRIGHT": 2.7,
+        "SUPERB GUY": 8.083333333333334,
+        "SUPREME WINNER": 6.833333333333333,
+        "MANYTHANKS FOREVER": 4.666666666666667,
+        "RUBY THRIVE": 5.75,
+        "E HO HO": 6.222222222222222,
+        "GOOD POWER": 10.0,
+        "EXCEED THE WISH": 7.916666666666667,
+        "PRECISION MIND": 6.5,
+        "HERO MASTERMIND": 7.0,
+        "DANCING BLAZE": 5.5,
+        "CHARMING BABE": 6.636363636363637,
+        "GRAND TURBO": 11.714285714285714,
+        "VERBIER": 3.6666666666666665,
+        "MADE FOR LIFE": 8.0,
+        "SUPREME VOYAGER": 8.25,
+        "THUNDER PRINCE": 6.083333333333333,
+        "WINNING NOW": 2.2,
+        "DOUBLE BINGO": 8.181818181818182,
+        "SILVER UP": 9.0,
+        "DRACO": 10.416666666666666,
+        "HE WAS ME": 4.5,
+        "FORTUNE KINGO": 9.0,
+        "BRIGHT MORTAR": 9.4,
+        "PRIME ACE": 6.0,
+        "PERFECT PEACH": 8.75,
+        "COLOURFUL WINNER": 3.0833333333333335,
+        "CHILL MASTER": 9.0,
+        "SPEEDY TRIDENT": 7.75,
+        "LITTLE MONSTER": 5.75,
+        "CHARMING LEGEND": 6.583333333333333,
+        "IRON SECURITY": 3.5714285714285716,
+        "HAPPY SHOOTER": 6.909090909090909,
+        "PARROT BLESSING": 8.5,
+        "LUCKY DOCTOR": 6.142857142857143,
+        "SPEEDY PATCH": 8.333333333333334,
+        "ENJOY GOLF": 4.666666666666667,
+        "GREEN FIELD PEARL": 8.666666666666666,
+        "TEN LOVES": 12.666666666666666,
+        "MIGHTY FIGHTER": 8.0,
+        "KOL": 5.25,
+        "RUSSET GLOW": 9.285714285714286,
+        "ROAD TO GLORY": 12.0,
+        "KEMPES": 10.5,
+        "LUNAR DASH": 5.111111111111111,
+        "GHORGAN": 6.75,
+        "WORLD HERO": 3.5,
+        "WITHOUT RHYME": 9.333333333333334,
+        "KINGMAN REEF": 6.0,
+        "SPIRITED STEED": 8.0,
+        "NOBLE SUPERIOR": 4.5,
+        "VICTOR SUPREME": 10.875,
+        "APEX GLORY": 4.333333333333333,
+        "BETTER AND BETTER": 7.083333333333333,
+        "VIEW ALL THINGS": 7.5,
+        "FLYING BOOM": 8.909090909090908,
+        "LUCKY BALERION": 6.2,
+        "BEAUTY VIVA": 11.083333333333334,
+        "AUTOMATED": 8.7,
+        "CIRCUIT MARSHAL": 10.125,
+        "GORGEOUS VICTORY": 7.555555555555555,
+        "ETALON OR": 8.083333333333334,
+        "LOVELY MILES": 11.0,
+        "CHEERFUL WONGCHOY": 8.333333333333334,
+        "GOOD GOOD": 2.6666666666666665,
+        "BEAUTY MISSILE": 8.583333333333334,
+        "MEGA MASTERMIND": 3.6666666666666665,
+        "STRATHPEFFER": 5.083333333333333,
+        "LADY'S LOVE": 8.833333333333334,
+        "QUANTUM WUKONG": 6.666666666666667,
+        "LUCK IS BACK": 8.166666666666666,
+        "HERO RISING": 11.0,
+        "STORM MIRROR": 6.666666666666667,
+        "ACE": 7.25,
+        "PEARL OF PANG'S": 5.25,
+        "BIG BIG WORLD": 10.0,
+        "CALIFORNIA WAVES": 8.083333333333334,
+        "SOLID STATE": 1.0,
+        "BEST FARM": 7.0,
+        "ABSOLUTE AWAKENED": 7.636363636363637,
+        "SUPERB KID": 11.416666666666666,
+        "TOP TO SKY": 4.75,
+        "LA FORZA": 5.0,
+        "FAST RESPONDER": 6.666666666666667,
+        "STRAIGHT TO GLORY": 6.0,
+        "DRAGON AIR FORCE": 6.916666666666667,
+        "ALPHA STRIKE": 3.3333333333333335,
+        "KYRUS DRAGON": 8.916666666666666,
+        "INVINCIBLE STEED": 9.5,
+        "CONGHUA GALAXY": 6.0,
+        "METRO POWER": 2.0833333333333335,
+        "EVER LUCK": 4.0,
+        "MASTER CHAMPION": 3.6666666666666665,
+        "LUCY IN THE SKY": 3.3333333333333335,
+        "LUCKY CANDY": 6.333333333333333,
+        "FIT FOR BEAUTY": 6.916666666666667,
+        "CELESTIAL HERO": 8.25,
+        "MICKLEY": 10.333333333333334,
+        "CHILL BUDDY": 4.9,
+        "STAY COSMIC": 8.5,
+        "GULU GOGO": 10.0,
+        "VIVA PROSPERAR": 6.0,
+        "AURORA PATCH": 3.6666666666666665,
+        "THUNDER KIT": 9.11111111111111,
+        "MIGHTY COMMANDER": 9.25,
+        "WELL ENOUGH": 12.0,
+        "FLOW WATER FLOW": 9.333333333333334,
+        "SAVVY BRILLIANT": 10.090909090909092,
+        "ANODE": 4.5,
+        "CHIU CHOW SPIRIT": 10.416666666666666,
+        "THE BOOM BOX": 9.916666666666666,
+        "ALL OUT FOR SIX": 4.166666666666667,
+        "RUN RUN SMART": 2.3333333333333335,
+        "MEANINGFUL DRAGON": 3.142857142857143,
+        "AEROVOLANIC": 5.090909090909091,
+        "SOVEREIGN FUND": 6.0,
+        "BIG RETURN": 8.25,
+        "NYX GLUCK": 7.166666666666667,
+        "MONEY GAMES": 6.0,
+        "WINNING GOLD": 8.5,
+        "FLYING KNIGHT": 7.0,
+        "MONARCH COUNTY": 8.166666666666666,
+        "RISING PHOENIX": 8.166666666666666,
+        "OLDTOWN": 8.333333333333334
     },
     "last_comments": {
         "BABA MAMA": "Began well, raced 2 wide in midfield, slightly improved     from 600M, finished off strongly to get 2nd.                                                                                                                                        ",

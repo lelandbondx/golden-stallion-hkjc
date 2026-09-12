@@ -1,75 +1,72 @@
-Loading data...
-Meeting: Happy Valley - 2026-09-09 - Going: GOOD
+=== GOLDEN STALLION HKJC PREDICTOR: SHA TIN MEETING (2026-09-13) ===
+Track: Sha Tin Turf B Course | Total Races: 10 | Active Runners: 139
 
---- RACE 1 : Class 5 - 1200m ---
-1st Pick: #5 AUTUMN VIBES (Odds: 5.4) - Conf: 85% - EV: -0.003 - Jockey: Z Purton
-2st Pick: #10 TELECOM POWER (Odds: 7.1) - Conf: 71% - EV: 0.011 - Jockey: H Bentley
-3st Pick: #6 ALWAYS FLUKE (Odds: 7.5) - Conf: 70% - EV: 0.016 - Jockey: C Y Ho
-4st Pick: #8 SOLAR RIVER (Odds: 8.7) - Conf: 59% - EV: 0.013 - Jockey: M L Yeung
-5st Pick: #4 STORMY KNIGHT (Odds: 11.0) - Conf: 58% - EV: 0.032 - Jockey: B Avdulla
+--- RACE 1 ---
+Rank 1: #1 GOR GOR (Odds: 10.0) | Jockey: L Hewitson | Conf: 85% | EV: 0.072
+Rank 2: #10 RATTAN GALAXY (Odds: 4.8) | Jockey: L Ferraris | Conf: 72% | EV: -0.041
+Rank 3: #2 LIGHTNING ACE (Odds: 9.0) | Jockey: M Chadwick | Conf: 72% | EV: 0.038
+Rank 4: #7 PERIDOT (Odds: 10.0) | Jockey: J Orman | Conf: 52% | EV: 0.007
+Rank 5: #6 MULTISUPERSTAR (Odds: 10.0) | Jockey: A Badel | Conf: 50% | EV: 0.003
 
---- RACE 2 : Class 4 - 1650m ---
-1st Pick: #9 PRECISION HOPE (Odds: 3.0) - Conf: 85% - EV: -0.101 - Jockey: A Badel
-2st Pick: #1 MIGHTY STEED (Odds: 4.7) - Conf: 83% - EV: -0.006 - Jockey: Z Purton
-3st Pick: #7 FIREFOOT (Odds: 6.7) - Conf: 80% - EV: 0.039 - Jockey: K Teetan
-4st Pick: #6 THE AZURE (Odds: 17.0) - Conf: 61% - EV: 0.069 - Jockey: A Atzeni
-5st Pick: #3 STURDY RUBY (Odds: 9.4) - Conf: 51% - EV: 0.009 - Jockey: C Y Ho
+--- RACE 2 ---
+Rank 1: #5 HANDSOME HERO (Odds: 5.0) | Jockey: C L Chau | Conf: 85% | EV: 0.032
+Rank 2: #9 DANCING BLAZE (Odds: 8.0) | Jockey: C Y Ho | Conf: 73% | EV: 0.059
+Rank 3: #2 LOOKING BRIGHT (Odds: 4.4) | Jockey: K Teetan | Conf: 71% | EV: -0.027
+Rank 4: #8 RUBY THRIVE (Odds: 3.4) | Jockey: Z Purton | Conf: 60% | EV: -0.113
+Rank 5: #4 GOLDEN ELITE (Odds: 39.0) | Jockey: R Kingscote | Conf: 58% | EV: 0.1
 
---- RACE 3 : Class 5 - 1200m ---
-1st Pick: #4 MACANESE MASTER (Odds: 8.9) - Conf: 85% - EV: 0.046 - Jockey: K Teetan
-2st Pick: #3 SWAGGER BRO (Odds: 7.9) - Conf: 83% - EV: 0.031 - Jockey: A Badel
-3st Pick: #9 THOUSAND CUPS (Odds: 7.3) - Conf: 82% - EV: 0.021 - Jockey: Y L Chung
-4st Pick: #1 LAKESHORE HERO (Odds: 5.0) - Conf: 80% - EV: -0.035 - Jockey: Z Purton
-5st Pick: #11 ORIENTAL SURPRISE (Odds: 6.7) - Conf: 72% - EV: -0.006 - Jockey: H Bentley
+--- RACE 3 ---
+Rank 1: #6 SILVER UP (Odds: 5.9) | Jockey: M L Yeung | Conf: 85% | EV: 0.009
+Rank 2: #4 MADE FOR LIFE (Odds: 8.6) | Jockey: Z Purton | Conf: 83% | EV: 0.048
+Rank 3: #1 GRAND TURBO (Odds: 26.0) | Jockey: R Kingscote | Conf: 82% | EV: 0.111
+Rank 4: #3 DOUBLE BINGO (Odds: 8.5) | Jockey: H Y Yuen | Conf: 73% | EV: 0.026
+Rank 5: #7 WINNING NOW (Odds: 23.0) | Jockey: P N Wong | Conf: 55% | EV: 0.052
 
---- RACE 4 : Class 4 - 1650m ---
-1st Pick: #2 SKY DEEP (Odds: 4.8) - Conf: 85% - EV: 0.000 - Jockey: E C W Wong
-2st Pick: #3 SHOOTING TO TOP (Odds: 9.0) - Conf: 80% - EV: 0.069 - Jockey: K C Leung
-3st Pick: #10 AMAZING GAZE (Odds: 7.4) - Conf: 77% - EV: 0.041 - Jockey: K Teetan
-4st Pick: #1 SHAMZ (Odds: 7.3) - Conf: 65% - EV: 0.010 - Jockey: C Y Ho
-5st Pick: #4 SUNDAY'S SERENADE (Odds: 4.6) - Conf: 62% - EV: -0.062 - Jockey: Z Purton
+--- RACE 4 ---
+Rank 1: #12 ENJOY GOLF (Odds: 4.1) | Jockey: P N Wong | Conf: 85% | EV: -0.075
+Rank 2: #4 PRIME ACE (Odds: 7.2) | Jockey: A Atzeni | Conf: 76% | EV: -0.005
+Rank 3: #11 MIGHTY FIGHTER (Odds: 7.7) | Jockey: J Orman | Conf: 73% | EV: -0.002
+Rank 4: #2 HAPPY SHOOTER (Odds: 10.0) | Jockey: L Hewitson | Conf: 73% | EV: 0.022
+Rank 5: #1 CHARMING LEGEND (Odds: 21.0) | Jockey: E C W Wong | Conf: 67% | EV: 0.055
 
---- RACE 5 : Class 3 - 1650m ---
-1st Pick: #4 DO YOUR PART (Odds: 5.4) - Conf: 85% - EV: -0.007 - Jockey: B Avdulla
-2st Pick: #6 ANOTHER ZONDA (Odds: 10.0) - Conf: 85% - EV: 0.062 - Jockey: P N Wong
-3st Pick: #5 VIOLET STAR (Odds: 4.3) - Conf: 82% - EV: -0.050 - Jockey: K Teetan
-4st Pick: #2 SOLID WIN (Odds: 6.6) - Conf: 74% - EV: 0.000 - Jockey: C L Chau
-5st Pick: #3 CHINA WIN (Odds: 8.4) - Conf: 67% - EV: 0.013 - Jockey: M L Yeung
+--- RACE 5 ---
+Rank 1: #9 ROAD TO GLORY (Odds: 6.2) | Jockey: C Y Ho | Conf: 85% | EV: 0.037
+Rank 2: #2 KEMPES (Odds: 7.9) | Jockey: J Orman | Conf: 81% | EV: 0.057
+Rank 3: #10 SPIRITED STEED (Odds: 4.2) | Jockey: Z Purton | Conf: 79% | EV: -0.04
+Rank 4: #7 GHORGAN (Odds: 7.2) | Jockey: K C Leung | Conf: 63% | EV: 0.003
+Rank 5: #11 BETTER AND BETTER (Odds: 7.7) | Jockey: A Badel | Conf: 56% | EV: -0.006
 
---- RACE 6 : Class 4 - 1000m ---
-1st Pick: #2 BEAUTY SHOW (Odds: 2.5) - Conf: 85% - EV: -0.145 - Jockey: Z Purton
-2st Pick: #6 JUMBO BLESSING (Odds: 6.7) - Conf: 68% - EV: 0.015 - Jockey: C Y Ho
-3st Pick: #5 GEORGIAN SIGMA (Odds: 10.0) - Conf: 65% - EV: 0.049 - Jockey: A Atzeni
-4st Pick: #8 HARMONY FIRE (Odds: 11.0) - Conf: 62% - EV: 0.047 - Jockey: P N Wong
-5st Pick: #1 BLUE ILLUSION (Odds: 11.0) - Conf: 52% - EV: 0.024 - Jockey: H Y Yuen
+--- RACE 6 ---
+Rank 1: #1 VICTOR SUPREME (Odds: 3.3) | Jockey: C Y Ho | Conf: 85% | EV: -0.035
+Rank 2: #5 LUCKY YEAR (Odds: 9.3) | Jockey: H Bentley | Conf: 67% | EV: 0.072
+Rank 3: #3 LUCKY BALERION (Odds: 9.7) | Jockey: M F Poon | Conf: 67% | EV: 0.074
+Rank 4: #9 GORGEOUS VICTORY (Odds: 6.7) | Jockey: Z Purton | Conf: 61% | EV: 0.021
+Rank 5: #6 AUTOMATED (Odds: 12.0) | Jockey: R Kingscote | Conf: 34% | EV: -0.005
 
---- RACE 7 : Class 4 - 1200m ---
-1st Pick: #1 ROBOT LUCKY STAR (Odds: 3.1) - Conf: 85% - EV: -0.089 - Jockey: Z Purton
-2st Pick: #4 LEADING DRAGON (Odds: 6.0) - Conf: 76% - EV: 0.020 - Jockey: H Y Yuen
-3st Pick: #7 GOOD LUCK HAPPY (Odds: 8.8) - Conf: 56% - EV: 0.022 - Jockey: Y L Chung
-4st Pick: #12 FORZA LEADER (Odds: 7.3) - Conf: 49% - EV: -0.012 - Jockey: K Teetan
-5st Pick: #6 THE PERFECT MATCH (Odds: 12.0) - Conf: 43% - EV: 0.019 - Jockey: C L Chau
+--- RACE 7 ---
+Rank 1: #5 STORM MIRROR (Odds: 4.5) | Jockey: Z Purton | Conf: 85% | EV: -0.002
+Rank 2: #2 MEGA MASTERMIND (Odds: 14.0) | Jockey: L Ferraris | Conf: 61% | EV: 0.062
+Rank 3: #7 QUANTUM WUKONG (Odds: 9.2) | Jockey: Y L Chung | Conf: 58% | EV: 0.024
+Rank 4: #4 CALIFORNIA WAVES (Odds: 8.7) | Jockey: B Avdulla | Conf: 58% | EV: 0.018
+Rank 5: #3 ACE (Odds: 8.1) | Jockey: C L Chau | Conf: 55% | EV: 0.004
 
---- RACE 8 : Class 3 - 1200m ---
-1st Pick: #3 MOTOR (Odds: 8.7) - Conf: 85% - EV: 0.116 - Jockey: K Teetan
-2st Pick: #4 TYCOON RESOURCES (Odds: 4.2) - Conf: 74% - EV: -0.017 - Jockey: Y L Chung
-3st Pick: #2 HARMONY N BLESSED (Odds: 5.5) - Conf: 49% - EV: -0.042 - Jockey: H Y Yuen
-4st Pick: #10 TANG HEART (Odds: 12.0) - Conf: 49% - EV: 0.037 - Jockey: A Atzeni
-5st Pick: #6 POWER KOEPP (Odds: 18.0) - Conf: 44% - EV: 0.046 - Jockey: A Badel
+--- RACE 8 ---
+Rank 1: #1 SOLID STATE (Odds: 1.6) | Jockey: A Badel | Conf: 85% | EV: -0.26
+Rank 2: #13 LUCKY CANDY (Odds: 10.0) | Jockey: K Teetan | Conf: 56% | EV: 0.067
+Rank 3: #8 MICKLEY (Odds: 10.0) | Jockey: A Atzeni | Conf: 44% | EV: 0.026
+Rank 4: #2 FAST RESPONDER (Odds: 17.0) | Jockey: H Y Yuen | Conf: 41% | EV: 0.048
+Rank 5: #6 METRO POWER (Odds: 22.0) | Jockey: L Hewitson | Conf: 34% | EV: 0.033
 
+--- RACE 9 ---
+Rank 1: #8 THUNDER KIT (Odds: 9.1) | Jockey: C Y Ho | Conf: 85% | EV: 0.064
+Rank 2: #2 AURORA PATCH (Odds: 29.0) | Jockey: J Orman | Conf: 81% | EV: 0.116
+Rank 3: #1 CHILL BUDDY (Odds: 12.0) | Jockey: C L Chau | Conf: 69% | EV: 0.052
+Rank 4: #5 LUCY IN THE SKY (Odds: 1.5) | Jockey: H Y Yuen | Conf: 66% | EV: -0.42
+Rank 5: #4 FIT FOR BEAUTY (Odds: 26.0) | Jockey: A Atzeni | Conf: 63% | EV: 0.073
 
---- OVERALL GLOBAL BEST BETS ---
-Top Pick 1: Race 8 - #3 MOTOR (Odds: 8.7, Conf: 85%, EV: 0.116)
-Top Pick 2: Race 6 - #2 BEAUTY SHOW (Odds: 2.5, Conf: 85%, EV: -0.145)
-Top Pick 3: Race 7 - #1 ROBOT LUCKY STAR (Odds: 3.1, Conf: 85%, EV: -0.089)
-
-
---- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---
-Race 1 Bet Selection: Anchor #5 AUTUMN VIBES (5.4) | Sleeper #4 STORMY KNIGHT (11.0)
-Race 2 Bet Selection: Anchor #9 PRECISION HOPE (3.0) | Sleeper #6 THE AZURE (17.0)
-Race 3 Bet Selection: Anchor #4 MACANESE MASTER (8.9) | Sleeper #3 SWAGGER BRO (7.9)
-Race 4 Bet Selection: Anchor #2 SKY DEEP (4.8) | Sleeper #3 SHOOTING TO TOP (9.0)
-Race 5 Bet Selection: Anchor #4 DO YOUR PART (5.4) | Sleeper #6 ANOTHER ZONDA (10.0)
-Race 6 Bet Selection: Anchor #2 BEAUTY SHOW (2.5) | Sleeper #5 GEORGIAN SIGMA (10.0)
-Race 7 Bet Selection: Anchor #1 ROBOT LUCKY STAR (3.1) | Sleeper #7 GOOD LUCK HAPPY (8.8)
-Race 8 Bet Selection: Anchor #3 MOTOR (8.7) | Sleeper #6 POWER KOEPP (18.0)
+--- RACE 10 ---
+Rank 1: #4 FLOW WATER FLOW (Odds: 8.5) | Jockey: B Avdulla | Conf: 85% | EV: 0.046
+Rank 2: #12 NYX GLUCK (Odds: 3.1) | Jockey: Z Purton | Conf: 81% | EV: -0.127
+Rank 3: #1 SOVEREIGN FUND (Odds: 14.0) | Jockey: K Teetan | Conf: 63% | EV: 0.044
+Rank 4: #11 BIG RETURN (Odds: 23.0) | Jockey: L Hewitson | Conf: 61% | EV: 0.063
+Rank 5: #3 ALL OUT FOR SIX (Odds: 21.0) | Jockey: M Chadwick | Conf: 60% | EV: 0.058

@@ -310,6 +310,25 @@ def run():
             is_wide_sprinter = (distance <= 1200) & (df_runners['draw'] >= 9)
             hv_c_course_penalty = np.where(is_wide_sprinter, -0.04, 0.0)
             
+        # Sha Tin Straight 1000m Outside Rail Draw Bias (Races 2 & 8)
+        is_st_straight_1000 = (meeting.get('venue') == 'Sha Tin') and (distance == 1000) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
+        st_1000_draw_boost = 0.0
+        st_1000_draw_penalty = 0.0
+        if is_st_straight_1000:
+            # Outside stands-side rail advantage (Gates 10-14)
+            is_outside_draw = (df_runners['draw'] >= 10)
+            st_1000_draw_boost = np.where(is_outside_draw, 0.035, 0.0)
+            # Inside low draw disadvantage in straight sprint (Gates 1-4)
+            is_inside_disadv = (df_runners['draw'] <= 4)
+            st_1000_draw_penalty = np.where(is_inside_disadv, -0.025, 0.0)
+
+        # Elite Jockey Lightweight Multiplier (Premier riders carrying <= 121 lbs)
+        ELITE_JOCKEYS = {'Z PURTON', 'H BOWMAN', 'C Y HO', 'K TEETAN', 'A ATZENI', 'J MOREIRA', 'B SHINN', 'J MCDONALD'}
+        df_runners_jockey_upper = df_runners['jockey'].astype(str).str.strip().str.upper()
+        actual_wt = pd.to_numeric(df_runners.get('actual_weight', df_runners.get('weight', 120)), errors='coerce').fillna(120)
+        is_elite_lightweight = df_runners_jockey_upper.isin(ELITE_JOCKEYS) & (actual_wt <= 121) & (recent_pos <= 6.0)
+        elite_lightweight_boost = np.where(is_elite_lightweight, 0.025, 0.0)
+            
         # Quantitative Barrier Trial Multipliers
         trial_boost = []
         trial_penalty = []
@@ -361,7 +380,7 @@ def run():
         is_fit_fresh = is_mile_or_distance & (recent_pos <= 5.0) & (vet_issue == 0)
         fresh_mile_fitness_boost = np.where(is_fit_fresh, 0.015, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_mile_fitness_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + elite_lightweight_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_mile_fitness_boost
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
             
