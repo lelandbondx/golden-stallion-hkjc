@@ -1,0 +1,64 @@
+==================================================
+  GOLDEN STALLION AI: SHA TIN RACE REPORT (13/09/2026)
+==================================================
+
+1. HIGHLIGHTS & KEY WINNERS
+---------------------------
+• Race 9 – Complete 4-Horse Sweep
+  - 1st: #5 LUCY IN THE SKY ($2.10)
+  - 2nd: #1 CHILL BUDDY
+  - 3rd: #2 AURORA PATCH
+  - 4th: #4 FIT FOR BEAUTY
+  * AI predicted 1st, 2nd, 3rd, and 4th all inside Top 5, sweeping the Quinella, Quinella Place ($29.0, $43.0, $79.0), Tierce/Trifecta ($596.00), and First 4 ($546.00).
+
+• Race 1 – Clean Win
+  - Winner: #10 RATTAN GALAXY ($4.30)
+  * Top 2 pick scored victory in the meeting opener.
+
+• Race 5 – Strong Win & Exotic Hit
+  - Winner: #2 KEMPES ($6.20)
+  - 3rd: #10 SPIRITED STEED ($1.90 Place)
+  * Delivered Rank 2 winner plus Quinella Place dividend ($74.00).
+
+• Race 10 – Finale Win
+  - Winner: #12 NYX GLUCK ($2.15)
+  * Top 2 selection ridden by Zac Purton closed out the card with a clean win.
+
+• Race 4 – Value Double
+  - Winner: #2 HAPPY SHOOTER ($11.95)
+  - 3rd: #4 PRIME ACE ($7.05 Place)
+  * Delivered double-digit winner plus Quinella Place ($322.50).
+
+• Race 2 – Winner & Spotlight Sleeper
+  - Winner: #8 RUBY THRIVE ($3.55)
+  - 3rd: #11 THUNDER PRINCE ($2.85 Place)
+  * Identified winner and the unlucky replay runner THUNDER PRINCE hitting the board at 10.0 odds.
+
+
+2. OVERALL PERFORMANCE METRICS
+------------------------------
+• Top 5 Winner Strike Rate: 60.0% (6 of 10 Winners found in Top 5).
+
+• Top 2 Direct Hits: 3 Races won by our top 2 selections (R1, R5, R10).
+
+• Banker Performance: Standout Banker #1 SOLID STATE ran 2nd in Race 8.
+
+• Exotic Dividends Captured:
+  - Race 9: Full Tierce/Trifecta ($596.00) + First 4 ($546.00) + Quinella ($57.00)
+  - Race 4: Quinella Place ($322.50)
+  - Race 5: Quinella Place ($74.00)
+  - Race 2: Quinella Place ($70.00)
+
+
+3. CONCLUSION
+-------------
+The Golden Stallion AI delivered a very strong day at Sha Tin, identifying 60% of the day's winners within the Top 5 selections, hitting 3 direct winners in the top 2, and delivering a clean 4-horse superfecta sweep in Race 9 alongside multiple high-value Quinella Place dividends.
+
+
+4. POSSIBLE CHANGES TO IMPLEMENT
+--------------------------------
+• Apprentice Weight Allowance Weighting:
+  - Increase the weighting multiplier for in-form apprentices (e.g. E C W Wong) claiming significant weight in sprint races.
+
+• Rank 1 vs Rank 2 Tie-Breaker Tuning:
+  - Refine final point differentials to convert narrow Rank 2 selections into primary Rank 1 winners.

@@ -1,0 +1,1968 @@
+{
+    "results": {
+        "1": [
+            {
+                "place": "1",
+                "horse_no": "10",
+                "horse_name": "RATTAN GALAXY",
+                "jockey": "L Ferraris",
+                "trainer": "K L Man",
+                "win_odds": "4.3"
+            },
+            {
+                "place": "2",
+                "horse_no": "9",
+                "horse_name": "THE ALL ROUNDER",
+                "jockey": "C Y Ho",
+                "trainer": "P C Ng",
+                "win_odds": "12.0"
+            },
+            {
+                "place": "3",
+                "horse_no": "11",
+                "horse_name": "SUPERB GUY",
+                "jockey": "Z Purton",
+                "trainer": "K W Lui",
+                "win_odds": "7.1"
+            },
+            {
+                "place": "4",
+                "horse_no": "7",
+                "horse_name": "PERIDOT",
+                "jockey": "J Orman",
+                "trainer": "D J Hall",
+                "win_odds": "15.0"
+            },
+            {
+                "place": "5",
+                "horse_no": "6",
+                "horse_name": "MULTISUPERSTAR",
+                "jockey": "A Badel",
+                "trainer": "A S Cruz",
+                "win_odds": "16.0"
+            },
+            {
+                "place": "6",
+                "horse_no": "3",
+                "horse_name": "SEA DIAMOND",
+                "jockey": "B Avdulla",
+                "trainer": "C S Shum",
+                "win_odds": "17.0"
+            },
+            {
+                "place": "7",
+                "horse_no": "1",
+                "horse_name": "GOR GOR",
+                "jockey": "L Hewitson",
+                "trainer": "B Crawford",
+                "win_odds": "11.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "2",
+                "horse_name": "LIGHTNING ACE",
+                "jockey": "M Chadwick",
+                "trainer": "W K Mo",
+                "win_odds": "19.0"
+            },
+            {
+                "place": "9",
+                "horse_no": "12",
+                "horse_name": "SUPREME WINNER",
+                "jockey": "C L Chau",
+                "trainer": "D J Whyte",
+                "win_odds": "26.0"
+            },
+            {
+                "place": "10",
+                "horse_no": "4",
+                "horse_name": "YOUNG FIGHTER",
+                "jockey": "E C W Wong",
+                "trainer": "C Fownes",
+                "win_odds": "28.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "8",
+                "horse_name": "LEGENDARY IMPACT",
+                "jockey": "H T Mo",
+                "trainer": "Y S Tsui",
+                "win_odds": "81.0"
+            },
+            {
+                "place": "12",
+                "horse_no": "13",
+                "horse_name": "MANYTHANKS FOREVER",
+                "jockey": "H Bentley",
+                "trainer": "W Y So",
+                "win_odds": "7.7"
+            },
+            {
+                "place": "13",
+                "horse_no": "14",
+                "horse_name": "EXCEED THE WISH",
+                "jockey": "A Atzeni",
+                "trainer": "M Newnham",
+                "win_odds": "7.3"
+            },
+            {
+                "place": "14",
+                "horse_no": "5",
+                "horse_name": "THE CONCENTRATION",
+                "jockey": "H Y Yuen",
+                "trainer": "P F Yiu",
+                "win_odds": "12.0"
+            }
+        ],
+        "2": [
+            {
+                "place": "1",
+                "horse_no": "8",
+                "horse_name": "RUBY THRIVE",
+                "jockey": "Z Purton",
+                "trainer": "K L Man",
+                "win_odds": "3.5"
+            },
+            {
+                "place": "2",
+                "horse_no": "12",
+                "horse_name": "PRECISION MIND",
+                "jockey": "H T Mo",
+                "trainer": "Y S Tsui",
+                "win_odds": "94.0"
+            },
+            {
+                "place": "3",
+                "horse_no": "11",
+                "horse_name": "THUNDER PRINCE",
+                "jockey": "B Avdulla",
+                "trainer": "J Richards",
+                "win_odds": "11.0"
+            },
+            {
+                "place": "4",
+                "horse_no": "3",
+                "horse_name": "CHARMING BABE",
+                "jockey": "H Y Yuen",
+                "trainer": "P F Yiu",
+                "win_odds": "16.0"
+            },
+            {
+                "place": "5",
+                "horse_no": "5",
+                "horse_name": "HANDSOME HERO",
+                "jockey": "C L Chau",
+                "trainer": "B Crawford",
+                "win_odds": "3.5"
+            },
+            {
+                "place": "6",
+                "horse_no": "9",
+                "horse_name": "DANCING BLAZE",
+                "jockey": "C Y Ho",
+                "trainer": "C Fownes",
+                "win_odds": "19.0"
+            },
+            {
+                "place": "7",
+                "horse_no": "7",
+                "horse_name": "HERO MASTERMIND",
+                "jockey": "L Ferraris",
+                "trainer": "M Newnham",
+                "win_odds": "83.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "1",
+                "horse_name": "HIGH PRAISE",
+                "jockey": "K C Leung",
+                "trainer": "W K Mo",
+                "win_odds": "66.0"
+            },
+            {
+                "place": "9",
+                "horse_no": "10",
+                "horse_name": "E HO HO",
+                "jockey": "P N Wong",
+                "trainer": "K L Man",
+                "win_odds": "12.0"
+            },
+            {
+                "place": "10",
+                "horse_no": "2",
+                "horse_name": "LOOKING BRIGHT",
+                "jockey": "K Teetan",
+                "trainer": "F C Lor",
+                "win_odds": "3.9"
+            },
+            {
+                "place": "11",
+                "horse_no": "13",
+                "horse_name": "SUPREME VOYAGER",
+                "jockey": "H Bentley",
+                "trainer": "C H Yip",
+                "win_odds": "19.0"
+            },
+            {
+                "place": "12",
+                "horse_no": "6",
+                "horse_name": "GOOD POWER",
+                "jockey": "M L Yeung",
+                "trainer": "C W Chang",
+                "win_odds": "102.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "4",
+                "horse_name": "GOLDEN ELITE",
+                "jockey": "R Kingscote",
+                "trainer": "D A Hayes",
+                "win_odds": "77.0"
+            }
+        ],
+        "3": [
+            {
+                "place": "1",
+                "horse_no": "13",
+                "horse_name": "DRACO",
+                "jockey": "K C Leung",
+                "trainer": "W K Mo",
+                "win_odds": "4.6"
+            },
+            {
+                "place": "2",
+                "horse_no": "10",
+                "horse_name": "FORTUNE KINGO",
+                "jockey": "C L Chau",
+                "trainer": "D J Whyte",
+                "win_odds": "7.5"
+            },
+            {
+                "place": "3",
+                "horse_no": "8",
+                "horse_name": "HE WAS ME",
+                "jockey": "A Atzeni",
+                "trainer": "A S Cruz",
+                "win_odds": "10.0"
+            },
+            {
+                "place": "4",
+                "horse_no": "9",
+                "horse_name": "COLOURFUL WINNER",
+                "jockey": "J Orman",
+                "trainer": "W Y So",
+                "win_odds": "9.4"
+            },
+            {
+                "place": "5",
+                "horse_no": "3",
+                "horse_name": "DOUBLE BINGO",
+                "jockey": "H Y Yuen",
+                "trainer": "P F Yiu",
+                "win_odds": "14.0"
+            },
+            {
+                "place": "6",
+                "horse_no": "4",
+                "horse_name": "MADE FOR LIFE",
+                "jockey": "Z Purton",
+                "trainer": "M Newnham",
+                "win_odds": "7.3"
+            },
+            {
+                "place": "7",
+                "horse_no": "12",
+                "horse_name": "CHILL MASTER",
+                "jockey": "C Y Ho",
+                "trainer": "K L Man",
+                "win_odds": "8.5"
+            },
+            {
+                "place": "8",
+                "horse_no": "6",
+                "horse_name": "SILVER UP",
+                "jockey": "M L Yeung",
+                "trainer": "B Crawford",
+                "win_odds": "9.4"
+            },
+            {
+                "place": "9",
+                "horse_no": "1",
+                "horse_name": "GRAND TURBO",
+                "jockey": "R Kingscote",
+                "trainer": "C S Shum",
+                "win_odds": "79.0"
+            },
+            {
+                "place": "10",
+                "horse_no": "5",
+                "horse_name": "VERBIER",
+                "jockey": "E C W Wong",
+                "trainer": "C Fownes",
+                "win_odds": "55.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "14",
+                "horse_name": "SPEEDY TRIDENT",
+                "jockey": "K Teetan",
+                "trainer": "Y S Tsui",
+                "win_odds": "8.5"
+            },
+            {
+                "place": "12",
+                "horse_no": "7",
+                "horse_name": "WINNING NOW",
+                "jockey": "P N Wong",
+                "trainer": "F C Lor",
+                "win_odds": "18.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "11",
+                "horse_name": "PERFECT PEACH",
+                "jockey": "L Hewitson",
+                "trainer": "C W Chang",
+                "win_odds": "55.0"
+            },
+            {
+                "place": "14",
+                "horse_no": "2",
+                "horse_name": "GLORIOUS RYDER",
+                "jockey": "L Ferraris",
+                "trainer": "D Eustace",
+                "win_odds": "81.0"
+            }
+        ],
+        "4": [
+            {
+                "place": "1",
+                "horse_no": "2",
+                "horse_name": "HAPPY SHOOTER",
+                "jockey": "L Hewitson",
+                "trainer": "C S Shum",
+                "win_odds": "11.0"
+            },
+            {
+                "place": "2",
+                "horse_no": "3",
+                "horse_name": "BRIGHT MORTAR",
+                "jockey": "Y L Chung",
+                "trainer": "A S Cruz",
+                "win_odds": "14.0"
+            },
+            {
+                "place": "3",
+                "horse_no": "4",
+                "horse_name": "PRIME ACE",
+                "jockey": "A Atzeni",
+                "trainer": "J Size",
+                "win_odds": "20.0"
+            },
+            {
+                "place": "4",
+                "horse_no": "13",
+                "horse_name": "KOL",
+                "jockey": "M L Yeung",
+                "trainer": "D A Hayes",
+                "win_odds": "10.0"
+            },
+            {
+                "place": "5",
+                "horse_no": "6",
+                "horse_name": "LITTLE MONSTER",
+                "jockey": "K C Leung",
+                "trainer": "W K Mo",
+                "win_odds": "16.0"
+            },
+            {
+                "place": "6",
+                "horse_no": "11",
+                "horse_name": "MIGHTY FIGHTER",
+                "jockey": "J Orman",
+                "trainer": "P F Yiu",
+                "win_odds": "7.6"
+            },
+            {
+                "place": "7",
+                "horse_no": "10",
+                "horse_name": "PARROT BLESSING",
+                "jockey": "H T Mo",
+                "trainer": "W Y So",
+                "win_odds": "79.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "14",
+                "horse_name": "RUSSET GLOW",
+                "jockey": "M Chadwick",
+                "trainer": "M Newnham",
+                "win_odds": "29.0"
+            },
+            {
+                "place": "9",
+                "horse_no": "12",
+                "horse_name": "ENJOY GOLF",
+                "jockey": "P N Wong",
+                "trainer": "F C Lor",
+                "win_odds": "2.9"
+            },
+            {
+                "place": "10",
+                "horse_no": "5",
+                "horse_name": "IRON SECURITY",
+                "jockey": "M F Poon",
+                "trainer": "Y S Tsui",
+                "win_odds": "21.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "7",
+                "horse_name": "LUCKY DOCTOR",
+                "jockey": "L Ferraris",
+                "trainer": "P C Ng",
+                "win_odds": "5.9"
+            },
+            {
+                "place": "12",
+                "horse_no": "1",
+                "horse_name": "CHARMING LEGEND",
+                "jockey": "E C W Wong",
+                "trainer": "C Fownes",
+                "win_odds": "29.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "9",
+                "horse_name": "GREEN FIELD PEARL",
+                "jockey": "C L Chau",
+                "trainer": "K W Lui",
+                "win_odds": "31.0"
+            },
+            {
+                "place": "14",
+                "horse_no": "8",
+                "horse_name": "SPEEDY PATCH",
+                "jockey": "C Y Ho",
+                "trainer": "K L Man",
+                "win_odds": "17.0"
+            }
+        ],
+        "5": [
+            {
+                "place": "1",
+                "horse_no": "2",
+                "horse_name": "KEMPES",
+                "jockey": "J Orman",
+                "trainer": "D J Hall",
+                "win_odds": "6.2"
+            },
+            {
+                "place": "2",
+                "horse_no": "12",
+                "horse_name": "NOBLE SUPERIOR",
+                "jockey": "M L Yeung",
+                "trainer": "K H Ting",
+                "win_odds": "36.0"
+            },
+            {
+                "place": "3",
+                "horse_no": "10",
+                "horse_name": "SPIRITED STEED",
+                "jockey": "Z Purton",
+                "trainer": "K W Lui",
+                "win_odds": "4.1"
+            },
+            {
+                "place": "4",
+                "horse_no": "13",
+                "horse_name": "APEX GLORY",
+                "jockey": "P N Wong",
+                "trainer": "K L Man",
+                "win_odds": "7.9"
+            },
+            {
+                "place": "5",
+                "horse_no": "11",
+                "horse_name": "BETTER AND BETTER",
+                "jockey": "A Badel",
+                "trainer": "F C Lor",
+                "win_odds": "6.2"
+            },
+            {
+                "place": "6",
+                "horse_no": "6",
+                "horse_name": "WORLD HERO",
+                "jockey": "H Bentley",
+                "trainer": "D A Hayes",
+                "win_odds": "22.0"
+            },
+            {
+                "place": "7",
+                "horse_no": "14",
+                "horse_name": "VIEW ALL THINGS",
+                "jockey": "M Chadwick",
+                "trainer": "W K Mo",
+                "win_odds": "27.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "9",
+                "horse_name": "ROAD TO GLORY",
+                "jockey": "C Y Ho",
+                "trainer": "J Richards",
+                "win_odds": "7.5"
+            },
+            {
+                "place": "9",
+                "horse_no": "7",
+                "horse_name": "GHORGAN",
+                "jockey": "K C Leung",
+                "trainer": "J Cummings",
+                "win_odds": "10.0"
+            },
+            {
+                "place": "10",
+                "horse_no": "1",
+                "horse_name": "TEN LOVES",
+                "jockey": "R Kingscote",
+                "trainer": "D J Whyte",
+                "win_odds": "99.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "3",
+                "horse_name": "LUNAR DASH",
+                "jockey": "C L Chau",
+                "trainer": "B Crawford",
+                "win_odds": "9.8"
+            },
+            {
+                "place": "12",
+                "horse_no": "5",
+                "horse_name": "OLDTOWN",
+                "jockey": "A Atzeni",
+                "trainer": "M Newnham",
+                "win_odds": "28.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "8",
+                "horse_name": "KINGMAN REEF",
+                "jockey": "K Teetan",
+                "trainer": "J Size",
+                "win_odds": "27.0"
+            },
+            {
+                "place": "14",
+                "horse_no": "4",
+                "horse_name": "WITHOUT RHYME",
+                "jockey": "Y L Chung",
+                "trainer": "A S Cruz",
+                "win_odds": "133.0"
+            }
+        ],
+        "6": [
+            {
+                "place": "1",
+                "horse_no": "13",
+                "horse_name": "LUCK IS BACK",
+                "jockey": "E C W Wong",
+                "trainer": "P C Ng",
+                "win_odds": "32.0"
+            },
+            {
+                "place": "2",
+                "horse_no": "5",
+                "horse_name": "LUCKY YEAR",
+                "jockey": "H Bentley",
+                "trainer": "C H Yip",
+                "win_odds": "5.7"
+            },
+            {
+                "place": "3",
+                "horse_no": "4",
+                "horse_name": "FLYING BOOM",
+                "jockey": "K C Leung",
+                "trainer": "C W Chang",
+                "win_odds": "22.0"
+            },
+            {
+                "place": "4",
+                "horse_no": "9",
+                "horse_name": "GORGEOUS VICTORY",
+                "jockey": "Z Purton",
+                "trainer": "C S Shum",
+                "win_odds": "4.8"
+            },
+            {
+                "place": "5",
+                "horse_no": "12",
+                "horse_name": "CHEERFUL WONGCHOY",
+                "jockey": "K Teetan",
+                "trainer": "D J Whyte",
+                "win_odds": "11.0"
+            },
+            {
+                "place": "6",
+                "horse_no": "11",
+                "horse_name": "CIRCUIT MARSHAL",
+                "jockey": "M Chadwick",
+                "trainer": "M Newnham",
+                "win_odds": "27.0"
+            },
+            {
+                "place": "7",
+                "horse_no": "3",
+                "horse_name": "LUCKY BALERION",
+                "jockey": "M F Poon",
+                "trainer": "F C Lor",
+                "win_odds": "10.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "7",
+                "horse_name": "BEAUTY MISSILE",
+                "jockey": "A Badel",
+                "trainer": "B Crawford",
+                "win_odds": "23.0"
+            },
+            {
+                "place": "9",
+                "horse_no": "1",
+                "horse_name": "VICTOR SUPREME",
+                "jockey": "C Y Ho",
+                "trainer": "P F Yiu",
+                "win_odds": "2.9"
+            },
+            {
+                "place": "10",
+                "horse_no": "6",
+                "horse_name": "AUTOMATED",
+                "jockey": "R Kingscote",
+                "trainer": "W Y So",
+                "win_odds": "12.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "2",
+                "horse_name": "BEAUTY VIVA",
+                "jockey": "B Avdulla",
+                "trainer": "A S Cruz",
+                "win_odds": "66.0"
+            },
+            {
+                "place": "12",
+                "horse_no": "10",
+                "horse_name": "LOVELY MILES",
+                "jockey": "L Hewitson",
+                "trainer": "P F Yiu",
+                "win_odds": "117.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "14",
+                "horse_name": "PEARL OF PANG'S",
+                "jockey": "P N Wong",
+                "trainer": "K L Man",
+                "win_odds": "67.0"
+            },
+            {
+                "place": "14",
+                "horse_no": "8",
+                "horse_name": "GOOD GOOD",
+                "jockey": "A Atzeni",
+                "trainer": "J Size",
+                "win_odds": "26.0"
+            }
+        ],
+        "7": [
+            {
+                "place": "1",
+                "horse_no": "12",
+                "horse_name": "ABSOLUTE AWAKENED",
+                "jockey": "K C Leung",
+                "trainer": "D A Hayes",
+                "win_odds": "24.0"
+            },
+            {
+                "place": "2",
+                "horse_no": "1",
+                "horse_name": "ETALON OR",
+                "jockey": "H Y Yuen",
+                "trainer": "P F Yiu",
+                "win_odds": "9.4"
+            },
+            {
+                "place": "3",
+                "horse_no": "6",
+                "horse_name": "LADY'S LOVE",
+                "jockey": "J Orman",
+                "trainer": "C W Chang",
+                "win_odds": "59.0"
+            },
+            {
+                "place": "4",
+                "horse_no": "10",
+                "horse_name": "HERO RISING",
+                "jockey": "L Hewitson",
+                "trainer": "B Crawford",
+                "win_odds": "38.0"
+            },
+            {
+                "place": "5",
+                "horse_no": "4",
+                "horse_name": "CALIFORNIA WAVES",
+                "jockey": "B Avdulla",
+                "trainer": "W K Mo",
+                "win_odds": "8.9"
+            },
+            {
+                "place": "6",
+                "horse_no": "3",
+                "horse_name": "ACE",
+                "jockey": "C L Chau",
+                "trainer": "M Newnham",
+                "win_odds": "6.1"
+            },
+            {
+                "place": "7",
+                "horse_no": "7",
+                "horse_name": "QUANTUM WUKONG",
+                "jockey": "Y L Chung",
+                "trainer": "A S Cruz",
+                "win_odds": "14.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "2",
+                "horse_name": "MEGA MASTERMIND",
+                "jockey": "L Ferraris",
+                "trainer": "J Richards",
+                "win_odds": "6.6"
+            },
+            {
+                "place": "9",
+                "horse_no": "9",
+                "horse_name": "BIG BIG WORLD",
+                "jockey": "C Y Ho",
+                "trainer": "K H Ting",
+                "win_odds": "112.0"
+            },
+            {
+                "place": "10",
+                "horse_no": "8",
+                "horse_name": "STRATHPEFFER",
+                "jockey": "R Kingscote",
+                "trainer": "D J Whyte",
+                "win_odds": "21.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "5",
+                "horse_name": "STORM MIRROR",
+                "jockey": "Z Purton",
+                "trainer": "P C Ng",
+                "win_odds": "4.1"
+            },
+            {
+                "place": "12",
+                "horse_no": "13",
+                "horse_name": "TOP TO SKY",
+                "jockey": "K Teetan",
+                "trainer": "C H Yip",
+                "win_odds": "5.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "11",
+                "horse_name": "SUPERB KID",
+                "jockey": "M F Poon",
+                "trainer": "Y S Tsui",
+                "win_odds": "61.0"
+            },
+            {
+                "place": "14",
+                "horse_no": "14",
+                "horse_name": "BEST FARM",
+                "jockey": "M L Yeung",
+                "trainer": "K L Man",
+                "win_odds": "120.0"
+            }
+        ],
+        "8": [
+            {
+                "place": "1",
+                "horse_no": "10",
+                "horse_name": "ALPHA STRIKE",
+                "jockey": "E C W Wong",
+                "trainer": "C Fownes",
+                "win_odds": "11.0"
+            },
+            {
+                "place": "2",
+                "horse_no": "1",
+                "horse_name": "SOLID STATE",
+                "jockey": "A Badel",
+                "trainer": "F C Lor",
+                "win_odds": "1.5"
+            },
+            {
+                "place": "3",
+                "horse_no": "11",
+                "horse_name": "CONGHUA GALAXY",
+                "jockey": "L Ferraris",
+                "trainer": "B Crawford",
+                "win_odds": "29.0"
+            },
+            {
+                "place": "4",
+                "horse_no": "6",
+                "horse_name": "METRO POWER",
+                "jockey": "L Hewitson",
+                "trainer": "D A Hayes",
+                "win_odds": "13.0"
+            },
+            {
+                "place": "5",
+                "horse_no": "12",
+                "horse_name": "INVINCIBLE STEED",
+                "jockey": "C Y Ho",
+                "trainer": "Y S Tsui",
+                "win_odds": "14.0"
+            },
+            {
+                "place": "6",
+                "horse_no": "13",
+                "horse_name": "LUCKY CANDY",
+                "jockey": "K Teetan",
+                "trainer": "W K Mo",
+                "win_odds": "11.0"
+            },
+            {
+                "place": "7",
+                "horse_no": "4",
+                "horse_name": "STRAIGHT TO GLORY",
+                "jockey": "K C Leung",
+                "trainer": "C W Chang",
+                "win_odds": "19.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "7",
+                "horse_name": "LA FORZA",
+                "jockey": "B Avdulla",
+                "trainer": "J Richards",
+                "win_odds": "85.0"
+            },
+            {
+                "place": "9",
+                "horse_no": "5",
+                "horse_name": "KYRUS DRAGON",
+                "jockey": "P N Wong",
+                "trainer": "D J Hall",
+                "win_odds": "41.0"
+            },
+            {
+                "place": "10",
+                "horse_no": "2",
+                "horse_name": "FAST RESPONDER",
+                "jockey": "H Y Yuen",
+                "trainer": "D J Whyte",
+                "win_odds": "27.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "8",
+                "horse_name": "MICKLEY",
+                "jockey": "A Atzeni",
+                "trainer": "J Size",
+                "win_odds": "25.0"
+            },
+            {
+                "place": "12",
+                "horse_no": "14",
+                "horse_name": "MASTER CHAMPION",
+                "jockey": "R Kingscote",
+                "trainer": "P C Ng",
+                "win_odds": "102.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "9",
+                "horse_name": "EVER LUCK",
+                "jockey": "J Orman",
+                "trainer": "M Newnham",
+                "win_odds": "27.0"
+            },
+            {
+                "place": "14",
+                "horse_no": "3",
+                "horse_name": "DRAGON AIR FORCE",
+                "jockey": "M Chadwick",
+                "trainer": "P F Yiu",
+                "win_odds": "98.0"
+            }
+        ],
+        "9": [
+            {
+                "place": "1",
+                "horse_no": "5",
+                "horse_name": "LUCY IN THE SKY",
+                "jockey": "H Y Yuen",
+                "trainer": "Y S Tsui",
+                "win_odds": "2.1"
+            },
+            {
+                "place": "2",
+                "horse_no": "1",
+                "horse_name": "CHILL BUDDY",
+                "jockey": "C L Chau",
+                "trainer": "P F Yiu",
+                "win_odds": "6.0"
+            },
+            {
+                "place": "3",
+                "horse_no": "2",
+                "horse_name": "AURORA PATCH",
+                "jockey": "J Orman",
+                "trainer": "K L Man",
+                "win_odds": "9.6"
+            },
+            {
+                "place": "4",
+                "horse_no": "4",
+                "horse_name": "FIT FOR BEAUTY",
+                "jockey": "A Atzeni",
+                "trainer": "J Size",
+                "win_odds": "26.0"
+            },
+            {
+                "place": "5",
+                "horse_no": "9",
+                "horse_name": "SAVVY BRILLIANT",
+                "jockey": "A Badel",
+                "trainer": "F C Lor",
+                "win_odds": "26.0"
+            },
+            {
+                "place": "6",
+                "horse_no": "3",
+                "horse_name": "MIGHTY COMMANDER",
+                "jockey": "K C Leung",
+                "trainer": "C Fownes",
+                "win_odds": "48.0"
+            },
+            {
+                "place": "7",
+                "horse_no": "13",
+                "horse_name": "ANODE",
+                "jockey": "E C W Wong",
+                "trainer": "C S Shum",
+                "win_odds": "23.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "8",
+                "horse_name": "THUNDER KIT",
+                "jockey": "C Y Ho",
+                "trainer": "K W Lui",
+                "win_odds": "8.9"
+            },
+            {
+                "place": "9",
+                "horse_no": "11",
+                "horse_name": "GULU GOGO",
+                "jockey": "K Teetan",
+                "trainer": "W K Mo",
+                "win_odds": "14.0"
+            },
+            {
+                "place": "10",
+                "horse_no": "6",
+                "horse_name": "CELESTIAL HERO",
+                "jockey": "L Hewitson",
+                "trainer": "D J Whyte",
+                "win_odds": "27.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "12",
+                "horse_name": "VIVA PROSPERAR",
+                "jockey": "Z Purton",
+                "trainer": "A S Cruz",
+                "win_odds": "13.0"
+            },
+            {
+                "place": "12",
+                "horse_no": "7",
+                "horse_name": "STAY COSMIC",
+                "jockey": "B Avdulla",
+                "trainer": "D A Hayes",
+                "win_odds": "96.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "14",
+                "horse_name": "WELL ENOUGH",
+                "jockey": "M L Yeung",
+                "trainer": "J Richards",
+                "win_odds": "146.0"
+            },
+            {
+                "place": "14",
+                "horse_no": "10",
+                "horse_name": "THE BOOM BOX",
+                "jockey": "H Bentley",
+                "trainer": "W Y So",
+                "win_odds": "35.0"
+            }
+        ],
+        "10": [
+            {
+                "place": "1",
+                "horse_no": "12",
+                "horse_name": "NYX GLUCK",
+                "jockey": "Z Purton",
+                "trainer": "C S Shum",
+                "win_odds": "2.1"
+            },
+            {
+                "place": "2",
+                "horse_no": "2",
+                "horse_name": "AEROVOLANIC",
+                "jockey": "A Atzeni",
+                "trainer": "P C Ng",
+                "win_odds": "11.0"
+            },
+            {
+                "place": "3",
+                "horse_no": "5",
+                "horse_name": "CHIU CHOW SPIRIT",
+                "jockey": "A Badel",
+                "trainer": "K L Man",
+                "win_odds": "20.0"
+            },
+            {
+                "place": "4",
+                "horse_no": "4",
+                "horse_name": "FLOW WATER FLOW",
+                "jockey": "B Avdulla",
+                "trainer": "J Size",
+                "win_odds": "9.9"
+            },
+            {
+                "place": "5",
+                "horse_no": "6",
+                "horse_name": "RUN RUN SMART",
+                "jockey": "H Y Yuen",
+                "trainer": "F C Lor",
+                "win_odds": "13.0"
+            },
+            {
+                "place": "6",
+                "horse_no": "9",
+                "horse_name": "MONEY GAMES",
+                "jockey": "J Orman",
+                "trainer": "M Newnham",
+                "win_odds": "20.0"
+            },
+            {
+                "place": "7",
+                "horse_no": "11",
+                "horse_name": "BIG RETURN",
+                "jockey": "L Hewitson",
+                "trainer": "J Richards",
+                "win_odds": "15.0"
+            },
+            {
+                "place": "8",
+                "horse_no": "14",
+                "horse_name": "FLYING KNIGHT",
+                "jockey": "K C Leung",
+                "trainer": "W K Mo",
+                "win_odds": "11.0"
+            },
+            {
+                "place": "9",
+                "horse_no": "1",
+                "horse_name": "SOVEREIGN FUND",
+                "jockey": "K Teetan",
+                "trainer": "B Crawford",
+                "win_odds": "29.0"
+            },
+            {
+                "place": "10",
+                "horse_no": "10",
+                "horse_name": "WINNING GOLD",
+                "jockey": "C L Chau",
+                "trainer": "W Y So",
+                "win_odds": "17.0"
+            },
+            {
+                "place": "11",
+                "horse_no": "3",
+                "horse_name": "ALL OUT FOR SIX",
+                "jockey": "M Chadwick",
+                "trainer": "Y S Tsui",
+                "win_odds": "28.0"
+            },
+            {
+                "place": "12",
+                "horse_no": "8",
+                "horse_name": "MONARCH COUNTY",
+                "jockey": "L Ferraris",
+                "trainer": "C Fownes",
+                "win_odds": "24.0"
+            },
+            {
+                "place": "13",
+                "horse_no": "13",
+                "horse_name": "RISING PHOENIX",
+                "jockey": "M F Poon",
+                "trainer": "D J Hall",
+                "win_odds": "26.0"
+            },
+            {
+                "place": "14",
+                "horse_no": "7",
+                "horse_name": "MEANINGFUL DRAGON",
+                "jockey": "P N Wong",
+                "trainer": "K W Lui",
+                "win_odds": "35.0"
+            }
+        ]
+    },
+    "dividends": {
+        "1": [
+            {
+                "pool": "WIN",
+                "combination": "10",
+                "dividend": "43.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "10",
+                "dividend": "16.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "9",
+                "dividend": "35.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "11",
+                "dividend": "24.0"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "910",
+                "dividend": "274.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "910",
+                "dividend": "101.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "1011",
+                "dividend": "59.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "911",
+                "dividend": "140.5"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "109",
+                "dividend": "535.0"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "10911",
+                "dividend": "2043.0"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "91011",
+                "dividend": "476.0"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "791011",
+                "dividend": "1198.0"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "109117",
+                "dividend": "20279.0"
+            }
+        ],
+        "2": [
+            {
+                "pool": "WIN",
+                "combination": "8",
+                "dividend": "35.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "8",
+                "dividend": "14.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "12",
+                "dividend": "155.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "11",
+                "dividend": "28.5"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "812",
+                "dividend": "1233.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "812",
+                "dividend": "331.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "811",
+                "dividend": "70.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "1112",
+                "dividend": "934.5"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "812",
+                "dividend": "1581.0"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "81211",
+                "dividend": "15254.0"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "81112",
+                "dividend": "4079.0"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "381112",
+                "dividend": "11225.0"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "812113",
+                "dividend": "243367.0"
+            },
+            {
+                "pool": "1ST DOUBLE",
+                "combination": "10/8",
+                "dividend": "98.5"
+            },
+            {
+                "pool": "1ST DOUBLE",
+                "combination": "10/12",
+                "dividend": "381.0"
+            },
+            {
+                "pool": "1ST DOUBLE TRIO",
+                "combination": "9,10,11/8,11,12",
+                "dividend": "225413.0"
+            }
+        ],
+        "3": [
+            {
+                "pool": "WIN",
+                "combination": "13",
+                "dividend": "46.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "13",
+                "dividend": "20.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "10",
+                "dividend": "25.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "8",
+                "dividend": "34.0"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "1013",
+                "dividend": "187.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "1013",
+                "dividend": "72.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "813",
+                "dividend": "119.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "810",
+                "dividend": "159.5"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "1310",
+                "dividend": "391.0"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "13108",
+                "dividend": "3486.0"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "81013",
+                "dividend": "783.0"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "891013",
+                "dividend": "2279.0"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "131089",
+                "dividend": "35573.0"
+            },
+            {
+                "pool": "2ND DOUBLE",
+                "combination": "8/13",
+                "dividend": "303.0"
+            },
+            {
+                "pool": "2ND DOUBLE",
+                "combination": "8/10",
+                "dividend": "78.5"
+            }
+        ],
+        "4": [
+            {
+                "pool": "WIN",
+                "combination": "2",
+                "dividend": "119.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "2",
+                "dividend": "28.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "3",
+                "dividend": "35.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "4",
+                "dividend": "70.5"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "23",
+                "dividend": "539.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "23",
+                "dividend": "145.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "24",
+                "dividend": "322.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "34",
+                "dividend": "467.5"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "23",
+                "dividend": "1048.0"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "234",
+                "dividend": "16135.0"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "234",
+                "dividend": "3302.0"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "23413",
+                "dividend": "13174.0"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "23413",
+                "dividend": "290721.0"
+            },
+            {
+                "pool": "3RD DOUBLE",
+                "combination": "13/2",
+                "dividend": "644.0"
+            },
+            {
+                "pool": "3RD DOUBLE",
+                "combination": "13/3",
+                "dividend": "148.5"
+            },
+            {
+                "pool": "2ND DOUBLE TRIO",
+                "combination": "8,10,13/2,3,4",
+                "dividend": "279750.0"
+            }
+        ],
+        "5": [
+            {
+                "pool": "WIN",
+                "combination": "2",
+                "dividend": "62.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "2",
+                "dividend": "21.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "12",
+                "dividend": "99.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "10",
+                "dividend": "19.0"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "212",
+                "dividend": "1239.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "212",
+                "dividend": "373.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "210",
+                "dividend": "74.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "1012",
+                "dividend": "304.0"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "212",
+                "dividend": "2020.0"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "21210",
+                "dividend": "16902.0"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "21012",
+                "dividend": "2271.0"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "2101213",
+                "dividend": "4296.0"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "2121013",
+                "dividend": "146169.0"
+            },
+            {
+                "pool": "4TH DOUBLE",
+                "combination": "2/2",
+                "dividend": "722.0"
+            },
+            {
+                "pool": "4TH DOUBLE",
+                "combination": "2/12",
+                "dividend": "1389.0"
+            },
+            {
+                "pool": "1ST TREBLE",
+                "combination": "13/2/2",
+                "dividend": "3751.0"
+            },
+            {
+                "pool": "1ST TREBLE",
+                "combination": "13/2/12",
+                "dividend": "7309.0"
+            }
+        ],
+        "6": [
+            {
+                "pool": "WIN",
+                "combination": "13",
+                "dividend": "328.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "13",
+                "dividend": "78.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "5",
+                "dividend": "19.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "4",
+                "dividend": "47.0"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "513",
+                "dividend": "788.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "513",
+                "dividend": "233.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "413",
+                "dividend": "657.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "45",
+                "dividend": "145.5"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "135",
+                "dividend": "1711.0"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "1354",
+                "dividend": "32394.0"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "4513",
+                "dividend": "4581.0"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "45913",
+                "dividend": "4803.0"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "13549",
+                "dividend": "159748.0"
+            },
+            {
+                "pool": "5TH DOUBLE",
+                "combination": "2/13",
+                "dividend": "787.0"
+            },
+            {
+                "pool": "5TH DOUBLE",
+                "combination": "2/5",
+                "dividend": "66.0"
+            },
+            {
+                "pool": "3RD DOUBLE TRIO",
+                "combination": "2,10,12/F",
+                "dividend": "1229.0"
+            },
+            {
+                "pool": "TRIPLE TRIO(Consolation)",
+                "combination": "2,3,4/Any Combination/Any Combination",
+                "dividend": "221.0"
+            }
+        ],
+        "7": [
+            {
+                "pool": "WIN",
+                "combination": "12",
+                "dividend": "241.00"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "12",
+                "dividend": "55.50"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "1",
+                "dividend": "28.00"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "6",
+                "dividend": "161.50"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "112",
+                "dividend": "1067.00"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "112",
+                "dividend": "307.50"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "612",
+                "dividend": "1630.50"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "16",
+                "dividend": "781.00"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "121",
+                "dividend": "2623.00"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "1216",
+                "dividend": "130552.00"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "1612",
+                "dividend": "18953.00"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "161012",
+                "dividend": "105347.00"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "121610",
+                "dividend": "349,150.00/$1.0"
+            },
+            {
+                "pool": "6TH DOUBLE",
+                "combination": "13/12",
+                "dividend": "5437.50"
+            },
+            {
+                "pool": "6TH DOUBLE",
+                "combination": "13/1",
+                "dividend": "312.50"
+            }
+        ],
+        "8": [
+            {
+                "pool": "WIN",
+                "combination": "10",
+                "dividend": "112.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "10",
+                "dividend": "34.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "1",
+                "dividend": "11.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "11",
+                "dividend": "67.5"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "110",
+                "dividend": "97.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "110",
+                "dividend": "48.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "1011",
+                "dividend": "347.5"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "111",
+                "dividend": "91.5"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "101",
+                "dividend": "363.0"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "10111",
+                "dividend": "5743.0"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "11011",
+                "dividend": "880.0"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "161011",
+                "dividend": "1612.0"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "101116",
+                "dividend": "63104.0"
+            },
+            {
+                "pool": "7TH DOUBLE",
+                "combination": "12/10",
+                "dividend": "7014.5"
+            },
+            {
+                "pool": "7TH DOUBLE",
+                "combination": "12/1",
+                "dividend": "62.0"
+            },
+            {
+                "pool": "4TH DOUBLE TRIO",
+                "combination": "1,6,12/1,10,11",
+                "dividend": "851920.0"
+            }
+        ],
+        "9": [
+            {
+                "pool": "WIN",
+                "combination": "5",
+                "dividend": "21.5"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "5",
+                "dividend": "14.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "1",
+                "dividend": "18.0"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "2",
+                "dividend": "26.5"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "15",
+                "dividend": "57.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "15",
+                "dividend": "29.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "25",
+                "dividend": "43.0"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "12",
+                "dividend": "79.0"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "51",
+                "dividend": "96.0"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "512",
+                "dividend": "596.0"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "125",
+                "dividend": "159.0"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "1245",
+                "dividend": "546.0"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "5124",
+                "dividend": "5817.0"
+            },
+            {
+                "pool": "8TH DOUBLE",
+                "combination": "10/5",
+                "dividend": "440.5"
+            },
+            {
+                "pool": "8TH DOUBLE",
+                "combination": "10/1",
+                "dividend": "174.0"
+            }
+        ],
+        "10": [
+            {
+                "pool": "WIN",
+                "combination": "12",
+                "dividend": "21.50"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "12",
+                "dividend": "13.00"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "2",
+                "dividend": "31.00"
+            },
+            {
+                "pool": "PLACE",
+                "combination": "5",
+                "dividend": "52.50"
+            },
+            {
+                "pool": "QUINELLA",
+                "combination": "212",
+                "dividend": "123.50"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "212",
+                "dividend": "55.00"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "512",
+                "dividend": "114.50"
+            },
+            {
+                "pool": "QUINELLA PLACE",
+                "combination": "25",
+                "dividend": "271.50"
+            },
+            {
+                "pool": "FORECAST",
+                "combination": "122",
+                "dividend": "186.00"
+            },
+            {
+                "pool": "TIERCE",
+                "combination": "1225",
+                "dividend": "2680.00"
+            },
+            {
+                "pool": "TRIO",
+                "combination": "2512",
+                "dividend": "719.00"
+            },
+            {
+                "pool": "FIRST 4",
+                "combination": "24512",
+                "dividend": "942.00"
+            },
+            {
+                "pool": "QUARTET",
+                "combination": "12254",
+                "dividend": "15900.00"
+            },
+            {
+                "pool": "9TH DOUBLE",
+                "combination": "5/12",
+                "dividend": "68.00"
+            },
+            {
+                "pool": "9TH DOUBLE",
+                "combination": "5/2",
+                "dividend": "50.50"
+            },
+            {
+                "pool": "2ND TREBLE",
+                "combination": "10/5/12",
+                "dividend": "953.00"
+            },
+            {
+                "pool": "2ND TREBLE",
+                "combination": "10/5/2",
+                "dividend": "809.00"
+            },
+            {
+                "pool": "5TH DOUBLE TRIO",
+                "combination": "1,2,5/2,5,12",
+                "dividend": "17765.00"
+            },
+            {
+                "pool": "SIX UP",
+                "combination": "2,12/5,13/1,12/1,10/1,5/2,12",
+                "dividend": "6376.00"
+            },
+            {
+                "pool": "SIX UP",
+                "combination": "2/13/12/10/5/12",
+                "dividend": "1895387.00"
+            },
+            {
+                "pool": "JOCKEY CHALLENGE 1",
+                "combination": "1 [Z Purton]",
+                "dividend": "Details"
+            },
+            {
+                "pool": "TRAINER CHALLENGE 1",
+                "combination": "2 [K L Man]",
+                "dividend": "Details"
+            }
+        ]
+    }
+}
