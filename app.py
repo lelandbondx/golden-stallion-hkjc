@@ -697,11 +697,11 @@ with tab1:
             is_wide_sprinter = (distance <= 1200) & (df_runners['draw'] >= 9)
             hv_c_course_penalty = np.where(is_wide_sprinter, -0.04, 0.0)
             
-        # Caspar Fownes Happy Valley Specialist Boost (+0.04 on home track)
+        # Caspar Fownes Happy Valley Specialist Boost (+0.03 on home track)
         fownes_hv_boost = 0.0
         if is_hv:
             is_fownes = df_runners['trainer'].astype(str).str.strip().str.upper() == 'C FOWNES'
-            fownes_hv_boost = np.where(is_fownes, 0.04, 0.0)
+            fownes_hv_boost = np.where(is_fownes, 0.03, 0.0)
 
         # Sha Tin Straight 1000m Outside Rail Draw Bias (Races 2 & 8)
         is_st_straight_1000 = (meeting.get('venue') == 'Sha Tin') and (distance == 1000) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
