@@ -704,18 +704,6 @@ with tab1:
             is_inside_disadv = (df_runners['draw'] <= 4)
             st_1000_draw_penalty = np.where(is_inside_disadv, -0.025, 0.0)
 
-        # Elite Jockey Lightweight Multiplier (Premier riders carrying <= 121 lbs)
-        ELITE_JOCKEYS = {'Z PURTON', 'H BOWMAN', 'C Y HO', 'K TEETAN', 'A ATZENI', 'J MOREIRA', 'B SHINN', 'J MCDONALD'}
-        df_runners_jockey_upper = df_runners['jockey'].astype(str).str.strip().str.upper()
-        actual_wt = pd.to_numeric(df_runners.get('actual_weight', df_runners.get('weight', 120)), errors='coerce').fillna(120)
-        is_elite_lightweight = df_runners_jockey_upper.isin(ELITE_JOCKEYS) & (actual_wt <= 121) & (recent_pos <= 6.0)
-        elite_lightweight_boost = np.where(is_elite_lightweight, 0.025, 0.0)
-
-        # In-Form Apprentice Weight Claim Multiplier in Sprints (<= 1200m, weight <= 120 lbs)
-        CLAIMING_APPRENTICES = {'E C W WONG', 'P N WONG', 'H Y YUEN', 'H T MO', 'Y L CHUNG'}
-        is_apprentice_sprint = (distance <= 1200) & (df_runners_jockey_upper.isin(CLAIMING_APPRENTICES)) & (actual_wt <= 120)
-        apprentice_sprint_boost = np.where(is_apprentice_sprint, 0.035, 0.0)
-            
         # Quantitative Barrier Trial Multipliers
         trial_boost = []
         trial_penalty = []
@@ -767,7 +755,7 @@ with tab1:
         is_fit_fresh = is_mile_or_distance & (recent_pos <= 5.0) & (vet_issue == 0)
         fresh_mile_fitness_boost = np.where(is_fit_fresh, 0.015, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + elite_lightweight_boost + fownes_hv_boost + apprentice_sprint_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_mile_fitness_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_mile_fitness_boost
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
