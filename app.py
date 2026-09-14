@@ -245,6 +245,14 @@ def fetch_horse_stats():
 def fetch_tips():
     return get_live_tips_index()
 
+@st.cache_data(ttl=86400)
+def fetch_trial_features():
+    try:
+        with open('data/engineered_trial_features.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
 # Initialize variables
 data = fetch_data()
 precomputed = load_precomputed_data()
@@ -256,6 +264,7 @@ sectional_bursts = precomputed.get('sectional_bursts', {})
 std_times_df = fetch_standard_times()
 horse_stats_df = fetch_horse_stats()
 tips_data = fetch_tips()
+trial_features = fetch_trial_features()
 meetings = data.get('meetings', [])
 
 try:
@@ -437,6 +446,8 @@ with tab1:
                         
                         if class_int_frozen == 5:
                             df_runners['kelly_stake'] = df_runners['kelly_stake'] * 0.5
+                            if 'confidence' in df_runners.columns:
+                                df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
                         
                         # Recalculate baseline odds dynamically if the race is still early (>120 mins out)
                         df_runners['baseline_odds'] = df_runners.apply(
@@ -803,6 +814,10 @@ with tab1:
         else:
             df_runners['confidence'] = 50
 
+        # Class 5 Volatility Guard: Cap confidence to maximum 68% in volatile Class 5 races
+        if class_int == 5:
+            df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
+
         # Add historical records
         if 'clean_name' not in df_runners.columns:
             df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
@@ -1095,6 +1110,84 @@ with tab1:
             </div>
             '''), unsafe_allow_html=True)
             
+            # Open Contest / Class 5 Volatility Alert
+            is_class_5 = (c_val == "5") or ("Class 5" in class_dist)
+            top_prob = df_runners['model_prob'].max() if 'model_prob' in df_runners.columns else 0.20
+            is_open_contest = is_class_5 or (top_prob < 0.18)
+            if is_open_contest:
+                contest_reason = "Class 5 contest with compressed ratings and historically volatile outcomes." if is_class_5 else "Wide-open field with tightly compressed win probabilities."
+                st.markdown(clean_html(f'''
+                <div style="background: rgba(234, 179, 8, 0.08); padding: 12px 18px; border-radius: 8px; border: 1px dashed rgba(234, 179, 8, 0.6); margin-bottom: 15px; font-size:0.95rem; color:#facc15; font-family:'Inter', sans-serif;">
+                    ⚠️ <b>HIGH VOLATILITY / OPEN CONTEST ALERT</b>: {contest_reason} AI confidence is guarded. We recommend conservative single-win stakes and prioritizing Dual-Staking (Win/Place) and exotic structures (Quinella Place / Tierce).
+                </div>
+                '''), unsafe_allow_html=True)
+
+            # ⚡ Tactical Edge & Outlier Radar (Stewards, Vet, First-Up, Trial Outliers)
+            trouble_keywords = ['interference', 'blocked', 'held up', 'checked', 'crowded', 'hampered', 'stumble', 'clipt', 'clip ', 'check ', 'wide without cover', 'hung out', 'slow to begin', 'denied a clear run', 'untested']
+            
+            tactical_radar_items = []
+            for _, r_item in df_runners.iterrows():
+                r_no = r_item.get('no')
+                r_name = str(r_item.get('name', '')).strip().upper()
+                r_comment = str(last_comments.get(r_name, '')).strip()
+                r_vet_status = pd.to_numeric(r_item.get('prev_run_vet_finding', 0), errors='coerce')
+                r_vet_notes = str(r_item.get('vet_findings', '')).strip()
+                r_days_off = pd.to_numeric(r_item.get('days_since_last_run', 0), errors='coerce')
+                
+                # 1. Stewards Trouble / Hidden Run
+                if any(kw in r_comment.lower() for kw in trouble_keywords):
+                    clean_snippet = ' '.join(r_comment.split())
+                    if len(clean_snippet) > 85: clean_snippet = clean_snippet[:85] + '...'
+                    tactical_radar_items.append({
+                        'type': '🚨 STEWARDS INCIDENT / HIDDEN RUN',
+                        'color': '#ef4444',
+                        'bg': 'rgba(239, 68, 68, 0.10)',
+                        'border': 'rgba(239, 68, 68, 0.4)',
+                        'text': f"<b>#{r_no} {r_name}</b>: {clean_snippet}"
+                    })
+                    
+                # 2. Post-Surgery / Medical Recovery
+                if r_vet_status == 1 or any(k in r_vet_notes.lower() for k in ['surgery', 'tieback', 'bleeder', 'lame', 'trachea', 'heart']):
+                    tactical_radar_items.append({
+                        'type': '🏥 VET / SURGERY RECOVERY',
+                        'color': '#f97316',
+                        'bg': 'rgba(249, 115, 22, 0.10)',
+                        'border': 'rgba(249, 115, 22, 0.4)',
+                        'text': f"<b>#{r_no} {r_name}</b>: Medical record / veterinary recovery flagged on file"
+                    })
+                    
+                # 3. First-Up / Fresh Layoff
+                if pd.notnull(r_days_off) and r_days_off >= 90:
+                    tactical_radar_items.append({
+                        'type': '⚡ FIRST-UP / FRESH',
+                        'color': '#3b82f6',
+                        'bg': 'rgba(59, 130, 246, 0.10)',
+                        'border': 'rgba(59, 130, 246, 0.4)',
+                        'text': f"<b>#{r_no} {r_name}</b>: Resuming after {int(r_days_off)} days off"
+                    })
+                    
+                # 4. Barrier Trial Speed Outlier
+                if r_name in trial_features:
+                    spd = float(trial_features[r_name].get('best_trial_speed_diff', 0.0))
+                    if spd >= 0.5:
+                        tactical_radar_items.append({
+                            'type': '🔥 TRIAL SPEED OUTLIER',
+                            'color': '#10b981',
+                            'bg': 'rgba(16, 185, 129, 0.10)',
+                            'border': 'rgba(16, 185, 129, 0.4)',
+                            'text': f"<b>#{r_no} {r_name}</b>: Blistering barrier trial speed (+{spd:.2f}s faster than course standard)"
+                        })
+
+            if tactical_radar_items:
+                with st.expander("⚡ TACTICAL EDGE & OUTLIER RADAR (STEWARDS & VET MONITOR)", expanded=True):
+                    radar_html = '<div style="display:flex; flex-direction:column; gap:8px;">'
+                    for item in tactical_radar_items:
+                        radar_html += f'''<div style="background:{item['bg']}; border-left:4px solid {item['color']}; padding:8px 12px; border-radius:4px; font-size:0.90rem; color:#f8fafc; font-family:\'Inter\', sans-serif;">
+                            <span style="color:{item['color']}; font-weight:700; font-size:0.80rem; text-transform:uppercase; margin-right:8px;">[{item['type']}]</span>{item['text']}
+                        </div>'''
+                    radar_html += '</div>'
+                    st.markdown(clean_html(radar_html), unsafe_allow_html=True)
+
             # Special Exotic Sleeper Alert for DO YOU JUST (L094)
             has_do_you_just = any(str(r.get('code', '')).upper() == 'L094' for r in race.get('runners', []))
             if has_do_you_just:

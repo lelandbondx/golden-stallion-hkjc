@@ -2,7 +2,7 @@
 Track: Happy Valley Turf | Total Races: 8 | Active Runners: 96
 
 --- RACE 1 ---
-Rank 1: #11 SPICY SPANGLE (Odds: 20.0) | Jockey: K C Leung | Conf: 85% | EV: 0.170
+Rank 1: #11 SPICY SPANGLE (Odds: 20.0) | Jockey: K C Leung | Conf: 68% | EV: 0.170
 Rank 2: #9 RUNJEET (Odds: 20.0) | Jockey: L Ferraris | Conf: 51% | EV: 0.059
 Rank 3: #2 ALWAYS MY FOLKS (Odds: 20.0) | Jockey: Z Purton | Conf: 49% | EV: 0.052
 Rank 4: #6 ICONICAL (Odds: 20.0) | Jockey: L Hewitson | Conf: 33% | EV: 0.002

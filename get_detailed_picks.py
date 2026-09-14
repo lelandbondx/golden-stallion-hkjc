@@ -410,6 +410,10 @@ def run():
             df_runners['confidence'] = (15.0 + ((df_runners['model_prob'] - p_min) / (p_max - p_min)) * 70).round(0).astype(int)
         else:
             df_runners['confidence'] = 50
+
+        # Class 5 Volatility Guard: Cap confidence to maximum 68% in volatile Class 5 races
+        if class_int == 5:
+            df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
             
         race_picks = df_runners.sort_values(by='gs_score', ascending=False)
         
