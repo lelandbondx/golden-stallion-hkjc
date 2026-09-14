@@ -2455,6 +2455,166 @@
         "OLDTOWN": [
             "B/XB",
             "TT"
+        ],
+        "ALWAYS MY FOLKS": [
+            "B/TT"
+        ],
+        "ICONICAL": [
+            "TT"
+        ],
+        "JOLLY COMPANION": [
+            "B/TT"
+        ],
+        "DAN ATTACK": [
+            "XB"
+        ],
+        "HOLMES A COURT": [
+            "V-/B2/TT-"
+        ],
+        "CALIFORNIA BAY": [
+            "V/TT"
+        ],
+        "BRIGHT DAY": [
+            "V/TT"
+        ],
+        "ROSEWOOD FLEETFOOT": [
+            "V/TT"
+        ],
+        "FAMILY FORTUNE": [
+            "TT"
+        ],
+        "LEGEND STAR": [
+            "B/TT",
+            "B2/TT"
+        ],
+        "STAR BROSE": [
+            "CP/TT"
+        ],
+        "SERANGOON": [
+            "B/TT"
+        ],
+        "OCEAN IMPACT": [
+            "CP-/B1"
+        ],
+        "LIVE WIRE": [
+            "B/XB"
+        ],
+        "VICTOR THE RAPID": [
+            "B/TT"
+        ],
+        "SOMELOVEFROMABOVE": [
+            "PC",
+            "XB-"
+        ],
+        "STARRY SHOW": [
+            "B"
+        ],
+        "EVERSTAR": [
+            "CP"
+        ],
+        "GRATIFIDE": [
+            "B"
+        ],
+        "WINNING MONEY": [
+            "H/XB"
+        ],
+        "JUICY DRAGON": [
+            "B-/V1",
+            "V"
+        ],
+        "LUCKY MCQUEEN": [
+            "H/TT"
+        ],
+        "GENIUS BABY": [
+            "XB/TT"
+        ],
+        "ELEGANT LIFE": [
+            "B/TT"
+        ],
+        "DAZZLING FIT": [
+            "XB"
+        ],
+        "GOLDEN FRIENDSHIP": [
+            "B/TT"
+        ],
+        "WROTE A NEW PAGE": [
+            "TT"
+        ],
+        "HIGHLAND RAHY": [
+            "B/TT"
+        ],
+        "SUPER UNICORN": [
+            "CP"
+        ],
+        "ROMANTIC GLADIATOR": [
+            "TT"
+        ],
+        "ALL ROUND WINNER": [
+            "B",
+            "CP-/B1"
+        ],
+        "LOVE TOGETHER": [
+            "TT"
+        ],
+        "VIVA GRACIOUSNESS": [
+            "TT"
+        ],
+        "CANDLELIGHT DINNER": [
+            "H"
+        ],
+        "DANCING CLASSICS": [
+            "B1/TT",
+            "SR/TT",
+            "TT1"
+        ],
+        "HORSEPOWER": [
+            "XB/TT"
+        ],
+        "CASA OF HONOR": [
+            "H-/SR-/XB"
+        ],
+        "BUNTA BABY": [
+            "V/TT"
+        ],
+        "HONEST WITNESS": [
+            "B/TT"
+        ],
+        "NOTTHESILLYONE": [
+            "TT"
+        ],
+        "SAGACIOUS LIFE": [
+            "TT",
+            "TT1"
+        ],
+        "PARENTS' LOVE": [
+            "H/TT"
+        ],
+        "SPEED DRAGON": [
+            "B"
+        ],
+        "DRAGON FOUR SEAS": [
+            "B"
+        ],
+        "HELENE FEELING": [
+            "B/TT"
+        ],
+        "HUGE WAVE": [
+            "TT"
+        ],
+        "LE ZONDA": [
+            "TT"
+        ],
+        "SILVERY BREEZE": [
+            "CP/TT"
+        ],
+        "MAX QUE": [
+            "TT"
+        ],
+        "AWESOME FLUKE": [
+            "P/TT"
+        ],
+        "ARMOR GOLDEN EAGLE": [
+            "B"
         ]
     },
     "running_styles": {
@@ -4300,7 +4460,7 @@
         "JOLTIN": 10.571428571428571,
         "THE LION KING": 4.583333333333333,
         "SOLID WIN": 8.666666666666666,
-        "ROMANTIC LAOS": 6.583333333333333,
+        "ROMANTIC LAOS": 7.0,
         "AMAZING GAZE": 6.083333333333333,
         "SUNDAY'S SERENADE": 8.75,
         "WINDLORD": 6.333333333333333,
@@ -4334,7 +4494,7 @@
         "TYCOON RESOURCES": 4.0,
         "COPARTNER FLEET": 5.333333333333333,
         "NORTHERN FIRE BALL": 2.090909090909091,
-        "FORZA LEADER": 9.416666666666666,
+        "FORZA LEADER": 9.083333333333334,
         "GOOD LUCK HAPPY": 4.833333333333333,
         "AURIO": 8.727272727272727,
         "FORERUNNER": 7.5,
@@ -4484,7 +4644,98 @@
         "FLYING KNIGHT": 7.0,
         "MONARCH COUNTY": 8.166666666666666,
         "RISING PHOENIX": 8.166666666666666,
-        "OLDTOWN": 8.333333333333334
+        "OLDTOWN": 8.333333333333334,
+        "BEAUTY GEMINI": 4.833333333333333,
+        "TOPSPIN KING": 6.6,
+        "RUNJEET": 6.909090909090909,
+        "DIRIYA": 5.5,
+        "ALWAYS MY FOLKS": 3.75,
+        "SWEET BRIAR": 6.916666666666667,
+        "ICONICAL": 2.8333333333333335,
+        "SMART CITY": 4.083333333333333,
+        "GLORIOUS DYNASTY": 6.0,
+        "JOLLY COMPANION": 6.75,
+        "TRUE BROTHERS": 2.6666666666666665,
+        "GRIT SPIRIT": 10.25,
+        "DAN ATTACK": 5.25,
+        "HOLMES A COURT": 5.416666666666667,
+        "SPICY SPANGLE": 2.5833333333333335,
+        "CALIFORNIA BAY": 5.583333333333333,
+        "KANSAS": 5.125,
+        "VERY GRATEFUL": 8.3,
+        "TACTICAL COMMAND": 9.666666666666666,
+        "BRIGHT DAY": 7.25,
+        "ROSEWOOD FLEETFOOT": 8.181818181818182,
+        "FAMILY FORTUNE": 9.416666666666666,
+        "JUMBO STEPS": 9.6,
+        "LEGEND STAR": 7.916666666666667,
+        "ROMANTIC FANTASY": 7.75,
+        "LOVING VIBES": 5.666666666666667,
+        "FLUORESCENCE": 10.0,
+        "STAR BROSE": 8.916666666666666,
+        "NOISY BOY": 6.75,
+        "SERANGOON": 11.416666666666666,
+        "OCEAN IMPACT": 6.416666666666667,
+        "LIVE WIRE": 2.857142857142857,
+        "SMILING ONE": 10.166666666666666,
+        "FRIENDS OF SHAJING": 5.0,
+        "GIANT LEAP": 3.9166666666666665,
+        "CAN'T GO WONG": 7.416666666666667,
+        "VICTOR THE RAPID": 7.5,
+        "LIGHTNESS OF BEING": 6.222222222222222,
+        "JOLLY BONUS": 7.0,
+        "SOMELOVEFROMABOVE": 4.916666666666667,
+        "A TIME FOR US": 6.0,
+        "STARRY SHOW": 9.5,
+        "KWAI CHUNG TALENTS": 7.0,
+        "ARMOUR WAR EAGLE": 8.0,
+        "EVERSTAR": 7.7272727272727275,
+        "SAME TO YOU": 7.75,
+        "GRATIFIDE": 8.428571428571429,
+        "WINNING MONEY": 3.1666666666666665,
+        "STAR OF HEARTS": 9.0,
+        "JUICY DRAGON": 5.25,
+        "LUCKY MCQUEEN": 6.166666666666667,
+        "GROUPER": 3.8333333333333335,
+        "GENIUS BABY": 7.916666666666667,
+        "YOUNG ARROW": 7.333333333333333,
+        "ELEGANT LIFE": 5.75,
+        "DAZZLING FIT": 8.833333333333334,
+        "GOLDEN FRIENDSHIP": 4.333333333333333,
+        "POPE CODY": 8.75,
+        "CALL ME TOPSEED": 4.833333333333333,
+        "WROTE A NEW PAGE": 5.083333333333333,
+        "HIGHLAND RAHY": 2.0833333333333335,
+        "EMBRACES": 8.75,
+        "SUPER UNICORN": 8.333333333333334,
+        "HYMNBOOK": 9.833333333333334,
+        "ROMANTIC GLADIATOR": 4.333333333333333,
+        "ALL ROUND WINNER": 6.666666666666667,
+        "ETERNAL FORTUNE": 3.9166666666666665,
+        "LOVE TOGETHER": 8.0,
+        "VIVA GRACIOUSNESS": 5.583333333333333,
+        "REFUSETOBEENGLISH": 9.333333333333334,
+        "CANDLELIGHT DINNER": 2.3333333333333335,
+        "DANCING CLASSICS": 6.666666666666667,
+        "HORSEPOWER": 8.833333333333334,
+        "CASA OF HONOR": 6.5,
+        "BUNTA BABY": 6.916666666666667,
+        "HONEST WITNESS": 2.1666666666666665,
+        "MASSIVE SOVEREIGN": 8.8,
+        "NOTTHESILLYONE": 2.9166666666666665,
+        "SAGACIOUS LIFE": 4.375,
+        "PARENTS' LOVE": 3.909090909090909,
+        "SPEED DRAGON": 10.090909090909092,
+        "DRAGON FOUR SEAS": 6.666666666666667,
+        "HELENE FEELING": 7.5,
+        "HUGE WAVE": 7.0,
+        "LE ZONDA": 9.375,
+        "SILVERY BREEZE": 7.583333333333333,
+        "MAX QUE": 6.75,
+        "RED ELEGANCE": 6.75,
+        "CALIFORNIATOTALITY": 3.6363636363636362,
+        "AWESOME FLUKE": 4.0,
+        "ARMOR GOLDEN EAGLE": 6.6
     },
     "last_comments": {
         "BABA MAMA": "Began well, raced 2 wide in midfield, slightly improved     from 600M, finished off strongly to get 2nd.                                                                                                                                        ",
