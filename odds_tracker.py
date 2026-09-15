@@ -1,18 +1,21 @@
 import os
 import json
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds, minutes_to_post=999.0):
     """
     Loads baseline odds from file. If not found, saves current odds as baseline.
     If minutes_to_post > 120.0, keeps updating the baseline to match the latest live odds.
     Returns the baseline odds.
     """
-    filename = f"data/baseline_odds_{date_str.replace('-', '')}.json"
+    cleaned_date = str(date_str).replace('-', '') if date_str else 'today'
+    filename = os.path.join(BASE_DIR, "data", f"baseline_odds_{cleaned_date}.json")
     
     # Load existing baseline data
     if os.path.exists(filename):
         try:
-            with open(filename, 'r') as f:
+            with open(filename, 'r', encoding='utf-8') as f:
                 baseline_data = json.load(f)
         except:
             baseline_data = {}
@@ -27,8 +30,8 @@ def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds, minutes_
             baseline_data[key] = current_odds
             try:
                 os.makedirs(os.path.dirname(filename), exist_ok=True)
-                with open(filename, 'w') as f:
-                    json.dump(baseline_data, f)
+                with open(filename, 'w', encoding='utf-8') as f:
+                    json.dump(baseline_data, f, indent=4)
             except Exception as e:
                 print(f"[WARNING] Could not save baseline odds to file: {e}")
             return current_odds
@@ -40,8 +43,8 @@ def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds, minutes_
             # Save updated baseline safely (prevent crashes in read-only environments)
             try:
                 os.makedirs(os.path.dirname(filename), exist_ok=True)
-                with open(filename, 'w') as f:
-                    json.dump(baseline_data, f)
+                with open(filename, 'w', encoding='utf-8') as f:
+                    json.dump(baseline_data, f, indent=4)
             except Exception as e:
                 print(f"[WARNING] Could not save baseline odds to file: {e}")
             return current_odds
@@ -59,30 +62,38 @@ def calculate_odds_shift_bonus(baseline_odds, current_odds, recent_pos, vet_issu
         
     shift_pct = (current_odds - baseline_odds) / baseline_odds
     
-    bonus = 0.0
-    
-    # SMART STEAM: Odds drop by > 15%, horse has elite form (recent pos <= 4.0)
-    # Dampened from 4.0 to 1.5
-    if shift_pct < -0.15 and recent_pos <= 4.0:
-        bonus += 1.5
+    # Significant steam (>20% price drop)
+    if shift_pct <= -0.20:
+        if recent_pos <= 4.0 and vet_issue == 0:
+            return 8.0 # Smart money on proven form
+        elif vet_issue == 1 or recent_pos >= 8.0:
+            return 2.0 # Speculative move on questionable form
+        else:
+            return 4.0
+            
+    # Mild steam (10% to 20% drop)
+    elif shift_pct <= -0.10:
+        if recent_pos <= 4.0 and vet_issue == 0:
+            return 4.0
+        else:
+            return 2.0
+            
+    # Moderate drift (15% to 30% drift)
+    elif shift_pct >= 0.15 and shift_pct < 0.30:
+        return -2.0
         
-    # RED FLAG DRIFT: Odds rise by > 30%, horse has a known vet issue
-    # Dampened from -3.0 to -1.5
-    if shift_pct > 0.30 and vet_issue > 0:
-        bonus -= 1.5
+    # Massive drift (>30% drift)
+    elif shift_pct >= 0.30:
+        return -5.0
         
-    # VALUE DRIFT: Odds rise by > 25%, horse has elite form and NO vet issues
-    # Dampened from 2.0 to 0.75
-    if shift_pct > 0.25 and recent_pos <= 3.5 and vet_issue == 0:
-        bonus += 0.75
-        
-    return bonus
+    return 0.0
 
 def cache_live_odds(date_str, venue, races):
     """
     Saves the scraped win odds of all runners if they are > 0.
     """
-    filename = f"data/odds_cache_{date_str.replace('-', '')}.json"
+    cleaned_date = str(date_str).replace('-', '') if date_str else 'today'
+    filename = os.path.join(BASE_DIR, "data", f"odds_cache_{cleaned_date}.json")
     cache = {}
     if os.path.exists(filename):
         try:
@@ -117,7 +128,8 @@ def get_cached_odds(date_str, venue, race_no, horse_no, current_odds):
     if current_odds > 0:
         return current_odds
         
-    filename = f"data/odds_cache_{date_str.replace('-', '')}.json"
+    cleaned_date = str(date_str).replace('-', '') if date_str else 'today'
+    filename = os.path.join(BASE_DIR, "data", f"odds_cache_{cleaned_date}.json")
     if os.path.exists(filename):
         try:
             with open(filename, 'r', encoding='utf-8') as f:
@@ -127,13 +139,36 @@ def get_cached_odds(date_str, venue, race_no, horse_no, current_odds):
                     return cache[key]
         except:
             pass
+            
+    return get_current_odds_with_fallback(date_str, venue, race_no, horse_no, current_odds)
+
+def get_current_odds_with_fallback(date_str, venue, race_no, horse_no, scraped_odds=None):
+    """
+    Returns the best available current odds.
+    """
+    if scraped_odds is not None and float(scraped_odds) > 0:
+        return float(scraped_odds)
+        
+    cleaned_date = str(date_str).replace('-', '') if date_str else 'today'
+    filename = os.path.join(BASE_DIR, "data", f"baseline_odds_{cleaned_date}.json")
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r', encoding='utf-8') as f:
+                baseline_data = json.load(f)
+                key = f"{venue}_R{race_no}_H{horse_no}"
+                if key in baseline_data and baseline_data[key] > 0:
+                    return float(baseline_data[key])
+        except:
+            pass
+            
     return 20.0 # Fallback
 
 def save_frozen_predictions(date_str, venue, race_no, runners_list):
     """
     Saves predictions (runners list) to data/frozen_predictions_{date}.json to preserve the final ratings state.
     """
-    filename = f"data/frozen_predictions_{date_str.replace('-', '')}.json"
+    cleaned_date = str(date_str).replace('-', '') if date_str else 'today'
+    filename = os.path.join(BASE_DIR, "data", f"frozen_predictions_{cleaned_date}.json")
     cache = {}
     if os.path.exists(filename):
         try:
@@ -156,7 +191,8 @@ def get_frozen_predictions(date_str, venue, race_no):
     """
     Returns frozen predictions if they exist, otherwise None.
     """
-    filename = f"data/frozen_predictions_{date_str.replace('-', '')}.json"
+    cleaned_date = str(date_str).replace('-', '') if date_str else 'today'
+    filename = os.path.join(BASE_DIR, "data", f"frozen_predictions_{cleaned_date}.json")
     if os.path.exists(filename):
         try:
             with open(filename, 'r', encoding='utf-8') as f:
