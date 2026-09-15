@@ -90,8 +90,8 @@ def save_current_state(state):
         log_message(f"Error saving state file: {e}")
 
 def main():
-    log_message("🚀 Golden Stallion AI Track Condition Monitor Initialized")
-    log_message("Monitoring Sha Tin turf and dirt track goings live from HKJC API...")
+    log_message("🚀 Golden Stallion AI Live Telemetry Monitor Initialized")
+    log_message("Monitoring Happy Valley & Sha Tin goings, scratches, and jockey changes live from HKJC API...")
     
     # Load previously stored track state
     previous_state = load_previous_state()
@@ -111,25 +111,39 @@ def main():
             date_str = meeting.get('date', 'today')
             races = meeting.get('races', [])
             
-            # Construct current going state mapping
-            current_state = {}
+            # Construct comprehensive state mapping: goings, active runners, and jockeys
+            current_state = {
+                "goings": {},
+                "runners": {},
+                "jockeys": {}
+            }
             for race in races:
                 race_no = race.get('race_no')
                 if race_no is not None:
-                    # Prefer race-specific going, fall back to meeting going, default to GOOD
                     going_desc = race.get('going', meeting.get('going', 'GOOD')).upper().strip()
-                    current_state[str(race_no)] = going_desc
+                    current_state["goings"][str(race_no)] = going_desc
+                    
+                    r_list = []
+                    j_map = {}
+                    for runner in race.get('runners', []):
+                        r_no = runner.get('no')
+                        if r_no:
+                            r_list.append(int(r_no))
+                            j_map[str(r_no)] = str(runner.get('jockey', '')).strip().upper()
+                    current_state["runners"][str(race_no)] = sorted(r_list)
+                    current_state["jockeys"][str(race_no)] = j_map
             
-            if not current_state:
+            if not current_state["goings"]:
                 log_message("⚠️ Scraped state returned no races. Retrying in 120s...")
                 time.sleep(120)
                 continue
                 
-            # If first run, initialize and print current goings
+            # If first run, initialize and log current state
             if is_first_run:
-                log_message(f"📊 Initializing Track Goings for {venue} - {date_str}:")
-                for race_no, going in sorted(current_state.items(), key=lambda x: int(x[0])):
-                    log_message(f"   Race {race_no}: {going}")
+                log_message(f"📊 Initialized Live Monitor for {venue} - {date_str}:")
+                for race_no, going in sorted(current_state["goings"].items(), key=lambda x: int(x[0])):
+                    r_count = len(current_state["runners"].get(race_no, []))
+                    log_message(f"   Race {race_no}: Going={going} | Active Runners={r_count}")
                 
                 save_current_state(current_state)
                 previous_state = current_state.copy()
@@ -138,11 +152,14 @@ def main():
                 # Run predictions on start to ensure files are fresh
                 run_prediction_update()
             else:
-                # Compare state
                 has_changed = False
-                for race_no, going in current_state.items():
-                    prev_going = previous_state.get(race_no)
-                    
+                prev_goings = previous_state.get("goings", {}) if isinstance(previous_state, dict) and "goings" in previous_state else previous_state
+                prev_runners = previous_state.get("runners", {}) if isinstance(previous_state, dict) else {}
+                prev_jockeys = previous_state.get("jockeys", {}) if isinstance(previous_state, dict) else {}
+                
+                # 1. Check going changes
+                for race_no, going in current_state["goings"].items():
+                    prev_going = prev_goings.get(race_no)
                     if prev_going is None:
                         log_message(f"🆕 Race {race_no} registered with going: {going}")
                         has_changed = True
@@ -150,21 +167,34 @@ def main():
                         log_message(f"🚨 ALERT: Race {race_no} track condition changed from '{prev_going}' to '{going}'!")
                         has_changed = True
                         
+                # 2. Check scratches / runner withdrawals
+                for race_no, curr_r_list in current_state["runners"].items():
+                    prev_r_list = prev_runners.get(race_no, [])
+                    if prev_r_list and set(prev_r_list) != set(curr_r_list):
+                        scratched = set(prev_r_list) - set(curr_r_list)
+                        log_message(f"🚨 ALERT: Scratching detected in Race {race_no}: Horses #{scratched}")
+                        has_changed = True
+                        
+                # 3. Check jockey changes
+                for race_no, curr_j_map in current_state["jockeys"].items():
+                    prev_j_map = prev_jockeys.get(race_no, {})
+                    for r_no, j_name in curr_j_map.items():
+                        prev_j = prev_j_map.get(r_no)
+                        if prev_j and j_name and prev_j != j_name:
+                            log_message(f"🚨 ALERT: Jockey change in Race {race_no} on #{r_no}: '{prev_j}' -> '{j_name}'")
+                            has_changed = True
+                        
                 if has_changed:
                     save_current_state(current_state)
                     previous_state = current_state.copy()
-                    
-                    # Trigger prediction updates
                     run_prediction_update()
                 else:
-                    # Print normal heartbeat message
-                    going_summary = ", ".join([f"R{r}:{g}" for r, g in sorted(current_state.items(), key=lambda x: int(x[0]))])
-                    log_message(f"💓 Heartbeat: Checked {len(current_state)} races. Goings: {going_summary}. No changes.")
+                    going_summary = ", ".join([f"R{r}:{g}" for r, g in sorted(current_state["goings"].items(), key=lambda x: int(x[0]))])
+                    log_message(f"💓 Heartbeat: Checked {len(current_state['goings'])} races ({sum(len(v) for v in current_state['runners'].values())} runners). Goings: {going_summary}. 0 changes.")
                     
         except Exception as e:
             log_message(f"❌ Exception in monitoring loop: {e}")
             
-        # Poll every 2 minutes
         time.sleep(120)
 
 if __name__ == "__main__":
