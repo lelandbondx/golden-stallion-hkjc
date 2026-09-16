@@ -1148,14 +1148,31 @@ with tab1:
                         'text': f"<b>#{r_no} {r_name}</b>: {clean_snippet}"
                     })
                     
-                # 2. Post-Surgery / Medical Recovery
-                if r_vet_status == 1 or any(k in r_vet_notes.lower() for k in ['surgery', 'tieback', 'bleeder', 'lame', 'trachea', 'heart']):
+                # 2. Specific Medical / Veterinary Recovery Tag (Exact 2-word condition)
+                med_text = (str(r_comment) + ' ' + str(r_vet_notes)).lower()
+                specific_vet_tag = None
+                if 'tieback' in med_text or 'tie-back' in med_text or 'throat' in med_text or 'epiglottic' in med_text:
+                    specific_vet_tag = 'THROAT SURGERY'
+                elif 'bled' in med_text or 'bleeder' in med_text:
+                    specific_vet_tag = 'BLEEDER RECOVERY'
+                elif 'lame' in med_text or 'lameness' in med_text:
+                    specific_vet_tag = 'LAME RECOVERY'
+                elif 'trachea' in med_text or 'mucus' in med_text or 'respiratory' in med_text:
+                    specific_vet_tag = 'RESPIRATORY CLEAR'
+                elif 'irregular heart' in med_text or 'heart irregularity' in med_text:
+                    specific_vet_tag = 'HEART RECOVERY'
+                elif 'arthroscop' in med_text or 'bone chip' in med_text or 'joint' in med_text:
+                    specific_vet_tag = 'JOINT SURGERY'
+                elif r_vet_status == 1:
+                    specific_vet_tag = 'VET CLEARED'
+                    
+                if specific_vet_tag:
                     tactical_radar_items.append({
-                        'type': '🏥 VET / SURGERY RECOVERY',
+                        'type': f'🏥 {specific_vet_tag}',
                         'color': '#f97316',
                         'bg': 'rgba(249, 115, 22, 0.10)',
                         'border': 'rgba(249, 115, 22, 0.4)',
-                        'text': f"<b>#{r_no} {r_name}</b>: Medical record / veterinary recovery flagged on file"
+                        'text': f"<b>#{r_no} {r_name}</b>: [{specific_vet_tag}] Officially recorded on file"
                     })
                     
                 # 3. First-Up / Fresh Layoff
