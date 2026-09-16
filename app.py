@@ -1148,7 +1148,7 @@ with tab1:
                         'text': f"<b>#{r_no} {r_name}</b>: {clean_snippet}"
                     })
                     
-                # 2. Specific Medical / Veterinary Recovery Tag (Exact 2-word condition)
+                # 2. Specific Medical / Veterinary Recovery Tag (Exact 2-word condition only)
                 med_text = (str(r_comment) + ' ' + str(r_vet_notes)).lower()
                 specific_vet_tag = None
                 if 'tieback' in med_text or 'tie-back' in med_text or 'throat' in med_text or 'epiglottic' in med_text:
@@ -1163,8 +1163,6 @@ with tab1:
                     specific_vet_tag = 'HEART RECOVERY'
                 elif 'arthroscop' in med_text or 'bone chip' in med_text or 'joint' in med_text:
                     specific_vet_tag = 'JOINT SURGERY'
-                elif r_vet_status == 1:
-                    specific_vet_tag = 'VET CLEARED'
                     
                 if specific_vet_tag:
                     tactical_radar_items.append({
