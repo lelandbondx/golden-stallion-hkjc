@@ -1112,8 +1112,10 @@ with tab1:
             
             # Open Contest / Class 5 Volatility Alert
             is_class_5 = (c_val == "5") or ("Class 5" in class_dist)
-            top_prob = df_runners['model_prob'].max() if 'model_prob' in df_runners.columns else 0.20
-            is_open_contest = is_class_5 or (top_prob < 0.18)
+            sorted_probs = df_runners['model_prob'].sort_values(ascending=False).values if 'model_prob' in df_runners.columns and len(df_runners) > 0 else []
+            top_prob = sorted_probs[0] if len(sorted_probs) > 0 else 0.20
+            # Only trigger in actual Class 5 races or extreme dead-heats where top probability is below 11%
+            is_open_contest = is_class_5 or (top_prob < 0.11)
             if is_open_contest:
                 contest_reason = "Class 5 contest with compressed ratings and historically volatile outcomes." if is_class_5 else "Wide-open field with tightly compressed win probabilities."
                 st.markdown(clean_html(f'''
