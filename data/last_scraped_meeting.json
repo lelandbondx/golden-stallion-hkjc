@@ -1264,7 +1264,7 @@
               "actual_weight": 135,
               "declared_weight": 1185,
               "rtg": 100,
-              "win_odds": 24.0,
+              "win_odds": 22.0,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -1278,7 +1278,7 @@
               "actual_weight": 132,
               "declared_weight": 1108,
               "rtg": 97,
-              "win_odds": 23.0,
+              "win_odds": 39.0,
               "final_position": 0,
               "horse_gear": "CP2"
             },
@@ -1292,7 +1292,7 @@
               "actual_weight": 132,
               "declared_weight": 1054,
               "rtg": 97,
-              "win_odds": 9.9,
+              "win_odds": 11.0,
               "final_position": 0,
               "horse_gear": "B1/TT"
             },
@@ -1306,23 +1306,9 @@
               "actual_weight": 129,
               "declared_weight": 1267,
               "rtg": 94,
-              "win_odds": 37.0,
+              "win_odds": 35.0,
               "final_position": 0,
               "horse_gear": "B/TT"
-            },
-            {
-              "no": 5,
-              "name": "HUGE WAVE",
-              "code": "J197",
-              "jockey": "H Bentley",
-              "trainer": "K H Ting",
-              "draw": 2,
-              "actual_weight": 129,
-              "declared_weight": 1210,
-              "rtg": 94,
-              "win_odds": 15.0,
-              "final_position": 0,
-              "horse_gear": "TT"
             },
             {
               "no": 6,
@@ -1334,7 +1320,7 @@
               "actual_weight": 127,
               "declared_weight": 1093,
               "rtg": 92,
-              "win_odds": 6.5,
+              "win_odds": 9.9,
               "final_position": 0,
               "horse_gear": "XB"
             },
@@ -1362,7 +1348,7 @@
               "actual_weight": 125,
               "declared_weight": 1133,
               "rtg": 90,
-              "win_odds": 3.5,
+              "win_odds": 4.9,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1376,7 +1362,7 @@
               "actual_weight": 123,
               "declared_weight": 1106,
               "rtg": 88,
-              "win_odds": 17.0,
+              "win_odds": 10.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -1404,7 +1390,7 @@
               "actual_weight": 117,
               "declared_weight": 1070,
               "rtg": 82,
-              "win_odds": 12.0,
+              "win_odds": 5.7,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -1418,7 +1404,7 @@
               "actual_weight": 117,
               "declared_weight": 1050,
               "rtg": 82,
-              "win_odds": 4.0,
+              "win_odds": 3.0,
               "final_position": 0,
               "horse_gear": "TT"
             }
