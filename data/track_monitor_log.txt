@@ -1183,3 +1183,29 @@
 [2026-09-06 19:13:27] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM, R10:GOOD TO FIRM. No changes.
 [2026-09-06 19:15:30] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM, R10:GOOD TO FIRM. No changes.
 [2026-09-06 20:08:43] 💓 Heartbeat: Checked 10 races. Goings: R1:GOOD, R2:GOOD, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM, R10:GOOD TO FIRM. No changes.
+[2026-09-15 19:17:24] 🚀 Golden Stallion AI Live Telemetry Monitor Initialized
+[2026-09-15 19:17:24] Monitoring Happy Valley & Sha Tin goings, scratches, and jockey changes live from HKJC API...
+[2026-09-15 19:17:26] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:19:27] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:21:29] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:23:31] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:25:33] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:27:35] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:29:37] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:31:39] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:33:40] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:35:43] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:37:45] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:39:47] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:41:49] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:43:52] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:45:53] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:47:55] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:49:57] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:51:58] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:54:00] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:56:02] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 19:58:04] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 20:00:06] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 20:02:08] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-15 20:04:10] 💓 Heartbeat: Checked 8 races (96 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
