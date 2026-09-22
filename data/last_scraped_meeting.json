@@ -4,7 +4,7 @@
     {
       "venue": "Happy Valley",
       "date": "2026-09-16",
-      "status": "STARTED",
+      "status": "CLOSED",
       "going": "GOOD",
       "weather": "Live Feed Connected",
       "races": [
@@ -1265,7 +1265,7 @@
               "declared_weight": 1185,
               "rtg": 100,
               "win_odds": 22.0,
-              "final_position": 0,
+              "final_position": 7,
               "horse_gear": "B"
             },
             {
@@ -1279,7 +1279,7 @@
               "declared_weight": 1108,
               "rtg": 97,
               "win_odds": 39.0,
-              "final_position": 0,
+              "final_position": 5,
               "horse_gear": "CP2"
             },
             {
@@ -1293,7 +1293,7 @@
               "declared_weight": 1054,
               "rtg": 97,
               "win_odds": 11.0,
-              "final_position": 0,
+              "final_position": 2,
               "horse_gear": "B1/TT"
             },
             {
@@ -1307,7 +1307,7 @@
               "declared_weight": 1267,
               "rtg": 94,
               "win_odds": 35.0,
-              "final_position": 0,
+              "final_position": 3,
               "horse_gear": "B/TT"
             },
             {
@@ -1321,7 +1321,7 @@
               "declared_weight": 1093,
               "rtg": 92,
               "win_odds": 9.9,
-              "final_position": 0,
+              "final_position": 6,
               "horse_gear": "XB"
             },
             {
@@ -1335,7 +1335,7 @@
               "declared_weight": 1107,
               "rtg": 92,
               "win_odds": 11.0,
-              "final_position": 0,
+              "final_position": 9,
               "horse_gear": "CP/TT"
             },
             {
@@ -1349,7 +1349,7 @@
               "declared_weight": 1133,
               "rtg": 90,
               "win_odds": 4.9,
-              "final_position": 0,
+              "final_position": 11,
               "horse_gear": "TT"
             },
             {
@@ -1363,7 +1363,7 @@
               "declared_weight": 1106,
               "rtg": 88,
               "win_odds": 10.0,
-              "final_position": 0,
+              "final_position": 4,
               "horse_gear": "B/TT"
             },
             {
@@ -1377,7 +1377,7 @@
               "declared_weight": 1191,
               "rtg": 86,
               "win_odds": 31.0,
-              "final_position": 0,
+              "final_position": 10,
               "horse_gear": "P-/B1/TT"
             },
             {
@@ -1391,7 +1391,7 @@
               "declared_weight": 1070,
               "rtg": 82,
               "win_odds": 5.7,
-              "final_position": 0,
+              "final_position": 8,
               "horse_gear": "B"
             },
             {
@@ -1405,7 +1405,7 @@
               "declared_weight": 1050,
               "rtg": 82,
               "win_odds": 3.0,
-              "final_position": 0,
+              "final_position": 1,
               "horse_gear": "TT"
             }
           ]
