@@ -144,7 +144,11 @@ def run():
         
         # Map last comments and check for troubled runs (interference, etc.)
         df_runners['last_comment'] = df_runners['clean_name'].map(last_comments).fillna("").str.lower()
-        trouble_keywords = ['interference', 'blocked', 'held up', 'checked', 'crowded', 'hampered', 'stumble', 'clipt', 'clip ', 'check ']
+        trouble_keywords = [
+            'interference', 'blocked', 'held up', 'checked', 'crowded', 'hampered', 
+            'stumble', 'clipt', 'clip ', 'check ', 'wide without cover', 'no cover', 
+            'raced wide', 'severely check', 'tight room', 'unbalanced', 'lost ground'
+        ]
         df_runners['had_trouble'] = df_runners['last_comment'].apply(lambda c: any(kw in c for kw in trouble_keywords)).astype(int)
 
         df_runners['model_prob'] = probs
@@ -241,17 +245,27 @@ def run():
         is_elite_closer = (df_runners['avg_first_pos'] > 5.5) & (df_runners['best_last_sec'] < 22.5)
         late_closer_boost = np.where(is_elite_closer, 0.02, 0.0)
         
-        # Smart Wet Turf Adjustments
+        # Smart Wet Turf & Overseas Surface Adjustments
         race_track_type = str(race.get('track', 'TURF')).upper()
         is_wet_turf = (str(race_going).upper() in ["YIELDING", "GOOD TO YIELDING", "SOFT", "HEAVY"]) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
+        is_awt_race = ("ALL WEATHER" in race_track_type) or ("AWT" in race_track_type)
         
         on_speed_wet_boost = 0.0
         yielding_form_boost = 0.0
+        polytrack_awt_boost = 0.0
         
         if is_wet_turf:
             on_speed_wet_boost = np.where(df_runners['avg_first_pos'] <= 4.5, 0.03, 0.0)
-            has_yielding_form = df_runners['last_form_going'].astype(str).str.upper().str.contains("YIELD|SOFT|HEAVY|WET")
-            yielding_form_boost = np.where(has_yielding_form, 0.02, 0.0)
+            has_yielding_form = df_runners['last_form_going'].astype(str).str.upper().str.contains("YIELD|SOFT|HEAVY|WET|^S$|^H$|HVY")
+            yielding_form_boost = np.where(has_yielding_form, 0.025, 0.0)
+            
+        if is_awt_race:
+            has_poly_form = (df_runners.get('has_overseas_form', 0) == 1) & (
+                df_runners['last_form_going'].astype(str).str.upper().str.contains("POLY|SYNTH|AWT|STAND|TAPETA") |
+                (df_runners.get('AWT_win_rate', 0) > 0) |
+                (df_runners.get('AWT_vs_Turf_pref', '') == 'AWT')
+            )
+            polytrack_awt_boost = np.where(has_poly_form, 0.025, 0.0)
             
         # Apply Pace Pressure Refinements (Tuned down to 2% to ensure balanced split)
         # 1. Pace collapse trigger raised to 4+ speed horses
@@ -273,7 +287,7 @@ def run():
                 0.0
             )
             
-        # Jockey/Trainer Combo Partnership Boost (Ronan's conservative 3% boost):
+        # Jockey/Trainer Combo Partnership Boost (Ronan's calibrated 2.5% boost):
         jockey_trainer_boost = 0.0
         try:
             if os.path.exists('data/jockey_trainer_partnerships.csv') and 'jockey' in df_runners.columns and 'trainer' in df_runners.columns:
@@ -310,7 +324,7 @@ def run():
             (df_runners['win_rate_jt'] >= 0.18) | 
             df_runners.apply(lambda r: (str(r.get('jockey', '')).strip().upper(), str(r.get('trainer', '')).strip().upper()) in MODERN_ELITE, axis=1)
         )
-        jockey_trainer_boost = np.where(is_elite_jt, 0.03, 0.0)
+        jockey_trainer_boost = np.where(is_elite_jt, 0.025, 0.0)
         
         # Happy Valley C-Course Draw Bias Adjustments
         is_hv = meeting.get('venue') == 'Happy Valley'
@@ -393,12 +407,15 @@ def run():
         is_settled_stable_horse = is_good_rating & (recent_pos <= 6.0) & (vet_issue == 0) & (~is_debutant)
         trainer_transfer_2nd_up_boost = np.where(is_settled_stable_horse, 0.015, 0.0)
 
-        # Fresh Horses First Mile / Middle Distance with Fitness (1.5% Boost)
-        is_mile_or_distance = distance >= 1400
-        is_fit_fresh = is_mile_or_distance & (recent_pos <= 5.0) & (vet_issue == 0)
-        fresh_mile_fitness_boost = np.where(is_fit_fresh, 0.015, 0.0)
+        # Fresh Horses Distance Fitness Sweet Spot (within 250m of optimal distance with form) (1.5% Boost)
+        is_fit_fresh = (recent_pos <= 5.0) & (vet_issue == 0) & (
+            (df_runners.get('distance_win_rate', 0) > 0) | 
+            (distance >= 1400) |
+            (pd.to_numeric(df_runners.get('days_since_last_run', 0), errors='coerce').fillna(0) >= 28)
+        )
+        fresh_distance_fitness_boost = np.where(is_fit_fresh, 0.015, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_mile_fitness_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
