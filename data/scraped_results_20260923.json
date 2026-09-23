@@ -1102,5 +1102,221 @@
                 }
             ]
         }
+    },
+    "6": {
+        "finishers": [
+            {
+                "plc": "1",
+                "horse_no": 1,
+                "horse_name": "JUMBO BLESSING",
+                "raw_name": "JUMBO BLESSING(K529)",
+                "jockey": "C Y Ho",
+                "trainer": "C Fownes",
+                "act_wt": "135",
+                "draw": "6",
+                "finish_time": "3.5",
+                "win_odds": ""
+            },
+            {
+                "plc": "2",
+                "horse_no": 5,
+                "horse_name": "GEORGIAN SIGMA",
+                "raw_name": "GEORGIAN SIGMA(L007)",
+                "jockey": "A Atzeni",
+                "trainer": "A S Cruz",
+                "act_wt": "128",
+                "draw": "12",
+                "finish_time": "4",
+                "win_odds": ""
+            },
+            {
+                "plc": "3",
+                "horse_no": 4,
+                "horse_name": "SUPERB KING",
+                "raw_name": "SUPERB KING(K479)",
+                "jockey": "C L Chau",
+                "trainer": "K W Lui",
+                "act_wt": "129",
+                "draw": "3",
+                "finish_time": "2.6",
+                "win_odds": ""
+            },
+            {
+                "plc": "4",
+                "horse_no": 12,
+                "horse_name": "MAPOGO",
+                "raw_name": "MAPOGO(L175)",
+                "jockey": "K Teetan",
+                "trainer": "K L Man",
+                "act_wt": "118",
+                "draw": "1",
+                "finish_time": "8.4",
+                "win_odds": ""
+            },
+            {
+                "plc": "5",
+                "horse_no": 6,
+                "horse_name": "DOUBLE ALPHA",
+                "raw_name": "DOUBLE ALPHA(L291)",
+                "jockey": "M F Poon",
+                "trainer": "C S Shum",
+                "act_wt": "126",
+                "draw": "10",
+                "finish_time": "44",
+                "win_odds": ""
+            },
+            {
+                "plc": "6",
+                "horse_no": 3,
+                "horse_name": "BLUE ILLUSION",
+                "raw_name": "BLUE ILLUSION(K468)",
+                "jockey": "J Orman",
+                "trainer": "P C Ng",
+                "act_wt": "131",
+                "draw": "8",
+                "finish_time": "42",
+                "win_odds": ""
+            },
+            {
+                "plc": "7",
+                "horse_no": 9,
+                "horse_name": "HARMONY FIRE",
+                "raw_name": "HARMONY FIRE(E175)",
+                "jockey": "P N Wong",
+                "trainer": "D J Whyte",
+                "act_wt": "116",
+                "draw": "7",
+                "finish_time": "19",
+                "win_odds": ""
+            },
+            {
+                "plc": "8",
+                "horse_no": 2,
+                "horse_name": "COPPER CORE",
+                "raw_name": "COPPER CORE(L214)",
+                "jockey": "K C Leung",
+                "trainer": "W Y So",
+                "act_wt": "133",
+                "draw": "4",
+                "finish_time": "96",
+                "win_odds": ""
+            },
+            {
+                "plc": "9",
+                "horse_no": 11,
+                "horse_name": "HAPPY UNITED",
+                "raw_name": "HAPPY UNITED(H208)",
+                "jockey": "M Chadwick",
+                "trainer": "J Richards",
+                "act_wt": "120",
+                "draw": "9",
+                "finish_time": "27",
+                "win_odds": ""
+            },
+            {
+                "plc": "10",
+                "horse_no": 8,
+                "horse_name": "FLYING TING LOK",
+                "raw_name": "FLYING TING LOK(K228)",
+                "jockey": "H Y Yuen",
+                "trainer": "Y S Tsui",
+                "act_wt": "114",
+                "draw": "11",
+                "finish_time": "49",
+                "win_odds": ""
+            },
+            {
+                "plc": "11",
+                "horse_no": 10,
+                "horse_name": "CASA BUDDY",
+                "raw_name": "CASA BUDDY(L101)",
+                "jockey": "H T Mo",
+                "trainer": "C W Chang",
+                "act_wt": "120",
+                "draw": "5",
+                "finish_time": "122",
+                "win_odds": ""
+            },
+            {
+                "plc": "12",
+                "horse_no": 7,
+                "horse_name": "SECRET INGREDIENT",
+                "raw_name": "SECRET INGREDIENT(L290)",
+                "jockey": "H Bentley",
+                "trainer": "D A Hayes",
+                "act_wt": "126",
+                "draw": "2",
+                "finish_time": "78",
+                "win_odds": ""
+            }
+        ],
+        "dividends": {
+            "Pool": [
+                {
+                    "combination": "Winning Combination",
+                    "dividend": "Dividend (HK$)"
+                }
+            ],
+            "WIN": [
+                {
+                    "combination": "1",
+                    "dividend": "35.50"
+                }
+            ],
+            "PLACE": [
+                {
+                    "combination": "1",
+                    "dividend": "12.50"
+                }
+            ],
+            "QUINELLA": [
+                {
+                    "combination": "1,5",
+                    "dividend": "70.00"
+                }
+            ],
+            "QUINELLA PLACE": [
+                {
+                    "combination": "1,5",
+                    "dividend": "27.00"
+                }
+            ],
+            "FORECAST": [
+                {
+                    "combination": "1,5",
+                    "dividend": "139.00"
+                }
+            ],
+            "TIERCE": [
+                {
+                    "combination": "1,5,4",
+                    "dividend": "359.00"
+                }
+            ],
+            "TRIO": [
+                {
+                    "combination": "1,4,5",
+                    "dividend": "50.00"
+                }
+            ],
+            "FIRST 4": [
+                {
+                    "combination": "1,4,5,12",
+                    "dividend": "75.00"
+                }
+            ],
+            "QUARTET": [
+                {
+                    "combination": "1,5,4,12",
+                    "dividend": "1,584.00"
+                }
+            ],
+            "5TH DOUBLE": [
+                {
+                    "combination": "6/1",
+                    "dividend": "154.50"
+                }
+            ]
+        }
     }
 }
