@@ -572,7 +572,7 @@
                 "win_odds": "65"
             },
             {
-                "plc": "",
+                "plc": "WV",
                 "horse_no": "",
                 "horse_name": "FAMILY KNIGHT",
                 "raw_name": "FAMILY KNIGHT(K490)",
@@ -782,7 +782,7 @@
                 "win_odds": "79"
             },
             {
-                "plc": "",
+                "plc": "WV",
                 "horse_no": 3,
                 "horse_name": "LEADING DRAGON",
                 "raw_name": "LEADING DRAGON(L083)",
@@ -794,7 +794,7 @@
                 "win_odds": "---"
             },
             {
-                "plc": "",
+                "plc": "WV",
                 "horse_no": 7,
                 "horse_name": "STUNNING BUNDLE",
                 "raw_name": "STUNNING BUNDLE(L420)",
@@ -1114,8 +1114,8 @@
                 "trainer": "C Fownes",
                 "act_wt": "135",
                 "draw": "6",
-                "finish_time": "3.5",
-                "win_odds": ""
+                "finish_time": "0:56.94",
+                "win_odds": "3.5"
             },
             {
                 "plc": "2",
@@ -1126,8 +1126,8 @@
                 "trainer": "A S Cruz",
                 "act_wt": "128",
                 "draw": "12",
-                "finish_time": "4",
-                "win_odds": ""
+                "finish_time": "0:57.10",
+                "win_odds": "4"
             },
             {
                 "plc": "3",
@@ -1138,8 +1138,8 @@
                 "trainer": "K W Lui",
                 "act_wt": "129",
                 "draw": "3",
-                "finish_time": "2.6",
-                "win_odds": ""
+                "finish_time": "0:57.15",
+                "win_odds": "2.6"
             },
             {
                 "plc": "4",
@@ -1150,8 +1150,8 @@
                 "trainer": "K L Man",
                 "act_wt": "118",
                 "draw": "1",
-                "finish_time": "8.4",
-                "win_odds": ""
+                "finish_time": "0:57.17",
+                "win_odds": "8.4"
             },
             {
                 "plc": "5",
@@ -1162,8 +1162,8 @@
                 "trainer": "C S Shum",
                 "act_wt": "126",
                 "draw": "10",
-                "finish_time": "44",
-                "win_odds": ""
+                "finish_time": "0:57.18",
+                "win_odds": "44"
             },
             {
                 "plc": "6",
@@ -1174,8 +1174,8 @@
                 "trainer": "P C Ng",
                 "act_wt": "131",
                 "draw": "8",
-                "finish_time": "42",
-                "win_odds": ""
+                "finish_time": "0:57.36",
+                "win_odds": "42"
             },
             {
                 "plc": "7",
@@ -1186,8 +1186,8 @@
                 "trainer": "D J Whyte",
                 "act_wt": "116",
                 "draw": "7",
-                "finish_time": "19",
-                "win_odds": ""
+                "finish_time": "0:57.49",
+                "win_odds": "19"
             },
             {
                 "plc": "8",
@@ -1198,8 +1198,8 @@
                 "trainer": "W Y So",
                 "act_wt": "133",
                 "draw": "4",
-                "finish_time": "96",
-                "win_odds": ""
+                "finish_time": "0:57.51",
+                "win_odds": "96"
             },
             {
                 "plc": "9",
@@ -1210,8 +1210,8 @@
                 "trainer": "J Richards",
                 "act_wt": "120",
                 "draw": "9",
-                "finish_time": "27",
-                "win_odds": ""
+                "finish_time": "0:57.72",
+                "win_odds": "27"
             },
             {
                 "plc": "10",
@@ -1222,8 +1222,8 @@
                 "trainer": "Y S Tsui",
                 "act_wt": "114",
                 "draw": "11",
-                "finish_time": "49",
-                "win_odds": ""
+                "finish_time": "0:58.00",
+                "win_odds": "49"
             },
             {
                 "plc": "11",
@@ -1234,8 +1234,8 @@
                 "trainer": "C W Chang",
                 "act_wt": "120",
                 "draw": "5",
-                "finish_time": "122",
-                "win_odds": ""
+                "finish_time": "0:58.48",
+                "win_odds": "122"
             },
             {
                 "plc": "12",
@@ -1246,8 +1246,8 @@
                 "trainer": "D A Hayes",
                 "act_wt": "126",
                 "draw": "2",
-                "finish_time": "78",
-                "win_odds": ""
+                "finish_time": "0:58.51",
+                "win_odds": "78"
             }
         ],
         "dividends": {
@@ -1315,6 +1315,702 @@
                 {
                     "combination": "6/1",
                     "dividend": "154.50"
+                }
+            ]
+        }
+    },
+    "7": {
+        "finishers": [
+            {
+                "plc": "1",
+                "horse_no": 11,
+                "horse_name": "PRESTIGE ALWAYS",
+                "raw_name": "PRESTIGE ALWAYS(J300)",
+                "jockey": "H Y Yuen",
+                "trainer": "P C Ng",
+                "act_wt": "111",
+                "draw": "9",
+                "finish_time": "1:09.62",
+                "win_odds": "8.1"
+            },
+            {
+                "plc": "2",
+                "horse_no": 12,
+                "horse_name": "DARYL FLASH",
+                "raw_name": "DARYL FLASH(L168)",
+                "jockey": "Y L Chung",
+                "trainer": "Y S Tsui",
+                "act_wt": "118",
+                "draw": "6",
+                "finish_time": "1:09.70",
+                "win_odds": "3.5"
+            },
+            {
+                "plc": "3",
+                "horse_no": 8,
+                "horse_name": "WUKONG JEWELLERY",
+                "raw_name": "WUKONG JEWELLERY(K314)",
+                "jockey": "A Atzeni",
+                "trainer": "J Size",
+                "act_wt": "124",
+                "draw": "2",
+                "finish_time": "1:09.73",
+                "win_odds": "5.9"
+            },
+            {
+                "plc": "4",
+                "horse_no": 1,
+                "horse_name": "FLYING WROTE",
+                "raw_name": "FLYING WROTE(J290)",
+                "jockey": "C L Chau",
+                "trainer": "A S Cruz",
+                "act_wt": "132",
+                "draw": "4",
+                "finish_time": "1:09.81",
+                "win_odds": "5.6"
+            },
+            {
+                "plc": "5",
+                "horse_no": 2,
+                "horse_name": "SYMBOL OF STRENGTH",
+                "raw_name": "SYMBOL OF STRENGTH(K352)",
+                "jockey": "B Avdulla",
+                "trainer": "F C Lor",
+                "act_wt": "134",
+                "draw": "3",
+                "finish_time": "1:09.82",
+                "win_odds": "14"
+            },
+            {
+                "plc": "6",
+                "horse_no": 7,
+                "horse_name": "CALIFORNIA BLITZ",
+                "raw_name": "CALIFORNIA BLITZ(J370)",
+                "jockey": "M Chadwick",
+                "trainer": "W K Mo",
+                "act_wt": "124",
+                "draw": "11",
+                "finish_time": "1:09.86",
+                "win_odds": "17"
+            },
+            {
+                "plc": "7",
+                "horse_no": 3,
+                "horse_name": "AKASHVANI",
+                "raw_name": "AKASHVANI(K234)",
+                "jockey": "Z Purton",
+                "trainer": "D A Hayes",
+                "act_wt": "133",
+                "draw": "10",
+                "finish_time": "1:10.03",
+                "win_odds": "9.3"
+            },
+            {
+                "plc": "8",
+                "horse_no": 6,
+                "horse_name": "POWER KOEPP",
+                "raw_name": "POWER KOEPP(E301)",
+                "jockey": "K C Leung",
+                "trainer": "M Newnham",
+                "act_wt": "127",
+                "draw": "7",
+                "finish_time": "1:10.04",
+                "win_odds": "19"
+            },
+            {
+                "plc": "9",
+                "horse_no": 5,
+                "horse_name": "PASS LINE",
+                "raw_name": "PASS LINE(L384)",
+                "jockey": "M F Poon",
+                "trainer": "D J Hall",
+                "act_wt": "129",
+                "draw": "5",
+                "finish_time": "1:10.35",
+                "win_odds": "82"
+            },
+            {
+                "plc": "10",
+                "horse_no": 9,
+                "horse_name": "KING MILES",
+                "raw_name": "KING MILES(J158)",
+                "jockey": "H Bentley",
+                "trainer": "K W Lui",
+                "act_wt": "123",
+                "draw": "1",
+                "finish_time": "1:10.35",
+                "win_odds": "25"
+            },
+            {
+                "plc": "11",
+                "horse_no": 4,
+                "horse_name": "YOUNG EMPEROR",
+                "raw_name": "YOUNG EMPEROR(K011)",
+                "jockey": "L Ferraris",
+                "trainer": "D Eustace",
+                "act_wt": "131",
+                "draw": "12",
+                "finish_time": "1:10.47",
+                "win_odds": "16"
+            },
+            {
+                "plc": "12",
+                "horse_no": 10,
+                "horse_name": "ANODE",
+                "raw_name": "ANODE(K367)",
+                "jockey": "E C W Wong",
+                "trainer": "C S Shum",
+                "act_wt": "119",
+                "draw": "8",
+                "finish_time": "1:10.61",
+                "win_odds": "17"
+            }
+        ],
+        "dividends": {
+            "Pool": [
+                {
+                    "combination": "Winning Combination",
+                    "dividend": "Dividend (HK$)"
+                }
+            ],
+            "WIN": [
+                {
+                    "combination": "11",
+                    "dividend": "81.00"
+                }
+            ],
+            "PLACE": [
+                {
+                    "combination": "11",
+                    "dividend": "25.00"
+                }
+            ],
+            "QUINELLA": [
+                {
+                    "combination": "11,12",
+                    "dividend": "153.00"
+                }
+            ],
+            "QUINELLA PLACE": [
+                {
+                    "combination": "11,12",
+                    "dividend": "63.00"
+                }
+            ],
+            "FORECAST": [
+                {
+                    "combination": "11,12",
+                    "dividend": "402.00"
+                }
+            ],
+            "TIERCE": [
+                {
+                    "combination": "11,12,8",
+                    "dividend": "2,406.00"
+                }
+            ],
+            "TRIO": [
+                {
+                    "combination": "8,11,12",
+                    "dividend": "402.00"
+                }
+            ],
+            "FIRST 4": [
+                {
+                    "combination": "1,8,11,12",
+                    "dividend": "340.00"
+                }
+            ],
+            "QUARTET": [
+                {
+                    "combination": "11,12,8,1",
+                    "dividend": "10,013.00"
+                }
+            ],
+            "6TH DOUBLE": [
+                {
+                    "combination": "1/11",
+                    "dividend": "399.50"
+                }
+            ],
+            "3RD DOUBLE TRIO": [
+                {
+                    "combination": "1,4,5/8,11,12",
+                    "dividend": "3,054.00"
+                }
+            ],
+            "TRIPLE TRIO": [
+                {
+                    "combination": "1,6,12/1,4,5/8,11,12",
+                    "dividend": "1,423,578.00"
+                }
+            ],
+            "TRIPLE TRIO(Consolation)": [
+                {
+                    "combination": "1,6,12/1,4,5/Any Combination",
+                    "dividend": "3,053.00"
+                }
+            ]
+        }
+    },
+    "8": {
+        "finishers": [
+            {
+                "plc": "1",
+                "horse_no": 8,
+                "horse_name": "DANICA'S CHOICE",
+                "raw_name": "DANICA'S CHOICE(L096)",
+                "jockey": "A Atzeni",
+                "trainer": "K L Man",
+                "act_wt": "122",
+                "draw": "5",
+                "finish_time": "1:09.24",
+                "win_odds": "2"
+            },
+            {
+                "plc": "2",
+                "horse_no": 11,
+                "horse_name": "LEADING AGILITY",
+                "raw_name": "LEADING AGILITY(K553)",
+                "jockey": "E C W Wong",
+                "trainer": "C S Shum",
+                "act_wt": "118",
+                "draw": "3",
+                "finish_time": "1:09.51",
+                "win_odds": "6.5"
+            },
+            {
+                "plc": "3",
+                "horse_no": 6,
+                "horse_name": "THRIVING BROTHERS",
+                "raw_name": "THRIVING BROTHERS(J396)",
+                "jockey": "K Teetan",
+                "trainer": "C H Yip",
+                "act_wt": "126",
+                "draw": "7",
+                "finish_time": "1:09.58",
+                "win_odds": "22"
+            },
+            {
+                "plc": "4",
+                "horse_no": 5,
+                "horse_name": "PEGAS",
+                "raw_name": "PEGAS(L075)",
+                "jockey": "C L Chau",
+                "trainer": "Y S Tsui",
+                "act_wt": "125",
+                "draw": "11",
+                "finish_time": "1:09.59",
+                "win_odds": "34"
+            },
+            {
+                "plc": "5",
+                "horse_no": 9,
+                "horse_name": "KING LOTUS",
+                "raw_name": "KING LOTUS(K186)",
+                "jockey": "L Hewitson",
+                "trainer": "M Newnham",
+                "act_wt": "122",
+                "draw": "9",
+                "finish_time": "1:09.60",
+                "win_odds": "19"
+            },
+            {
+                "plc": "6",
+                "horse_no": 7,
+                "horse_name": "STORMING DRAGON",
+                "raw_name": "STORMING DRAGON(J237)",
+                "jockey": "B Avdulla",
+                "trainer": "J Richards",
+                "act_wt": "123",
+                "draw": "6",
+                "finish_time": "1:09.70",
+                "win_odds": "32"
+            },
+            {
+                "plc": "7",
+                "horse_no": 10,
+                "horse_name": "MEOWTH",
+                "raw_name": "MEOWTH(J487)",
+                "jockey": "H Y Yuen",
+                "trainer": "W K Mo",
+                "act_wt": "112",
+                "draw": "12",
+                "finish_time": "1:09.71",
+                "win_odds": "9"
+            },
+            {
+                "plc": "8",
+                "horse_no": 12,
+                "horse_name": "OUTGATE",
+                "raw_name": "OUTGATE(H113)",
+                "jockey": "Y L Chung",
+                "trainer": "A S Cruz",
+                "act_wt": "118",
+                "draw": "10",
+                "finish_time": "1:09.96",
+                "win_odds": "47"
+            },
+            {
+                "plc": "9",
+                "horse_no": 2,
+                "horse_name": "STRAIGHT TO GLORY",
+                "raw_name": "STRAIGHT TO GLORY(K340)",
+                "jockey": "K C Leung",
+                "trainer": "C W Chang",
+                "act_wt": "135",
+                "draw": "8",
+                "finish_time": "1:10.09",
+                "win_odds": "25"
+            },
+            {
+                "plc": "10",
+                "horse_no": 3,
+                "horse_name": "SKY CAP",
+                "raw_name": "SKY CAP(K125)",
+                "jockey": "C Y Ho",
+                "trainer": "C Fownes",
+                "act_wt": "129",
+                "draw": "4",
+                "finish_time": "1:10.14",
+                "win_odds": "23"
+            },
+            {
+                "plc": "11",
+                "horse_no": 4,
+                "horse_name": "STAR RISE",
+                "raw_name": "STAR RISE(K516)",
+                "jockey": "J Orman",
+                "trainer": "D J Hall",
+                "act_wt": "129",
+                "draw": "1",
+                "finish_time": "1:10.17",
+                "win_odds": "6.8"
+            },
+            {
+                "plc": "12",
+                "horse_no": 1,
+                "horse_name": "HARMONY N BLESSED",
+                "raw_name": "HARMONY N BLESSED(E061)",
+                "jockey": "L Ferraris",
+                "trainer": "D A Hayes",
+                "act_wt": "135",
+                "draw": "2",
+                "finish_time": "1:10.36",
+                "win_odds": "19"
+            }
+        ],
+        "dividends": {
+            "Pool": [
+                {
+                    "combination": "Winning Combination",
+                    "dividend": "Dividend (HK$)"
+                }
+            ],
+            "WIN": [
+                {
+                    "combination": "8",
+                    "dividend": "20.50"
+                }
+            ],
+            "PLACE": [
+                {
+                    "combination": "8",
+                    "dividend": "10.50"
+                }
+            ],
+            "QUINELLA": [
+                {
+                    "combination": "8,11",
+                    "dividend": "64.00"
+                }
+            ],
+            "QUINELLA PLACE": [
+                {
+                    "combination": "8,11",
+                    "dividend": "30.00"
+                }
+            ],
+            "FORECAST": [
+                {
+                    "combination": "8,11",
+                    "dividend": "109.00"
+                }
+            ],
+            "TIERCE": [
+                {
+                    "combination": "8,11,6",
+                    "dividend": "948.00"
+                }
+            ],
+            "TRIO": [
+                {
+                    "combination": "6,8,11",
+                    "dividend": "300.00"
+                }
+            ],
+            "FIRST 4": [
+                {
+                    "combination": "5,6,8,11",
+                    "dividend": "1,633.00"
+                }
+            ],
+            "QUARTET": [
+                {
+                    "combination": "8,11,6,5",
+                    "dividend": "12,193.00"
+                }
+            ],
+            "7TH DOUBLE": [
+                {
+                    "combination": "11/8",
+                    "dividend": "179.00"
+                }
+            ]
+        }
+    },
+    "9": {
+        "finishers": [
+            {
+                "plc": "1",
+                "horse_no": 6,
+                "horse_name": "FORTUNATE SON",
+                "raw_name": "FORTUNATE SON(J446)",
+                "jockey": "C Y Ho",
+                "trainer": "W K Mo",
+                "act_wt": "126",
+                "draw": "8",
+                "finish_time": "1:48.03",
+                "win_odds": "11"
+            },
+            {
+                "plc": "2",
+                "horse_no": 5,
+                "horse_name": "FIVEFORTWO",
+                "raw_name": "FIVEFORTWO(K381)",
+                "jockey": "C L Chau",
+                "trainer": "K W Lui",
+                "act_wt": "129",
+                "draw": "12",
+                "finish_time": "1:48.45",
+                "win_odds": "24"
+            },
+            {
+                "plc": "3",
+                "horse_no": 2,
+                "horse_name": "SERAPH GABRIEL",
+                "raw_name": "SERAPH GABRIEL(L108)",
+                "jockey": "Z Purton",
+                "trainer": "D Eustace",
+                "act_wt": "135",
+                "draw": "5",
+                "finish_time": "1:48.66",
+                "win_odds": "4.4"
+            },
+            {
+                "plc": "4",
+                "horse_no": 9,
+                "horse_name": "CHINA WIN",
+                "raw_name": "CHINA WIN(K395)",
+                "jockey": "M L Yeung",
+                "trainer": "D A Hayes",
+                "act_wt": "125",
+                "draw": "11",
+                "finish_time": "1:48.70",
+                "win_odds": "12"
+            },
+            {
+                "plc": "5",
+                "horse_no": 10,
+                "horse_name": "WINDLORD",
+                "raw_name": "WINDLORD(L184)",
+                "jockey": "M Chadwick",
+                "trainer": "A S Cruz",
+                "act_wt": "122",
+                "draw": "10",
+                "finish_time": "1:48.79",
+                "win_odds": "3.1"
+            },
+            {
+                "plc": "6",
+                "horse_no": 8,
+                "horse_name": "THE AUSPICIOUS",
+                "raw_name": "THE AUSPICIOUS(K004)",
+                "jockey": "K Teetan",
+                "trainer": "Y S Tsui",
+                "act_wt": "126",
+                "draw": "9",
+                "finish_time": "1:48.97",
+                "win_odds": "11"
+            },
+            {
+                "plc": "7",
+                "horse_no": 12,
+                "horse_name": "FLYING FORTUNE",
+                "raw_name": "FLYING FORTUNE(L057)",
+                "jockey": "H Bentley",
+                "trainer": "W K Mo",
+                "act_wt": "117",
+                "draw": "6",
+                "finish_time": "1:49.01",
+                "win_odds": "16"
+            },
+            {
+                "plc": "8",
+                "horse_no": 4,
+                "horse_name": "LO RIDER",
+                "raw_name": "LO RIDER(K161)",
+                "jockey": "L Ferraris",
+                "trainer": "C Fownes",
+                "act_wt": "132",
+                "draw": "3",
+                "finish_time": "1:49.04",
+                "win_odds": "10"
+            },
+            {
+                "plc": "9",
+                "horse_no": 11,
+                "horse_name": "KEEFY",
+                "raw_name": "KEEFY(G306)",
+                "jockey": "M F Poon",
+                "trainer": "F C Lor",
+                "act_wt": "119",
+                "draw": "4",
+                "finish_time": "1:49.58",
+                "win_odds": "34"
+            },
+            {
+                "plc": "10",
+                "horse_no": 1,
+                "horse_name": "KA YING GENERATION",
+                "raw_name": "KA YING GENERATION(J075)",
+                "jockey": "A Atzeni",
+                "trainer": "P C Ng",
+                "act_wt": "135",
+                "draw": "1",
+                "finish_time": "1:50.21",
+                "win_odds": "14"
+            },
+            {
+                "plc": "11",
+                "horse_no": 7,
+                "horse_name": "ROMANTIC GLADIATOR",
+                "raw_name": "ROMANTIC GLADIATOR(L240)",
+                "jockey": "E C W Wong",
+                "trainer": "C S Shum",
+                "act_wt": "123",
+                "draw": "2",
+                "finish_time": "1:50.75",
+                "win_odds": "22"
+            },
+            {
+                "plc": "12",
+                "horse_no": 3,
+                "horse_name": "WITHOUT COMPARE",
+                "raw_name": "WITHOUT COMPARE(L151)",
+                "jockey": "J Orman",
+                "trainer": "C S Shum",
+                "act_wt": "135",
+                "draw": "7",
+                "finish_time": "1:50.84",
+                "win_odds": "14"
+            }
+        ],
+        "dividends": {
+            "Pool": [
+                {
+                    "combination": "Winning Combination",
+                    "dividend": "Dividend (HK$)"
+                }
+            ],
+            "WIN": [
+                {
+                    "combination": "6",
+                    "dividend": "112.00"
+                }
+            ],
+            "PLACE": [
+                {
+                    "combination": "6",
+                    "dividend": "31.00"
+                }
+            ],
+            "QUINELLA": [
+                {
+                    "combination": "5,6",
+                    "dividend": "1,090.50"
+                }
+            ],
+            "QUINELLA PLACE": [
+                {
+                    "combination": "5,6",
+                    "dividend": "299.50"
+                }
+            ],
+            "FORECAST": [
+                {
+                    "combination": "6,5",
+                    "dividend": "2,215.00"
+                }
+            ],
+            "TIERCE": [
+                {
+                    "combination": "6,5,2",
+                    "dividend": "8,073.00"
+                }
+            ],
+            "TRIO": [
+                {
+                    "combination": "2,5,6",
+                    "dividend": "1,065.00"
+                }
+            ],
+            "FIRST 4": [
+                {
+                    "combination": "2,5,6,9",
+                    "dividend": "1,497.00"
+                }
+            ],
+            "QUARTET": [
+                {
+                    "combination": "6,5,2,9",
+                    "dividend": "45,695.00"
+                }
+            ],
+            "8TH DOUBLE": [
+                {
+                    "combination": "8/6",
+                    "dividend": "246.50"
+                }
+            ],
+            "2ND TREBLE": [
+                {
+                    "combination": "11/8/6",
+                    "dividend": "3,075.00"
+                }
+            ],
+            "4TH DOUBLE TRIO": [
+                {
+                    "combination": "6,8,11/2,5,6",
+                    "dividend": "29,413.00"
+                }
+            ],
+            "SIX UP": [
+                {
+                    "combination": "3,4,6,7/6,12/1,5/11,12/8,11/5,6",
+                    "dividend": "4,707.00"
+                }
+            ],
+            "JOCKEY CHALLENGE 1": [
+                {
+                    "combination": "2 [C L Chau]",
+                    "dividend": "Details"
+                }
+            ],
+            "TRAINER CHALLENGE 1": [
+                {
+                    "combination": "3 [D Eustace]",
+                    "dividend": "Details"
                 }
             ]
         }
