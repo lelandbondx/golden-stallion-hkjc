@@ -762,12 +762,8 @@ with tab1:
         trial_boost = np.array(trial_boost)
         trial_penalty = np.array(trial_penalty)
         
-        # The Akashvani Rule: If carrying >= 132 lbs AND drawn Gate 9+, cap trial boosts at 50% and apply wide heavyweight penalty
         actual_weights = pd.to_numeric(df_runners.get('actual_weight', 125), errors='coerce').fillna(125)
         draws = pd.to_numeric(df_runners.get('draw', 6), errors='coerce').fillna(6)
-        is_wide_heavyweight = (actual_weights >= 132) & (draws >= 9)
-        trial_boost = np.where(is_wide_heavyweight, trial_boost * 0.5, trial_boost)
-        wide_heavyweight_penalty = np.where(is_wide_heavyweight, -0.03, 0.0)
 
         # Weight-Spread Agility Escalator: When weight gap >= 14 lbs, boost in-form lightweights (<= 122 lbs)
         weight_spread = actual_weights.max() - actual_weights.min() if len(actual_weights) > 0 else 0
@@ -800,8 +796,9 @@ with tab1:
         has_throat_surgery = df_runners['last_comment'].str.contains('tieback|tie-back|throat|epiglottic|wind op', case=False, na=False)
         throat_surgery_boost = np.where(has_throat_surgery, 0.035, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + wide_heavyweight_penalty + lightweight_agility_boost + st_closer_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + st_closer_boost
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
+
 
         
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
