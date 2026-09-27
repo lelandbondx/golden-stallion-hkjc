@@ -390,9 +390,9 @@ def run():
         is_st_turf = (meeting.get('venue') == 'Sha Tin') and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
         st_closer_boost = np.where(is_st_turf & (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.8) & (distance >= 1200), 0.02, 0.0)
 
-        # Rating Dominance in Open/Group or Top Class races (Rating >= 15 pts above field median)
+        # Rating Dominance in Open/Group or Top Class races (Rating >= 15 pts above field median) (Calibrated to 5% boost)
         median_rtg = pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40).median()
-        rating_dom_boost = np.where((pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40) - median_rtg >= 15) & (recent_pos <= 4.0) & (vet_issue == 0), 0.15, 0.0)
+        rating_dom_boost = np.where((pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40) - median_rtg >= 15) & (recent_pos <= 4.0) & (vet_issue == 0), 0.05, 0.0)
 
         # Non-First Start for New Trainer with Good Rating (1.5% Boost)
         good_rating_thresh = 38 if class_int == 5 else 50
@@ -412,7 +412,13 @@ def run():
         has_throat_surgery = df_runners['last_comment'].str.contains('tieback|tie-back|throat|epiglottic|wind op', case=False, na=False)
         throat_surgery_boost = np.where(has_throat_surgery, 0.035, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + st_closer_boost
+        # Optimal Body Weight Condition Zone (within 15 lbs of historical peak / winning weight) (+1.0% Boost)
+        declared_weights = pd.to_numeric(df_runners.get('declared_weight', 1100), errors='coerce').fillna(1100)
+        opt_body_weights = pd.to_numeric(df_runners.get('latest_body_weight', np.nan), errors='coerce')
+        is_optimal_weight_zone = (opt_body_weights.notna()) & (np.abs(declared_weights - opt_body_weights) <= 15)
+        optimal_weight_boost = np.where(is_optimal_weight_zone, 0.01, 0.0)
+
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + st_closer_boost + optimal_weight_boost
         multiplier = np.maximum(multiplier, 0.1)
 
 
