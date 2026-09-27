@@ -53,7 +53,16 @@ except ImportError:
         pass
 
 
-st.set_page_config(page_title="Golden Stallion AI", layout="wide", page_icon="🐎")
+st.set_page_config(
+    page_title="Golden Stallion AI", 
+    layout="wide", 
+    page_icon="🐎",
+    menu_items={
+        'Get Help': None,
+        'Report a bug': None,
+        'About': None
+    }
+)
 
 # --- PAUSE SWITCH ---
 APP_PAUSED = False
@@ -94,6 +103,17 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;500;600;700&display=swap');
     
+    /* Hide Streamlit Header, Main Menu, Deploy Button, and Footer */
+    #MainMenu {visibility: hidden; display: none !important;}
+    header {visibility: hidden; display: none !important;}
+    footer {visibility: hidden; display: none !important;}
+    .stDeployButton {display: none !important;}
+    [data-testid="stToolbar"] {display: none !important;}
+    [data-testid="stDecoration"] {display: none !important;}
+    [data-testid="stStatusWidget"] {display: none !important;}
+    div[class*="viewerBadge"] {display: none !important;}
+    div[data-testid="stActionButton"] {display: none !important;}
+
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;
     }
