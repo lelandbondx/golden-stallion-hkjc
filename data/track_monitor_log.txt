@@ -1421,3 +1421,16 @@
 [2026-09-16 13:25:56] 💓 Heartbeat: Checked 8 races (95 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
 [2026-09-16 13:28:02] 💓 Heartbeat: Checked 8 races (95 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
 [2026-09-16 13:30:05] 💓 Heartbeat: Checked 8 races (95 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD. 0 changes.
+[2026-09-26 23:47:47] 🚀 Golden Stallion AI Live Telemetry Monitor Initialized
+[2026-09-26 23:47:47] Monitoring Happy Valley & Sha Tin goings, scratches, and jockey changes live from HKJC API...
+[2026-09-26 23:47:49] 🚨 ALERT: Race 2 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-26 23:47:49] 🚨 ALERT: Race 3 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-26 23:47:49] 🚨 ALERT: Race 4 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-26 23:47:49] 🚨 ALERT: Race 6 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-26 23:47:49] 🚨 ALERT: Race 8 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-26 23:47:49] 🆕 Race 9 registered with going: GOOD TO FIRM
+[2026-09-26 23:47:49] 🆕 Race 10 registered with going: GOOD TO FIRM
+[2026-09-26 23:47:49] 🆕 Race 11 registered with going: GOOD TO FIRM
+[2026-09-26 23:47:49] 🔄 Triggering prediction update...
+[2026-09-26 23:48:02] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
+[2026-09-26 23:48:02] 📡 Auto-syncing updated data to origin main...

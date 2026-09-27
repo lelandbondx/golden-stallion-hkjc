@@ -1,58 +1,99 @@
-=== GOLDEN STALLION HKJC PREDICTOR: HAPPY VALLEY MEETING (2026-09-16) ===
-Track: Happy Valley Turf | Total Races: 8 | Active Runners: 96
+Loading data...
+Meeting: Sha Tin - 2026-09-27 - Going: GOOD
 
---- RACE 1 ---
-Rank 1: #11 SPICY SPANGLE (Odds: 20.0) | Jockey: K C Leung | Conf: 68% | EV: 0.170
-Rank 2: #9 RUNJEET (Odds: 20.0) | Jockey: L Ferraris | Conf: 51% | EV: 0.059
-Rank 3: #2 ALWAYS MY FOLKS (Odds: 20.0) | Jockey: Z Purton | Conf: 49% | EV: 0.052
-Rank 4: #6 ICONICAL (Odds: 20.0) | Jockey: L Hewitson | Conf: 33% | EV: 0.002
-Rank 5: #12 SOLAR RIVER (Odds: 20.0) | Jockey: R Kingscote | Conf: 29% | EV: -0.012
+--- RACE 1 : Class 5 - 1200m ---
+1st Pick: #6 ONLY U (Odds: 3.0) - Conf: 68% - EV: -0.120 - Jockey: Z Purton
+2st Pick: #3 DAILY TROPHY (Odds: 8.8) - Conf: 68% - EV: 0.045 - Jockey: L Ferraris
+3st Pick: #9 GIMME FIVE (Odds: 6.6) - Conf: 68% - EV: 0.003 - Jockey: H Y Yuen
+4st Pick: #5 HAPPY ACTION (Odds: 13.0) - Conf: 68% - EV: 0.058 - Jockey: A Atzeni
+5st Pick: #2 SO MY FOLKS (Odds: 7.4) - Conf: 67% - EV: 0.005 - Jockey: J Orman
 
---- RACE 2 ---
-Rank 1: #9 VERY GRATEFUL (Odds: 20.0) | Jockey: M Chadwick | Conf: 85% | EV: 0.054
-Rank 2: #3 BRIGHT DAY (Odds: 20.0) | Jockey: K C Leung | Conf: 84% | EV: 0.054
-Rank 3: #1 GLORIOUS DYNASTY (Odds: 20.0) | Jockey: L Hewitson | Conf: 82% | EV: 0.050
-Rank 4: #11 LOVING VIBES (Odds: 20.0) | Jockey: A Atzeni | Conf: 72% | EV: 0.032
-Rank 5: #5 HOLMES A COURT (Odds: 20.0) | Jockey: B Avdulla | Conf: 71% | EV: 0.030
+--- RACE 2 : Class 4 - 1200m ---
+1st Pick: #12 GLACIATED (Odds: 5.9) - Conf: 85% - EV: -0.021 - Jockey: C Y Ho
+2st Pick: #1 NOT USUAL DOUBLE (Odds: 17.0) - Conf: 81% - EV: 0.064 - Jockey: M L Yeung
+3st Pick: #4 LITTLE MONSTER (Odds: 6.6) - Conf: 75% - EV: -0.021 - Jockey: M Chadwick
+4st Pick: #2 DAILY FUN (Odds: 40.0) - Conf: 74% - EV: 0.081 - Jockey: L Ferraris
+5st Pick: #5 SOO KOO (Odds: 25.0) - Conf: 72% - EV: 0.067 - Jockey: R Kingscote
 
---- RACE 3 ---
-Rank 1: #6 ROSEWOOD FLEETFOOT (Odds: 20.0) | Jockey: K Teetan | Conf: 85% | EV: 0.050
-Rank 2: #5 ROMANTIC LAOS (Odds: 20.0) | Jockey: C L Chau | Conf: 77% | EV: 0.035
-Rank 3: #10 STAR BROSE (Odds: 20.0) | Jockey: M L Yeung | Conf: 76% | EV: 0.035
-Rank 4: #9 CAN'T GO WONG (Odds: 20.0) | Jockey: M F Poon | Conf: 75% | EV: 0.032
-Rank 5: #1 NOISY BOY (Odds: 20.0) | Jockey: Z Purton | Conf: 71% | EV: 0.026
+--- RACE 3 : Class 5 - 1400m ---
+1st Pick: #1 FOREVER FANCY (Odds: 4.1) - Conf: 68% - EV: -0.036 - Jockey: C Y Ho
+2st Pick: #2 DOUBLE BINGO (Odds: 8.4) - Conf: 65% - EV: 0.027 - Jockey: H Y Yuen
+3st Pick: #8 SILVER UP (Odds: 10.0) - Conf: 54% - EV: 0.021 - Jockey: M L Yeung
+4st Pick: #5 LEAN MASTER (Odds: 15.0) - Conf: 54% - EV: 0.046 - Jockey: P N Wong
+5st Pick: #7 SWAGGER BRO (Odds: 16.0) - Conf: 43% - EV: 0.029 - Jockey: M Chadwick
 
---- RACE 4 ---
-Rank 1: #3 LIVE WIRE (Odds: 20.0) | Jockey: Z Purton | Conf: 85% | EV: 0.075
-Rank 2: #2 SOMELOVEFROMABOVE (Odds: 20.0) | Jockey: J Orman | Conf: 72% | EV: 0.049
-Rank 3: #1 FRIENDS OF SHAJING (Odds: 20.0) | Jockey: C Y Ho | Conf: 66% | EV: 0.037
-Rank 4: #4 GIANT LEAP (Odds: 20.0) | Jockey: H Y Yuen | Conf: 62% | EV: 0.031
-Rank 5: #7 A TIME FOR US (Odds: 20.0) | Jockey: B Avdulla | Conf: 54% | EV: 0.014
+--- RACE 4 : Class 4 - 1000m ---
+1st Pick: #3 HARVEST MOON (Odds: 6.5) - Conf: 85% - EV: 0.027 - Jockey: A Atzeni
+2st Pick: #6 FLOWING RICHES (Odds: 7.9) - Conf: 82% - EV: 0.044 - Jockey: C L Chau
+3st Pick: #1 RAPID PHANTOM (Odds: 3.9) - Conf: 75% - EV: -0.075 - Jockey: H Y Yuen
+4st Pick: #2 RUN RUN SUNRISE (Odds: 11.0) - Conf: 56% - EV: 0.022 - Jockey: K C Leung
+5st Pick: #10 SHOW ME YOUR LOVE (Odds: 36.0) - Conf: 49% - EV: 0.059 - Jockey: L Hewitson
 
---- RACE 5 ---
-Rank 1: #4 LUCKY MCQUEEN (Odds: 20.0) | Jockey: M F Poon | Conf: 85% | EV: 0.036
-Rank 2: #10 GENIUS BABY (Odds: 20.0) | Jockey: K C Leung | Conf: 80% | EV: 0.030
-Rank 3: #6 YOUNG ARROW (Odds: 20.0) | Jockey: Z Purton | Conf: 77% | EV: 0.027
-Rank 4: #8 GROUPER (Odds: 20.0) | Jockey: C L Chau | Conf: 68% | EV: 0.017
-Rank 5: #9 STAR OF HEARTS (Odds: 20.0) | Jockey: C Y Ho | Conf: 67% | EV: 0.016
+--- RACE 5 : Class 4 - 1200m ---
+1st Pick: #6 BRIGHT MORTAR (Odds: 2.1) - Conf: 85% - EV: -0.245 - Jockey: Y L Chung
+2st Pick: #3 WATCH LEGEND (Odds: 69.0) - Conf: 82% - EV: 0.123 - Jockey: E C W Wong
+3st Pick: #5 ARMOUR WAR EAGLE (Odds: 6.9) - Conf: 81% - EV: 0.016 - Jockey: K C Leung
+4st Pick: #4 NATURAL HIGH (Odds: 19.0) - Conf: 78% - EV: 0.085 - Jockey: C L Chau
+5st Pick: #1 CAUSEWAY KING (Odds: 10.0) - Conf: 63% - EV: 0.017 - Jockey: H Y Yuen
 
---- RACE 6 ---
-Rank 1: #3 ROMANTIC GLADIATOR (Odds: 20.0) | Jockey: Y L Chung | Conf: 85% | EV: 0.051
-Rank 2: #2 POPE CODY (Odds: 20.0) | Jockey: A Badel | Conf: 71% | EV: 0.029
-Rank 3: #8 SUPER UNICORN (Odds: 20.0) | Jockey: A Atzeni | Conf: 64% | EV: 0.020
-Rank 4: #7 EMBRACES (Odds: 20.0) | Jockey: C L Chau | Conf: 62% | EV: 0.017
-Rank 5: #5 HIGHLAND RAHY (Odds: 20.0) | Jockey: L Hewitson | Conf: 57% | EV: 0.009
+--- RACE 6 : Class 4 - 1400m ---
+1st Pick: #9 GHORGAN (Odds: 7.9) - Conf: 85% - EV: -0.001 - Jockey: A Atzeni
+2st Pick: #4 HAROLD WIN (Odds: 6.8) - Conf: 82% - EV: -0.021 - Jockey: C L Chau
+3st Pick: #5 BUCEPHALAS (Odds: 7.0) - Conf: 80% - EV: -0.020 - Jockey: K C Leung
+4st Pick: #3 CIRCUIT FIERY (Odds: 17.0) - Conf: 78% - EV: 0.046 - Jockey: P N Wong
+5st Pick: #8 LUCKY MAN (Odds: 7.6) - Conf: 76% - EV: -0.017 - Jockey: Z Purton
 
---- RACE 7 ---
-Rank 1: #1 LOVE TOGETHER (Odds: 20.0) | Jockey: C Y Ho | Conf: 85% | EV: 0.073
-Rank 2: #10 PARENTS' LOVE (Odds: 20.0) | Jockey: P N Wong | Conf: 70% | EV: 0.042
-Rank 3: #4 DANCING CLASSICS (Odds: 20.0) | Jockey: E C W Wong | Conf: 65% | EV: 0.032
-Rank 4: #2 CANDLELIGHT DINNER (Odds: 20.0) | Jockey: C L Chau | Conf: 62% | EV: 0.025
-Rank 5: #9 HONEST WITNESS (Odds: 20.0) | Jockey: K Teetan | Conf: 61% | EV: 0.023
+--- RACE 7 : Class 3 - 1200m ---
+1st Pick: #1 AURORA PATCH (Odds: 6.6) - Conf: 85% - EV: 0.071 - Jockey: C Y Ho
+2st Pick: #9 PACKING KING (Odds: 7.8) - Conf: 62% - EV: 0.031 - Jockey: E C W Wong
+3st Pick: #3 RIDING TOGETHER (Odds: 20.0) - Conf: 58% - EV: 0.085 - Jockey: A Atzeni
+4st Pick: #5 FOUR STARS ALIGN (Odds: 6.3) - Conf: 52% - EV: -0.019 - Jockey: Y L Chung
+5st Pick: #8 BUSTLING CITY (Odds: 2.3) - Conf: 50% - EV: -0.249 - Jockey: B Avdulla
 
---- RACE 8 ---
-Rank 1: #12 LE ZONDA (Odds: 20.0) | Jockey: C Y Ho | Conf: 85% | EV: 0.170
-Rank 2: #2 MASSIVE SOVEREIGN (Odds: 20.0) | Jockey: C L Chau | Conf: 46% | EV: 0.041
-Rank 3: #8 MAX QUE (Odds: 20.0) | Jockey: A Badel | Conf: 46% | EV: 0.040
-Rank 4: #5 HUGE WAVE (Odds: 20.0) | Jockey: H Bentley | Conf: 32% | EV: -0.004
-Rank 5: #3 SAGACIOUS LIFE (Odds: 20.0) | Jockey: J Orman | Conf: 31% | EV: -0.007
+--- RACE 8 : Group Three - 1400m ---
+1st Pick: #3 INVINCIBLE IBIS (Odds: 6.0) - Conf: 85% - EV: 0.083 - Jockey: L Ferraris
+2st Pick: #1 GALAXY PATCH (Odds: 8.1) - Conf: 69% - EV: 0.075 - Jockey: K Teetan
+3st Pick: #5 COPARTNER PRANCE (Odds: 18.0) - Conf: 48% - EV: 0.075 - Jockey: M L Yeung
+4st Pick: #6 LITTLE PARADISE (Odds: 1.8) - Conf: 48% - EV: -0.337 - Jockey: Z Purton
+5st Pick: #4 PATCH OF THETA (Odds: 28.0) - Conf: 47% - EV: 0.088 - Jockey: C Y Ho
+
+--- RACE 9 : Class 3 - 1600m ---
+1st Pick: #1 AMAZING PARTNERS (Odds: 5.4) - Conf: 85% - EV: -0.011 - Jockey: C Y Ho
+2st Pick: #2 MISTER DAPPER (Odds: 29.0) - Conf: 83% - EV: 0.107 - Jockey: B Avdulla
+3st Pick: #9 BIG RETURN (Odds: 16.0) - Conf: 76% - EV: 0.073 - Jockey: L Hewitson
+4st Pick: #3 FALLON (Odds: 18.0) - Conf: 62% - EV: 0.056 - Jockey: M L Yeung
+5st Pick: #8 PACKING FIGHTER (Odds: 2.2) - Conf: 43% - EV: -0.295 - Jockey: Z Purton
+
+--- RACE 10 : Class 2 - 1200m ---
+1st Pick: #1 STORM RIDER (Odds: 34.0) - Conf: 85% - EV: 0.120 - Jockey: B Avdulla
+2st Pick: #3 RISING FORCE (Odds: 3.5) - Conf: 83% - EV: -0.094 - Jockey: Z Purton
+3st Pick: #4 SKY TRUST (Odds: 14.0) - Conf: 69% - EV: 0.056 - Jockey: E C W Wong
+4st Pick: #2 MUGEN (Odds: 18.0) - Conf: 66% - EV: 0.063 - Jockey: J Orman
+5st Pick: #8 SALON S (Odds: 5.8) - Conf: 62% - EV: -0.039 - Jockey: M F Poon
+
+--- RACE 11 : Class 3 - 1400m ---
+1st Pick: #1 LUCKY SAM GOR (Odds: 17.0) - Conf: 85% - EV: 0.107 - Jockey: C L Chau
+2st Pick: #2 THE RED HARE (Odds: 9.9) - Conf: 82% - EV: 0.066 - Jockey: M F Poon
+3st Pick: #6 CIRCUIT CHAMPION (Odds: 3.0) - Conf: 74% - EV: -0.139 - Jockey: Z Purton
+4st Pick: #3 AEROINVINCIBLE (Odds: 5.5) - Conf: 70% - EV: -0.023 - Jockey: H Y Yuen
+5st Pick: #4 BEAUTY CRESCENT (Odds: 13.0) - Conf: 49% - EV: 0.021 - Jockey: Y L Chung
+
+
+--- OVERALL GLOBAL BEST BETS ---
+Top Pick 1: Race 8 - #3 INVINCIBLE IBIS (Odds: 6.0, Conf: 85%, EV: 0.083)
+Top Pick 2: Race 7 - #1 AURORA PATCH (Odds: 6.6, Conf: 85%, EV: 0.071)
+Top Pick 3: Race 3 - #1 FOREVER FANCY (Odds: 4.1, Conf: 68%, EV: -0.036)
+
+
+--- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---
+Race 1 Bet Selection: Anchor #6 ONLY U (3.0) | Sleeper #2 SO MY FOLKS (7.4)
+Race 2 Bet Selection: Anchor #12 GLACIATED (5.9) | Sleeper #2 DAILY FUN (40.0)
+Race 3 Bet Selection: Anchor #1 FOREVER FANCY (4.1) | Sleeper #5 LEAN MASTER (15.0)
+Race 4 Bet Selection: Anchor #3 HARVEST MOON (6.5) | Sleeper #10 SHOW ME YOUR LOVE (36.0)
+Race 5 Bet Selection: Anchor #6 BRIGHT MORTAR (2.1) | Sleeper #3 WATCH LEGEND (69.0)
+Race 6 Bet Selection: Anchor #9 GHORGAN (7.9) | Sleeper #3 CIRCUIT FIERY (17.0)
+Race 7 Bet Selection: Anchor #1 AURORA PATCH (6.6) | Sleeper #3 RIDING TOGETHER (20.0)
+Race 8 Bet Selection: Anchor #3 INVINCIBLE IBIS (6.0) | Sleeper #4 PATCH OF THETA (28.0)
+Race 9 Bet Selection: Anchor #1 AMAZING PARTNERS (5.4) | Sleeper #2 MISTER DAPPER (29.0)
+Race 10 Bet Selection: Anchor #1 STORM RIDER (34.0) | Sleeper #2 MUGEN (18.0)
+Race 11 Bet Selection: Anchor #1 LUCKY SAM GOR (17.0) | Sleeper #2 THE RED HARE (9.9)
