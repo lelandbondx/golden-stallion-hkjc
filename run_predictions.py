@@ -437,7 +437,14 @@ def run():
         is_optimal_weight_zone = (opt_body_weights.notna()) & (np.abs(declared_weights - opt_body_weights) <= 15)
         optimal_weight_boost = np.where(is_optimal_weight_zone, 0.01, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + st_closer_boost + optimal_weight_boost
+        # Disguised Form & Weight-Carrying Resilience Cushion (+2.5% Boost)
+        # Prevents blind penalties on horses with high weight + wide gates that demonstrated hidden form / swooper profiles
+        is_resilient_weight_carrier = (actual_weights >= 130) & (draws >= 8) & (recent_pos <= 6.0) & (vet_issue == 0) & (
+            (df_runners.get('avg_first_pos', 6.0) >= 7.0) | (df_runners.get('recent_win_rate', 0) > 0) | (df_runners.get('gear_win_rate', 0) > 0.10)
+        )
+        weight_resilience_boost = np.where(is_resilient_weight_carrier, 0.025, 0.0)
+
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + st_closer_boost + optimal_weight_boost + weight_resilience_boost
 
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)

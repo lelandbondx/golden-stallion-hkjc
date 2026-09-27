@@ -31,3 +31,4 @@ tmp*.json
 tunnel*.txt
 *.html
 cloudflared.exe
+scratch/
