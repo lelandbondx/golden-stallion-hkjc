@@ -274,16 +274,16 @@ def run():
             on_speed_wet_boost = 0.0
             closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.02, 0.0)
         elif speed_count <= 1:
-            # Low Pace Pressure: speed bias highly likely. Boost lone speed (if in decent form), penalize deep closers (only in sprints, exempt elite closers)
-            # Lone leader boost limited to competitive horses (recent_pos <= 5.0)
-            lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & (recent_pos <= 5.0), 0.02, 0.0)
+            # Low Pace Pressure: speed bias highly likely. Boost lone speed (if in decent form or elite jockey), penalize deep closers
+            is_elite_jockey_leader = df_runners['jockey'].astype(str).str.strip().str.upper().isin(['Z PURTON', 'B AVDULLA', 'H BOWMAN', 'C Y HO', 'K TEETAN', 'A ATZENI', 'L FERRARIS'])
+            lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & ((recent_pos <= 5.5) | is_elite_jockey_leader), 0.035, 0.0)
             # Closer penalty limited to sprints (<=1200m) and non-elite closers (recent_pos > 4.0, no elite sectional burst)
             closer_pace_penalty = np.where(
                 (df_runners['avg_first_pos'] > 6.0) & 
                 (distance <= 1200) & 
                 (recent_pos > 4.0) & 
                 (df_runners['best_last_sec'] >= 22.5), 
-                -0.02, 
+                -0.03, 
                 0.0
             )
             
@@ -444,7 +444,16 @@ def run():
         )
         weight_resilience_boost = np.where(is_resilient_weight_carrier, 0.025, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + st_closer_boost + optimal_weight_boost + weight_resilience_boost
+        # Surface Switch & Trial Delta Boost (+6.0% Boost)
+        # When a horse is switching surfaces with proven trials
+        is_surface_switch = (is_awt_race & (df_runners.get('AWT_win_rate', 0) == 0)) | ((not is_awt_race) & (df_runners.get('Turf_win_rate', 0) == 0))
+        surface_switch_trial_boost = np.where(is_surface_switch & has_strong_trial, 0.06, 0.0)
+
+        # Late-Closer Win Conversion Boost: Closers who possess elite closing burst (<= 22.4s) in races >= 1200m
+        is_elite_finisher = (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.4) & (distance >= 1200)
+        finisher_win_conversion_boost = np.where(is_elite_finisher, 0.025, 0.0)
+
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + st_closer_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + finisher_win_conversion_boost
 
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
