@@ -1,100 +1,99 @@
 Loading data...
-Meeting: Sha Tin - 2026-09-27 - Going: GOOD
+Meeting: Sha Tin - 2026-10-01 - Going: 
 
 --- RACE 1 : Class 5 - 1200m ---
-1st Pick: #6 ONLY U (Odds: 3.0) - Conf: 68% - EV: -0.120 - Jockey: Z Purton
-2st Pick: #3 DAILY TROPHY (Odds: 8.8) - Conf: 68% - EV: 0.045 - Jockey: L Ferraris
-3st Pick: #9 GIMME FIVE (Odds: 6.6) - Conf: 68% - EV: 0.003 - Jockey: H Y Yuen
-4st Pick: #5 HAPPY ACTION (Odds: 13.0) - Conf: 68% - EV: 0.058 - Jockey: A Atzeni
-5st Pick: #2 SO MY FOLKS (Odds: 7.4) - Conf: 67% - EV: 0.005 - Jockey: J Orman
+1st Pick: #8 GROOVY FEELING (Odds: 20.0) - Conf: 68% - EV: 0.094 - Jockey: P N Wong
+2st Pick: #10 VIVA CHALEUR (Odds: 20.0) - Conf: 68% - EV: 0.072 - Jockey: B Avdulla
+3st Pick: #7 CIRRUS SPEED (Odds: 20.0) - Conf: 68% - EV: 0.070 - Jockey: M F Poon
+4st Pick: #1 SUNNY Q (Odds: 20.0) - Conf: 55% - EV: 0.032 - Jockey: A Atzeni
+5st Pick: #2 FALCON HUNTER (Odds: 20.0) - Conf: 40% - EV: 0.000 - Jockey: J Orman
 
---- RACE 2 : Class 4 - 1200m ---
-1st Pick: #12 GLACIATED (Odds: 6.1) - Conf: 85% - EV: -0.017 - Jockey: C Y Ho
-2st Pick: #1 NOT USUAL DOUBLE (Odds: 18.0) - Conf: 81% - EV: 0.066 - Jockey: M L Yeung
-3st Pick: #11 SUPER DRAGON (Odds: 9.1) - Conf: 78% - EV: 0.016 - Jockey: A Atzeni
-4st Pick: #4 LITTLE MONSTER (Odds: 6.7) - Conf: 75% - EV: -0.019 - Jockey: M Chadwick
-5st Pick: #2 DAILY FUN (Odds: 42.0) - Conf: 74% - EV: 0.081 - Jockey: L Ferraris
+--- RACE 2 : Class 5 - 1600m ---
+1st Pick: #9 ALL ARE MINE (Odds: 20.0) - Conf: 68% - EV: 0.098 - Jockey: A Badel
+2st Pick: #12 SPECIAL HEDGE (Odds: 20.0) - Conf: 68% - EV: 0.069 - Jockey: H T Mo
+3st Pick: #1 AMAZING DUCK (Odds: 20.0) - Conf: 66% - EV: 0.053 - Jockey: Z Purton
+4st Pick: #6 GENERAL SMART (Odds: 20.0) - Conf: 53% - EV: 0.024 - Jockey: A Atzeni
+5st Pick: #11 SETANTA (Odds: 20.0) - Conf: 49% - EV: 0.014 - Jockey: K C Leung
 
---- RACE 3 : Class 5 - 1400m ---
-1st Pick: #1 FOREVER FANCY (Odds: 4.0) - Conf: 68% - EV: -0.043 - Jockey: C Y Ho
-2st Pick: #2 DOUBLE BINGO (Odds: 7.7) - Conf: 68% - EV: 0.025 - Jockey: H Y Yuen
-3st Pick: #5 LEAN MASTER (Odds: 15.0) - Conf: 56% - EV: 0.050 - Jockey: P N Wong
-4st Pick: #7 SWAGGER BRO (Odds: 16.0) - Conf: 45% - EV: 0.032 - Jockey: M Chadwick
-5st Pick: #8 SILVER UP (Odds: 11.0) - Conf: 42% - EV: 0.004 - Jockey: M L Yeung
+--- RACE 3 : Group Three - 1000m ---
+1st Pick: #2 CRIMSON FLASH (Odds: 20.0) - Conf: 85% - EV: 0.140 - Jockey: A Atzeni
+2st Pick: #6 BOTTOMUPTOGETHER (Odds: 20.0) - Conf: 76% - EV: 0.109 - Jockey: A Badel
+3st Pick: #5 TOMODACHI KOKOROE (Odds: 20.0) - Conf: 47% - EV: 0.010 - Jockey: H Bentley
+4st Pick: #3 BEAUTY WAVES (Odds: 20.0) - Conf: 42% - EV: -0.005 - Jockey: C L Chau
+5st Pick: #4 COLOURFUL KING (Odds: 20.0) - Conf: 37% - EV: -0.022 - Jockey: Z Purton
 
---- RACE 4 : Class 4 - 1000m ---
-1st Pick: #3 HARVEST MOON (Odds: 6.6) - Conf: 85% - EV: 0.031 - Jockey: A Atzeni
-2st Pick: #6 FLOWING RICHES (Odds: 7.8) - Conf: 82% - EV: 0.044 - Jockey: C L Chau
-3st Pick: #1 RAPID PHANTOM (Odds: 3.7) - Conf: 75% - EV: -0.086 - Jockey: H Y Yuen
-4st Pick: #2 RUN RUN SUNRISE (Odds: 11.0) - Conf: 56% - EV: 0.023 - Jockey: K C Leung
-5st Pick: #10 SHOW ME YOUR LOVE (Odds: 36.0) - Conf: 49% - EV: 0.060 - Jockey: L Hewitson
+--- RACE 4 : Class 4 - 1400m ---
+1st Pick: #4 JOY TOGETHER (Odds: 20.0) - Conf: 85% - EV: 0.065 - Jockey: C L Chau
+2st Pick: #8 SILVERY KNIGHT (Odds: 20.0) - Conf: 82% - EV: 0.060 - Jockey: L Hewitson
+3st Pick: #10 VOYAGE BOSS (Odds: 20.0) - Conf: 67% - EV: 0.033 - Jockey: H Y Yuen
+4st Pick: #12 FRANCIS MEYNELL (Odds: 20.0) - Conf: 67% - EV: 0.032 - Jockey: M F Poon
+5st Pick: #7 SOLID CAR (Odds: 20.0) - Conf: 63% - EV: 0.027 - Jockey: J Orman
 
---- RACE 5 : Class 4 - 1200m ---
-1st Pick: #6 BRIGHT MORTAR (Odds: 2.0) - Conf: 85% - EV: -0.261 - Jockey: Y L Chung
-2st Pick: #3 WATCH LEGEND (Odds: 72.0) - Conf: 82% - EV: 0.124 - Jockey: E C W Wong
-3st Pick: #5 ARMOUR WAR EAGLE (Odds: 7.4) - Conf: 81% - EV: 0.025 - Jockey: K C Leung
-4st Pick: #4 NATURAL HIGH (Odds: 20.0) - Conf: 78% - EV: 0.087 - Jockey: C L Chau
-5st Pick: #1 CAUSEWAY KING (Odds: 10.0) - Conf: 63% - EV: 0.017 - Jockey: H Y Yuen
+--- RACE 5 : Class 4 - 1000m ---
+1st Pick: #5 CELESTIAL ZOUS (Odds: 20.0) - Conf: 85% - EV: 0.078 - Jockey: A Badel
+2st Pick: #14 CHAMP'S DOMAIN (Odds: 20.0) - Conf: 71% - EV: 0.050 - Jockey: L Ferraris
+3st Pick: #7 HOWEVER (Odds: 20.0) - Conf: 70% - EV: 0.047 - Jockey: C Y Ho
+4st Pick: #9 TALENTS CHAMPION (Odds: 20.0) - Conf: 68% - EV: 0.043 - Jockey: M L Yeung
+5st Pick: #6 HANDSOME HERO (Odds: 20.0) - Conf: 66% - EV: 0.039 - Jockey: C L Chau
 
---- RACE 6 : Class 4 - 1400m ---
-1st Pick: #9 GHORGAN (Odds: 8.0) - Conf: 85% - EV: 0.000 - Jockey: A Atzeni
-2st Pick: #4 HAROLD WIN (Odds: 6.7) - Conf: 82% - EV: -0.023 - Jockey: C L Chau
-3st Pick: #5 BUCEPHALAS (Odds: 7.2) - Conf: 80% - EV: -0.017 - Jockey: K C Leung
-4st Pick: #3 CIRCUIT FIERY (Odds: 16.0) - Conf: 78% - EV: 0.043 - Jockey: P N Wong
-5st Pick: #8 LUCKY MAN (Odds: 7.6) - Conf: 76% - EV: -0.016 - Jockey: Z Purton
+--- RACE 6 : Class 4 - 1800m ---
+1st Pick: #4 ROMANTIC LAOS (Odds: 20.0) - Conf: 85% - EV: 0.124 - Jockey: C L Chau
+2st Pick: #6 ROMANTIC FANTASY (Odds: 20.0) - Conf: 62% - EV: 0.063 - Jockey: Z Purton
+3st Pick: #8 SUPREME MASTERMIND (Odds: 20.0) - Conf: 52% - EV: 0.038 - Jockey: L Ferraris
+4st Pick: #7 LUCKY YEAR (Odds: 20.0) - Conf: 43% - EV: 0.015 - Jockey: H Bentley
+5st Pick: #11 MASSIVE GLORY (Odds: 20.0) - Conf: 43% - EV: 0.014 - Jockey: Y L Chung
 
---- RACE 7 : Class 3 - 1200m ---
-1st Pick: #1 AURORA PATCH (Odds: 6.7) - Conf: 85% - EV: 0.071 - Jockey: C Y Ho
-2st Pick: #9 PACKING KING (Odds: 7.6) - Conf: 62% - EV: 0.027 - Jockey: E C W Wong
-3st Pick: #3 RIDING TOGETHER (Odds: 20.0) - Conf: 58% - EV: 0.084 - Jockey: A Atzeni
-4st Pick: #5 FOUR STARS ALIGN (Odds: 6.5) - Conf: 52% - EV: -0.017 - Jockey: Y L Chung
-5st Pick: #8 BUSTLING CITY (Odds: 2.2) - Conf: 50% - EV: -0.266 - Jockey: B Avdulla
+--- RACE 7 : Class 4 - 1200m ---
+1st Pick: #11 RIDING HIGH (Odds: 20.0) - Conf: 85% - EV: 0.041 - Jockey: L Hewitson
+2st Pick: #4 JOKER ORBIT (Odds: 20.0) - Conf: 81% - EV: 0.035 - Jockey: C L Chau
+3st Pick: #5 RISING FROM ASHES (Odds: 20.0) - Conf: 77% - EV: 0.029 - Jockey: J Orman
+4st Pick: #10 KA YING RADIANCE (Odds: 20.0) - Conf: 75% - EV: 0.027 - Jockey: M F Poon
+5st Pick: #7 CAVAMAZING (Odds: 20.0) - Conf: 73% - EV: 0.023 - Jockey: M L Yeung
 
---- RACE 8 : Group Three - 1400m ---
-1st Pick: #3 INVINCIBLE IBIS (Odds: 6.5) - Conf: 85% - EV: 0.096 - Jockey: L Ferraris
-2st Pick: #1 GALAXY PATCH (Odds: 8.3) - Conf: 67% - EV: 0.073 - Jockey: K Teetan
-3st Pick: #5 COPARTNER PRANCE (Odds: 15.0) - Conf: 49% - EV: 0.068 - Jockey: M L Yeung
-4st Pick: #6 LITTLE PARADISE (Odds: 1.7) - Conf: 48% - EV: -0.356 - Jockey: Z Purton
-5st Pick: #4 PATCH OF THETA (Odds: 29.0) - Conf: 47% - EV: 0.091 - Jockey: C Y Ho
+--- RACE 8 : Class 4 - 1200m ---
+1st Pick: #7 GOLDEN TRIUMPH (Odds: 20.0) - Conf: 85% - EV: 0.069 - Jockey: L Ferraris
+2st Pick: #6 PRIVATE WEALTH (Odds: 20.0) - Conf: 72% - EV: 0.047 - Jockey: J Orman
+3st Pick: #10 LUCKY BID (Odds: 20.0) - Conf: 67% - EV: 0.039 - Jockey: M Chadwick
+4st Pick: #4 VIRTUS GLORY (Odds: 20.0) - Conf: 66% - EV: 0.037 - Jockey: B Avdulla
+5st Pick: #1 ALMIGHTY WARRIOR (Odds: 20.0) - Conf: 60% - EV: 0.028 - Jockey: Z Purton
 
---- RACE 9 : Class 3 - 1600m ---
-1st Pick: #1 AMAZING PARTNERS (Odds: 5.7) - Conf: 85% - EV: -0.000 - Jockey: C Y Ho
-2st Pick: #2 MISTER DAPPER (Odds: 31.0) - Conf: 81% - EV: 0.109 - Jockey: B Avdulla
-3st Pick: #9 BIG RETURN (Odds: 17.0) - Conf: 74% - EV: 0.076 - Jockey: L Hewitson
-4st Pick: #3 FALLON (Odds: 20.0) - Conf: 60% - EV: 0.060 - Jockey: M L Yeung
-5st Pick: #8 PACKING FIGHTER (Odds: 2.0) - Conf: 42% - EV: -0.334 - Jockey: Z Purton
+--- RACE 9 : Class 2 - 1400m ---
+1st Pick: #7 EMBLAZON (Odds: 20.0) - Conf: 85% - EV: 0.045 - Jockey: H Bentley
+2st Pick: #2 HOT DELIGHT (Odds: 20.0) - Conf: 75% - EV: 0.031 - Jockey: C Y Ho
+3st Pick: #3 CHILL EASY (Odds: 20.0) - Conf: 72% - EV: 0.026 - Jockey: C L Chau
+4st Pick: #8 BRAVEFIELD (Odds: 20.0) - Conf: 66% - EV: 0.018 - Jockey: L Hewitson
+5st Pick: #10 REGAL GEM (Odds: 20.0) - Conf: 65% - EV: 0.017 - Jockey: K C Leung
 
---- RACE 10 : Class 2 - 1200m ---
-1st Pick: #1 STORM RIDER (Odds: 34.0) - Conf: 85% - EV: 0.121 - Jockey: B Avdulla
-2st Pick: #3 RISING FORCE (Odds: 3.4) - Conf: 83% - EV: -0.098 - Jockey: Z Purton
-3st Pick: #4 SKY TRUST (Odds: 14.0) - Conf: 69% - EV: 0.057 - Jockey: E C W Wong
-4st Pick: #2 MUGEN (Odds: 18.0) - Conf: 66% - EV: 0.064 - Jockey: J Orman
-5st Pick: #8 SALON S (Odds: 5.8) - Conf: 62% - EV: -0.038 - Jockey: M F Poon
-[DEFROST] Triggered due to jockey change on Horse #10: 'L FERRARIS' -> 'L HEWITSON'
+--- RACE 10 : Class 3 - 1400m ---
+1st Pick: #8 MONEY GAMES (Odds: 20.0) - Conf: 85% - EV: 0.060 - Jockey: J Orman
+2st Pick: #4 FLYING FORTRESS (Odds: 20.0) - Conf: 79% - EV: 0.051 - Jockey: H Bentley
+3st Pick: #6 FORTUNE BOY (Odds: 20.0) - Conf: 70% - EV: 0.038 - Jockey: B Avdulla
+4st Pick: #5 SONIC LINER (Odds: 20.0) - Conf: 66% - EV: 0.031 - Jockey: P N Wong
+5st Pick: #1 CHILL BUDDY (Odds: 20.0) - Conf: 54% - EV: 0.012 - Jockey: C L Chau
 
---- RACE 11 : Class 3 - 1400m ---
-1st Pick: #6 CIRCUIT CHAMPION (Odds: 2.0) - Conf: 75% - EV: -0.277 - Jockey: Z Purton
-2st Pick: #2 THE RED HARE (Odds: 9.7) - Conf: 82% - EV: 0.065 - Jockey: M F Poon
-3st Pick: #3 AEROINVINCIBLE (Odds: 5.8) - Conf: 72% - EV: -0.012 - Jockey: H Y Yuen
-4st Pick: #7 COMPLETE UNKNOWN (Odds: 6.9) - Conf: 50% - EV: -0.034 - Jockey: K Teetan
-5st Pick: #1 LUCKY SAM GOR (Odds: 25.0) - Conf: 85% - EV: 0.122 - Jockey: C L Chau
+--- RACE 11 : Class 3 - 1200m ---
+1st Pick: #4 SUPER STRONG KID (Odds: 20.0) - Conf: 85% - EV: 0.048 - Jockey: L Ferraris
+2st Pick: #3 EFFORTLESS WIN (Odds: 20.0) - Conf: 83% - EV: 0.044 - Jockey: C L Chau
+3st Pick: #5 RED SEA (Odds: 20.0) - Conf: 60% - EV: 0.013 - Jockey: A Atzeni
+4st Pick: #9 THE HEIR (Odds: 20.0) - Conf: 60% - EV: 0.013 - Jockey: H Bentley
+5st Pick: #7 GLORYSPEED (Odds: 20.0) - Conf: 59% - EV: 0.012 - Jockey: Y L Chung
 
 
 --- OVERALL GLOBAL BEST BETS ---
-Top Pick 1: Race 8 - #3 INVINCIBLE IBIS (Odds: 6.5, Conf: 85%, EV: 0.096)
-Top Pick 2: Race 7 - #1 AURORA PATCH (Odds: 6.7, Conf: 85%, EV: 0.071)
-Top Pick 3: Race 11 - #6 CIRCUIT CHAMPION (Odds: 2.0, Conf: 75%, EV: -0.277)
+Top Pick 1: Race 3 - #2 CRIMSON FLASH (Odds: 20.0, Conf: 85%, EV: 0.140)
+Top Pick 2: Race 6 - #4 ROMANTIC LAOS (Odds: 20.0, Conf: 85%, EV: 0.124)
+Top Pick 3: Race 2 - #9 ALL ARE MINE (Odds: 20.0, Conf: 68%, EV: 0.098)
 
 
 --- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---
-Race 1 Bet Selection: Anchor #6 ONLY U (3.0) | Sleeper #2 SO MY FOLKS (7.4)
-Race 2 Bet Selection: Anchor #12 GLACIATED (6.1) | Sleeper #2 DAILY FUN (42.0)
-Race 3 Bet Selection: Anchor #1 FOREVER FANCY (4.0) | Sleeper #8 SILVER UP (11.0)
-Race 4 Bet Selection: Anchor #3 HARVEST MOON (6.6) | Sleeper #10 SHOW ME YOUR LOVE (36.0)
-Race 5 Bet Selection: Anchor #6 BRIGHT MORTAR (2.0) | Sleeper #1 CAUSEWAY KING (10.0)
-Race 6 Bet Selection: Anchor #9 GHORGAN (8.0) | Sleeper #8 LUCKY MAN (7.6)
-Race 7 Bet Selection: Anchor #1 AURORA PATCH (6.7) | Sleeper #8 BUSTLING CITY (2.2)
-Race 8 Bet Selection: Anchor #3 INVINCIBLE IBIS (6.5) | Sleeper #4 PATCH OF THETA (29.0)
-Race 9 Bet Selection: Anchor #1 AMAZING PARTNERS (5.7) | Sleeper #8 PACKING FIGHTER (2.0)
-Race 10 Bet Selection: Anchor #1 STORM RIDER (34.0) | Sleeper #8 SALON S (5.8)
-Race 11 Bet Selection: Anchor #6 CIRCUIT CHAMPION (2.0) | Sleeper #1 LUCKY SAM GOR (25.0)
+Race 1 Bet Selection: Anchor #8 GROOVY FEELING (20.0) | Sleeper #10 VIVA CHALEUR (20.0)
+Race 2 Bet Selection: Anchor #9 ALL ARE MINE (20.0) | Sleeper #12 SPECIAL HEDGE (20.0)
+Race 3 Bet Selection: Anchor #2 CRIMSON FLASH (20.0) | Sleeper #6 BOTTOMUPTOGETHER (20.0)
+Race 4 Bet Selection: Anchor #4 JOY TOGETHER (20.0) | Sleeper #8 SILVERY KNIGHT (20.0)
+Race 5 Bet Selection: Anchor #5 CELESTIAL ZOUS (20.0) | Sleeper #14 CHAMP'S DOMAIN (20.0)
+Race 6 Bet Selection: Anchor #4 ROMANTIC LAOS (20.0) | Sleeper #6 ROMANTIC FANTASY (20.0)
+Race 7 Bet Selection: Anchor #11 RIDING HIGH (20.0) | Sleeper #4 JOKER ORBIT (20.0)
+Race 8 Bet Selection: Anchor #7 GOLDEN TRIUMPH (20.0) | Sleeper #6 PRIVATE WEALTH (20.0)
+Race 9 Bet Selection: Anchor #7 EMBLAZON (20.0) | Sleeper #2 HOT DELIGHT (20.0)
+Race 10 Bet Selection: Anchor #8 MONEY GAMES (20.0) | Sleeper #4 FLYING FORTRESS (20.0)
+Race 11 Bet Selection: Anchor #4 SUPER STRONG KID (20.0) | Sleeper #3 EFFORTLESS WIN (20.0)
