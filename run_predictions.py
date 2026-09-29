@@ -229,8 +229,8 @@ def run():
             0.0
         )
         
-        # Consensus intel boost (gentle tie breaker)
-        consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 12), 0.0)
+        # Consensus intel boost (gentle tie breaker capped at +3.5%)
+        consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 3.5), 0.0)
         
         df_runners['avg_first_pos'] = df_runners['clean_name'].map(running_styles).fillna(6.0)
 
@@ -427,14 +427,14 @@ def run():
         )
         fresh_distance_fitness_boost = np.where(is_fit_fresh, 0.015, 0.0)
 
-        # Recent Throat Surgery Recovery Boost (+3.5% Boost)
+        # Recent Throat Surgery Recovery Boost (+3.5% Boost with verified strong trial)
         has_throat_surgery = df_runners['last_comment'].str.contains('tieback|tie-back|throat|epiglottic|wind op', case=False, na=False)
-        throat_surgery_boost = np.where(has_throat_surgery, 0.035, 0.0)
+        throat_surgery_boost = np.where(has_throat_surgery & has_strong_trial, 0.035, 0.0)
 
         # Optimal Body Weight Condition Zone (within 15 lbs of historical peak / winning weight) (+1.0% Boost)
         declared_weights = pd.to_numeric(df_runners.get('declared_weight', 1100), errors='coerce').fillna(1100)
         opt_body_weights = pd.to_numeric(df_runners.get('latest_body_weight', np.nan), errors='coerce')
-        is_optimal_weight_zone = (opt_body_weights.notna()) & (np.abs(declared_weights - opt_body_weights) <= 15)
+        is_optimal_weight_zone = (opt_body_weights.notna()) & (opt_body_weights > 800) & (np.abs(declared_weights - opt_body_weights) <= 15)
         optimal_weight_boost = np.where(is_optimal_weight_zone, 0.01, 0.0)
 
         # Disguised Form & Weight-Carrying Resilience Cushion (+2.5% Boost)
@@ -444,16 +444,27 @@ def run():
         )
         weight_resilience_boost = np.where(is_resilient_weight_carrier, 0.025, 0.0)
 
-        # Surface Switch & Trial Delta Boost (+6.0% Boost)
+        # Surface Switch & Trial Delta Boost (+6.0% Boost for true 1st-time switchers)
         # When a horse is switching surfaces with proven trials
-        is_surface_switch = (is_awt_race & (df_runners.get('AWT_win_rate', 0) == 0)) | ((not is_awt_race) & (df_runners.get('Turf_win_rate', 0) == 0))
+        awt_starts = pd.to_numeric(df_runners['AWT_starts'], errors='coerce').fillna(0) if 'AWT_starts' in df_runners.columns else 0
+        turf_starts = pd.to_numeric(df_runners['Turf_starts'], errors='coerce').fillna(0) if 'Turf_starts' in df_runners.columns else 0
+        awt_win_rate = pd.to_numeric(df_runners.get('AWT_win_rate', 0), errors='coerce').fillna(0)
+        turf_win_rate = pd.to_numeric(df_runners.get('Turf_win_rate', 0), errors='coerce').fillna(0)
+        is_surface_switch = (
+            (is_awt_race & (awt_win_rate == 0) & (awt_starts == 0)) | 
+            ((not is_awt_race) & (turf_win_rate == 0) & (turf_starts == 0))
+        )
         surface_switch_trial_boost = np.where(is_surface_switch & has_strong_trial, 0.06, 0.0)
 
         # Late-Closer Win Conversion Boost: Closers who possess elite closing burst (<= 22.4s) in races >= 1200m
         is_elite_finisher = (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.4) & (distance >= 1200)
         finisher_win_conversion_boost = np.where(is_elite_finisher, 0.025, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + closer_pace_boost + closer_pace_penalty + lone_speed_boost + late_closer_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + st_closer_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + finisher_win_conversion_boost
+        # Cumulative Closer Boost Ceiling: Cap all stacked closer multipliers at +3.5% max
+        raw_closer_boost = closer_pace_boost + late_closer_boost + st_closer_boost + finisher_win_conversion_boost
+        total_closer_boost = np.minimum(raw_closer_boost, 0.035)
+
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + closer_pace_penalty + lone_speed_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
 
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
