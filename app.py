@@ -714,6 +714,10 @@ with tab1:
             df_runners.apply(lambda r: (str(r.get('jockey', '')).strip().upper(), str(r.get('trainer', '')).strip().upper()) in MODERN_ELITE, axis=1)
         )
         jockey_trainer_boost = np.where(is_elite_jt, 0.025, 0.0)
+
+        # Standalone Elite Jockey Win Conversion Boost (+2.5% for Tier-1 jockeys on in-form runners)
+        is_tier1_jockey = df_runners['jockey'].astype(str).str.strip().str.upper().isin(['Z PURTON', 'H BOWMAN', 'C Y HO', 'A ATZENI', 'B AVDULLA'])
+        elite_jockey_boost = np.where(is_tier1_jockey & (recent_pos <= 4.0) & (vet_issue == 0), 0.025, 0.0)
         
         # Happy Valley C-Course Draw Bias Adjustments
         is_hv = meeting.get('venue') == 'Happy Valley'
@@ -745,6 +749,11 @@ with tab1:
             # Inside low draw disadvantage in straight sprint (Gates 1-4)
             is_inside_disadv = (df_runners['draw'] <= 4)
             st_1000_draw_penalty = np.where(is_inside_disadv, -0.025, 0.0)
+
+        # Sha Tin 1200m-1600m Bend Draw Bias (Inside Rail Advantage Gates 1-4 vs Wide Trap Gates 11-14)
+        is_st_bend = (meeting.get('venue') == 'Sha Tin') and (distance >= 1200) and (distance <= 1600) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
+        st_inside_draw_boost = np.where(is_st_bend & (df_runners['draw'] <= 4), 0.02, 0.0)
+        st_wide_draw_penalty = np.where(is_st_bend & (df_runners['draw'] >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
 
         # Quantitative Barrier Trial Multipliers
         trial_boost = []
@@ -845,11 +854,16 @@ with tab1:
         is_elite_finisher = (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.4) & (distance >= 1200)
         finisher_win_conversion_boost = np.where(is_elite_finisher, 0.025, 0.0)
 
+        # Early-Season 2nd-Up Peak Fitness Sweet Spot (+2.0% Boost for horses with 1 run 14-35 days ago)
+        days_since = pd.to_numeric(df_runners.get('days_since_last_run', 0), errors='coerce').fillna(0)
+        is_second_up_fitness = (days_since >= 14) & (days_since <= 35) & (recent_pos <= 6.0) & (vet_issue == 0) & (~is_debutant)
+        second_up_fitness_boost = np.where(is_second_up_fitness, 0.02, 0.0)
+
         # Cumulative Closer Boost Ceiling: Cap all stacked closer multipliers at +3.5% max
         raw_closer_boost = closer_pace_boost + late_closer_boost + st_closer_boost + finisher_win_conversion_boost
         total_closer_boost = np.minimum(raw_closer_boost, 0.035)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + closer_pace_penalty + lone_speed_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + closer_pace_penalty + lone_speed_boost + elite_jockey_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + st_inside_draw_boost + st_wide_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
 
 
