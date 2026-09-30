@@ -151,7 +151,11 @@ def run():
         ]
         df_runners['had_trouble'] = df_runners['last_comment'].apply(lambda c: any(kw in c for kw in trouble_keywords)).astype(int)
 
-        df_runners['model_prob'] = probs
+        # Store pure raw model probability before multipliers
+        df_runners['raw_model_prob'] = probs.copy() if hasattr(probs, 'copy') else np.array(probs)
+        df_runners['raw_rank'] = df_runners['raw_model_prob'].rank(ascending=False, method='min').astype(int)
+
+        df_runners['model_prob'] = probs.copy() if hasattr(probs, 'copy') else np.array(probs)
         df_runners['implied_raw'] = 1 / df_runners['win_odds'].replace(0, 1.0)
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
@@ -505,6 +509,8 @@ def run():
             # Unlock smart money shifts (incorporating shift_bonus, excluding raw value bias)
             df_runners['gs_score'] = (df_runners['model_prob'] * 100) + df_runners['shift_bonus']
         
+        df_runners['gs_rank'] = df_runners['gs_score'].rank(ascending=False, method='min').astype(int)
+
         p_min = df_runners['model_prob'].min()
         p_max = df_runners['model_prob'].max()
         if p_max > p_min:
@@ -516,19 +522,40 @@ def run():
         if class_int == 5:
             df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
             
-        race_picks = df_runners.sort_values(by='gs_score', ascending=False)
+        # Determine PRIMARY according to Grok Heavy Selection Hierarchy:
+        # 1. Horse at 4.0 or shorter that is also raw_model_prob rank 1–3.
+        # 2. Else the top gs_score horse with odds shorter than 20.0.
+        # 3. Do not publish a 20.0+ horse as PRIMARY unless it is raw_model_prob rank 1.
+        cand1 = df_runners[(df_runners['win_odds'] > 0) & (df_runners['win_odds'] <= 4.0) & (df_runners['raw_rank'] <= 3)]
+        if not cand1.empty:
+            primary_runner = cand1.sort_values(by='gs_score', ascending=False).iloc[0]
+            primary_reason = "Fav <= 4.0 & raw rank 1-3"
+        else:
+            cand2 = df_runners[(df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 20.0)]
+            if not cand2.empty:
+                primary_runner = cand2.sort_values(by='gs_score', ascending=False).iloc[0]
+                primary_reason = "Top GS score (< 20.0 odds)"
+            else:
+                primary_runner = df_runners.sort_values(by='raw_model_prob', ascending=False).iloc[0]
+                primary_reason = "Raw rank 1 baseline"
+
+        df_runners['is_primary'] = (df_runners['no'] == primary_runner['no']).astype(int)
+        df_runners['primary_reason'] = np.where(df_runners['no'] == primary_runner['no'], primary_reason, "")
+
+        race_picks = df_runners.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
         print(f"\n--- RACE {race.get('race_no')} : {class_str} ---")
+        print(f"PRIMARY: #{primary_runner['no']} {primary_runner['name']} (Odds: {primary_runner['win_odds']:.1f}) - Raw Rank: {primary_runner['raw_rank']} - GS Rank: {primary_runner['gs_rank']} - Reason: {primary_reason}")
         
         for i in range(min(5, len(race_picks))):
             pick = race_picks.iloc[i]
-            print(f"{i+1}st Pick: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
+            tag = "[PRIMARY]" if pick['no'] == primary_runner['no'] else f"Pick {i+1}"
+            print(f"{tag}: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - RawRank: {pick['raw_rank']} - GSRank: {pick['gs_rank']} - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
             
-        # Compile high-ROI dual-staking wagers: Rank 1 Anchor + Highest EV Sleeper in Top 5
-        if len(race_picks) > 4:
-            p1 = race_picks.iloc[0]
-            # Find candidate with highest positive value_diff among picks 2..5
-            top5_candidates = race_picks.iloc[1:5].copy()
-            high_ev_sleepers = top5_candidates.sort_values(by='value_diff', ascending=False)
+        # Compile high-ROI dual-staking wagers: Primary Anchor + Highest EV Sleeper among remaining runners
+        if len(race_picks) > 1:
+            p1 = primary_runner
+            remaining = df_runners[df_runners['no'] != primary_runner['no']].copy()
+            high_ev_sleepers = remaining.sort_values(by='value_diff', ascending=False)
             p5 = high_ev_sleepers.iloc[0]
             
             dual_staking_wagers.append({
@@ -542,8 +569,8 @@ def run():
                 "p5_ev": float(p5['value_diff'])
             })
             
-        best = race_picks.iloc[0].to_dict()
-        best.update({"race_no": race.get("race_no"), "class_dist": class_str})
+        best = primary_runner.to_dict()
+        best.update({"race_no": race.get("race_no"), "class_dist": class_str, "primary_reason": primary_reason})
         global_best_bets.append(best)
         
         # Always freeze predictions once they are generated, so they don't change overnight
