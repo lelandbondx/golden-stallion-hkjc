@@ -1,0 +1,1484 @@
+{
+    "1": [
+        {
+            "place": 1,
+            "horse_no": 7,
+            "horse_name": "CIRRUS SPEED\u00a0(K279)",
+            "jockey": "M F Poon",
+            "trainer": "D J Hall",
+            "win_odds": 12.0,
+            "lbw": "---",
+            "finish_time": "1:08.53"
+        },
+        {
+            "place": 2,
+            "horse_no": 2,
+            "horse_name": "FALCON HUNTER\u00a0(K503)",
+            "jockey": "J Orman",
+            "trainer": "J Cummings",
+            "win_odds": 10.0,
+            "lbw": "1",
+            "finish_time": "1:08.67"
+        },
+        {
+            "place": 3,
+            "horse_no": 1,
+            "horse_name": "SUNNY Q\u00a0(J223)",
+            "jockey": "A Atzeni",
+            "trainer": "W Y So",
+            "win_odds": 6.6,
+            "lbw": "1-1/4",
+            "finish_time": "1:08.74"
+        },
+        {
+            "place": 4,
+            "horse_no": 4,
+            "horse_name": "POWER PATCH\u00a0(L100)",
+            "jockey": "C Y Ho",
+            "trainer": "K L Man",
+            "win_odds": 10.0,
+            "lbw": "2-1/2",
+            "finish_time": "1:08.93"
+        },
+        {
+            "place": 5,
+            "horse_no": 6,
+            "horse_name": "NOBLE FANS\u00a0(K038)",
+            "jockey": "Z Purton",
+            "trainer": "J Size",
+            "win_odds": 18.0,
+            "lbw": "2-3/4",
+            "finish_time": "1:08.99"
+        },
+        {
+            "place": 6,
+            "horse_no": 13,
+            "horse_name": "WINNING DIAMOND\u00a0(K216)",
+            "jockey": "R Kingscote",
+            "trainer": "D Eustace",
+            "win_odds": 40.0,
+            "lbw": "3-1/4",
+            "finish_time": "1:09.03"
+        },
+        {
+            "place": 7,
+            "horse_no": 10,
+            "horse_name": "VIVA CHALEUR\u00a0(G368)",
+            "jockey": "B Avdulla",
+            "trainer": "A S Cruz",
+            "win_odds": 12.0,
+            "lbw": "3-1/4",
+            "finish_time": "1:09.04"
+        },
+        {
+            "place": 8,
+            "horse_no": 3,
+            "horse_name": "FLASH STAR\u00a0(K431)",
+            "jockey": "C L Chau",
+            "trainer": "C S Shum",
+            "win_odds": 30.0,
+            "lbw": "5-1/2",
+            "finish_time": "1:09.41"
+        },
+        {
+            "place": 9,
+            "horse_no": 14,
+            "horse_name": "EXCEED THE WISH\u00a0(J480)",
+            "jockey": "L Hewitson",
+            "trainer": "M Newnham",
+            "win_odds": 81.0,
+            "lbw": "7",
+            "finish_time": "1:09.65"
+        },
+        {
+            "place": 10,
+            "horse_no": 8,
+            "horse_name": "GROOVY FEELING\u00a0(J515)",
+            "jockey": "P N Wong",
+            "trainer": "J Richards",
+            "win_odds": 56.0,
+            "lbw": "7-1/2",
+            "finish_time": "1:09.73"
+        },
+        {
+            "place": 11,
+            "horse_no": 11,
+            "horse_name": "QUICK MONEY\u00a0(K377)",
+            "jockey": "K C Leung",
+            "trainer": "C H Yip",
+            "win_odds": 49.0,
+            "lbw": "7-1/2",
+            "finish_time": "1:09.75"
+        },
+        {
+            "place": 12,
+            "horse_no": 9,
+            "horse_name": "LEGENDARY IMPACT\u00a0(K035)",
+            "jockey": "A Badel",
+            "trainer": "Y S Tsui",
+            "win_odds": 90.0,
+            "lbw": "10-1/2",
+            "finish_time": "1:10.21"
+        },
+        {
+            "place": 13,
+            "horse_no": 12,
+            "horse_name": "YEE CHEONG RAIDER\u00a0(J176)",
+            "jockey": "K Teetan",
+            "trainer": "B Crawford",
+            "win_odds": 13.0,
+            "lbw": "11",
+            "finish_time": "1:10.30"
+        },
+        {
+            "place": 14,
+            "horse_no": 5,
+            "horse_name": "GOOD FORTUNE\u00a0(H349)",
+            "jockey": "H Y Yuen",
+            "trainer": "P C Ng",
+            "win_odds": 2.1,
+            "lbw": "22-3/4",
+            "finish_time": "1:12.19"
+        }
+    ],
+    "2": [
+        {
+            "place": 1,
+            "horse_no": 9,
+            "horse_name": "ALL ARE MINE\u00a0(H293)",
+            "jockey": "A Badel",
+            "trainer": "B Crawford",
+            "win_odds": 4.6,
+            "lbw": "---",
+            "finish_time": "1:34.79"
+        },
+        {
+            "place": 2,
+            "horse_no": 10,
+            "horse_name": "FORTUNE KINGO\u00a0(K457)",
+            "jockey": "C L Chau",
+            "trainer": "D J Whyte",
+            "win_odds": 12.0,
+            "lbw": "1-3/4",
+            "finish_time": "1:35.08"
+        },
+        {
+            "place": 3,
+            "horse_no": 7,
+            "horse_name": "I EXCELLE\u00a0(K502)",
+            "jockey": "C Y Ho",
+            "trainer": "P C Ng",
+            "win_odds": 12.0,
+            "lbw": "1-3/4",
+            "finish_time": "1:35.09"
+        },
+        {
+            "place": 4,
+            "horse_no": 1,
+            "horse_name": "AMAZING DUCK\u00a0(H392)",
+            "jockey": "Z Purton",
+            "trainer": "K H Ting",
+            "win_odds": 3.4,
+            "lbw": "3",
+            "finish_time": "1:35.28"
+        },
+        {
+            "place": 5,
+            "horse_no": 14,
+            "horse_name": "MANYTHANKS FOREVER\u00a0(J065)",
+            "jockey": "M L Yeung",
+            "trainer": "W Y So",
+            "win_odds": 95.0,
+            "lbw": "3",
+            "finish_time": "1:35.29"
+        },
+        {
+            "place": 6,
+            "horse_no": 12,
+            "horse_name": "SPECIAL HEDGE\u00a0(H354)",
+            "jockey": "H T Mo",
+            "trainer": "C W Chang",
+            "win_odds": 109.0,
+            "lbw": "3-1/2",
+            "finish_time": "1:35.37"
+        },
+        {
+            "place": 7,
+            "horse_no": 2,
+            "horse_name": "CIRCUIT MARSHAL\u00a0(K526)",
+            "jockey": "M Chadwick",
+            "trainer": "M Newnham",
+            "win_odds": 27.0,
+            "lbw": "3-3/4",
+            "finish_time": "1:35.39"
+        },
+        {
+            "place": 8,
+            "horse_no": 11,
+            "horse_name": "SETANTA\u00a0(G095)",
+            "jockey": "K C Leung",
+            "trainer": "Y S Tsui",
+            "win_odds": 37.0,
+            "lbw": "4",
+            "finish_time": "1:35.42"
+        },
+        {
+            "place": 9,
+            "horse_no": 8,
+            "horse_name": "MULTISUPERSTAR\u00a0(L163)",
+            "jockey": "K Teetan",
+            "trainer": "A S Cruz",
+            "win_odds": 12.0,
+            "lbw": "4",
+            "finish_time": "1:35.44"
+        },
+        {
+            "place": 10,
+            "horse_no": 13,
+            "horse_name": "HAPPY BUDDIES\u00a0(K344)",
+            "jockey": "L Hewitson",
+            "trainer": "W K Mo",
+            "win_odds": 13.0,
+            "lbw": "4-1/2",
+            "finish_time": "1:35.53"
+        },
+        {
+            "place": 11,
+            "horse_no": 4,
+            "horse_name": "SUPER SICARIO\u00a0(K306)",
+            "jockey": "J Orman",
+            "trainer": "C Fownes",
+            "win_odds": 60.0,
+            "lbw": "5",
+            "finish_time": "1:35.61"
+        },
+        {
+            "place": 12,
+            "horse_no": 5,
+            "horse_name": "THE CONCENTRATION\u00a0(H465)",
+            "jockey": "H Y Yuen",
+            "trainer": "P F Yiu",
+            "win_odds": 71.0,
+            "lbw": "5-1/2",
+            "finish_time": "1:35.67"
+        },
+        {
+            "place": 13,
+            "horse_no": 6,
+            "horse_name": "GENERAL SMART\u00a0(K138)",
+            "jockey": "A Atzeni",
+            "trainer": "C S Shum",
+            "win_odds": 3.7,
+            "lbw": "6",
+            "finish_time": "1:35.74"
+        },
+        {
+            "place": 14,
+            "horse_no": 3,
+            "horse_name": "PEARL OF PANG'S\u00a0(J447)",
+            "jockey": "L Ferraris",
+            "trainer": "K L Man",
+            "win_odds": 76.0,
+            "lbw": "6-3/4",
+            "finish_time": "1:35.85"
+        }
+    ],
+    "3": [
+        {
+            "place": 1,
+            "horse_no": 4,
+            "horse_name": "COLOURFUL KING\u00a0(K227)",
+            "jockey": "Z Purton",
+            "trainer": "D Eustace",
+            "win_odds": 2.2,
+            "lbw": "---",
+            "finish_time": "0:55.72"
+        },
+        {
+            "place": 2,
+            "horse_no": 7,
+            "horse_name": "MAGIC CONTROL\u00a0(J333)",
+            "jockey": "M Chadwick",
+            "trainer": "W K Mo",
+            "win_odds": 4.8,
+            "lbw": "1-1/4",
+            "finish_time": "0:55.90"
+        },
+        {
+            "place": 3,
+            "horse_no": 6,
+            "horse_name": "BOTTOMUPTOGETHER\u00a0(J316)",
+            "jockey": "A Badel",
+            "trainer": "F C Lor",
+            "win_odds": 6.6,
+            "lbw": "1-1/4",
+            "finish_time": "0:55.91"
+        },
+        {
+            "place": 4,
+            "horse_no": 1,
+            "horse_name": "RAGING BLIZZARD\u00a0(H368)",
+            "jockey": "B Avdulla",
+            "trainer": "J Size",
+            "win_odds": 11.0,
+            "lbw": "2-3/4",
+            "finish_time": "0:56.17"
+        },
+        {
+            "place": 5,
+            "horse_no": 2,
+            "horse_name": "CRIMSON FLASH\u00a0(K173)",
+            "jockey": "A Atzeni",
+            "trainer": "M Newnham",
+            "win_odds": 5.6,
+            "lbw": "3",
+            "finish_time": "0:56.19"
+        },
+        {
+            "place": 6,
+            "horse_no": 8,
+            "horse_name": "JOHANNES BRAHMS\u00a0(K014)",
+            "jockey": "M L Yeung",
+            "trainer": "P C Ng",
+            "win_odds": 29.0,
+            "lbw": "3-1/4",
+            "finish_time": "0:56.23"
+        },
+        {
+            "place": 7,
+            "horse_no": 5,
+            "horse_name": "TOMODACHI KOKOROE\u00a0(H303)",
+            "jockey": "H Bentley",
+            "trainer": "D A Hayes",
+            "win_odds": 15.0,
+            "lbw": "8-3/4",
+            "finish_time": "0:57.13"
+        },
+        {
+            "place": 8,
+            "horse_no": 3,
+            "horse_name": "BEAUTY WAVES\u00a0(H294)",
+            "jockey": "C L Chau",
+            "trainer": "A S Cruz",
+            "win_odds": 25.0,
+            "lbw": "9",
+            "finish_time": "0:57.18"
+        }
+    ],
+    "4": [
+        {
+            "place": 1,
+            "horse_no": 7,
+            "horse_name": "SOLID CAR\u00a0(K058)",
+            "jockey": "J Orman",
+            "trainer": "D J Hall",
+            "win_odds": 1.9,
+            "lbw": "---",
+            "finish_time": "1:22.13"
+        },
+        {
+            "place": 2,
+            "horse_no": 6,
+            "horse_name": "PRESTIGE COME\u00a0(L261)",
+            "jockey": "R Kingscote",
+            "trainer": "P F Yiu",
+            "win_odds": 8.5,
+            "lbw": "1-1/4",
+            "finish_time": "1:22.30"
+        },
+        {
+            "place": 3,
+            "horse_no": 3,
+            "horse_name": "CHILL PARTNERS\u00a0(K484)",
+            "jockey": "M L Yeung",
+            "trainer": "K W Lui",
+            "win_odds": 31.0,
+            "lbw": "1-1/4",
+            "finish_time": "1:22.32"
+        },
+        {
+            "place": 4,
+            "horse_no": 14,
+            "horse_name": "STAR SATYR\u00a0(K231)",
+            "jockey": "Y L Chung",
+            "trainer": "A S Cruz",
+            "win_odds": 11.0,
+            "lbw": "1-1/4",
+            "finish_time": "1:22.33"
+        },
+        {
+            "place": 5,
+            "horse_no": 11,
+            "horse_name": "ALABAMA SONG\u00a0(K480)",
+            "jockey": "A Atzeni",
+            "trainer": "J Size",
+            "win_odds": 18.0,
+            "lbw": "1-1/2",
+            "finish_time": "1:22.36"
+        },
+        {
+            "place": 6,
+            "horse_no": 5,
+            "horse_name": "NOBLE PATCH\u00a0(L282)",
+            "jockey": "K C Leung",
+            "trainer": "P C Ng",
+            "win_odds": 27.0,
+            "lbw": "3-1/4",
+            "finish_time": "1:22.64"
+        },
+        {
+            "place": 7,
+            "horse_no": 12,
+            "horse_name": "FRANCIS MEYNELL\u00a0(J394)",
+            "jockey": "M F Poon",
+            "trainer": "D Eustace",
+            "win_odds": 22.0,
+            "lbw": "3-1/2",
+            "finish_time": "1:22.70"
+        },
+        {
+            "place": 8,
+            "horse_no": 1,
+            "horse_name": "EXCELLENCE VALUE\u00a0(K093)",
+            "jockey": "H T Mo",
+            "trainer": "W Y So",
+            "win_odds": 69.0,
+            "lbw": "4",
+            "finish_time": "1:22.76"
+        },
+        {
+            "place": 9,
+            "horse_no": 13,
+            "horse_name": "DIAMOND SPARKLE\u00a0(L182)",
+            "jockey": "M Chadwick",
+            "trainer": "M Newnham",
+            "win_odds": 66.0,
+            "lbw": "4",
+            "finish_time": "1:22.79"
+        },
+        {
+            "place": 10,
+            "horse_no": 8,
+            "horse_name": "SILVERY KNIGHT\u00a0(L236)",
+            "jockey": "L Hewitson",
+            "trainer": "D J Whyte",
+            "win_odds": 108.0,
+            "lbw": "6",
+            "finish_time": "1:23.11"
+        },
+        {
+            "place": 11,
+            "horse_no": 4,
+            "horse_name": "JOY TOGETHER\u00a0(L227)",
+            "jockey": "C L Chau",
+            "trainer": "C W Chang",
+            "win_odds": 82.0,
+            "lbw": "6-3/4",
+            "finish_time": "1:23.22"
+        },
+        {
+            "place": 12,
+            "horse_no": 9,
+            "horse_name": "PRESIDENT PEGASUS\u00a0(L241)",
+            "jockey": "K Teetan",
+            "trainer": "C S Shum",
+            "win_odds": 18.0,
+            "lbw": "7-1/4",
+            "finish_time": "1:23.30"
+        },
+        {
+            "place": 13,
+            "horse_no": 2,
+            "horse_name": "TRUE BROTHERS\u00a0(L381)",
+            "jockey": "P N Wong",
+            "trainer": "Y S Tsui",
+            "win_odds": 109.0,
+            "lbw": "7-1/2",
+            "finish_time": "1:23.31"
+        },
+        {
+            "place": 14,
+            "horse_no": 10,
+            "horse_name": "VOYAGE BOSS\u00a0(K321)",
+            "jockey": "H Y Yuen",
+            "trainer": "F C Lor",
+            "win_odds": 5.1,
+            "lbw": "8",
+            "finish_time": "1:23.41"
+        }
+    ],
+    "6": [
+        {
+            "place": 1,
+            "horse_no": 3,
+            "horse_name": "SUPER GOLDENDRAGON\u00a0(K458)",
+            "jockey": "K C Leung",
+            "trainer": "W K Mo",
+            "win_odds": 5.0,
+            "lbw": "---",
+            "finish_time": "1:47.75"
+        },
+        {
+            "place": 2,
+            "horse_no": 1,
+            "horse_name": "VICTOR SUPREME\u00a0(K547)",
+            "jockey": "C Y Ho",
+            "trainer": "P F Yiu",
+            "win_odds": 3.9,
+            "lbw": "1-1/2",
+            "finish_time": "1:47.99"
+        },
+        {
+            "place": 3,
+            "horse_no": 8,
+            "horse_name": "SUPREME MASTERMIND\u00a0(K387)",
+            "jockey": "L Ferraris",
+            "trainer": "M Newnham",
+            "win_odds": 10.0,
+            "lbw": "2",
+            "finish_time": "1:48.08"
+        },
+        {
+            "place": 4,
+            "horse_no": 4,
+            "horse_name": "ROMANTIC LAOS\u00a0(G476)",
+            "jockey": "C L Chau",
+            "trainer": "C W Chang",
+            "win_odds": 31.0,
+            "lbw": "2-1/2",
+            "finish_time": "1:48.15"
+        },
+        {
+            "place": 5,
+            "horse_no": 9,
+            "horse_name": "FAST SPEED\u00a0(K351)",
+            "jockey": "M Chadwick",
+            "trainer": "Y S Tsui",
+            "win_odds": 24.0,
+            "lbw": "2-3/4",
+            "finish_time": "1:48.20"
+        },
+        {
+            "place": 6,
+            "horse_no": 7,
+            "horse_name": "LUCKY YEAR\u00a0(K443)",
+            "jockey": "H Bentley",
+            "trainer": "C H Yip",
+            "win_odds": 4.6,
+            "lbw": "3",
+            "finish_time": "1:48.21"
+        },
+        {
+            "place": 7,
+            "horse_no": 13,
+            "horse_name": "STAR BROSE\u00a0(J463)",
+            "jockey": "M L Yeung",
+            "trainer": "D A Hayes",
+            "win_odds": 8.3,
+            "lbw": "3-1/4",
+            "finish_time": "1:48.29"
+        },
+        {
+            "place": 8,
+            "horse_no": 12,
+            "horse_name": "ON THE LASH\u00a0(J182)",
+            "jockey": "A Atzeni",
+            "trainer": "P C Ng",
+            "win_odds": 21.0,
+            "lbw": "7-1/4",
+            "finish_time": "1:48.90"
+        },
+        {
+            "place": 9,
+            "horse_no": 6,
+            "horse_name": "ROMANTIC FANTASY\u00a0(H168)",
+            "jockey": "Z Purton",
+            "trainer": "J Richards",
+            "win_odds": 9.3,
+            "lbw": "10-1/4",
+            "finish_time": "1:49.40"
+        },
+        {
+            "place": 10,
+            "horse_no": 5,
+            "horse_name": "FLUORESCENCE\u00a0(L124)",
+            "jockey": "A Badel",
+            "trainer": "K L Man",
+            "win_odds": 94.0,
+            "lbw": "12-3/4",
+            "finish_time": "1:49.78"
+        },
+        {
+            "place": 11,
+            "horse_no": 11,
+            "horse_name": "MASSIVE GLORY\u00a0(K205)",
+            "jockey": "Y L Chung",
+            "trainer": "F C Lor",
+            "win_odds": 97.0,
+            "lbw": "13",
+            "finish_time": "1:49.84"
+        },
+        {
+            "place": 12,
+            "horse_no": 2,
+            "horse_name": "DRAGON ON SNOW\u00a0(L111)",
+            "jockey": "R Kingscote",
+            "trainer": "D Eustace",
+            "win_odds": 116.0,
+            "lbw": "13-1/4",
+            "finish_time": "1:49.86"
+        },
+        {
+            "place": 13,
+            "horse_no": 14,
+            "horse_name": "CIRCUIT CENTURY\u00a0(K308)",
+            "jockey": "H T Mo",
+            "trainer": "C S Shum",
+            "win_odds": 22.0,
+            "lbw": "14-1/2",
+            "finish_time": "1:50.07"
+        },
+        {
+            "place": 14,
+            "horse_no": 10,
+            "horse_name": "GOOD GOOD\u00a0(J224)",
+            "jockey": "K Teetan",
+            "trainer": "J Size",
+            "win_odds": 48.0,
+            "lbw": "15-1/2",
+            "finish_time": "1:50.23"
+        }
+    ],
+    "7": [
+        {
+            "place": 1,
+            "horse_no": 7,
+            "horse_name": "CAVAMAZING\u00a0(L344)",
+            "jockey": "M L Yeung",
+            "trainer": "W Y So",
+            "win_odds": 38.0,
+            "lbw": "---",
+            "finish_time": "1:08.67"
+        },
+        {
+            "place": 2,
+            "horse_no": 10,
+            "horse_name": "KA YING RADIANCE\u00a0(K134)",
+            "jockey": "M F Poon",
+            "trainer": "D A Hayes",
+            "win_odds": 3.4,
+            "lbw": "1/2",
+            "finish_time": "1:08.74"
+        },
+        {
+            "place": 3,
+            "horse_no": 11,
+            "horse_name": "RIDING HIGH\u00a0(J403)",
+            "jockey": "L Hewitson",
+            "trainer": "D J Whyte",
+            "win_odds": 16.0,
+            "lbw": "2-1/4",
+            "finish_time": "1:09.01"
+        },
+        {
+            "place": 4,
+            "horse_no": 2,
+            "horse_name": "LIGHT YEARS GLORY\u00a0(K204)",
+            "jockey": "L Ferraris",
+            "trainer": "D Eustace",
+            "win_odds": 3.7,
+            "lbw": "3-1/4",
+            "finish_time": "1:09.19"
+        },
+        {
+            "place": 5,
+            "horse_no": 5,
+            "horse_name": "RISING FROM ASHES\u00a0(G209)",
+            "jockey": "J Orman",
+            "trainer": "C W Chang",
+            "win_odds": 81.0,
+            "lbw": "3-1/2",
+            "finish_time": "1:09.23"
+        },
+        {
+            "place": 6,
+            "horse_no": 4,
+            "horse_name": "JOKER ORBIT\u00a0(L115)",
+            "jockey": "C L Chau",
+            "trainer": "C S Shum",
+            "win_odds": 21.0,
+            "lbw": "4",
+            "finish_time": "1:09.29"
+        },
+        {
+            "place": 7,
+            "horse_no": 9,
+            "horse_name": "HIGH RISE VICTORY\u00a0(L128)",
+            "jockey": "K C Leung",
+            "trainer": "C H Yip",
+            "win_odds": 162.0,
+            "lbw": "4-1/4",
+            "finish_time": "1:09.33"
+        },
+        {
+            "place": 8,
+            "horse_no": 14,
+            "horse_name": "LAKESHORE HERO\u00a0(J288)",
+            "jockey": "A Atzeni",
+            "trainer": "D J Hall",
+            "win_odds": 12.0,
+            "lbw": "4-1/2",
+            "finish_time": "1:09.38"
+        },
+        {
+            "place": 9,
+            "horse_no": 8,
+            "horse_name": "MY WYNDFALL\u00a0(K445)",
+            "jockey": "M Chadwick",
+            "trainer": "J Richards",
+            "win_odds": 132.0,
+            "lbw": "5",
+            "finish_time": "1:09.48"
+        },
+        {
+            "place": 10,
+            "horse_no": 6,
+            "horse_name": "SPIRITED STEED\u00a0(L278)",
+            "jockey": "Z Purton",
+            "trainer": "K W Lui",
+            "win_odds": 3.5,
+            "lbw": "5-3/4",
+            "finish_time": "1:09.59"
+        },
+        {
+            "place": 11,
+            "horse_no": 3,
+            "horse_name": "EVER WEALTH\u00a0(L317)",
+            "jockey": "C Y Ho",
+            "trainer": "P F Yiu",
+            "win_odds": 32.0,
+            "lbw": "7-3/4",
+            "finish_time": "1:09.91"
+        },
+        {
+            "place": 12,
+            "horse_no": 12,
+            "horse_name": "LUCKY GIBS\u00a0(L157)",
+            "jockey": "P N Wong",
+            "trainer": "K L Man",
+            "win_odds": 159.0,
+            "lbw": "8",
+            "finish_time": "1:09.93"
+        },
+        {
+            "place": 13,
+            "horse_no": 13,
+            "horse_name": "VICTORY CHAMPION\u00a0(K240)",
+            "jockey": "A Badel",
+            "trainer": "F C Lor",
+            "win_odds": 16.0,
+            "lbw": "8-1/4",
+            "finish_time": "1:09.98"
+        },
+        {
+            "place": 14,
+            "horse_no": 1,
+            "horse_name": "MASTER CHAMPION\u00a0(K266)",
+            "jockey": "H Y Yuen",
+            "trainer": "P C Ng",
+            "win_odds": 31.0,
+            "lbw": "8-1/4",
+            "finish_time": "1:09.99"
+        }
+    ],
+    "8": [
+        {
+            "place": 1,
+            "horse_no": 9,
+            "horse_name": "E HO HO\u00a0(L119)",
+            "jockey": "H Bentley",
+            "trainer": "K L Man",
+            "win_odds": 50.0,
+            "lbw": "---",
+            "finish_time": "1:08.76"
+        },
+        {
+            "place": 2,
+            "horse_no": 4,
+            "horse_name": "VIRTUS GLORY\u00a0(L298)",
+            "jockey": "B Avdulla",
+            "trainer": "P F Yiu",
+            "win_odds": 3.4,
+            "lbw": "3/4",
+            "finish_time": "1:08.87"
+        },
+        {
+            "place": 3,
+            "horse_no": 11,
+            "horse_name": "SPEEDY POWER\u00a0(L362)",
+            "jockey": "A Atzeni",
+            "trainer": "J Cummings",
+            "win_odds": 4.1,
+            "lbw": "3/4",
+            "finish_time": "1:08.88"
+        },
+        {
+            "place": 4,
+            "horse_no": 8,
+            "horse_name": "BETTER AND BETTER\u00a0(K277)",
+            "jockey": "A Badel",
+            "trainer": "F C Lor",
+            "win_odds": 9.9,
+            "lbw": "1-1/2",
+            "finish_time": "1:08.99"
+        },
+        {
+            "place": 5,
+            "horse_no": 7,
+            "horse_name": "GOLDEN TRIUMPH\u00a0(K506)",
+            "jockey": "L Ferraris",
+            "trainer": "D Eustace",
+            "win_odds": 17.0,
+            "lbw": "2",
+            "finish_time": "1:09.06"
+        },
+        {
+            "place": 6,
+            "horse_no": 13,
+            "horse_name": "MONTA FRUTTA\u00a0(H455)",
+            "jockey": "Y L Chung",
+            "trainer": "A S Cruz",
+            "win_odds": 33.0,
+            "lbw": "2-1/2",
+            "finish_time": "1:09.16"
+        },
+        {
+            "place": 7,
+            "horse_no": 3,
+            "horse_name": "OLDTOWN\u00a0(K105)",
+            "jockey": "C L Chau",
+            "trainer": "M Newnham",
+            "win_odds": 51.0,
+            "lbw": "3-1/4",
+            "finish_time": "1:09.28"
+        },
+        {
+            "place": 8,
+            "horse_no": 12,
+            "horse_name": "TYCOON EXPRESS\u00a0(K376)",
+            "jockey": "C Y Ho",
+            "trainer": "C Fownes",
+            "win_odds": 30.0,
+            "lbw": "3-1/4",
+            "finish_time": "1:09.30"
+        },
+        {
+            "place": 9,
+            "horse_no": 5,
+            "horse_name": "PRIME ACE\u00a0(L443)",
+            "jockey": "K Teetan",
+            "trainer": "J Size",
+            "win_odds": 12.0,
+            "lbw": "4-1/2",
+            "finish_time": "1:09.46"
+        },
+        {
+            "place": 10,
+            "horse_no": 14,
+            "horse_name": "CASA PRIMO\u00a0(L201)",
+            "jockey": "R Kingscote",
+            "trainer": "C W Chang",
+            "win_odds": 12.0,
+            "lbw": "4-1/2",
+            "finish_time": "1:09.48"
+        },
+        {
+            "place": 11,
+            "horse_no": 6,
+            "horse_name": "PRIVATE WEALTH\u00a0(L177)",
+            "jockey": "J Orman",
+            "trainer": "D J Hall",
+            "win_odds": 16.0,
+            "lbw": "5-3/4",
+            "finish_time": "1:09.68"
+        },
+        {
+            "place": 12,
+            "horse_no": 10,
+            "horse_name": "LUCKY BID\u00a0(L274)",
+            "jockey": "M Chadwick",
+            "trainer": "J Richards",
+            "win_odds": 118.0,
+            "lbw": "6-3/4",
+            "finish_time": "1:09.84"
+        },
+        {
+            "place": 13,
+            "horse_no": 1,
+            "horse_name": "ALMIGHTY WARRIOR\u00a0(L245)",
+            "jockey": "Z Purton",
+            "trainer": "K W Lui",
+            "win_odds": 5.9,
+            "lbw": "8-1/4",
+            "finish_time": "1:10.07"
+        },
+        {
+            "place": 14,
+            "horse_no": 2,
+            "horse_name": "HEALTHY HEALTHY\u00a0(H203)",
+            "jockey": "H Y Yuen",
+            "trainer": "P C Ng",
+            "win_odds": 59.0,
+            "lbw": "11-1/4",
+            "finish_time": "1:10.55"
+        }
+    ],
+    "9": [
+        {
+            "place": 1,
+            "horse_no": 1,
+            "horse_name": "SKY JEWELLERY\u00a0(K032)",
+            "jockey": "J Orman",
+            "trainer": "J Size",
+            "win_odds": 8.1,
+            "lbw": "---",
+            "finish_time": "1:20.60"
+        },
+        {
+            "place": 2,
+            "horse_no": 2,
+            "horse_name": "HOT DELIGHT\u00a0(K583)",
+            "jockey": "C Y Ho",
+            "trainer": "K W Lui",
+            "win_odds": 3.9,
+            "lbw": "SH",
+            "finish_time": "1:20.62"
+        },
+        {
+            "place": 3,
+            "horse_no": 11,
+            "horse_name": "DROMBEG BANNER\u00a0(H117)",
+            "jockey": "H Y Yuen",
+            "trainer": "P C Ng",
+            "win_odds": 5.0,
+            "lbw": "1-1/2",
+            "finish_time": "1:20.85"
+        },
+        {
+            "place": 4,
+            "horse_no": 9,
+            "horse_name": "INFINITE RESOLVE\u00a0(K369)",
+            "jockey": "A Atzeni",
+            "trainer": "M Newnham",
+            "win_odds": 20.0,
+            "lbw": "1-3/4",
+            "finish_time": "1:20.88"
+        },
+        {
+            "place": 5,
+            "horse_no": 10,
+            "horse_name": "REGAL GEM\u00a0(K258)",
+            "jockey": "K C Leung",
+            "trainer": "F C Lor",
+            "win_odds": 44.0,
+            "lbw": "1-3/4",
+            "finish_time": "1:20.88"
+        },
+        {
+            "place": 6,
+            "horse_no": 3,
+            "horse_name": "CHILL EASY\u00a0(L148)",
+            "jockey": "C L Chau",
+            "trainer": "P F Yiu",
+            "win_odds": 8.3,
+            "lbw": "2-1/4",
+            "finish_time": "1:20.98"
+        },
+        {
+            "place": 7,
+            "horse_no": 4,
+            "horse_name": "TOP DRAGON\u00a0(J481)",
+            "jockey": "Z Purton",
+            "trainer": "W Y So",
+            "win_odds": 6.5,
+            "lbw": "2-1/2",
+            "finish_time": "1:21.00"
+        },
+        {
+            "place": 8,
+            "horse_no": 12,
+            "horse_name": "PUBLIC ATTENTION\u00a0(L035)",
+            "jockey": "A Badel",
+            "trainer": "B Crawford",
+            "win_odds": 5.9,
+            "lbw": "3-1/2",
+            "finish_time": "1:21.16"
+        },
+        {
+            "place": 9,
+            "horse_no": 6,
+            "horse_name": "BEAUTY BOLT\u00a0(K491)",
+            "jockey": "Y L Chung",
+            "trainer": "A S Cruz",
+            "win_odds": 14.0,
+            "lbw": "4-3/4",
+            "finish_time": "1:21.38"
+        },
+        {
+            "place": 10,
+            "horse_no": 5,
+            "horse_name": "VICTORY SKY\u00a0(J540)",
+            "jockey": "M F Poon",
+            "trainer": "P F Yiu",
+            "win_odds": 51.0,
+            "lbw": "6-1/2",
+            "finish_time": "1:21.66"
+        },
+        {
+            "place": 11,
+            "horse_no": 8,
+            "horse_name": "BRAVEFIELD\u00a0(L513)",
+            "jockey": "L Hewitson",
+            "trainer": "C S Shum",
+            "win_odds": 66.0,
+            "lbw": "7-1/4",
+            "finish_time": "1:21.78"
+        },
+        {
+            "place": 12,
+            "horse_no": 7,
+            "horse_name": "EMBLAZON\u00a0(K122)",
+            "jockey": "H Bentley",
+            "trainer": "W K Mo",
+            "win_odds": 73.0,
+            "lbw": "7-3/4",
+            "finish_time": "1:21.85"
+        }
+    ],
+    "10": [
+        {
+            "place": 1,
+            "horse_no": 3,
+            "horse_name": "AEROVOLANIC\u00a0(K400)",
+            "jockey": "H Y Yuen",
+            "trainer": "P C Ng",
+            "win_odds": 5.6,
+            "lbw": "---",
+            "finish_time": "1:21.21"
+        },
+        {
+            "place": 2,
+            "horse_no": 1,
+            "horse_name": "CHILL BUDDY\u00a0(K469)",
+            "jockey": "C L Chau",
+            "trainer": "P F Yiu",
+            "win_odds": 15.0,
+            "lbw": "HD",
+            "finish_time": "1:21.24"
+        },
+        {
+            "place": 3,
+            "horse_no": 7,
+            "horse_name": "SUPERB SPIRIT\u00a0(L040)",
+            "jockey": "Z Purton",
+            "trainer": "K W Lui",
+            "win_odds": 3.8,
+            "lbw": "3/4",
+            "finish_time": "1:21.34"
+        },
+        {
+            "place": 4,
+            "horse_no": 14,
+            "horse_name": "MASTER LUCKY\u00a0(K582)",
+            "jockey": "A Atzeni",
+            "trainer": "J Size",
+            "win_odds": 2.9,
+            "lbw": "3/4",
+            "finish_time": "1:21.35"
+        },
+        {
+            "place": 5,
+            "horse_no": 10,
+            "horse_name": "SAMARKAND\u00a0(H070)",
+            "jockey": "L Hewitson",
+            "trainer": "J Richards",
+            "win_odds": 117.0,
+            "lbw": "1",
+            "finish_time": "1:21.39"
+        },
+        {
+            "place": 6,
+            "horse_no": 12,
+            "horse_name": "NATURAL NUMBERS\u00a0(L166)",
+            "jockey": "M Chadwick",
+            "trainer": "Y S Tsui",
+            "win_odds": 38.0,
+            "lbw": "1-1/2",
+            "finish_time": "1:21.45"
+        },
+        {
+            "place": 7,
+            "horse_no": 6,
+            "horse_name": "FORTUNE BOY\u00a0(K098)",
+            "jockey": "B Avdulla",
+            "trainer": "D A Hayes",
+            "win_odds": 44.0,
+            "lbw": "1-3/4",
+            "finish_time": "1:21.51"
+        },
+        {
+            "place": 8,
+            "horse_no": 9,
+            "horse_name": "PAPAYA BROSE\u00a0(L264)",
+            "jockey": "C Y Ho",
+            "trainer": "C Fownes",
+            "win_odds": 16.0,
+            "lbw": "2-1/2",
+            "finish_time": "1:21.59"
+        },
+        {
+            "place": 9,
+            "horse_no": 13,
+            "horse_name": "KING OF FIGHTERS\u00a0(K174)",
+            "jockey": "K Teetan",
+            "trainer": "B Crawford",
+            "win_odds": 66.0,
+            "lbw": "3",
+            "finish_time": "1:21.69"
+        },
+        {
+            "place": 10,
+            "horse_no": 8,
+            "horse_name": "MONEY GAMES\u00a0(L402)",
+            "jockey": "J Orman",
+            "trainer": "M Newnham",
+            "win_odds": 13.0,
+            "lbw": "3-1/4",
+            "finish_time": "1:21.72"
+        },
+        {
+            "place": 11,
+            "horse_no": 4,
+            "horse_name": "FLYING FORTRESS\u00a0(J445)",
+            "jockey": "H Bentley",
+            "trainer": "W K Mo",
+            "win_odds": 8.0,
+            "lbw": "3-1/4",
+            "finish_time": "1:21.74"
+        },
+        {
+            "place": 12,
+            "horse_no": 5,
+            "horse_name": "SONIC LINER\u00a0(L410)",
+            "jockey": "P N Wong",
+            "trainer": "J Richards",
+            "win_odds": 158.0,
+            "lbw": "4",
+            "finish_time": "1:21.86"
+        },
+        {
+            "place": 13,
+            "horse_no": 11,
+            "horse_name": "LEATHER HERO\u00a0(L473)",
+            "jockey": "M F Poon",
+            "trainer": "C H Yip",
+            "win_odds": 94.0,
+            "lbw": "5",
+            "finish_time": "1:22.00"
+        },
+        {
+            "place": 14,
+            "horse_no": 2,
+            "horse_name": "JOYFIELD\u00a0(L514)",
+            "jockey": "K C Leung",
+            "trainer": "C S Shum",
+            "win_odds": 96.0,
+            "lbw": "6-1/4",
+            "finish_time": "1:22.23"
+        }
+    ],
+    "11": [
+        {
+            "place": 1,
+            "horse_no": 6,
+            "horse_name": "ABSOLUTE HEART\u00a0(L226)",
+            "jockey": "K C Leung",
+            "trainer": "W K Mo",
+            "win_odds": 5.5,
+            "lbw": "---",
+            "finish_time": "1:08.46"
+        },
+        {
+            "place": 2,
+            "horse_no": 11,
+            "horse_name": "MAJESTIC VALOUR\u00a0(L016)",
+            "jockey": "Z Purton",
+            "trainer": "C S Shum",
+            "win_odds": 7.3,
+            "lbw": "1/2",
+            "finish_time": "1:08.55"
+        },
+        {
+            "place": 3,
+            "horse_no": 13,
+            "horse_name": "THOUSAND SPIRIT\u00a0(K365)",
+            "jockey": "L Hewitson",
+            "trainer": "M Newnham",
+            "win_odds": 81.0,
+            "lbw": "1-1/2",
+            "finish_time": "1:08.68"
+        },
+        {
+            "place": 4,
+            "horse_no": 7,
+            "horse_name": "GLORYSPEED\u00a0(L519)",
+            "jockey": "Y L Chung",
+            "trainer": "A S Cruz",
+            "win_odds": 15.0,
+            "lbw": "1-1/2",
+            "finish_time": "1:08.70"
+        },
+        {
+            "place": 5,
+            "horse_no": 9,
+            "horse_name": "THE HEIR\u00a0(H459)",
+            "jockey": "H Bentley",
+            "trainer": "C Fownes",
+            "win_odds": 15.0,
+            "lbw": "1-3/4",
+            "finish_time": "1:08.73"
+        },
+        {
+            "place": 6,
+            "horse_no": 4,
+            "horse_name": "SUPER STRONG KID\u00a0(K180)",
+            "jockey": "L Ferraris",
+            "trainer": "K L Man",
+            "win_odds": 9.4,
+            "lbw": "2-1/2",
+            "finish_time": "1:08.85"
+        },
+        {
+            "place": 7,
+            "horse_no": 10,
+            "horse_name": "LUCRATIVE EIGHT\u00a0(K542)",
+            "jockey": "M F Poon",
+            "trainer": "P F Yiu",
+            "win_odds": 11.0,
+            "lbw": "2-1/2",
+            "finish_time": "1:08.85"
+        },
+        {
+            "place": 8,
+            "horse_no": 1,
+            "horse_name": "PI LEGEND\u00a0(L117)",
+            "jockey": "K Teetan",
+            "trainer": "B Crawford",
+            "win_odds": 7.1,
+            "lbw": "2-1/2",
+            "finish_time": "1:08.87"
+        },
+        {
+            "place": 9,
+            "horse_no": 12,
+            "horse_name": "MR DESIRA\u00a0(K411)",
+            "jockey": "A Badel",
+            "trainer": "C Fownes",
+            "win_odds": 20.0,
+            "lbw": "3-1/2",
+            "finish_time": "1:09.01"
+        },
+        {
+            "place": 10,
+            "horse_no": 5,
+            "horse_name": "RED SEA\u00a0(L195)",
+            "jockey": "A Atzeni",
+            "trainer": "J Richards",
+            "win_odds": 39.0,
+            "lbw": "3-3/4",
+            "finish_time": "1:09.04"
+        },
+        {
+            "place": 11,
+            "horse_no": 8,
+            "horse_name": "SPICY STANDARD\u00a0(J520)",
+            "jockey": "B Avdulla",
+            "trainer": "J Size",
+            "win_odds": 3.9,
+            "lbw": "4-3/4",
+            "finish_time": "1:09.20"
+        },
+        {
+            "place": 12,
+            "horse_no": 2,
+            "horse_name": "PERFECT GENERAL\u00a0(J417)",
+            "jockey": "C Y Ho",
+            "trainer": "C Fownes",
+            "win_odds": 63.0,
+            "lbw": "9-1/4",
+            "finish_time": "1:09.92"
+        },
+        {
+            "place": 13,
+            "horse_no": 14,
+            "horse_name": "MOUNT EVEREST\u00a0(K237)",
+            "jockey": "M L Yeung",
+            "trainer": "W Y So",
+            "win_odds": 54.0,
+            "lbw": "10-1/2",
+            "finish_time": "1:10.14"
+        },
+        {
+            "place": 14,
+            "horse_no": 3,
+            "horse_name": "EFFORTLESS WIN\u00a0(L310)",
+            "jockey": "C L Chau",
+            "trainer": "F C Lor",
+            "win_odds": 19.0,
+            "lbw": "13-1/4",
+            "finish_time": "1:10.59"
+        }
+    ],
+    "5": [
+        {
+            "place": 1,
+            "horse_no": 3,
+            "horse_name": "KA YING LIGHTNING\u00a0(L137)",
+            "jockey": "A Atzeni",
+            "trainer": "D J Hall",
+            "win_odds": 4.7,
+            "lbw": "---",
+            "finish_time": "0:55.94"
+        },
+        {
+            "place": 2,
+            "horse_no": 1,
+            "horse_name": "JEDI SPURS\u00a0(L441)",
+            "jockey": "B Avdulla",
+            "trainer": "D A Hayes",
+            "win_odds": 2.0,
+            "lbw": "2",
+            "finish_time": "0:56.25"
+        },
+        {
+            "place": 3,
+            "horse_no": 6,
+            "horse_name": "HANDSOME HERO\u00a0(L346)",
+            "jockey": "C L Chau",
+            "trainer": "B Crawford",
+            "win_odds": 9.5,
+            "lbw": "2",
+            "finish_time": "0:56.25"
+        },
+        {
+            "place": 4,
+            "horse_no": 2,
+            "horse_name": "YEE CHEONG GLORY\u00a0(K074)",
+            "jockey": "J Orman",
+            "trainer": "J Richards",
+            "win_odds": 14.0,
+            "lbw": "3-1/4",
+            "finish_time": "0:56.47"
+        },
+        {
+            "place": 5,
+            "horse_no": 11,
+            "horse_name": "DOUBLE ALPHA\u00a0(L291)",
+            "jockey": "M F Poon",
+            "trainer": "C S Shum",
+            "win_odds": 9.4,
+            "lbw": "4",
+            "finish_time": "0:56.58"
+        },
+        {
+            "place": 6,
+            "horse_no": 12,
+            "horse_name": "PRECISION MIND\u00a0(L296)",
+            "jockey": "H T Mo",
+            "trainer": "Y S Tsui",
+            "win_odds": 26.0,
+            "lbw": "5",
+            "finish_time": "0:56.72"
+        },
+        {
+            "place": 7,
+            "horse_no": 13,
+            "horse_name": "HEROIC VANGUARD\u00a0(L180)",
+            "jockey": "K Teetan",
+            "trainer": "C H Yip",
+            "win_odds": 52.0,
+            "lbw": "6",
+            "finish_time": "0:56.91"
+        },
+        {
+            "place": 8,
+            "horse_no": 4,
+            "horse_name": "CHARMING BABE\u00a0(J513)",
+            "jockey": "H Y Yuen",
+            "trainer": "P F Yiu",
+            "win_odds": 24.0,
+            "lbw": "7-1/4",
+            "finish_time": "0:57.09"
+        },
+        {
+            "place": 9,
+            "horse_no": 5,
+            "horse_name": "CELESTIAL ZOUS\u00a0(L455)",
+            "jockey": "A Badel",
+            "trainer": "D J Whyte",
+            "win_odds": 59.0,
+            "lbw": "7-3/4",
+            "finish_time": "0:57.18"
+        },
+        {
+            "place": 10,
+            "horse_no": 10,
+            "horse_name": "CLASSIC TRIPLE\u00a0(L212)",
+            "jockey": "K C Leung",
+            "trainer": "W Y So",
+            "win_odds": 24.0,
+            "lbw": "8",
+            "finish_time": "0:57.22"
+        },
+        {
+            "place": 11,
+            "horse_no": 8,
+            "horse_name": "SUPREME DATA\u00a0(L262)",
+            "jockey": "R Kingscote",
+            "trainer": "P F Yiu",
+            "win_odds": 28.0,
+            "lbw": "8-1/2",
+            "finish_time": "0:57.28"
+        },
+        {
+            "place": 12,
+            "horse_no": 7,
+            "horse_name": "HOWEVER\u00a0(L350)",
+            "jockey": "C Y Ho",
+            "trainer": "C Fownes",
+            "win_odds": 66.0,
+            "lbw": "9-1/2",
+            "finish_time": "0:57.46"
+        },
+        {
+            "place": 13,
+            "horse_no": 14,
+            "horse_name": "CHAMP'S DOMAIN\u00a0(L318)",
+            "jockey": "L Ferraris",
+            "trainer": "W Y So",
+            "win_odds": 70.0,
+            "lbw": "11",
+            "finish_time": "0:57.71"
+        },
+        {
+            "place": 14,
+            "horse_no": 9,
+            "horse_name": "TALENTS CHAMPION\u00a0(L295)",
+            "jockey": "M L Yeung",
+            "trainer": "D A Hayes",
+            "win_odds": 79.0,
+            "lbw": "19-1/2",
+            "finish_time": "0:59.06"
+        }
+    ]
+}
