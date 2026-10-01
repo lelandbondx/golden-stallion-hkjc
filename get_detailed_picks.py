@@ -194,22 +194,23 @@ def run():
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         debutant_penalty = np.where((consensus > 5.0) | has_strong_trial, 0.0, debutant_penalty_val)
 
-        # First-Time Gear Boost (Blinkers B1 / Visor V1 split):
+        # First-Time Gear Boost (Blinkers B1 3.0% / Visor V1 2.5%):
         if 'horse_gear' in df_runners.columns:
             has_B1 = df_runners['horse_gear'].astype(str).str.contains('B1')
             has_V1 = df_runners['horse_gear'].astype(str).str.contains('V1')
-            first_time_gear_boost = np.where(has_B1, 0.04, np.where(has_V1, 0.03, 0.0))
+            first_time_gear_boost = np.where(has_B1, 0.03, np.where(has_V1, 0.025, 0.0))
         else:
             first_time_gear_boost = 0.0
 
-        # False Favorite Penalty: Reduced to 5% penalty (-0.05) based on Ronan's feedback
-        # EXEMPTION: Class droppers (class_drop > 0) and horses with trouble/interference (had_trouble == 1)
+        # False Favorite Penalty: Calibrated to 3% penalty (-0.03) with strict incident/vet protection
+        # EXEMPTION: Class droppers, horses with in-race trouble/interference, or prior vet finding
         false_fav_penalty = np.where(
             (df_runners['implied_prob'] > 0.20) & 
             (recent_pos > 6.0) & 
             (class_drop <= 0) & 
-            (df_runners['had_trouble'] == 0), 
-            -0.05, 
+            (df_runners['had_trouble'] == 0) &
+            (vet_issue == 0), 
+            -0.03, 
             0.0
         )
         
@@ -227,12 +228,13 @@ def run():
         speed_count = (df_runners['avg_first_pos'] <= 3.5).sum()
         
         closer_pace_boost = 0.0
+        frontrunner_pace_penalty = 0.0
         closer_pace_penalty = 0.0
         lone_speed_boost = 0.0
         
-        # Late-Closer Boost: Closers who have a proven elite sectional burst (< 22.5s)
+        # Late-Closer Boost: Closers who have a proven elite sectional burst (< 22.5s) (Tuned to +1.0%)
         is_elite_closer = (df_runners['avg_first_pos'] > 5.5) & (df_runners['best_last_sec'] < 22.5)
-        late_closer_boost = np.where(is_elite_closer, 0.02, 0.0)
+        late_closer_boost = np.where(is_elite_closer, 0.01, 0.0)
         
         # Smart Wet Turf & Overseas Surface Adjustments
         race_track_type = str(race.get('track', 'TURF')).upper()
@@ -256,27 +258,26 @@ def run():
             )
             polytrack_awt_boost = np.where(has_poly_form, 0.025, 0.0)
             
-        # Apply Pace Pressure Refinements (Tuned down to 2% to ensure balanced split)
-        # 1. Pace collapse trigger raised to 4+ speed horses
+        # Apply Pace Pressure Refinements
+        # 1. Pace collapse trigger (4+ speed horses): Frontrunners penalized (-2.5%), closers boosted (+2.0%)
         if speed_count >= 4:
-            # High Pace Pressure: pace collapse likely. Boost closers, neutralize on-speed wet boost.
             on_speed_wet_boost = 0.0
+            frontrunner_pace_penalty = np.where(df_runners['avg_first_pos'] <= 3.5, -0.025, 0.0)
             closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.02, 0.0)
         elif speed_count <= 1:
-            # Low Pace Pressure: speed bias highly likely. Boost lone speed (if in decent form or elite jockey), penalize deep closers
+            # Low Pace Pressure: speed bias likely. Boost lone speed, soften deep closer penalty to -1.0%
             is_elite_jockey_leader = df_runners['jockey'].astype(str).str.strip().str.upper().isin(['Z PURTON', 'B AVDULLA', 'H BOWMAN', 'C Y HO', 'K TEETAN', 'A ATZENI', 'L FERRARIS'])
             lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & ((recent_pos <= 5.5) | is_elite_jockey_leader), 0.035, 0.0)
-            # Closer penalty limited to sprints (<=1200m) and non-elite closers (recent_pos > 4.0, no elite sectional burst)
             closer_pace_penalty = np.where(
                 (df_runners['avg_first_pos'] > 6.0) & 
                 (distance <= 1200) & 
                 (recent_pos > 4.0) & 
                 (df_runners['best_last_sec'] >= 22.5), 
-                -0.03, 
+                -0.01, 
                 0.0
             )
             
-        # Jockey/Trainer Combo Partnership Boost (Ronan's calibrated 2.5% boost):
+        # Jockey/Trainer Combo Partnership Boost (Gentle tie-breaker tuned to 0.5%):
         jockey_trainer_boost = 0.0
         try:
             if os.path.exists('data/jockey_trainer_partnerships.csv') and 'jockey' in df_runners.columns and 'trainer' in df_runners.columns:
@@ -313,11 +314,11 @@ def run():
             (df_runners['win_rate_jt'] >= 0.18) | 
             df_runners.apply(lambda r: (str(r.get('jockey', '')).strip().upper(), str(r.get('trainer', '')).strip().upper()) in MODERN_ELITE, axis=1)
         )
-        jockey_trainer_boost = np.where(is_elite_jt, 0.025, 0.0)
+        jockey_trainer_boost = np.where(is_elite_jt, 0.005, 0.0)
 
-        # Standalone Elite Jockey Win Conversion Boost (+2.5% for Tier-1 jockeys on in-form runners)
-        is_tier1_jockey = df_runners['jockey'].astype(str).str.strip().str.upper().isin(['Z PURTON', 'H BOWMAN', 'C Y HO', 'A ATZENI', 'B AVDULLA'])
-        elite_jockey_boost = np.where(is_tier1_jockey & (recent_pos <= 4.0) & (vet_issue == 0), 0.025, 0.0)
+        # Standalone Elite Jockey Win Conversion Boost (+1.5% strictly for Z Purton on in-form runners)
+        is_tier1_jockey = df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON'
+        elite_jockey_boost = np.where(is_tier1_jockey & (recent_pos <= 4.0) & (vet_issue == 0), 0.015, 0.0)
         
         # Happy Valley C-Course Draw Bias Adjustments
         is_hv = meeting.get('venue') == 'Happy Valley'
@@ -368,17 +369,13 @@ def run():
                 t_data = trial_features[clean_name]
                 t_pos = t_data.get('best_trial_pos_ratio', 1.0)
                 t_speed = t_data.get('best_trial_speed_diff', 0.0)
-                t_jockeys = [j.upper() for j in t_data.get('trial_jockeys', [])]
-                r_jockey = str(r.get('jockey', '')).strip().upper()
                 
-                jockey_match = r_jockey in t_jockeys
-                
-                # 1. Elite trial (placed top 35% with raceday jockey commitment)
-                if t_pos <= 0.35 and jockey_match:
-                    t_boost += 0.03
-                    
-                # 2. Raw speed trial (speed diff >= 0.5s faster than standard)
+                # 1. Raw speed trial (speed diff >= 0.5s faster than standard)
                 if t_speed >= 0.5:
+                    t_boost += 0.02
+                    
+                # 2. High quality trial vs top competition
+                if t_data.get('high_quality_trial', False):
                     t_boost += 0.02
                     
                 # 3. Poor trial (bottom 10% and slow)
@@ -399,9 +396,9 @@ def run():
         is_in_form_lightweight = (actual_weights <= 122) & (recent_pos <= 5.0) & (vet_issue == 0) & (weight_spread >= 14)
         lightweight_agility_boost = np.where(is_in_form_lightweight, 0.025, 0.0)
 
-        # Sha Tin Long Straight Closer Boost (Turf races >= 1200m)
+        # Sha Tin Long Straight Closer Boost (Turf races >= 1200m) (Tuned to +1.0%)
         is_st_turf = (meeting.get('venue') == 'Sha Tin') and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
-        st_closer_boost = np.where(is_st_turf & (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.8) & (distance >= 1200), 0.02, 0.0)
+        st_closer_boost = np.where(is_st_turf & (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.8) & (distance >= 1200), 0.01, 0.0)
 
         # Rating Dominance in Open/Group or Top Class races (Rating >= 15 pts above field median) (Calibrated to 5% boost)
         median_rtg = pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40).median()
@@ -463,7 +460,7 @@ def run():
         raw_closer_boost = closer_pace_boost + late_closer_boost + st_closer_boost + finisher_win_conversion_boost
         total_closer_boost = np.minimum(raw_closer_boost, 0.035)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + closer_pace_penalty + lone_speed_boost + elite_jockey_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + st_inside_draw_boost + st_wide_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + elite_jockey_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + st_inside_draw_boost + st_wide_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
         multiplier = np.maximum(multiplier, 0.1)
 
 
