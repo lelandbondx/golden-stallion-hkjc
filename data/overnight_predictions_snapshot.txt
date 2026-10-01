@@ -56,7 +56,6 @@ Pick 2: #2 LIGHT YEARS GLORY (Odds: 5.5) - RawRank: 2 - GSRank: 2 - Conf: 78% - 
 Pick 3: #10 KA YING RADIANCE (Odds: 4.0) - RawRank: 3 - GSRank: 3 - Conf: 71% - EV: -0.086 - Jockey: M F Poon
 Pick 4: #3 EVER WEALTH (Odds: 29.0) - RawRank: 4 - GSRank: 4 - Conf: 69% - EV: 0.087 - Jockey: C Y Ho
 Pick 5: #4 JOKER ORBIT (Odds: 15.0) - RawRank: 5 - GSRank: 5 - Conf: 53% - EV: 0.030 - Jockey: C L Chau
-[WARNING] Failed to write frozen predictions: [Errno 22] Invalid argument: 'C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\frozen_predictions_20261001.json'
 
 --- RACE 8 : Class 4 - 1200m ---
 PRIMARY: #6 PRIVATE WEALTH (Odds: 8.3) - Raw Rank: 3 - GS Rank: 3 - Reason: Top GS score (< 20.0 odds)

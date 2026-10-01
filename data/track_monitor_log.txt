@@ -2949,3 +2949,21 @@
 [2026-09-30 20:03:20] 📡 Auto-syncing updated data to origin main...
 [2026-09-30 20:03:21] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
 [2026-09-30 20:03:21] 📡 Auto-syncing updated data to origin main...
+[2026-09-30 20:03:22] 🚀 Live Streamlit app successfully synchronized with origin main.
+[2026-09-30 20:03:23] ⚠️ Git push note: To https://github.com/lelandbondx/golden-stallion-hkjc.git
+ ! [remote rejected] main -> main (cannot lock ref 'refs/heads/main': is at 82810dba599dee80f7b99c474d3979847aa78edb but expected b12b4fc9c8be3a809faa04e8089908de484b1906)
+error: failed to push some refs to 'https://github.com/lelandbondx/golden-stallion-hkjc.git'
+[2026-09-30 20:04:14] 🚨 ALERT: Race 1 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 2 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 3 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 4 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 5 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 6 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 7 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 8 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 9 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 10 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🚨 ALERT: Race 11 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-09-30 20:04:14] 🔄 Triggering prediction update...
+[2026-09-30 20:04:24] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
+[2026-09-30 20:04:24] 📡 Auto-syncing updated data to origin main...
