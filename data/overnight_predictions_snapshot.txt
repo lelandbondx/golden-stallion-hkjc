@@ -1,6 +1,5 @@
 Loading data...
 Meeting: Sha Tin - 2026-10-01 - Going: GOOD TO FIRM
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 1 : Class 5 - 1200m ---
 PRIMARY: #5 GOOD FORTUNE (Odds: 3.5) - Raw Rank: 1 - GS Rank: 1 - Reason: Fav <= 4.0 & raw rank 1-3
@@ -9,7 +8,6 @@ Pick 2: #1 SUNNY Q (Odds: 6.4) - RawRank: 2 - GSRank: 2 - Conf: 68% - EV: 0.002 
 Pick 3: #2 FALCON HUNTER (Odds: 6.9) - RawRank: 3 - GSRank: 3 - Conf: 68% - EV: 0.006 - Jockey: J Orman
 Pick 4: #10 VIVA CHALEUR (Odds: 7.7) - RawRank: 4 - GSRank: 4 - Conf: 67% - EV: -0.001 - Jockey: B Avdulla
 Pick 5: #8 GROOVY FEELING (Odds: 23.0) - RawRank: 5 - GSRank: 5 - Conf: 62% - EV: 0.060 - Jockey: P N Wong
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 2 : Class 5 - 1600m ---
 PRIMARY: #1 AMAZING DUCK (Odds: 3.2) - Raw Rank: 2 - GS Rank: 2 - Reason: Fav <= 4.0 & raw rank 1-3
@@ -18,7 +16,6 @@ Pick 2: #6 GENERAL SMART (Odds: 4.4) - RawRank: 1 - GSRank: 1 - Conf: 68% - EV: 
 Pick 3: #4 SUPER SICARIO (Odds: 37.0) - RawRank: 3 - GSRank: 3 - Conf: 68% - EV: 0.101 - Jockey: J Orman
 Pick 4: #9 ALL ARE MINE (Odds: 8.0) - RawRank: 4 - GSRank: 4 - Conf: 63% - EV: 0.009 - Jockey: A Badel
 Pick 5: #7 I EXCELLE (Odds: 13.0) - RawRank: 5 - GSRank: 5 - Conf: 61% - EV: 0.045 - Jockey: C Y Ho
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 3 : Group Three - 1000m ---
 PRIMARY: #4 COLOURFUL KING (Odds: 3.0) - Raw Rank: 3 - GS Rank: 2 - Reason: Fav <= 4.0 & raw rank 1-3
@@ -27,7 +24,6 @@ Pick 2: #2 CRIMSON FLASH (Odds: 4.1) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 
 Pick 3: #3 BEAUTY WAVES (Odds: 11.0) - RawRank: 2 - GSRank: 3 - Conf: 56% - EV: 0.085 - Jockey: C L Chau
 Pick 4: #6 BOTTOMUPTOGETHER (Odds: 12.0) - RawRank: 4 - GSRank: 4 - Conf: 49% - EV: 0.067 - Jockey: A Badel
 Pick 5: #1 RAGING BLIZZARD (Odds: 5.5) - RawRank: 6 - GSRank: 5 - Conf: 38% - EV: -0.050 - Jockey: B Avdulla
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 4 : Class 4 - 1400m ---
 PRIMARY: #10 VOYAGE BOSS (Odds: 4.5) - Raw Rank: 1 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
@@ -36,7 +32,6 @@ Pick 2: #6 PRESTIGE COME (Odds: 19.0) - RawRank: 7 - GSRank: 2 - Conf: 76% - EV:
 Pick 3: #3 CHILL PARTNERS (Odds: 20.0) - RawRank: 4 - GSRank: 3 - Conf: 76% - EV: 0.058 - Jockey: M L Yeung
 Pick 4: #14 STAR SATYR (Odds: 6.1) - RawRank: 3 - GSRank: 4 - Conf: 76% - EV: -0.036 - Jockey: Y L Chung
 Pick 5: #1 EXCELLENCE VALUE (Odds: 25.0) - RawRank: 2 - GSRank: 5 - Conf: 73% - EV: 0.062 - Jockey: H T Mo
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 5 : Class 4 - 1000m ---
 PRIMARY: #1 JEDI SPURS (Odds: 2.5) - Raw Rank: 3 - GS Rank: 3 - Reason: Fav <= 4.0 & raw rank 1-3
@@ -45,7 +40,6 @@ Pick 2: #3 KA YING LIGHTNING (Odds: 5.6) - RawRank: 1 - GSRank: 1 - Conf: 85% - 
 Pick 3: #2 YEE CHEONG GLORY (Odds: 25.0) - RawRank: 2 - GSRank: 2 - Conf: 81% - EV: 0.088 - Jockey: J Orman
 Pick 4: #7 HOWEVER (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 62% - EV: 0.046 - Jockey: C Y Ho
 Pick 5: #6 HANDSOME HERO (Odds: 16.0) - RawRank: 5 - GSRank: 5 - Conf: 60% - EV: 0.033 - Jockey: C L Chau
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 6 : Class 4 - 1800m ---
 PRIMARY: #3 SUPER GOLDENDRAGON (Odds: 2.9) - Raw Rank: 2 - GS Rank: 3 - Reason: Fav <= 4.0 & raw rank 1-3
@@ -54,7 +48,6 @@ Pick 2: #1 VICTOR SUPREME (Odds: 5.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV:
 Pick 3: #6 ROMANTIC FANTASY (Odds: 11.0) - RawRank: 3 - GSRank: 2 - Conf: 68% - EV: 0.055 - Jockey: Z Purton
 Pick 4: #4 ROMANTIC LAOS (Odds: 20.0) - RawRank: 5 - GSRank: 4 - Conf: 58% - EV: 0.066 - Jockey: C L Chau
 Pick 5: #8 SUPREME MASTERMIND (Odds: 7.2) - RawRank: 4 - GSRank: 5 - Conf: 55% - EV: -0.012 - Jockey: L Ferraris
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 7 : Class 4 - 1200m ---
 PRIMARY: #6 SPIRITED STEED (Odds: 3.3) - Raw Rank: 1 - GS Rank: 1 - Reason: Fav <= 4.0 & raw rank 1-3
@@ -63,7 +56,7 @@ Pick 2: #2 LIGHT YEARS GLORY (Odds: 5.5) - RawRank: 2 - GSRank: 2 - Conf: 78% - 
 Pick 3: #10 KA YING RADIANCE (Odds: 4.0) - RawRank: 3 - GSRank: 3 - Conf: 71% - EV: -0.086 - Jockey: M F Poon
 Pick 4: #3 EVER WEALTH (Odds: 29.0) - RawRank: 4 - GSRank: 4 - Conf: 69% - EV: 0.087 - Jockey: C Y Ho
 Pick 5: #4 JOKER ORBIT (Odds: 15.0) - RawRank: 5 - GSRank: 5 - Conf: 53% - EV: 0.030 - Jockey: C L Chau
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
+[WARNING] Failed to write frozen predictions: [Errno 22] Invalid argument: 'C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\frozen_predictions_20261001.json'
 
 --- RACE 8 : Class 4 - 1200m ---
 PRIMARY: #6 PRIVATE WEALTH (Odds: 8.3) - Raw Rank: 3 - GS Rank: 3 - Reason: Top GS score (< 20.0 odds)
@@ -72,7 +65,6 @@ Pick 2: #2 HEALTHY HEALTHY (Odds: 28.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - E
 Pick 3: #3 OLDTOWN (Odds: 23.0) - RawRank: 2 - GSRank: 2 - Conf: 83% - EV: 0.080 - Jockey: C L Chau
 Pick 4: #8 BETTER AND BETTER (Odds: 10.0) - RawRank: 4 - GSRank: 4 - Conf: 71% - EV: 0.017 - Jockey: A Badel
 Pick 5: #4 VIRTUS GLORY (Odds: 4.5) - RawRank: 5 - GSRank: 5 - Conf: 68% - EV: -0.088 - Jockey: B Avdulla
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 9 : Class 2 - 1400m ---
 PRIMARY: #2 HOT DELIGHT (Odds: 3.0) - Raw Rank: 1 - GS Rank: 2 - Reason: Fav <= 4.0 & raw rank 1-3
@@ -81,7 +73,6 @@ Pick 2: #3 CHILL EASY (Odds: 8.7) - RawRank: 2 - GSRank: 1 - Conf: 85% - EV: 0.0
 Pick 3: #9 INFINITE RESOLVE (Odds: 10.0) - RawRank: 3 - GSRank: 3 - Conf: 71% - EV: 0.027 - Jockey: A Atzeni
 Pick 4: #4 TOP DRAGON (Odds: 11.0) - RawRank: 4 - GSRank: 4 - Conf: 68% - EV: 0.030 - Jockey: Z Purton
 Pick 5: #1 SKY JEWELLERY (Odds: 6.7) - RawRank: 5 - GSRank: 5 - Conf: 60% - EV: -0.028 - Jockey: J Orman
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 10 : Class 3 - 1400m ---
 PRIMARY: #1 CHILL BUDDY (Odds: 10.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
@@ -90,7 +81,6 @@ Pick 2: #3 AEROVOLANIC (Odds: 6.3) - RawRank: 2 - GSRank: 2 - Conf: 77% - EV: 0.
 Pick 3: #7 SUPERB SPIRIT (Odds: 6.5) - RawRank: 3 - GSRank: 3 - Conf: 56% - EV: -0.027 - Jockey: Z Purton
 Pick 4: #5 SONIC LINER (Odds: 50.0) - RawRank: 6 - GSRank: 4 - Conf: 50% - EV: 0.071 - Jockey: P N Wong
 Pick 5: #4 FLYING FORTRESS (Odds: 6.9) - RawRank: 5 - GSRank: 5 - Conf: 50% - EV: -0.033 - Jockey: H Bentley
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
 
 --- RACE 11 : Class 3 - 1200m ---
 PRIMARY: #1 PI LEGEND (Odds: 4.7) - Raw Rank: 2 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
