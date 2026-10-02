@@ -8,7 +8,6 @@ Pick 2: #1 DOUBLE BINGO (Odds: 20.0) - RawRank: 4 - GSRank: 2 - Conf: 68% - EV: 
 Pick 3: #4 SOARING BRONCO (Odds: 20.0) - RawRank: 2 - GSRank: 3 - Conf: 65% - EV: 0.028 - Jockey: J Orman
 Pick 4: #8 VIVA TASTE (Odds: 20.0) - RawRank: 3 - GSRank: 4 - Conf: 60% - EV: 0.022 - Jockey: M Chadwick
 Pick 5: #14 HAPPYDEARHAPPYDEER (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 56% - EV: 0.016 - Jockey: P N Wong
-[DEFROST] Triggered due to jockey change on Horse #2: 'P N WONG' -> 'L HEWITSON'
 
 --- RACE 2 : Class 4 - 1200m ---
 PRIMARY: #2 WOLF COMING (Odds: 20.0) - Raw Rank: 1 - GS Rank: 2 - Reason: Raw rank 1 baseline
