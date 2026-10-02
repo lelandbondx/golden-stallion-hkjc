@@ -1,0 +1,899 @@
+{
+    "1": [
+        {
+            "pool": "WIN",
+            "combination": "7",
+            "dividend": 124.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "7",
+            "dividend": 34.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "2",
+            "dividend": 34.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "1",
+            "dividend": 18.0
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "27",
+            "dividend": 554.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "27",
+            "dividend": 162.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "17",
+            "dividend": 133.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "12",
+            "dividend": 121.0
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "72",
+            "dividend": 1233.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "721",
+            "dividend": 7421.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "127",
+            "dividend": 1252.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "1247",
+            "dividend": 2609.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "7214",
+            "dividend": 75749.0
+        }
+    ],
+    "2": [
+        {
+            "pool": "WIN",
+            "combination": "9",
+            "dividend": 46.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "9",
+            "dividend": 16.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "10",
+            "dividend": 31.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "7",
+            "dividend": 37.5
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "910",
+            "dividend": 225.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "910",
+            "dividend": 79.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "79",
+            "dividend": 94.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "710",
+            "dividend": 193.0
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "910",
+            "dividend": 430.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "9107",
+            "dividend": 3290.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "7910",
+            "dividend": 801.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "17910",
+            "dividend": 678.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "91071",
+            "dividend": 17834.0
+        },
+        {
+            "pool": "1ST DOUBLE",
+            "combination": "7/9",
+            "dividend": 824.5
+        },
+        {
+            "pool": "1ST DOUBLE",
+            "combination": "7/10",
+            "dividend": 200.0
+        }
+    ],
+    "3": [
+        {
+            "pool": "WIN",
+            "combination": "4",
+            "dividend": 22.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "4",
+            "dividend": 12.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "7",
+            "dividend": 15.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "6",
+            "dividend": 20.0
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "47",
+            "dividend": 52.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "47",
+            "dividend": 23.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "46",
+            "dividend": 32.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "67",
+            "dividend": 44.5
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "47",
+            "dividend": 88.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "476",
+            "dividend": 313.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "467",
+            "dividend": 109.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "1467",
+            "dividend": 186.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "4761",
+            "dividend": 1689.0
+        },
+        {
+            "pool": "2ND DOUBLE",
+            "combination": "9/4",
+            "dividend": 113.0
+        },
+        {
+            "pool": "2ND DOUBLE",
+            "combination": "9/7",
+            "dividend": 46.5
+        },
+        {
+            "pool": "1ST DOUBLE TRIO",
+            "combination": "7,9,10/4,6,7",
+            "dividend": 11873.0
+        }
+    ],
+    "4": [
+        {
+            "pool": "WIN",
+            "combination": "7",
+            "dividend": 19.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "7",
+            "dividend": 11.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "6",
+            "dividend": 21.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "3",
+            "dividend": 73.5
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "67",
+            "dividend": 77.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "67",
+            "dividend": 30.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "37",
+            "dividend": 99.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "36",
+            "dividend": 294.5
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "76",
+            "dividend": 97.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "763",
+            "dividend": 1611.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "367",
+            "dividend": 593.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "36714",
+            "dividend": 1511.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "76314",
+            "dividend": 14325.0
+        },
+        {
+            "pool": "3RD DOUBLE",
+            "combination": "4/7",
+            "dividend": 39.0
+        },
+        {
+            "pool": "3RD DOUBLE",
+            "combination": "4/6",
+            "dividend": 94.0
+        }
+    ],
+    "5": [
+        {
+            "pool": "WIN",
+            "combination": "3",
+            "dividend": 47.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "3",
+            "dividend": 16.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "1",
+            "dividend": 13.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "6",
+            "dividend": 26.0
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "13",
+            "dividend": 46.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "13",
+            "dividend": 23.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "36",
+            "dividend": 59.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "16",
+            "dividend": 41.5
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "31",
+            "dividend": 146.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "316",
+            "dividend": 619.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "136",
+            "dividend": 107.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "1236",
+            "dividend": 275.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "3162",
+            "dividend": 4187.0
+        },
+        {
+            "pool": "4TH DOUBLE",
+            "combination": "7/3",
+            "dividend": 73.5
+        },
+        {
+            "pool": "4TH DOUBLE",
+            "combination": "7/1",
+            "dividend": 10.5
+        },
+        {
+            "pool": "1ST TREBLE",
+            "combination": "4/7/3",
+            "dividend": 227.0
+        },
+        {
+            "pool": "1ST TREBLE",
+            "combination": "4/7/1",
+            "dividend": 19.0
+        },
+        {
+            "pool": "2ND DOUBLE TRIO",
+            "combination": "3,6,7/1,3,6",
+            "dividend": 11163.0
+        }
+    ],
+    "6": [
+        {
+            "pool": "WIN",
+            "combination": "3",
+            "dividend": 50.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "3",
+            "dividend": 17.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "1",
+            "dividend": 17.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "8",
+            "dividend": 29.5
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "13",
+            "dividend": 88.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "13",
+            "dividend": 38.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "38",
+            "dividend": 108.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "18",
+            "dividend": 77.5
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "31",
+            "dividend": 174.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "318",
+            "dividend": 1508.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "138",
+            "dividend": 258.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "1348",
+            "dividend": 1681.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "3184",
+            "dividend": 24227.0
+        },
+        {
+            "pool": "5TH DOUBLE",
+            "combination": "3/3",
+            "dividend": 196.0
+        },
+        {
+            "pool": "5TH DOUBLE",
+            "combination": "3/1",
+            "dividend": 39.5
+        }
+    ],
+    "7": [
+        {
+            "pool": "WIN",
+            "combination": "7",
+            "dividend": 380.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "7",
+            "dividend": 78.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "10",
+            "dividend": 14.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "11",
+            "dividend": 33.5
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "710",
+            "dividend": 758.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "710",
+            "dividend": 232.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "711",
+            "dividend": 645.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "1011",
+            "dividend": 75.0
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "710",
+            "dividend": 2116.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "71011",
+            "dividend": 25616.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "71011",
+            "dividend": 3358.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "271011",
+            "dividend": 2037.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "710112",
+            "dividend": 101419.0
+        },
+        {
+            "pool": "6TH DOUBLE",
+            "combination": "3/7",
+            "dividend": 2137.5
+        },
+        {
+            "pool": "6TH DOUBLE",
+            "combination": "3/10",
+            "dividend": 33.5
+        },
+        {
+            "pool": "3RD DOUBLE TRIO",
+            "combination": "1,3,8/7,10,11",
+            "dividend": 131381.0
+        },
+        {
+            "pool": "TRIPLE TRIO",
+            "combination": "1,3,6/1,3,8/7,10,11",
+            "dividend": 1356610.0
+        },
+        {
+            "pool": "TRIPLE TRIO(CONSOLATION)",
+            "combination": "1,3,6/1,3,8/Any Combination",
+            "dividend": 249.0
+        }
+    ],
+    "8": [
+        {
+            "pool": "WIN",
+            "combination": "9",
+            "dividend": 500.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "9",
+            "dividend": 97.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "4",
+            "dividend": 15.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "11",
+            "dividend": 18.0
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "49",
+            "dividend": 658.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "49",
+            "dividend": 198.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "911",
+            "dividend": 373.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "411",
+            "dividend": 36.5
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "94",
+            "dividend": 1364.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "9411",
+            "dividend": 12501.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "4911",
+            "dividend": 1115.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "48911",
+            "dividend": 1491.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "94118",
+            "dividend": 56686.0
+        },
+        {
+            "pool": "7TH DOUBLE",
+            "combination": "7/9",
+            "dividend": 27407.5
+        },
+        {
+            "pool": "7TH DOUBLE",
+            "combination": "7/4",
+            "dividend": 201.0
+        }
+    ],
+    "9": [
+        {
+            "pool": "WIN",
+            "combination": "1",
+            "dividend": 81.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "1",
+            "dividend": 27.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "2",
+            "dividend": 17.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "11",
+            "dividend": 19.0
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "12",
+            "dividend": 140.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "12",
+            "dividend": 55.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "111",
+            "dividend": 86.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "211",
+            "dividend": 50.5
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "12",
+            "dividend": 340.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "1211",
+            "dividend": 3414.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "1211",
+            "dividend": 407.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "12911",
+            "dividend": 1164.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "12119",
+            "dividend": 27161.0
+        },
+        {
+            "pool": "8TH DOUBLE",
+            "combination": "9/1",
+            "dividend": 3677.5
+        },
+        {
+            "pool": "8TH DOUBLE",
+            "combination": "9/2",
+            "dividend": 279.5
+        },
+        {
+            "pool": "4TH DOUBLE TRIO",
+            "combination": "4,9,11/1,2,11",
+            "dividend": 72274.0
+        }
+    ],
+    "10": [
+        {
+            "pool": "WIN",
+            "combination": "3",
+            "dividend": 56.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "3",
+            "dividend": 18.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "1",
+            "dividend": 41.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "7",
+            "dividend": 17.5
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "13",
+            "dividend": 352.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "13",
+            "dividend": 113.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "37",
+            "dividend": 43.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "17",
+            "dividend": 113.0
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "31",
+            "dividend": 700.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "317",
+            "dividend": 2930.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "137",
+            "dividend": 413.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "13714",
+            "dividend": 257.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "31714",
+            "dividend": 9317.0
+        },
+        {
+            "pool": "9TH DOUBLE",
+            "combination": "1/3",
+            "dividend": 581.0
+        },
+        {
+            "pool": "9TH DOUBLE",
+            "combination": "1/1",
+            "dividend": 207.5
+        }
+    ],
+    "11": [
+        {
+            "pool": "WIN",
+            "combination": "6",
+            "dividend": 55.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "6",
+            "dividend": 23.0
+        },
+        {
+            "pool": "PLACE",
+            "combination": "11",
+            "dividend": 27.5
+        },
+        {
+            "pool": "PLACE",
+            "combination": "13",
+            "dividend": 178.0
+        },
+        {
+            "pool": "QUINELLA",
+            "combination": "611",
+            "dividend": 240.5
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "611",
+            "dividend": 96.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "613",
+            "dividend": 742.0
+        },
+        {
+            "pool": "QUINELLA PLACE",
+            "combination": "1113",
+            "dividend": 765.0
+        },
+        {
+            "pool": "FORECAST",
+            "combination": "611",
+            "dividend": 460.0
+        },
+        {
+            "pool": "TIERCE",
+            "combination": "61113",
+            "dividend": 20199.0
+        },
+        {
+            "pool": "TRIO",
+            "combination": "61113",
+            "dividend": 6019.0
+        },
+        {
+            "pool": "FIRST 4",
+            "combination": "671113",
+            "dividend": 26028.0
+        },
+        {
+            "pool": "QUARTET",
+            "combination": "611137",
+            "dividend": 368800.0
+        },
+        {
+            "pool": "10TH DOUBLE",
+            "combination": "3/6",
+            "dividend": 336.5
+        },
+        {
+            "pool": "10TH DOUBLE",
+            "combination": "3/11",
+            "dividend": 109.5
+        },
+        {
+            "pool": "2ND TREBLE",
+            "combination": "1/3/6",
+            "dividend": 1740.0
+        },
+        {
+            "pool": "2ND TREBLE",
+            "combination": "1/3/11",
+            "dividend": 616.0
+        },
+        {
+            "pool": "5TH DOUBLE TRIO",
+            "combination": "1,3,7/6,11,13",
+            "dividend": 436817.0
+        },
+        {
+            "pool": "SIX UP",
+            "combination": "1,3/7,10/4,9/1,2/1,3/6,11",
+            "dividend": 2597.0
+        }
+    ]
+}
