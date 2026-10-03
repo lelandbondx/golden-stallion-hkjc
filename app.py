@@ -4,8 +4,6 @@ import numpy as np
 import os
 import re
 import json
-from streamlit_autorefresh import st_autorefresh
-import threading
 import time
 import requests
 import odds_tracker
@@ -13,26 +11,6 @@ import textwrap
 
 def clean_html(html_str):
     return "\n".join(line.lstrip() for line in html_str.split("\n"))
-
-
-def keep_alive():
-    while True:
-        try:
-            requests.get("https://hkjcbotlee.streamlit.app/", timeout=10)
-        except:
-            pass
-        try:
-            requests.get("https://huggingface.co/spaces/lelandbondx/golden-stallion", timeout=10)
-        except:
-            pass
-        try:
-            requests.get("https://huggingface.co/spaces/lelandbondx/golden-stallion-hkjc", timeout=10)
-        except:
-            pass
-        time.sleep(600)
-
-if not any(t.name == "KeepAlive" for t in threading.enumerate()):
-    threading.Thread(target=keep_alive, name="KeepAlive", daemon=True).start()
 
 try:
     from scraper import get_live_meeting_data, get_hkjc_news, get_live_tips_index
@@ -92,9 +70,6 @@ if APP_PAUSED:
     st.error("⚠️ The AI Engine is currently paused for mid-meeting recalibration and results reporting. Please check back shortly.")
     st.stop()
 # --------------------
-
-# Run the autorefresh every 60 seconds
-st_autorefresh(interval=60000, limit=1000, key="hkjc_live_refresh")
 
 # Removed NPM initialization since we are now natively using Python
 
@@ -339,7 +314,16 @@ if not found_today:
             break
 
 
-selected_meeting_str = st.selectbox("📅 Select Race Meeting Date & Venue", meeting_options, index=default_index)
+col_sel, col_ref = st.columns([4, 1])
+with col_sel:
+    selected_meeting_str = st.selectbox("📅 Select Race Meeting Date & Venue", meeting_options, index=default_index)
+with col_ref:
+    st.write("")
+    st.write("")
+    if st.button("🔄 Refresh Live Data", use_container_width=True):
+        st.cache_data.clear()
+        st.rerun()
+
 selected_index = meeting_options.index(selected_meeting_str)
 meeting = meetings[selected_index]
 races = meeting.get('races', [])
