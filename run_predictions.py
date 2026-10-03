@@ -177,7 +177,7 @@ def run():
         # Secondary edge: Class droppers who are in decent form (<= 5.0) and healthy
         is_class_dropper_standout = (class_drop > 0) & (recent_pos <= 5.0) & (vet_issue == 0)
         
-        standout_boost = np.where(is_super_standout, 0.08, 0.0) # 8% boost for true standouts
+        standout_boost = np.where(is_super_standout, 0.02, 0.0) # 2% boost for true standouts
         standout_boost += np.where(is_class_dropper_standout, 0.05, 0.0) # 5% boost for dangerous class droppers
         
         # Scale debutant penalty:
@@ -280,19 +280,24 @@ def run():
             frontrunner_pace_penalty = np.where(df_runners['avg_first_pos'] <= 3.5, -0.025, 0.0)
             closer_pace_boost = np.where((df_runners['avg_first_pos'] > 5.5) & (recent_pos <= 5.5), 0.02, 0.0)
         elif speed_count <= 1:
-            # Low Pace Pressure: speed bias likely. Boost lone speed, soften deep closer penalty to -1.0%
-            is_elite_jockey_leader = df_runners['jockey'].astype(str).str.strip().str.upper().isin(['Z PURTON', 'B AVDULLA', 'H BOWMAN', 'C Y HO', 'K TEETAN', 'A ATZENI', 'L FERRARIS'])
-            lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & ((recent_pos <= 5.5) | is_elite_jockey_leader), 0.035, 0.0)
+            # Low Pace Pressure: speed bias likely. Boost lone speed (2% if recent_pos <= 5.5, or Z Purton), penalize deep closers
+            is_purton_leader = df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON'
+            lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & ((recent_pos <= 5.5) | is_purton_leader), 0.02, 0.0)
+            
+            # Race-proven gate speed check (Races outrank trials: trials cannot exempt closer penalty)
+            has_race_gate_speed = (df_runners['avg_first_pos'] <= 4.5) | df_runners['last_comment'].str.contains('jumped well|began speedily|led early|raced prominently', case=False, na=False)
+            
             closer_pace_penalty = np.where(
                 (df_runners['avg_first_pos'] > 6.0) & 
                 (distance <= 1200) & 
                 (recent_pos > 4.0) & 
-                (df_runners['best_last_sec'] >= 22.5), 
-                -0.01, 
+                (df_runners['best_last_sec'] >= 22.5) &
+                (~has_race_gate_speed), 
+                -0.03, 
                 0.0
             )
             
-        # Jockey/Trainer Combo Partnership Boost (Gentle tie-breaker tuned to 0.5%):
+        # Jockey/Trainer Combo Partnership Boost (2.0% strictly for Z PURTON pairs):
         jockey_trainer_boost = 0.0
         try:
             if os.path.exists('data/jockey_trainer_partnerships.csv') and 'jockey' in df_runners.columns and 'trainer' in df_runners.columns:
@@ -329,11 +334,12 @@ def run():
             (df_runners['win_rate_jt'] >= 0.18) | 
             df_runners.apply(lambda r: (str(r.get('jockey', '')).strip().upper(), str(r.get('trainer', '')).strip().upper()) in MODERN_ELITE, axis=1)
         )
-        jockey_trainer_boost = np.where(is_elite_jt, 0.005, 0.0)
+        is_purton_jt = is_elite_jt & (df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON')
+        jockey_trainer_boost = np.where(is_purton_jt, 0.02, 0.0)
 
-        # Standalone Elite Jockey Win Conversion Boost (+1.5% strictly for Z Purton on in-form runners)
-        is_tier1_jockey = df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON'
-        elite_jockey_boost = np.where(is_tier1_jockey & (recent_pos <= 4.0) & (vet_issue == 0), 0.015, 0.0)
+        # Standalone Elite Jockey Win Conversion Boost (2.0% strictly for Z PURTON on in-form runners)
+        is_purton_jockey = df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON'
+        elite_jockey_boost = np.where(is_purton_jockey & (recent_pos <= 4.0) & (vet_issue == 0), 0.02, 0.0)
         
         # Happy Valley C-Course Draw Bias Adjustments
         is_hv = meeting.get('venue') == 'Happy Valley'
@@ -361,7 +367,7 @@ def run():
         if is_st_straight_1000:
             # Outside stands-side rail advantage (Gates 10-14)
             is_outside_draw = (df_runners['draw'] >= 10)
-            st_1000_draw_boost = np.where(is_outside_draw, 0.035, 0.0)
+            st_1000_draw_boost = np.where(is_outside_draw, 0.027, 0.0)
             # Inside low draw disadvantage in straight sprint (Gates 1-4)
             is_inside_disadv = (df_runners['draw'] <= 4)
             st_1000_draw_penalty = np.where(is_inside_disadv, -0.025, 0.0)

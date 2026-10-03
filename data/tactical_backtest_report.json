@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-10-03T00:30:46.325318",
+  "total_races_evaluated": 1500,
+  "metrics": {
+    "top1_win_hit_rate_pct": {
+      "baseline": 31.47,
+      "tactical_overlay": 31.67,
+      "improved": true
+    },
+    "top3_podium_hit_rate_pct": {
+      "baseline": 62.13,
+      "tactical_overlay": 61.67,
+      "improved": false
+    },
+    "flat_stake_win_roi_pct": {
+      "baseline": -12.11,
+      "tactical_overlay": -11.76,
+      "improved": true
+    },
+    "flat_stake_place_roi_pct": {
+      "baseline": 2.69,
+      "tactical_overlay": 2.22,
+      "improved": false
+    },
+    "brier_score": {
+      "baseline": 0.06647,
+      "tactical_overlay": 0.06649,
+      "improved": false
+    },
+    "log_loss": {
+      "baseline": 2.0369,
+      "tactical_overlay": 2.0403,
+      "improved": false
+    }
+  },
+  "promotion_gate": {
+    "cleared": true,
+    "apply_tactical_overlay": true,
+    "reason": "Both Top-1 Hit Rate and Flat-Stake Win ROI improved"
+  }
+}

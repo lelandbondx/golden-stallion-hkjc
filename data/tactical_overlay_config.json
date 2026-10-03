@@ -1,0 +1,15 @@
+{
+  "seeds": {
+    "forgiven_run": 2.5,
+    "trip_regression": -2.0,
+    "sectional_eye_catcher": 2.0
+  },
+  "total_clip": 3.5,
+  "relative_clip": 0.15,
+  "apply_tactical_overlay": true,
+  "live_coefficients": {
+    "forgiven_run": 2.5,
+    "trip_regression": -2.0,
+    "sectional_eye_catcher": 2.0
+  }
+}
