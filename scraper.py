@@ -456,7 +456,7 @@ def get_hkjc_news():
     headers = {"User-Agent": "Mozilla/5.0"}
     news_items = []
     try:
-        res = requests.get(url, headers=headers, timeout=10)
+        res = requests.get(url, headers=headers, timeout=2.0)
         soup = BeautifulSoup(res.content, 'html.parser')
         
         # Look for article links which typically contain a date structure in href
@@ -485,66 +485,62 @@ def get_hkjc_news():
         ]
     return news_items
 
-def get_live_tips_index():
+def fetch_single_race_tips(race_no, headers):
     import re
+    url = f"https://racing.hkjc.com/racing/english/tipsindex/tips_index.asp?RaceNo={race_no}"
+    try:
+        res = requests.get(url, headers=headers, timeout=1.5)
+        if res.status_code != 200:
+            return race_no, {}
+        soup = BeautifulSoup(res.content, 'html.parser')
+        tables = soup.find_all('table')
+        race_tips = {}
+        for t in tables:
+            rows = t.find_all('tr')
+            if not rows: continue
+            first_row_cells = rows[0].find_all(['td', 'th'])
+            first_row_txt = "".join([c.get_text() for c in first_row_cells]).lower()
+            if "initial" in first_row_txt and "day tips" in first_row_txt:
+                for row in rows[1:]:
+                    cells = row.find_all('td')
+                    if len(cells) < 9: continue
+                    try:
+                        h_no = int(cells[0].get_text(strip=True))
+                        r_tips_val = cells[8].get_text(strip=True)
+                        i_tips_val = cells[7].get_text(strip=True)
+                        r_clean = re.sub(r'[^\d\.]', '', r_tips_val)
+                        i_clean = re.sub(r'[^\d\.]', '', i_tips_val)
+                        r_val = float(r_clean) if r_clean else 99.0
+                        i_val = float(i_clean) if i_clean else 99.0
+                        chosen_val = r_val if r_val < 99.0 else i_val
+                        if chosen_val < 99.0:
+                            score = max(0.0, 15.0 - chosen_val)
+                            race_tips[h_no] = round(score, 1)
+                        else:
+                            race_tips[h_no] = 0.0
+                    except Exception:
+                        pass
+                break
+        return race_no, race_tips
+    except Exception:
+        return race_no, {}
+
+def get_live_tips_index():
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     headers = {"User-Agent": "Mozilla/5.0"}
     tips_data = {}
-    
-    # Standard size of HKJC meeting is usually 10-12 races. We query up to 12.
-    for race_no in range(1, 13):
-        url = f"https://racing.hkjc.com/racing/english/tipsindex/tips_index.asp?RaceNo={race_no}"
-        try:
-            res = requests.get(url, headers=headers, timeout=10)
-            if res.status_code != 200:
-                continue
-            soup = BeautifulSoup(res.content, 'html.parser')
-            
-            tables = soup.find_all('table')
-            race_tips = {}
-            
-            for t in tables:
-                rows = t.find_all('tr')
-                if not rows:
-                    continue
-                    
-                first_row_cells = rows[0].find_all(['td', 'th'])
-                first_row_txt = "".join([c.get_text() for c in first_row_cells]).lower()
-                
-                if "initial" in first_row_txt and "day tips" in first_row_txt:
-                    for row in rows[1:]:
-                        cells = row.find_all('td')
-                        if len(cells) < 9:
-                            continue
-                        
-                        try:
-                            h_no = int(cells[0].get_text(strip=True))
-                            r_tips_val = cells[8].get_text(strip=True)
-                            i_tips_val = cells[7].get_text(strip=True)
-                            
-                            r_clean = re.sub(r'[^\d\.]', '', r_tips_val)
-                            i_clean = re.sub(r'[^\d\.]', '', i_tips_val)
-                            
-                            r_val = float(r_clean) if r_clean else 99.0
-                            i_val = float(i_clean) if i_clean else 99.0
-                            
-                            chosen_val = r_val if r_val < 99.0 else i_val
-                            
-                            if chosen_val < 99.0:
-                                # Convert: lower index is better. Map to a positive score (e.g. 15.0 - index)
-                                score = max(0.0, 15.0 - chosen_val)
-                                race_tips[h_no] = round(score, 1)
-                            else:
-                                race_tips[h_no] = 0.0
-                        except Exception as e:
-                            pass
-                    break # Found the correct table
-            
-            if race_tips:
-                tips_data[race_no] = race_tips
-        except Exception as e:
-            print(f"Failed to scrape tips index for race {race_no}: {e}")
-            pass
-            
+    try:
+        with ThreadPoolExecutor(max_workers=6) as executor:
+            futures = [executor.submit(fetch_single_race_tips, r_no, headers) for r_no in range(1, 13)]
+            for fut in as_completed(futures, timeout=2.5):
+                try:
+                    r_no, r_tips = fut.result()
+                    if r_tips:
+                        tips_data[r_no] = r_tips
+                except Exception:
+                    pass
+    except Exception as e:
+        print(f"Tips scraper exception: {e}")
     return tips_data
 
 if __name__ == "__main__":
