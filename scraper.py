@@ -249,7 +249,7 @@ def get_live_meeting_data():
             url, 
             json={"query": GRAPHQL_QUERY, "variables": {}},
             headers=headers,
-            timeout=10
+            timeout=4
         )
         if res.status_code == 200:
             data = res.json()
@@ -264,7 +264,7 @@ def get_live_meeting_data():
 
                     # Fetch detailed races for the meeting
                     variables = {"date": m.get("date"), "venueCode": m.get("venueCode")}
-                    detail_res = requests.post(url, json={"query": GRAPHQL_QUERY, "variables": variables}, headers=headers, timeout=10)
+                    detail_res = requests.post(url, json={"query": GRAPHQL_QUERY, "variables": variables}, headers=headers, timeout=4)
                     detail_data = detail_res.json()
                     
                     meeting_detail = detail_data.get("data", {}).get("raceMeetings", [{}])[0]
@@ -278,7 +278,7 @@ def get_live_meeting_data():
                     }
                     odds_lookup = {}
                     try:
-                        odds_res = requests.post(url, json={"query": ODDS_GRAPHQL_QUERY, "variables": odds_variables}, headers=headers, timeout=10)
+                        odds_res = requests.post(url, json={"query": ODDS_GRAPHQL_QUERY, "variables": odds_variables}, headers=headers, timeout=4)
                         if odds_res.status_code == 200:
                             odds_data = odds_res.json()
                             if "errors" not in odds_data and "data" in odds_data:

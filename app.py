@@ -93,8 +93,8 @@ if APP_PAUSED:
     st.stop()
 # --------------------
 
-# Run the autorefresh about every 20 seconds
-st_autorefresh(interval=20000, limit=1000, key="hkjc_live_refresh")
+# Run the autorefresh every 60 seconds
+st_autorefresh(interval=60000, limit=1000, key="hkjc_live_refresh")
 
 # Removed NPM initialization since we are now natively using Python
 
@@ -228,7 +228,7 @@ with col_b2:
 st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">金金驹AI__香港赛马会预测</div>', unsafe_allow_html=True)
 
-@st.cache_data(ttl=20)
+@st.cache_data(ttl=120)
 def fetch_data():
     return get_live_meeting_data()
 
@@ -273,6 +273,23 @@ def fetch_trial_features():
     except Exception:
         return {}
 
+@st.cache_data(ttl=86400)
+def fetch_horse_memory():
+    try:
+        from data.incident_engine import load_horse_memory
+        return load_horse_memory()
+    except Exception:
+        return {}
+
+@st.cache_data(ttl=86400)
+def fetch_jt_partnerships():
+    try:
+        if os.path.exists('data/jockey_trainer_partnerships.csv'):
+            return pd.read_csv('data/jockey_trainer_partnerships.csv')
+        return pd.DataFrame()
+    except Exception:
+        return pd.DataFrame()
+
 # Initialize variables
 data = fetch_data()
 precomputed = load_precomputed_data()
@@ -285,6 +302,8 @@ std_times_df = fetch_standard_times()
 horse_stats_df = fetch_horse_stats()
 tips_data = fetch_tips()
 trial_features = fetch_trial_features()
+horse_memory = fetch_horse_memory()
+jt_partnerships_df = fetch_jt_partnerships()
 meetings = data.get('meetings', [])
 
 try:
@@ -1336,8 +1355,7 @@ with tab1:
 
                 # 5. Tactical Incident & Trip Badges (From Stewards Memory)
                 try:
-                    from data.incident_engine import evaluate_tactical_scores, load_horse_memory
-                    h_mem = load_horse_memory()
+                    from data.incident_engine import evaluate_tactical_scores
                     t_ctx = {
                         'barrier': int(r_item.get('draw', 8)),
                         'venue': meeting.get('venue', 'Sha Tin'),
@@ -1348,7 +1366,7 @@ with tab1:
                         'winner_weight': 125.0,
                         'weight_carried': float(r_item.get('actual_weight', 125.0))
                     }
-                    t_eval = evaluate_tactical_scores(r_name, t_ctx, h_mem)
+                    t_eval = evaluate_tactical_scores(r_name, t_ctx, horse_memory)
                     for b in t_eval.get('badges', []):
                         is_credit = (b.get('type') == 'credit')
                         b_col = '#10b981' if is_credit else '#f59e0b' # Green for credit, amber for trip regression
