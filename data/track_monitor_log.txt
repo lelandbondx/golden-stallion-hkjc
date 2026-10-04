@@ -4268,3 +4268,17 @@ error: failed to push some refs to 'https://github.com/lelandbondx/golden-stalli
 [2026-10-03 23:15:20] 💓 Heartbeat: Checked 11 races (141 runners). Goings: R1:SEALED, R2:GOOD, R3:SEALED, R4:GOOD, R5:SEALED, R6:GOOD, R7:GOOD, R8:GOOD, R9:SEALED, R10:GOOD, R11:GOOD. 0 changes.
 [2026-10-03 23:17:22] 💓 Heartbeat: Checked 11 races (141 runners). Goings: R1:SEALED, R2:GOOD, R3:SEALED, R4:GOOD, R5:SEALED, R6:GOOD, R7:GOOD, R8:GOOD, R9:SEALED, R10:GOOD, R11:GOOD. 0 changes.
 [2026-10-03 23:19:24] 💓 Heartbeat: Checked 11 races (141 runners). Goings: R1:SEALED, R2:GOOD, R3:SEALED, R4:GOOD, R5:SEALED, R6:GOOD, R7:GOOD, R8:GOOD, R9:SEALED, R10:GOOD, R11:GOOD. 0 changes.
+[2026-10-03 23:21:26] 💓 Heartbeat: Checked 11 races (141 runners). Goings: R1:SEALED, R2:GOOD, R3:SEALED, R4:GOOD, R5:SEALED, R6:GOOD, R7:GOOD, R8:GOOD, R9:SEALED, R10:GOOD, R11:GOOD. 0 changes.
+[2026-10-03 23:23:28] 💓 Heartbeat: Checked 11 races (141 runners). Goings: R1:SEALED, R2:GOOD, R3:SEALED, R4:GOOD, R5:SEALED, R6:GOOD, R7:GOOD, R8:GOOD, R9:SEALED, R10:GOOD, R11:GOOD. 0 changes.
+[2026-10-03 23:25:33] 💓 Heartbeat: Checked 11 races (141 runners). Goings: R1:SEALED, R2:GOOD, R3:SEALED, R4:GOOD, R5:SEALED, R6:GOOD, R7:GOOD, R8:GOOD, R9:SEALED, R10:GOOD, R11:GOOD. 0 changes.
+[2026-10-03 23:27:36] 💓 Heartbeat: Checked 11 races (141 runners). Goings: R1:SEALED, R2:GOOD, R3:SEALED, R4:GOOD, R5:SEALED, R6:GOOD, R7:GOOD, R8:GOOD, R9:SEALED, R10:GOOD, R11:GOOD. 0 changes.
+[2026-10-03 23:29:38] 🚨 ALERT: Race 2 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-10-03 23:29:38] 🚨 ALERT: Race 4 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-10-03 23:29:38] 🚨 ALERT: Race 6 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-10-03 23:29:38] 🚨 ALERT: Race 7 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-10-03 23:29:38] 🚨 ALERT: Race 8 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-10-03 23:29:38] 🚨 ALERT: Race 10 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-10-03 23:29:38] 🚨 ALERT: Race 11 track condition changed from 'GOOD' to 'GOOD TO FIRM'!
+[2026-10-03 23:29:38] 🔄 Triggering prediction update...
+[2026-10-03 23:29:46] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
+[2026-10-03 23:29:46] 📡 Auto-syncing updated data to origin main...
