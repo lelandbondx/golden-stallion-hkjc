@@ -1,110 +1,114 @@
 Loading data...
-Meeting: Sha Tin - 2026-10-04 - Going: 
+Meeting: Sha Tin - 2026-10-04 - Going: SEALED
+[DEFROST] Triggered due to going change: 'WET FAST' -> 'SEALED'
 
 --- RACE 1 : Class 5 - 1650m ---
-PRIMARY: #2 HAILTOTHEVICTORS (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #2 HAILTOTHEVICTORS (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 68% - EV: 0.056 - Jockey: L Ferraris
-Pick 2: #1 DOUBLE BINGO (Odds: 20.0) - RawRank: 4 - GSRank: 2 - Conf: 68% - EV: 0.032 - Jockey: H Y Yuen
-Pick 3: #4 SOARING BRONCO (Odds: 20.0) - RawRank: 2 - GSRank: 3 - Conf: 65% - EV: 0.028 - Jockey: J Orman
-Pick 4: #8 VIVA TASTE (Odds: 20.0) - RawRank: 3 - GSRank: 4 - Conf: 60% - EV: 0.022 - Jockey: M Chadwick
-Pick 5: #14 HAPPYDEARHAPPYDEER (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 56% - EV: 0.016 - Jockey: P N Wong
+PRIMARY: #1 DOUBLE BINGO (Odds: 8.3) - Raw Rank: 2 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
+[PRIMARY]: #1 DOUBLE BINGO (Odds: 8.3) - RawRank: 2 - GSRank: 1 - Conf: 68% - EV: 0.043 - Jockey: H Y Yuen
+Pick 2: #2 HAILTOTHEVICTORS (Odds: 6.6) - RawRank: 1 - GSRank: 2 - Conf: 68% - EV: 0.017 - Jockey: L Ferraris
+Pick 3: #12 ORIENTAL SURPRISE (Odds: 4.7) - RawRank: 3 - GSRank: 3 - Conf: 68% - EV: -0.055 - Jockey: Z Purton
+Pick 4: #14 HAPPYDEARHAPPYDEER (Odds: 3.5) - RawRank: 4 - GSRank: 4 - Conf: 64% - EV: -0.127 - Jockey: P N Wong
+Pick 5: #4 SOARING BRONCO (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 59% - EV: 0.056 - Jockey: J Orman
 
 --- RACE 2 : Class 4 - 1200m ---
-PRIMARY: #2 WOLF COMING (Odds: 20.0) - Raw Rank: 1 - GS Rank: 2 - Reason: Raw rank 1 baseline
-[PRIMARY]: #2 WOLF COMING (Odds: 20.0) - RawRank: 1 - GSRank: 2 - Conf: 84% - EV: 0.042 - Jockey: L Hewitson
-Pick 2: #11 TRENDY RUSH (Odds: 20.0) - RawRank: 2 - GSRank: 1 - Conf: 85% - EV: 0.044 - Jockey: B Avdulla
-Pick 3: #6 HAPPY SPECIAL (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 78% - EV: 0.033 - Jockey: A Atzeni
-Pick 4: #4 FAITHFUL WARRIOR (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 74% - EV: 0.028 - Jockey: H T Mo
-Pick 5: #10 SHANDONG SPIRIT (Odds: 20.0) - RawRank: 6 - GSRank: 5 - Conf: 69% - EV: 0.021 - Jockey: M F Poon
+PRIMARY: #11 TRENDY RUSH (Odds: 8.2) - Raw Rank: 1 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
+[PRIMARY]: #11 TRENDY RUSH (Odds: 8.2) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.033 - Jockey: B Avdulla
+Pick 2: #2 WOLF COMING (Odds: 6.4) - RawRank: 2 - GSRank: 2 - Conf: 83% - EV: 0.002 - Jockey: L Hewitson
+Pick 3: #3 COPARTNER A I (Odds: 8.5) - RawRank: 3 - GSRank: 3 - Conf: 73% - EV: 0.017 - Jockey: C Y Ho
+Pick 4: #6 HAPPY SPECIAL (Odds: 15.0) - RawRank: 4 - GSRank: 4 - Conf: 65% - EV: 0.045 - Jockey: A Atzeni
+Pick 5: #4 FAITHFUL WARRIOR (Odds: 44.0) - RawRank: 5 - GSRank: 5 - Conf: 63% - EV: 0.078 - Jockey: H T Mo
+[DEFROST] Triggered due to going change: 'WET FAST' -> 'SEALED'
 
 --- RACE 3 : Class 2 - 1650m ---
-PRIMARY: #1 CHANCHENG GLORY (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #1 CHANCHENG GLORY (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.126 - Jockey: C L Chau
-Pick 2: #2 TALENTS AMBITION (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 60% - EV: 0.057 - Jockey: Z Purton
-Pick 3: #3 SING DRAGON (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 45% - EV: 0.017 - Jockey: M Chadwick
-Pick 4: #7 SKY VINO (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 33% - EV: -0.016 - Jockey: A Badel
-Pick 5: #4 GORGEOUS WIN (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 31% - EV: -0.021 - Jockey: R Kingscote
+PRIMARY: #2 TALENTS AMBITION (Odds: 2.3) - Raw Rank: 2 - GS Rank: 2 - Reason: Fav <= 4.0 & raw rank 1-3
+[PRIMARY]: #2 TALENTS AMBITION (Odds: 2.3) - RawRank: 2 - GSRank: 2 - Conf: 76% - EV: -0.130 - Jockey: Z Purton
+Pick 2: #1 CHANCHENG GLORY (Odds: 10.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.170 - Jockey: C L Chau
+Pick 3: #3 SING DRAGON (Odds: 6.9) - RawRank: 3 - GSRank: 3 - Conf: 58% - EV: 0.042 - Jockey: M Chadwick
+Pick 4: #7 SKY VINO (Odds: 5.6) - RawRank: 4 - GSRank: 4 - Conf: 46% - EV: -0.024 - Jockey: A Badel
+Pick 5: #4 GORGEOUS WIN (Odds: 10.0) - RawRank: 5 - GSRank: 5 - Conf: 39% - EV: 0.018 - Jockey: R Kingscote
 
 --- RACE 4 : Class 5 - 1400m ---
-PRIMARY: #1 TURBO JEFFERIES (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #1 TURBO JEFFERIES (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 68% - EV: 0.077 - Jockey: H Bentley
-Pick 2: #2 LIGHTNING ACE (Odds: 20.0) - RawRank: 3 - GSRank: 2 - Conf: 65% - EV: 0.037 - Jockey: M Chadwick
-Pick 3: #3 SEA DIAMOND (Odds: 20.0) - RawRank: 2 - GSRank: 3 - Conf: 63% - EV: 0.034 - Jockey: H Y Yuen
-Pick 4: #5 MADE FOR LIFE (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 57% - EV: 0.022 - Jockey: R Kingscote
-Pick 5: #4 RATTAN GALAXY (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 56% - EV: 0.021 - Jockey: L Ferraris
+PRIMARY: #8 THE ALL ROUNDER (Odds: 3.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Fav <= 4.0 & raw rank 1-3
+[PRIMARY]: #8 THE ALL ROUNDER (Odds: 3.0) - RawRank: 1 - GSRank: 1 - Conf: 68% - EV: -0.131 - Jockey: C Y Ho
+Pick 2: #1 TURBO JEFFERIES (Odds: 22.0) - RawRank: 2 - GSRank: 2 - Conf: 68% - EV: 0.090 - Jockey: H Bentley
+Pick 3: #6 PERIDOT (Odds: 7.4) - RawRank: 3 - GSRank: 3 - Conf: 64% - EV: -0.009 - Jockey: J Orman
+Pick 4: #4 RATTAN GALAXY (Odds: 12.0) - RawRank: 5 - GSRank: 4 - Conf: 59% - EV: 0.025 - Jockey: L Ferraris
+Pick 5: #2 LIGHTNING ACE (Odds: 13.0) - RawRank: 6 - GSRank: 5 - Conf: 59% - EV: 0.030 - Jockey: M Chadwick
+[DEFROST] Triggered due to going change: 'WET FAST' -> 'SEALED'
 
 --- RACE 5 : Class 4 - 1650m ---
-PRIMARY: #4 VIVACIOUS WIN (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #4 VIVACIOUS WIN (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.036 - Jockey: Z Purton
-Pick 2: #8 FIREFOOT (Odds: 20.0) - RawRank: 3 - GSRank: 2 - Conf: 85% - EV: 0.036 - Jockey: K Teetan
-Pick 3: #2 HAPPY UNIVERSE (Odds: 20.0) - RawRank: 2 - GSRank: 3 - Conf: 75% - EV: 0.019 - Jockey: K C Leung
-Pick 4: #1 GENERAL REDWOOD (Odds: 20.0) - RawRank: 5 - GSRank: 4 - Conf: 72% - EV: 0.015 - Jockey: B Avdulla
-Pick 5: #6 NIGHT PUROSANGUE (Odds: 20.0) - RawRank: 4 - GSRank: 5 - Conf: 67% - EV: 0.008 - Jockey: A Badel
+PRIMARY: #4 VIVACIOUS WIN (Odds: 10.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
+[PRIMARY]: #4 VIVACIOUS WIN (Odds: 10.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.048 - Jockey: Z Purton
+Pick 2: #8 FIREFOOT (Odds: 11.0) - RawRank: 3 - GSRank: 2 - Conf: 76% - EV: 0.039 - Jockey: K Teetan
+Pick 3: #6 NIGHT PUROSANGUE (Odds: 5.6) - RawRank: 4 - GSRank: 3 - Conf: 72% - EV: -0.041 - Jockey: A Badel
+Pick 4: #2 HAPPY UNIVERSE (Odds: 9.2) - RawRank: 2 - GSRank: 4 - Conf: 69% - EV: 0.012 - Jockey: K C Leung
+Pick 5: #7 CHILL KAKA (Odds: 5.0) - RawRank: 5 - GSRank: 5 - Conf: 69% - EV: -0.064 - Jockey: R Kingscote
 
 --- RACE 6 : Class 4 - 1400m ---
-PRIMARY: #3 POSITIVE SMILE (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #3 POSITIVE SMILE (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.034 - Jockey: Z Purton
-Pick 2: #6 MR COOL (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 83% - EV: 0.030 - Jockey: K Teetan
-Pick 3: #2 GRAND PATCH (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 80% - EV: 0.027 - Jockey: C Y Ho
-Pick 4: #5 PEGASUS ELITE (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 79% - EV: 0.026 - Jockey: L Ferraris
-Pick 5: #8 HERO RISING (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 77% - EV: 0.022 - Jockey: L Hewitson
+PRIMARY: #6 MR COOL (Odds: 6.6) - Raw Rank: 1 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
+[PRIMARY]: #6 MR COOL (Odds: 6.6) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.025 - Jockey: K Teetan
+Pick 2: #3 POSITIVE SMILE (Odds: 5.5) - RawRank: 2 - GSRank: 2 - Conf: 79% - EV: -0.013 - Jockey: Z Purton
+Pick 3: #8 HERO RISING (Odds: 11.0) - RawRank: 4 - GSRank: 3 - Conf: 66% - EV: 0.035 - Jockey: L Hewitson
+Pick 4: #2 GRAND PATCH (Odds: 2.6) - RawRank: 5 - GSRank: 4 - Conf: 65% - EV: -0.205 - Jockey: C Y Ho
+Pick 5: #9 SHOTGUN (Odds: 10.0) - RawRank: 6 - GSRank: 5 - Conf: 65% - EV: 0.025 - Jockey: M F Poon
 
 --- RACE 7 : Class 4 - 1400m ---
-PRIMARY: #13 FORZA LEADER (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #13 FORZA LEADER (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.041 - Jockey: A Badel
-Pick 2: #2 CALIFORNIA WAVES (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 72% - EV: 0.027 - Jockey: B Avdulla
-Pick 3: #7 GENIUS BABY (Odds: 20.0) - RawRank: 4 - GSRank: 3 - Conf: 67% - EV: 0.022 - Jockey: L Hewitson
-Pick 4: #4 STEADFAST FORT (Odds: 20.0) - RawRank: 3 - GSRank: 4 - Conf: 65% - EV: 0.019 - Jockey: J Orman
-Pick 5: #9 MIGHTY FIGHTER (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 65% - EV: 0.019 - Jockey: R Kingscote
+PRIMARY: #9 MIGHTY FIGHTER (Odds: 10.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
+[PRIMARY]: #9 MIGHTY FIGHTER (Odds: 10.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.027 - Jockey: R Kingscote
+Pick 2: #2 CALIFORNIA WAVES (Odds: 12.0) - RawRank: 2 - GSRank: 2 - Conf: 84% - EV: 0.039 - Jockey: B Avdulla
+Pick 3: #11 HAPPY PROMISE (Odds: 9.2) - RawRank: 3 - GSRank: 3 - Conf: 70% - EV: 0.003 - Jockey: A Atzeni
+Pick 4: #14 QUICK CONTRIBUTION (Odds: 5.7) - RawRank: 5 - GSRank: 4 - Conf: 68% - EV: -0.054 - Jockey: M F Poon
+Pick 5: #7 GENIUS BABY (Odds: 21.0) - RawRank: 6 - GSRank: 5 - Conf: 65% - EV: 0.047 - Jockey: L Hewitson
 
 --- RACE 8 : Class 3 - 1800m ---
-PRIMARY: #5 FLOW WATER FLOW (Odds: 20.0) - Raw Rank: 1 - GS Rank: 2 - Reason: Raw rank 1 baseline
-[PRIMARY]: #5 FLOW WATER FLOW (Odds: 20.0) - RawRank: 1 - GSRank: 2 - Conf: 77% - EV: 0.070 - Jockey: Z Purton
-Pick 2: #8 BIG RETURN (Odds: 20.0) - RawRank: 2 - GSRank: 1 - Conf: 85% - EV: 0.085 - Jockey: A Badel
-Pick 3: #3 CALL ME MAGNIFIQUE (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 49% - EV: 0.016 - Jockey: M F Poon
-Pick 4: #1 SMART AVENUE (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 45% - EV: 0.007 - Jockey: H Bentley
-Pick 5: #9 HYMNBOOK (Odds: 20.0) - RawRank: 7 - GSRank: 5 - Conf: 36% - EV: -0.009 - Jockey: C Y Ho
+PRIMARY: #5 FLOW WATER FLOW (Odds: 2.4) - Raw Rank: 1 - GS Rank: 2 - Reason: Fav <= 4.0 & raw rank 1-3
+[PRIMARY]: #5 FLOW WATER FLOW (Odds: 2.4) - RawRank: 1 - GSRank: 2 - Conf: 84% - EV: -0.165 - Jockey: Z Purton
+Pick 2: #8 BIG RETURN (Odds: 11.0) - RawRank: 2 - GSRank: 1 - Conf: 85% - EV: 0.101 - Jockey: A Badel
+Pick 3: #3 CALL ME MAGNIFIQUE (Odds: 8.0) - RawRank: 3 - GSRank: 3 - Conf: 68% - EV: 0.034 - Jockey: M F Poon
+Pick 4: #1 SMART AVENUE (Odds: 21.0) - RawRank: 4 - GSRank: 4 - Conf: 56% - EV: 0.069 - Jockey: H Bentley
+Pick 5: #9 HYMNBOOK (Odds: 5.8) - RawRank: 5 - GSRank: 5 - Conf: 53% - EV: -0.038 - Jockey: C Y Ho
+[DEFROST] Triggered due to going change: 'WET FAST' -> 'SEALED'
 
 --- RACE 9 : Class 3 - 1650m ---
-PRIMARY: #3 RELIABLE PROFIT (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #3 RELIABLE PROFIT (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.038 - Jockey: M F Poon
-Pick 2: #2 CORLEONE (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 70% - EV: 0.023 - Jockey: L Ferraris
-Pick 3: #7 KEEFY (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 60% - EV: 0.014 - Jockey: H Y Yuen
-Pick 4: #11 TURIN MASCOT (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 51% - EV: 0.006 - Jockey: M L Yeung
-Pick 5: #9 KING DANCE (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 47% - EV: 0.002 - Jockey: C Y Ho
+PRIMARY: #2 CORLEONE (Odds: 13.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
+[PRIMARY]: #2 CORLEONE (Odds: 13.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.077 - Jockey: L Ferraris
+Pick 2: #11 TURIN MASCOT (Odds: 9.0) - RawRank: 4 - GSRank: 2 - Conf: 75% - EV: 0.036 - Jockey: M L Yeung
+Pick 3: #6 STORMI (Odds: 8.2) - RawRank: 2 - GSRank: 3 - Conf: 74% - EV: 0.026 - Jockey: C L Chau
+Pick 4: #4 THRIVING BROTHERS (Odds: 7.5) - RawRank: 3 - GSRank: 4 - Conf: 72% - EV: 0.013 - Jockey: K Teetan
+Pick 5: #5 NEZHA (Odds: 7.2) - RawRank: 5 - GSRank: 5 - Conf: 70% - EV: 0.007 - Jockey: J Orman
 
 --- RACE 10 : Class 3 - 1000m ---
-PRIMARY: #13 LUCKY CANDY (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #13 LUCKY CANDY (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.056 - Jockey: K Teetan
-Pick 2: #4 CELESTIAL HERO (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 75% - EV: 0.037 - Jockey: Z Purton
-Pick 3: #10 INVINCIBLE STEED (Odds: 20.0) - RawRank: 4 - GSRank: 3 - Conf: 73% - EV: 0.035 - Jockey: C Y Ho
-Pick 4: #6 SMART OINK (Odds: 20.0) - RawRank: 3 - GSRank: 4 - Conf: 71% - EV: 0.031 - Jockey: H Y Yuen
-Pick 5: #5 ETERNAL FORTUNE (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 62% - EV: 0.016 - Jockey: P N Wong
+PRIMARY: #10 INVINCIBLE STEED (Odds: 8.9) - Raw Rank: 1 - GS Rank: 1 - Reason: Top GS score (< 20.0 odds)
+[PRIMARY]: #10 INVINCIBLE STEED (Odds: 8.9) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.039 - Jockey: C Y Ho
+Pick 2: #13 LUCKY CANDY (Odds: 8.6) - RawRank: 3 - GSRank: 2 - Conf: 82% - EV: 0.030 - Jockey: K Teetan
+Pick 3: #2 ALPHA STRIKE (Odds: 8.6) - RawRank: 2 - GSRank: 3 - Conf: 77% - EV: 0.022 - Jockey: J Orman
+Pick 4: #6 SMART OINK (Odds: 7.8) - RawRank: 4 - GSRank: 4 - Conf: 72% - EV: 0.002 - Jockey: H Y Yuen
+Pick 5: #4 CELESTIAL HERO (Odds: 14.0) - RawRank: 5 - GSRank: 5 - Conf: 64% - EV: 0.034 - Jockey: Z Purton
 
 --- RACE 11 : Class 3 - 1200m ---
-PRIMARY: #2 SOLID STATE (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #2 SOLID STATE (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.113 - Jockey: Z Purton
-Pick 2: #1 HELENE SUPAFEELING (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 57% - EV: 0.050 - Jockey: C L Chau
-Pick 3: #3 LUCY IN THE SKY (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 44% - EV: 0.020 - Jockey: P N Wong
-Pick 4: #4 GOLD PATCH (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 41% - EV: 0.016 - Jockey: C Y Ho
-Pick 5: #7 GRAND EAGLE (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 40% - EV: 0.013 - Jockey: A Atzeni
+PRIMARY: #2 SOLID STATE (Odds: 1.9) - Raw Rank: 1 - GS Rank: 1 - Reason: Fav <= 4.0 & raw rank 1-3
+[PRIMARY]: #2 SOLID STATE (Odds: 1.9) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: -0.208 - Jockey: Z Purton
+Pick 2: #1 HELENE SUPAFEELING (Odds: 13.0) - RawRank: 2 - GSRank: 2 - Conf: 62% - EV: 0.092 - Jockey: C L Chau
+Pick 3: #3 LUCY IN THE SKY (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 44% - EV: 0.063 - Jockey: P N Wong
+Pick 4: #7 GRAND EAGLE (Odds: 10.0) - RawRank: 4 - GSRank: 4 - Conf: 43% - EV: 0.022 - Jockey: A Atzeni
+Pick 5: #4 GOLD PATCH (Odds: 21.0) - RawRank: 5 - GSRank: 5 - Conf: 39% - EV: 0.052 - Jockey: C Y Ho
 
 
 --- OVERALL GLOBAL BEST BETS ---
-Top Pick 1: Race 3 - #1 CHANCHENG GLORY (Odds: 20.0, Conf: 85%, EV: 0.126)
-Top Pick 2: Race 11 - #2 SOLID STATE (Odds: 20.0, Conf: 85%, EV: 0.113)
-Top Pick 3: Race 8 - #5 FLOW WATER FLOW (Odds: 20.0, Conf: 77%, EV: 0.070)
+Top Pick 1: Race 3 - #2 TALENTS AMBITION (Odds: 2.3, Conf: 76%, EV: -0.130)
+Top Pick 2: Race 11 - #2 SOLID STATE (Odds: 1.9, Conf: 85%, EV: -0.208)
+Top Pick 3: Race 8 - #5 FLOW WATER FLOW (Odds: 2.4, Conf: 84%, EV: -0.165)
 
 
 --- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---
-Race 1 Bet Selection: Anchor #2 HAILTOTHEVICTORS (20.0) | Sleeper #1 DOUBLE BINGO (20.0)
-Race 2 Bet Selection: Anchor #2 WOLF COMING (20.0) | Sleeper #11 TRENDY RUSH (20.0)
-Race 3 Bet Selection: Anchor #1 CHANCHENG GLORY (20.0) | Sleeper #2 TALENTS AMBITION (20.0)
-Race 4 Bet Selection: Anchor #1 TURBO JEFFERIES (20.0) | Sleeper #2 LIGHTNING ACE (20.0)
-Race 5 Bet Selection: Anchor #4 VIVACIOUS WIN (20.0) | Sleeper #8 FIREFOOT (20.0)
-Race 6 Bet Selection: Anchor #3 POSITIVE SMILE (20.0) | Sleeper #6 MR COOL (20.0)
-Race 7 Bet Selection: Anchor #13 FORZA LEADER (20.0) | Sleeper #2 CALIFORNIA WAVES (20.0)
-Race 8 Bet Selection: Anchor #5 FLOW WATER FLOW (20.0) | Sleeper #8 BIG RETURN (20.0)
-Race 9 Bet Selection: Anchor #3 RELIABLE PROFIT (20.0) | Sleeper #2 CORLEONE (20.0)
-Race 10 Bet Selection: Anchor #13 LUCKY CANDY (20.0) | Sleeper #4 CELESTIAL HERO (20.0)
-Race 11 Bet Selection: Anchor #2 SOLID STATE (20.0) | Sleeper #1 HELENE SUPAFEELING (20.0)
+Race 1 Bet Selection: Anchor #1 DOUBLE BINGO (8.3) | Sleeper #4 SOARING BRONCO (20.0)
+Race 2 Bet Selection: Anchor #11 TRENDY RUSH (8.2) | Sleeper #4 FAITHFUL WARRIOR (44.0)
+Race 3 Bet Selection: Anchor #2 TALENTS AMBITION (2.3) | Sleeper #1 CHANCHENG GLORY (10.0)
+Race 4 Bet Selection: Anchor #8 THE ALL ROUNDER (3.0) | Sleeper #1 TURBO JEFFERIES (22.0)
+Race 5 Bet Selection: Anchor #4 VIVACIOUS WIN (10.0) | Sleeper #8 FIREFOOT (11.0)
+Race 6 Bet Selection: Anchor #6 MR COOL (6.6) | Sleeper #5 PEGASUS ELITE (19.0)
+Race 7 Bet Selection: Anchor #9 MIGHTY FIGHTER (10.0) | Sleeper #4 STEADFAST FORT (42.0)
+Race 8 Bet Selection: Anchor #5 FLOW WATER FLOW (2.4) | Sleeper #8 BIG RETURN (11.0)
+Race 9 Bet Selection: Anchor #2 CORLEONE (13.0) | Sleeper #11 TURIN MASCOT (9.0)
+Race 10 Bet Selection: Anchor #10 INVINCIBLE STEED (8.9) | Sleeper #4 CELESTIAL HERO (14.0)
+Race 11 Bet Selection: Anchor #2 SOLID STATE (1.9) | Sleeper #1 HELENE SUPAFEELING (13.0)

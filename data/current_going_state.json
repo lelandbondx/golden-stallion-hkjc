@@ -1,14 +1,14 @@
 {
     "goings": {
-        "1": "GOOD",
+        "1": "SEALED",
         "2": "GOOD",
-        "3": "GOOD",
+        "3": "SEALED",
         "4": "GOOD",
-        "5": "GOOD",
+        "5": "SEALED",
         "6": "GOOD",
         "7": "GOOD",
         "8": "GOOD",
-        "9": "GOOD",
+        "9": "SEALED",
         "10": "GOOD",
         "11": "GOOD"
     },
@@ -134,7 +134,6 @@
         "9": [
             1,
             2,
-            3,
             4,
             5,
             6,
@@ -228,7 +227,7 @@
             "4": "L FERRARIS",
             "5": "R KINGSCOTE",
             "6": "J ORMAN",
-            "7": "A ATZENI",
+            "7": "K TEETAN",
             "8": "C Y HO",
             "9": "M L YEUNG",
             "10": "B AVDULLA",
@@ -300,7 +299,6 @@
         "9": {
             "1": "M CHADWICK",
             "2": "L FERRARIS",
-            "3": "M F POON",
             "4": "K TEETAN",
             "5": "J ORMAN",
             "6": "C L CHAU",
@@ -336,7 +334,7 @@
             "6": "M CHADWICK",
             "7": "A ATZENI",
             "8": "J ORMAN",
-            "9": "K TEETAN",
+            "9": "K C LEUNG",
             "10": "H Y YUEN",
             "11": "L HEWITSON",
             "12": "H T MO",

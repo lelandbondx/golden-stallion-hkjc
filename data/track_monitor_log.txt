@@ -4218,3 +4218,15 @@ error: failed to push some refs to 'https://github.com/lelandbondx/golden-stalli
 [2026-10-02 17:42:47] 💓 Heartbeat: Checked 11 races (142 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD, R11:GOOD. 0 changes.
 [2026-10-02 17:42:47] 💓 Heartbeat: Checked 11 races (142 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD, R11:GOOD. 0 changes.
 [2026-10-02 17:42:50] 💓 Heartbeat: Checked 11 races (142 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD, R10:GOOD, R11:GOOD. 0 changes.
+[2026-10-03 22:03:38] 🚀 Golden Stallion AI Live Telemetry Monitor Initialized
+[2026-10-03 22:03:38] Monitoring Happy Valley & Sha Tin goings, scratches, and jockey changes live from HKJC API...
+[2026-10-03 22:03:40] 🚨 ALERT: Race 1 track condition changed from 'GOOD' to 'SEALED'!
+[2026-10-03 22:03:40] 🚨 ALERT: Race 3 track condition changed from 'GOOD' to 'SEALED'!
+[2026-10-03 22:03:40] 🚨 ALERT: Race 5 track condition changed from 'GOOD' to 'SEALED'!
+[2026-10-03 22:03:40] 🚨 ALERT: Race 9 track condition changed from 'GOOD' to 'SEALED'!
+[2026-10-03 22:03:40] 🚨 ALERT: Scratching detected in Race 9: Horses #{3}
+[2026-10-03 22:03:40] 🚨 ALERT: Jockey change in Race 4 on #7: 'A ATZENI' -> 'K TEETAN'
+[2026-10-03 22:03:40] 🚨 ALERT: Jockey change in Race 11 on #9: 'K TEETAN' -> 'K C LEUNG'
+[2026-10-03 22:03:40] 🔄 Triggering prediction update...
+[2026-10-03 22:03:49] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
+[2026-10-03 22:03:49] 📡 Auto-syncing updated data to origin main...
