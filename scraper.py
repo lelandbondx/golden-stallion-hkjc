@@ -234,6 +234,15 @@ query racing($date: String, $venueCode: String, $oddsTypes: [OddsType], $raceNo:
 """.strip()
 
 def get_live_meeting_data():
+    cached_data = None
+    try:
+        import os
+        if os.path.exists('data/last_scraped_meeting.json'):
+            with open('data/last_scraped_meeting.json', 'r', encoding='utf-8') as f:
+                cached_data = json.load(f)
+    except Exception as e:
+        print("Failed to read last_scraped_meeting.json:", e)
+
     url = "https://info.cld.hkjc.com/graphql/base/"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
@@ -245,7 +254,7 @@ def get_live_meeting_data():
             url, 
             json={"query": GRAPHQL_QUERY, "variables": {}},
             headers=headers,
-            timeout=4
+            timeout=2.0
         )
         if res.status_code == 200:
             data = res.json()
@@ -260,7 +269,7 @@ def get_live_meeting_data():
 
                     # Fetch detailed races for the meeting
                     variables = {"date": m.get("date"), "venueCode": m.get("venueCode")}
-                    detail_res = requests.post(url, json={"query": GRAPHQL_QUERY, "variables": variables}, headers=headers, timeout=4)
+                    detail_res = requests.post(url, json={"query": GRAPHQL_QUERY, "variables": variables}, headers=headers, timeout=2.0)
                     detail_data = detail_res.json()
                     
                     meeting_detail = detail_data.get("data", {}).get("raceMeetings", [{}])[0]
@@ -274,7 +283,7 @@ def get_live_meeting_data():
                     }
                     odds_lookup = {}
                     try:
-                        odds_res = requests.post(url, json={"query": ODDS_GRAPHQL_QUERY, "variables": odds_variables}, headers=headers, timeout=4)
+                        odds_res = requests.post(url, json={"query": ODDS_GRAPHQL_QUERY, "variables": odds_variables}, headers=headers, timeout=2.0)
                         if odds_res.status_code == 200:
                             odds_data = odds_res.json()
                             if "errors" not in odds_data and "data" in odds_data:
@@ -366,23 +375,12 @@ def get_live_meeting_data():
                         print("Failed to save last scraped meeting:", e)
                     return {"status": "success", "meetings": out_meetings}
     except Exception as e:
-        print("Live Python scraper failed, falling back:", str(e))
+        print("Live scraper timeout/error:", str(e))
         pass
 
-    # Try to load last successfully scraped meeting from file
-    try:
-        import os
-        if os.path.exists('data/last_scraped_meeting.json'):
-            with open('data/last_scraped_meeting.json', 'r', encoding='utf-8') as f:
-                cached_data = json.load(f)
-                if cached_data.get('status') == 'success' and cached_data.get('meetings'):
-                    for m in cached_data['meetings']:
-                        m['weather'] = "Cached data (live connection failed)"
-                    return cached_data
-    except Exception as e:
-        print("Failed to read last_scraped_meeting.json:", e)
+    if cached_data and cached_data.get('status') == 'success' and cached_data.get('meetings'):
+        return cached_data
 
-    # Fallback if bridge fails
     return build_fallback_live_data()
 
 
