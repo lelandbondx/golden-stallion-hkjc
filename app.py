@@ -514,8 +514,11 @@ with tab1:
                 r_dict.update({"race_no": race.get("race_no")})
                 global_best_bets.append(r_dict)
                 
-            # Parlay candidate is the 1st Pick of this race
-            race_picks_gs = df_runners.sort_values(by='gs_score', ascending=False)
+            # Parlay candidate is the Primary Pick of this race
+            if 'is_primary' in df_runners.columns:
+                race_picks_gs = df_runners.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
+            else:
+                race_picks_gs = df_runners.sort_values(by='gs_score', ascending=False)
             if not race_picks_gs.empty:
                 best_gs = race_picks_gs.iloc[0].to_dict()
                 best_gs.update({"race_no": race.get("race_no")})
@@ -1066,7 +1069,10 @@ with tab1:
         if 'processed_runners' not in r: continue
         df_p = r['processed_runners']
         if len(df_p) > 4:
-            df_p_sorted = df_p.sort_values(by='gs_score', ascending=False).reset_index(drop=True)
+            if 'is_primary' in df_p.columns:
+                df_p_sorted = df_p.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False]).reset_index(drop=True)
+            else:
+                df_p_sorted = df_p.sort_values(by='gs_score', ascending=False).reset_index(drop=True)
             p1 = df_p_sorted.iloc[0]
             p5 = df_p_sorted.iloc[4]
             dual_staking_bets.append({
@@ -1399,7 +1405,10 @@ with tab1:
                 </div>
                 '''), unsafe_allow_html=True)
             
-            race_picks = df_runners.sort_values(by='gs_score', ascending=False)
+            if 'is_primary' in df_runners.columns:
+                race_picks = df_runners.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
+            else:
+                race_picks = df_runners.sort_values(by='gs_score', ascending=False)
             
             # Ensure we have at least 5 runners
             if len(race_picks) < 5:
@@ -1503,7 +1512,12 @@ with tab1:
                         df_runners[col] = '-'
 
                 df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
-                df_display = df_display.sort_values(by='gs_score', ascending=False)
+                if 'is_primary' in df_runners.columns:
+                    df_display['is_primary'] = df_runners['is_primary']
+                    df_display = df_display.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
+                    df_display = df_display.drop(columns=['is_primary'])
+                else:
+                    df_display = df_display.sort_values(by='gs_score', ascending=False)
                 
                 # Fill NAs and ensure string type for object columns to avoid PyArrow serialization errors
                 df_display['last_win_rating'] = df_display['last_win_rating'].astype(str).replace('nan', '-')

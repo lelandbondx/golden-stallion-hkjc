@@ -83,7 +83,10 @@ def run():
         class_str = race.get("class_dist", "")
         if minutes_to_post <= 60 and frozen_runners is not None and not is_defrost:
             df_runners = pd.DataFrame(frozen_runners)
-            race_picks = df_runners.sort_values(by='gs_score', ascending=False)
+            if 'is_primary' in df_runners.columns:
+                race_picks = df_runners.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
+            else:
+                race_picks = df_runners.sort_values(by='gs_score', ascending=False)
             if len(race_picks) > 4:
                 p1 = race_picks.iloc[0]
                 p5 = race_picks.iloc[4]
