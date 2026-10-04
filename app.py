@@ -6,6 +6,7 @@ import re
 import json
 import time
 import requests
+from streamlit_autorefresh import st_autorefresh
 import odds_tracker
 import textwrap
 
@@ -71,12 +72,24 @@ if APP_PAUSED:
     st.stop()
 # --------------------
 
-# Removed NPM initialization since we are now natively using Python
+# Ultra-smooth live odds refresh every 15 seconds (keeps session live without sleeping)
+st_autorefresh(interval=15000, key="hkjc_live_refresh_pulse")
 
 # CSS Injection for Chinese-Friendly Ruby/Gold 3D UI
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;500;600;700&display=swap');
+    
+    /* Suppress Streamlit's dimming/greying out during background refresh */
+    [data-testid="stAppViewContainer"] > .main {
+        opacity: 1 !important;
+        transition: none !important;
+        filter: none !important;
+    }
+    div[data-testid="stAppViewBlockContainer"] {
+        opacity: 1 !important;
+        filter: none !important;
+    }
     
     /* Hide Streamlit Header, Main Menu, Deploy Button, and Footer */
     #MainMenu {visibility: hidden; display: none !important;}
@@ -203,7 +216,7 @@ with col_b2:
 st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">金金驹AI__香港赛马会预测</div>', unsafe_allow_html=True)
 
-@st.cache_data(ttl=120)
+@st.cache_data(ttl=15)
 def fetch_data():
     return get_live_meeting_data()
 
