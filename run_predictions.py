@@ -389,7 +389,7 @@ def run():
             
             is_heavy = (actual_weights >= 132)
             base_wt_extra = np.where(is_wide_gate & is_heavy, np.where(is_sprint, -0.02, -0.01), 0.0)
-            is_on_pace_crosser = (df_runners['avg_first_pos'] <= 3.5)
+            is_on_pace_crosser = (df_runners['avg_first_pos'] <= 3.5) | (pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0) <= 3.5)
             eff_wt_extra = np.where(is_on_pace_crosser, base_wt_extra * 0.5, base_wt_extra)
             
             hv_c_course_penalty = base_draw_pen + eff_wt_extra
@@ -607,17 +607,58 @@ def run():
         else:
             p5 = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
             
-        # Price Test on Pick 1:
+        # Price Test & Split Rule on Sprints (1000m / 1200m) for Pick 1:
         p1_odds = float(p1.get('win_odds', 20.0))
         p1_prob = float(p1.get('model_prob', 0.0))
+        p1_draw = int(pd.to_numeric(p1.get('draw', 6), errors='coerce'))
+        p1_wt = float(pd.to_numeric(p1.get('actual_weight', 125), errors='coerce'))
+        p1_first_pos = float(pd.to_numeric(p1.get('avg_first_pos', 6.0), errors='coerce'))
         p1_live = (p1_odds > 0) and (p1_odds < 20.0)
-        p1_passes_test = p1_live and (p1_prob * p1_odds > 1.0)
+        p1_passes_val = p1_live and (p1_prob * p1_odds > 1.0)
         
-        if p1_passes_test:
-            p1_status = "WIN STAKE ACTIVE (Half Unit Win + Place)"
-        else:
-            p1_status = "Winning-horse pick / exotic key only — no win stake"
+        # Check sprint wide+heavy split rule:
+        is_sprint = (distance <= 1200)
+        is_p1_wide_heavy = is_hv and is_sprint and (p1_draw >= 9) and (p1_wt >= 132)
+        p1_recent_pos = float(pd.to_numeric(p1.get('recent_avg_pos', 7.0), errors='coerce'))
+        p1_is_crosser = (p1_first_pos <= 3.5) or (p1_recent_pos <= 3.5)
+        
+        shifted_win_runner = None
+        
+        if is_p1_wide_heavy and (not p1_is_crosser):
+            # Condition 1: Wide topweight, NOT an on-pace crosser (e.g. Aurora Lady) -> Win stake LOCKED
+            p1_passes_test = False
+            p1_status = "Winning-horse pick / exotic key only — no win stake. Wide topweight, not an on-pace crosser."
+            df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
             
+            # Shift win stake to highest positive-EV horse that survives wide+heavy
+            all_eligible_survivors = df_runners[
+                ~((df_runners['draw'] >= 9) & (pd.to_numeric(df_runners.get('actual_weight', 125), errors='coerce').fillna(125) >= 132)) &
+                (df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 20.0) &
+                (df_runners['value_diff'] > 0)
+            ].copy()
+            if not all_eligible_survivors.empty:
+                shifted_win_runner = all_eligible_survivors.sort_values(by='value_diff', ascending=False).iloc[0]
+                
+        elif is_p1_wide_heavy and p1_is_crosser:
+            # Condition 2: Wide topweight, IS an on-pace crosser (e.g. Motor) -> Speed exception, Half-Unit Win
+            if p1_passes_val:
+                p1_passes_test = True
+                p1_status = f"WIN STAKE ACTIVE (Half-Unit Win + Place — Crosser Draw {p1_draw}, {int(p1_wt)}lb)"
+                df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] * 0.5
+            else:
+                p1_passes_test = False
+                p1_status = "Winning-horse pick / exotic key only — no win stake"
+                df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
+        else:
+            # Standard runner
+            if p1_passes_val:
+                p1_passes_test = True
+                p1_status = "WIN STAKE ACTIVE (Half Unit Win + Place)"
+            else:
+                p1_passes_test = False
+                p1_status = "Winning-horse pick / exotic key only — no win stake"
+                df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
+
         # Assign card rank (1 to 5)
         card_picks = [p1, p2, p3, p4, p5]
         df_runners['card_rank'] = 99
@@ -629,9 +670,16 @@ def run():
         df_runners['is_primary'] = (df_runners['no'] == p1['no']).astype(int)
         df_runners['primary_reason'] = np.where(df_runners['no'] == p1['no'], f"Top GS Score ({p1['gs_score']:.1f}) - {p1_status}", "")
         df_runners['win_stake_active'] = np.where((df_runners['no'] == p1['no']) & p1_passes_test, 1, 0)
+        
+        # If win stake shifted to another runner, flag it
+        if shifted_win_runner is not None:
+            df_runners.loc[df_runners['no'] == shifted_win_runner['no'], 'win_stake_active'] = 1
+            df_runners.loc[df_runners['no'] == shifted_win_runner['no'], 'primary_reason'] = f"Shifted Win Stake (EV +{shifted_win_runner['value_diff']:.3f})"
 
         print(f"\n--- RACE {race.get('race_no')} : {class_str} ---")
         print(f"🏆 PICK 1 (WINNING HORSE PICK): #{p1['no']} {p1['name']} (Odds: {p1['win_odds']:.1f}) - GS Score: {p1['gs_score']:.1f} - Conf: {p1['confidence']}% - Status: [{p1_status}]")
+        if shifted_win_runner is not None:
+            print(f"⚡ SHIFTED WIN STAKE: #{shifted_win_runner['no']} {shifted_win_runner['name']} (Odds: {shifted_win_runner['win_odds']:.1f}) - EV: +{shifted_win_runner['value_diff']:.3f}")
         if p2 is not None:
             print(f"🎯 PICK 2 (EXACTA/QUINELLA): #{p2['no']} {p2['name']} (Odds: {p2['win_odds']:.1f}) - GS Score: {p2['gs_score']:.1f}")
         if p3 is not None:
