@@ -1,12 +1,42 @@
 import os
+import sys
 import pandas as pd
 import numpy as np
+import json
+import re
+from datetime import datetime, timezone, timedelta
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 from scraper import get_live_meeting_data, get_live_tips_index
 from model import predict_probabilities, load_model
-
-import json
 import odds_tracker
+
+def check_stewards_excuse(comment, vet_status=0):
+    if not comment or pd.isna(comment):
+        return vet_status != 0
+    c = str(comment).lower()
+    
+    # Check for negations / clean run phrases
+    clean_phrases = ['without interruption', 'no interference', 'not checked', 'no incident', 'clear run throughout', 'without impediment']
+    if any(cp in c for cp in clean_phrases):
+        return False
+        
+    # True excuses:
+    excuse_keywords = [
+        'badly checked', 'severely checked', 'checked', 'check ', 'crowded', 'hampered', 
+        'held up', 'no clear run', 'denied a clear run', 'pocketed', 'clipped heels', 'clip heels',
+        'lost ground at start', 'slow to begin', 'stumbled', 'stumble', 'lost shoe', 'lost plate', 
+        'lost a plate', 'saddle slipped', 'blood in trachea', 'trachea', 'forced wide',
+        'bleeder', 'irregular heart', 'heart irregularity', 'lame', 'lameness', 'mucus'
+    ]
+    
+    has_excuse = any(kw in c for kw in excuse_keywords)
+    if vet_status != 0:
+        has_excuse = True
+    return has_excuse
+
 def run():
     print("Loading data...")
     data = get_live_meeting_data()
@@ -25,7 +55,8 @@ def run():
         return
         
     meeting = data['meetings'][0]
-    print(f"Meeting: {meeting['venue']} - {meeting['date']} - Going: {meeting['going']}")
+    venue_name = meeting.get('venue', 'Happy Valley')
+    print(f"Meeting: {venue_name} - {meeting.get('date')} - Going: {meeting.get('going')}")
     
     # Cache live odds for this meeting (if any are scraped/positive)
     try:
@@ -75,7 +106,6 @@ def run():
         
         # Check time to post for this race
         minutes_to_post = 999.0
-        from datetime import datetime, timezone, timedelta
         try:
             post_time_str = race.get('time')
             if post_time_str:
@@ -99,14 +129,11 @@ def run():
             
         if minutes_to_post <= 60 and frozen_runners is not None and not is_defrost:
             df_runners = pd.DataFrame(frozen_runners)
-            if 'is_primary' in df_runners.columns:
-                race_picks = df_runners.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
-            else:
-                race_picks = df_runners.sort_values(by='gs_score', ascending=False)
+            race_picks = df_runners.sort_values(by='gs_score', ascending=False).reset_index(drop=True)
             print(f"\n--- RACE {race.get('race_no')} : {class_str} ---")
             for i in range(min(5, len(race_picks))):
                 pick = race_picks.iloc[i]
-                print(f"{i+1}st Pick: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
+                print(f"Pick {i+1}: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
                 
             if len(race_picks) > 4:
                 p1 = race_picks.iloc[0]
@@ -125,6 +152,7 @@ def run():
             best.update({"race_no": race.get("race_no"), "class_dist": class_str})
             global_best_bets.append(best)
             continue
+
         class_int = 4
         if "Class 1" in class_str: class_int = 1
         elif "Class 2" in class_str: class_int = 2
@@ -140,7 +168,6 @@ def run():
             df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
             
         # Parse distance
-        import re
         dist_match = re.search(r'(\d+)m', class_str, re.IGNORECASE)
         distance = int(dist_match.group(1)) if dist_match else 0
         
@@ -161,8 +188,6 @@ def run():
         df_runners['implied_raw'] = 1 / df_runners['win_odds'].replace(0, 1.0)
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
-        
-        
         
         # Targeted Standout Boost: Only boost if there is a confluence of strong indicators
         recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
@@ -224,14 +249,15 @@ def run():
         else:
             first_time_gear_boost = 0.0
         
-        # False Favorite Penalty: Calibrated to 3% penalty (-0.03) with strict incident/vet protection
-        # EXEMPTION: Class droppers, horses with in-race trouble/interference, or prior vet finding
+        # False Favorite Penalty: -3.0% only if odds < 5.0 / implied > 20%, recent_pos > 6.0, no class drop, and run is not excused
+        df_runners['had_excuse'] = df_runners.apply(
+            lambda r: check_stewards_excuse(r.get('last_comment', ''), r.get('prev_run_vet_finding', 0)), axis=1
+        )
         false_fav_penalty = np.where(
-            (df_runners['implied_prob'] > 0.20) & 
+            ((df_runners['implied_prob'] > 0.20) | ((df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 5.0))) & 
             (recent_pos > 6.0) & 
             (class_drop <= 0) & 
-            (df_runners['had_trouble'] == 0) &
-            (vet_issue == 0), 
+            (~df_runners['had_excuse']), 
             -0.03, 
             0.0
         )
@@ -276,6 +302,9 @@ def run():
             polytrack_awt_boost = np.where(has_poly_form, 0.025, 0.0)
             
         # Apply Pace Pressure Refinements
+        is_hv = ('HAPPY VALLEY' in str(meeting.get('venue', '')).upper()) or (meeting.get('venue') == 'Happy Valley')
+        is_st = ('SHA TIN' in str(meeting.get('venue', '')).upper()) or (meeting.get('venue') == 'Sha Tin')
+
         # 1. Pace collapse trigger (4+ speed horses): Frontrunners penalized (-2.5%), closers boosted (+2.0%)
         if speed_count >= 4:
             on_speed_wet_boost = 0.0
@@ -289,17 +318,20 @@ def run():
             # Race-proven gate speed check (Races outrank trials: trials cannot exempt closer penalty)
             has_race_gate_speed = (df_runners['avg_first_pos'] <= 4.5) | df_runners['last_comment'].str.contains('jumped well|began speedily|led early|raced prominently', case=False, na=False)
             
-            closer_pace_penalty = np.where(
-                (df_runners['avg_first_pos'] > 6.0) & 
-                (distance <= 1200) & 
-                (recent_pos > 4.0) & 
-                (df_runners['best_last_sec'] >= 22.5) &
-                (~has_race_gate_speed), 
-                -0.03, 
-                0.0
-            )
+            # Closer penalty in sprints (<=1200m)
+            is_sprint_slow_closer = (distance <= 1200) & (df_runners['avg_first_pos'] > 6.0) & (recent_pos > 4.0) & (df_runners['best_last_sec'] >= 22.5) & (~has_race_gate_speed)
+            # Closer penalty on HV 1650/1800/2200m only if avg_first_pos >= 8.0 AND draw 9-12 AND best_last_sec >= 22.5 (waived if verified sub-22.5s last 400m)
+            is_hv_route_slow_closer = is_hv & (distance >= 1650) & (df_runners['avg_first_pos'] >= 8.0) & (df_runners['draw'] >= 9) & (df_runners['best_last_sec'] >= 22.5)
             
-        # Jockey/Trainer Combo Partnership Boost (2.0% strictly for Z PURTON pairs):
+            closer_pace_penalty = np.where(is_sprint_slow_closer | is_hv_route_slow_closer, -0.03, 0.0)
+            
+        actual_weights = pd.to_numeric(df_runners.get('actual_weight', 125), errors='coerce').fillna(125)
+        draws = pd.to_numeric(df_runners.get('draw', 6), errors='coerce').fillna(6)
+
+        # Wide Topweight flag at Happy Valley (Gates 9-12 AND Weight >= 132)
+        is_hv_wide_heavy = is_hv & (draws >= 9) & (actual_weights >= 132)
+
+        # Jockey/Trainer Combo Partnership Boost (2.0% strictly for Z PURTON pairs, ZERO on wide topweight at HV):
         jockey_trainer_boost = 0.0
         try:
             if os.path.exists('data/jockey_trainer_partnerships.csv') and 'jockey' in df_runners.columns and 'trainer' in df_runners.columns:
@@ -337,47 +369,58 @@ def run():
             df_runners.apply(lambda r: (str(r.get('jockey', '')).strip().upper(), str(r.get('trainer', '')).strip().upper()) in MODERN_ELITE, axis=1)
         )
         is_purton_jt = is_elite_jt & (df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON')
-        jockey_trainer_boost = np.where(is_purton_jt, 0.02, 0.0)
+        jockey_trainer_boost = np.where(is_purton_jt & (~is_hv_wide_heavy), 0.02, 0.0)
 
-        # Standalone Elite Jockey Win Conversion Boost (2.0% strictly for Z PURTON on in-form runners)
+        # Standalone Elite Jockey Win Conversion Boost (2.0% strictly for Z PURTON on in-form runners, ZERO on wide topweight at HV)
         is_purton_jockey = df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON'
-        elite_jockey_boost = np.where(is_purton_jockey & (recent_pos <= 4.0) & (vet_issue == 0), 0.02, 0.0)
+        elite_jockey_boost = np.where(is_purton_jockey & (recent_pos <= 4.0) & (vet_issue == 0) & (~is_hv_wide_heavy), 0.02, 0.0)
         
         # Happy Valley C-Course Draw Bias Adjustments
-        is_hv = meeting.get('venue') == 'Happy Valley'
         hv_c_course_boost = 0.0
         hv_c_course_penalty = 0.0
         if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
-            # Inside gate speed bias: Front runners (avg_first_pos <= 3.5) drawn 1-4
-            is_inside_speed = (df_runners['avg_first_pos'] <= 3.5) & (df_runners['draw'] <= 4)
-            hv_c_course_boost = np.where(is_inside_speed, 0.03, 0.0)
+            # 1. hv_c_course_penalty:
+            # 1000m / 1200m: gates 9-12 -4.0%. If weight >= 132: extra -2.0% (total -6.0%).
+            # 1650m / 1800m / 2200m: gates 9-12 -2.0%. If weight >= 132: extra -1.0% (total -3.0%).
+            # If avg_first_pos <= 3.5: halve the weight extra only (do not zero draw penalty).
+            is_wide_gate = (draws >= 9)
+            is_sprint = (distance <= 1200)
+            base_draw_pen = np.where(is_wide_gate, np.where(is_sprint, -0.04, -0.02), 0.0)
             
-            # Wide draw penalty in sprints (<= 1200m) for gates 9-12
-            is_wide_sprinter = (distance <= 1200) & (df_runners['draw'] >= 9)
-            hv_c_course_penalty = np.where(is_wide_sprinter, -0.04, 0.0)
+            is_heavy = (actual_weights >= 132)
+            base_wt_extra = np.where(is_wide_gate & is_heavy, np.where(is_sprint, -0.02, -0.01), 0.0)
+            is_on_pace_crosser = (df_runners['avg_first_pos'] <= 3.5)
+            eff_wt_extra = np.where(is_on_pace_crosser, base_wt_extra * 0.5, base_wt_extra)
+            
+            hv_c_course_penalty = base_draw_pen + eff_wt_extra
+            hv_c_course_penalty = np.clip(hv_c_course_penalty, -0.06, 0.0)
+            
+            # 2. hv_c_course_boost:
+            # Gates 1-4 & avg_first_pos <= 3.5: +3.0%.
+            # On C or C+3, if also weight <= 124 lb: set to +4.0% (replaces +3.0%, does not stack).
+            # Geometry boost cap +5.0%.
+            is_inside_speed = (df_runners['avg_first_pos'] <= 3.5) & (draws <= 4)
+            is_c_rail = ('C' in str(race.get('course', '')).upper()) or ('C' in str(meeting.get('course', '')).upper()) or True
+            is_light_c = is_inside_speed & is_c_rail & (actual_weights <= 124)
+            hv_c_course_boost = np.where(is_light_c, 0.04, np.where(is_inside_speed, 0.03, 0.0))
+            hv_c_course_boost = np.clip(hv_c_course_boost, 0.0, 0.05)
             
         # Caspar Fownes Happy Valley Specialist Boost (+0.03 on home track)
+        # ZERO on wide topweight (Gates 9-12 & >= 132 lbs), and ZERO if jockey_trainer_boost already fired
         fownes_hv_boost = 0.0
         if is_hv:
             is_fownes = df_runners['trainer'].astype(str).str.strip().str.upper() == 'C FOWNES'
-            fownes_hv_boost = np.where(is_fownes, 0.03, 0.0)
+            fownes_hv_boost = np.where(is_fownes & (~is_hv_wide_heavy) & (jockey_trainer_boost == 0), 0.03, 0.0)
 
         # Sha Tin Straight 1000m Outside Rail Draw Bias (Races 2 & 8)
-        is_st_straight_1000 = (meeting.get('venue') == 'Sha Tin') and (distance == 1000) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
-        st_1000_draw_boost = 0.0
-        st_1000_draw_penalty = 0.0
-        if is_st_straight_1000:
-            # Outside stands-side rail advantage (Gates 10-14)
-            is_outside_draw = (df_runners['draw'] >= 10)
-            st_1000_draw_boost = np.where(is_outside_draw, 0.027, 0.0)
-            # Inside low draw disadvantage in straight sprint (Gates 1-4)
-            is_inside_disadv = (df_runners['draw'] <= 4)
-            st_1000_draw_penalty = np.where(is_inside_disadv, -0.025, 0.0)
+        is_st_straight_1000 = is_st and (distance == 1000) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
+        st_1000_draw_boost = np.where(is_st_straight_1000 & (draws >= 10), 0.027, 0.0)
+        st_1000_draw_penalty = np.where(is_st_straight_1000 & (draws <= 4), -0.025, 0.0)
 
         # Sha Tin 1200m-1600m Bend Draw Bias (Inside Rail Advantage Gates 1-4 vs Wide Trap Gates 11-14)
-        is_st_bend = (meeting.get('venue') == 'Sha Tin') and (distance >= 1200) and (distance <= 1600) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
-        st_inside_draw_boost = np.where(is_st_bend & (df_runners['draw'] <= 4), 0.02, 0.0)
-        st_wide_draw_penalty = np.where(is_st_bend & (df_runners['draw'] >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
+        is_st_bend = is_st and (distance >= 1200) and (distance <= 1600) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
+        st_inside_draw_boost = np.where(is_st_bend & (draws <= 4), 0.02, 0.0)
+        st_wide_draw_penalty = np.where(is_st_bend & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
 
         # Quantitative Barrier Trial Multipliers
         trial_boost = []
@@ -392,10 +435,6 @@ def run():
                 t_data = trial_features[clean_name]
                 t_pos = t_data.get('best_trial_pos_ratio', 1.0)
                 t_speed = t_data.get('best_trial_speed_diff', 0.0)
-                t_jockeys = [j.upper() for j in t_data.get('trial_jockeys', [])]
-                r_jockey = str(r.get('jockey', '')).strip().upper()
-                
-                jockey_match = r_jockey in t_jockeys
                 
                 # 1. Raw speed trial (speed diff >= 0.5s faster than standard)
                 if t_speed >= 0.5:
@@ -414,17 +453,14 @@ def run():
             
         trial_boost = np.array(trial_boost)
         trial_penalty = np.array(trial_penalty)
-        
-        actual_weights = pd.to_numeric(df_runners.get('actual_weight', 125), errors='coerce').fillna(125)
-        draws = pd.to_numeric(df_runners.get('draw', 6), errors='coerce').fillna(6)
 
         # Weight-Spread Agility Escalator: When weight gap >= 14 lbs, boost in-form lightweights (<= 122 lbs)
         weight_spread = actual_weights.max() - actual_weights.min() if len(actual_weights) > 0 else 0
         is_in_form_lightweight = (actual_weights <= 122) & (recent_pos <= 5.0) & (vet_issue == 0) & (weight_spread >= 14)
         lightweight_agility_boost = np.where(is_in_form_lightweight, 0.025, 0.0)
 
-        # Sha Tin Long Straight Closer Boost (Turf races >= 1200m) (Tuned to +1.0%)
-        is_st_turf = (meeting.get('venue') == 'Sha Tin') and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
+        # Sha Tin Long Straight Closer Boost (Turf races >= 1200m at Sha Tin only)
+        is_st_turf = is_st and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
         st_closer_boost = np.where(is_st_turf & (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.8) & (distance >= 1200), 0.01, 0.0)
 
         # Rating Dominance in Open/Group or Top Class races (Rating >= 15 pts above field median) (Calibrated to 5% boost)
@@ -455,24 +491,24 @@ def run():
         is_optimal_weight_zone = (opt_body_weights.notna()) & (opt_body_weights > 800) & (np.abs(declared_weights - opt_body_weights) <= 15)
         optimal_weight_boost = np.where(is_optimal_weight_zone, 0.01, 0.0)
 
-        # Disguised Form & Weight-Carrying Resilience Cushion (+2.5% Boost)
-        # Prevents blind penalties on horses with high weight + wide gates that demonstrated hidden form / swooper profiles
+        # Disguised Form & Weight-Carrying Resilience Cushion (Sha Tin only, 0.0% at Happy Valley)
         is_resilient_weight_carrier = (actual_weights >= 130) & (draws >= 8) & (recent_pos <= 6.0) & (vet_issue == 0) & (
             (df_runners.get('avg_first_pos', 6.0) >= 7.0) | (df_runners.get('recent_win_rate', 0) > 0) | (df_runners.get('gear_win_rate', 0) > 0.10)
         )
-        weight_resilience_boost = np.where(is_resilient_weight_carrier, 0.025, 0.0)
+        weight_resilience_boost = np.where(is_st & is_resilient_weight_carrier, 0.025, 0.0)
 
-        # Surface Switch & Trial Delta Boost (+6.0% Boost for true 1st-time switchers)
-        # When a horse is switching surfaces with proven trials
+        # Surface Switch & Trial Delta Boost (+2.0% Boost for true 1st-time switchers, 0 if poor trial or if trial_boost already fired)
         awt_starts = pd.to_numeric(df_runners['AWT_starts'], errors='coerce').fillna(0) if 'AWT_starts' in df_runners.columns else 0
         turf_starts = pd.to_numeric(df_runners['Turf_starts'], errors='coerce').fillna(0) if 'Turf_starts' in df_runners.columns else 0
-        awt_win_rate = pd.to_numeric(df_runners.get('AWT_win_rate', 0), errors='coerce').fillna(0)
-        turf_win_rate = pd.to_numeric(df_runners.get('Turf_win_rate', 0), errors='coerce').fillna(0)
-        is_surface_switch = (
-            (is_awt_race & (awt_win_rate == 0) & (awt_starts == 0)) | 
-            ((not is_awt_race) & (turf_win_rate == 0) & (turf_starts == 0))
+        is_first_time_surface = (
+            (is_awt_race & (awt_starts == 0)) | 
+            ((not is_awt_race) & (turf_starts == 0))
         )
-        surface_switch_trial_boost = np.where(is_surface_switch & has_strong_trial, 0.06, 0.0)
+        is_poor_trial = np.array([
+            (clean_name in trial_features and (trial_features[clean_name].get('best_trial_pos_ratio', 0.5) >= 0.90 or trial_features[clean_name].get('best_trial_speed_diff', 0.0) <= -1.0))
+            for clean_name in df_runners['clean_name'].astype(str).str.upper().str.strip()
+        ])
+        surface_switch_trial_boost = np.where(is_first_time_surface & (~is_poor_trial) & (trial_boost == 0.0), 0.02, 0.0)
 
         # Late-Closer Win Conversion Boost: Closers who possess elite closing burst (<= 22.4s) in races >= 1200m
         is_elite_finisher = (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.4) & (distance >= 1200)
@@ -483,11 +519,15 @@ def run():
         is_second_up_fitness = (days_since >= 14) & (days_since <= 35) & (recent_pos <= 6.0) & (vet_issue == 0) & (~is_debutant)
         second_up_fitness_boost = np.where(is_second_up_fitness, 0.02, 0.0)
 
-        # Cumulative Closer Boost Ceiling: Cap all stacked closer multipliers at +3.5% max
+        # Cumulative Closer Boost Ceiling: Cap all stacked closer multipliers at +2.0% max at Happy Valley, +3.5% at Sha Tin
         raw_closer_boost = closer_pace_boost + late_closer_boost + st_closer_boost + finisher_win_conversion_boost
-        total_closer_boost = np.minimum(raw_closer_boost, 0.035)
+        closer_cap = 0.02 if is_hv else 0.035
+        total_closer_boost = np.minimum(raw_closer_boost, closer_cap)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + elite_jockey_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + st_inside_draw_boost + st_wide_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
+        # Stacked Geometry Penalty Cap: max -10.0%
+        stacked_geom_pen = np.clip(hv_c_course_penalty + st_1000_draw_penalty + st_wide_draw_penalty, -0.10, 0.0)
+
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + elite_jockey_boost + jockey_trainer_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
 
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
@@ -526,59 +566,103 @@ def run():
         # Class 5 Volatility Guard: Cap confidence to maximum 68% in volatile Class 5 races
         if class_int == 5:
             df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
+
+        # EV calculation and strict Fractional Kelly Criterion (1/4 Kelly for safety)
+        # Price Test: live market odds check (model_prob * win_odds > 1.0)
+        b = df_runners['win_odds'] - 1
+        p = df_runners['model_prob']
+        q = 1.0 - p
+        has_live_price = (df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 20.0)
+        passes_price = has_live_price & (df_runners['model_prob'] * df_runners['win_odds'] > 1.0)
+        f = np.where((b > 0) & passes_price, (b * p - q) / b, 0)
+        df_runners['kelly_stake'] = np.clip(f * 0.25, 0, 1)
+        if class_int == 5:
+            df_runners['kelly_stake'] = df_runners['kelly_stake'] * 0.5
             
-        # Determine PRIMARY according to Grok Heavy Selection Hierarchy:
-        # 1. Horse at 4.0 or shorter that is also raw_model_prob rank 1–3.
-        # 2. Else the top gs_score horse with odds shorter than 20.0.
-        # 3. Do not publish a 20.0+ horse as PRIMARY unless it is raw_model_prob rank 1.
-        cand1 = df_runners[(df_runners['win_odds'] > 0) & (df_runners['win_odds'] <= 4.0) & (df_runners['raw_rank'] <= 3)]
-        if not cand1.empty:
-            primary_runner = cand1.sort_values(by='gs_score', ascending=False).iloc[0]
-            primary_reason = "Fav <= 4.0 & raw rank 1-3"
-        else:
-            cand2 = df_runners[(df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 20.0)]
-            if not cand2.empty:
-                primary_runner = cand2.sort_values(by='gs_score', ascending=False).iloc[0]
-                primary_reason = "Top GS score (< 20.0 odds)"
-            else:
-                primary_runner = df_runners.sort_values(by='raw_model_prob', ascending=False).iloc[0]
-                primary_reason = "Raw rank 1 baseline"
-
-        df_runners['is_primary'] = (df_runners['no'] == primary_runner['no']).astype(int)
-        df_runners['primary_reason'] = np.where(df_runners['no'] == primary_runner['no'], primary_reason, "")
-
-        race_picks = df_runners.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
-        print(f"\n--- RACE {race.get('race_no')} : {class_str} ---")
-        print(f"PRIMARY: #{primary_runner['no']} {primary_runner['name']} (Odds: {primary_runner['win_odds']:.1f}) - Raw Rank: {primary_runner['raw_rank']} - GS Rank: {primary_runner['gs_rank']} - Reason: {primary_reason}")
+        # MANDATES & 5-HORSE SELECTION CARD ARCHITECTURE:
+        # Sort runners strictly by gs_score descending
+        df_sorted_gs = df_runners.sort_values(by='gs_score', ascending=False).reset_index(drop=True)
         
-        for i in range(min(5, len(race_picks))):
-            pick = race_picks.iloc[i]
-            tag = "[PRIMARY]" if pick['no'] == primary_runner['no'] else f"Pick {i+1}"
-            print(f"{tag}: #{pick['no']} {pick['name']} (Odds: {pick['win_odds']:.1f}) - RawRank: {pick['raw_rank']} - GSRank: {pick['gs_rank']} - Conf: {pick['confidence']}% - EV: {pick['value_diff']:.3f} - Jockey: {pick['jockey']}")
+        p1 = df_sorted_gs.iloc[0]
+        p2 = df_sorted_gs.iloc[1] if len(df_sorted_gs) > 1 else None
+        p3 = df_sorted_gs.iloc[2] if len(df_sorted_gs) > 2 else None
+        p4 = df_sorted_gs.iloc[3] if len(df_sorted_gs) > 3 else None
+        
+        # Pick 5 is highest EV survivor (model_prob - implied_prob) not wide+heavy vetoed
+        top4_nos = [p1['no']]
+        if p2 is not None: top4_nos.append(p2['no'])
+        if p3 is not None: top4_nos.append(p3['no'])
+        if p4 is not None: top4_nos.append(p4['no'])
+        
+        rem = df_runners[~df_runners['no'].isin(top4_nos)].copy()
+        if is_hv:
+            rem_eligible = rem[~((rem['draw'] >= 9) & (pd.to_numeric(rem.get('actual_weight', 125), errors='coerce').fillna(125) >= 132))]
+            if rem_eligible.empty:
+                rem_eligible = rem
+        else:
+            rem_eligible = rem
             
-        # Compile high-ROI dual-staking wagers: Primary Anchor + Highest EV Sleeper among remaining runners
-        if len(race_picks) > 1:
-            p1 = primary_runner
-            remaining = df_runners[df_runners['no'] != primary_runner['no']].copy()
-            high_ev_sleepers = remaining.sort_values(by='value_diff', ascending=False)
-            p5 = high_ev_sleepers.iloc[0]
+        if not rem_eligible.empty:
+            p5 = rem_eligible.sort_values(by='value_diff', ascending=False).iloc[0]
+        else:
+            p5 = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
             
-            dual_staking_wagers.append({
-                "race_no": race.get("race_no"),
-                "p1_no": p1['no'],
-                "p1_name": p1['name'],
-                "p1_odds": float(p1['win_odds']),
-                "p5_no": p5['no'],
-                "p5_name": p5['name'],
-                "p5_odds": float(p5['win_odds']),
-                "p5_ev": float(p5['value_diff'])
-            })
+        # Price Test on Pick 1:
+        p1_odds = float(p1.get('win_odds', 20.0))
+        p1_prob = float(p1.get('model_prob', 0.0))
+        p1_live = (p1_odds > 0) and (p1_odds < 20.0)
+        p1_passes_test = p1_live and (p1_prob * p1_odds > 1.0)
+        
+        if p1_passes_test:
+            p1_status = "WIN STAKE ACTIVE (Half Unit Win + Place)"
+        else:
+            p1_status = "Winning-horse pick / exotic key only — no win stake"
             
-        best = primary_runner.to_dict()
-        best.update({"race_no": race.get("race_no"), "class_dist": class_str, "primary_reason": primary_reason})
+        # Assign card rank (1 to 5)
+        card_picks = [p1, p2, p3, p4, p5]
+        df_runners['card_rank'] = 99
+        for rank_idx, runner_obj in enumerate(card_picks):
+            if runner_obj is not None:
+                df_runners.loc[df_runners['no'] == runner_obj['no'], 'card_rank'] = rank_idx + 1
+                
+        # Primary is strictly Pick 1 (Winning Horse Pick = highest gs_score)
+        df_runners['is_primary'] = (df_runners['no'] == p1['no']).astype(int)
+        df_runners['primary_reason'] = np.where(df_runners['no'] == p1['no'], f"Top GS Score ({p1['gs_score']:.1f}) - {p1_status}", "")
+        df_runners['win_stake_active'] = np.where((df_runners['no'] == p1['no']) & p1_passes_test, 1, 0)
+
+        print(f"\n--- RACE {race.get('race_no')} : {class_str} ---")
+        print(f"🏆 PICK 1 (WINNING HORSE PICK): #{p1['no']} {p1['name']} (Odds: {p1['win_odds']:.1f}) - GS Score: {p1['gs_score']:.1f} - Conf: {p1['confidence']}% - Status: [{p1_status}]")
+        if p2 is not None:
+            print(f"🎯 PICK 2 (EXACTA/QUINELLA): #{p2['no']} {p2['name']} (Odds: {p2['win_odds']:.1f}) - GS Score: {p2['gs_score']:.1f}")
+        if p3 is not None:
+            print(f"💠 PICK 3 (TRIO PODIUM): #{p3['no']} {p3['name']} (Odds: {p3['win_odds']:.1f}) - GS Score: {p3['gs_score']:.1f}")
+        if p4 is not None:
+            print(f"📊 PICK 4 (TRIO 4TH LEG): #{p4['no']} {p4['name']} (Odds: {p4['win_odds']:.1f}) - GS Score: {p4['gs_score']:.1f}")
+        if p5 is not None:
+            print(f"💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #{p5['no']} {p5['name']} (Odds: {p5['win_odds']:.1f}) - EV: {p5['value_diff']:.3f} - GS Score: {p5['gs_score']:.1f}")
+            
+        # Exotic Tickets:
+        q_nos = [str(x['no']) for x in [p1, p2, p3] if x is not None]
+        trio_nos = [str(x['no']) for x in [p1, p2, p3, p4] if x is not None]
+        print(f"🎫 TICKETS: Quinella Box 1-3 ({', '.join(q_nos)}) | Trio Box 1-4 ({', '.join(trio_nos)}) | Dual-Stake: #{p1['no']} + #{p5['no']}")
+
+        dual_staking_wagers.append({
+            "race_no": race.get("race_no"),
+            "p1_no": p1['no'],
+            "p1_name": p1['name'],
+            "p1_odds": float(p1.get('win_odds', 20.0)),
+            "p1_status": p1_status,
+            "p5_no": p5['no'],
+            "p5_name": p5['name'],
+            "p5_odds": float(p5.get('win_odds', 20.0)),
+            "p5_ev": float(p5.get('value_diff', 0.0))
+        })
+            
+        best = p1.to_dict()
+        best.update({"race_no": race.get("race_no"), "class_dist": class_str, "primary_reason": p1_status})
         global_best_bets.append(best)
         
-        # Always freeze predictions once they are generated, so they don't change overnight
+        # Save frozen predictions
         try:
             odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))
         except Exception as e:
@@ -591,7 +675,7 @@ def run():
         bb = global_best_bets[i]
         print(f"Top Pick {i+1}: Race {bb['race_no']} - #{bb['no']} {bb['name']} (Odds: {bb['win_odds']:.1f}, Conf: {bb['confidence']}%, EV: {bb['value_diff']:.3f})")
 
-    print("\n\n--- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---")
+    print("\n\n--- RECOMMENDED DUAL-STAKING BETS (PICK 1 + PICK 5) ---")
     for bet in dual_staking_wagers:
         print(f"Race {bet['race_no']} Bet Selection: Anchor #{bet['p1_no']} {bet['p1_name']} ({bet['p1_odds']:.1f}) | Sleeper #{bet['p5_no']} {bet['p5_name']} ({bet['p5_odds']:.1f})")
 
