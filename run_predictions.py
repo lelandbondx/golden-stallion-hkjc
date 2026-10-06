@@ -343,14 +343,10 @@ def run():
         is_purton_jockey = df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON'
         elite_jockey_boost = np.where(is_purton_jockey & (recent_pos <= 4.0) & (vet_issue == 0), 0.02, 0.0)
         
-        actual_weights = pd.to_numeric(df_runners.get('actual_weight', 125), errors='coerce').fillna(125)
-        draws = pd.to_numeric(df_runners.get('draw', 6), errors='coerce').fillna(6)
-
         # Happy Valley C-Course Draw Bias Adjustments
         is_hv = meeting.get('venue') == 'Happy Valley'
         hv_c_course_boost = 0.0
         hv_c_course_penalty = 0.0
-        hv_heavy_wide_penalty = 0.0
         if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
             # Inside gate speed bias: Front runners (avg_first_pos <= 3.5) drawn 1-4
             is_inside_speed = (df_runners['avg_first_pos'] <= 3.5) & (df_runners['draw'] <= 4)
@@ -358,11 +354,7 @@ def run():
             
             # Wide draw penalty in sprints (<= 1200m) for gates 9-12
             is_wide_sprinter = (distance <= 1200) & (df_runners['draw'] >= 9)
-            hv_c_course_penalty = np.where(is_wide_sprinter, -0.045, 0.0)
-            
-            # Heavy Weight + Wide Gate Compound Trap (>= 132 lbs from Gates 9-12)
-            is_heavy_wide_trap = (df_runners['draw'] >= 9) & (actual_weights >= 132) & (df_runners['avg_first_pos'] > 3.0)
-            hv_heavy_wide_penalty = np.where(is_heavy_wide_trap, -0.05, 0.0)
+            hv_c_course_penalty = np.where(is_wide_sprinter, -0.04, 0.0)
             
         # Caspar Fownes Happy Valley Specialist Boost (+0.03 on home track)
         fownes_hv_boost = 0.0
@@ -495,7 +487,7 @@ def run():
         raw_closer_boost = closer_pace_boost + late_closer_boost + st_closer_boost + finisher_win_conversion_boost
         total_closer_boost = np.minimum(raw_closer_boost, 0.035)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + elite_jockey_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + hv_heavy_wide_penalty + st_1000_draw_boost + st_1000_draw_penalty + st_inside_draw_boost + st_wide_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + elite_jockey_boost + jockey_trainer_boost + hv_c_course_boost + hv_c_course_penalty + st_1000_draw_boost + st_1000_draw_penalty + st_inside_draw_boost + st_wide_draw_penalty + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
 
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
@@ -535,22 +527,22 @@ def run():
         if class_int == 5:
             df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
             
-        # Determine PRIMARY according to Grok Heavy Selection Hierarchy (Upgraded with Value & Full Tactical Fallback):
-        # 1. Market favorite (<= 4.0) that is model-confirmed (raw_rank <= 3) AND protected against negative EV (EV >= -0.05).
-        # 2. Else top tactical gs_score horse with odds < 20.0.
-        # 3. Overnight Baseline: Rank strictly by top gs_score (all tactical & track multipliers active).
-        cand1 = df_runners[(df_runners['win_odds'] > 0) & (df_runners['win_odds'] <= 4.0) & (df_runners['raw_rank'] <= 3) & (df_runners['value_diff'] >= -0.05)]
+        # Determine PRIMARY according to Grok Heavy Selection Hierarchy:
+        # 1. Horse at 4.0 or shorter that is also raw_model_prob rank 1–3.
+        # 2. Else the top gs_score horse with odds shorter than 20.0.
+        # 3. Do not publish a 20.0+ horse as PRIMARY unless it is raw_model_prob rank 1.
+        cand1 = df_runners[(df_runners['win_odds'] > 0) & (df_runners['win_odds'] <= 4.0) & (df_runners['raw_rank'] <= 3)]
         if not cand1.empty:
             primary_runner = cand1.sort_values(by='gs_score', ascending=False).iloc[0]
-            primary_reason = "Fav <= 4.0 & raw rank 1-3 (EV Protected)"
+            primary_reason = "Fav <= 4.0 & raw rank 1-3"
         else:
             cand2 = df_runners[(df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 20.0)]
             if not cand2.empty:
                 primary_runner = cand2.sort_values(by='gs_score', ascending=False).iloc[0]
                 primary_reason = "Top GS score (< 20.0 odds)"
             else:
-                primary_runner = df_runners.sort_values(by='gs_score', ascending=False).iloc[0]
-                primary_reason = "Top Tactical GS Score (Baseline)"
+                primary_runner = df_runners.sort_values(by='raw_model_prob', ascending=False).iloc[0]
+                primary_reason = "Raw rank 1 baseline"
 
         df_runners['is_primary'] = (df_runners['no'] == primary_runner['no']).astype(int)
         df_runners['primary_reason'] = np.where(df_runners['no'] == primary_runner['no'], primary_reason, "")
