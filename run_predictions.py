@@ -624,7 +624,14 @@ def run():
         
         shifted_win_runner = None
         
-        if is_p1_wide_heavy and (not p1_is_crosser):
+        if not p1_live:
+            # Pre-market placeholder odds (e.g. 20.0) -> Awaiting live odds
+            p1_passes_test = False
+            p1_status = "Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)"
+            df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
+            shifted_win_runner = None
+            
+        elif is_p1_wide_heavy and (not p1_is_crosser):
             # Condition 1: Wide topweight, NOT an on-pace crosser (e.g. Aurora Lady) -> Win stake LOCKED
             p1_passes_test = False
             p1_status = "Winning-horse pick / exotic key only — no win stake. Wide topweight, not an on-pace crosser."
