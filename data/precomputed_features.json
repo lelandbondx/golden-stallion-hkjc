@@ -2139,6 +2139,145 @@
         ],
         "ZACHARY": [
             "CP-/B2/TT"
+        ],
+        "OCEAN IMPACT": [
+            "CP-/B1"
+        ],
+        "LUCKY MCQUEEN": [
+            "H/TT"
+        ],
+        "WINNING MONEY": [
+            "H/XB"
+        ],
+        "DECISION LINK": [
+            "V/TT",
+            "V1/TT"
+        ],
+        "DASHING MAURISON": [
+            "CP-/B1"
+        ],
+        "LUCK IS BACK": [
+            "B"
+        ],
+        "FORTUNE STAR": [
+            "B/TT"
+        ],
+        "VIVA GRACIOUSNESS": [
+            "TT"
+        ],
+        "SKY DEEP": [
+            "V/XB"
+        ],
+        "TAKE ACTION": [
+            "B"
+        ],
+        "STURDY RUBY": [
+            "B/TT"
+        ],
+        "GRAND NOVA": [
+            "E"
+        ],
+        "VIGOR EYE": [
+            "CP"
+        ],
+        "CALIFORNIA BAY": [
+            "V/TT"
+        ],
+        "KING OBERON": [
+            "B"
+        ],
+        "NO OTHER CHOICE": [
+            "B/TT"
+        ],
+        "TARGET AUDIENCE": [
+            "TT",
+            "TT1"
+        ],
+        "STARRY SHOW": [
+            "B"
+        ],
+        "MAJESTIC DELIGHT": [
+            "XB/TT"
+        ],
+        "BRIGHT DAY": [
+            "V/TT"
+        ],
+        "JUBILANT WINNER": [
+            "B/TT",
+            "BR-/V-/B1/TT"
+        ],
+        "POPE CODY": [
+            "TT"
+        ],
+        "DO YOU JUST": [
+            "H-/CP2/TT"
+        ],
+        "DAZZLING FIT": [
+            "XB"
+        ],
+        "FLYING FORTUNE": [
+            "TT"
+        ],
+        "MOTOR": [
+            "B/TT",
+            "CP-/B1/TT"
+        ],
+        "YOUNG ARROW": [
+            "CP"
+        ],
+        "RUN RUN SMART": [
+            "TT"
+        ],
+        "LEGEND WINNER": [
+            "B/TT"
+        ],
+        "AUDACIOUS PURSUIT": [
+            "TT"
+        ],
+        "LIVE WIRE": [
+            "B/XB"
+        ],
+        "THUNDER KIT": [
+            "H"
+        ],
+        "PRESTIGE ALWAYS": [
+            "B/TT"
+        ],
+        "RISING PHOENIX": [
+            "B"
+        ],
+        "HONEST WITNESS": [
+            "B/TT"
+        ],
+        "RAGGA BOMB": [
+            "CP-/XB"
+        ],
+        "PODIUM": [
+            "B/TT"
+        ],
+        "AURORA LADY": [
+            "CP/TT"
+        ],
+        "FLYING WROTE": [
+            "TT"
+        ],
+        "LUCKY PLANET": [
+            "B/TT"
+        ],
+        "POWER KOEPP": [
+            "B"
+        ],
+        "MATTERS MOST": [
+            "B/TT"
+        ],
+        "PRESTIGE GOOD": [
+            "V"
+        ],
+        "AURIO": [
+            "SR/TT"
+        ],
+        "STORMING DRAGON": [
+            "B2/TT"
         ]
     },
     "running_styles": {
@@ -3938,7 +4077,115 @@
         "ZACHARY": 8.076923076923077,
         "ZERO ENERGY ACT": 10.625,
         "ZERO HEDGE": 6.0,
-        "ZOOMOOL": 10.5
+        "ZOOMOOL": 10.5,
+        "CAN'T GO WONG": 6.75,
+        "YOUNG FIGHTER": 6.571428571428571,
+        "GOOD LUCK WIN": 5.25,
+        "PERFECT PAIRING": 11.25,
+        "TURF PHOENIX": 5.75,
+        "KINGLY DEMEANOR": 1.6666666666666667,
+        "SPLENDID FORCE": 9.0,
+        "OCEAN IMPACT": 6.25,
+        "SHARPEN BRIGHT": 6.416666666666667,
+        "GLORIOUS DYNASTY": 7.666666666666667,
+        "LUCKY MCQUEEN": 6.25,
+        "HAYDAY": 3.9166666666666665,
+        "SMILING ONE": 9.25,
+        "GRAND TURBO": 11.75,
+        "WINNING MONEY": 3.1666666666666665,
+        "GOLDEN FORTUNE": 5.583333333333333,
+        "I AM BACK": 8.333333333333334,
+        "WORLD HERO": 6.0,
+        "NEW POWER": 4.636363636363637,
+        "LOVING VIBES": 5.083333333333333,
+        "VIGOR HAPPINESS": 3.5,
+        "DECISION LINK": 7.083333333333333,
+        "SUNDAY'S SERENADE": 8.583333333333334,
+        "BULLISH NOVA": 9.0,
+        "LIGHTNESS OF BEING": 6.0,
+        "DASHING MAURISON": 9.083333333333334,
+        "SMILING CHAMPION": 10.0,
+        "LUCK IS BACK": 6.75,
+        "EXCEED THE LIMIT": 9.0,
+        "CLASS": 8.0,
+        "FORTUNE STAR": 9.5,
+        "COLOURFUL GAN": 6.9,
+        "VIVA GRACIOUSNESS": 5.5,
+        "TACTICAL COMMAND": 6.0,
+        "LUCKY XANDER": 8.3,
+        "SKY DEEP": 4.2727272727272725,
+        "PRECISION HOPE": 8.9,
+        "TAKE ACTION": 8.25,
+        "JUMBO STEPS": 8.333333333333334,
+        "MISSION GIANT": 6.5,
+        "BLAZING METEOR": 14.0,
+        "ABSOLUTE HONOUR": 3.6666666666666665,
+        "AMAZING AWARD": 4.583333333333333,
+        "STURDY RUBY": 9.0,
+        "GLORIOUS ST PAUL'S": 6.0,
+        "GRAND NOVA": 7.25,
+        "MASTER CHAMPION": 4.416666666666667,
+        "SUPERB KING": 2.75,
+        "GEORGIAN SIGMA": 2.5,
+        "BRILLIANT TURN": 6.0,
+        "VIGOR EYE": 3.5555555555555554,
+        "COPPER CORE": 6.8,
+        "JACKSON HABIT": 9.333333333333334,
+        "BEAUTY SHOW": 1.3333333333333333,
+        "PRESTIGE RICKY": 9.333333333333334,
+        "CALIFORNIA BAY": 5.916666666666667,
+        "GOLDEN ACE": 13.0,
+        "GRIT SPIRIT": 10.0,
+        "IRON SECURITY": 3.875,
+        "UNSTOPPAPLE": 11.0,
+        "MAPOGO": 2.8333333333333335,
+        "POET'S REIGN": 10.6,
+        "KING OBERON": 4.75,
+        "NO OTHER CHOICE": 6.166666666666667,
+        "TARGET AUDIENCE": 6.222222222222222,
+        "STARRY SHOW": 8.583333333333334,
+        "KWAI CHUNG TALENTS": 6.75,
+        "MAJESTIC DELIGHT": 7.75,
+        "BRIGHT DAY": 7.083333333333333,
+        "JUBILANT WINNER": 5.25,
+        "VIEW OF COSMOS": 10.25,
+        "POPE CODY": 8.666666666666666,
+        "SAVVY BRILLIANT": 9.909090909090908,
+        "DO YOU JUST": 3.5,
+        "DAZZLING FIT": 8.166666666666666,
+        "QUANTUM CLOUD": 7.333333333333333,
+        "FLYING FORTUNE": 6.111111111111111,
+        "DARYL FLASH": 6.0,
+        "CALL ME TOPSEED": 4.571428571428571,
+        "MOTOR": 6.083333333333333,
+        "YOUNG ARROW": 7.416666666666667,
+        "REFUSETOBEENGLISH": 9.25,
+        "RUN RUN SMART": 2.3333333333333335,
+        "LEGEND WINNER": 5.3,
+        "AUDACIOUS PURSUIT": 7.833333333333333,
+        "LIVE WIRE": 2.625,
+        "THUNDER KIT": 8.9,
+        "URANUS STAR": 3.5,
+        "PRESTIGE ALWAYS": 5.818181818181818,
+        "RISING PHOENIX": 8.166666666666666,
+        "THUNDER ACTION": 11.0,
+        "AMAZING KID": 4.75,
+        "TRIPLE FORTUNE": 11.0,
+        "HONEST WITNESS": 2.75,
+        "RAGGA BOMB": 5.636363636363637,
+        "PODIUM": 7.833333333333333,
+        "AURORA LADY": 5.363636363636363,
+        "FLYING WROTE": 5.583333333333333,
+        "LUCKY PLANET": 2.0833333333333335,
+        "POWER KOEPP": 5.666666666666667,
+        "MATTERS MOST": 2.1666666666666665,
+        "PRESTIGE GOOD": 5.583333333333333,
+        "HEALTHY HEALTHY": 6.0,
+        "GUSTOSISIMO": 5.0,
+        "HAPPY UNITED": 6.0,
+        "AURIO": 8.636363636363637,
+        "THE HEIR": 8.083333333333334,
+        "STORMING DRAGON": 9.0
     },
     "last_comments": {
         "BABA MAMA": "Began well, raced 2 wide in midfield, slightly improved     from 600M, finished off strongly to get 2nd.                                                                                                                                        ",
