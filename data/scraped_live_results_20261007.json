@@ -1,0 +1,394 @@
+{
+  "1": [
+    {
+      "plc": "1",
+      "no": "9",
+      "name": "GOLDEN FORTUNE(K500)",
+      "jockey": "B Avdulla",
+      "trainer": "K L Man",
+      "odds": "4.7"
+    },
+    {
+      "plc": "2",
+      "no": "4",
+      "name": "KINGLY DEMEANOR(H486)",
+      "jockey": "M L Yeung",
+      "trainer": "A S Cruz",
+      "odds": "6.6"
+    },
+    {
+      "plc": "3",
+      "no": "8",
+      "name": "GOOD LUCK WIN(J135)",
+      "jockey": "K C Leung",
+      "trainer": "P C Ng",
+      "odds": "10"
+    },
+    {
+      "plc": "4",
+      "no": "11",
+      "name": "PERFECT PAIRING(J331)",
+      "jockey": "A Atzeni",
+      "trainer": "J Size",
+      "odds": "10"
+    },
+    {
+      "plc": "5",
+      "no": "5",
+      "name": "OCEAN IMPACT(J502)",
+      "jockey": "L Ferraris",
+      "trainer": "D J Whyte",
+      "odds": "9.8"
+    },
+    {
+      "plc": "6",
+      "no": "3",
+      "name": "GRAND TURBO(L138)",
+      "jockey": "R Kingscote",
+      "trainer": "C S Shum",
+      "odds": "15"
+    },
+    {
+      "plc": "7",
+      "no": "6",
+      "name": "YOUNG FIGHTER(K464)",
+      "jockey": "E C W Wong",
+      "trainer": "C Fownes",
+      "odds": "21"
+    },
+    {
+      "plc": "8",
+      "no": "1",
+      "name": "CAN'T GO WONG(H087)",
+      "jockey": "Z Purton",
+      "trainer": "F C Lor",
+      "odds": "4"
+    },
+    {
+      "plc": "9",
+      "no": "12",
+      "name": "TURF PHOENIX(J294)",
+      "jockey": "H T Mo",
+      "trainer": "K H Ting",
+      "odds": "21"
+    },
+    {
+      "plc": "10",
+      "no": "10",
+      "name": "SPLENDID FORCE(K120)",
+      "jockey": "J Orman",
+      "trainer": "C H Yip",
+      "odds": "17"
+    },
+    {
+      "plc": "11",
+      "no": "2",
+      "name": "SHARPEN BRIGHT(H276)",
+      "jockey": "K Teetan",
+      "trainer": "D J Hall",
+      "odds": "11"
+    },
+    {
+      "plc": "12",
+      "no": "7",
+      "name": "SMILING ONE(K336)",
+      "jockey": "M F Poon",
+      "trainer": "K H Ting",
+      "odds": "83"
+    }
+  ],
+  "2": [
+    {
+      "plc": "1",
+      "no": "7",
+      "name": "NEW POWER(H325)",
+      "jockey": "M L Yeung",
+      "trainer": "C W Chang",
+      "odds": "9.9"
+    },
+    {
+      "plc": "2",
+      "no": "5",
+      "name": "WORLD HERO(J413)",
+      "jockey": "H Bentley",
+      "trainer": "D A Hayes",
+      "odds": "8.3"
+    },
+    {
+      "plc": "3",
+      "no": "9",
+      "name": "LIGHTNESS OF BEING(K159)",
+      "jockey": "Y L Chung",
+      "trainer": "A S Cruz",
+      "odds": "24"
+    },
+    {
+      "plc": "4",
+      "no": "2",
+      "name": "LUCKY MCQUEEN(K064)",
+      "jockey": "M F Poon",
+      "trainer": "W K Mo",
+      "odds": "5.9"
+    },
+    {
+      "plc": "5",
+      "no": "8",
+      "name": "I AM BACK(L061)",
+      "jockey": "C Y Ho",
+      "trainer": "C Fownes",
+      "odds": "28"
+    },
+    {
+      "plc": "6",
+      "no": "6",
+      "name": "HAYDAY(H321)",
+      "jockey": "H Y Yuen",
+      "trainer": "P F Yiu",
+      "odds": "9.9"
+    },
+    {
+      "plc": "7",
+      "no": "4",
+      "name": "WINNING MONEY(J116)",
+      "jockey": "L Ferraris",
+      "trainer": "K W Lui",
+      "odds": "5.4"
+    },
+    {
+      "plc": "8",
+      "no": "11",
+      "name": "SMILING CHAMPION(K565)",
+      "jockey": "K Teetan",
+      "trainer": "D J Whyte",
+      "odds": "84"
+    },
+    {
+      "plc": "9",
+      "no": "10",
+      "name": "LOVING VIBES(J359)",
+      "jockey": "A Atzeni",
+      "trainer": "M Newnham",
+      "odds": "2.6"
+    },
+    {
+      "plc": "10",
+      "no": "1",
+      "name": "GLORIOUS DYNASTY(L315)",
+      "jockey": "L Hewitson",
+      "trainer": "B Crawford",
+      "odds": "31"
+    },
+    {
+      "plc": "11",
+      "no": "12",
+      "name": "TACTICAL COMMAND(H197)",
+      "jockey": "A Badel",
+      "trainer": "J Richards",
+      "odds": "38"
+    },
+    {
+      "plc": "12",
+      "no": "3",
+      "name": "VIGOR HAPPINESS(L284)",
+      "jockey": "E C W Wong",
+      "trainer": "Y S Tsui",
+      "odds": "114"
+    }
+  ],
+  "3": [
+    {
+      "plc": "1",
+      "no": "4",
+      "name": "SUNDAY'S SERENADE(J231)",
+      "jockey": "Z Purton",
+      "trainer": "J Richards",
+      "odds": "4.9"
+    },
+    {
+      "plc": "2",
+      "no": "6",
+      "name": "DECISION LINK(K416)",
+      "jockey": "L Ferraris",
+      "trainer": "C Fownes",
+      "odds": "3.9"
+    },
+    {
+      "plc": "3",
+      "no": "3",
+      "name": "CLASS(L134)",
+      "jockey": "J Orman",
+      "trainer": "P F Yiu",
+      "odds": "14"
+    },
+    {
+      "plc": "4",
+      "no": "8",
+      "name": "LUCK IS BACK(J398)",
+      "jockey": "E C W Wong",
+      "trainer": "P C Ng",
+      "odds": "5.4"
+    },
+    {
+      "plc": "5",
+      "no": "10",
+      "name": "FORTUNE STAR(K003)",
+      "jockey": "A Atzeni",
+      "trainer": "M Newnham",
+      "odds": "6"
+    },
+    {
+      "plc": "6",
+      "no": "1",
+      "name": "EXCEED THE LIMIT(L267)",
+      "jockey": "L Hewitson",
+      "trainer": "C S Shum",
+      "odds": "12"
+    },
+    {
+      "plc": "7",
+      "no": "7",
+      "name": "DASHING MAURISON(K374)",
+      "jockey": "H Bentley",
+      "trainer": "D A Hayes",
+      "odds": "42"
+    },
+    {
+      "plc": "8",
+      "no": "9",
+      "name": "COLOURFUL GAN(L054)",
+      "jockey": "R Kingscote",
+      "trainer": "D J Whyte",
+      "odds": "48"
+    },
+    {
+      "plc": "9",
+      "no": "12",
+      "name": "GLORIOUS ST PAUL'S(K524)",
+      "jockey": "M F Poon",
+      "trainer": "F C Lor",
+      "odds": "27"
+    },
+    {
+      "plc": "10",
+      "no": "5",
+      "name": "BULLISH NOVA(L200)",
+      "jockey": "M Chadwick",
+      "trainer": "A S Cruz",
+      "odds": "10"
+    },
+    {
+      "plc": "11",
+      "no": "11",
+      "name": "LUCKY XANDER(K407)",
+      "jockey": "M L Yeung",
+      "trainer": "K H Ting",
+      "odds": "74"
+    },
+    {
+      "plc": "12",
+      "no": "2",
+      "name": "RAGGA BOMB(K162)",
+      "jockey": "B Avdulla",
+      "trainer": "D Eustace",
+      "odds": "15"
+    }
+  ],
+  "4": [
+    {
+      "plc": "1",
+      "no": "8",
+      "name": "ABSOLUTE HONOUR(K260)",
+      "jockey": "Z Purton",
+      "trainer": "F C Lor",
+      "odds": "3.6"
+    },
+    {
+      "plc": "2",
+      "no": "2",
+      "name": "SKY DEEP(K041)",
+      "jockey": "E C W Wong",
+      "trainer": "C Fownes",
+      "odds": "6.3"
+    },
+    {
+      "plc": "3",
+      "no": "10",
+      "name": "PRECISION HOPE(L047)",
+      "jockey": "A Badel",
+      "trainer": "D A Hayes",
+      "odds": "3.3"
+    },
+    {
+      "plc": "4",
+      "no": "11",
+      "name": "PODIUM(H173)",
+      "jockey": "A Atzeni",
+      "trainer": "D Eustace",
+      "odds": "15"
+    },
+    {
+      "plc": "5",
+      "no": "12",
+      "name": "PRESTIGE RICKY(K009)",
+      "jockey": "K Teetan",
+      "trainer": "P F Yiu",
+      "odds": "7"
+    },
+    {
+      "plc": "6",
+      "no": "3",
+      "name": "STURDY RUBY(H207)",
+      "jockey": "L Ferraris",
+      "trainer": "K L Man",
+      "odds": "39"
+    },
+    {
+      "plc": "7",
+      "no": "7",
+      "name": "MISSION GIANT(K577)",
+      "jockey": "H T Mo",
+      "trainer": "Y S Tsui",
+      "odds": "114"
+    },
+    {
+      "plc": "8",
+      "no": "5",
+      "name": "JUMBO STEPS(L269)",
+      "jockey": "C Y Ho",
+      "trainer": "P C Ng",
+      "odds": "24"
+    },
+    {
+      "plc": "9",
+      "no": "9",
+      "name": "AMAZING AWARD(J236)",
+      "jockey": "R Kingscote",
+      "trainer": "D Eustace",
+      "odds": "22"
+    },
+    {
+      "plc": "10",
+      "no": "6",
+      "name": "BLAZING METEOR(L426)",
+      "jockey": "M F Poon",
+      "trainer": "C H Yip",
+      "odds": "42"
+    },
+    {
+      "plc": "11",
+      "no": "1",
+      "name": "VIVA GRACIOUSNESS(J079)",
+      "jockey": "P N Wong",
+      "trainer": "A S Cruz",
+      "odds": "14"
+    },
+    {
+      "plc": "12",
+      "no": "4",
+      "name": "TAKE ACTION(J098)",
+      "jockey": "B Avdulla",
+      "trainer": "J Size",
+      "odds": "19"
+    }
+  ]
+}
