@@ -1,92 +1,92 @@
 Loading data...
-Meeting: Happy Valley - 2026-10-07 - Going: 
+Meeting: Happy Valley - 2026-10-07 - Going: GOOD TO FIRM
 
 --- RACE 1 : Class 5 - 1800m ---
-PRIMARY: #9 GOLDEN FORTUNE (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #9 GOLDEN FORTUNE (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 68% - EV: 0.114 - Jockey: B Avdulla
-Pick 2: #10 SPLENDID FORCE (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 68% - EV: 0.110 - Jockey: J Orman
-Pick 3: #1 CAN'T GO WONG (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 56% - EV: 0.037 - Jockey: Z Purton
-Pick 4: #8 GOOD LUCK WIN (Odds: 20.0) - RawRank: 5 - GSRank: 4 - Conf: 54% - EV: 0.032 - Jockey: K C Leung
-Pick 5: #4 KINGLY DEMEANOR (Odds: 20.0) - RawRank: 4 - GSRank: 5 - Conf: 53% - EV: 0.029 - Jockey: M L Yeung
+🏆 PICK 1 (WINNING HORSE PICK): #1 CAN'T GO WONG (Odds: 3.8) - GS Score: 21.8 - Conf: 68% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #4 KINGLY DEMEANOR (Odds: 4.7) - GS Score: 17.3
+💠 PICK 3 (TRIO PODIUM): #3 GRAND TURBO (Odds: 9.8) - GS Score: 14.0
+📊 PICK 4 (TRIO 4TH LEG): #5 OCEAN IMPACT (Odds: 10.0) - GS Score: 13.3
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #6 YOUNG FIGHTER (Odds: 17.0) - EV: 0.025 - GS Score: 7.2
+🎫 TICKETS: Quinella Box 1-3 (1, 4, 3) | Trio Box 1-4 (1, 4, 3, 5) | Dual-Stake: #1 + #6
 
 --- RACE 2 : Class 4 - 1200m ---
-PRIMARY: #7 NEW POWER (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #7 NEW POWER (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.064 - Jockey: M L Yeung
-Pick 2: #2 LUCKY MCQUEEN (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 70% - EV: 0.039 - Jockey: M F Poon
-Pick 3: #5 WORLD HERO (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 65% - EV: 0.030 - Jockey: H Bentley
-Pick 4: #8 I AM BACK (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 62% - EV: 0.026 - Jockey: C Y Ho
-Pick 5: #10 LOVING VIBES (Odds: 20.0) - RawRank: 6 - GSRank: 5 - Conf: 55% - EV: 0.014 - Jockey: A Atzeni
+🏆 PICK 1 (WINNING HORSE PICK): #10 LOVING VIBES (Odds: 2.4) - GS Score: 19.4 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #2 LUCKY MCQUEEN (Odds: 8.0) - GS Score: 17.0
+💠 PICK 3 (TRIO PODIUM): #6 HAYDAY (Odds: 7.2) - GS Score: 13.3
+📊 PICK 4 (TRIO 4TH LEG): #5 WORLD HERO (Odds: 7.5) - GS Score: 12.4
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #4 WINNING MONEY (Odds: 12.0) - EV: 0.049 - GS Score: 11.7
+🎫 TICKETS: Quinella Box 1-3 (10, 2, 6) | Trio Box 1-4 (10, 2, 6, 5) | Dual-Stake: #10 + #4
 
 --- RACE 3 : Class 4 - 1650m ---
-PRIMARY: #6 DECISION LINK (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #6 DECISION LINK (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.108 - Jockey: L Ferraris
-Pick 2: #11 LUCKY XANDER (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 55% - EV: 0.042 - Jockey: M L Yeung
-Pick 3: #9 COLOURFUL GAN (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 48% - EV: 0.027 - Jockey: R Kingscote
-Pick 4: #8 LUCK IS BACK (Odds: 20.0) - RawRank: 5 - GSRank: 4 - Conf: 43% - EV: 0.016 - Jockey: E C W Wong
-Pick 5: #5 BULLISH NOVA (Odds: 20.0) - RawRank: 4 - GSRank: 5 - Conf: 43% - EV: 0.016 - Jockey: M Chadwick
+🏆 PICK 1 (WINNING HORSE PICK): #1 EXCEED THE LIMIT (Odds: 15.0) - GS Score: 13.3 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #6 DECISION LINK (Odds: 6.0) - GS Score: 13.2
+💠 PICK 3 (TRIO PODIUM): #4 SUNDAY'S SERENADE (Odds: 4.2) - GS Score: 11.7
+📊 PICK 4 (TRIO 4TH LEG): #5 BULLISH NOVA (Odds: 6.6) - GS Score: 11.3
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #2 RAGGA BOMB (Odds: 22.0) - EV: 0.053 - GS Score: 9.0
+🎫 TICKETS: Quinella Box 1-3 (1, 6, 4) | Trio Box 1-4 (1, 6, 4, 5) | Dual-Stake: #1 + #2
 
 --- RACE 4 : Class 4 - 1650m ---
-PRIMARY: #10 PRECISION HOPE (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #10 PRECISION HOPE (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.178 - Jockey: A Badel
-Pick 2: #8 ABSOLUTE HONOUR (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 40% - EV: 0.029 - Jockey: Z Purton
-Pick 3: #9 AMAZING AWARD (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 34% - EV: 0.011 - Jockey: R Kingscote
-Pick 4: #6 BLAZING METEOR (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 30% - EV: -0.003 - Jockey: M F Poon
-Pick 5: #5 JUMBO STEPS (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 29% - EV: -0.007 - Jockey: C Y Ho
+🏆 PICK 1 (WINNING HORSE PICK): #10 PRECISION HOPE (Odds: 4.2) - GS Score: 19.8 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #2 SKY DEEP (Odds: 5.0) - GS Score: 17.1
+💠 PICK 3 (TRIO PODIUM): #8 ABSOLUTE HONOUR (Odds: 9.2) - GS Score: 14.8
+📊 PICK 4 (TRIO 4TH LEG): #3 STURDY RUBY (Odds: 20.0) - GS Score: 9.7
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #9 AMAZING AWARD (Odds: 19.0) - EV: 0.015 - GS Score: 5.8
+🎫 TICKETS: Quinella Box 1-3 (10, 2, 8) | Trio Box 1-4 (10, 2, 8, 3) | Dual-Stake: #10 + #9
 
 --- RACE 5 : Class 4 - 1000m ---
-PRIMARY: #6 BEAUTY SHOW (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #6 BEAUTY SHOW (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.057 - Jockey: A Atzeni
-Pick 2: #8 GEORGIAN SIGMA (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 81% - EV: 0.050 - Jockey: Y L Chung
-Pick 3: #7 BRILLIANT TURN (Odds: 20.0) - RawRank: 4 - GSRank: 3 - Conf: 75% - EV: 0.038 - Jockey: J Orman
-Pick 4: #9 GOLDEN ACE (Odds: 20.0) - RawRank: 3 - GSRank: 4 - Conf: 75% - EV: 0.038 - Jockey: B Avdulla
-Pick 5: #4 SUPERB KING (Odds: 20.0) - RawRank: 7 - GSRank: 5 - Conf: 62% - EV: 0.014 - Jockey: Z Purton
+🏆 PICK 1 (WINNING HORSE PICK): #4 SUPERB KING (Odds: 2.8) - GS Score: 19.9 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #8 GEORGIAN SIGMA (Odds: 3.9) - GS Score: 16.4
+💠 PICK 3 (TRIO PODIUM): #9 GOLDEN ACE (Odds: 7.9) - GS Score: 14.8
+📊 PICK 4 (TRIO 4TH LEG): #6 BEAUTY SHOW (Odds: 12.0) - GS Score: 14.6
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #7 BRILLIANT TURN (Odds: 18.0) - EV: 0.036 - GS Score: 8.1
+🎫 TICKETS: Quinella Box 1-3 (4, 8, 9) | Trio Box 1-4 (4, 8, 9, 6) | Dual-Stake: #4 + #7
 
 --- RACE 6 : Class 4 - 1200m ---
-PRIMARY: #10 KWAI CHUNG TALENTS (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #10 KWAI CHUNG TALENTS (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.061 - Jockey: M L Yeung
-Pick 2: #8 HAPPY UNITED (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 72% - EV: 0.040 - Jockey: M Chadwick
-Pick 3: #11 VIEW OF COSMOS (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 68% - EV: 0.034 - Jockey: M F Poon
-Pick 4: #4 UNSTOPPAPLE (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 61% - EV: 0.021 - Jockey: K C Leung
-Pick 5: #7 POET'S REIGN (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 53% - EV: 0.009 - Jockey: J Orman
+🏆 PICK 1 (WINNING HORSE PICK): #1 HEALTHY HEALTHY (Odds: 20.0) - GS Score: 16.0 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #4 UNSTOPPAPLE (Odds: 10.0) - GS Score: 15.8
+💠 PICK 3 (TRIO PODIUM): #10 KWAI CHUNG TALENTS (Odds: 5.0) - GS Score: 14.2
+📊 PICK 4 (TRIO 4TH LEG): #2 GRIT SPIRIT (Odds: 11.0) - GS Score: 9.5
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #3 STARRY SHOW (Odds: 19.0) - EV: 0.030 - GS Score: 7.2
+🎫 TICKETS: Quinella Box 1-3 (1, 4, 10) | Trio Box 1-4 (1, 4, 10, 2) | Dual-Stake: #1 + #3
 
 --- RACE 7 : Class 3 - 1200m ---
-PRIMARY: #9 BRIGHT DAY (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #9 BRIGHT DAY (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.071 - Jockey: K C Leung
-Pick 2: #4 LUCKY PLANET (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 59% - EV: 0.028 - Jockey: M F Poon
-Pick 3: #5 TARGET AUDIENCE (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 57% - EV: 0.025 - Jockey: A Badel
-Pick 4: #8 MATTERS MOST (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 48% - EV: 0.010 - Jockey: E C W Wong
-Pick 5: #3 JUBILANT WINNER (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 44% - EV: 0.003 - Jockey: P N Wong
+🏆 PICK 1 (WINNING HORSE PICK): #2 FLYING WROTE (Odds: 4.8) - GS Score: 19.3 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #10 QUANTUM CLOUD (Odds: 12.0) - GS Score: 14.5
+💠 PICK 3 (TRIO PODIUM): #5 TARGET AUDIENCE (Odds: 4.6) - GS Score: 13.5
+📊 PICK 4 (TRIO 4TH LEG): #9 BRIGHT DAY (Odds: 10.0) - GS Score: 9.9
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #8 MATTERS MOST (Odds: 24.0) - EV: 0.036 - GS Score: 6.9
+🎫 TICKETS: Quinella Box 1-3 (2, 10, 5) | Trio Box 1-4 (2, 10, 5, 9) | Dual-Stake: #2 + #8
 
 --- RACE 8 : Class 3 - 1650m ---
-PRIMARY: #7 LEGEND WINNER (Odds: 20.0) - Raw Rank: 1 - GS Rank: 2 - Reason: Raw rank 1 baseline
-[PRIMARY]: #7 LEGEND WINNER (Odds: 20.0) - RawRank: 1 - GSRank: 2 - Conf: 85% - EV: 0.056 - Jockey: L Hewitson
-Pick 2: #8 RISING PHOENIX (Odds: 20.0) - RawRank: 2 - GSRank: 1 - Conf: 85% - EV: 0.056 - Jockey: P N Wong
-Pick 3: #1 DAZZLING FIT (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 50% - EV: 0.014 - Jockey: Z Purton
-Pick 4: #10 FLYING FORTUNE (Odds: 20.0) - RawRank: 4 - GSRank: 4 - Conf: 43% - EV: 0.005 - Jockey: H Bentley
-Pick 5: #4 DO YOU JUST (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 40% - EV: 0.001 - Jockey: Y L Chung
+🏆 PICK 1 (WINNING HORSE PICK): #2 POPE CODY (Odds: 6.5) - GS Score: 21.4 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #1 DAZZLING FIT (Odds: 3.9) - GS Score: 15.7
+💠 PICK 3 (TRIO PODIUM): #4 DO YOU JUST (Odds: 5.9) - GS Score: 11.6
+📊 PICK 4 (TRIO 4TH LEG): #3 PRESTIGE GOOD (Odds: 11.0) - GS Score: 9.5
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #7 LEGEND WINNER (Odds: 33.0) - EV: 0.028 - GS Score: 5.3
+🎫 TICKETS: Quinella Box 1-3 (2, 1, 4) | Trio Box 1-4 (2, 1, 4, 3) | Dual-Stake: #2 + #7
 
 --- RACE 9 : Class 3 - 1200m ---
-PRIMARY: #9 LIVE WIRE (Odds: 20.0) - Raw Rank: 1 - GS Rank: 1 - Reason: Raw rank 1 baseline
-[PRIMARY]: #9 LIVE WIRE (Odds: 20.0) - RawRank: 1 - GSRank: 1 - Conf: 85% - EV: 0.120 - Jockey: A Atzeni
-Pick 2: #8 HONEST WITNESS (Odds: 20.0) - RawRank: 2 - GSRank: 2 - Conf: 57% - EV: 0.055 - Jockey: M F Poon
-Pick 3: #4 AMAZING KID (Odds: 20.0) - RawRank: 3 - GSRank: 3 - Conf: 45% - EV: 0.027 - Jockey: A Badel
-Pick 4: #5 THUNDER KIT (Odds: 20.0) - RawRank: 6 - GSRank: 4 - Conf: 34% - EV: -0.001 - Jockey: L Hewitson
-Pick 5: #7 THE HEIR (Odds: 20.0) - RawRank: 5 - GSRank: 5 - Conf: 32% - EV: -0.004 - Jockey: C Y Ho
+🏆 PICK 1 (WINNING HORSE PICK): #9 LIVE WIRE (Odds: 8.5) - GS Score: 17.7 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #6 PRESTIGE ALWAYS (Odds: 6.6) - GS Score: 13.2
+💠 PICK 3 (TRIO PODIUM): #2 MOTOR (Odds: 9.8) - GS Score: 12.6
+📊 PICK 4 (TRIO 4TH LEG): #1 AURIO (Odds: 4.7) - GS Score: 12.3
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #3 GUSTOSISIMO (Odds: 17.0) - EV: 0.072 - GS Score: 12.0
+🎫 TICKETS: Quinella Box 1-3 (9, 6, 2) | Trio Box 1-4 (9, 6, 2, 1) | Dual-Stake: #9 + #3
 
 
 --- OVERALL GLOBAL BEST BETS ---
-Top Pick 1: Race 4 - #10 PRECISION HOPE (Odds: 20.0, Conf: 85%, EV: 0.178)
-Top Pick 2: Race 9 - #9 LIVE WIRE (Odds: 20.0, Conf: 85%, EV: 0.120)
-Top Pick 3: Race 1 - #9 GOLDEN FORTUNE (Odds: 20.0, Conf: 68%, EV: 0.114)
+Top Pick 1: Race 1 - #1 CAN'T GO WONG (Odds: 3.8, Conf: 68%, EV: 0.006)
+Top Pick 2: Race 8 - #2 POPE CODY (Odds: 6.5, Conf: 85%, EV: 0.088)
+Top Pick 3: Race 5 - #4 SUPERB KING (Odds: 2.8, Conf: 85%, EV: -0.089)
 
 
---- RECOMMENDED DUAL-STAKING BETS (RANK 1 + RANK 5) ---
-Race 1 Bet Selection: Anchor #9 GOLDEN FORTUNE (20.0) | Sleeper #10 SPLENDID FORCE (20.0)
-Race 2 Bet Selection: Anchor #7 NEW POWER (20.0) | Sleeper #2 LUCKY MCQUEEN (20.0)
-Race 3 Bet Selection: Anchor #6 DECISION LINK (20.0) | Sleeper #11 LUCKY XANDER (20.0)
-Race 4 Bet Selection: Anchor #10 PRECISION HOPE (20.0) | Sleeper #8 ABSOLUTE HONOUR (20.0)
-Race 5 Bet Selection: Anchor #6 BEAUTY SHOW (20.0) | Sleeper #8 GEORGIAN SIGMA (20.0)
-Race 6 Bet Selection: Anchor #10 KWAI CHUNG TALENTS (20.0) | Sleeper #8 HAPPY UNITED (20.0)
-Race 7 Bet Selection: Anchor #9 BRIGHT DAY (20.0) | Sleeper #4 LUCKY PLANET (20.0)
-Race 8 Bet Selection: Anchor #7 LEGEND WINNER (20.0) | Sleeper #8 RISING PHOENIX (20.0)
-Race 9 Bet Selection: Anchor #9 LIVE WIRE (20.0) | Sleeper #8 HONEST WITNESS (20.0)
+--- RECOMMENDED DUAL-STAKING BETS (PICK 1 + PICK 5) ---
+Race 1 Bet Selection: Anchor #1 CAN'T GO WONG (3.8) | Sleeper #6 YOUNG FIGHTER (17.0)
+Race 2 Bet Selection: Anchor #10 LOVING VIBES (2.4) | Sleeper #4 WINNING MONEY (12.0)
+Race 3 Bet Selection: Anchor #1 EXCEED THE LIMIT (15.0) | Sleeper #2 RAGGA BOMB (22.0)
+Race 4 Bet Selection: Anchor #10 PRECISION HOPE (4.2) | Sleeper #9 AMAZING AWARD (19.0)
+Race 5 Bet Selection: Anchor #4 SUPERB KING (2.8) | Sleeper #7 BRILLIANT TURN (18.0)
+Race 6 Bet Selection: Anchor #1 HEALTHY HEALTHY (20.0) | Sleeper #3 STARRY SHOW (19.0)
+Race 7 Bet Selection: Anchor #2 FLYING WROTE (4.8) | Sleeper #8 MATTERS MOST (24.0)
+Race 8 Bet Selection: Anchor #2 POPE CODY (6.5) | Sleeper #7 LEGEND WINNER (33.0)
+Race 9 Bet Selection: Anchor #9 LIVE WIRE (8.5) | Sleeper #3 GUSTOSISIMO (17.0)
