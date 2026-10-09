@@ -4799,3 +4799,191 @@ error: failed to push some refs to 'https://github.com/lelandbondx/golden-stalli
 [2026-10-07 10:53:01] 🔄 Triggering prediction update...
 [2026-10-07 10:53:13] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
 [2026-10-07 10:53:13] 📡 Auto-syncing updated data to origin main...
+[2026-10-07 10:53:17] 🚀 Live Streamlit app successfully synchronized with origin main.
+[2026-10-07 10:55:20] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 10:57:24] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 10:59:27] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:01:29] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:03:31] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:05:35] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:07:39] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:09:43] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:11:48] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:13:52] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:15:56] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:18:01] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:20:05] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:22:09] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:24:11] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:26:14] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:28:17] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:30:22] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:32:26] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:34:30] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:36:35] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:38:38] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:40:43] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:42:47] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:44:51] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:46:55] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:48:59] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:51:03] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:53:07] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:55:11] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:57:15] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 11:59:20] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 12:01:24] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 12:03:45] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:15:42] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:17:44] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:19:48] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:21:52] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:23:54] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:25:58] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:28:01] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:30:04] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:32:07] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:34:10] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:36:13] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:38:15] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:40:16] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:42:17] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:44:18] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:46:20] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:48:22] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:50:24] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:52:25] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:54:27] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:56:28] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 17:58:29] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:00:30] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:02:31] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:04:32] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:06:33] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:08:34] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:10:35] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:12:36] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:14:38] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:16:39] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:18:41] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:20:42] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-07 18:22:43] 💓 Heartbeat: Checked 9 races (107 runners). Goings: R1:GOOD TO FIRM, R2:GOOD TO FIRM, R3:GOOD TO FIRM, R4:GOOD TO FIRM, R5:GOOD TO FIRM, R6:GOOD TO FIRM, R7:GOOD TO FIRM, R8:GOOD TO FIRM, R9:GOOD TO FIRM. 0 changes.
+[2026-10-08 22:24:18] 🚨 ALERT: Race 1 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🚨 ALERT: Race 2 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🚨 ALERT: Race 3 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🚨 ALERT: Race 4 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🚨 ALERT: Race 5 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🚨 ALERT: Race 6 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🚨 ALERT: Race 7 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🚨 ALERT: Race 8 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🚨 ALERT: Race 9 track condition changed from 'GOOD TO FIRM' to 'GOOD'!
+[2026-10-08 22:24:18] 🆕 Race 10 registered with going: GOOD
+[2026-10-08 22:24:18] 🆕 Race 11 registered with going: GOOD
+[2026-10-08 22:24:18] 🚨 ALERT: Scratching detected in Race 2: Horses #set()
+[2026-10-08 22:24:18] 🚨 ALERT: Scratching detected in Race 4: Horses #{11, 3, 12}
+[2026-10-08 22:24:18] 🚨 ALERT: Scratching detected in Race 7: Horses #set()
+[2026-10-08 22:24:18] 🚨 ALERT: Scratching detected in Race 8: Horses #set()
+[2026-10-08 22:24:18] 🚨 ALERT: Scratching detected in Race 9: Horses #set()
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #1: 'Z PURTON' -> 'M F POON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #2: 'K TEETAN' -> 'J ORMAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #3: 'R KINGSCOTE' -> 'C L CHAU'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #4: 'M L YEUNG' -> 'Z PURTON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #6: 'E C W WONG' -> 'A BADEL'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #7: 'M F POON' -> 'R KINGSCOTE'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #8: 'K C LEUNG' -> 'K TEETAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #9: 'B AVDULLA' -> 'L HEWITSON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #10: 'J ORMAN' -> 'A ATZENI'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #11: 'A ATZENI' -> 'H Y YUEN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 1 on #12: 'H T MO' -> 'Y L CHUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #1: 'L HEWITSON' -> 'C L CHAU'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #2: 'M F POON' -> 'Z PURTON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #3: 'E C W WONG' -> 'C Y HO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #4: 'L FERRARIS' -> 'K C LEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #5: 'H BENTLEY' -> 'M L YEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #6: 'H Y YUEN' -> 'L FERRARIS'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #7: 'M L YEUNG' -> 'Y L CHUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #8: 'C Y HO' -> 'B AVDULLA'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #9: 'Y L CHUNG' -> 'J ORMAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #10: 'A ATZENI' -> 'R KINGSCOTE'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #11: 'K TEETAN' -> 'P N WONG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 2 on #12: 'A BADEL' -> 'H Y YUEN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #1: 'L HEWITSON' -> 'A ATZENI'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #2: 'B AVDULLA' -> 'J ORMAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #3: 'J ORMAN' -> 'M F POON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #4: 'Z PURTON' -> 'C L CHAU'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #5: 'M CHADWICK' -> 'H Y YUEN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #6: 'L FERRARIS' -> 'M CHADWICK'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #7: 'H BENTLEY' -> 'C Y HO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #8: 'E C W WONG' -> 'K C LEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #9: 'R KINGSCOTE' -> 'P N WONG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #10: 'A ATZENI' -> 'E C W WONG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #11: 'M L YEUNG' -> 'A BADEL'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 3 on #12: 'M F POON' -> 'M L YEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 4 on #2: 'E C W WONG' -> 'B AVDULLA'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 4 on #4: 'B AVDULLA' -> 'K C LEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 4 on #5: 'C Y HO' -> 'K TEETAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 4 on #6: 'M F POON' -> 'E C W WONG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 4 on #7: 'H T MO' -> 'H BENTLEY'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 4 on #8: 'Z PURTON' -> 'A ATZENI'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 4 on #9: 'R KINGSCOTE' -> 'H Y YUEN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 4 on #10: 'A BADEL' -> 'M CHADWICK'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #1: 'R KINGSCOTE' -> 'L FERRARIS'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #2: 'H Y YUEN' -> 'Z PURTON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #3: 'K C LEUNG' -> 'J ORMAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #4: 'Z PURTON' -> 'C L CHAU'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #5: 'H BENTLEY' -> 'M CHADWICK'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #6: 'A ATZENI' -> 'K C LEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #7: 'J ORMAN' -> 'P N WONG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #8: 'Y L CHUNG' -> 'H Y YUEN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #9: 'B AVDULLA' -> 'E C W WONG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #10: 'P N WONG' -> 'H T MO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #11: 'A BADEL' -> 'L HEWITSON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 5 on #12: 'K TEETAN' -> 'A ATZENI'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #1: 'A ATZENI' -> 'B AVDULLA'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #2: 'C Y HO' -> 'Z PURTON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #3: 'R KINGSCOTE' -> 'M CHADWICK'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #4: 'K C LEUNG' -> 'A ATZENI'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #5: 'K TEETAN' -> 'L HEWITSON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #6: 'P N WONG' -> 'J ORMAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #7: 'J ORMAN' -> 'M L YEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #8: 'M CHADWICK' -> 'H T MO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #9: 'A BADEL' -> 'C Y HO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #10: 'M L YEUNG' -> 'H BENTLEY'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #11: 'M F POON' -> 'K TEETAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 6 on #12: 'H BENTLEY' -> 'M F POON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #1: 'M L YEUNG' -> 'A BADEL'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #2: 'H Y YUEN' -> 'K TEETAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #3: 'P N WONG' -> 'K C LEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #4: 'M F POON' -> 'H T MO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #5: 'A BADEL' -> 'C Y HO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #6: 'L FERRARIS' -> 'Z PURTON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #7: 'A ATZENI' -> 'J ORMAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #8: 'E C W WONG' -> 'M CHADWICK'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #9: 'K C LEUNG' -> 'A ATZENI'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #10: 'L HEWITSON' -> 'B AVDULLA'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #11: 'Y L CHUNG' -> 'L FERRARIS'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 7 on #12: 'M CHADWICK' -> 'E C W WONG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #1: 'Z PURTON' -> 'A ATZENI'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #2: 'A BADEL' -> 'C L CHAU'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #3: 'R KINGSCOTE' -> 'K C LEUNG'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #4: 'Y L CHUNG' -> 'A BADEL'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #5: 'H Y YUEN' -> 'M CHADWICK'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #6: 'A ATZENI' -> 'L FERRARIS'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #7: 'L HEWITSON' -> 'M F POON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #8: 'P N WONG' -> 'B AVDULLA'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #9: 'E C W WONG' -> 'L HEWITSON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #10: 'H BENTLEY' -> 'R KINGSCOTE'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #11: 'M CHADWICK' -> 'Z PURTON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 8 on #12: 'K C LEUNG' -> 'C Y HO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #2: 'K C LEUNG' -> 'C L CHAU'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #3: 'Y L CHUNG' -> 'C Y HO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #5: 'L HEWITSON' -> 'H T MO'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #7: 'C Y HO' -> 'L HEWITSON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #8: 'M F POON' -> 'L FERRARIS'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #9: 'A ATZENI' -> 'K TEETAN'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #10: 'R KINGSCOTE' -> 'A ATZENI'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #11: 'P N WONG' -> 'M F POON'
+[2026-10-08 22:24:18] 🚨 ALERT: Jockey change in Race 9 on #12: 'M L YEUNG' -> 'M CHADWICK'
+[2026-10-08 22:24:18] 🔄 Triggering prediction update...
+[2026-10-08 22:24:29] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
+[2026-10-08 22:24:29] 📡 Auto-syncing updated data to origin main...
