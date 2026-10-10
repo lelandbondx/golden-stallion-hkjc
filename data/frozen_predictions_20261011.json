@@ -1130,8 +1130,8 @@
             "kelly_stake": 0.004803483336512433,
             "card_rank": 2,
             "is_primary": 0,
-            "primary_reason": "",
-            "win_stake_active": 0
+            "primary_reason": "Shifted Win Stake (Pick 2 - EV +0.056)",
+            "win_stake_active": 1
         },
         {
             "no": 2,
@@ -7580,8 +7580,8 @@
             "kelly_stake": 0.009812470065458349,
             "card_rank": 2,
             "is_primary": 0,
-            "primary_reason": "",
-            "win_stake_active": 0
+            "primary_reason": "Shifted Win Stake (Pick 2 - EV +0.048)",
+            "win_stake_active": 1
         },
         {
             "no": 3,

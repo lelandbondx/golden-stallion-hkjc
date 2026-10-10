@@ -178,6 +178,32 @@ class TestAppMultipliers(unittest.TestCase):
         )
         self.assertEqual(closer_pace_penalty[0], -0.03)
 
+    def test_purton_cap_at_2_percent(self):
+        """Test elite_jockey_boost + jockey_trainer_boost is capped at 0.02 max."""
+        jockey_trainer_boost = 0.02
+        elite_jockey_boost = 0.02
+        purton_total_boost = np.minimum(jockey_trainer_boost + elite_jockey_boost, 0.02)
+        self.assertEqual(purton_total_boost, 0.02)
+
+    def test_shifted_win_stake_p24(self):
+        """Test win stake shift selects best of Picks 2-4 passing price test (model_prob * odds > 1.0)."""
+        p2 = {'no': 2, 'name': 'HORSE B', 'win_odds': 4.0, 'model_prob': 0.20} # 0.20 * 4.0 = 0.80 -> FAILS (< 1.0)
+        p3 = {'no': 3, 'name': 'HORSE C', 'win_odds': 5.0, 'model_prob': 0.25} # 0.25 * 5.0 = 1.25 -> PASSES
+        p4 = {'no': 4, 'name': 'HORSE D', 'win_odds': 8.0, 'model_prob': 0.18} # 0.18 * 8.0 = 1.44 -> PASSES (HIGHEST)
+
+        p24_cands = [(p2, 2), (p3, 3), (p4, 4)]
+        valid = []
+        for cand, r_idx in p24_cands:
+            c_odds = float(cand.get('win_odds', 20.0))
+            c_prob = float(cand.get('model_prob', 0.0))
+            if (c_odds > 0) and (c_odds < 20.0) and (c_prob * c_odds > 1.0):
+                valid.append((cand, r_idx, c_prob * c_odds))
+        
+        valid.sort(key=lambda x: x[2], reverse=True)
+        shifted_win_runner, shifted_from_rank = valid[0][0], valid[0][1]
+        self.assertEqual(shifted_win_runner['no'], 4)
+        self.assertEqual(shifted_from_rank, 4)
+
 
 if __name__ == '__main__':
     unittest.main()

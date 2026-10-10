@@ -22,11 +22,12 @@ def check_stewards_excuse(comment, vet_status=0):
     if any(cp in c for cp in clean_phrases):
         return False
         
+    # True excuses:
     excuse_keywords = [
         'badly checked', 'severely checked', 'checked', 'check ', 'crowded', 'hampered', 
         'held up', 'no clear run', 'denied a clear run', 'pocketed', 'clipped heels', 'clip heels',
         'lost ground at start', 'slow to begin', 'stumbled', 'stumble', 'lost shoe', 'lost plate', 
-        'lost a plate', 'saddle slipped', 'blood in trachea', 'trachea', 'forced wide',
+        'lost a plate', 'saddle slipped', 'blood in trachea', 'trachea', 'forced wide', 'no room', 'blocked',
         'bleeder', 'irregular heart', 'heart irregularity', 'lame', 'lameness', 'mucus'
     ]
     
@@ -354,6 +355,9 @@ def run():
         is_purton_jockey = df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON'
         elite_jockey_boost = np.where(is_purton_jockey & (recent_pos <= 4.0) & (vet_issue == 0) & (~is_hv_wide_heavy), 0.02, 0.0)
         
+        # Purton Total Boost Cap: Cap Purton at +2.0% total (elite_jockey_boost and jockey_trainer_boost must not stack past +2.0%)
+        purton_total_boost = np.minimum(jockey_trainer_boost + elite_jockey_boost, 0.02)
+        
         # Happy Valley C-Course Draw Bias Adjustments
         hv_c_course_boost = 0.0
         hv_c_course_penalty = 0.0
@@ -506,7 +510,7 @@ def run():
         # Stacked Geometry Penalty Cap: max -10.0%
         stacked_geom_pen = np.clip(hv_c_course_penalty + st_1000_draw_penalty + st_wide_draw_penalty, -0.10, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + elite_jockey_boost + jockey_trainer_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
 
         # Ensure multiplier doesn't go below 0.1
         multiplier = np.maximum(multiplier, 0.1)
@@ -598,7 +602,23 @@ def run():
         is_p1_wide_heavy = is_hv and is_sprint and (p1_draw >= 9) and (p1_wt >= 132)
         
         shifted_win_runner = None
+        shifted_from_rank = None
         
+        # Helper to find best candidate among Picks 2-4 that passes price test (model_prob * decimal_odds > 1.0)
+        def get_best_p24_shifted():
+            p24_cands = [(p2, 2), (p3, 3), (p4, 4)]
+            valid = []
+            for cand, r_idx in p24_cands:
+                if cand is not None:
+                    c_odds = float(cand.get('win_odds', 20.0))
+                    c_prob = float(cand.get('model_prob', 0.0))
+                    if (c_odds > 0) and (c_odds < 20.0) and (c_prob * c_odds > 1.0):
+                        valid.append((cand, r_idx, c_prob * c_odds))
+            if valid:
+                valid.sort(key=lambda x: x[2], reverse=True)
+                return valid[0][0], valid[0][1]
+            return None, None
+            
         if not p1_live:
             # Pre-market placeholder odds (e.g. 20.0) -> Awaiting live odds
             p1_passes_test = False
@@ -607,22 +627,14 @@ def run():
             shifted_win_runner = None
             
         elif is_p1_wide_heavy and (not p1_is_crosser):
-            # Condition 1: Wide topweight, NOT an on-pace crosser (e.g. Aurora Lady) -> Win stake LOCKED
+            # Condition 1: Wide topweight, NOT an on-pace crosser -> Win stake LOCKED
             p1_passes_test = False
             p1_status = "Winning-horse pick / exotic key only — no win stake. Wide topweight, not an on-pace crosser."
             df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
-            
-            # Shift win stake to highest positive-EV horse that survives wide+heavy
-            all_eligible_survivors = df_runners[
-                ~((df_runners['draw'] >= 9) & (pd.to_numeric(df_runners.get('actual_weight', 125), errors='coerce').fillna(125) >= 132)) &
-                (df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 20.0) &
-                (df_runners['value_diff'] > 0)
-            ].copy()
-            if not all_eligible_survivors.empty:
-                shifted_win_runner = all_eligible_survivors.sort_values(by='value_diff', ascending=False).iloc[0]
+            shifted_win_runner, shifted_from_rank = get_best_p24_shifted()
                 
         elif is_p1_wide_heavy and p1_is_crosser:
-            # Condition 2: Wide topweight, IS an on-pace crosser (e.g. Motor) -> Speed exception, Half-Unit Win
+            # Condition 2: Wide topweight, IS an on-pace crosser -> Speed exception, Half-Unit Win
             if p1_passes_val:
                 p1_passes_test = True
                 p1_status = f"WIN STAKE ACTIVE (Half-Unit Win + Place — Crosser Draw {p1_draw}, {int(p1_wt)}lb)"
@@ -631,8 +643,9 @@ def run():
                 p1_passes_test = False
                 p1_status = "Winning-horse pick / exotic key only — no win stake"
                 df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
+                shifted_win_runner, shifted_from_rank = get_best_p24_shifted()
         else:
-            # Standard runner
+            # Standard runner (including Sha Tin races)
             if p1_passes_val:
                 p1_passes_test = True
                 p1_status = "WIN STAKE ACTIVE (Half Unit Win + Place)"
@@ -640,6 +653,7 @@ def run():
                 p1_passes_test = False
                 p1_status = "Winning-horse pick / exotic key only — no win stake"
                 df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
+                shifted_win_runner, shifted_from_rank = get_best_p24_shifted()
 
         # Assign card rank (1 to 5)
         card_picks = [p1, p2, p3, p4, p5]
@@ -653,10 +667,10 @@ def run():
         df_runners['primary_reason'] = np.where(df_runners['no'] == p1['no'], f"Top GS Score ({p1['gs_score']:.1f}) - {p1_status}", "")
         df_runners['win_stake_active'] = np.where((df_runners['no'] == p1['no']) & p1_passes_test, 1, 0)
         
-        # If win stake shifted to another runner, flag it
+        # If win stake shifted to another runner in Picks 2-4, flag it
         if shifted_win_runner is not None:
             df_runners.loc[df_runners['no'] == shifted_win_runner['no'], 'win_stake_active'] = 1
-            df_runners.loc[df_runners['no'] == shifted_win_runner['no'], 'primary_reason'] = f"Shifted Win Stake (EV +{shifted_win_runner['value_diff']:.3f})"
+            df_runners.loc[df_runners['no'] == shifted_win_runner['no'], 'primary_reason'] = f"Shifted Win Stake (Pick {shifted_from_rank} - EV +{shifted_win_runner['value_diff']:.3f})"
             
         dual_staking_wagers.append({
             "race_no": race.get("race_no"),
