@@ -1,4 +1,4 @@
-# Force rebuild environment
+# Force fresh rebuild - 2026-10-11 Sha Tin live meeting v2
 streamlit
 pandas
 numpy
