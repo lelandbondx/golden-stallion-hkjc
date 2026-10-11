@@ -95,8 +95,8 @@ if APP_PAUSED:
     st.stop()
 # --------------------
 
-# Ultra-smooth live odds refresh every 25 seconds (keeps session live without sleeping)
-st_autorefresh(interval=25000, key="hkjc_live_refresh_pulse")
+# Ultra-smooth live odds refresh every 45 seconds (keeps session live without lag)
+st_autorefresh(interval=45000, key="hkjc_live_refresh_pulse")
 
 # CSS Injection for Chinese-Friendly Ruby/Gold 3D UI
 st.markdown("""
@@ -1314,10 +1314,18 @@ with tab1:
                 return f' <span style="background:#4b5563; color:#ffffff; padding:2px 6px; border-radius:4px; font-size:0.75rem; font-weight:bold; vertical-align:middle;">💨 DRIFT +{pct*100:.0f}%</span>'
         return ''
 
-    st.markdown("<h3 style='font-family:\"Montserrat\"; letter-spacing:1px; color:#ffffff; font-weight:700;'>AI RACE-BY-RACE PREDICTIONS</h3>", unsafe_allow_html=True)
+    col_hdr, col_flt = st.columns([1.5, 1])
+    with col_hdr:
+        st.markdown("<h3 style='font-family:\"Montserrat\"; letter-spacing:1px; color:#ffffff; font-weight:700; margin-top:5px;'>AI RACE PREDICTIONS</h3>", unsafe_allow_html=True)
+    with col_flt:
+        race_options = ["All Races"] + [f"Race {r.get('race_no')}" for r in races]
+        selected_race_view = st.selectbox("🏇 Jump to Specific Race", race_options, index=0)
 
     for race in races:
         if not race.get('runners'): continue
+        race_num_label = f"Race {race.get('race_no')}"
+        if selected_race_view != "All Races" and selected_race_view != race_num_label:
+            continue
         df_runners = race['processed_runners']
         
         with st.container():
@@ -1546,7 +1554,7 @@ with tab1:
                     pass
 
             if tactical_radar_items:
-                with st.expander("⚡ TACTICAL EDGE & OUTLIER RADAR (STEWARDS & VET MONITOR)", expanded=True):
+                with st.expander("⚡ TACTICAL EDGE & OUTLIER RADAR (STEWARDS & VET MONITOR)", expanded=False):
                     radar_html = '<div style="display:flex; flex-direction:column; gap:8px;">'
                     for item in tactical_radar_items:
                         radar_html += f'''<div style="background:{item['bg']}; border-left:4px solid {item['color']}; padding:8px 12px; border-radius:4px; font-size:0.90rem; color:#f8fafc; font-family:\'Inter\', sans-serif;">
@@ -1676,7 +1684,7 @@ with tab1:
             longshots = df_runners[(df_runners['win_odds'] >= 12.0) & (df_runners['no'] != best['no']) & (df_runners['value_diff'] > 0.0)].sort_values(by='value_diff', ascending=False)
             if not longshots.empty:
                 bold_pick = longshots.iloc[0]
-                with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=True):
+                with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=False):
                     st.markdown(clean_html(f'''
                     <div style="background: rgba(239, 68, 68, 0.08); padding: 20px; border-radius: 8px; border: 1px dashed rgba(239, 68, 68, 0.4); margin-bottom: 5px;">
                         <div style="color:#ef4444; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: #{bold_pick['no']} {bold_pick['name']}</div>
@@ -1690,7 +1698,7 @@ with tab1:
                     </div>
                     '''), unsafe_allow_html=True)
 
-            with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=True):
+            with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=False):
                 # Ensure missing columns exist
                 for col in ['last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'class_diff', 'rating_diff', 'days_since_last_run', 'gear_changed', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'photo_finish', 'vet_findings', 'steward_notes']:
                     if col not in df_runners.columns:
