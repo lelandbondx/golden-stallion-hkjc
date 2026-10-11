@@ -14,5 +14,5 @@ while True:
     except Exception as e:
         print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Ping failed: {e}")
     
-    # Sleep for 5 minutes (300 seconds) to prevent the container from sleeping
-    time.sleep(300)
+    # Sleep for 1 minute (60 seconds) to ensure container never sleeps and stays warm
+    time.sleep(60)
