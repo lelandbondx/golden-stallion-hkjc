@@ -1,11 +1,9 @@
-# Force fresh rebuild - 2026-10-11 Sha Tin live meeting v2
+# Fast production dependencies for Streamlit Cloud
 streamlit
 pandas
 numpy
 requests
 beautifulsoup4
-scikit-learn
 joblib
 streamlit-autorefresh
-lxml
-html5lib
+

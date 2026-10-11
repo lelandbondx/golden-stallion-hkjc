@@ -5,6 +5,12 @@ showErrorDetails = true
 [browser]
 gatherUsageStats = false
 
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+
 [theme]
 base = "dark"
 primaryColor = "#FFD700"
