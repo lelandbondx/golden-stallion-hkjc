@@ -529,22 +529,14 @@ def fetch_single_race_tips(race_no, headers):
         return race_no, {}
 
 def get_live_tips_index():
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    headers = {"User-Agent": "Mozilla/5.0"}
-    tips_data = {}
-    try:
-        with ThreadPoolExecutor(max_workers=6) as executor:
-            futures = [executor.submit(fetch_single_race_tips, r_no, headers) for r_no in range(1, 13)]
-            for fut in as_completed(futures, timeout=2.5):
-                try:
-                    r_no, r_tips = fut.result()
-                    if r_tips:
-                        tips_data[r_no] = r_tips
-                except Exception:
-                    pass
-    except Exception as e:
-        print(f"Tips scraper exception: {e}")
-    return tips_data
+    import os
+    if os.path.exists('data/tips_cache.json'):
+        try:
+            with open('data/tips_cache.json', 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
 
 if __name__ == "__main__":
     print(get_live_tips_index())
