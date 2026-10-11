@@ -1,7 +1,10 @@
 import os
 import pandas as pd
 import numpy as np
-import xgboost as xgb
+try:
+    import xgboost as xgb
+except ImportError:
+    xgb = None
 import joblib
 from datetime import datetime
 
@@ -235,17 +238,26 @@ _model_mtime = None
 def load_model():
     global _loaded_model, _model_mtime
     
+    if xgb is None:
+        return None
     if os.path.exists(MODEL_PATH):
-        current_mtime = os.path.getmtime(MODEL_PATH)
-        if _loaded_model is None or _model_mtime != current_mtime:
-            _loaded_model = joblib.load(MODEL_PATH)
-            _model_mtime = current_mtime
-        return _loaded_model
+        try:
+            current_mtime = os.path.getmtime(MODEL_PATH)
+            if _loaded_model is None or _model_mtime != current_mtime:
+                _loaded_model = joblib.load(MODEL_PATH)
+                _model_mtime = current_mtime
+            return _loaded_model
+        except Exception as e:
+            print("Failed to load model.joblib:", e)
+            return None
     else:
-        _loaded_model = train_and_save_model()
-        if os.path.exists(MODEL_PATH):
-            _model_mtime = os.path.getmtime(MODEL_PATH)
-        return _loaded_model
+        try:
+            _loaded_model = train_and_save_model()
+            if os.path.exists(MODEL_PATH):
+                _model_mtime = os.path.getmtime(MODEL_PATH)
+            return _loaded_model
+        except Exception:
+            return None
 
 def predict_probabilities(df, venue=None, going=None, race_date=None, race_class_int=None, track_type=None):
     """
@@ -254,7 +266,11 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
     """
     model = load_model()
     if not model:
-        return np.ones(len(df)) / len(df)
+        if 'win_odds' in df.columns:
+            implied = 1.0 / pd.to_numeric(df['win_odds'], errors='coerce').replace(0, 20.0).fillna(20.0)
+            s = implied.sum()
+            return (implied / s).values, df
+        return np.ones(len(df)) / len(df), df
     
     live_df = df.copy()
     if os.path.exists('data/latest_horse_stats.csv'):
