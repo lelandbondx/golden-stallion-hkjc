@@ -95,8 +95,8 @@ if APP_PAUSED:
     st.stop()
 # --------------------
 
-# Ultra-smooth live odds refresh every 45 seconds (keeps session live without lag)
-st_autorefresh(interval=45000, key="hkjc_live_refresh_pulse")
+# Ultra-smooth live odds refresh every 20 seconds (keeps session live and odds fresh)
+st_autorefresh(interval=20000, key="hkjc_live_refresh_pulse")
 
 # CSS Injection for Chinese-Friendly Ruby/Gold 3D UI
 st.markdown("""
@@ -239,7 +239,7 @@ with col_b2:
 st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">金金驹AI__香港赛马会预测</div>', unsafe_allow_html=True)
 
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=20)
 def fetch_data():
     return get_live_meeting_data(force_network=False)
 

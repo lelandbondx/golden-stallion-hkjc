@@ -243,9 +243,15 @@ def get_live_meeting_data(force_network=False):
     except Exception as e:
         print("Failed to read last_scraped_meeting.json:", e)
 
-    # Fast-path: return cached data immediately when network refresh is not explicitly requested
+    # Fast-path: return cached data only if under 20 seconds old to ensure odds stay live
     if not force_network and cached_data and cached_data.get('status') == 'success' and cached_data.get('meetings'):
-        return cached_data
+        import time
+        try:
+            mtime = os.path.getmtime('data/last_scraped_meeting.json')
+            if (time.time() - mtime) < 20:
+                return cached_data
+        except Exception:
+            pass
 
     url = "https://info.cld.hkjc.com/graphql/base/"
     headers = {
