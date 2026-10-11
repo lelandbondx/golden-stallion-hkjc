@@ -1,0 +1,944 @@
+{
+  "1": [
+    {
+      "pool": "WIN",
+      "comb": "8",
+      "div": "405.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "8",
+      "div": "108.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "9",
+      "div": "33.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "7",
+      "div": "17.50"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "8,9",
+      "div": "1,848.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "8,9",
+      "div": "474.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "7,8",
+      "div": "313.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "7,9",
+      "div": "111.50"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "8,9",
+      "div": "3,135.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "8,9,7",
+      "div": "27,750.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "7,8,9",
+      "div": "2,260.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "5,7,8,9",
+      "div": "3,862.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "8,9,7,5",
+      "div": "110,878.00"
+    }
+  ],
+  "2": [
+    {
+      "pool": "WIN",
+      "comb": "1",
+      "div": "43.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "1",
+      "div": "17.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "13",
+      "div": "56.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "2",
+      "div": "23.50"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "1,13",
+      "div": "412.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,13",
+      "div": "147.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,2",
+      "div": "58.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "2,13",
+      "div": "203.00"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "1,13",
+      "div": "517.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "1,13,2",
+      "div": "3,432.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "1,2,13",
+      "div": "711.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "1,2,11,13",
+      "div": "2,909.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "1,13,2,11",
+      "div": "43,229.00"
+    },
+    {
+      "pool": "1ST DOUBLE",
+      "comb": "8/1",
+      "div": "2,341.00"
+    },
+    {
+      "pool": "1ST DOUBLE",
+      "comb": "8/13",
+      "div": "1,164.00"
+    }
+  ],
+  "3": [
+    {
+      "pool": "WIN",
+      "comb": "4",
+      "div": "28.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "4",
+      "div": "13.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "2",
+      "div": "14.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "7",
+      "div": "42.50"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "2,4",
+      "div": "49.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "2,4",
+      "div": "23.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "4,7",
+      "div": "77.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "2,7",
+      "div": "84.00"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "4,2",
+      "div": "95.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "4,2,7",
+      "div": "849.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "2,4,7",
+      "div": "227.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "2,4,7,11",
+      "div": "436.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "4,2,7,11",
+      "div": "4,736.00"
+    },
+    {
+      "pool": "2ND DOUBLE",
+      "comb": "1/4",
+      "div": "118.50"
+    },
+    {
+      "pool": "2ND DOUBLE",
+      "comb": "1/2",
+      "div": "25.00"
+    },
+    {
+      "pool": "1ST DOUBLE TRIO",
+      "comb": "1,2,13/2,4,7",
+      "div": "14,385.00"
+    }
+  ],
+  "4": [
+    {
+      "pool": "WIN",
+      "comb": "8",
+      "div": "57.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "8",
+      "div": "13.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "2",
+      "div": "10.10"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "1",
+      "div": "15.50"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "2,8",
+      "div": "30.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "2,8",
+      "div": "15.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,8",
+      "div": "31.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,2",
+      "div": "19.50"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "8,2",
+      "div": "104.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "8,2,1",
+      "div": "375.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "1,2,8",
+      "div": "43.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "1,2,4,8",
+      "div": "148.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "8,2,1,4",
+      "div": "3,861.00"
+    },
+    {
+      "pool": "3RD DOUBLE",
+      "comb": "4/8",
+      "div": "213.50"
+    },
+    {
+      "pool": "3RD DOUBLE",
+      "comb": "4/2,5",
+      "div": "10.50"
+    }
+  ],
+  "5": [
+    {
+      "pool": "WIN",
+      "comb": "6",
+      "div": "89.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "6",
+      "div": "23.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "8",
+      "div": "28.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "1",
+      "div": "22.00"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "6,8",
+      "div": "301.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "6,8",
+      "div": "98.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,6",
+      "div": "78.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,8",
+      "div": "91.50"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "6,8",
+      "div": "710.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "6,8,1",
+      "div": "4,004.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "1,6,8",
+      "div": "632.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "1,2,6,8",
+      "div": "373.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "6,8,1,2",
+      "div": "13,935.00"
+    },
+    {
+      "pool": "4TH DOUBLE",
+      "comb": "8/6",
+      "div": "460.00"
+    },
+    {
+      "pool": "4TH DOUBLE",
+      "comb": "8/8",
+      "div": "119.50"
+    },
+    {
+      "pool": "1ST TREBLE",
+      "comb": "4/8/6",
+      "div": "1,235.00"
+    },
+    {
+      "pool": "1ST TREBLE",
+      "comb": "4/8/8",
+      "div": "255.00"
+    },
+    {
+      "pool": "2ND DOUBLE TRIO",
+      "comb": "1,2,5,8/1,6,8",
+      "div": "3,504.00"
+    }
+  ],
+  "6": [
+    {
+      "pool": "WIN",
+      "comb": "12",
+      "div": "112.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "12",
+      "div": "23.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "2",
+      "div": "12.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "7",
+      "div": "24.00"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "2,12",
+      "div": "41.00"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "7,12",
+      "div": "184.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "2,12",
+      "div": "35.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "7,12",
+      "div": "101.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "2,7",
+      "div": "38.50"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "12,2",
+      "div": "161.00"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "12,7",
+      "div": "433.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "12,2,7",
+      "div": "963.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "12,7,2",
+      "div": "1,103.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "2,7,12",
+      "div": "212.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "2,3,7,12",
+      "div": "186.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "12,2,7,3",
+      "div": "3,078.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "12,7,2,3",
+      "div": "3,390.00"
+    },
+    {
+      "pool": "5TH DOUBLE",
+      "comb": "6/12",
+      "div": "720.00"
+    },
+    {
+      "pool": "5TH DOUBLE",
+      "comb": "6/2",
+      "div": "18.00"
+    },
+    {
+      "pool": "5TH DOUBLE",
+      "comb": "6/7",
+      "div": "41.50"
+    },
+    {
+      "pool": "1ST SIX UP",
+      "comb": "8,9/1,13/2,4/2,5,8/6,8/2,7,12",
+      "div": "5,523.00"
+    },
+    {
+      "pool": "1ST SIX UP",
+      "comb": "8/1/4/8/6/12",
+      "div": "2,749,826.00"
+    }
+  ],
+  "7": [
+    {
+      "pool": "WIN",
+      "comb": "5",
+      "div": "89.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "5",
+      "div": "23.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "10",
+      "div": "15.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "13",
+      "div": "312.50"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "5,10",
+      "div": "136.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "5,10",
+      "div": "55.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "5,13",
+      "div": "2,116.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "10,13",
+      "div": "1,032.00"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "5,10",
+      "div": "475.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "5,10,13",
+      "div": "44,567.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "5,10,13",
+      "div": "8,829.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "3,5,10,13",
+      "div": "5,675.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "5,10,13,3",
+      "div": "213,822.00"
+    },
+    {
+      "pool": "6TH DOUBLE",
+      "comb": "12/5",
+      "div": "810.50"
+    },
+    {
+      "pool": "6TH DOUBLE",
+      "comb": "12/10",
+      "div": "71.50"
+    },
+    {
+      "pool": "3RD DOUBLE TRIO",
+      "comb": "2,7,12/5,10,13",
+      "div": "176,488.00"
+    },
+    {
+      "pool": "TRIPLE TRIO(Consolation)",
+      "comb": "1,6,8/2,7,12/Any Combination",
+      "div": "3,057.00"
+    }
+  ],
+  "8": [
+    {
+      "pool": "WIN",
+      "comb": "1",
+      "div": "56.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "1",
+      "div": "17.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "7",
+      "div": "33.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "11",
+      "div": "13.50"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "1,7",
+      "div": "328.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,7",
+      "div": "97.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,11",
+      "div": "28.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "7,11",
+      "div": "54.00"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "1,7",
+      "div": "524.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "1,7,11",
+      "div": "1,377.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "1,7,11",
+      "div": "171.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "1,7,9,11",
+      "div": "677.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "1,7,11,9",
+      "div": "16,995.00"
+    },
+    {
+      "pool": "7TH DOUBLE",
+      "comb": "5/1",
+      "div": "406.50"
+    },
+    {
+      "pool": "7TH DOUBLE",
+      "comb": "5/7",
+      "div": "173.00"
+    }
+  ],
+  "9": [
+    {
+      "pool": "WIN",
+      "comb": "8",
+      "div": "50.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "8",
+      "div": "19.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "1",
+      "div": "28.00"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "3",
+      "div": "15.00"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "1,8",
+      "div": "269.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,8",
+      "div": "102.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "3,8",
+      "div": "49.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,3",
+      "div": "55.50"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "8,1",
+      "div": "456.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "8,1,3",
+      "div": "2,050.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "1,3,8",
+      "div": "367.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "1,3,8,9",
+      "div": "2,812.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "8,1,3,9",
+      "div": "47,152.00"
+    },
+    {
+      "pool": "8TH DOUBLE",
+      "comb": "1/8",
+      "div": "609.00"
+    },
+    {
+      "pool": "8TH DOUBLE",
+      "comb": "1/1",
+      "div": "66.50"
+    },
+    {
+      "pool": "4TH DOUBLE TRIO",
+      "comb": "1,7,11/1,3,8",
+      "div": "4,020.00"
+    }
+  ],
+  "10": [
+    {
+      "pool": "WIN",
+      "comb": "9",
+      "div": "72.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "9",
+      "div": "25.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "1",
+      "div": "24.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "7",
+      "div": "36.50"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "1,9",
+      "div": "313.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,9",
+      "div": "103.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "7,9",
+      "div": "136.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "1,7",
+      "div": "129.50"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "9,1",
+      "div": "556.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "9,1,7",
+      "div": "5,072.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "1,7,9",
+      "div": "1,135.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "1,4,7,9",
+      "div": "4,817.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "9,1,7,4",
+      "div": "79,264.00"
+    },
+    {
+      "pool": "9TH DOUBLE",
+      "comb": "8/9",
+      "div": "415.50"
+    },
+    {
+      "pool": "9TH DOUBLE",
+      "comb": "8/1",
+      "div": "107.00"
+    }
+  ],
+  "11": [
+    {
+      "pool": "WIN",
+      "comb": "3",
+      "div": "50.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "3",
+      "div": "20.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "6",
+      "div": "14.50"
+    },
+    {
+      "pool": "PLACE",
+      "comb": "2",
+      "div": "19.00"
+    },
+    {
+      "pool": "QUINELLA",
+      "comb": "3,6",
+      "div": "102.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "3,6",
+      "div": "41.50"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "2,3",
+      "div": "51.00"
+    },
+    {
+      "pool": "QUINELLA PLACE",
+      "comb": "2,6",
+      "div": "36.00"
+    },
+    {
+      "pool": "FORECAST",
+      "comb": "3,6",
+      "div": "228.00"
+    },
+    {
+      "pool": "TIERCE",
+      "comb": "3,6,2",
+      "div": "918.00"
+    },
+    {
+      "pool": "TRIO",
+      "comb": "2,3,6",
+      "div": "146.00"
+    },
+    {
+      "pool": "FIRST 4",
+      "comb": "2,3,6,11",
+      "div": "105.00"
+    },
+    {
+      "pool": "QUARTET",
+      "comb": "3,6,2,11",
+      "div": "2,843.00"
+    },
+    {
+      "pool": "10TH DOUBLE",
+      "comb": "9/3",
+      "div": "432.00"
+    },
+    {
+      "pool": "10TH DOUBLE",
+      "comb": "9/6",
+      "div": "49.00"
+    },
+    {
+      "pool": "2ND TREBLE",
+      "comb": "8/9/3",
+      "div": "2,647.00"
+    },
+    {
+      "pool": "2ND TREBLE",
+      "comb": "8/9/6",
+      "div": "354.00"
+    },
+    {
+      "pool": "5TH DOUBLE TRIO",
+      "comb": "1,7,9/2,3,6",
+      "div": "17,804.00"
+    },
+    {
+      "pool": "2ND SIX UP",
+      "comb": "2,7,12/5,10/1,7/1,8/1,9/3,6",
+      "div": "3,335.00"
+    },
+    {
+      "pool": "2ND SIX UP",
+      "comb": "12/5/1/8/9/3",
+      "div": "2,390,585.00"
+    },
+    {
+      "pool": "JOCKEY CHALLENGE 1",
+      "comb": "9 [M F Poon]",
+      "div": "Details"
+    },
+    {
+      "pool": "TRAINER CHALLENGE 1",
+      "comb": "1 [P F Yiu]",
+      "div": "Details"
+    }
+  ]
+}
