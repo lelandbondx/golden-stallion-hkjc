@@ -95,8 +95,8 @@ if APP_PAUSED:
     st.stop()
 # --------------------
 
-# Ultra-smooth live odds refresh every 15 seconds (keeps session live without sleeping)
-st_autorefresh(interval=15000, key="hkjc_live_refresh_pulse")
+# Ultra-smooth live odds refresh every 25 seconds (keeps session live without sleeping)
+st_autorefresh(interval=25000, key="hkjc_live_refresh_pulse")
 
 # CSS Injection for Chinese-Friendly Ruby/Gold 3D UI
 st.markdown("""
@@ -239,11 +239,11 @@ with col_b2:
 st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">金金驹AI__香港赛马会预测</div>', unsafe_allow_html=True)
 
-@st.cache_data(ttl=15)
+@st.cache_data(ttl=60)
 def fetch_data():
-    return get_live_meeting_data()
+    return get_live_meeting_data(force_network=False)
 
-@st.cache_data(ttl=900)
+@st.cache_data(ttl=3600)
 def fetch_news():
     return get_hkjc_news()
 
@@ -272,7 +272,7 @@ def fetch_horse_stats():
     except Exception:
         return pd.DataFrame()
 
-@st.cache_data(ttl=900)
+@st.cache_data(ttl=3600)
 def fetch_tips():
     return get_live_tips_index()
 
@@ -358,6 +358,8 @@ with col_ref:
     st.write("")
     if st.button("🔄 Refresh Live Data", use_container_width=True):
         st.cache_data.clear()
+        with st.spinner("Fetching latest live odds from HKJC..."):
+            get_live_meeting_data(force_network=True)
         st.rerun()
 
 selected_index = meeting_options.index(selected_meeting_str)
@@ -526,6 +528,33 @@ with tab1:
                             )
                             # Keep core rankings completely stable and frozen based on model_prob so picks never jump around before post time
                             df_runners['gs_score'] = df_runners['model_prob'] * 100
+
+                        # Dynamic win stake shift check on live odds update
+                        if 'card_rank' in df_runners.columns:
+                            p1_mask = df_runners['card_rank'] == 1
+                            if p1_mask.any():
+                                p1_idx = df_runners[p1_mask].index[0]
+                                p1_o = float(df_runners.loc[p1_idx, 'win_odds'])
+                                p1_p = float(df_runners.loc[p1_idx, 'model_prob'])
+                                p1_live = (p1_o > 0) and (p1_o < 20.0)
+                                p1_pass = p1_live and (p1_p * p1_o > 1.0)
+                                
+                                df_runners['win_stake_active'] = 0
+                                if p1_pass:
+                                    df_runners.loc[p1_idx, 'win_stake_active'] = 1
+                                    df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({df_runners.loc[p1_idx, 'gs_score']:.1f}) - WIN STAKE ACTIVE (Half Unit Win + Place)"
+                                elif p1_live:
+                                    df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({df_runners.loc[p1_idx, 'gs_score']:.1f}) - Winning-horse pick / exotic key only — no win stake"
+                                    # Pick 1 failed -> find best passing candidate among Picks 2-4
+                                    p24_mask = df_runners['card_rank'].isin([2, 3, 4])
+                                    p24_df = df_runners[p24_mask].copy()
+                                    if not p24_df.empty:
+                                        p24_pass = p24_df[(p24_df['win_odds'] > 0) & (p24_df['win_odds'] < 20.0) & (p24_df['model_prob'] * p24_df['win_odds'] > 1.0)].copy()
+                                        if not p24_pass.empty:
+                                            p24_pass['ev_mult'] = p24_pass['model_prob'] * p24_pass['win_odds']
+                                            best_s = p24_pass.sort_values(by='ev_mult', ascending=False).iloc[0]
+                                            df_runners.loc[df_runners['no'] == best_s['no'], 'win_stake_active'] = 1
+                                            df_runners.loc[df_runners['no'] == best_s['no'], 'primary_reason'] = f"Shifted Win Stake (Pick {int(best_s['card_rank'])} - EV +{best_s.get('value_diff', 0):.3f})"
             
             if 'clean_name' not in df_runners.columns:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()

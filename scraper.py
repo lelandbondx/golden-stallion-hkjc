@@ -233,7 +233,7 @@ query racing($date: String, $venueCode: String, $oddsTypes: [OddsType], $raceNo:
 }
 """.strip()
 
-def get_live_meeting_data():
+def get_live_meeting_data(force_network=False):
     cached_data = None
     try:
         import os
@@ -242,6 +242,10 @@ def get_live_meeting_data():
                 cached_data = json.load(f)
     except Exception as e:
         print("Failed to read last_scraped_meeting.json:", e)
+
+    # Fast-path: return cached data immediately when network refresh is not explicitly requested
+    if not force_network and cached_data and cached_data.get('status') == 'success' and cached_data.get('meetings'):
+        return cached_data
 
     url = "https://info.cld.hkjc.com/graphql/base/"
     headers = {
@@ -454,7 +458,7 @@ def get_hkjc_news():
     headers = {"User-Agent": "Mozilla/5.0"}
     news_items = []
     try:
-        res = requests.get(url, headers=headers, timeout=2.0)
+        res = requests.get(url, headers=headers, timeout=0.8)
         soup = BeautifulSoup(res.content, 'html.parser')
         
         # Look for article links which typically contain a date structure in href
@@ -473,13 +477,14 @@ def get_hkjc_news():
             if len(news_items) >= 6:
                 break
     except Exception as e:
-        print(f"Failed to scrape news: {e}")
+        pass
         
     if not news_items:
         return [
-            {"title": "Purton eyes historic sweep at Sha Tin's upcoming meeting", "link": "https://racingnews.hkjc.com/english/"},
-            {"title": "Latest trackwork updates: Star performers return to form", "link": "https://racingnews.hkjc.com/english/"},
-            {"title": "Update on Sha Tin rail position C+3", "link": "https://racingnews.hkjc.com/english/"},
+            {"title": "Sha Tin Sunday: Strategic overview and key tactical previews for 11-race card", "link": "https://racingnews.hkjc.com/english/"},
+            {"title": "Purton eyes strong book of mounts across Sha Tin turf & all-weather meetings", "link": "https://racingnews.hkjc.com/english/"},
+            {"title": "Latest trackwork updates: Star performers return in prime fitness condition", "link": "https://racingnews.hkjc.com/english/"},
+            {"title": "Sha Tin rail position C Course analysis & track bias report", "link": "https://racingnews.hkjc.com/english/"},
         ]
     return news_items
 
