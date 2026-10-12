@@ -56,7 +56,7 @@ except ImportError:
 
 
 st.set_page_config(
-    page_title="Golden Stallion AI", 
+    page_title="SILKS.AI | Institutional HKJC Terminal", 
     layout="wide", 
     page_icon="🐎",
     menu_items={
@@ -90,7 +90,7 @@ if APP_PAUSED:
     </style>
     """, unsafe_allow_html=True)
     st.image("golden_stallion_banner.png", use_container_width=True)
-    st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero-title">SILKS.AI</div>', unsafe_allow_html=True)
     st.error("⚠️ The AI Engine is currently paused for mid-meeting recalibration and results reporting. Please check back shortly.")
     st.stop()
 # --------------------
@@ -236,8 +236,8 @@ col_b1, col_b2, col_b3 = st.columns([1.2, 2, 1.2])
 with col_b2:
     st.image("golden_stallion_banner.png", use_container_width=True)
 
-st.markdown('<div class="hero-title">GOLDEN STALLION AI</div>', unsafe_allow_html=True)
-st.markdown('<div class="hero-subtitle">金金驹AI__香港赛马会预测</div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-title">SILKS.AI</div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-subtitle">SILKS.AI • 香港赛马会智能预测终端</div>', unsafe_allow_html=True)
 
 @st.cache_data(ttl=20)
 def fetch_data():
@@ -1809,4 +1809,4 @@ with tab3:
         st.info("News feed temporarily unavailable.")
         
 st.markdown("---")
-st.markdown("<p style='text-align: center; color: #6b7280; font-family:\"Inter\"; font-weight: 500; font-size: 0.85rem; letter-spacing: 1px;'>GOLDEN STALLION AI • INSTITUTIONAL TERMINAL • RESPONSIBLE GAMBLING 18+</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #6b7280; font-family:\"Inter\"; font-weight: 500; font-size: 0.85rem; letter-spacing: 1px;'>SILKS.AI • INSTITUTIONAL RACING TERMINAL • RESPONSIBLE GAMBLING 18+</p>", unsafe_allow_html=True)
