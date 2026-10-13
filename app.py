@@ -83,13 +83,25 @@ if APP_PAUSED:
             letter-spacing: 2px;
             margin-bottom: 0px;
         }
-        .stApp { 
-            background: radial-gradient(circle at top, #a5d4f8 0%, #87bef5 45%, #b2dbfc 100%) !important;
+        .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] { 
+            background: #B0E0E6 !important;
+            background-color: #B0E0E6 !important;
             color: #0f172a; 
+        }
+        img {
+            border-radius: 12px;
+            border: 2px solid rgba(255, 215, 0, 0.55);
+            box-shadow: 0 6px 18px rgba(10, 30, 60, 0.2);
+            max-width: 175px !important;
+            max-height: 125px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            display: block !important;
+            object-fit: cover;
         }
     </style>
     """, unsafe_allow_html=True)
-    col_p1, col_p2, col_p3 = st.columns([1.1, 1.8, 1.1])
+    col_p1, col_p2, col_p3 = st.columns([1.8, 1.0, 1.8])
     with col_p2:
         st.image("silks_ai_banner.jpg", use_container_width=True)
     st.markdown('<div class="hero-title">SILKS.AI</div>', unsafe_allow_html=True)
@@ -131,19 +143,30 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
     }
     
-    /* Baby Blue Institutional Canvas */
-    .stApp { 
-        background: radial-gradient(circle at top, #a5d4f8 0%, #87bef5 45%, #b2dbfc 100%) !important;
+    /* Powder Blue Institutional Canvas */
+    .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] { 
+        background: #B0E0E6 !important;
+        background-color: #B0E0E6 !important;
         color: #0f172a; 
     }
     
-    /* Image styling: Smaller, neat, rounded with Gold & Navy border */
+    /* Image styling: Shrunk down, neat, rounded with Gold & Navy border */
     img {
-        border-radius: 14px;
-        border: 2px solid rgba(255, 215, 0, 0.45);
-        box-shadow: 0 10px 25px rgba(10, 30, 60, 0.25);
-        max-height: 250px;
+        border-radius: 12px;
+        border: 2px solid rgba(255, 215, 0, 0.55);
+        box-shadow: 0 6px 18px rgba(10, 30, 60, 0.2);
+        max-width: 175px !important;
+        max-height: 125px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
         object-fit: cover;
+    }
+    
+    /* Gallery images inside tabs can expand to column width */
+    .stTabs [data-testid="stImage"] img {
+        max-width: 100% !important;
+        max-height: 220px !important;
     }
     
     /* Ultra-readable Headers */
@@ -170,7 +193,7 @@ st.markdown("""
         text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
     }
     
-    /* 3D Glassy Deep Sapphire/Obsidian Cards on Baby Blue */
+    /* 3D Glassy Deep Sapphire/Obsidian Cards on Powder Blue */
     .tech-panel { 
         position: relative;
         background: linear-gradient(145deg, rgba(12, 25, 48, 0.94), rgba(6, 14, 28, 0.98));
@@ -244,8 +267,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Central Banner (Smaller, centered)
-col_b1, col_b2, col_b3 = st.columns([1.1, 1.8, 1.1])
+# Central Banner (Shrunk, centered)
+col_b1, col_b2, col_b3 = st.columns([1.8, 1.0, 1.8])
 with col_b2:
     st.image("silks_ai_banner.jpg", use_container_width=True)
 
