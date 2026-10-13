@@ -12,8 +12,8 @@ enableXsrfProtection = false
 
 
 [theme]
-base = "light"
-primaryColor = "#0284c7"
-backgroundColor = "#B0E0E6"
-secondaryBackgroundColor = "#C2EAEF"
-textColor = "#0f172a"
+base = "dark"
+primaryColor = "#FFD700"
+backgroundColor = "#570a13"
+secondaryBackgroundColor = "#3c050c"
+textColor = "#ffffff"
