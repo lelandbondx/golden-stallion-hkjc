@@ -300,7 +300,7 @@
               "actual_weight": 119,
               "declared_weight": 1143,
               "rtg": 43,
-              "win_odds": 6.2,
+              "win_odds": 6.1,
               "final_position": 0,
               "horse_gear": "V/XB"
             },
@@ -328,7 +328,7 @@
               "actual_weight": 118,
               "declared_weight": 1086,
               "rtg": 42,
-              "win_odds": 5.4,
+              "win_odds": 5.5,
               "final_position": 0,
               "horse_gear": "TT"
             }
@@ -598,7 +598,7 @@
               "actual_weight": 128,
               "declared_weight": 1243,
               "rtg": 52,
-              "win_odds": 40.0,
+              "win_odds": 39.0,
               "final_position": 0,
               "horse_gear": ""
             },
