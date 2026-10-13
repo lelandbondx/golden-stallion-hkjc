@@ -11,6 +11,12 @@ import odds_tracker
 import textwrap
 import base64
 
+try:
+    from patch_index import patch_index
+    patch_index()
+except Exception:
+    pass
+
 def clean_html(html_str):
     return "\n".join(line.lstrip() for line in html_str.split("\n"))
 
