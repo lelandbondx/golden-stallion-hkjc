@@ -74,9 +74,9 @@ if APP_PAUSED:
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;500;600;700&display=swap');
         .hero-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FFFFFF 0%, #bae6fd 40%, #FFD700 80%, #f59e0b 100%);
+            background: linear-gradient(135deg, #091a36 0%, #1e3a8a 50%, #b45309 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
@@ -84,12 +84,14 @@ if APP_PAUSED:
             margin-bottom: 0px;
         }
         .stApp { 
-            background: radial-gradient(circle at top, #0c1829 0%, #050b14 100%);
-            color: #f8fafc; 
+            background: radial-gradient(circle at top, #a5d4f8 0%, #87bef5 45%, #b2dbfc 100%) !important;
+            color: #0f172a; 
         }
     </style>
     """, unsafe_allow_html=True)
-    st.image("silks_ai_banner.jpg", use_container_width=True)
+    col_p1, col_p2, col_p3 = st.columns([1.1, 1.8, 1.1])
+    with col_p2:
+        st.image("silks_ai_banner.jpg", use_container_width=True)
     st.markdown('<div class="hero-title">SILKS.AI</div>', unsafe_allow_html=True)
     st.error("⚠️ The AI Engine is currently paused for mid-meeting recalibration and results reporting. Please check back shortly.")
     st.stop()
@@ -129,65 +131,67 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
     }
     
-    /* Institutional Midnight Powder Blue & Gold Background */
+    /* Baby Blue Institutional Canvas */
     .stApp { 
-        background: radial-gradient(circle at top, #0d1e38 0%, #050b14 100%);
-        color: #f8fafc; 
+        background: radial-gradient(circle at top, #a5d4f8 0%, #87bef5 45%, #b2dbfc 100%) !important;
+        color: #0f172a; 
     }
     
-    /* Image styling with Powder Blue & Gold Glow */
+    /* Image styling: Smaller, neat, rounded with Gold & Navy border */
     img {
         border-radius: 14px;
-        border: 1.5px solid rgba(125, 211, 252, 0.4);
-        box-shadow: 0 12px 35px rgba(0,0,0,0.7), 0 0 25px rgba(125, 211, 252, 0.22);
+        border: 2px solid rgba(255, 215, 0, 0.45);
+        box-shadow: 0 10px 25px rgba(10, 30, 60, 0.25);
+        max-height: 250px;
+        object-fit: cover;
     }
     
     /* Ultra-readable Headers */
     .hero-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 3.6rem;
+        font-size: 3.2rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #FFFFFF 0%, #bae6fd 40%, #FFD700 80%, #f59e0b 100%);
+        background: linear-gradient(135deg, #091a36 0%, #1e3a8a 50%, #b45309 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
         letter-spacing: 3px;
         margin-bottom: 0px;
-        filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.8));
+        filter: drop-shadow(0px 2px 4px rgba(255,255,255,0.7));
     }
     .hero-subtitle {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.15rem;
-        color: #7dd3fc;
+        font-size: 1.05rem;
+        color: #0d254c;
         text-align: center;
         letter-spacing: 5px;
-        margin-bottom: 30px;
-        font-weight: 700;
-        text-shadow: 0 0 14px rgba(125, 211, 252, 0.5);
+        margin-bottom: 25px;
+        font-weight: 800;
+        text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
     }
     
-    /* 3D Glassy Deep Sapphire/Powder Blue Slate Panels */
+    /* 3D Glassy Deep Sapphire/Obsidian Cards on Baby Blue */
     .tech-panel { 
         position: relative;
-        background: linear-gradient(145deg, rgba(14, 28, 51, 0.85), rgba(7, 15, 28, 0.95));
+        background: linear-gradient(145deg, rgba(12, 25, 48, 0.94), rgba(6, 14, 28, 0.98));
         backdrop-filter: blur(12px);
         padding: 22px; 
-        border-radius: 12px;
-        border: 1px solid rgba(125, 211, 252, 0.25); 
+        border-radius: 14px;
+        border: 1.5px solid rgba(255, 215, 0, 0.35); 
         margin: 12px 0; 
-        box-shadow: 0 15px 35px rgba(0,0,0,0.55), inset 0 1px 0 rgba(125, 211, 252, 0.2);
+        box-shadow: 0 14px 30px rgba(8, 28, 56, 0.25), inset 0 1px 0 rgba(186, 230, 253, 0.2);
         transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
         overflow: hidden;
     }
     .tech-panel:hover {
         transform: translateY(-3px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 15px rgba(125, 211, 252, 0.25);
+        box-shadow: 0 18px 36px rgba(8, 28, 56, 0.35), 0 0 15px rgba(255, 215, 0, 0.3);
     }
 
     /* Edge Lighting Effects (Powder Blue and Gold) */
     .border-accent-gold { border-left: 5px solid #FFD700; box-shadow: -4px 0 15px rgba(255, 215, 0, 0.25), 0 15px 30px rgba(0,0,0,0.5); }
-    .border-accent-blue { border-left: 5px solid #7dd3fc; box-shadow: -4px 0 15px rgba(125, 211, 252, 0.3), 0 15px 30px rgba(0,0,0,0.5); }
-    .border-accent-red { border-left: 5px solid #7dd3fc; box-shadow: -4px 0 15px rgba(125, 211, 252, 0.3), 0 15px 30px rgba(0,0,0,0.5); }
+    .border-accent-blue { border-left: 5px solid #38bdf8; box-shadow: -4px 0 15px rgba(56, 189, 248, 0.35), 0 15px 30px rgba(0,0,0,0.5); }
+    .border-accent-red { border-left: 5px solid #38bdf8; box-shadow: -4px 0 15px rgba(56, 189, 248, 0.35), 0 15px 30px rgba(0,0,0,0.5); }
 
     .data-label {
         font-family: 'Inter', sans-serif;
@@ -208,40 +212,40 @@ st.markdown("""
     /* 3D Expanders */
     .streamlit-expanderHeader { 
         font-family: 'Montserrat', sans-serif;
-        color: #e0f2fe !important; 
-        font-weight: 600;
-        border: 1px solid rgba(125, 211, 252, 0.2);
+        color: #ffffff !important; 
+        font-weight: 700;
+        border: 1px solid rgba(255, 215, 0, 0.3);
         border-radius: 8px;
-        background: linear-gradient(180deg, #0e1e36, #070d18);
-        box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+        background: linear-gradient(180deg, #0d203d, #061122);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.25);
     }
     
     /* 3D Progress Bar in Powder Blue / Gold */
     .stProgress > div > div > div > div {
-        background: linear-gradient(90deg, #7dd3fc, #FFD700);
-        box-shadow: 0 0 12px rgba(125, 211, 252, 0.5);
+        background: linear-gradient(90deg, #38bdf8, #FFD700);
+        box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
         border-radius: 10px;
     }
     
     /* Elegant Tabs */
-    .stTabs [data-baseweb="tab-list"] { gap: 10px; border-bottom: 2px solid rgba(125, 211, 252, 0.25); }
+    .stTabs [data-baseweb="tab-list"] { gap: 10px; border-bottom: 2px solid rgba(14, 38, 70, 0.25); }
     .stTabs [data-baseweb="tab"] {
         font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
+        font-weight: 800;
         letter-spacing: 1px;
         font-size: 0.95rem;
-        color: #94a3b8;
+        color: #1e3a8a;
     }
     .stTabs [aria-selected="true"] { 
-        color: #FFD700 !important; 
-        border-bottom-color: #7dd3fc !important; 
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        color: #0c2340 !important; 
+        border-bottom-color: #0284c7 !important; 
+        text-shadow: 0 0 8px rgba(2, 132, 199, 0.3);
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Central Banner
-col_b1, col_b2, col_b3 = st.columns([0.15, 3.7, 0.15])
+# Central Banner (Smaller, centered)
+col_b1, col_b2, col_b3 = st.columns([1.1, 1.8, 1.1])
 with col_b2:
     st.image("silks_ai_banner.jpg", use_container_width=True)
 
@@ -1324,7 +1328,7 @@ with tab1:
 
     col_hdr, col_flt = st.columns([1.5, 1])
     with col_hdr:
-        st.markdown("<h3 style='font-family:\"Montserrat\"; letter-spacing:1px; color:#ffffff; font-weight:700; margin-top:5px;'>AI RACE PREDICTIONS</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='font-family:\"Montserrat\"; letter-spacing:1px; color:#0c2340; font-weight:800; margin-top:5px; text-shadow: 0 1px 2px rgba(255,255,255,0.6);'>AI RACE PREDICTIONS</h3>", unsafe_allow_html=True)
     with col_flt:
         race_options = ["All Races"] + [f"Race {r.get('race_no')}" for r in races]
         selected_race_view = st.selectbox("🏇 Jump to Specific Race", race_options, index=0)
@@ -1382,8 +1386,8 @@ with tab1:
                     if pd.isna(match.iloc[0]['Record_Horse']): rec_horse = "-"
 
             st.markdown(clean_html(f'''
-            <div style="font-family:'Montserrat'; font-size:1.6rem; font-weight:800; color:#7dd3fc; margin-top:30px; margin-bottom:5px; text-shadow: 0 0 14px rgba(125,211,252,0.4);">
-                RACE {race.get("race_no", "")} – <span style="font-family:'Inter'; font-weight:500; font-size:1.2rem; color:#e0f2fe;">{class_dist}</span>
+            <div style="font-family:'Montserrat'; font-size:1.6rem; font-weight:800; color:#0c2340; margin-top:30px; margin-bottom:5px; text-shadow: 0 1px 3px rgba(255,255,255,0.7);">
+                RACE {race.get("race_no", "")} – <span style="font-family:'Inter'; font-weight:700; font-size:1.2rem; color:#1e3a8a;">{class_dist}</span>
             </div>
             <div style="display:flex; gap: 20px; margin-bottom:15px;">
                 <div style="background: rgba(255, 215, 0, 0.08); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.35);">
