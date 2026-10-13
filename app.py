@@ -89,17 +89,32 @@ if APP_PAUSED:
             background-color: #520812 !important;
             color: #ffffff; 
         }
-        img {
+        .block-container {
+            padding-top: 1rem !important;
+            max-width: 1250px !important;
+            margin: 0 auto !important;
+        }
+        div[data-testid="stImage"] {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            text-align: center !important;
+        }
+        div[data-testid="stImage"] > img {
             border-radius: 16px;
             border: 2px solid rgba(255, 215, 0, 0.65);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
             width: 100% !important;
-            max-width: 100% !important;
-            max-height: 280px !important;
+            max-width: 1150px !important;
+            aspect-ratio: 16 / 4.8 !important;
+            max-height: 270px !important;
+            min-height: 140px !important;
             margin: 0 auto 15px auto !important;
             display: block !important;
             object-fit: cover;
-            object-position: center 30%;
+            object-position: center 32%;
         }
     </style>
     """, unsafe_allow_html=True)
@@ -151,48 +166,95 @@ st.markdown("""
         color: #ffffff !important; 
     }
     
-    /* Big Horizontal Cinematic Hero Banner */
-    img {
-        border-radius: 16px;
-        border: 2.5px solid rgba(255, 215, 0, 0.65);
-        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
-        width: 100% !important;
-        max-width: 100% !important;
-        max-height: 280px !important;
-        margin: 0 auto 15px auto !important;
-        display: block !important;
-        object-fit: cover;
-        object-position: center 30%;
+    /* Ensure page content starts cleanly at the very top */
+    .block-container {
+        padding-top: 1.0rem !important;
+        padding-bottom: 2.5rem !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+        max-width: 1350px !important;
+        margin: 0 auto !important;
     }
     
-    /* Gallery images inside tabs can expand to column width */
-    .stTabs [data-testid="stImage"] img {
+    /* Top Hero Banner - Centered & Long Horizontal Widescreen */
+    div[data-testid="stImage"] {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+    }
+    
+    div[data-testid="stImage"] > img {
+        border-radius: 16px !important;
+        border: 2.5px solid rgba(255, 215, 0, 0.65) !important;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6) !important;
+        width: 100% !important;
+        max-width: 1150px !important;
+        aspect-ratio: 16 / 4.8 !important;
+        max-height: 275px !important;
+        min-height: 140px !important;
+        margin: 0 auto 10px auto !important;
+        display: block !important;
+        object-fit: cover !important;
+        object-position: center 32% !important;
+    }
+    
+    /* Gallery images inside tabs stay proportionate */
+    .stTabs div[data-testid="stImage"] > img {
         max-width: 100% !important;
-        max-height: 220px !important;
+        height: 200px !important;
+        aspect-ratio: auto !important;
+        object-fit: cover !important;
+        border-radius: 10px !important;
+        border: 1.5px solid rgba(255, 215, 0, 0.3) !important;
     }
     
     /* Ultra-readable Headers (Imperial Gold Foil Gradient) */
     .hero-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 3.5rem;
+        font-size: 2.7rem;
         font-weight: 900;
         background: linear-gradient(135deg, #FFFDF0 0%, #FFDF00 50%, #E6B800 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
         letter-spacing: 4px;
+        margin-top: 2px;
         margin-bottom: 2px;
         filter: drop-shadow(0px 3px 12px rgba(0,0,0,0.85));
     }
     .hero-subtitle {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.1rem;
+        font-size: 1.0rem;
         color: #FFDF00 !important;
         text-align: center;
-        letter-spacing: 5px;
-        margin-bottom: 25px;
+        letter-spacing: 4px;
+        margin-bottom: 22px;
         font-weight: 800;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    }
+    
+    /* Responsive adjustments for mobile and tablets */
+    @media (max-width: 768px) {
+        .block-container {
+            padding-top: 0.6rem !important;
+            padding-left: 0.8rem !important;
+            padding-right: 0.8rem !important;
+        }
+        div[data-testid="stImage"] > img {
+            max-height: 170px !important;
+            border-radius: 12px !important;
+        }
+        .hero-title {
+            font-size: 2.1rem !important;
+        }
+        .hero-subtitle {
+            font-size: 0.85rem !important;
+            letter-spacing: 2px !important;
+        }
     }
     
     /* VIP Obsidian Crimson Glass Panels with 24k Gold Accents */
