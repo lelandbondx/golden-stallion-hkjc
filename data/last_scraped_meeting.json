@@ -67,7 +67,7 @@
               "actual_weight": 132,
               "declared_weight": 1123,
               "rtg": 36,
-              "win_odds": 38.0,
+              "win_odds": 35.0,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -202,7 +202,7 @@
               "actual_weight": 135,
               "declared_weight": 1138,
               "rtg": 59,
-              "win_odds": 9.2,
+              "win_odds": 9.3,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -328,7 +328,7 @@
               "actual_weight": 118,
               "declared_weight": 1086,
               "rtg": 42,
-              "win_odds": 5.5,
+              "win_odds": 5.4,
               "final_position": 0,
               "horse_gear": "TT"
             }
@@ -379,7 +379,7 @@
               "actual_weight": 131,
               "declared_weight": 1184,
               "rtg": 53,
-              "win_odds": 10.0,
+              "win_odds": 9.9,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -435,7 +435,7 @@
               "actual_weight": 124,
               "declared_weight": 1001,
               "rtg": 46,
-              "win_odds": 18.0,
+              "win_odds": 19.0,
               "final_position": 0,
               "horse_gear": "XB"
             },
@@ -584,7 +584,7 @@
               "actual_weight": 130,
               "declared_weight": 1053,
               "rtg": 54,
-              "win_odds": 6.9,
+              "win_odds": 6.8,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -677,7 +677,7 @@
               "actual_weight": 135,
               "declared_weight": 1208,
               "rtg": 60,
-              "win_odds": 6.4,
+              "win_odds": 6.3,
               "final_position": 0,
               "horse_gear": "V/TT"
             },
@@ -733,7 +733,7 @@
               "actual_weight": 127,
               "declared_weight": 1134,
               "rtg": 52,
-              "win_odds": 9.9,
+              "win_odds": 10.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -761,7 +761,7 @@
               "actual_weight": 125,
               "declared_weight": 1054,
               "rtg": 50,
-              "win_odds": 7.4,
+              "win_odds": 7.3,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -831,7 +831,7 @@
               "actual_weight": 117,
               "declared_weight": 1135,
               "rtg": 42,
-              "win_odds": 8.0,
+              "win_odds": 8.1,
               "final_position": 0,
               "horse_gear": ""
             }
@@ -882,7 +882,7 @@
               "actual_weight": 127,
               "declared_weight": 1273,
               "rtg": 94,
-              "win_odds": 13.0,
+              "win_odds": 12.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -1017,7 +1017,7 @@
               "actual_weight": 133,
               "declared_weight": 1055,
               "rtg": 58,
-              "win_odds": 9.5,
+              "win_odds": 9.6,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1166,7 +1166,7 @@
               "actual_weight": 135,
               "declared_weight": 1149,
               "rtg": 80,
-              "win_odds": 3.6,
+              "win_odds": 3.7,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1194,7 +1194,7 @@
               "actual_weight": 131,
               "declared_weight": 1088,
               "rtg": 76,
-              "win_odds": 5.8,
+              "win_odds": 5.7,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1413,7 +1413,7 @@
               "actual_weight": 125,
               "declared_weight": 1102,
               "rtg": 67,
-              "win_odds": 14.0,
+              "win_odds": 15.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1441,7 +1441,7 @@
               "actual_weight": 124,
               "declared_weight": 1129,
               "rtg": 66,
-              "win_odds": 9.5,
+              "win_odds": 9.3,
               "final_position": 0,
               "horse_gear": ""
             },
