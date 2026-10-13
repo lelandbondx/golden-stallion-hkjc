@@ -13,7 +13,7 @@ enableXsrfProtection = false
 
 [theme]
 base = "dark"
-primaryColor = "#FFD700"
+primaryColor = "#38bdf8"
 backgroundColor = "#570a13"
 secondaryBackgroundColor = "#3c050c"
 textColor = "#ffffff"
