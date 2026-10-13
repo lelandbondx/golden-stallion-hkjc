@@ -111,7 +111,13 @@
     "horse_name": "ACE CHAMPION",
     "horse_code": "K379",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.14285714285714285,
+      "best_trial_speed_diff": 0.010000000000005116,
+      "jockeys": [
+        "M L YEUNG"
+      ]
+    }
   },
   "K379": {
     "horse_name": "ACE CHAMPION",
@@ -1599,7 +1605,13 @@
     "horse_name": "DRAGON FOUR SEAS",
     "horse_code": "J317",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.1,
+      "best_trial_speed_diff": 1.75,
+      "jockeys": [
+        "M L YEUNG"
+      ]
+    }
   },
   "J317": {
     "horse_name": "DRAGON FOUR SEAS",
@@ -3399,7 +3411,13 @@
     "horse_name": "LE ZONDA",
     "horse_code": "L110",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.2857142857142857,
+      "best_trial_speed_diff": -0.5499999999999972,
+      "jockeys": [
+        "M L YEUNG"
+      ]
+    }
   },
   "L110": {
     "horse_name": "LE ZONDA",
@@ -3411,7 +3429,13 @@
     "horse_name": "LEADING DRAGON",
     "horse_code": "L083",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.2857142857142857,
+      "best_trial_speed_diff": 0.010000000000005116,
+      "jockeys": [
+        "H Y YUEN"
+      ]
+    }
   },
   "L083": {
     "horse_name": "LEADING DRAGON",
@@ -3927,7 +3951,13 @@
     "horse_name": "MASSIVE SOVEREIGN",
     "horse_code": "J208",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.625,
+      "best_trial_speed_diff": -0.20999999999999375,
+      "jockeys": [
+        "C L CHAU"
+      ]
+    }
   },
   "J208": {
     "horse_name": "MASSIVE SOVEREIGN",
@@ -5115,7 +5145,13 @@
     "horse_name": "ROBOT LUCKY STAR",
     "horse_code": "K485",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": -0.20999999999999375,
+      "jockeys": [
+        "Z PURTON"
+      ]
+    }
   },
   "K485": {
     "horse_name": "ROBOT LUCKY STAR",
@@ -5499,7 +5535,13 @@
     "horse_name": "SHAMZ",
     "horse_code": "L097",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.4,
+      "best_trial_speed_diff": 0.45000000000000284,
+      "jockeys": [
+        "L FERRARIS"
+      ]
+    }
   },
   "L097": {
     "horse_name": "SHAMZ",
@@ -5547,7 +5589,13 @@
     "horse_name": "SILVERY BREEZE",
     "horse_code": "K057",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.9,
+      "best_trial_speed_diff": 0.9099999999999966,
+      "jockeys": [
+        "K L CHUI"
+      ]
+    }
   },
   "K057": {
     "horse_name": "SILVERY BREEZE",
@@ -6213,7 +6261,13 @@
     "horse_name": "THE AZURE",
     "horse_code": "J227",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.7,
+      "best_trial_speed_diff": 0.7199999999999989,
+      "jockeys": [
+        "C L CHAU"
+      ]
+    }
   },
   "J227": {
     "horse_name": "THE AZURE",
@@ -6297,7 +6351,13 @@
     "horse_name": "THE LION KING",
     "horse_code": "K265",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.7,
+      "best_trial_speed_diff": 1.0100000000000051,
+      "jockeys": [
+        "Z ZURIMAN"
+      ]
+    }
   },
   "K265": {
     "horse_name": "THE LION KING",
@@ -14656,5 +14716,1371 @@
         "B AVDULLA"
       ]
     }
+  },
+  "VIGOR HAPPINESS": {
+    "horse_name": "VIGOR HAPPINESS",
+    "horse_code": "L284",
+    "runs": [],
+    "trial_note": null
+  },
+  "L284": {
+    "horse_name": "VIGOR HAPPINESS",
+    "horse_code": "L284",
+    "runs": [],
+    "trial_note": null
+  },
+  "SPLENDID FORCE": {
+    "horse_name": "SPLENDID FORCE",
+    "horse_code": "K120",
+    "runs": [],
+    "trial_note": null
+  },
+  "K120": {
+    "horse_name": "SPLENDID FORCE",
+    "horse_code": "K120",
+    "runs": [],
+    "trial_note": null
+  },
+  "GOOD LUCK WIN": {
+    "horse_name": "GOOD LUCK WIN",
+    "horse_code": "J135",
+    "runs": [],
+    "trial_note": null
+  },
+  "J135": {
+    "horse_name": "GOOD LUCK WIN",
+    "horse_code": "J135",
+    "runs": [],
+    "trial_note": null
+  },
+  "SHARPEN BRIGHT": {
+    "horse_name": "SHARPEN BRIGHT",
+    "horse_code": "H276",
+    "runs": [],
+    "trial_note": null
+  },
+  "H276": {
+    "horse_name": "SHARPEN BRIGHT",
+    "horse_code": "H276",
+    "runs": [],
+    "trial_note": null
+  },
+  "KINGLY DEMEANOR": {
+    "horse_name": "KINGLY DEMEANOR",
+    "horse_code": "H486",
+    "runs": [],
+    "trial_note": null
+  },
+  "H486": {
+    "horse_name": "KINGLY DEMEANOR",
+    "horse_code": "H486",
+    "runs": [],
+    "trial_note": null
+  },
+  "PERFECT PAIRING": {
+    "horse_name": "PERFECT PAIRING",
+    "horse_code": "J331",
+    "runs": [],
+    "trial_note": null
+  },
+  "J331": {
+    "horse_name": "PERFECT PAIRING",
+    "horse_code": "J331",
+    "runs": [],
+    "trial_note": null
+  },
+  "GOLDEN FORTUNE": {
+    "horse_name": "GOLDEN FORTUNE",
+    "horse_code": "K500",
+    "runs": [],
+    "trial_note": null
+  },
+  "K500": {
+    "horse_name": "GOLDEN FORTUNE",
+    "horse_code": "K500",
+    "runs": [],
+    "trial_note": null
+  },
+  "NEW POWER": {
+    "horse_name": "NEW POWER",
+    "horse_code": "H325",
+    "runs": [],
+    "trial_note": null
+  },
+  "H325": {
+    "horse_name": "NEW POWER",
+    "horse_code": "H325",
+    "runs": [],
+    "trial_note": null
+  },
+  "SMILING CHAMPION": {
+    "horse_name": "SMILING CHAMPION",
+    "horse_code": "K565",
+    "runs": [],
+    "trial_note": null
+  },
+  "K565": {
+    "horse_name": "SMILING CHAMPION",
+    "horse_code": "K565",
+    "runs": [],
+    "trial_note": null
+  },
+  "BULLISH NOVA": {
+    "horse_name": "BULLISH NOVA",
+    "horse_code": "L200",
+    "runs": [],
+    "trial_note": null
+  },
+  "L200": {
+    "horse_name": "BULLISH NOVA",
+    "horse_code": "L200",
+    "runs": [],
+    "trial_note": null
+  },
+  "DASHING MAURISON": {
+    "horse_name": "DASHING MAURISON",
+    "horse_code": "K374",
+    "runs": [],
+    "trial_note": null
+  },
+  "K374": {
+    "horse_name": "DASHING MAURISON",
+    "horse_code": "K374",
+    "runs": [],
+    "trial_note": null
+  },
+  "CLASS": {
+    "horse_name": "CLASS",
+    "horse_code": "L134",
+    "runs": [],
+    "trial_note": null
+  },
+  "L134": {
+    "horse_name": "CLASS",
+    "horse_code": "L134",
+    "runs": [],
+    "trial_note": null
+  },
+  "I AM BACK": {
+    "horse_name": "I AM BACK",
+    "horse_code": "L061",
+    "runs": [],
+    "trial_note": null
+  },
+  "L061": {
+    "horse_name": "I AM BACK",
+    "horse_code": "L061",
+    "runs": [],
+    "trial_note": null
+  },
+  "RAGGA BOMB": {
+    "horse_name": "RAGGA BOMB",
+    "horse_code": "K162",
+    "runs": [],
+    "trial_note": null
+  },
+  "K162": {
+    "horse_name": "RAGGA BOMB",
+    "horse_code": "K162",
+    "runs": [],
+    "trial_note": null
+  },
+  "HAYDAY": {
+    "horse_name": "HAYDAY",
+    "horse_code": "H321",
+    "runs": [],
+    "trial_note": null
+  },
+  "H321": {
+    "horse_name": "HAYDAY",
+    "horse_code": "H321",
+    "runs": [],
+    "trial_note": null
+  },
+  "FORTUNE STAR": {
+    "horse_name": "FORTUNE STAR",
+    "horse_code": "K003",
+    "runs": [],
+    "trial_note": null
+  },
+  "K003": {
+    "horse_name": "FORTUNE STAR",
+    "horse_code": "K003",
+    "runs": [],
+    "trial_note": null
+  },
+  "ABSOLUTE HONOUR": {
+    "horse_name": "ABSOLUTE HONOUR",
+    "horse_code": "K260",
+    "runs": [],
+    "trial_note": null
+  },
+  "K260": {
+    "horse_name": "ABSOLUTE HONOUR",
+    "horse_code": "K260",
+    "runs": [],
+    "trial_note": null
+  },
+  "LUCKY XANDER": {
+    "horse_name": "LUCKY XANDER",
+    "horse_code": "K407",
+    "runs": [],
+    "trial_note": null
+  },
+  "K407": {
+    "horse_name": "LUCKY XANDER",
+    "horse_code": "K407",
+    "runs": [],
+    "trial_note": null
+  },
+  "AMAZING AWARD": {
+    "horse_name": "AMAZING AWARD",
+    "horse_code": "J236",
+    "runs": [],
+    "trial_note": null
+  },
+  "J236": {
+    "horse_name": "AMAZING AWARD",
+    "horse_code": "J236",
+    "runs": [],
+    "trial_note": null
+  },
+  "GLORIOUS ST PAUL'S": {
+    "horse_name": "GLORIOUS ST PAUL'S",
+    "horse_code": "K524",
+    "runs": [],
+    "trial_note": null
+  },
+  "K524": {
+    "horse_name": "GLORIOUS ST PAUL'S",
+    "horse_code": "K524",
+    "runs": [],
+    "trial_note": null
+  },
+  "TAKE ACTION": {
+    "horse_name": "TAKE ACTION",
+    "horse_code": "J098",
+    "runs": [],
+    "trial_note": null
+  },
+  "J098": {
+    "horse_name": "TAKE ACTION",
+    "horse_code": "J098",
+    "runs": [],
+    "trial_note": null
+  },
+  "BLAZING METEOR": {
+    "horse_name": "BLAZING METEOR",
+    "horse_code": "L426",
+    "runs": [],
+    "trial_note": null
+  },
+  "L426": {
+    "horse_name": "BLAZING METEOR",
+    "horse_code": "L426",
+    "runs": [],
+    "trial_note": null
+  },
+  "COPPER CORE": {
+    "horse_name": "COPPER CORE",
+    "horse_code": "L214",
+    "runs": [],
+    "trial_note": null
+  },
+  "L214": {
+    "horse_name": "COPPER CORE",
+    "horse_code": "L214",
+    "runs": [],
+    "trial_note": null
+  },
+  "BRILLIANT TURN": {
+    "horse_name": "BRILLIANT TURN",
+    "horse_code": "L368",
+    "runs": [],
+    "trial_note": null
+  },
+  "L368": {
+    "horse_name": "BRILLIANT TURN",
+    "horse_code": "L368",
+    "runs": [],
+    "trial_note": null
+  },
+  "GOLDEN ACE": {
+    "horse_name": "GOLDEN ACE",
+    "horse_code": "L461",
+    "runs": [],
+    "trial_note": null
+  },
+  "L461": {
+    "horse_name": "GOLDEN ACE",
+    "horse_code": "L461",
+    "runs": [],
+    "trial_note": null
+  },
+  "PODIUM": {
+    "horse_name": "PODIUM",
+    "horse_code": "H173",
+    "runs": [],
+    "trial_note": null
+  },
+  "H173": {
+    "horse_name": "PODIUM",
+    "horse_code": "H173",
+    "runs": [],
+    "trial_note": null
+  },
+  "GRAND NOVA": {
+    "horse_name": "GRAND NOVA",
+    "horse_code": "J323",
+    "runs": [],
+    "trial_note": null
+  },
+  "J323": {
+    "horse_name": "GRAND NOVA",
+    "horse_code": "J323",
+    "runs": [],
+    "trial_note": null
+  },
+  "VIGOR EYE": {
+    "horse_name": "VIGOR EYE",
+    "horse_code": "L068",
+    "runs": [],
+    "trial_note": null
+  },
+  "L068": {
+    "horse_name": "VIGOR EYE",
+    "horse_code": "L068",
+    "runs": [],
+    "trial_note": null
+  },
+  "MAPOGO": {
+    "horse_name": "MAPOGO",
+    "horse_code": "L175",
+    "runs": [],
+    "trial_note": null
+  },
+  "L175": {
+    "horse_name": "MAPOGO",
+    "horse_code": "L175",
+    "runs": [],
+    "trial_note": null
+  },
+  "VIEW OF COSMOS": {
+    "horse_name": "VIEW OF COSMOS",
+    "horse_code": "L060",
+    "runs": [],
+    "trial_note": null
+  },
+  "L060": {
+    "horse_name": "VIEW OF COSMOS",
+    "horse_code": "L060",
+    "runs": [],
+    "trial_note": null
+  },
+  "MAJESTIC DELIGHT": {
+    "horse_name": "MAJESTIC DELIGHT",
+    "horse_code": "K189",
+    "runs": [],
+    "trial_note": null
+  },
+  "K189": {
+    "horse_name": "MAJESTIC DELIGHT",
+    "horse_code": "K189",
+    "runs": [],
+    "trial_note": null
+  },
+  "UNSTOPPAPLE": {
+    "horse_name": "UNSTOPPAPLE",
+    "horse_code": "L205",
+    "runs": [],
+    "trial_note": null
+  },
+  "L205": {
+    "horse_name": "UNSTOPPAPLE",
+    "horse_code": "L205",
+    "runs": [],
+    "trial_note": null
+  },
+  "JACKSON HABIT": {
+    "horse_name": "JACKSON HABIT",
+    "horse_code": "L036",
+    "runs": [],
+    "trial_note": null
+  },
+  "L036": {
+    "horse_name": "JACKSON HABIT",
+    "horse_code": "L036",
+    "runs": [],
+    "trial_note": null
+  },
+  "JUBILANT WINNER": {
+    "horse_name": "JUBILANT WINNER",
+    "horse_code": "J346",
+    "runs": [],
+    "trial_note": null
+  },
+  "J346": {
+    "horse_name": "JUBILANT WINNER",
+    "horse_code": "J346",
+    "runs": [],
+    "trial_note": null
+  },
+  "TARGET AUDIENCE": {
+    "horse_name": "TARGET AUDIENCE",
+    "horse_code": "K107",
+    "runs": [],
+    "trial_note": null
+  },
+  "K107": {
+    "horse_name": "TARGET AUDIENCE",
+    "horse_code": "K107",
+    "runs": [],
+    "trial_note": null
+  },
+  "QUANTUM CLOUD": {
+    "horse_name": "QUANTUM CLOUD",
+    "horse_code": "L221",
+    "runs": [],
+    "trial_note": null
+  },
+  "L221": {
+    "horse_name": "QUANTUM CLOUD",
+    "horse_code": "L221",
+    "runs": [],
+    "trial_note": null
+  },
+  "DARYL FLASH": {
+    "horse_name": "DARYL FLASH",
+    "horse_code": "L168",
+    "runs": [],
+    "trial_note": null
+  },
+  "L168": {
+    "horse_name": "DARYL FLASH",
+    "horse_code": "L168",
+    "runs": [],
+    "trial_note": null
+  },
+  "AURORA LADY": {
+    "horse_name": "AURORA LADY",
+    "horse_code": "J066",
+    "runs": [],
+    "trial_note": null
+  },
+  "J066": {
+    "horse_name": "AURORA LADY",
+    "horse_code": "J066",
+    "runs": [],
+    "trial_note": null
+  },
+  "FLYING WROTE": {
+    "horse_name": "FLYING WROTE",
+    "horse_code": "J290",
+    "runs": [],
+    "trial_note": null
+  },
+  "J290": {
+    "horse_name": "FLYING WROTE",
+    "horse_code": "J290",
+    "runs": [],
+    "trial_note": null
+  },
+  "LUCKY PLANET": {
+    "horse_name": "LUCKY PLANET",
+    "horse_code": "H235",
+    "runs": [],
+    "trial_note": null
+  },
+  "H235": {
+    "horse_name": "LUCKY PLANET",
+    "horse_code": "H235",
+    "runs": [],
+    "trial_note": null
+  },
+  "DO YOU JUST": {
+    "horse_name": "DO YOU JUST",
+    "horse_code": "L094",
+    "runs": [],
+    "trial_note": null
+  },
+  "L094": {
+    "horse_name": "DO YOU JUST",
+    "horse_code": "L094",
+    "runs": [],
+    "trial_note": null
+  },
+  "LEGEND WINNER": {
+    "horse_name": "LEGEND WINNER",
+    "horse_code": "L032",
+    "runs": [],
+    "trial_note": null
+  },
+  "AUDACIOUS PURSUIT": {
+    "horse_name": "AUDACIOUS PURSUIT",
+    "horse_code": "K398",
+    "runs": [],
+    "trial_note": null
+  },
+  "K398": {
+    "horse_name": "AUDACIOUS PURSUIT",
+    "horse_code": "K398",
+    "runs": [],
+    "trial_note": null
+  },
+  "FLYING FORTUNE": {
+    "horse_name": "FLYING FORTUNE",
+    "horse_code": "L057",
+    "runs": [],
+    "trial_note": null
+  },
+  "L057": {
+    "horse_name": "FLYING FORTUNE",
+    "horse_code": "L057",
+    "runs": [],
+    "trial_note": null
+  },
+  "URANUS STAR": {
+    "horse_name": "URANUS STAR",
+    "horse_code": "K511",
+    "runs": [],
+    "trial_note": null
+  },
+  "K511": {
+    "horse_name": "URANUS STAR",
+    "horse_code": "K511",
+    "runs": [],
+    "trial_note": null
+  },
+  "PRESTIGE GOOD": {
+    "horse_name": "PRESTIGE GOOD",
+    "horse_code": "K131",
+    "runs": [],
+    "trial_note": null
+  },
+  "K131": {
+    "horse_name": "PRESTIGE GOOD",
+    "horse_code": "K131",
+    "runs": [],
+    "trial_note": null
+  },
+  "POET'S REIGN": {
+    "horse_name": "POET'S REIGN",
+    "horse_code": "L021",
+    "runs": [],
+    "trial_note": null
+  },
+  "L021": {
+    "horse_name": "POET'S REIGN",
+    "horse_code": "L021",
+    "runs": [],
+    "trial_note": null
+  },
+  "AMAZING KID": {
+    "horse_name": "AMAZING KID",
+    "horse_code": "K434",
+    "runs": [],
+    "trial_note": null
+  },
+  "K434": {
+    "horse_name": "AMAZING KID",
+    "horse_code": "K434",
+    "runs": [],
+    "trial_note": null
+  },
+  "TRIPLE FORTUNE": {
+    "horse_name": "TRIPLE FORTUNE",
+    "horse_code": "L302",
+    "runs": [],
+    "trial_note": null
+  },
+  "L302": {
+    "horse_name": "TRIPLE FORTUNE",
+    "horse_code": "L302",
+    "runs": [],
+    "trial_note": null
+  },
+  "PRESTIGE ALWAYS": {
+    "horse_name": "PRESTIGE ALWAYS",
+    "horse_code": "J300",
+    "runs": [],
+    "trial_note": null
+  },
+  "J300": {
+    "horse_name": "PRESTIGE ALWAYS",
+    "horse_code": "J300",
+    "runs": [],
+    "trial_note": null
+  },
+  "THUNDER ACTION": {
+    "horse_name": "THUNDER ACTION",
+    "horse_code": "L314",
+    "runs": [],
+    "trial_note": null
+  },
+  "L314": {
+    "horse_name": "THUNDER ACTION",
+    "horse_code": "L314",
+    "runs": [],
+    "trial_note": null
+  },
+  "GUSTOSISIMO": {
+    "horse_name": "GUSTOSISIMO",
+    "horse_code": "J303",
+    "runs": [],
+    "trial_note": null
+  },
+  "J303": {
+    "horse_name": "GUSTOSISIMO",
+    "horse_code": "J303",
+    "runs": [],
+    "trial_note": null
+  },
+  "WHOWROTETHATSONG": {
+    "horse_name": "WHOWROTETHATSONG",
+    "horse_code": "L048",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 1.0,
+      "best_trial_speed_diff": 0.0,
+      "jockeys": []
+    }
+  },
+  "L048": {
+    "horse_name": "WHOWROTETHATSONG",
+    "horse_code": "L048",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 1.0,
+      "best_trial_speed_diff": 0.0,
+      "jockeys": []
+    }
+  },
+  "KASA PAPA": {
+    "horse_name": "KASA PAPA",
+    "horse_code": "G312",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 1.0,
+      "best_trial_speed_diff": 0.0,
+      "jockeys": []
+    }
+  },
+  "G312": {
+    "horse_name": "KASA PAPA",
+    "horse_code": "G312",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 1.0,
+      "best_trial_speed_diff": 0.0,
+      "jockeys": []
+    }
+  },
+  "WINDICATOR FAMILY": {
+    "horse_name": "WINDICATOR FAMILY",
+    "horse_code": "H419",
+    "runs": [],
+    "trial_note": null
+  },
+  "H419": {
+    "horse_name": "WINDICATOR FAMILY",
+    "horse_code": "H419",
+    "runs": [],
+    "trial_note": null
+  },
+  "IVY LEAGUE": {
+    "horse_name": "IVY LEAGUE",
+    "horse_code": "H116",
+    "runs": [],
+    "trial_note": null
+  },
+  "H116": {
+    "horse_name": "IVY LEAGUE",
+    "horse_code": "H116",
+    "runs": [],
+    "trial_note": null
+  },
+  "OUR LUCKY GLORY": {
+    "horse_name": "OUR LUCKY GLORY",
+    "horse_code": "G292",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5714285714285714,
+      "best_trial_speed_diff": -0.7900000000000063,
+      "jockeys": [
+        "H BENTLEY",
+        "A BADEL"
+      ]
+    }
+  },
+  "G292": {
+    "horse_name": "OUR LUCKY GLORY",
+    "horse_code": "G292",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5714285714285714,
+      "best_trial_speed_diff": -0.7900000000000063,
+      "jockeys": [
+        "H BENTLEY",
+        "A BADEL"
+      ]
+    }
+  },
+  "GAZELEY": {
+    "horse_name": "GAZELEY",
+    "horse_code": "K253",
+    "runs": [],
+    "trial_note": null
+  },
+  "K253": {
+    "horse_name": "GAZELEY",
+    "horse_code": "K253",
+    "runs": [],
+    "trial_note": null
+  },
+  "VERMILION TEMPEST": {
+    "horse_name": "VERMILION TEMPEST",
+    "horse_code": "L093",
+    "runs": [],
+    "trial_note": null
+  },
+  "L093": {
+    "horse_name": "VERMILION TEMPEST",
+    "horse_code": "L093",
+    "runs": [],
+    "trial_note": null
+  },
+  "LUCKY TOGETHER": {
+    "horse_name": "LUCKY TOGETHER",
+    "horse_code": "L079",
+    "runs": [],
+    "trial_note": null
+  },
+  "L079": {
+    "horse_name": "LUCKY TOGETHER",
+    "horse_code": "L079",
+    "runs": [],
+    "trial_note": null
+  },
+  "AKERMANIS GOLD": {
+    "horse_name": "AKERMANIS GOLD",
+    "horse_code": "L031",
+    "runs": [],
+    "trial_note": null
+  },
+  "L031": {
+    "horse_name": "AKERMANIS GOLD",
+    "horse_code": "L031",
+    "runs": [],
+    "trial_note": null
+  },
+  "RAINBOW SEVEN": {
+    "horse_name": "RAINBOW SEVEN",
+    "horse_code": "K145",
+    "runs": [],
+    "trial_note": null
+  },
+  "K145": {
+    "horse_name": "RAINBOW SEVEN",
+    "horse_code": "K145",
+    "runs": [],
+    "trial_note": null
+  },
+  "MASSIVE REWARD": {
+    "horse_name": "MASSIVE REWARD",
+    "horse_code": "L331",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6,
+      "best_trial_speed_diff": 0.7199999999999989,
+      "jockeys": [
+        "M F POON"
+      ]
+    }
+  },
+  "L331": {
+    "horse_name": "MASSIVE REWARD",
+    "horse_code": "L331",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6,
+      "best_trial_speed_diff": 0.7199999999999989,
+      "jockeys": [
+        "M F POON"
+      ]
+    }
+  },
+  "SURE JOYFUL": {
+    "horse_name": "SURE JOYFUL",
+    "horse_code": "G125",
+    "runs": [],
+    "trial_note": null
+  },
+  "G125": {
+    "horse_name": "SURE JOYFUL",
+    "horse_code": "G125",
+    "runs": [],
+    "trial_note": null
+  },
+  "EXCEED THE LIMIT": {
+    "horse_name": "EXCEED THE LIMIT",
+    "horse_code": "L267",
+    "runs": [],
+    "trial_note": null
+  },
+  "L267": {
+    "horse_name": "EXCEED THE LIMIT",
+    "horse_code": "L267",
+    "runs": [],
+    "trial_note": null
+  },
+  "RED BRICK WARRIOR": {
+    "horse_name": "RED BRICK WARRIOR",
+    "horse_code": "K580",
+    "runs": [],
+    "trial_note": null
+  },
+  "K580": {
+    "horse_name": "RED BRICK WARRIOR",
+    "horse_code": "K580",
+    "runs": [],
+    "trial_note": null
+  },
+  "PRESTIGE RICKY": {
+    "horse_name": "PRESTIGE RICKY",
+    "horse_code": "K009",
+    "runs": [],
+    "trial_note": null
+  },
+  "K009": {
+    "horse_name": "PRESTIGE RICKY",
+    "horse_code": "K009",
+    "runs": [],
+    "trial_note": null
+  },
+  "FAMILY KNIGHT": {
+    "horse_name": "FAMILY KNIGHT",
+    "horse_code": "K490",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.2222222222222222,
+      "best_trial_speed_diff": -1.0100000000000051,
+      "jockeys": [
+        "M L YEUNG"
+      ]
+    }
+  },
+  "K490": {
+    "horse_name": "FAMILY KNIGHT",
+    "horse_code": "K490",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.2222222222222222,
+      "best_trial_speed_diff": -1.0100000000000051,
+      "jockeys": [
+        "M L YEUNG"
+      ]
+    }
+  },
+  "FIND MY LOVE": {
+    "horse_name": "FIND MY LOVE",
+    "horse_code": "H110",
+    "runs": [],
+    "trial_note": null
+  },
+  "H110": {
+    "horse_name": "FIND MY LOVE",
+    "horse_code": "H110",
+    "runs": [],
+    "trial_note": null
+  },
+  "WINNING COMBO": {
+    "horse_name": "WINNING COMBO",
+    "horse_code": "L292",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.2,
+      "best_trial_speed_diff": 1.1099999999999994,
+      "jockeys": [
+        "Y L CHUNG",
+        "Y L CHUNG"
+      ]
+    }
+  },
+  "L292": {
+    "horse_name": "WINNING COMBO",
+    "horse_code": "L292",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.2,
+      "best_trial_speed_diff": 1.1099999999999994,
+      "jockeys": [
+        "Y L CHUNG",
+        "Y L CHUNG"
+      ]
+    }
+  },
+  "COUNTRY PRIDE": {
+    "horse_name": "COUNTRY PRIDE",
+    "horse_code": "L325",
+    "runs": [],
+    "trial_note": null
+  },
+  "L325": {
+    "horse_name": "COUNTRY PRIDE",
+    "horse_code": "L325",
+    "runs": [],
+    "trial_note": null
+  },
+  "CASA BUDDY": {
+    "horse_name": "CASA BUDDY",
+    "horse_code": "L101",
+    "runs": [],
+    "trial_note": null
+  },
+  "L101": {
+    "horse_name": "CASA BUDDY",
+    "horse_code": "L101",
+    "runs": [],
+    "trial_note": null
+  },
+  "GOLDEN BRILLIANT": {
+    "horse_name": "GOLDEN BRILLIANT",
+    "horse_code": "K347",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6666666666666666,
+      "best_trial_speed_diff": 0.45999999999999375,
+      "jockeys": [
+        "E C W WONG",
+        "A BADEL"
+      ]
+    }
+  },
+  "K347": {
+    "horse_name": "GOLDEN BRILLIANT",
+    "horse_code": "K347",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6666666666666666,
+      "best_trial_speed_diff": 0.45999999999999375,
+      "jockeys": [
+        "E C W WONG",
+        "A BADEL"
+      ]
+    }
+  },
+  "BROWNNEEDSFURTHER": {
+    "horse_name": "BROWNNEEDSFURTHER",
+    "horse_code": "K325",
+    "runs": [],
+    "trial_note": null
+  },
+  "K325": {
+    "horse_name": "BROWNNEEDSFURTHER",
+    "horse_code": "K325",
+    "runs": [],
+    "trial_note": null
+  },
+  "CORNERSTONE": {
+    "horse_name": "CORNERSTONE",
+    "horse_code": "K519",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.4444444444444444,
+      "best_trial_speed_diff": 0.0,
+      "jockeys": [
+        "C L CHAU"
+      ]
+    }
+  },
+  "K519": {
+    "horse_name": "CORNERSTONE",
+    "horse_code": "K519",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.4444444444444444,
+      "best_trial_speed_diff": 0.0,
+      "jockeys": [
+        "C L CHAU"
+      ]
+    }
+  },
+  "MEGA AWESOME": {
+    "horse_name": "MEGA AWESOME",
+    "horse_code": "L323",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.2,
+      "best_trial_speed_diff": 1.019999999999996,
+      "jockeys": [
+        "B AVDULLA",
+        "A ATZENI"
+      ]
+    }
+  },
+  "L323": {
+    "horse_name": "MEGA AWESOME",
+    "horse_code": "L323",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.2,
+      "best_trial_speed_diff": 1.019999999999996,
+      "jockeys": [
+        "B AVDULLA",
+        "A ATZENI"
+      ]
+    }
+  },
+  "FREE PONY": {
+    "horse_name": "FREE PONY",
+    "horse_code": "K229",
+    "runs": [],
+    "trial_note": null
+  },
+  "K229": {
+    "horse_name": "FREE PONY",
+    "horse_code": "K229",
+    "runs": [],
+    "trial_note": null
+  },
+  "STUNNING PEACH": {
+    "horse_name": "STUNNING PEACH",
+    "horse_code": "J301",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.42857142857142855,
+      "best_trial_speed_diff": 0.0,
+      "jockeys": [
+        "Y L CHUNG"
+      ]
+    }
+  },
+  "J301": {
+    "horse_name": "STUNNING PEACH",
+    "horse_code": "J301",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.42857142857142855,
+      "best_trial_speed_diff": 0.0,
+      "jockeys": [
+        "Y L CHUNG"
+      ]
+    }
+  },
+  "GAMEPLAYER ELITE": {
+    "horse_name": "GAMEPLAYER ELITE",
+    "horse_code": "H356",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.8,
+      "best_trial_speed_diff": 1.6000000000000014,
+      "jockeys": [
+        "C L CHAU"
+      ]
+    }
+  },
+  "H356": {
+    "horse_name": "GAMEPLAYER ELITE",
+    "horse_code": "H356",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.8,
+      "best_trial_speed_diff": 1.6000000000000014,
+      "jockeys": [
+        "C L CHAU"
+      ]
+    }
+  },
+  "GENTLEMEN LEGACY": {
+    "horse_name": "GENTLEMEN LEGACY",
+    "horse_code": "K385",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.9,
+      "best_trial_speed_diff": 1.25,
+      "jockeys": [
+        "M CHADWICK"
+      ]
+    }
+  },
+  "K385": {
+    "horse_name": "GENTLEMEN LEGACY",
+    "horse_code": "K385",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.9,
+      "best_trial_speed_diff": 1.25,
+      "jockeys": [
+        "M CHADWICK"
+      ]
+    }
+  },
+  "FLASHING FIGHTER": {
+    "horse_name": "FLASHING FIGHTER",
+    "horse_code": "L281",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.3,
+      "best_trial_speed_diff": 0.7199999999999989,
+      "jockeys": [
+        "H Y YUEN",
+        "J ORMAN"
+      ]
+    }
+  },
+  "L281": {
+    "horse_name": "FLASHING FIGHTER",
+    "horse_code": "L281",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.3,
+      "best_trial_speed_diff": 0.7199999999999989,
+      "jockeys": [
+        "H Y YUEN",
+        "J ORMAN"
+      ]
+    }
+  },
+  "TALENTS AMBITION": {
+    "horse_name": "TALENTS AMBITION",
+    "horse_code": "J136",
+    "runs": [],
+    "trial_note": null
+  },
+  "J136": {
+    "horse_name": "TALENTS AMBITION",
+    "horse_code": "J136",
+    "runs": [],
+    "trial_note": null
+  },
+  "OUTGATE": {
+    "horse_name": "OUTGATE",
+    "horse_code": "H113",
+    "runs": [],
+    "trial_note": null
+  },
+  "H113": {
+    "horse_name": "OUTGATE",
+    "horse_code": "H113",
+    "runs": [],
+    "trial_note": null
+  },
+  "PERFECT TRIUMPH": {
+    "horse_name": "PERFECT TRIUMPH",
+    "horse_code": "L275",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.7142857142857143,
+      "best_trial_speed_diff": -0.4399999999999977,
+      "jockeys": [
+        "J ORMAN"
+      ]
+    }
+  },
+  "L275": {
+    "horse_name": "PERFECT TRIUMPH",
+    "horse_code": "L275",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.7142857142857143,
+      "best_trial_speed_diff": -0.4399999999999977,
+      "jockeys": [
+        "J ORMAN"
+      ]
+    }
+  },
+  "CLOUD NINE": {
+    "horse_name": "CLOUD NINE",
+    "horse_code": "L050",
+    "runs": [],
+    "trial_note": null
+  },
+  "L050": {
+    "horse_name": "CLOUD NINE",
+    "horse_code": "L050",
+    "runs": [],
+    "trial_note": null
+  },
+  "CORLEONE": {
+    "horse_name": "CORLEONE",
+    "horse_code": "J426",
+    "runs": [],
+    "trial_note": null
+  },
+  "J426": {
+    "horse_name": "CORLEONE",
+    "horse_code": "J426",
+    "runs": [],
+    "trial_note": null
+  },
+  "SERAPH GABRIEL": {
+    "horse_name": "SERAPH GABRIEL",
+    "horse_code": "L108",
+    "runs": [],
+    "trial_note": null
+  },
+  "L108": {
+    "horse_name": "SERAPH GABRIEL",
+    "horse_code": "L108",
+    "runs": [],
+    "trial_note": null
+  },
+  "THE AUSPICIOUS": {
+    "horse_name": "THE AUSPICIOUS",
+    "horse_code": "K004",
+    "runs": [],
+    "trial_note": null
+  },
+  "K004": {
+    "horse_name": "THE AUSPICIOUS",
+    "horse_code": "K004",
+    "runs": [],
+    "trial_note": null
+  },
+  "FIVEFORTWO": {
+    "horse_name": "FIVEFORTWO",
+    "horse_code": "K381",
+    "runs": [],
+    "trial_note": null
+  },
+  "K381": {
+    "horse_name": "FIVEFORTWO",
+    "horse_code": "K381",
+    "runs": [],
+    "trial_note": null
+  },
+  "HAPPY UNITED": {
+    "horse_name": "HAPPY UNITED",
+    "horse_code": "H208",
+    "runs": [],
+    "trial_note": null
+  },
+  "H208": {
+    "horse_name": "HAPPY UNITED",
+    "horse_code": "H208",
+    "runs": [],
+    "trial_note": null
+  },
+  "LO RIDER": {
+    "horse_name": "LO RIDER",
+    "horse_code": "K161",
+    "runs": [],
+    "trial_note": null
+  },
+  "K161": {
+    "horse_name": "LO RIDER",
+    "horse_code": "K161",
+    "runs": [],
+    "trial_note": null
+  },
+  "GLITTERING LEGEND": {
+    "horse_name": "GLITTERING LEGEND",
+    "horse_code": "L109",
+    "runs": [],
+    "trial_note": null
+  },
+  "L109": {
+    "horse_name": "GLITTERING LEGEND",
+    "horse_code": "L109",
+    "runs": [],
+    "trial_note": null
+  },
+  "FOREVER FOLKS": {
+    "horse_name": "FOREVER FOLKS",
+    "horse_code": "G463",
+    "runs": [],
+    "trial_note": null
+  },
+  "G463": {
+    "horse_name": "FOREVER FOLKS",
+    "horse_code": "G463",
+    "runs": [],
+    "trial_note": null
+  },
+  "MY DAY MY WAY": {
+    "horse_name": "MY DAY MY WAY",
+    "horse_code": "J519",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": 0.9099999999999966,
+      "jockeys": [
+        "C L CHAU",
+        "C L CHAU"
+      ]
+    }
+  },
+  "J519": {
+    "horse_name": "MY DAY MY WAY",
+    "horse_code": "J519",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": 0.9099999999999966,
+      "jockeys": [
+        "C L CHAU",
+        "C L CHAU"
+      ]
+    }
+  },
+  "SYMBOL OF STRENGTH": {
+    "horse_name": "SYMBOL OF STRENGTH",
+    "horse_code": "K352",
+    "runs": [],
+    "trial_note": null
+  },
+  "K352": {
+    "horse_name": "SYMBOL OF STRENGTH",
+    "horse_code": "K352",
+    "runs": [],
+    "trial_note": null
+  },
+  "CALIFORNIA BLITZ": {
+    "horse_name": "CALIFORNIA BLITZ",
+    "horse_code": "J370",
+    "runs": [],
+    "trial_note": null
+  },
+  "J370": {
+    "horse_name": "CALIFORNIA BLITZ",
+    "horse_code": "J370",
+    "runs": [],
+    "trial_note": null
+  },
+  "GOLDEN CHAMP": {
+    "horse_name": "GOLDEN CHAMP",
+    "horse_code": "L135",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.375,
+      "best_trial_speed_diff": -1.5100000000000051,
+      "jockeys": [
+        "A BADEL"
+      ]
+    }
+  },
+  "L135": {
+    "horse_name": "GOLDEN CHAMP",
+    "horse_code": "L135",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.375,
+      "best_trial_speed_diff": -1.5100000000000051,
+      "jockeys": [
+        "A BADEL"
+      ]
+    }
+  },
+  "WUKONG JEWELLERY": {
+    "horse_name": "WUKONG JEWELLERY",
+    "horse_code": "K314",
+    "runs": [],
+    "trial_note": null
+  },
+  "K314": {
+    "horse_name": "WUKONG JEWELLERY",
+    "horse_code": "K314",
+    "runs": [],
+    "trial_note": null
   }
 }

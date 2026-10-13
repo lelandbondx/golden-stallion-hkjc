@@ -2278,6 +2278,161 @@
         ],
         "STORMING DRAGON": [
             "B2/TT"
+        ],
+        "FLASH STAR": [
+            "H/TT"
+        ],
+        "SHAMZ": [
+            "TT"
+        ],
+        "IVY LEAGUE": [
+            "SR/TT"
+        ],
+        "SHOOTING TO TOP": [
+            "B/TT"
+        ],
+        "AKERMANIS GOLD": [
+            "XB1"
+        ],
+        "RAINBOW SEVEN": [
+            "B/TT"
+        ],
+        "THE AZURE": [
+            "CP1"
+        ],
+        "RED BRICK WARRIOR": [
+            "SR1"
+        ],
+        "CALIFORNIA MOXIE": [
+            "B/TT"
+        ],
+        "FORERUNNER": [
+            "CP/TT"
+        ],
+        "FIND MY LOVE": [
+            "B/TT"
+        ],
+        "LEADING DRAGON": [
+            "TT"
+        ],
+        "ELEGANT LIFE": [
+            "B/TT"
+        ],
+        "THE PERFECT MATCH": [
+            "TT"
+        ],
+        "GOLDEN BRILLIANT": [
+            "B"
+        ],
+        "RUN RUN SUNRISE": [
+            "E/TT"
+        ],
+        "BROWNNEEDSFURTHER": [
+            "V/TT"
+        ],
+        "DAN ATTACK": [
+            "XB"
+        ],
+        "CHARMING BABE": [
+            "BR"
+        ],
+        "HELENE FEELING": [
+            "B/TT"
+        ],
+        "SPEED DRAGON": [
+            "B"
+        ],
+        "VICTOR THE RAPID": [
+            "B/TT"
+        ],
+        "LE ZONDA": [
+            "TT"
+        ],
+        "FREE PONY": [
+            "P"
+        ],
+        "SILVERY BREEZE": [
+            "CP/TT"
+        ],
+        "STUNNING PEACH": [
+            "CP/TT"
+        ],
+        "GAMEPLAYER ELITE": [
+            "SR/TT"
+        ],
+        "GENTLEMEN LEGACY": [
+            "B/TT"
+        ],
+        "TALENTS AMBITION": [
+            "B/XB"
+        ],
+        "OUTGATE": [
+            "TT"
+        ],
+        "BITS SUPERSTAR": [
+            "TT"
+        ],
+        "CORLEONE": [
+            "TT"
+        ],
+        "THE AUSPICIOUS": [
+            "H"
+        ],
+        "FALLON": [
+            "B/TT"
+        ],
+        "LEGEND STAR": [
+            "B/TT",
+            "B2/TT"
+        ],
+        "FIVEFORTWO": [
+            "B-/XB-/TT1",
+            "TT"
+        ],
+        "HAPPY UNITED": [
+            "TT"
+        ],
+        "CHINA WIN": [
+            "B-"
+        ],
+        "FORTUNATE SON": [
+            "TT"
+        ],
+        "LO RIDER": [
+            "H/SR1"
+        ],
+        "STRAIGHT TO GLORY": [
+            "H/TT"
+        ],
+        "VIOLET STAR": [
+            "SR/TT"
+        ],
+        "ACE CHAMPION": [
+            "CP/TT"
+        ],
+        "FOREVER FOLKS": [
+            "B/TT",
+            "B2/TT1"
+        ],
+        "MY DAY MY WAY": [
+            "CP",
+            "CP/TT"
+        ],
+        "SAMARKAND": [
+            "CP/TT"
+        ],
+        "AURORA PATCH": [
+            "V/TT"
+        ],
+        "CALIFORNIA BLITZ": [
+            "B/TT"
+        ],
+        "WUKONG JEWELLERY": [
+            "TT"
+        ],
+        "NORTHERN FIRE BALL": [
+            "CP-/TT",
+            "TT"
         ]
     },
     "running_styles": {
@@ -2554,7 +2709,7 @@
         "CLASSIER": 5.666666666666667,
         "CLEVER BEAVER": 7.4,
         "CLEVER SPIRIT": 7.916666666666667,
-        "CLOUD NINE": 7.0,
+        "CLOUD NINE": 3.111111111111111,
         "CLUB LIFE": 3.3846153846153846,
         "COBY BOY": 8.0,
         "COLCHESTER": 4.0,
@@ -3504,7 +3659,7 @@
         "PERFECT SMART": 3.8461538461538463,
         "PERFECT TIMING": 12.052631578947368,
         "PERFECT TOUCH": 6.0,
-        "PERFECT TRIUMPH": 7.333333333333333,
+        "PERFECT TRIUMPH": 7.833333333333333,
         "PERI PERI SAFFRON": 11.0,
         "PERPETUAL JOYANCE": 5.454545454545454,
         "PERPETUAL TREASURE": 4.529411764705882,
@@ -4099,14 +4254,14 @@
         "NEW POWER": 4.636363636363637,
         "LOVING VIBES": 5.083333333333333,
         "VIGOR HAPPINESS": 3.5,
-        "DECISION LINK": 7.083333333333333,
+        "DECISION LINK": 7.166666666666667,
         "SUNDAY'S SERENADE": 8.583333333333334,
         "BULLISH NOVA": 9.0,
         "LIGHTNESS OF BEING": 6.0,
         "DASHING MAURISON": 9.083333333333334,
         "SMILING CHAMPION": 10.0,
         "LUCK IS BACK": 6.75,
-        "EXCEED THE LIMIT": 9.0,
+        "EXCEED THE LIMIT": 9.333333333333334,
         "CLASS": 8.0,
         "FORTUNE STAR": 9.5,
         "COLOURFUL GAN": 6.9,
@@ -4132,7 +4287,7 @@
         "COPPER CORE": 6.8,
         "JACKSON HABIT": 9.333333333333334,
         "BEAUTY SHOW": 1.3333333333333333,
-        "PRESTIGE RICKY": 9.333333333333334,
+        "PRESTIGE RICKY": 9.416666666666666,
         "CALIFORNIA BAY": 5.916666666666667,
         "GOLDEN ACE": 13.0,
         "GRIT SPIRIT": 10.0,
@@ -4182,10 +4337,105 @@
         "PRESTIGE GOOD": 5.583333333333333,
         "HEALTHY HEALTHY": 6.0,
         "GUSTOSISIMO": 5.0,
-        "HAPPY UNITED": 6.0,
+        "HAPPY UNITED": 4.25,
         "AURIO": 8.636363636363637,
         "THE HEIR": 8.083333333333334,
-        "STORMING DRAGON": 9.0
+        "STORMING DRAGON": 9.0,
+        "FLASH STAR": 7.416666666666667,
+        "THE LION KING": 4.416666666666667,
+        "CHEERFUL WONGCHOY": 7.571428571428571,
+        "ORIENTAL SURPRISE": 5.25,
+        "WHOWROTETHATSONG": 10.857142857142858,
+        "MADE FOR LIFE": 8.5,
+        "KASA PAPA": 7.5,
+        "SHAMZ": 7.75,
+        "WINDICATOR FAMILY": 7.666666666666667,
+        "THE ALL ROUNDER": 9.25,
+        "WINNING DIAMOND": 9.333333333333334,
+        "IVY LEAGUE": 4.666666666666667,
+        "OUR LUCKY GLORY": 7.166666666666667,
+        "DRAGON ON SNOW": 5.8,
+        "CASA ROCHESTER": 8.916666666666666,
+        "GAZELEY": 7.545454545454546,
+        "SETANTA": 9.083333333333334,
+        "SHOOTING TO TOP": 4.625,
+        "VERMILION TEMPEST": 10.2,
+        "LUCKY TOGETHER": 8.909090909090908,
+        "AKERMANIS GOLD": 8.3,
+        "RAINBOW SEVEN": 9.083333333333334,
+        "MASSIVE REWARD": 3.4,
+        "SURE JOYFUL": 5.666666666666667,
+        "THE AZURE": 9.416666666666666,
+        "RED BRICK WARRIOR": 9.0,
+        "KYOTO SPRING": 8.666666666666666,
+        "FAMILY KNIGHT": 9.3,
+        "CALIFORNIA MOXIE": 10.166666666666666,
+        "FORERUNNER": 7.666666666666667,
+        "LOOKING BRIGHT": 2.4166666666666665,
+        "CHAMP'S DOMAIN": 4.0,
+        "DRAGON FOUR SEAS": 7.583333333333333,
+        "FIND MY LOVE": 8.0,
+        "WINNING COMBO": 6.0,
+        "LEADING DRAGON": 1.3333333333333333,
+        "ELEGANT LIFE": 5.75,
+        "COUNTRY PRIDE": 7.666666666666667,
+        "THE PERFECT MATCH": 7.333333333333333,
+        "CASA BUDDY": 8.25,
+        "GOLDEN BRILLIANT": 9.625,
+        "RUN RUN SUNRISE": 6.9,
+        "BROWNNEEDSFURTHER": 7.0,
+        "SAME TO YOU": 7.666666666666667,
+        "CORNERSTONE": 10.0,
+        "FRIENDS OF SHAJING": 5.2727272727272725,
+        "MEGA AWESOME": 7.333333333333333,
+        "DAN ATTACK": 5.25,
+        "CHARMING BABE": 6.666666666666667,
+        "HELENE FEELING": 6.833333333333333,
+        "SPEED DRAGON": 9.909090909090908,
+        "VICTOR THE RAPID": 7.5,
+        "MASSIVE SOVEREIGN": 9.0,
+        "LE ZONDA": 9.11111111111111,
+        "EVERSTAR": 8.0,
+        "LUCKY TWENTY": 4.5,
+        "FREE PONY": 8.0,
+        "CALIFORNIATOTALITY": 3.5454545454545454,
+        "SILVERY BREEZE": 7.75,
+        "STUNNING PEACH": 8.0,
+        "GAMEPLAYER ELITE": 6.181818181818182,
+        "GENTLEMEN LEGACY": 7.0,
+        "FLASHING FIGHTER": 4.0,
+        "TALENTS AMBITION": 8.916666666666666,
+        "SPEEDY SMARTIE": 3.3333333333333335,
+        "A TIME FOR US": 6.2727272727272725,
+        "OUTGATE": 2.9166666666666665,
+        "GOLDEN ELITE": 10.0,
+        "CLASSIC TRIPLE": 3.0,
+        "BITS SUPERSTAR": 4.333333333333333,
+        "CORLEONE": 3.25,
+        "SERAPH GABRIEL": 5.571428571428571,
+        "THE AUSPICIOUS": 8.75,
+        "FALLON": 10.25,
+        "LEGEND STAR": 8.333333333333334,
+        "FIVEFORTWO": 8.272727272727273,
+        "CHINA WIN": 7.1,
+        "FORTUNATE SON": 7.818181818181818,
+        "LO RIDER": 6.916666666666667,
+        "STRAIGHT TO GLORY": 6.666666666666667,
+        "GLITTERING LEGEND": 6.7,
+        "VIOLET STAR": 7.5,
+        "ALL OUT FOR SIX": 3.75,
+        "ACE CHAMPION": 8.555555555555555,
+        "FOUR STARS ALIGN": 4.0,
+        "FOREVER FOLKS": 11.666666666666666,
+        "MY DAY MY WAY": 7.833333333333333,
+        "SAMARKAND": 1.8181818181818181,
+        "ROBOT LUCKY STAR": 6.111111111111111,
+        "AURORA PATCH": 4.416666666666667,
+        "SYMBOL OF STRENGTH": 5.083333333333333,
+        "CALIFORNIA BLITZ": 2.75,
+        "GOLDEN CHAMP": 3.6666666666666665,
+        "WUKONG JEWELLERY": 7.5,
+        "NORTHERN FIRE BALL": 1.1818181818181819
     },
     "last_comments": {
         "BABA MAMA": "Began well, raced 2 wide in midfield, slightly improved     from 600M, finished off strongly to get 2nd.                                                                                                                                        ",
