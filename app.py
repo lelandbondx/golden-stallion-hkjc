@@ -76,7 +76,7 @@ if APP_PAUSED:
             font-family: 'Montserrat', sans-serif;
             font-size: 3.5rem;
             font-weight: 800;
-            background: linear-gradient(180deg, #FFFFFF 0%, #ffe066 50%, #FFD700 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #bae6fd 40%, #FFD700 80%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-align: center;
@@ -84,12 +84,12 @@ if APP_PAUSED:
             margin-bottom: 0px;
         }
         .stApp { 
-            background: radial-gradient(circle at top, #1a0f12 0%, #080405 100%);
+            background: radial-gradient(circle at top, #0c1829 0%, #050b14 100%);
             color: #f8fafc; 
         }
     </style>
     """, unsafe_allow_html=True)
-    st.image("golden_stallion_banner.png", use_container_width=True)
+    st.image("silks_ai_banner.jpg", use_container_width=True)
     st.markdown('<div class="hero-title">SILKS.AI</div>', unsafe_allow_html=True)
     st.error("⚠️ The AI Engine is currently paused for mid-meeting recalibration and results reporting. Please check back shortly.")
     st.stop()
@@ -129,62 +129,70 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
     }
     
-    /* Institutional Dark Ruby Background */
+    /* Institutional Midnight Powder Blue & Gold Background */
     .stApp { 
-        background: radial-gradient(circle at top, #1a0f12 0%, #080405 100%);
+        background: radial-gradient(circle at top, #0d1e38 0%, #050b14 100%);
         color: #f8fafc; 
+    }
+    
+    /* Image styling with Powder Blue & Gold Glow */
+    img {
+        border-radius: 14px;
+        border: 1.5px solid rgba(125, 211, 252, 0.4);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.7), 0 0 25px rgba(125, 211, 252, 0.22);
     }
     
     /* Ultra-readable Headers */
     .hero-title {
         font-family: 'Montserrat', sans-serif;
-        font-size: 3.5rem;
+        font-size: 3.6rem;
         font-weight: 800;
-        background: linear-gradient(180deg, #FFFFFF 0%, #ffe066 50%, #FFD700 100%);
+        background: linear-gradient(135deg, #FFFFFF 0%, #bae6fd 40%, #FFD700 80%, #f59e0b 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         margin-bottom: 0px;
-        filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.8));
+        filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.8));
     }
     .hero-subtitle {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1.1rem;
-        color: #ef4444;
+        font-size: 1.15rem;
+        color: #7dd3fc;
         text-align: center;
-        letter-spacing: 6px;
-        margin-bottom: 35px;
+        letter-spacing: 5px;
+        margin-bottom: 30px;
         font-weight: 700;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        text-shadow: 0 0 14px rgba(125, 211, 252, 0.5);
     }
     
-    /* 3D Glassy Ruby/Dark Slate Panels */
+    /* 3D Glassy Deep Sapphire/Powder Blue Slate Panels */
     .tech-panel { 
         position: relative;
-        background: linear-gradient(145deg, rgba(31, 15, 18, 0.8), rgba(15, 8, 10, 0.95));
-        backdrop-filter: blur(10px);
+        background: linear-gradient(145deg, rgba(14, 28, 51, 0.85), rgba(7, 15, 28, 0.95));
+        backdrop-filter: blur(12px);
         padding: 22px; 
         border-radius: 12px;
-        border: 1px solid rgba(255, 215, 0, 0.15); 
+        border: 1px solid rgba(125, 211, 252, 0.25); 
         margin: 12px 0; 
-        box-shadow: 0 15px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,215,0,0.1);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.55), inset 0 1px 0 rgba(125, 211, 252, 0.2);
         transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
         overflow: hidden;
     }
     .tech-panel:hover {
         transform: translateY(-3px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,215,0,0.25);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.7), 0 0 15px rgba(125, 211, 252, 0.25);
     }
 
-    /* Edge Lighting Effects (Ruby and Gold) */
-    .border-accent-gold { border-left: 5px solid #FFD700; box-shadow: -4px 0 15px rgba(255, 215, 0, 0.15), 0 15px 30px rgba(0,0,0,0.5); }
-    .border-accent-red { border-left: 5px solid #ef4444; box-shadow: -4px 0 15px rgba(239, 68, 68, 0.15), 0 15px 30px rgba(0,0,0,0.5); }
+    /* Edge Lighting Effects (Powder Blue and Gold) */
+    .border-accent-gold { border-left: 5px solid #FFD700; box-shadow: -4px 0 15px rgba(255, 215, 0, 0.25), 0 15px 30px rgba(0,0,0,0.5); }
+    .border-accent-blue { border-left: 5px solid #7dd3fc; box-shadow: -4px 0 15px rgba(125, 211, 252, 0.3), 0 15px 30px rgba(0,0,0,0.5); }
+    .border-accent-red { border-left: 5px solid #7dd3fc; box-shadow: -4px 0 15px rgba(125, 211, 252, 0.3), 0 15px 30px rgba(0,0,0,0.5); }
 
     .data-label {
         font-family: 'Inter', sans-serif;
         font-size: 0.80rem;
-        color: #9ca3af;
+        color: #94a3b8;
         letter-spacing: 1.5px;
         text-transform: uppercase;
         margin-bottom: 5px;
@@ -200,41 +208,42 @@ st.markdown("""
     /* 3D Expanders */
     .streamlit-expanderHeader { 
         font-family: 'Montserrat', sans-serif;
-        color: #ffffff !important; 
+        color: #e0f2fe !important; 
         font-weight: 600;
-        border: 1px solid rgba(255,215,0,0.1);
+        border: 1px solid rgba(125, 211, 252, 0.2);
         border-radius: 8px;
-        background: linear-gradient(180deg, #1f0f12, #080405);
+        background: linear-gradient(180deg, #0e1e36, #070d18);
         box-shadow: 0 4px 6px rgba(0,0,0,0.4);
     }
     
-    /* 3D Progress Bar in Gold */
+    /* 3D Progress Bar in Powder Blue / Gold */
     .stProgress > div > div > div > div {
-        background: linear-gradient(90deg, #facc15, #fef08a);
-        box-shadow: 0 0 10px rgba(255,215,0,0.5);
+        background: linear-gradient(90deg, #7dd3fc, #FFD700);
+        box-shadow: 0 0 12px rgba(125, 211, 252, 0.5);
         border-radius: 10px;
     }
     
     /* Elegant Tabs */
-    .stTabs [data-baseweb="tab-list"] { gap: 10px; border-bottom: 1px solid rgba(239, 68, 68, 0.3); }
+    .stTabs [data-baseweb="tab-list"] { gap: 10px; border-bottom: 2px solid rgba(125, 211, 252, 0.25); }
     .stTabs [data-baseweb="tab"] {
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         letter-spacing: 1px;
         font-size: 0.95rem;
-        color: #9ca3af;
+        color: #94a3b8;
     }
     .stTabs [aria-selected="true"] { 
         color: #FFD700 !important; 
-        border-bottom-color: #FFD700 !important; 
+        border-bottom-color: #7dd3fc !important; 
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
     }
 </style>
 """, unsafe_allow_html=True)
 
 # Central Banner
-col_b1, col_b2, col_b3 = st.columns([1.2, 2, 1.2])
+col_b1, col_b2, col_b3 = st.columns([0.15, 3.7, 0.15])
 with col_b2:
-    st.image("golden_stallion_banner.png", use_container_width=True)
+    st.image("silks_ai_banner.jpg", use_container_width=True)
 
 st.markdown('<div class="hero-title">SILKS.AI</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">SILKS.AI • 香港赛马会智能预测终端</div>', unsafe_allow_html=True)
@@ -402,13 +411,13 @@ with tab1:
     # Meeting Status Grid
     col_st1, col_st2, col_st3, col_st4 = st.columns(4)
     with col_st1:
-        st.markdown('<div class="tech-panel border-accent-red"><div class="data-label">Venue</div><div class="data-value">{}</div></div>'.format(meeting.get('venue')), unsafe_allow_html=True)
+        st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#7dd3fc;">Venue</div><div class="data-value">{}</div></div>'.format(meeting.get('venue')), unsafe_allow_html=True)
     with col_st2:
-        st.markdown('<div class="tech-panel border-accent-red"><div class="data-label">Date</div><div class="data-value">{}</div></div>'.format(meeting.get('date')), unsafe_allow_html=True)
+        st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#7dd3fc;">Date</div><div class="data-value">{}</div></div>'.format(meeting.get('date')), unsafe_allow_html=True)
     with col_st3:
         st.markdown('<div class="tech-panel border-accent-gold"><div class="data-label" style="color:#FFD700;">Track Conditions</div><div class="data-value" style="color:#FFD700;">{}</div></div>'.format(meeting.get('going')), unsafe_allow_html=True)
     with col_st4:
-        st.markdown('<div class="tech-panel border-accent-red"><div class="data-label">Weather</div><div class="data-value">{}</div></div>'.format(meeting.get('weather')), unsafe_allow_html=True)
+        st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#7dd3fc;">Weather</div><div class="data-value">{}</div></div>'.format(meeting.get('weather')), unsafe_allow_html=True)
 
     if not os.path.exists('model.joblib'):
         with st.spinner("Compiling structural probability models..."):
@@ -1250,26 +1259,26 @@ with tab1:
             col_bb1, col_bb2 = st.columns(2)
             with col_bb1:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel border-accent-gold" style="background: linear-gradient(145deg, rgba(30,20,5, 0.9), rgba(15, 8, 10, 0.9)); min-height: 160px; {check_highlight(top_pick_today, search_term)}">
+                <div class="tech-panel border-accent-gold" style="background: linear-gradient(145deg, rgba(28, 22, 10, 0.9), rgba(10, 16, 28, 0.95)); min-height: 160px; {check_highlight(top_pick_today, search_term)}">
                     {get_match_badge(top_pick_today, search_term)}
                     <div class="data-label" style="color:#FFD700; font-size:0.90rem;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
                     <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#FFDF00; text-shadow: 0 4px 10px rgba(255,215,0,0.4);">Race {top_pick_today['race_no']} – #{top_pick_today['no']} {top_pick_today['name']}</div>
-                    <div class="data-value" style="font-size:1.0rem; color:#f8fafc; margin-top: 5px;">Live Odds: <b>{top_pick_today['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#ef4444;">{top_pick_today['confidence']}%</b></div>
+                    <div class="data-value" style="font-size:1.0rem; color:#f8fafc; margin-top: 5px;">Live Odds: <b>{top_pick_today['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#7dd3fc;">{top_pick_today['confidence']}%</b></div>
                 </div>
                 '''), unsafe_allow_html=True)
             with col_bb2:
                 top_gs_pick = global_best_bets_sorted_by_gs[0] if global_best_bets_sorted_by_gs else None
                 if top_gs_pick:
                     st.markdown(clean_html(f'''
-                    <div class="tech-panel border-accent-red" style="background: linear-gradient(145deg, rgba(40,10,15, 0.9), rgba(15, 8, 10, 0.9)); min-height: 160px; {check_highlight(top_gs_pick, search_term)}">
+                    <div class="tech-panel border-accent-blue" style="background: linear-gradient(145deg, rgba(14, 32, 58, 0.9), rgba(8, 16, 30, 0.95)); min-height: 160px; {check_highlight(top_gs_pick, search_term)}">
                         {get_match_badge(top_gs_pick, search_term)}
-                        <div class="data-label" style="color:#ef4444; font-size:0.90rem;">🔥 AI STRONGEST CONFIDENCE (BEST BET)</div>
-                        <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff; text-shadow: 0 4px 10px rgba(239,68,68,0.4);">Race {top_gs_pick['race_no']} – #{top_gs_pick['no']} {top_gs_pick['name']}</div>
+                        <div class="data-label" style="color:#7dd3fc; font-size:0.90rem;">💎 AI STRONGEST CONFIDENCE (BEST BET)</div>
+                        <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff; text-shadow: 0 4px 10px rgba(125,211,252,0.4);">Race {top_gs_pick['race_no']} – #{top_gs_pick['no']} {top_gs_pick['name']}</div>
                         <div class="data-value" style="font-size:1.0rem; color:#f8fafc; margin-top: 5px;">Live Odds: <b>{top_gs_pick['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#FFD700;">{top_gs_pick['confidence']}%</b></div>
                     </div>
                     '''), unsafe_allow_html=True)
             parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in parlay_sorted[:3]])
-            st.markdown(f"<div style='margin-top:10px; font-family:\"Inter\"; font-size:1.15rem;'><b>Optimized Multi-Leg Sequence:</b> <span style='color:#ef4444; font-weight:700;'>{parlay_str}</span></div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='margin-top:10px; font-family:\"Inter\"; font-size:1.15rem;'><b>Optimized Multi-Leg Sequence:</b> <span style='color:#7dd3fc; font-weight:700;'>{parlay_str}</span></div>", unsafe_allow_html=True)
             
             if dual_staking_bets:
                 st.markdown("<div style='margin-top:15px; font-family:\"Montserrat\"; font-weight:700; font-size:1.15rem; color:#ffffff;'>🐎 RECOMMENDED DUAL-STAKING BETS (WIN/PLACE)</div>", unsafe_allow_html=True)
@@ -1279,7 +1288,7 @@ with tab1:
                     <div style="background: rgba(255, 215, 0, 0.08); padding: 8px 14px; border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.4); font-size:0.95rem; color:#ffffff; line-height:1.4; min-width: 250px;">
                         <b>Race {bet['race_no']} Bet Selection:</b><br>
                         🎯 Anchor (Rank 1): <span style="color:#FFD700; font-weight:700;">#{bet['p1_no']} {bet['p1_name']}</span> ({bet['p1_odds']:.1f})<br>
-                        💣 Sleeper (Rank 5): <span style="color:#ef4444; font-weight:700;">#{bet['p5_no']} {bet['p5_name']}</span> ({bet['p5_odds']:.1f})
+                        💣 Sleeper (Rank 5): <span style="color:#7dd3fc; font-weight:700;">#{bet['p5_no']} {bet['p5_name']}</span> ({bet['p5_odds']:.1f})
                     </div>
                     ''')
                 dual_html += '</div>'
@@ -1287,20 +1296,19 @@ with tab1:
             
             # Display Steam Alerts inside expander
             if steam_alerts:
-                steam_html = '<div style="margin-top:20px; font-family:\'Montserrat\'; font-weight:700; font-size:1.1rem; color:#ffffff; letter-spacing:0.5px;">🔥 LIVE MARKET STEAM ALERTS (SMART MONEY ACTION)</div>'
+                steam_html = '<div style="margin-top:20px; font-family:\'Montserrat\'; font-weight:700; font-size:1.1rem; color:#ffffff; letter-spacing:0.5px;">⚡ LIVE MARKET STEAM ALERTS (SMART MONEY ACTION)</div>'
                 steam_html += '<div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;">'
                 sorted_steam = sorted(steam_alerts, key=lambda x: x['pct'])
                 for alert in sorted_steam[:6]: # Show top 6
                     pct_str = f"{alert['pct'] * 100:.0f}%"
                     steam_html += clean_html(f'''
-                    <div style="background: rgba(239, 68, 68, 0.12); padding: 8px 14px; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.4); font-size:0.95rem; color:#ffffff; line-height:1.4;">
+                    <div style="background: rgba(125, 211, 252, 0.12); padding: 8px 14px; border-radius: 6px; border: 1px solid rgba(125, 211, 252, 0.4); font-size:0.95rem; color:#ffffff; line-height:1.4;">
                         <b>R{alert['race_no']} #{alert['no']} {alert['name']}</b><br>
-                        <span style="color:#ef4444; font-weight:700;">Steam: {pct_str}</span> ({alert['base']:.1f} → {alert['curr']:.1f}) | <i>{alert['jockey']}</i>
+                        <span style="color:#7dd3fc; font-weight:700;">Steam: {pct_str}</span> ({alert['base']:.1f} → {alert['curr']:.1f}) | <i>{alert['jockey']}</i>
                     </div>
                     ''')
                 steam_html += '</div>'
                 st.markdown(steam_html, unsafe_allow_html=True)
-    
     st.markdown("---")
     
     def get_shift_badge(row):
@@ -1309,9 +1317,9 @@ with tab1:
         if base > 0 and curr > 0:
             pct = (curr - base) / base
             if pct < -0.15:
-                return f' <span style="background:#ef4444; color:#ffffff; padding:2px 6px; border-radius:4px; font-size:0.75rem; font-weight:bold; vertical-align:middle;">🔥 STEAM {pct*100:.0f}%</span>'
+                return f' <span style="background:linear-gradient(135deg, #0284c7, #38bdf8); color:#ffffff; padding:2px 7px; border-radius:4px; font-size:0.75rem; font-weight:bold; vertical-align:middle; box-shadow: 0 0 8px rgba(56,189,248,0.5);">⚡ STEAM {pct*100:.0f}%</span>'
             elif pct > 0.25:
-                return f' <span style="background:#4b5563; color:#ffffff; padding:2px 6px; border-radius:4px; font-size:0.75rem; font-weight:bold; vertical-align:middle;">💨 DRIFT +{pct*100:.0f}%</span>'
+                return f' <span style="background:#1e293b; color:#94a3b8; border:1px solid rgba(148,163,184,0.3); padding:2px 7px; border-radius:4px; font-size:0.75rem; font-weight:bold; vertical-align:middle;">💨 DRIFT +{pct*100:.0f}%</span>'
         return ''
 
     col_hdr, col_flt = st.columns([1.5, 1])
@@ -1374,17 +1382,17 @@ with tab1:
                     if pd.isna(match.iloc[0]['Record_Horse']): rec_horse = "-"
 
             st.markdown(clean_html(f'''
-            <div style="font-family:'Montserrat'; font-size:1.6rem; font-weight:800; color:#ef4444; margin-top:30px; margin-bottom:5px; text-shadow: 0 2px 5px rgba(239,68,68,0.4);">
-                RACE {race.get("race_no", "")} – <span style="font-family:'Inter'; font-weight:500; font-size:1.2rem; color:#d1d5db;">{class_dist}</span>
+            <div style="font-family:'Montserrat'; font-size:1.6rem; font-weight:800; color:#7dd3fc; margin-top:30px; margin-bottom:5px; text-shadow: 0 0 14px rgba(125,211,252,0.4);">
+                RACE {race.get("race_no", "")} – <span style="font-family:'Inter'; font-weight:500; font-size:1.2rem; color:#e0f2fe;">{class_dist}</span>
             </div>
             <div style="display:flex; gap: 20px; margin-bottom:15px;">
-                <div style="background: rgba(255, 215, 0, 0.1); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.3);">
-                    <span style="font-size:0.8rem; color:#9ca3af; text-transform:uppercase; font-weight:600;">⏱️ Standard Time:</span>
+                <div style="background: rgba(255, 215, 0, 0.08); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.35);">
+                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase; font-weight:600;">⏱️ Standard Time:</span>
                     <span style="font-size:0.95rem; color:#FFD700; font-weight:700; margin-left:5px;">{std_time}</span>
                 </div>
-                <div style="background: rgba(239, 68, 68, 0.1); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.3);">
-                    <span style="font-size:0.8rem; color:#9ca3af; text-transform:uppercase; font-weight:600;">🏆 Course Record:</span>
-                    <span style="font-size:0.95rem; color:#ffffff; font-weight:700; margin-left:5px;">{rec_time} ({rec_horse})</span>
+                <div style="background: rgba(125, 211, 252, 0.1); padding: 5px 12px; border-radius: 6px; border: 1px solid rgba(125, 211, 252, 0.35);">
+                    <span style="font-size:0.8rem; color:#94a3b8; text-transform:uppercase; font-weight:600;">🏆 Course Record:</span>
+                    <span style="font-size:0.95rem; color:#7dd3fc; font-weight:700; margin-left:5px;">{rec_time} ({rec_horse})</span>
                 </div>
             </div>
             '''), unsafe_allow_html=True)
@@ -1400,7 +1408,7 @@ with tab1:
             else:
                 if race_going_type in ["YIELDING", "SOFT", "HEAVY"]:
                     st.markdown(clean_html(f'''
-                    <div style="background: rgba(239, 68, 68, 0.08); padding: 10px 16px; border-radius: 6px; border: 1px dashed rgba(239, 68, 68, 0.5); margin-bottom: 15px; font-size:0.95rem; color:#ef4444; font-family:'Inter', sans-serif;">
+                    <div style="background: rgba(125, 211, 252, 0.08); padding: 10px 16px; border-radius: 6px; border: 1px dashed rgba(125, 211, 252, 0.5); margin-bottom: 15px; font-size:0.95rem; color:#7dd3fc; font-family:'Inter', sans-serif;">
                         🌧️ <b>TRACK BIAS ALERT (WET TURF - {race_going_type})</b>: Turf track has degraded. On-speed runners (leaders) are highly favored; off-pace closers may struggle to make ground.
                     </div>
                     '''), unsafe_allow_html=True)
@@ -1409,9 +1417,9 @@ with tab1:
             speed_count = (df_runners['avg_first_pos'] <= 3.5).sum()
             if speed_count >= 4:
                 pace_summary = "⚡ <b>HIGH PACE</b>: We assess this race to have a lot of speed. Front-runners may tire late, but they can still hold on based on form. Be wary of back-markers unless they have elite acceleration."
-                pace_color = "rgba(239, 68, 68, 0.08)"
-                border_color = "rgba(239, 68, 68, 0.4)"
-                text_color = "#ef4444"
+                pace_color = "rgba(125, 211, 252, 0.08)"
+                border_color = "rgba(125, 211, 252, 0.4)"
+                text_color = "#7dd3fc"
             elif speed_count <= 1:
                 pace_summary = "🐌 <b>ON SPEED</b>: Slow pace expected. Speed bias favors front-runners/leaders who can take off. Closers and late finishers may struggle to make up ground."
                 pace_color = "rgba(255, 215, 0, 0.08)"
@@ -1568,7 +1576,7 @@ with tab1:
             if has_do_you_just:
                 do_you_just_no = next((r.get('no') for r in race.get('runners', []) if str(r.get('code', '')).upper() == 'L094'), 12)
                 st.markdown(clean_html(f'''
-                <div style="background: rgba(239, 68, 68, 0.12); padding: 12px 18px; border-radius: 8px; border: 2px solid #ef4444; margin-bottom: 15px; font-size:0.95rem; color:#ffffff; font-family:'Inter', sans-serif;">
+                <div style="background: rgba(125, 211, 252, 0.12); padding: 12px 18px; border-radius: 8px; border: 2px solid #7dd3fc; margin-bottom: 15px; font-size:0.95rem; color:#ffffff; font-family:'Inter', sans-serif;">
                     🚨 <b>EXOTIC SLEEPER ALERT (TACTICAL INSIDER PICK)</b>: <b>#{do_you_just_no} DO YOU JUST</b> (Code L094) has won his last 2 races. Form indicates high effectiveness when putting Cheek Pieces (CP) back on and removing the Hood. Crucial exotic addition for exotic ticket structures!
                 </div>
                 '''), unsafe_allow_html=True)
@@ -1602,12 +1610,12 @@ with tab1:
                 stake_badge = '<span style="background:rgba(255,255,255,0.12); color:#d1d5db; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.85rem;">⚪ Winning-horse pick / exotic key only — no win stake</span>'
 
             st.markdown(clean_html(f'''
-            <div style="background: rgba(15, 8, 10, 0.85); padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(255, 215, 0, 0.25); margin-bottom: 12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;">
+            <div style="background: rgba(10, 22, 42, 0.9); padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(125, 211, 252, 0.35); margin-bottom: 12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px;">
                 <div>
                     <b>Official Window Tickets:</b> &nbsp;
                     <span style="color:#FFD700; font-weight:700;">🎯 Quinella Box (3 Combos):</span> <b>#{best['no']}, #{second['no']}, #{third['no']}</b> &nbsp;|&nbsp; 
-                    <span style="color:#ef4444; font-weight:700;">💠 Trio Box (4 Combos):</span> <b>#{best['no']}, #{second['no']}, #{third['no']}, #{fourth['no']}</b> &nbsp;|&nbsp; 
-                    <span style="color:#38bdf8; font-weight:700;">💣 Dual-Stake:</span> <b>Anchor #{best['no']} + Sleeper #{fifth['no']}</b>
+                    <span style="color:#7dd3fc; font-weight:700;">💠 Trio Box (4 Combos):</span> <b>#{best['no']}, #{second['no']}, #{third['no']}, #{fourth['no']}</b> &nbsp;|&nbsp; 
+                    <span style="color:#FFD700; font-weight:700;">💣 Dual-Stake:</span> <b>Anchor #{best['no']} + Sleeper #{fifth['no']}</b>
                 </div>
                 <div>{stake_badge}</div>
             </div>
@@ -1629,41 +1637,41 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc2:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel border-accent-red" style="{check_highlight(second, search_term)}">
+                <div class="tech-panel border-accent-blue" style="{check_highlight(second, search_term)}">
                     {get_match_badge(second, search_term)}
-                    <div class="data-label" style="font-size:0.85rem; color:#ef4444;">🎯 PICK 2 — EXACTA/QUINELLA</div>
+                    <div class="data-label" style="font-size:0.85rem; color:#7dd3fc;">🎯 PICK 2 — EXACTA/QUINELLA</div>
                     <div class="data-value" style="font-size:1.25rem;">{second['no']}. {second['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
                         J: <span style="color:#ffffff;">{second['jockey']}</span> | T: <span style="color:#ffffff;">{second['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{second['win_odds']:.1f}</span>{get_shift_badge(second)}
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#ef4444;">GS Score: {second.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: {second['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#7dd3fc;">GS Score: {second.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: {second['confidence']}%</div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc3:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel" style="border-left: 5px solid #38bdf8; {check_highlight(third, search_term)}">
+                <div class="tech-panel" style="border-left: 5px solid #7dd3fc; {check_highlight(third, search_term)}">
                     {get_match_badge(third, search_term)}
-                    <div class="data-label" style="font-size:0.85rem; color:#38bdf8;">💠 PICK 3 — TRIO PODIUM</div>
+                    <div class="data-label" style="font-size:0.85rem; color:#7dd3fc;">💠 PICK 3 — TRIO PODIUM</div>
                     <div class="data-value" style="font-size:1.25rem;">{third['no']}. {third['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
                         J: <span style="color:#ffffff;">{third['jockey']}</span> | T: <span style="color:#ffffff;">{third['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{third['win_odds']:.1f}</span>{get_shift_badge(third)}
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">GS Score: {third.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: {third['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#94a3b8;">GS Score: {third.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: {third['confidence']}%</div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc4:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel" style="border-left: 5px solid #a855f7; {check_highlight(fourth, search_term)}">
+                <div class="tech-panel" style="border-left: 5px solid #93c5fd; {check_highlight(fourth, search_term)}">
                     {get_match_badge(fourth, search_term)}
-                    <div class="data-label" style="font-size:0.85rem; color:#c084fc;">📊 PICK 4 — 4TH TRIO BOX</div>
+                    <div class="data-label" style="font-size:0.85rem; color:#bae6fd;">📊 PICK 4 — 4TH TRIO BOX</div>
                     <div class="data-value" style="font-size:1.25rem;">{fourth['no']}. {fourth['name']}</div>
                     <div class="data-value" style="font-size:0.9rem; color:#d1d5db; margin-top:8px;">
                         J: <span style="color:#ffffff;">{fourth['jockey']}</span> | T: <span style="color:#ffffff;">{fourth['trainer']}</span>
                         <br><span style="color:#d1d5db;">Odds:</span> <span style="color:#ffffff;">{fourth['win_odds']:.1f}</span>{get_shift_badge(fourth)}
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#9ca3af;">GS Score: {fourth.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: {fourth['confidence']}%</div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#94a3b8;">GS Score: {fourth.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: {fourth['confidence']}%</div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc5:
@@ -1686,8 +1694,8 @@ with tab1:
                 bold_pick = longshots.iloc[0]
                 with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=False):
                     st.markdown(clean_html(f'''
-                    <div style="background: rgba(239, 68, 68, 0.08); padding: 20px; border-radius: 8px; border: 1px dashed rgba(239, 68, 68, 0.4); margin-bottom: 5px;">
-                        <div style="color:#ef4444; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: #{bold_pick['no']} {bold_pick['name']}</div>
+                    <div style="background: rgba(125, 211, 252, 0.08); padding: 20px; border-radius: 8px; border: 1px dashed rgba(125, 211, 252, 0.4); margin-bottom: 5px;">
+                        <div style="color:#7dd3fc; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: #{bold_pick['no']} {bold_pick['name']}</div>
                         <div style="color:#f8fafc; font-size:1rem; margin-bottom: 15px; line-height:1.5;">
                             Our quantitative models have identified a significant probabilistic upside on <b>#{bold_pick['no']} {bold_pick['name']}</b> relative to the current market implied probability at <b>{bold_pick['win_odds']:.0f}</b> odds. 
                             (Jockey: <i>{bold_pick['jockey']}</i> | Trainer: <i>{bold_pick['trainer']}</i>)
@@ -1777,7 +1785,7 @@ with tab2:
         
         if os.path.exists(runs_file):
             df_runs = pd.read_csv(runs_file, nrows=1000) 
-            st.markdown('<div class="tech-panel border-accent-red">', unsafe_allow_html=True)
+            st.markdown('<div class="tech-panel border-accent-blue">', unsafe_allow_html=True)
             st.write("##### INDIVIDUAL RUNS LOG")
             st.dataframe(df_runs, use_container_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
@@ -1800,7 +1808,7 @@ with tab3:
     if news_items:
         for news in news_items:
             st.markdown(clean_html(f'''
-            <div class="tech-panel hover-effect border-accent-red" style="padding:22px; margin-bottom:20px;">
+            <div class="tech-panel hover-effect border-accent-blue" style="padding:22px; margin-bottom:20px;">
                 <div style="font-size:1.3rem; font-weight:700; font-family:'Montserrat'; margin-bottom: 12px;"><a href='{news['link']}' style='color: #ffffff; text-decoration: none;'>{news['title']}</a></div>
                 <div><a href='{news['link']}' style='color: #FFD700; font-family:"Inter", sans-serif; font-weight:600; font-size:0.95rem; text-decoration:none;'>[ Read Full Article &rarr; ]</a></div>
             </div>
