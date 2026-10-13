@@ -9,6 +9,7 @@ import requests
 from streamlit_autorefresh import st_autorefresh
 import odds_tracker
 import textwrap
+import base64
 
 def clean_html(html_str):
     return "\n".join(line.lstrip() for line in html_str.split("\n"))
@@ -66,6 +67,38 @@ st.set_page_config(
     }
 )
 
+@st.cache_data
+def get_hero_banner_b64():
+    banner_filename = "silks_ai_banner.jpg"
+    candidates = [
+        banner_filename,
+        os.path.join(os.path.dirname(__file__), banner_filename),
+        os.path.join("data", banner_filename),
+    ]
+    for path in candidates:
+        if os.path.exists(path):
+            try:
+                with open(path, "rb") as f:
+                    return base64.b64encode(f.read()).decode("utf-8")
+            except Exception:
+                pass
+    return ""
+
+def render_hero_banner():
+    b64 = get_hero_banner_b64()
+    if b64:
+        st.markdown(f'''
+        <div class="banner-outer-hero">
+            <img src="data:image/jpeg;base64,{b64}" alt="SILKS.AI Banner" class="banner-hero-img" />
+        </div>
+        <div class="hero-chinese-subtitle">香港赛马会智能预测终端</div>
+        ''', unsafe_allow_html=True)
+    else:
+        col_l, col_center, col_r = st.columns([0.5, 11, 0.5])
+        with col_center:
+            st.image("silks_ai_banner.jpg", width="stretch")
+        st.markdown('<div class="hero-chinese-subtitle">香港赛马会智能预测终端</div>', unsafe_allow_html=True)
+
 # --- PAUSE SWITCH ---
 APP_PAUSED = False
 if APP_PAUSED:
@@ -74,50 +107,56 @@ if APP_PAUSED:
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;500;600;700&display=swap');
         .hero-chinese-subtitle {
             font-family: 'Montserrat', 'Inter', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.45rem;
             font-weight: 800;
             color: #38bdf8 !important;
             text-align: center;
-            letter-spacing: 4px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.85);
+            letter-spacing: 5px;
+            margin-top: 8px;
+            margin-bottom: 24px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.9), 0 0 15px rgba(56, 189, 248, 0.4);
         }
         .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] { 
             background: radial-gradient(circle at 50% 8%, #780d1a 0%, #520812 50%, #35040a 100%) !important;
             background-color: #520812 !important;
             color: #ffffff; 
         }
-        .block-container {
+        [data-testid="stMain"] {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+        .block-container, [data-testid="stMainBlockContainer"] {
             padding-top: 0.5rem !important;
-            max-width: 1250px !important;
+            max-width: 1300px !important;
+            width: 100% !important;
             margin: 0 auto !important;
         }
-        div[data-testid="stImage"] {
+        .banner-outer-hero {
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
             width: 100% !important;
-            margin: 0 auto !important;
+            margin: 0 auto 8px auto !important;
             text-align: center !important;
         }
-        div[data-testid="stImage"] > img {
-            border-radius: 16px;
-            border: 2.5px solid #38bdf8;
-            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.35);
+        .banner-hero-img {
+            border-radius: 16px !important;
+            border: 2.5px solid #38bdf8 !important;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(56, 189, 248, 0.35) !important;
             width: 100% !important;
             max-width: 1200px !important;
             height: auto !important;
             max-height: 520px !important;
-            margin: 0 auto 15px auto !important;
+            margin: 0 auto !important;
             display: block !important;
-            object-fit: cover;
-            object-position: center center;
+            object-fit: cover !important;
+            object-position: center 35% !important;
         }
     </style>
     """, unsafe_allow_html=True)
-    st.image("silks_ai_banner.jpg", use_container_width=True)
-    st.markdown('<div class="hero-chinese-subtitle">香港赛马会智能预测终端</div>', unsafe_allow_html=True)
+    render_hero_banner()
     st.error("⚠️ The AI Engine is currently paused for mid-meeting recalibration and results reporting. Please check back shortly.")
     st.stop()
 # --------------------
@@ -164,36 +203,83 @@ st.markdown("""
         color: #ffffff !important; 
     }
     
-    /* Ensure page content starts cleanly at the very top */
-    .block-container {
+    /* Center the main container in the viewport */
+    [data-testid="stAppViewContainer"] > .main,
+    [data-testid="stMain"] {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* Ensure page content starts cleanly at the very top and is horizontally centered */
+    .block-container, [data-testid="stMainBlockContainer"] {
         padding-top: 0.5rem !important;
         padding-bottom: 2.5rem !important;
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
         max-width: 1300px !important;
-        margin: 0 auto !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
-    /* Top Hero Banner - Big, Beautiful & Strictly Centered */
-    div[data-testid="stImage"], [data-testid="stImage"] {
+    /* Top Hero Banner - Big, Horizontal, and Strictly Centered */
+    .banner-outer-hero {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
+        margin-top: 0 !important;
+        margin-bottom: 8px !important;
         text-align: center !important;
     }
-    
-    [data-testid="stImage"] div {
+
+    .banner-hero-img {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+        max-width: 1200px !important;
+        height: auto !important;
+        max-height: 520px !important;
+        object-fit: cover !important;
+        object-position: center 35% !important;
+        border-radius: 16px !important;
+        border: 2.5px solid #38bdf8 !important;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(56, 189, 248, 0.35) !important;
+    }
+
+    /* Force all container wrappers around hero banner and images to be full-width and centered */
+    div[data-testid="stElementContainer"]:has(.banner-outer-hero),
+    div.element-container:has(.banner-outer-hero),
+    div[data-testid="stElementContainer"]:has([data-testid="stImage"]),
+    div.element-container:has([data-testid="stImage"]) {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    div[data-testid="stElementContainer"]:has([data-testid="stImage"]) > div,
+    div[data-testid="stImage"],
+    div[data-testid="stImageContainer"],
+    div[data-testid="stImage"] > div {
+        width: 100% !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        width: 100% !important;
-        margin: 0 auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
     }
-    
-    [data-testid="stImage"] img {
+
+    div[data-testid="stImage"] img {
         border-radius: 16px !important;
         border: 2.5px solid #38bdf8 !important;
         box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(56, 189, 248, 0.35) !important;
@@ -201,10 +287,12 @@ st.markdown("""
         max-width: 1200px !important;
         height: auto !important;
         max-height: 520px !important;
-        margin: 0 auto 12px auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 12px !important;
         display: block !important;
         object-fit: cover !important;
-        object-position: center center !important;
+        object-position: center 35% !important;
     }
     
     /* Gallery images inside tabs stay proportionate */
@@ -233,11 +321,12 @@ st.markdown("""
     
     /* Responsive adjustments for mobile and tablets */
     @media (max-width: 768px) {
-        .block-container {
+        .block-container, [data-testid="stMainBlockContainer"] {
             padding-top: 0.4rem !important;
             padding-left: 0.6rem !important;
             padding-right: 0.6rem !important;
         }
+        .banner-hero-img,
         div[data-testid="stImage"] > img {
             max-height: 240px !important;
             border-radius: 12px !important;
@@ -328,10 +417,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Central Banner (Big, Beautiful & Centered)
-st.image("silks_ai_banner.jpg", use_container_width=True)
-
-st.markdown('<div class="hero-chinese-subtitle">香港赛马会智能预测终端</div>', unsafe_allow_html=True)
+# Central Banner (Big, Horizontal, Beautiful & Strictly Centered)
+render_hero_banner()
 
 @st.cache_data(ttl=20)
 def fetch_data():
@@ -1848,13 +1935,13 @@ with tab2:
     gal_col1, gal_col2, gal_col3 = st.columns(3)
     with gal_col1:
         if os.path.exists("data/images/shatin.png"):
-            st.image("data/images/shatin.png", caption="Thrilling Finish at Sha Tin", use_container_width=True)
+            st.image("data/images/shatin.png", caption="Thrilling Finish at Sha Tin", width="stretch")
     with gal_col2:
         if os.path.exists("data/images/happy_valley.png"):
-            st.image("data/images/happy_valley.png", caption="Night Racing at Happy Valley", use_container_width=True)
+            st.image("data/images/happy_valley.png", caption="Night Racing at Happy Valley", width="stretch")
     with gal_col3:
         if os.path.exists("data/images/winner.png"):
-            st.image("data/images/winner.png", caption="Winner's Circle Celebration", use_container_width=True)
+            st.image("data/images/winner.png", caption="Winner's Circle Celebration", width="stretch")
             
     st.markdown("---")
     
