@@ -11,16 +11,16 @@ def patch_index():
             html = f.read()
 
         new_metadata = """
-    <title>SILKS.AI | Institutional HKJC Terminal</title>
-    <meta name="description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Terminal & Win Predictor" />
-    <meta property="og:title" content="SILKS.AI | Institutional HKJC Terminal" />
-    <meta property="og:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Terminal & Win Predictor" />
+    <title>SILKS.AI | Quantitative HKJC Intelligence</title>
+    <meta name="description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />
+    <meta property="og:title" content="SILKS.AI | Quantitative HKJC Intelligence" />
+    <meta property="og:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />
     <meta property="og:site_name" content="SILKS.AI" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://silks-ai.onrender.com/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="SILKS.AI | Institutional HKJC Terminal" />
-    <meta name="twitter:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Terminal & Win Predictor" />
+    <meta name="twitter:title" content="SILKS.AI | Quantitative HKJC Intelligence" />
+    <meta name="twitter:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />
         """.strip()
 
         if "<title>Streamlit</title>" in html:
@@ -30,7 +30,16 @@ def patch_index():
             print("Successfully patched index.html with SILKS.AI metadata.")
             return True
         elif "SILKS.AI" in html:
-            print("index.html is already patched with SILKS.AI metadata.")
+            import re
+            html = re.sub(r'<title>SILKS\.AI.*?</title>', '<title>SILKS.AI | Quantitative HKJC Intelligence</title>', html)
+            html = re.sub(r'<meta property="og:title" content=".*?" />', '<meta property="og:title" content="SILKS.AI | Quantitative HKJC Intelligence" />', html)
+            html = re.sub(r'<meta name="twitter:title" content=".*?" />', '<meta name="twitter:title" content="SILKS.AI | Quantitative HKJC Intelligence" />', html)
+            html = re.sub(r'<meta property="og:description" content=".*?" />', '<meta property="og:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />', html)
+            html = re.sub(r'<meta name="twitter:description" content=".*?" />', '<meta name="twitter:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />', html)
+            html = re.sub(r'<meta name="description" content=".*?" />', '<meta name="description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />', html)
+            with open(index_path, "w", encoding="utf-8") as f:
+                f.write(html)
+            print("Successfully updated index.html with SILKS.AI | Quantitative HKJC Intelligence.")
             return True
         return False
     except Exception as e:

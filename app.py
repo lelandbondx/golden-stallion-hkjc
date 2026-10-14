@@ -63,7 +63,7 @@ except ImportError:
 
 
 st.set_page_config(
-    page_title="SILKS.AI | Institutional HKJC Terminal", 
+    page_title="SILKS.AI | Quantitative HKJC Intelligence", 
     layout="wide", 
     page_icon="🐎",
     menu_items={
