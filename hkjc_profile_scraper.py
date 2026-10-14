@@ -150,7 +150,7 @@ def get_horse_profile_stats(horse_code):
         # Class
         last_race_class_int = 4
         if not race_df.empty:
-            cls_str = str(race_df.iloc[0].get('Cls', '4'))
+            cls_str = str(race_df.iloc[0].get('Race Class', race_df.iloc[0].get('Cls', '4')))
             if '1' in cls_str: last_race_class_int = 1
             elif '2' in cls_str: last_race_class_int = 2
             elif '3' in cls_str: last_race_class_int = 3

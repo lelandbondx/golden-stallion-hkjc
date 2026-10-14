@@ -378,6 +378,12 @@ def run():
             hv_c_course_penalty = base_draw_pen + eff_wt_extra
             hv_c_course_penalty = np.clip(hv_c_course_penalty, -0.06, 0.0)
             
+            # Iron-Horse Class-Dropper Top-4 Consistency Rule (e.g. proven wide-draw/weight top-4 consistency dropping in class)
+            is_iron_horse_dropper = (class_drop > 0) & (recent_pos <= 3.0) & (vet_issue == 0)
+            hv_c_course_penalty = np.where(is_iron_horse_dropper, 0.0, hv_c_course_penalty)
+            frontrunner_pace_penalty = np.where(is_iron_horse_dropper, 0.0, frontrunner_pace_penalty)
+            standout_boost += np.where(is_iron_horse_dropper, 0.14, 0.0)
+            
             # 2. hv_c_course_boost:
             # Gates 1-4 & avg_first_pos <= 3.5: +3.0%.
             # On C or C+3, if also weight <= 124 lb: set to +4.0% (replaces +3.0%, does not stack).
