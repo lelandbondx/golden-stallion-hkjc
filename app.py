@@ -341,6 +341,20 @@ st.markdown("""
             font-size: 1.05rem !important;
             letter-spacing: 2px !important;
         }
+        .tech-panel {
+            padding: 15px 16px !important;
+            margin: 8px 0 !important;
+        }
+        /* Mobile Card Stacking: Guarantee cards stack full-width for effortless phone scrolling */
+        div[data-testid="stHorizontalBlock"] > div[data-testid="column"],
+        div[data-testid="column"] {
+            min-width: 100% !important;
+            width: 100% !important;
+            flex: 1 1 100% !important;
+        }
+        .data-value {
+            font-size: 1.15rem !important;
+        }
     }
     
     /* VIP Obsidian Crimson Glass Panels with Light Blue Accents */
