@@ -69,7 +69,7 @@ def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, 
             df['days_since_last_run'] = df.get('days_since_last_run', 30)
             
         # class_diff
-        if 'last_race_class_int' in df.columns and race_class_int:
+        if 'last_race_class_int' in df.columns and race_class_int is not None:
             df['class_diff'] = race_class_int - pd.to_numeric(df['last_race_class_int'], errors='coerce').fillna(race_class_int)
         else:
             df['class_diff'] = df.get('class_diff', 0)
@@ -150,8 +150,8 @@ def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, 
         df['Turf_win_rate'] = 0.0
     
     df['surface_pref_match'] = np.where(
-        ((df['current_surface'] == 1) & (df['AWT_vs_Turf_pref'] == 'AWT')) |
-        ((df['current_surface'] == 0) & (df['AWT_vs_Turf_pref'] == 'Turf')),
+        ((df['current_surface'] == 1) & (df['AWT_vs_Turf_pref'].astype(str).str.upper() == 'AWT')) |
+        ((df['current_surface'] == 0) & (df['AWT_vs_Turf_pref'].astype(str).str.upper() == 'TURF')),
         1, 0
     )
     

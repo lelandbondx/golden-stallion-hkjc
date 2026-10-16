@@ -111,11 +111,12 @@ def main():
             date_str = meeting.get('date', 'today')
             races = meeting.get('races', [])
             
-            # Construct comprehensive state mapping: goings, active runners, and jockeys
+            # Construct comprehensive state mapping: goings, active runners, jockeys, and whether live odds have opened
             current_state = {
                 "goings": {},
                 "runners": {},
-                "jockeys": {}
+                "jockeys": {},
+                "odds_opened": {}
             }
             for race in races:
                 race_no = race.get('race_no')
@@ -125,13 +126,18 @@ def main():
                     
                     r_list = []
                     j_map = {}
+                    has_real_odds = False
                     for runner in race.get('runners', []):
                         r_no = runner.get('no')
                         if r_no:
                             r_list.append(int(r_no))
                             j_map[str(r_no)] = str(runner.get('jockey', '')).strip().upper()
+                        w_odds = float(runner.get('win_odds', 0.0) or 0.0)
+                        if w_odds > 0.0 and w_odds != 20.0:
+                            has_real_odds = True
                     current_state["runners"][str(race_no)] = sorted(r_list)
                     current_state["jockeys"][str(race_no)] = j_map
+                    current_state["odds_opened"][str(race_no)] = has_real_odds
             
             if not current_state["goings"]:
                 log_message("⚠️ Scraped state returned no races. Retrying in 120s...")
@@ -156,6 +162,7 @@ def main():
                 prev_goings = previous_state.get("goings", {}) if isinstance(previous_state, dict) and "goings" in previous_state else previous_state
                 prev_runners = previous_state.get("runners", {}) if isinstance(previous_state, dict) else {}
                 prev_jockeys = previous_state.get("jockeys", {}) if isinstance(previous_state, dict) else {}
+                prev_odds_opened = previous_state.get("odds_opened", {}) if isinstance(previous_state, dict) else {}
                 
                 # 1. Check going changes
                 for race_no, going in current_state["goings"].items():
@@ -183,6 +190,13 @@ def main():
                         if prev_j and j_name and prev_j != j_name:
                             log_message(f"🚨 ALERT: Jockey change in Race {race_no} on #{r_no}: '{prev_j}' -> '{j_name}'")
                             has_changed = True
+
+                # 4. Check if live market odds just opened for any race
+                for race_no, is_open in current_state["odds_opened"].items():
+                    was_open = prev_odds_opened.get(race_no, False)
+                    if is_open and not was_open:
+                        log_message(f"🚨 ALERT: Live HKJC Win Odds pool opened for Race {race_no}! Recalculating EV and stakes...")
+                        has_changed = True
                         
                 if has_changed:
                     save_current_state(current_state)

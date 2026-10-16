@@ -242,5 +242,13 @@ def should_defrost_predictions(frozen_runners, live_runners, frozen_going, live_
             if live_jockey and frozen_jockey and live_jockey != frozen_jockey:
                 print(f"[DEFROST] Triggered due to jockey change on Horse #{l_no}: '{frozen_jockey}' -> '{live_jockey}'")
                 return True
+
+    # Check if frozen predictions were generated pre-market (all 20.0/0.0 placeholders) and live market odds have now opened
+    frozen_all_placeholder = all(float(r.get('win_odds', 20.0) or 20.0) == 20.0 for r in frozen_runners)
+    live_has_real_odds = any((float(r.get('win_odds', 0.0) or 0.0) > 0.0) and (float(r.get('win_odds', 0.0) or 0.0) != 20.0) for r in live_runners)
+    if frozen_all_placeholder and live_has_real_odds:
+        print("[DEFROST] Triggered due to live market odds opening (replacing pre-market 20.0 placeholders)")
+        return True
                 
     return False
+

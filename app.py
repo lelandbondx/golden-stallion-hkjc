@@ -607,7 +607,13 @@ with tab1:
     with col_st2:
         st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#38bdf8; font-weight:800;">Date</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(meeting.get('date')), unsafe_allow_html=True)
     with col_st3:
-        st.markdown('<div class="tech-panel border-accent-gold"><div class="data-label" style="color:#38bdf8; font-weight:800;">Track Conditions</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(meeting.get('going')), unsafe_allow_html=True)
+        going_display = meeting.get('going') or 'GOOD'
+        course_display = meeting.get('course') or ''
+        if course_display and course_display not in going_display:
+            cond_label = f"{going_display} ({course_display} Course)" if "COURSE" not in course_display.upper() else f"{going_display} ({course_display})"
+        else:
+            cond_label = going_display
+        st.markdown('<div class="tech-panel border-accent-gold"><div class="data-label" style="color:#38bdf8; font-weight:800;">Track Conditions</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(cond_label), unsafe_allow_html=True)
     with col_st4:
         st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#38bdf8; font-weight:800;">Weather</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(meeting.get('weather')), unsafe_allow_html=True)
 

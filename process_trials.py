@@ -54,14 +54,21 @@ def process_trials(meeting_date_str=None):
     
     # Track standard times dictionary (approximate class-neutral baselines)
     STANDARD_TIMES = {
-        ("SHA TIN AWT", 1200): 70.0,
-        ("SHA TIN AWT", 1050): 61.5,
-        ("SHA TIN TURF", 1000): 57.0,
-        ("SHA TIN TURF", 1600): 95.0,
-        ("CONGHUA TURF", 1000): 58.5,
-        ("CONGHUA TURF", 1200): 72.0,
-        ("CONGHUA TURF", 800): 47.0,
-        ("CONGHUA AWT", 1200): 72.0,
+        ("SHA TIN AWT", 1200): 70.5,
+        ("SHA TIN AWT", 1050): 62.0,
+        ("SHA TIN TURF", 800): 46.2,
+        ("SHA TIN TURF", 1000): 58.0,
+        ("SHA TIN TURF", 1200): 70.5,
+        ("SHA TIN TURF", 1600): 96.0,
+        ("HAPPY VALLEY TURF", 1000): 59.0,
+        ("HAPPY VALLEY TURF", 1200): 72.0,
+        ("HAPPY VALLEY TURF", 1700): 107.5,
+        ("CONGHUA TURF", 800): 46.5,
+        ("CONGHUA TURF", 1000): 58.0,
+        ("CONGHUA TURF", 1200): 71.5,
+        ("CONGHUA TURF", 1600): 97.0,
+        ("CONGHUA AWT", 1050): 61.7,
+        ("CONGHUA AWT", 1200): 70.5,
     }
     
     # Group trials by horse
@@ -146,5 +153,8 @@ def process_trials(meeting_date_str=None):
     return horse_features
 
 if __name__ == "__main__":
-    from datetime import datetime
-    process_trials("2026-07-15")
+    from scraper import get_live_meeting_data
+    data = get_live_meeting_data()
+    m_date = data["meetings"][0].get("date", "2026-10-19") if (data and data.get("meetings")) else "2026-10-19"
+    process_trials(m_date)
+

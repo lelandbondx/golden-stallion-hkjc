@@ -67,14 +67,16 @@ def run():
     # Load model
     load_model()
     
-    # Load precomputed running styles, comments, and sectional bursts
+    # Load precomputed running styles, winning gears, comments, and sectional bursts
     running_styles = {}
+    winning_gears = {}
     last_comments = {}
     sectional_bursts = {}
     try:
         with open('data/precomputed_features.json', 'r', encoding='utf-8') as f:
             precomputed = json.load(f)
             running_styles = precomputed.get('running_styles', {})
+            winning_gears = {k: set(v) for k, v in precomputed.get('winning_gears', {}).items()}
             last_comments = precomputed.get('last_comments', {})
             sectional_bursts = precomputed.get('sectional_bursts', {})
     except Exception as e:
@@ -736,6 +738,44 @@ def run():
         best.update({"race_no": race.get("race_no"), "class_dist": class_str, "primary_reason": p1_status})
         global_best_bets.append(best)
         
+        # Populate vet_findings, steward_notes, and photo_finish for full parity with app.py
+        vet_notes = []
+        steward_notes = []
+        photo_hist = []
+        for _, row in df_runners.iterrows():
+            c_name = str(row.get('clean_name', '')).strip().upper()
+            comment = last_comments.get(c_name, '').strip()
+            tonight_gear = str(row.get('horse_gear', '')).strip().upper()
+            if tonight_gear in ['', '-', '--']:
+                tonight_gear = ''
+            horse_win_gears = winning_gears.get(c_name, set())
+            is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
+            if comment:
+                photo = "✅ Yes" if any(x in comment.lower() for x in ["photo", "nose", "short head"]) else "❌ No"
+                vet = "No Findings"
+                steward = comment
+                if "(" in comment and ")" in comment:
+                    matches = re.findall(r'\((.*?)\)', comment)
+                    if matches:
+                        last_match = matches[-1]
+                        if "vet" in last_match.lower() or "finding" in last_match.lower():
+                            vet = last_match
+                if row.get('has_overseas_form') == 1 and is_gear_matched:
+                    steward = f"Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment. | {steward}"
+                vet_notes.append(vet)
+                steward_notes.append(steward)
+                photo_hist.append(photo)
+            else:
+                vet_notes.append("No active findings")
+                if row.get('has_overseas_form') == 1 and is_gear_matched:
+                    steward_notes.append("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
+                else:
+                    steward_notes.append("Clear Record")
+                photo_hist.append("None")
+        df_runners['vet_findings'] = vet_notes
+        df_runners['steward_notes'] = steward_notes
+        df_runners['photo_finish'] = photo_hist
+
         # Save frozen predictions
         try:
             odds_tracker.save_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'), df_runners.to_dict(orient='records'))

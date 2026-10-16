@@ -153,6 +153,15 @@ def scrape_trials_for_meeting(racedate="2026/07/15", venue="HV"):
         return pd.DataFrame()
 
 if __name__ == "__main__":
-    df = scrape_trials_for_meeting("2026/07/15", "HV")
+    from scraper import get_live_meeting_data
+    data = get_live_meeting_data()
+    if data and data.get("meetings"):
+        m = data["meetings"][0]
+        r_date = str(m.get("date", "2026-10-19")).replace("-", "/")
+        r_venue = "HV" if "VALLEY" in str(m.get("venue", "")).upper() else "ST"
+    else:
+        r_date, r_venue = "2026/10/19", "ST"
+    df = scrape_trials_for_meeting(r_date, r_venue)
     if not df.empty:
         print(df.head(10).to_string())
+

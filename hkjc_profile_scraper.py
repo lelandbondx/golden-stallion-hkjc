@@ -150,13 +150,13 @@ def get_horse_profile_stats(horse_code):
         # Class
         last_race_class_int = 4
         if not race_df.empty:
-            cls_str = str(race_df.iloc[0].get('Race Class', race_df.iloc[0].get('Cls', '4')))
-            if '1' in cls_str: last_race_class_int = 1
+            cls_str = str(race_df.iloc[0].get('Race Class', race_df.iloc[0].get('Cls', '4'))).strip().upper()
+            if 'G' in cls_str or 'OPEN' in cls_str or '4YO' in cls_str: last_race_class_int = 0
+            elif '1' in cls_str: last_race_class_int = 1
             elif '2' in cls_str: last_race_class_int = 2
             elif '3' in cls_str: last_race_class_int = 3
             elif '4' in cls_str: last_race_class_int = 4
             elif '5' in cls_str: last_race_class_int = 5
-            elif 'G' in cls_str.upper(): last_race_class_int = 0
             
         # Last rating
         last_horse_rating = None

@@ -315,24 +315,31 @@ def get_live_meeting_data(force_network=False):
                     except Exception as e:
                         print("Failed to fetch live odds:", e)
                     
+                    first_course = ""
+                    if races and races[0].get("raceCourse"):
+                        first_course = races[0]["raceCourse"].get("displayCode") or races[0]["raceCourse"].get("description_en") or ""
+
                     meeting_out = {
                         "venue": venue,
                         "date": m.get("date"),
                         "status": m.get("status") or "UNKNOWN",
-                        "going": races[0].get("go_en", "UNKNOWN") if races else "UNKNOWN",
+                        "going": (races[0].get("go_en") or "GOOD") if races else "GOOD",
+                        "course": first_course,
                         "weather": "Live Feed Connected",
                         "races": []
                     }
 
                     for r in races:
                         race_no = int(r.get("no"))
-                        track_desc = r.get("raceTrack", {}).get("description_en") or "TURF"
+                        track_desc = (r.get("raceTrack") or {}).get("description_en") or "TURF"
+                        course_desc = (r.get("raceCourse") or {}).get("displayCode") or (r.get("raceCourse") or {}).get("description_en") or first_course
                         going_desc = r.get("go_en") or "GOOD"
                         race_obj = {
                             "race_no": race_no,
                             "time": r.get("postTime"),
                             "class_dist": f'{r.get("raceClass_en") or "Class ?"} - {r.get("distance")}m',
                             "track": track_desc,
+                            "course": course_desc,
                             "going": going_desc,
                             "runners": []
                         }
