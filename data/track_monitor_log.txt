@@ -5941,3 +5941,269 @@ error: failed to push some refs to 'https://github.com/lelandbondx/golden-stalli
 [2026-10-14 10:52:18] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
 [2026-10-14 10:54:21] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
 [2026-10-14 10:56:24] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 10:58:26] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:00:29] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:02:31] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:04:34] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:06:37] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:08:40] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:10:43] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:12:45] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:14:47] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:16:50] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:18:53] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:20:55] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:22:58] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:25:00] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:27:02] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:29:05] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:31:08] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:33:10] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:35:13] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:37:15] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:39:18] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:41:21] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:43:25] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:45:27] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:47:29] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:49:32] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:51:35] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:53:37] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:55:40] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:57:43] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 11:59:45] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:01:48] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:03:50] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:05:53] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:07:56] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:09:58] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:12:01] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:14:04] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:16:06] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:18:09] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:20:11] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:22:14] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:24:17] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:26:19] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:28:22] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:30:24] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:32:27] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:34:30] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:36:32] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:38:35] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:40:38] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:42:40] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:44:43] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:46:46] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:48:49] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:50:52] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:52:54] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:54:57] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:56:59] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 12:59:02] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:01:04] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:03:07] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:05:10] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:07:12] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:09:15] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:11:17] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:13:19] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:15:22] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:17:25] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:19:27] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:21:30] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:23:32] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:25:35] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:27:37] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:29:39] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:31:42] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:33:44] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:35:47] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:37:49] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:39:52] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:41:55] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:43:58] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:46:00] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:48:02] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:50:05] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:52:08] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:54:11] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:56:14] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 13:58:18] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:00:20] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:02:23] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:04:25] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:06:28] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:08:31] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:10:34] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:12:36] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:14:39] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:16:42] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:18:45] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:20:48] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:22:50] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:24:53] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:26:55] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:28:58] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:31:00] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:33:03] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:35:06] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:37:08] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:39:11] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:41:14] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:43:17] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:45:19] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:47:22] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:49:24] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:51:27] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:53:30] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:55:33] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:57:35] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 14:59:38] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:01:41] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:03:44] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:05:46] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:07:49] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:09:52] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:11:54] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:13:57] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:16:00] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:18:02] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:20:05] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:22:07] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:24:09] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:26:12] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:28:14] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:30:17] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:32:20] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:34:23] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:36:25] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:38:28] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:40:30] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:42:33] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:44:35] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:46:38] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:48:41] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:50:43] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:52:46] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:54:48] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:56:50] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 15:58:54] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:00:57] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:03:01] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:05:04] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:07:07] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:09:10] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:11:13] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:13:15] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:15:19] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:17:22] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:19:25] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:21:27] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-14 16:23:30] 💓 Heartbeat: Checked 9 races (99 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-15 21:34:51] 🆕 Race 10 registered with going: GOOD
+[2026-10-15 21:34:51] 🆕 Race 11 registered with going: GOOD
+[2026-10-15 21:34:51] 🚨 ALERT: Scratching detected in Race 1: Horses #set()
+[2026-10-15 21:34:51] 🚨 ALERT: Scratching detected in Race 2: Horses #set()
+[2026-10-15 21:34:51] 🚨 ALERT: Scratching detected in Race 3: Horses #set()
+[2026-10-15 21:34:51] 🚨 ALERT: Scratching detected in Race 4: Horses #set()
+[2026-10-15 21:34:51] 🚨 ALERT: Scratching detected in Race 5: Horses #set()
+[2026-10-15 21:34:51] 🚨 ALERT: Scratching detected in Race 6: Horses #set()
+[2026-10-15 21:34:51] 🚨 ALERT: Scratching detected in Race 8: Horses #{4}
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #2: 'A ATZENI' -> 'B AVDULLA'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #3: 'L FERRARIS' -> 'K C LEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #4: 'L HEWITSON' -> 'H Y YUEN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #5: 'C Y HO' -> 'L FERRARIS'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #6: 'K C LEUNG' -> 'C Y HO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #7: 'H BENTLEY' -> 'P N WONG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #8: 'Y L CHUNG' -> 'C L CHAU'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #9: 'C L CHAU' -> 'M L YEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #10: 'H Y YUEN' -> 'J ORMAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #11: 'K TEETAN' -> 'M CHADWICK'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 1 on #12: 'R KINGSCOTE' -> 'H T MO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #1: 'L FERRARIS' -> 'P N WONG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #2: 'A ATZENI' -> 'K C LEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #3: 'C L CHAU' -> 'M L YEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #4: 'Z PURTON' -> 'C Y HO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #6: 'C Y HO' -> 'L FERRARIS'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #7: 'K C LEUNG' -> 'C L CHAU'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #8: 'M CHADWICK' -> 'A ATZENI'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #9: 'Y L CHUNG' -> 'E C W WONG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 2 on #10: 'K TEETAN' -> 'Z PURTON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #1: 'L HEWITSON' -> 'K TEETAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #2: 'Z PURTON' -> 'C Y HO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #3: 'B AVDULLA' -> 'M CHADWICK'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #4: 'C Y HO' -> 'K C LEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #5: 'C L CHAU' -> 'Z PURTON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #6: 'L FERRARIS' -> 'M F POON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #7: 'K C LEUNG' -> 'R KINGSCOTE'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #8: 'M L YEUNG' -> 'A BADEL'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #9: 'A ATZENI' -> 'H BENTLEY'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 3 on #10: 'K TEETAN' -> 'M L YEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #1: 'L FERRARIS' -> 'H T MO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #2: 'K C LEUNG' -> 'M CHADWICK'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #3: 'M L YEUNG' -> 'H BENTLEY'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #4: 'E C W WONG' -> 'B AVDULLA'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #5: 'H Y YUEN' -> 'M F POON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #6: 'K TEETAN' -> 'C L CHAU'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #7: 'C L CHAU' -> 'Z PURTON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #8: 'J ORMAN' -> 'R KINGSCOTE'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #9: 'Y L CHUNG' -> 'E C W WONG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #10: 'Z PURTON' -> 'L HEWITSON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #11: 'H T MO' -> 'J ORMAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 4 on #12: 'A BADEL' -> 'K TEETAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #1: 'B AVDULLA' -> 'K C LEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #2: 'C L CHAU' -> 'L HEWITSON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #3: 'A BADEL' -> 'H T MO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #5: 'H Y YUEN' -> 'E C W WONG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #6: 'H BENTLEY' -> 'C L CHAU'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #8: 'R KINGSCOTE' -> 'J ORMAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #9: 'A ATZENI' -> 'M L YEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #10: 'K TEETAN' -> 'L FERRARIS'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #11: 'M F POON' -> 'B AVDULLA'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 5 on #12: 'M L YEUNG' -> 'M F POON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #1: 'L HEWITSON' -> 'H Y YUEN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #2: 'C L CHAU' -> 'K C LEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #3: 'E C W WONG' -> 'Z PURTON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #4: 'R KINGSCOTE' -> 'B AVDULLA'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #5: 'Z PURTON' -> 'M L YEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #6: 'L FERRARIS' -> 'C L CHAU'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #7: 'C Y HO' -> 'J ORMAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #8: 'Y L CHUNG' -> 'P N WONG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 6 on #9: 'A ATZENI' -> 'Y L CHUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #2: 'Y L CHUNG' -> 'C L CHAU'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #3: 'H Y YUEN' -> 'J ORMAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #4: 'H BENTLEY' -> 'Z PURTON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #5: 'Z PURTON' -> 'H T MO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #6: 'C L CHAU' -> 'A ATZENI'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #7: 'E C W WONG' -> 'H Y YUEN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #8: 'J ORMAN' -> 'C Y HO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #9: 'M L YEUNG' -> 'K C LEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #10: 'C Y HO' -> 'M F POON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #11: 'A BADEL' -> 'L HEWITSON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 7 on #12: 'L HEWITSON' -> 'M L YEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #1: 'C Y HO' -> 'C L CHAU'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #2: 'B AVDULLA' -> 'Z PURTON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #3: 'C L CHAU' -> 'A ATZENI'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #5: 'E C W WONG' -> 'B AVDULLA'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #6: 'M L YEUNG' -> 'M F POON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #7: 'A BADEL' -> 'K TEETAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #8: 'L FERRARIS' -> 'K C LEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #9: 'Z PURTON' -> 'H BENTLEY'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #10: 'A ATZENI' -> 'A BADEL'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #11: 'L HEWITSON' -> 'E C W WONG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 8 on #12: 'K C LEUNG' -> 'M L YEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #1: 'E C W WONG' -> 'K TEETAN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #2: 'K C LEUNG' -> 'H BENTLEY'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #3: 'C L CHAU' -> 'K C LEUNG'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #4: 'B AVDULLA' -> 'L FERRARIS'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #5: 'C Y HO' -> 'M CHADWICK'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #6: 'K TEETAN' -> 'C L CHAU'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #7: 'M L YEUNG' -> 'C Y HO'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #9: 'H Y YUEN' -> 'B AVDULLA'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #10: 'A ATZENI' -> 'L HEWITSON'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #11: 'M CHADWICK' -> 'H Y YUEN'
+[2026-10-15 21:34:51] 🚨 ALERT: Jockey change in Race 9 on #12: 'A BADEL' -> 'P N WONG'
+[2026-10-15 21:34:51] 🔄 Triggering prediction update...
+[2026-10-15 21:35:00] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
+[2026-10-15 21:35:00] 📡 Auto-syncing updated data to origin main...
