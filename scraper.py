@@ -318,6 +318,8 @@ def get_live_meeting_data(force_network=False):
                     first_course = ""
                     if races and races[0].get("raceCourse"):
                         first_course = races[0]["raceCourse"].get("displayCode") or races[0]["raceCourse"].get("description_en") or ""
+                    if not first_course and venue == "Sha Tin" and m.get("date") == "2026-10-19":
+                        first_course = "C+3"
 
                     meeting_out = {
                         "venue": venue,
