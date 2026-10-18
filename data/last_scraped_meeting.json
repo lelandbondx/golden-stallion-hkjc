@@ -6,7 +6,6 @@
       "date": "2026-10-19",
       "status": "DEFINED",
       "going": "GOOD",
-      "course": "C+3",
       "weather": "Live Feed Connected",
       "races": [
         {
@@ -14,7 +13,6 @@
           "time": "2026-10-19T12:30:00+08:00",
           "class_dist": "Class 5 - 1800m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -83,7 +81,7 @@
               "actual_weight": 131,
               "declared_weight": 1074,
               "rtg": 36,
-              "win_odds": 21.0,
+              "win_odds": 22.0,
               "final_position": 0,
               "horse_gear": "PC-/B1/TT"
             },
@@ -97,7 +95,7 @@
               "actual_weight": 130,
               "declared_weight": 1135,
               "rtg": 35,
-              "win_odds": 6.9,
+              "win_odds": 6.7,
               "final_position": 0,
               "horse_gear": "H/TT"
             },
@@ -125,7 +123,7 @@
               "actual_weight": 127,
               "declared_weight": 1193,
               "rtg": 32,
-              "win_odds": 7.3,
+              "win_odds": 7.4,
               "final_position": 0,
               "horse_gear": "B-/V1"
             },
@@ -153,7 +151,7 @@
               "actual_weight": 124,
               "declared_weight": 1024,
               "rtg": 29,
-              "win_odds": 54.0,
+              "win_odds": 55.0,
               "final_position": 0,
               "horse_gear": "B-/TT"
             },
@@ -199,14 +197,14 @@
               "final_position": 0,
               "horse_gear": "B"
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 2,
           "time": "2026-10-19T13:00:00+08:00",
           "class_dist": "Class 4 - 1400m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -219,7 +217,7 @@
               "actual_weight": 135,
               "declared_weight": 1170,
               "rtg": 56,
-              "win_odds": 35.0,
+              "win_odds": 36.0,
               "final_position": 0,
               "horse_gear": "B-/V1"
             },
@@ -289,7 +287,7 @@
               "actual_weight": 131,
               "declared_weight": 1198,
               "rtg": 52,
-              "win_odds": 25.0,
+              "win_odds": 26.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -359,7 +357,7 @@
               "actual_weight": 128,
               "declared_weight": 1114,
               "rtg": 49,
-              "win_odds": 5.6,
+              "win_odds": 5.7,
               "final_position": 0,
               "horse_gear": "B/XB"
             },
@@ -373,7 +371,7 @@
               "actual_weight": 127,
               "declared_weight": 1167,
               "rtg": 48,
-              "win_odds": 11.0,
+              "win_odds": 10.0,
               "final_position": 0,
               "horse_gear": "CP/XB"
             },
@@ -405,14 +403,14 @@
               "final_position": 0,
               "horse_gear": "H/P"
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 3,
           "time": "2026-10-19T13:30:00+08:00",
           "class_dist": "Class 4 - 1800m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -467,7 +465,7 @@
               "actual_weight": 134,
               "declared_weight": 1024,
               "rtg": 58,
-              "win_odds": 48.0,
+              "win_odds": 49.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -509,7 +507,7 @@
               "actual_weight": 127,
               "declared_weight": 1111,
               "rtg": 51,
-              "win_odds": 23.0,
+              "win_odds": 24.0,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -551,7 +549,7 @@
               "actual_weight": 123,
               "declared_weight": 1042,
               "rtg": 47,
-              "win_odds": 33.0,
+              "win_odds": 34.0,
               "final_position": 0,
               "horse_gear": "H/TT"
             },
@@ -579,7 +577,7 @@
               "actual_weight": 120,
               "declared_weight": 1050,
               "rtg": 44,
-              "win_odds": 13.0,
+              "win_odds": 14.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -593,7 +591,7 @@
               "actual_weight": 118,
               "declared_weight": 1167,
               "rtg": 42,
-              "win_odds": 50.0,
+              "win_odds": 51.0,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -611,14 +609,14 @@
               "final_position": 0,
               "horse_gear": "B/TT"
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 4,
           "time": "2026-10-19T14:00:00+08:00",
           "class_dist": "Class 4 - 1400m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -645,7 +643,7 @@
               "actual_weight": 134,
               "declared_weight": 1202,
               "rtg": 56,
-              "win_odds": 78.0,
+              "win_odds": 79.0,
               "final_position": 0,
               "horse_gear": "H"
             },
@@ -687,7 +685,7 @@
               "actual_weight": 130,
               "declared_weight": 1139,
               "rtg": 52,
-              "win_odds": 38.0,
+              "win_odds": 37.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -715,7 +713,7 @@
               "actual_weight": 130,
               "declared_weight": 1205,
               "rtg": 52,
-              "win_odds": 6.9,
+              "win_odds": 6.6,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -743,7 +741,7 @@
               "actual_weight": 126,
               "declared_weight": 1134,
               "rtg": 48,
-              "win_odds": 84.0,
+              "win_odds": 83.0,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -771,7 +769,7 @@
               "actual_weight": 126,
               "declared_weight": 1161,
               "rtg": 48,
-              "win_odds": 8.5,
+              "win_odds": 8.6,
               "final_position": 0,
               "horse_gear": "XB"
             },
@@ -817,14 +815,14 @@
               "final_position": 0,
               "horse_gear": "B/TT"
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 5,
           "time": "2026-10-19T14:30:00+08:00",
           "class_dist": "Class 4 - 1200m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -837,7 +835,7 @@
               "actual_weight": 135,
               "declared_weight": 1163,
               "rtg": 59,
-              "win_odds": 25.0,
+              "win_odds": 26.0,
               "final_position": 0,
               "horse_gear": "H/TT"
             },
@@ -879,7 +877,7 @@
               "actual_weight": 127,
               "declared_weight": 1164,
               "rtg": 51,
-              "win_odds": 18.0,
+              "win_odds": 17.0,
               "final_position": 0,
               "horse_gear": "CP"
             },
@@ -893,7 +891,7 @@
               "actual_weight": 127,
               "declared_weight": 1128,
               "rtg": 51,
-              "win_odds": 31.0,
+              "win_odds": 32.0,
               "final_position": 0,
               "horse_gear": "B/TT"
             },
@@ -935,7 +933,7 @@
               "actual_weight": 126,
               "declared_weight": 1147,
               "rtg": 50,
-              "win_odds": 9.1,
+              "win_odds": 9.0,
               "final_position": 0,
               "horse_gear": "H/P"
             },
@@ -963,7 +961,7 @@
               "actual_weight": 123,
               "declared_weight": 1073,
               "rtg": 47,
-              "win_odds": 7.5,
+              "win_odds": 7.6,
               "final_position": 0,
               "horse_gear": "XB"
             },
@@ -991,18 +989,18 @@
               "actual_weight": 116,
               "declared_weight": 1112,
               "rtg": 40,
-              "win_odds": 5.5,
+              "win_odds": 5.6,
               "final_position": 0,
               "horse_gear": ""
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 6,
           "time": "2026-10-19T15:00:00+08:00",
           "class_dist": "Class 4 - 1000m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -1113,7 +1111,7 @@
               "actual_weight": 125,
               "declared_weight": 1084,
               "rtg": 49,
-              "win_odds": 7.2,
+              "win_odds": 7.3,
               "final_position": 0,
               "horse_gear": "CP/TT"
             },
@@ -1155,7 +1153,7 @@
               "actual_weight": 122,
               "declared_weight": 1218,
               "rtg": 46,
-              "win_odds": 8.4,
+              "win_odds": 8.2,
               "final_position": 0,
               "horse_gear": "XB/TT"
             },
@@ -1169,7 +1167,7 @@
               "actual_weight": 119,
               "declared_weight": 1242,
               "rtg": 43,
-              "win_odds": 7.7,
+              "win_odds": 7.8,
               "final_position": 0,
               "horse_gear": "B"
             },
@@ -1183,7 +1181,7 @@
               "actual_weight": 118,
               "declared_weight": 1295,
               "rtg": 42,
-              "win_odds": 39.0,
+              "win_odds": 38.0,
               "final_position": 0,
               "horse_gear": "V-/B2/TT"
             },
@@ -1197,18 +1195,18 @@
               "actual_weight": 116,
               "declared_weight": 1062,
               "rtg": 40,
-              "win_odds": 48.0,
+              "win_odds": 49.0,
               "final_position": 0,
               "horse_gear": "TT"
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 7,
           "time": "2026-10-19T15:35:00+08:00",
           "class_dist": "Class 4 - 1200m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -1249,7 +1247,7 @@
               "actual_weight": 132,
               "declared_weight": 1078,
               "rtg": 55,
-              "win_odds": 9.1,
+              "win_odds": 9.0,
               "final_position": 0,
               "horse_gear": "B/SR/TT"
             },
@@ -1319,7 +1317,7 @@
               "actual_weight": 125,
               "declared_weight": 1121,
               "rtg": 48,
-              "win_odds": 8.4,
+              "win_odds": 8.3,
               "final_position": 0,
               "horse_gear": "XB/TT"
             },
@@ -1379,14 +1377,14 @@
               "final_position": 0,
               "horse_gear": "B/TT"
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 8,
           "time": "2026-10-19T16:05:00+08:00",
           "class_dist": "Group Two - 1600m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -1427,7 +1425,7 @@
               "actual_weight": 125,
               "declared_weight": 1143,
               "rtg": 118,
-              "win_odds": 9.5,
+              "win_odds": 9.6,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1483,7 +1481,7 @@
               "actual_weight": 115,
               "declared_weight": 1195,
               "rtg": 106,
-              "win_odds": 6.3,
+              "win_odds": 6.4,
               "final_position": 0,
               "horse_gear": "H/TT"
             },
@@ -1497,7 +1495,7 @@
               "actual_weight": 115,
               "declared_weight": 1109,
               "rtg": 102,
-              "win_odds": 39.0,
+              "win_odds": 40.0,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1543,14 +1541,14 @@
               "final_position": 0,
               "horse_gear": ""
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 9,
           "time": "2026-10-19T16:40:00+08:00",
           "class_dist": "Class 3 - 1200m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -1647,7 +1645,7 @@
               "actual_weight": 123,
               "declared_weight": 1213,
               "rtg": 68,
-              "win_odds": 10.0,
+              "win_odds": 9.8,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1661,7 +1659,7 @@
               "actual_weight": 122,
               "declared_weight": 1165,
               "rtg": 67,
-              "win_odds": 5.2,
+              "win_odds": 5.3,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1689,7 +1687,7 @@
               "actual_weight": 120,
               "declared_weight": 1294,
               "rtg": 65,
-              "win_odds": 8.8,
+              "win_odds": 8.5,
               "final_position": 0,
               "horse_gear": "TT"
             },
@@ -1703,7 +1701,7 @@
               "actual_weight": 117,
               "declared_weight": 1056,
               "rtg": 62,
-              "win_odds": 7.8,
+              "win_odds": 7.9,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -1721,14 +1719,14 @@
               "final_position": 0,
               "horse_gear": "B/TT"
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 10,
           "time": "2026-10-19T17:15:00+08:00",
           "class_dist": "Class 3 - 1600m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -1927,14 +1925,14 @@
               "final_position": 0,
               "horse_gear": "E1"
             }
-          ]
+          ],
+          "course": "C+3"
         },
         {
           "race_no": 11,
           "time": "2026-10-19T17:50:00+08:00",
           "class_dist": "Class 3 - 1400m",
           "track": "TURF",
-          "course": "C+3",
           "going": "GOOD",
           "runners": [
             {
@@ -1989,7 +1987,7 @@
               "actual_weight": 133,
               "declared_weight": 1172,
               "rtg": 83,
-              "win_odds": 35.0,
+              "win_odds": 34.0,
               "final_position": 0,
               "horse_gear": "CP-/TT"
             },
@@ -2115,7 +2113,7 @@
               "actual_weight": 121,
               "declared_weight": 1149,
               "rtg": 71,
-              "win_odds": 7.4,
+              "win_odds": 7.3,
               "final_position": 0,
               "horse_gear": ""
             },
@@ -2133,16 +2131,17 @@
               "final_position": 0,
               "horse_gear": ""
             }
-          ]
+          ],
+          "course": "C+3"
         }
-      ]
+      ],
+      "course": "C+3"
     },
     {
       "venue": "Happy Valley",
       "date": "2026-10-21",
       "status": "DEFINED",
-      "going": "GOOD",
-      "course": "B",
+      "going": "",
       "weather": "Live Feed Connected",
       "races": [
         {
@@ -2150,7 +2149,6 @@
           "time": "2026-10-21T18:40:00+08:00",
           "class_dist": "Class 4 - 1650m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
@@ -2314,7 +2312,6 @@
           "time": "2026-10-21T19:10:00+08:00",
           "class_dist": "Class 5 - 1200m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
@@ -2492,7 +2489,6 @@
           "time": "2026-10-21T19:40:00+08:00",
           "class_dist": "Class 4 - 1650m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
@@ -2642,7 +2638,6 @@
           "time": "2026-10-21T20:10:00+08:00",
           "class_dist": "Class 4 - 1200m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
@@ -2820,7 +2815,6 @@
           "time": "2026-10-21T20:40:00+08:00",
           "class_dist": "Class 4 - 1000m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
@@ -2998,7 +2992,6 @@
           "time": "2026-10-21T21:10:00+08:00",
           "class_dist": "Class 2 - 1000m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
@@ -3148,7 +3141,6 @@
           "time": "2026-10-21T21:40:00+08:00",
           "class_dist": "Class 4 - 1200m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
@@ -3326,7 +3318,6 @@
           "time": "2026-10-21T22:15:00+08:00",
           "class_dist": "Class 3 - 1200m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
@@ -3504,7 +3495,6 @@
           "time": "2026-10-21T22:50:00+08:00",
           "class_dist": "Class 3 - 1650m",
           "track": "TURF",
-          "course": "B",
           "going": "GOOD",
           "runners": [
             {
