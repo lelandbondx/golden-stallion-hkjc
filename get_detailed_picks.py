@@ -550,9 +550,9 @@ def run():
         else:
             df_runners['confidence'] = 50
 
-        # Class 5 Volatility Guard: Cap confidence to maximum 68% in volatile Class 5 races
+        # Class 5 Volatility Guard: Cap confidence to maximum 74% in volatile Class 5 races
         if class_int == 5:
-            df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
+            df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 74)
 
         # EV calculation and strict Fractional Kelly Criterion (1/4 Kelly for safety)
         b = df_runners['win_odds'] - 1

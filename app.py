@@ -715,7 +715,7 @@ with tab1:
                         if class_int_frozen == 5:
                             df_runners['kelly_stake'] = df_runners['kelly_stake'] * 0.5
                             if 'confidence' in df_runners.columns:
-                                df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
+                                df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 74)
                         
                         # Recalculate baseline odds dynamically if the race is still early (>120 mins out)
                         df_runners['baseline_odds'] = df_runners.apply(
@@ -1224,9 +1224,9 @@ with tab1:
         else:
             df_runners['confidence'] = 50
 
-        # Class 5 Volatility Guard: Cap confidence to maximum 68% in volatile Class 5 races
+        # Class 5 Volatility Guard: Cap confidence to maximum 74% in volatile Class 5 races
         if class_int == 5:
-            df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 68)
+            df_runners['confidence'] = np.clip(df_runners['confidence'], 15, 74)
 
         # MANDATES & 5-HORSE SELECTION CARD ARCHITECTURE:
         df_sorted_gs = df_runners.sort_values(by='gs_score', ascending=False).reset_index(drop=True)
