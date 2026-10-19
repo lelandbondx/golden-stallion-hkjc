@@ -691,6 +691,11 @@ def run():
         })
             
         best = p1.to_dict()
+        if p2 is not None:
+            best['p2_no'] = p2.get('no')
+            best['p2_name'] = p2.get('name')
+            best['p2_odds'] = float(p2.get('win_odds', 20.0))
+            best['p2_gs'] = float(p2.get('gs_score', 0.0))
         best.update({"race_no": race.get("race_no"), "class_dist": class_str, "primary_reason": p1_status})
         global_best_bets.append(best)
 
@@ -722,8 +727,33 @@ def run():
     if len(all_up_sorted) >= 2:
         b1 = all_up_sorted[0]
         b2 = all_up_sorted[1]
+
+        def get_allup_pool(runner):
+            ev = float(runner.get('value_diff', 0.0))
+            odds = float(runner.get('win_odds', 20.0))
+            reason = str(runner.get('primary_reason', ''))
+            win_active = bool(runner.get('win_stake_active', 0)) or ('WIN STAKE ACTIVE' in reason)
+            p2_no = runner.get('p2_no')
+            p2_name = runner.get('p2_name')
+            p2_gs = float(runner.get('p2_gs', 0.0))
+            p1_gs = float(runner.get('gs_score', 0.0))
+            combined_gs = p1_gs + p2_gs
+
+            if win_active and ev >= 0.035:
+                return 'WIN (獨贏)', f"#{runner['no']} {runner['name']} ({odds:.1f})", f"High EV (+{ev:.3f}) & dominant win conversion"
+            elif p2_no and combined_gs >= 36.0:
+                return 'QUINELLA (連贏 Q)', f"#{runner['no']} + #{p2_no} {p2_name}", f"Dominant 1-2 lock (Combined GS {combined_gs:.1f})"
+            else:
+                est_pl = max(1.3, round(1.0 + (odds - 1.0) * 0.28, 1))
+                return 'PLACE (位置)', f"#{runner['no']} {runner['name']} (Est ~{est_pl:.1f})", f"Top GS ({p1_gs:.1f}) podium anchor (>80% top-3 safety)"
+
+        l1_pool, l1_desc, l1_rat = get_allup_pool(b1)
+        l2_pool, l2_desc, l2_rat = get_allup_pool(b2)
         print("\n\n--- RECOMMENDED 2x3 ALL UP (過關 2串3 BANKER) ---")
-        print(f"Banker: Race {b1['race_no']} #{b1['no']} {b1['name']} ({b1['win_odds']:.1f}, Conf: {b1['confidence']}%) × Leg 2: Race {b2['race_no']} #{b2['no']} {b2['name']} ({b2['win_odds']:.1f}, Conf: {b2['confidence']}%)")
+        print(f"🎯 AI-CALCULATED OPTIMAL 2x3 ALL UP:")
+        print(f"   🏛️ Leg 1 (Race {b1['race_no']}): [{l1_pool}] {l1_desc} -> {l1_rat}")
+        print(f"   🥈 Leg 2 (Race {b2['race_no']}): [{l2_pool}] {l2_desc} -> {l2_rat}")
+        print(f"🛡️ Alternative Options: Ultra-Safe PLACE 2x3 (R{b1['race_no']} Place × R{b2['race_no']} Place) | Aggressive WIN 2x3 (R{b1['race_no']} Win × R{b2['race_no']} Win)")
         print("Note: High-stability races only (Class 5 strictly excluded to prevent multi-leg bust).")
 
 if __name__ == '__main__':

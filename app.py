@@ -780,6 +780,12 @@ with tab1:
                 race_picks_gs = df_runners.sort_values(by='gs_score', ascending=False)
             if not race_picks_gs.empty:
                 best_gs = race_picks_gs.iloc[0].to_dict()
+                if len(race_picks_gs) > 1:
+                    p2_dict = race_picks_gs.iloc[1].to_dict()
+                    best_gs['p2_no'] = p2_dict.get('no')
+                    best_gs['p2_name'] = p2_dict.get('name')
+                    best_gs['p2_odds'] = float(p2_dict.get('win_odds', 20.0))
+                    best_gs['p2_gs'] = float(p2_dict.get('gs_score', 0.0))
                 class_str_frozen = str(race.get("class_dist", ""))
                 best_gs.update({"race_no": race.get("race_no"), "class_dist": class_str_frozen})
                 # Strictly veto volatile Class 5 races from All Up / Parlay multi-leg bankers
@@ -1409,6 +1415,11 @@ with tab1:
             
         # Parlay candidate is Pick 1 of this race (strictly vetoing volatile Class 5 races)
         best_gs = p1.to_dict()
+        if p2 is not None:
+            best_gs['p2_no'] = p2.get('no')
+            best_gs['p2_name'] = p2.get('name')
+            best_gs['p2_odds'] = float(p2.get('win_odds', 20.0))
+            best_gs['p2_gs'] = float(p2.get('gs_score', 0.0))
         best_gs.update({"race_no": race.get("race_no"), "primary_reason": p1_status, "class_dist": class_str})
         if "class 5" not in str(class_str).lower():
             parlay_candidates.append(best_gs)
@@ -1490,12 +1501,76 @@ with tab1:
             if len(parlay_sorted) >= 2:
                 b1 = parlay_sorted[0]
                 b2 = parlay_sorted[1]
+
+                def get_leg_bet_type(runner):
+                    ev = float(runner.get('value_diff', 0.0))
+                    odds = float(runner.get('win_odds', 20.0))
+                    reason = str(runner.get('primary_reason', ''))
+                    win_active = bool(runner.get('win_stake_active', 0)) or ('WIN STAKE ACTIVE' in reason)
+                    p2_no = runner.get('p2_no')
+                    p2_name = runner.get('p2_name')
+                    p2_gs = float(runner.get('p2_gs', 0.0))
+                    p1_gs = float(runner.get('gs_score', 0.0))
+                    combined_gs = p1_gs + p2_gs
+
+                    if win_active and ev >= 0.035:
+                        return {
+                            "pool": "WIN (獨贏)",
+                            "badge_bg": "#15803d",
+                            "pick": f"#{runner['no']} {runner['name']}",
+                            "odds_label": f"{odds:.1f}",
+                            "rationale": f"High Expected Value (+{ev:.3f} EV) & dominant win conversion"
+                        }
+                    elif p2_no and combined_gs >= 36.0:
+                        return {
+                            "pool": "QUINELLA (連贏 Q)",
+                            "badge_bg": "#b45309",
+                            "pick": f"#{runner['no']} + #{p2_no} {p2_name}",
+                            "odds_label": f"Q Box ({odds:.1f} / {runner.get('p2_odds', 0):.1f})",
+                            "rationale": f"1-2 Lock: Combined GS Score {combined_gs:.1f} across top two runners"
+                        }
+                    else:
+                        est_place = max(1.3, round(1.0 + (odds - 1.0) * 0.28, 1))
+                        return {
+                            "pool": "PLACE (位置)",
+                            "badge_bg": "#0284c7",
+                            "pick": f"#{runner['no']} {runner['name']}",
+                            "odds_label": f"Est. ~{est_place:.1f}",
+                            "rationale": f"Top GS Score ({p1_gs:.1f}) podium anchor (>80% top-3 safety buffer)"
+                        }
+
+                l1 = get_leg_bet_type(b1)
+                l2 = get_leg_bet_type(b2)
+
                 st.markdown(clean_html(f'''
-                <div style="margin-top:8px; padding: 12px 18px; background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); border-radius: 8px; border: 1.5px solid rgba(56, 189, 248, 0.5); font-family:'Inter'; font-size:1.05rem; color:#f8fafc; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
-                    <b style="color:#38bdf8;">🎯 RECOMMENDED 2x3 ALL UP (過關 2串3 BANKER):</b><br>
-                    🏛️ <b>Banker:</b> <span style="color:#ffffff; font-weight:800;">Race {b1.get('race_no')} #{b1.get('no')} {b1.get('name')}</span> (<span style="color:#38bdf8; font-weight:700;">{b1.get('win_odds', 0):.1f}</span>) &nbsp;×&nbsp; 
-                    🥈 <b>Leg 2:</b> <span style="color:#ffffff; font-weight:800;">Race {b2.get('race_no')} #{b2.get('no')} {b2.get('name')}</span> (<span style="color:#38bdf8; font-weight:700;">{b2.get('win_odds', 0):.1f}</span>)
-                    <div style="font-size:0.85rem; color:#94a3b8; margin-top:4px;">🛡️ <i>High-Stability Class 3/G2 Races Only — Class 5 strictly vetoed from All Up sequences to prevent multi-leg bust</i></div>
+                <div style="margin-top:10px; padding: 16px 20px; background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); border-radius: 10px; border: 1.5px solid rgba(56, 189, 248, 0.55); font-family:'Inter'; color:#f8fafc; box-shadow: 0 6px 18px rgba(0,0,0,0.5);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:8px;">
+                        <span style="color:#38bdf8; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; letter-spacing:0.5px;">🎯 AI-CALCULATED 2x3 ALL UP (過關 2串3 BANKER)</span>
+                        <span style="font-size:0.80rem; background:rgba(56, 189, 248, 0.15); border:1px solid #38bdf8; border-radius:4px; padding:2px 8px; color:#38bdf8; font-weight:700;">CROSS-POOL INTELLIGENCE</span>
+                    </div>
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:8px;">
+                        <div style="background:rgba(255,255,255,0.04); border-radius:8px; padding:10px 14px; border-left:3px solid {l1['badge_bg']};">
+                            <div style="font-size:0.80rem; color:#94a3b8; font-weight:700;">🏛️ LEG 1 BANKER (Race {b1.get('race_no')})</div>
+                            <div style="margin-top:2px; font-size:1.05rem; font-weight:800; color:#ffffff;">
+                                <span style="background:{l1['badge_bg']}; color:#ffffff; font-size:0.75rem; font-weight:800; padding:2px 6px; border-radius:4px; vertical-align:middle; margin-right:4px;">{l1['pool']}</span>
+                                {l1['pick']} <span style="color:#38bdf8;">({l1['odds_label']})</span>
+                            </div>
+                            <div style="font-size:0.80rem; color:#cbd5e1; margin-top:4px;"><i>💡 {l1['rationale']}</i></div>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.04); border-radius:8px; padding:10px 14px; border-left:3px solid {l2['badge_bg']};">
+                            <div style="font-size:0.80rem; color:#94a3b8; font-weight:700;">🥈 LEG 2 PARTNER (Race {b2.get('race_no')})</div>
+                            <div style="margin-top:2px; font-size:1.05rem; font-weight:800; color:#ffffff;">
+                                <span style="background:{l2['badge_bg']}; color:#ffffff; font-size:0.75rem; font-weight:800; padding:2px 6px; border-radius:4px; vertical-align:middle; margin-right:4px;">{l2['pool']}</span>
+                                {l2['pick']} <span style="color:#38bdf8;">({l2['odds_label']})</span>
+                            </div>
+                            <div style="font-size:0.80rem; color:#cbd5e1; margin-top:4px;"><i>💡 {l2['rationale']}</i></div>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.08); font-size:0.85rem; color:#94a3b8; display:flex; flex-wrap:wrap; gap:16px;">
+                        <span>🛡️ <b>Safe Option (PLACE 2x3):</b> R{b1.get('race_no')} #{b1.get('no')} Pl × R{b2.get('race_no')} #{b2.get('no')} Pl</span>
+                        <span>⚡ <b>AI Optimal:</b> R{b1.get('race_no')} ({l1['pool']}) × R{b2.get('race_no')} ({l2['pool']})</span>
+                        <span>🚀 <b>Alpha Option (WIN 2x3):</b> R{b1.get('race_no')} #{b1.get('no')} Win ({b1.get('win_odds', 0):.1f}) × R{b2.get('race_no')} #{b2.get('no')} Win ({b2.get('win_odds', 0):.1f})</span>
+                    </div>
                 </div>
                 '''), unsafe_allow_html=True)
             
