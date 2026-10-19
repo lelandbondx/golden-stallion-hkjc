@@ -716,5 +716,15 @@ def run():
     for bet in dual_staking_wagers:
         print(f"Race {bet['race_no']} Bet Selection: Anchor #{bet['p1_no']} {bet['p1_name']} ({bet['p1_odds']:.1f}) [{bet['p1_status']}] | Sleeper #{bet['p5_no']} {bet['p5_name']} ({bet['p5_odds']:.1f}) [EV: {bet['p5_ev']:.3f}]")
 
+    # Filter candidates for All Up / Parlay sequence (strictly exclude volatile Class 5 races)
+    all_up_candidates = [b for b in global_best_bets if "class 5" not in str(b.get("class_dist", "")).lower()]
+    all_up_sorted = sorted(all_up_candidates, key=lambda x: x.get('gs_score', 0), reverse=True)
+    if len(all_up_sorted) >= 2:
+        b1 = all_up_sorted[0]
+        b2 = all_up_sorted[1]
+        print("\n\n--- RECOMMENDED 2x3 ALL UP (過關 2串3 BANKER) ---")
+        print(f"Banker: Race {b1['race_no']} #{b1['no']} {b1['name']} ({b1['win_odds']:.1f}, Conf: {b1['confidence']}%) × Leg 2: Race {b2['race_no']} #{b2['no']} {b2['name']} ({b2['win_odds']:.1f}, Conf: {b2['confidence']}%)")
+        print("Note: High-stability races only (Class 5 strictly excluded to prevent multi-leg bust).")
+
 if __name__ == '__main__':
     run()

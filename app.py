@@ -780,8 +780,11 @@ with tab1:
                 race_picks_gs = df_runners.sort_values(by='gs_score', ascending=False)
             if not race_picks_gs.empty:
                 best_gs = race_picks_gs.iloc[0].to_dict()
-                best_gs.update({"race_no": race.get("race_no")})
-                parlay_candidates.append(best_gs)
+                class_str_frozen = str(race.get("class_dist", ""))
+                best_gs.update({"race_no": race.get("race_no"), "class_dist": class_str_frozen})
+                # Strictly veto volatile Class 5 races from All Up / Parlay multi-leg bankers
+                if "class 5" not in class_str_frozen.lower():
+                    parlay_candidates.append(best_gs)
             continue
             
         try:
@@ -1404,10 +1407,11 @@ with tab1:
             r_dict.update({"race_no": race.get("race_no")})
             global_best_bets.append(r_dict)
             
-        # Parlay candidate is Pick 1 of this race
+        # Parlay candidate is Pick 1 of this race (strictly vetoing volatile Class 5 races)
         best_gs = p1.to_dict()
-        best_gs.update({"race_no": race.get("race_no"), "primary_reason": p1_status})
-        parlay_candidates.append(best_gs)
+        best_gs.update({"race_no": race.get("race_no"), "primary_reason": p1_status, "class_dist": class_str})
+        if "class 5" not in str(class_str).lower():
+            parlay_candidates.append(best_gs)
 
     # Collect market steam alerts
     steam_alerts = []
@@ -1481,8 +1485,19 @@ with tab1:
                         <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{top_gs_pick['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{top_gs_pick['confidence']}%</b></div>
                     </div>
                     '''), unsafe_allow_html=True)
-            parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')}" for bb in parlay_sorted[:3]])
-            st.markdown(f"<div style='margin-top:12px; font-family:\"Inter\"; font-size:1.15rem; color:#f1f5f9;'><b>Optimized Multi-Leg Sequence:</b> <span style='color:#38bdf8; font-weight:800;'>{parlay_str}</span></div>", unsafe_allow_html=True)
+            parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')} {bb.get('name')}" for bb in parlay_sorted[:3]])
+            st.markdown(f"<div style='margin-top:12px; font-family:\"Inter\"; font-size:1.15rem; color:#f1f5f9;'><b>Optimized Multi-Leg Sequence (Excl. Class 5):</b> <span style='color:#38bdf8; font-weight:800;'>{parlay_str}</span></div>", unsafe_allow_html=True)
+            if len(parlay_sorted) >= 2:
+                b1 = parlay_sorted[0]
+                b2 = parlay_sorted[1]
+                st.markdown(clean_html(f'''
+                <div style="margin-top:8px; padding: 12px 18px; background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); border-radius: 8px; border: 1.5px solid rgba(56, 189, 248, 0.5); font-family:'Inter'; font-size:1.05rem; color:#f8fafc; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
+                    <b style="color:#38bdf8;">🎯 RECOMMENDED 2x3 ALL UP (過關 2串3 BANKER):</b><br>
+                    🏛️ <b>Banker:</b> <span style="color:#ffffff; font-weight:800;">Race {b1.get('race_no')} #{b1.get('no')} {b1.get('name')}</span> (<span style="color:#38bdf8; font-weight:700;">{b1.get('win_odds', 0):.1f}</span>) &nbsp;×&nbsp; 
+                    🥈 <b>Leg 2:</b> <span style="color:#ffffff; font-weight:800;">Race {b2.get('race_no')} #{b2.get('no')} {b2.get('name')}</span> (<span style="color:#38bdf8; font-weight:700;">{b2.get('win_odds', 0):.1f}</span>)
+                    <div style="font-size:0.85rem; color:#94a3b8; margin-top:4px;">🛡️ <i>High-Stability Class 3/G2 Races Only — Class 5 strictly vetoed from All Up sequences to prevent multi-leg bust</i></div>
+                </div>
+                '''), unsafe_allow_html=True)
             
             if dual_staking_bets:
                 st.markdown("<div style='margin-top:15px; font-family:\"Montserrat\"; font-weight:800; font-size:1.15rem; color:#38bdf8;'>🐎 RECOMMENDED DUAL-STAKING BETS (WIN/PLACE)</div>", unsafe_allow_html=True)
