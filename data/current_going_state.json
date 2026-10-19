@@ -8,9 +8,9 @@
         "6": "GOOD",
         "7": "GOOD",
         "8": "GOOD",
-        "9": "GOOD",
-        "10": "GOOD",
-        "11": "GOOD"
+        "9": "GOOD TO FIRM",
+        "10": "GOOD TO FIRM",
+        "11": "GOOD TO FIRM"
     },
     "runners": {
         "1": [
@@ -140,7 +140,6 @@
             4,
             5,
             6,
-            7,
             8,
             9,
             10,
@@ -165,7 +164,6 @@
         ],
         "11": [
             1,
-            2,
             3,
             4,
             5,
@@ -308,7 +306,6 @@
             "4": "L FERRARIS",
             "5": "M CHADWICK",
             "6": "C L CHAU",
-            "7": "C Y HO",
             "8": "Z PURTON",
             "9": "B AVDULLA",
             "10": "L HEWITSON",
@@ -333,7 +330,6 @@
         },
         "11": {
             "1": "P N WONG",
-            "2": "M F POON",
             "3": "K TEETAN",
             "4": "K C LEUNG",
             "5": "A ATZENI",
