@@ -97,13 +97,13 @@ def render_hero_banner():
         <div class="banner-outer-hero">
             <img src="data:image/jpeg;base64,{b64}" alt="SILKS.AI Banner" class="banner-hero-img" />
         </div>
-        <div class="hero-chinese-subtitle">香港赛马会智能预测终端</div>
+        <div class="hero-chinese-subtitle">香港賽馬會智能預測終端</div>
         ''', unsafe_allow_html=True)
     else:
         col_l, col_center, col_r = st.columns([0.5, 11, 0.5])
         with col_center:
             st.image("silks_ai_banner.jpg", width="stretch")
-        st.markdown('<div class="hero-chinese-subtitle">香港赛马会智能预测终端</div>', unsafe_allow_html=True)
+        st.markdown('<div class="hero-chinese-subtitle">香港賽馬會智能預測終端</div>', unsafe_allow_html=True)
 
 # --- PAUSE SWITCH ---
 APP_PAUSED = False
