@@ -1,114 +1,100 @@
 Loading data...
-Meeting: Sha Tin - 2026-10-19 - Going: GOOD
+Meeting: Happy Valley - 2026-10-21 - Going: GOOD
 
---- RACE 1 : Class 5 - 1800m ---
-Pick 1: #6 I EXCELLE (Odds: 5.7) - Conf: 74% - EV: 0.040 - Jockey: C Y Ho
-Pick 2: #4 KINGLY DEMEANOR (Odds: 4.2) - Conf: 74% - EV: -0.020 - Jockey: H Y Yuen
-Pick 3: #1 STAR BROSE (Odds: 5.5) - Conf: 74% - EV: 0.017 - Jockey: Z Purton
-Pick 4: #8 FORTUNE KINGO (Odds: 7.5) - Conf: 72% - EV: 0.041 - Jockey: C L Chau
-Pick 5: #3 CAN'T GO WONG (Odds: 22.0) - Conf: 70% - EV: 0.107 - Jockey: K C Leung
+--- RACE 1 : Class 4 - 1650m ---
+🏆 PICK 1 (WINNING HORSE PICK): #1 REFUSETOBEENGLISH (Odds: 20.0) - GS Score: 14.5 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #6 ACE (Odds: 20.0) - GS Score: 12.1
+💠 PICK 3 (TRIO PODIUM): #2 GLORIOUS JOURNEY (Odds: 20.0) - GS Score: 11.7
+📊 PICK 4 (TRIO 4TH LEG): #4 RAGGA BOMB (Odds: 20.0) - GS Score: 11.1
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #11 HAPPY PROMISE (Odds: 20.0) - EV: 0.009 - GS Score: 10.9
+🎫 TICKETS: Quinella Box 1-3 (1, 6, 2) | Trio Box 1-4 (1, 6, 2, 4) | Dual-Stake: #1 + #11
 
---- RACE 2 : Class 4 - 1400m ---
-Pick 1: #11 SHOTGUN (Odds: 5.2) - Conf: 85% - EV: 0.009 - Jockey: M F Poon
-Pick 2: #10 INVICTUS (Odds: 4.3) - Conf: 84% - EV: -0.026 - Jockey: Z Purton
-Pick 3: #8 GHORGAN (Odds: 2.6) - Conf: 67% - EV: -0.190 - Jockey: A Atzeni
-Pick 4: #5 LEAN GENERAL (Odds: 44.0) - Conf: 58% - EV: 0.085 - Jockey: R Kingscote
-Pick 5: #4 ISLAND HIGHFLYER (Odds: 57.0) - Conf: 55% - EV: 0.083 - Jockey: C Y Ho
+--- RACE 2 : Class 5 - 1200m ---
+🏆 PICK 1 (WINNING HORSE PICK): #3 AUTUMN VIBES (Odds: 20.0) - GS Score: 14.1 - Conf: 74% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #4 FALCON HUNTER (Odds: 20.0) - GS Score: 13.6
+💠 PICK 3 (TRIO PODIUM): #1 GOLDEN FRIENDSHIP (Odds: 20.0) - GS Score: 12.3
+📊 PICK 4 (TRIO 4TH LEG): #2 CASA PRIMO (Odds: 20.0) - GS Score: 11.1
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 RUNJEET (Odds: 20.0) - EV: 0.023 - GS Score: 10.6
+🎫 TICKETS: Quinella Box 1-3 (3, 4, 1) | Trio Box 1-4 (3, 4, 1, 2) | Dual-Stake: #3 + #10
 
---- RACE 3 : Class 4 - 1800m ---
-Pick 1: #6 LUCKY BALERION (Odds: 9.3) - Conf: 85% - EV: 0.055 - Jockey: M F Poon
-Pick 2: #5 AMAZING GAZE (Odds: 11.0) - Conf: 80% - EV: 0.059 - Jockey: Z Purton
-Pick 3: #2 VICTOR SUPREME (Odds: 3.0) - Conf: 78% - EV: -0.143 - Jockey: C Y Ho
-Pick 4: #9 LUCKY YEAR (Odds: 4.4) - Conf: 77% - EV: -0.057 - Jockey: H Bentley
-Pick 5: #1 DREAMING TOGETHER (Odds: 13.0) - Conf: 69% - EV: 0.049 - Jockey: K Teetan
+--- RACE 3 : Class 4 - 1650m ---
+🏆 PICK 1 (WINNING HORSE PICK): #8 LUCK IS BACK (Odds: 20.0) - GS Score: 16.4 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #3 TURIN CHAMPIONS (Odds: 20.0) - GS Score: 11.1
+💠 PICK 3 (TRIO PODIUM): #10 FORTUNE STAR (Odds: 20.0) - GS Score: 10.7
+📊 PICK 4 (TRIO 4TH LEG): #6 STRANGE ALERT (Odds: 20.0) - GS Score: 10.6
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #4 HAPPY SMILE (Odds: 20.0) - EV: 0.002 - GS Score: 10.2
+🎫 TICKETS: Quinella Box 1-3 (8, 3, 10) | Trio Box 1-4 (8, 3, 10, 6) | Dual-Stake: #8 + #4
 
---- RACE 4 : Class 4 - 1400m ---
-Pick 1: #7 NOT USUAL DOUBLE (Odds: 6.2) - Conf: 85% - EV: 0.019 - Jockey: Z Purton
-Pick 2: #4 CALIFORNIA WAVES (Odds: 3.8) - Conf: 69% - EV: -0.097 - Jockey: B Avdulla
-Pick 3: #5 COMIC (Odds: 40.0) - Conf: 69% - EV: 0.097 - Jockey: M F Poon
-Pick 4: #14 STAR SATYR (Odds: 5.1) - Conf: 62% - EV: -0.056 - Jockey: Y L Chung
-Pick 5: #11 HOT AIR BALLON (Odds: 7.9) - Conf: 54% - EV: -0.016 - Jockey: J Orman
+--- RACE 4 : Class 4 - 1200m ---
+🏆 PICK 1 (WINNING HORSE PICK): #1 LUCKY MCQUEEN (Odds: 20.0) - GS Score: 13.8 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #5 HARVEST MOON (Odds: 20.0) - GS Score: 11.9
+💠 PICK 3 (TRIO PODIUM): #3 MATZDEN (Odds: 20.0) - GS Score: 10.4
+📊 PICK 4 (TRIO 4TH LEG): #9 SHOW ME YOUR LOVE (Odds: 20.0) - GS Score: 9.5
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #6 VIGOR FLY (Odds: 20.0) - EV: 0.011 - GS Score: 9.5
+🎫 TICKETS: Quinella Box 1-3 (1, 5, 3) | Trio Box 1-4 (1, 5, 3, 9) | Dual-Stake: #1 + #6
 
---- RACE 5 : Class 4 - 1200m ---
-Pick 1: #2 WOLF COMING (Odds: 2.8) - Conf: 85% - EV: -0.124 - Jockey: L Hewitson
-Pick 2: #12 CIRRUS SPEED (Odds: 5.0) - Conf: 64% - EV: -0.038 - Jockey: M F Poon
-Pick 3: #10 NAVAS G (Odds: 7.1) - Conf: 61% - EV: 0.005 - Jockey: L Ferraris
-Pick 4: #3 COSMO DRAGON (Odds: 41.0) - Conf: 50% - EV: 0.078 - Jockey: H T Mo
-Pick 5: #9 NEVER SETTLE (Odds: 12.0) - Conf: 47% - EV: 0.023 - Jockey: M L Yeung
+--- RACE 5 : Class 4 - 1000m ---
+🏆 PICK 1 (WINNING HORSE PICK): #3 GEORGIAN SIGMA (Odds: 20.0) - GS Score: 14.0 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #10 SUPER SIXTY (Odds: 20.0) - GS Score: 11.1
+💠 PICK 3 (TRIO PODIUM): #5 COLOURFUL GOLD (Odds: 20.0) - GS Score: 10.7
+📊 PICK 4 (TRIO 4TH LEG): #9 SYNERGY IN ACTION (Odds: 20.0) - GS Score: 9.9
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #8 LEAN FLYER (Odds: 20.0) - EV: 0.006 - GS Score: 9.0
+🎫 TICKETS: Quinella Box 1-3 (3, 10, 5) | Trio Box 1-4 (3, 10, 5, 9) | Dual-Stake: #3 + #8
 
---- RACE 6 : Class 4 - 1000m ---
-Pick 1: #3 RUBY THRIVE (Odds: 4.9) - Conf: 85% - EV: -0.008 - Jockey: Z Purton
-Pick 2: #5 AURORA PHOENIX (Odds: 4.6) - Conf: 64% - EV: -0.064 - Jockey: M L Yeung
-Pick 3: #10 SUNNY Q (Odds: 15.0) - Conf: 63% - EV: 0.058 - Jockey: A Badel
-Pick 4: #8 ZOUPER FELLOW (Odds: 7.0) - Conf: 60% - EV: -0.011 - Jockey: P N Wong
-Pick 5: #4 SPARKLING FELLOW (Odds: 8.4) - Conf: 58% - EV: 0.003 - Jockey: B Avdulla
+--- RACE 6 : Class 2 - 1000m ---
+🏆 PICK 1 (WINNING HORSE PICK): #8 LOVE TOGETHER (Odds: 20.0) - GS Score: 17.2 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #1 BOTTOMUPTOGETHER (Odds: 20.0) - GS Score: 17.2
+💠 PICK 3 (TRIO PODIUM): #10 CANDLELIGHT DINNER (Odds: 20.0) - GS Score: 12.6
+📊 PICK 4 (TRIO 4TH LEG): #5 SIGHT HERMOSO (Odds: 20.0) - GS Score: 10.9
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #3 SUPERB CAPITALIST (Odds: 20.0) - EV: 0.008 - GS Score: 10.8
+🎫 TICKETS: Quinella Box 1-3 (8, 1, 10) | Trio Box 1-4 (8, 1, 10, 5) | Dual-Stake: #8 + #3
 
 --- RACE 7 : Class 4 - 1200m ---
-Pick 1: #4 ACE EAGLE (Odds: 2.3) - Conf: 85% - EV: -0.187 - Jockey: Z Purton
-Pick 2: #10 KA YING RADIANCE (Odds: 6.0) - Conf: 70% - EV: -0.004 - Jockey: M F Poon
-Pick 3: #8 DANCING BLAZE (Odds: 8.6) - Conf: 65% - EV: 0.025 - Jockey: C Y Ho
-Pick 4: #1 ISLAND BUDDY (Odds: 15.0) - Conf: 62% - EV: 0.058 - Jockey: K Teetan
-Pick 5: #3 SOLID CAR (Odds: 8.7) - Conf: 57% - EV: 0.007 - Jockey: J Orman
+🏆 PICK 1 (WINNING HORSE PICK): #2 MALPENSA (Odds: 20.0) - GS Score: 11.1 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #1 HEALTHY HEALTHY (Odds: 20.0) - GS Score: 10.6
+💠 PICK 3 (TRIO PODIUM): #4 GOLDEN ACE (Odds: 20.0) - GS Score: 9.6
+📊 PICK 4 (TRIO 4TH LEG): #9 TOP TO SKY (Odds: 20.0) - GS Score: 9.3
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #6 SPICY BONUS (Odds: 20.0) - EV: 0.005 - GS Score: 8.8
+🎫 TICKETS: Quinella Box 1-3 (2, 1, 4) | Trio Box 1-4 (2, 1, 4, 9) | Dual-Stake: #2 + #6
 
---- RACE 8 : Group Two - 1600m ---
-Pick 1: #10 SKY JEWELLERY (Odds: 4.7) - Conf: 85% - EV: 0.006 - Jockey: A Badel
-Pick 2: #8 STORMY GROVE (Odds: 6.1) - Conf: 79% - EV: 0.033 - Jockey: K C Leung
-Pick 3: #5 BEAUTY JOY (Odds: 10.0) - Conf: 71% - EV: 0.066 - Jockey: B Avdulla
-Pick 4: #2 MY WISH (Odds: 2.6) - Conf: 68% - EV: -0.172 - Jockey: Z Purton
-Pick 5: #3 HELIOS EXPRESS (Odds: 10.0) - Conf: 59% - EV: 0.038 - Jockey: A Atzeni
-[DEFROST] Triggered due to scratched runner(s): {7}
+--- RACE 8 : Class 3 - 1200m ---
+🏆 PICK 1 (WINNING HORSE PICK): #3 KYRUS DRAGON (Odds: 20.0) - GS Score: 13.6 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #1 PERFECTDAY (Odds: 20.0) - GS Score: 13.2
+💠 PICK 3 (TRIO PODIUM): #2 PERFECT GENERAL (Odds: 20.0) - GS Score: 11.2
+📊 PICK 4 (TRIO 4TH LEG): #5 GREATER BAE (Odds: 20.0) - GS Score: 10.1
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #8 PEGAS (Odds: 20.0) - EV: 0.009 - GS Score: 9.2
+🎫 TICKETS: Quinella Box 1-3 (3, 1, 2) | Trio Box 1-4 (3, 1, 2, 5) | Dual-Stake: #3 + #8
 
---- RACE 9 : Class 3 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #1 MR INCREDIBLE (Odds: 3.0) - GS Score: 29.6 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-🎯 PICK 2 (EXACTA/QUINELLA): #8 GLORYSPEED (Odds: 3.4) - GS Score: 23.9
-💠 PICK 3 (TRIO PODIUM): #10 HAPPY SHOOTER (Odds: 5.3) - GS Score: 23.3
-📊 PICK 4 (TRIO 4TH LEG): #2 SMART GOLF (Odds: 7.9) - GS Score: 13.4
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #5 PRECISION TIME (Odds: 37.0) - EV: 0.058 - GS Score: 3.0
-🎫 TICKETS: Quinella Box 1-3 (1, 8, 10) | Trio Box 1-4 (1, 8, 10, 2) | Dual-Stake: #1 + #5
-[DEFROST] Triggered due to going change: 'GOOD' -> 'GOOD TO FIRM'
-
---- RACE 10 : Class 3 - 1600m ---
-🏆 PICK 1 (WINNING HORSE PICK): #7 JOYFUL JOY (Odds: 4.5) - GS Score: 30.5 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #14 MASTER LUCKY (Odds: 6.1) - GS Score: 28.6
-💠 PICK 3 (TRIO PODIUM): #1 PACKING FIGHTER (Odds: 1.9) - GS Score: 16.1
-📊 PICK 4 (TRIO 4TH LEG): #5 COMPLETE UNKNOWN (Odds: 50.0) - GS Score: 5.4
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #4 MISTER DAPPER (Odds: 43.0) - EV: 0.047 - GS Score: 1.6
-🎫 TICKETS: Quinella Box 1-3 (7, 14, 1) | Trio Box 1-4 (7, 14, 1, 5) | Dual-Stake: #7 + #4
-[DEFROST] Triggered due to scratched runner(s): {2}
-
---- RACE 11 : Class 3 - 1400m ---
-🏆 PICK 1 (WINNING HORSE PICK): #8 BABY SAKURA (Odds: 3.0) - GS Score: 23.2 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-⚡ SHIFTED WIN STAKE: #6 AEROINVINCIBLE (Odds: 11.0) - EV: +0.068
-🎯 PICK 2 (EXACTA/QUINELLA): #13 NYX GLUCK (Odds: 3.1) - GS Score: 20.9
-💠 PICK 3 (TRIO PODIUM): #6 AEROINVINCIBLE (Odds: 11.0) - GS Score: 18.2
-📊 PICK 4 (TRIO 4TH LEG): #5 ENDUED (Odds: 15.0) - GS Score: 9.6
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #9 GENEVA (Odds: 18.0) - EV: 0.065 - GS Score: 9.0
-🎫 TICKETS: Quinella Box 1-3 (8, 13, 6) | Trio Box 1-4 (8, 13, 6, 5) | Dual-Stake: #8 + #9
+--- RACE 9 : Class 3 - 1650m ---
+🏆 PICK 1 (WINNING HORSE PICK): #2 POPE CODY (Odds: 20.0) - GS Score: 16.1 - Conf: 85% - Status: [Winning-horse pick / exotic key only — awaiting live odds (pre-market placeholder 20.0)]
+🎯 PICK 2 (EXACTA/QUINELLA): #3 THE RED HARE (Odds: 20.0) - GS Score: 12.1
+💠 PICK 3 (TRIO PODIUM): #9 EMBRACES (Odds: 20.0) - GS Score: 11.6
+📊 PICK 4 (TRIO 4TH LEG): #1 LUCKY SAM GOR (Odds: 20.0) - GS Score: 10.9
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #4 SOLID WIN (Odds: 20.0) - EV: 0.023 - GS Score: 10.6
+🎫 TICKETS: Quinella Box 1-3 (2, 3, 9) | Trio Box 1-4 (2, 3, 9, 1) | Dual-Stake: #2 + #4
 
 
 --- OVERALL GLOBAL BEST BETS ---
-Top Pick 1: Race 10 - #7 JOYFUL JOY (Odds: 4.5, Conf: 85%, EV: 0.044)
-Top Pick 2: Race 9 - #1 MR INCREDIBLE (Odds: 3.0, Conf: 85%, EV: -0.018)
-Top Pick 3: Race 11 - #8 BABY SAKURA (Odds: 3.0, Conf: 85%, EV: -0.120)
+Top Pick 1: Race 6 - #8 LOVE TOGETHER (Odds: 20.0, Conf: 85%, EV: 0.072)
+Top Pick 2: Race 3 - #8 LUCK IS BACK (Odds: 20.0, Conf: 85%, EV: 0.064)
+Top Pick 3: Race 9 - #2 POPE CODY (Odds: 20.0, Conf: 85%, EV: 0.077)
 
 
 --- RECOMMENDED DUAL-STAKING BETS (PICK 1 + PICK 5) ---
-Race 1 Bet Selection: Anchor #6 I EXCELLE (5.7) | Sleeper #3 CAN'T GO WONG (22.0)
-Race 2 Bet Selection: Anchor #11 SHOTGUN (5.2) | Sleeper #4 ISLAND HIGHFLYER (57.0)
-Race 3 Bet Selection: Anchor #6 LUCKY BALERION (9.3) | Sleeper #1 DREAMING TOGETHER (13.0)
-Race 4 Bet Selection: Anchor #7 NOT USUAL DOUBLE (6.2) | Sleeper #11 HOT AIR BALLON (7.9)
-Race 5 Bet Selection: Anchor #2 WOLF COMING (2.8) | Sleeper #9 NEVER SETTLE (12.0)
-Race 6 Bet Selection: Anchor #3 RUBY THRIVE (4.9) | Sleeper #4 SPARKLING FELLOW (8.4)
-Race 7 Bet Selection: Anchor #4 ACE EAGLE (2.3) | Sleeper #3 SOLID CAR (8.7)
-Race 8 Bet Selection: Anchor #10 SKY JEWELLERY (4.7) | Sleeper #3 HELIOS EXPRESS (10.0)
-Race 9 Bet Selection: Anchor #1 MR INCREDIBLE (3.0) | Sleeper #5 PRECISION TIME (37.0)
-Race 10 Bet Selection: Anchor #7 JOYFUL JOY (4.5) | Sleeper #4 MISTER DAPPER (43.0)
-Race 11 Bet Selection: Anchor #8 BABY SAKURA (3.0) | Sleeper #9 GENEVA (18.0)
+Race 1 Bet Selection: Anchor #1 REFUSETOBEENGLISH (20.0) | Sleeper #11 HAPPY PROMISE (20.0)
+Race 2 Bet Selection: Anchor #3 AUTUMN VIBES (20.0) | Sleeper #10 RUNJEET (20.0)
+Race 3 Bet Selection: Anchor #8 LUCK IS BACK (20.0) | Sleeper #4 HAPPY SMILE (20.0)
+Race 4 Bet Selection: Anchor #1 LUCKY MCQUEEN (20.0) | Sleeper #6 VIGOR FLY (20.0)
+Race 5 Bet Selection: Anchor #3 GEORGIAN SIGMA (20.0) | Sleeper #8 LEAN FLYER (20.0)
+Race 6 Bet Selection: Anchor #8 LOVE TOGETHER (20.0) | Sleeper #3 SUPERB CAPITALIST (20.0)
+Race 7 Bet Selection: Anchor #2 MALPENSA (20.0) | Sleeper #6 SPICY BONUS (20.0)
+Race 8 Bet Selection: Anchor #3 KYRUS DRAGON (20.0) | Sleeper #8 PEGAS (20.0)
+Race 9 Bet Selection: Anchor #2 POPE CODY (20.0) | Sleeper #4 SOLID WIN (20.0)
 
 
 --- RECOMMENDED 2x3 ALL UP (過關 2串3 BANKER) ---
 🎯 AI-CALCULATED OPTIMAL 2x3 ALL UP:
-   🏛️ Leg 1 (Race 10): [WIN (獨贏)] #7 JOYFUL JOY (4.5) -> High EV (+0.044) & dominant win conversion
-   🥈 Leg 2 (Race 9): [QUINELLA (連贏 Q)] #1 + #8 GLORYSPEED -> Dominant 1-2 lock (Combined GS 53.5)
-🛡️ Alternative Options: Ultra-Safe PLACE 2x3 (R10 Place × R9 Place) | Aggressive WIN 2x3 (R10 Win × R9 Win)
+   🏛️ Leg 1 (Race 6): [PLACE (位置)] #8 LOVE TOGETHER (Est ~6.3) -> Top GS (17.2) podium anchor (>80% top-3 safety)
+   🥈 Leg 2 (Race 3): [PLACE (位置)] #8 LUCK IS BACK (Est ~6.3) -> Top GS (16.4) podium anchor (>80% top-3 safety)
+🛡️ Alternative Options: Ultra-Safe PLACE 2x3 (R6 Place × R3 Place) | Aggressive WIN 2x3 (R6 Win × R3 Win)
 Note: High-stability races only (Class 5 strictly excluded to prevent multi-leg bust).
