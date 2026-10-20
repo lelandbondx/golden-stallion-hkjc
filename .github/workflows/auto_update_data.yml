@@ -41,7 +41,7 @@ jobs:
           
       - name: Ping Space URLs
         run: |
-          curl -s https://hkjcbotlee.streamlit.app/ > /dev/null || true
+          curl -s https://silks-ai.onrender.com/ > /dev/null || true
           curl -s https://huggingface.co/spaces/lelandbondx/golden-stallion > /dev/null || true
           curl -s https://huggingface.co/spaces/lelandbondx/golden-stallion-hkjc > /dev/null || true
 

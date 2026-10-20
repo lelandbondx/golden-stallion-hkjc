@@ -1,8 +1,8 @@
-name: Keep Streamlit Alive
+name: Keep Render Alive
 
 on:
   schedule:
-    # Run every 5 minutes (GitHub cron can sometimes have a few minutes delay, but it will keep the app warm)
+    # Run every 5 minutes to keep Render container warm and responsive
     - cron: '*/5 * * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
@@ -10,6 +10,6 @@ jobs:
   ping-app:
     runs-on: ubuntu-latest
     steps:
-      - name: Send keep-alive ping
+      - name: Send keep-alive ping to Render
         run: |
-          curl -s -I -o /dev/null -w "%{http_code}" https://hkjcbotlee.streamlit.app/
+          curl -s -I -o /dev/null -w "%{http_code}" https://silks-ai.onrender.com/
