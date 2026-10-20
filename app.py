@@ -1180,7 +1180,19 @@ with tab1:
         # Stacked Geometry Penalty Cap: max -10.0%
         stacked_geom_pen = np.clip(hv_c_course_penalty + st_1000_draw_penalty + st_wide_draw_penalty, -0.10, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
+        # 1. Light Apprentice On-Pace Factor (+1.5% small conditional bonus on Good/Firm turf)
+        is_apprentice = df_runners['jockey'].astype(str).str.strip().str.upper().isin(['P N WONG', 'E C W WONG', 'Y L CHUNG'])
+        has_pace_ability = (df_runners['avg_first_pos'] <= 5.0) | df_runners['last_comment'].str.contains('led|prominent|jumped well|on pace|led early|handy', case=False, na=False)
+        is_firm_turf = (str(race_going).upper() in ['GOOD', 'GOOD TO FIRM', 'FIRM']) and ('TURF' in str(race_track_type).upper())
+        is_apprentice_on_pace = is_apprentice & (actual_weights <= 120) & has_pace_ability & is_firm_turf & (vet_issue == 0)
+        apprentice_on_pace_boost = np.where(is_apprentice_on_pace, 0.015, 0.0)
+
+        # 2. Elite Jockey + Proven Miler Topweight Resilience (+1.5% small conditional cushion)
+        is_elite_jockey = df_runners['jockey'].astype(str).str.strip().str.upper().isin(['Z PURTON', 'H BOWMAN', 'C Y HO'])
+        has_mile_proven = (distance == 1600) & (actual_weights >= 133) & ((pd.to_numeric(df_runners.get('distance_win_rate', 0), errors='coerce').fillna(0) > 0) | (recent_pos <= 3.5)) & (vet_issue == 0)
+        elite_miler_topweight_boost = np.where(is_elite_jockey & has_mile_proven, 0.015, 0.0)
+
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + apprentice_on_pace_boost + elite_miler_topweight_boost
 
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
