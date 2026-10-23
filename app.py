@@ -836,13 +836,24 @@ with tab1:
         sum_implied = df_runners['implied_raw'].sum()
         df_runners['implied_prob'] = df_runners['implied_raw'] / sum_implied if sum_implied > 0 else (1/len(df_runners))
         
+        # Helper functions to safely extract series from df_runners
+        def get_series(df, col, default=0.0):
+            if col in df.columns:
+                return pd.to_numeric(df[col], errors='coerce').fillna(default)
+            return pd.Series(default, index=df.index)
+
+        def get_str_series(df, col, default=''):
+            if col in df.columns:
+                return df[col].fillna(default).astype(str)
+            return pd.Series(default, index=df.index)
+
         # Targeted Standout Boost Logic
-        recent_pos = pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0)
-        recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
-        track_match = (df_runners.get('ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
-        going_match = (df_runners.get('last_form_going', 'Unknown') == race_going).astype(int)
-        vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
-        class_drop = pd.to_numeric(df_runners.get('class_diff', 0), errors='coerce').fillna(0)
+        recent_pos = get_series(df_runners, 'recent_avg_pos', 7.0)
+        recent_win = get_series(df_runners, 'recent_win_rate', 0.0)
+        track_match = (get_str_series(df_runners, 'ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
+        going_match = (get_str_series(df_runners, 'last_form_going', 'Unknown') == race_going).astype(int)
+        vet_issue = get_series(df_runners, 'prev_run_vet_finding', 0)
+        class_drop = get_series(df_runners, 'class_diff', 0)
         
         # Super Standout condition: 
         is_super_standout = (recent_pos <= 3.5) & ((track_match == 1) | (going_match == 1)) & (vet_issue == 0)
@@ -879,7 +890,7 @@ with tab1:
         has_strong_trial = np.array(has_strong_trial)
             
         # If consensus from trials is strong OR we have a strong trial, waive it
-        consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
+        consensus = get_series(df_runners, 'consensus_score', 0)
         debutant_penalty = np.where((consensus > 5.0) | has_strong_trial, 0.0, debutant_penalty_val)
         
         # Map sectional times and find fastest last sectional
@@ -938,10 +949,10 @@ with tab1:
             yielding_form_boost = np.where(has_yielding_form, 0.025, 0.0)
             
         if is_awt_race:
-            has_poly_form = (df_runners.get('has_overseas_form', 0) == 1) & (
-                df_runners['last_form_going'].astype(str).str.upper().str.contains("POLY|SYNTH|AWT|STAND|TAPETA") |
-                (df_runners.get('AWT_win_rate', 0) > 0) |
-                (df_runners.get('AWT_vs_Turf_pref', '') == 'AWT')
+            has_poly_form = (get_series(df_runners, 'has_overseas_form', 0) == 1) & (
+                get_str_series(df_runners, 'last_form_going', '').str.upper().str.contains("POLY|SYNTH|AWT|STAND|TAPETA") |
+                (get_series(df_runners, 'AWT_win_rate', 0) > 0) |
+                (get_str_series(df_runners, 'AWT_vs_Turf_pref', '') == 'AWT')
             )
             polytrack_awt_boost = np.where(has_poly_form, 0.025, 0.0)
             
@@ -969,8 +980,8 @@ with tab1:
             
             closer_pace_penalty = np.where(is_sprint_slow_closer | is_hv_route_slow_closer, -0.03, 0.0)
             
-        actual_weights = pd.to_numeric(df_runners.get('actual_weight', 125), errors='coerce').fillna(125)
-        draws = pd.to_numeric(df_runners.get('draw', 6), errors='coerce').fillna(6)
+        actual_weights = get_series(df_runners, 'actual_weight', 125)
+        draws = get_series(df_runners, 'draw', 6)
 
         # Wide Topweight flag at Happy Valley (Gates 9-12 AND Weight >= 132)
         is_hv_wide_heavy = is_hv & (draws >= 9) & (actual_weights >= 132)
@@ -1036,7 +1047,7 @@ with tab1:
             
             is_heavy = (actual_weights >= 132)
             base_wt_extra = np.where(is_wide_gate & is_heavy, np.where(is_sprint, -0.02, -0.01), 0.0)
-            is_on_pace_crosser = (df_runners['avg_first_pos'] <= 3.5) | (pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0) <= 3.5)
+            is_on_pace_crosser = (get_series(df_runners, 'avg_first_pos', 6.0) <= 3.5) | (recent_pos <= 3.5)
             eff_wt_extra = np.where(is_on_pace_crosser, base_wt_extra * 0.5, base_wt_extra)
             
             hv_c_course_penalty = base_draw_pen + eff_wt_extra
@@ -1122,15 +1133,15 @@ with tab1:
 
         # Non-First Start for New Trainer with Good Rating (1.5% Boost)
         good_rating_thresh = 38 if class_int == 5 else 50
-        is_good_rating = (df_runners.get('rtg', 40) >= good_rating_thresh) | (pd.to_numeric(df_runners.get('horse_rating', 40), errors='coerce').fillna(40) >= good_rating_thresh)
+        is_good_rating = (get_series(df_runners, 'rtg', 40) >= good_rating_thresh) | (get_series(df_runners, 'horse_rating', 40) >= good_rating_thresh)
         is_settled_stable_horse = is_good_rating & (recent_pos <= 6.0) & (vet_issue == 0) & (~is_debutant)
         trainer_transfer_2nd_up_boost = np.where(is_settled_stable_horse, 0.015, 0.0)
 
         # Fresh Horses Distance Fitness Sweet Spot (within 250m of optimal distance with form) (1.5% Boost)
         is_fit_fresh = (recent_pos <= 5.0) & (vet_issue == 0) & (
-            (df_runners.get('distance_win_rate', 0) > 0) | 
+            (get_series(df_runners, 'distance_win_rate', 0) > 0) | 
             (distance >= 1400) |
-            (pd.to_numeric(df_runners.get('days_since_last_run', 0), errors='coerce').fillna(0) >= 28)
+            (get_series(df_runners, 'days_since_last_run', 0) >= 28)
         )
         fresh_distance_fitness_boost = np.where(is_fit_fresh, 0.015, 0.0)
 
@@ -1139,14 +1150,14 @@ with tab1:
         throat_surgery_boost = np.where(has_throat_surgery & has_strong_trial, 0.035, 0.0)
 
         # Optimal Body Weight Condition Zone (within 15 lbs of historical peak / winning weight) (+1.0% Boost)
-        declared_weights = pd.to_numeric(df_runners.get('declared_weight', 1100), errors='coerce').fillna(1100)
-        opt_body_weights = pd.to_numeric(df_runners.get('latest_body_weight', np.nan), errors='coerce')
+        declared_weights = get_series(df_runners, 'declared_weight', 1100)
+        opt_body_weights = get_series(df_runners, 'latest_body_weight', np.nan)
         is_optimal_weight_zone = (opt_body_weights.notna()) & (opt_body_weights > 800) & (np.abs(declared_weights - opt_body_weights) <= 15)
         optimal_weight_boost = np.where(is_optimal_weight_zone, 0.01, 0.0)
 
         # Disguised Form & Weight-Carrying Resilience Cushion (Sha Tin only, 0.0% at Happy Valley)
         is_resilient_weight_carrier = (actual_weights >= 130) & (draws >= 8) & (recent_pos <= 6.0) & (vet_issue == 0) & (
-            (df_runners.get('avg_first_pos', 6.0) >= 7.0) | (df_runners.get('recent_win_rate', 0) > 0) | (df_runners.get('gear_win_rate', 0) > 0.10)
+            (get_series(df_runners, 'avg_first_pos', 6.0) >= 7.0) | (get_series(df_runners, 'recent_win_rate', 0) > 0) | (get_series(df_runners, 'gear_win_rate', 0) > 0.10)
         )
         weight_resilience_boost = np.where(is_st & is_resilient_weight_carrier, 0.025, 0.0)
 
@@ -1168,7 +1179,7 @@ with tab1:
         finisher_win_conversion_boost = np.where(is_elite_finisher, 0.025, 0.0)
 
         # Early-Season 2nd-Up Peak Fitness Sweet Spot (+2.0% Boost for horses with 1 run 14-35 days ago)
-        days_since = pd.to_numeric(df_runners.get('days_since_last_run', 0), errors='coerce').fillna(0)
+        days_since = get_series(df_runners, 'days_since_last_run', 0)
         is_second_up_fitness = (days_since >= 14) & (days_since <= 35) & (recent_pos <= 6.0) & (vet_issue == 0) & (~is_debutant)
         second_up_fitness_boost = np.where(is_second_up_fitness, 0.02, 0.0)
 
