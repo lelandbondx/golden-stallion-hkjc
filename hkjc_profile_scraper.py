@@ -23,7 +23,10 @@ def get_horse_profile_stats(horse_code):
     
     try:
         res = requests.get(url, headers=headers, timeout=5)
-        dfs = pd.read_html(res.content)
+        try:
+            dfs = pd.read_html(res.content)
+        except Exception:
+            dfs = []
         
         # Find the table with race history
         race_df = None
@@ -33,18 +36,18 @@ def get_horse_profile_stats(horse_code):
                 break
                 
         if race_df is None:
-            return None
+            race_df = pd.DataFrame(columns=['Race Index', 'Pla.', 'Date', 'RC/Track/ Course', 'Dist.', 'G', 'Race Class', 'Dr.', 'Rtg.', 'Trainer', 'Jockey', 'LBW', 'Win Odds', 'Act. Wt.', 'Running Position', 'Finish Time', 'Declar. Horse Wt.', 'Gear', 'Video Replay'])
+        else:
+            # The first row is usually headers, let's clean it up
+            race_df.columns = [str(c).strip() for c in race_df.iloc[0]]
+            race_df = race_df.drop(0)
             
-        # The first row is usually headers, let's clean it up
-        race_df.columns = [str(c).strip() for c in race_df.iloc[0]]
-        race_df = race_df.drop(0)
-        
-        # Filter out season headers and rows with "No Running Records"
-        race_df = race_df[~race_df['Race Index'].astype(str).str.contains('Season|No Running', na=False, case=False)]
-        race_df = race_df[race_df['Date'].astype(str).str.match(r'^\d{2}/\d{2}/\d{2}$')]
-        
-        # Enforce "Current Form" constraint: Only look at the horse's last 12 runs
-        race_df = race_df.head(12)
+            # Filter out season headers and rows with "No Running Records"
+            race_df = race_df[~race_df['Race Index'].astype(str).str.contains('Season|No Running', na=False, case=False)]
+            race_df = race_df[race_df['Date'].astype(str).str.match(r'^\d{2}/\d{2}/\d{2}$')]
+            
+            # Enforce "Current Form" constraint: Only look at the horse's last 12 runs
+            race_df = race_df.head(12)
         
         # Clean up data
         race_df['Pla.'] = race_df['Pla.'].astype(str)
@@ -164,15 +167,15 @@ def get_horse_profile_stats(horse_code):
             last_horse_rating = pd.to_numeric(race_df.iloc[0].get('Rtg.'), errors='coerce')
             
         # Last gear
-        last_gear = None
+        last_gear = '--'
         if not race_df.empty:
-            last_gear = str(race_df.iloc[0].get('Gear', ''))
-            if last_gear.strip() in ['-', '--', 'nan']:
-                last_gear = ''
+            raw_lg = str(race_df.iloc[0].get('Gear', '')).strip()
+            if raw_lg not in ['', '-', '--', 'nan', 'None']:
+                last_gear = raw_lg
             
         # Gear Win Rate
         gear_win_rate = 0.0
-        if last_gear and last_gear.strip() not in ['-', '']:
+        if last_gear and last_gear not in ['-', '--', '']:
             gear_runs = race_df[race_df['Gear'] == last_gear]
             gear_wins = gear_runs[gear_runs['is_win'] == 1]
             gear_win_rate = len(gear_wins) / len(gear_runs) if len(gear_runs) > 0 else 0.0
@@ -186,14 +189,28 @@ def get_horse_profile_stats(horse_code):
                 dist_wins = dist_runs[dist_runs['is_win'] == 1]
                 distance_win_rate = len(dist_wins) / len(dist_runs) if len(dist_runs) > 0 else 0.0
 
-        # Recent Form
+        # Recent Form & Photo Finish History
         recent_avg_pos = 7.0
         recent_win_rate = 0.0
+        photo_finish_hist = "Debutant"
+        last_run_summary = "Unraced HK Debutant"
         if not race_df.empty:
             recent_runs = race_df.head(4).copy()
             recent_runs['pos_num'] = pd.to_numeric(recent_runs['Pla.'].astype(str).str.lstrip('0'), errors='coerce').fillna(7)
             recent_avg_pos = recent_runs['pos_num'].mean()
             recent_win_rate = recent_runs['is_win'].mean()
+            lbw_vals = race_df['LBW'].astype(str).str.strip().str.upper().tolist() if 'LBW' in race_df.columns else []
+            pla_vals = race_df['Pla.'].astype(str).str.strip().str.upper().tolist()
+            has_close = any(v in ['N', 'SH', 'HD', 'NOSE', 'SHORT HEAD'] for v in lbw_vals) or any('DH' in p for p in pla_vals)
+            photo_finish_hist = "✅ Yes" if has_close else "❌ No"
+            r0 = race_df.iloc[0]
+            r0_date = str(r0.get('Date', '')).strip()
+            r0_trk = ' '.join(str(r0.get('RC/Track/ Course', '')).split())
+            r0_dist = str(r0.get('Dist.', '')).strip()
+            r0_pla = str(r0.get('Pla.', '')).strip()
+            r0_lbw = str(r0.get('LBW', '')).strip()
+            r0_rp = ' '.join(str(r0.get('Running Position', '')).split())
+            last_run_summary = f"Last Run ({r0_date} {r0_trk} {r0_dist}m): Fin {r0_pla} (LBW {r0_lbw}) | RunPos: {r0_rp}"
             
         # Scrape horse veterinary record from ovehorse.aspx
         horse_id = None
@@ -209,6 +226,7 @@ def get_horse_profile_stats(horse_code):
             print(f"Error parsing horse_id for {horse_code}: {e}")
             
         prev_run_vet_finding = 0
+        latest_vet_note = "No Findings"
         if horse_id:
             try:
                 vet_url = f"https://racing.hkjc.com/racing/information/English/Horse/ovehorse.aspx?horseid={horse_id}"
@@ -228,8 +246,11 @@ def get_horse_profile_stats(horse_code):
                     if vet_history:
                         recent_finding = vet_history[0]
                         date_str = str(recent_finding.get('Date', '')).strip()
-                        details = str(recent_finding.get('Details', '')).strip().lower()
+                        raw_details = str(recent_finding.get('Details', '')).strip()
+                        details = raw_details.lower()
                         passed_date = str(recent_finding.get('Passed Date', '')).strip()
+                        if raw_details and raw_details.lower() not in ['nan', 'none', ''] and 'no record' not in details:
+                            latest_vet_note = f"{date_str}: {raw_details}" + (f" (Passed: {passed_date})" if passed_date and passed_date.lower() not in ['nan', 'none', ''] else "")
                         
                         vet_keywords = ['lame', 'blood', 'trachea', 'heart', 'irregularity', 'mucus', 'surgery', 'abnormal', 'infection', 'fever']
                         if any(k in details for k in vet_keywords):
@@ -272,7 +293,10 @@ def get_horse_profile_stats(horse_code):
             "distance_win_rate": distance_win_rate,
             "prev_run_vet_finding": prev_run_vet_finding,
             "has_overseas_form": has_overseas_form,
-            "winning_gears": winning_gears
+            "winning_gears": winning_gears,
+            "latest_vet_note": latest_vet_note,
+            "photo_finish_hist": photo_finish_hist,
+            "last_run_summary": last_run_summary
         }
         
     except Exception as e:

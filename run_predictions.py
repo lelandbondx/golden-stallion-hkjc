@@ -750,33 +750,46 @@ def run():
         for _, row in df_runners.iterrows():
             c_name = str(row.get('clean_name', '')).strip().upper()
             comment = last_comments.get(c_name, '').strip()
+            raw_vet_note = str(row.get('latest_vet_note', '')).strip()
+            raw_photo = str(row.get('photo_finish_hist', '')).strip()
+            raw_summary = str(row.get('last_run_summary', '')).strip()
             tonight_gear = str(row.get('horse_gear', '')).strip().upper()
-            if tonight_gear in ['', '-', '--']:
+            if tonight_gear in ['', '-', '--', 'NAN', 'NONE']:
                 tonight_gear = ''
             horse_win_gears = winning_gears.get(c_name, set())
             is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
-            if comment:
-                photo = "✅ Yes" if any(x in comment.lower() for x in ["photo", "nose", "short head"]) else "❌ No"
-                vet = "No Findings"
-                steward = comment
-                if "(" in comment and ")" in comment:
-                    matches = re.findall(r'\((.*?)\)', comment)
-                    if matches:
-                        last_match = matches[-1]
-                        if "vet" in last_match.lower() or "finding" in last_match.lower():
-                            vet = last_match
-                if row.get('has_overseas_form') == 1 and is_gear_matched:
-                    steward = f"Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment. | {steward}"
-                vet_notes.append(vet)
-                steward_notes.append(steward)
-                photo_hist.append(photo)
+
+            if raw_vet_note and raw_vet_note.lower() not in ['', 'nan', 'none', 'no findings']:
+                vet = raw_vet_note
+            elif comment and "(" in comment and ")" in comment:
+                matches = re.findall(r'\((.*?)\)', comment)
+                last_match = matches[-1] if matches else ""
+                vet = last_match if ("vet" in last_match.lower() or "finding" in last_match.lower()) else "No Active Findings"
+            elif pd.to_numeric(row.get('prev_run_vet_finding', 0), errors='coerce') == 1:
+                vet = "Passed Official HKJC Vet Exam"
             else:
-                vet_notes.append("No active findings")
-                if row.get('has_overseas_form') == 1 and is_gear_matched:
-                    steward_notes.append("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
-                else:
-                    steward_notes.append("Clear Record")
-                photo_hist.append("None")
+                vet = "No Active Findings"
+
+            if raw_photo in ["✅ Yes", "❌ No", "Debutant"]:
+                photo = raw_photo
+            elif comment:
+                photo = "✅ Yes" if any(x in comment.lower() for x in ["photo", "nose", "short head"]) else "❌ No"
+            else:
+                photo = "❌ No"
+
+            if comment:
+                steward = comment
+            elif raw_summary and raw_summary.lower() not in ['', 'nan', 'none']:
+                steward = raw_summary
+            else:
+                steward = "Clear Record"
+
+            if row.get('has_overseas_form') == 1 and is_gear_matched:
+                steward = f"Overseas Form + Proven HK Winning Gear | {steward}"
+
+            vet_notes.append(vet)
+            steward_notes.append(steward)
+            photo_hist.append(photo)
         df_runners['vet_findings'] = vet_notes
         df_runners['steward_notes'] = steward_notes
         df_runners['photo_finish'] = photo_hist

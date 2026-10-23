@@ -81,8 +81,24 @@ def prepare_features(df, is_live=False, venue=None, going=None, race_date=None, 
             df['rating_diff'] = df.get('rating_diff', 0)
             
         # gear_changed
-        if 'last_gear' in df.columns and 'horse_gear' in df.columns:
-            df['gear_changed'] = (df['horse_gear'] != df['last_gear']).astype(int)
+        if 'horse_gear' in df.columns:
+            import re as _re
+            def _check_gear_chg(row):
+                hg = str(row.get('horse_gear', '')).strip().upper()
+                if hg in ['', '-', '--', 'NAN', 'NONE']:
+                    hg = '--'
+                if _re.search(r'[A-Z]+[12-]', hg):
+                    return 1
+                lg = str(row.get('last_gear', '')).strip().upper()
+                if lg in ['', '-', '--', 'NAN', 'NONE']:
+                    lg = '--'
+                lrd = row.get('last_run_date')
+                if lrd is not None and not pd.isna(lrd) and str(lrd).strip() not in ['', 'nan', 'None']:
+                    hg_base = '/'.join(sorted([_re.sub(r'[12]$', '', p.strip()) for p in hg.split('/') if p.strip() and not p.strip().endswith('-')])) or '--'
+                    lg_base = '/'.join(sorted([_re.sub(r'[12]$', '', p.strip()) for p in lg.split('/') if p.strip() and not p.strip().endswith('-')])) or '--'
+                    return 1 if hg_base != lg_base else 0
+                return 0
+            df['gear_changed'] = df.apply(_check_gear_chg, axis=1)
         else:
             df['gear_changed'] = df.get('gear_changed', 0)
             
@@ -311,15 +327,22 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
             
         live_df['horse_gear'] = live_df['horse_gear'].apply(norm_gear)
         
+        stats_gear_wr = pd.to_numeric(live_df['gear_win_rate'], errors='coerce') if 'gear_win_rate' in live_df.columns else None
         gear_df = pd.read_csv('data/gear_win_rates.csv')
         gear_df['clean_name'] = gear_df['clean_name'].str.upper().str.strip()
         if 'gear_win_rate' in live_df.columns:
             live_df = live_df.drop(columns=['gear_win_rate'])
         live_df = pd.merge(live_df, gear_df, on=['clean_name', 'horse_gear'], how='left')
-        live_df['gear_win_rate'] = live_df['gear_win_rate'].fillna(0)
+        if stats_gear_wr is not None:
+            live_df['gear_win_rate'] = stats_gear_wr.values
+            live_df['gear_win_rate'] = pd.to_numeric(live_df['gear_win_rate'], errors='coerce').fillna(0.0)
+        else:
+            live_df['gear_win_rate'] = live_df['gear_win_rate'].fillna(0.0)
     else:
         if 'gear_win_rate' not in live_df.columns:
             live_df['gear_win_rate'] = 0.0
+        else:
+            live_df['gear_win_rate'] = pd.to_numeric(live_df['gear_win_rate'], errors='coerce').fillna(0.0)
 
     # Fallback dictionaries for modern jockeys/trainers
     FALLBACK_JOCKEY_RATES = {

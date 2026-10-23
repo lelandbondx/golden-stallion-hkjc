@@ -167,6 +167,7 @@ def save_frozen_predictions(date_str, venue, race_no, runners_list):
     """
     Saves predictions (runners list) to data/frozen_predictions_{date}.json to preserve the final ratings state.
     """
+    import math
     cleaned_date = str(date_str).replace('-', '') if date_str else 'today'
     filename = os.path.join(BASE_DIR, "data", f"frozen_predictions_{cleaned_date}.json")
     cache = {}
@@ -177,8 +178,19 @@ def save_frozen_predictions(date_str, venue, race_no, runners_list):
         except:
             pass
             
+    # Sanitize NaN values so valid JSON is always written
+    clean_runners = []
+    for r in runners_list:
+        clean_r = {}
+        for k, v in r.items():
+            if isinstance(v, float) and math.isnan(v):
+                clean_r[k] = None
+            else:
+                clean_r[k] = v
+        clean_runners.append(clean_r)
+
     key = f"{venue}_R{race_no}"
-    cache[key] = runners_list
+    cache[key] = clean_runners
     
     try:
         os.makedirs(os.path.dirname(filename), exist_ok=True)
@@ -248,6 +260,16 @@ def should_defrost_predictions(frozen_runners, live_runners, frozen_going, live_
     live_has_real_odds = any((float(r.get('win_odds', 0.0) or 0.0) > 0.0) and (float(r.get('win_odds', 0.0) or 0.0) != 20.0) for r in live_runners)
     if frozen_all_placeholder and live_has_real_odds:
         print("[DEFROST] Triggered due to live market odds opening (replacing pre-market 20.0 placeholders)")
+        return True
+
+    # Check if frozen predictions were generated before horse profile stats were scraped
+    missing_profile_telemetry = any(
+        r.get('horse_code') is None or str(r.get('horse_code', '')).strip().lower() in ['', 'nan', 'none'] or
+        r.get('last_run_summary') is None or str(r.get('last_run_summary', '')).strip().lower() in ['', 'nan', 'none']
+        for r in frozen_runners
+    )
+    if missing_profile_telemetry:
+        print("[DEFROST] Triggered due to unprimed horse profile telemetry in frozen cache")
         return True
                 
     return False

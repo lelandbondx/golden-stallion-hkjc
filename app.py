@@ -1473,39 +1473,60 @@ with tab1:
         for _, row in df_runners.iterrows():
             c_name = row['clean_name']
             comment = last_comments.get(c_name, '').strip()
+            raw_vet_note = str(row.get('latest_vet_note', '')).strip()
+            raw_photo = str(row.get('photo_finish_hist', '')).strip()
+            raw_summary = str(row.get('last_run_summary', '')).strip()
             
             tonight_gear = str(row.get('horse_gear', '')).strip().upper()
-            if tonight_gear in ['', '-']:
+            if tonight_gear in ['', '-', '--', 'NAN', 'NONE']:
                 tonight_gear = ''
             horse_win_gears = winning_gears.get(c_name, set())
             is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
             
-            if comment:
-                photo = "✅ Yes" if any(x in comment.lower() for x in ["photo", "nose", "short head"]) else "❌ No"
-                vet = "No Findings"
-                steward = comment
-                if "(" in comment and ")" in comment:
-                    matches = re.findall(r'\((.*?)\)', comment)
-                    if matches:
-                        last_match = matches[-1]
-                        if "vet" in last_match.lower() or "finding" in last_match.lower():
-                            vet = last_match
-                        else:
-                            vet = "No Findings"
-                
-                if row.get('has_overseas_form') == 1 and is_gear_matched:
-                    steward = f"Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment. | {steward}"
-                
-                vet_notes.append(vet)
-                steward_notes.append(steward)
-                photo_hist.append(photo)
+            # 1. Vet Findings
+            if raw_vet_note and raw_vet_note.lower() not in ['', 'nan', 'none', 'no findings']:
+                vet = raw_vet_note
+            elif comment and "(" in comment and ")" in comment:
+                matches = re.findall(r'\((.*?)\)', comment)
+                last_match = matches[-1] if matches else ""
+                vet = last_match if ("vet" in last_match.lower() or "finding" in last_match.lower()) else "No Active Findings"
+            elif pd.to_numeric(row.get('prev_run_vet_finding', 0), errors='coerce') == 1:
+                vet = "Passed Official HKJC Vet Exam"
             else:
-                vet_notes.append("No active findings")
-                if row.get('has_overseas_form') == 1 and is_gear_matched:
-                    steward_notes.append("Note: This horse had form overseas and won with the same consistent gear in the Hong Kong environment.")
-                else:
-                    steward_notes.append("Clear Record")
-                photo_hist.append("None")
+                vet = "No Active Findings"
+                
+            # 2. Photo Finish History
+            if raw_photo in ["✅ Yes", "❌ No", "Debutant"]:
+                photo = raw_photo
+            elif comment:
+                photo = "✅ Yes" if any(x in comment.lower() for x in ["photo", "nose", "short head"]) else "❌ No"
+            else:
+                photo = "❌ No"
+                
+            # 3. Steward / Form Notes
+            mem_entry = horse_memory.get(c_name, {}) if isinstance(horse_memory, dict) else {}
+            mem_runs = mem_entry.get('runs', []) if isinstance(mem_entry, dict) else []
+            mem_snippet = ""
+            if mem_runs and isinstance(mem_runs[0], dict):
+                flags = mem_runs[0].get('incident_flags', [])
+                if flags and isinstance(flags[0], dict):
+                    mem_snippet = str(flags[0].get('snippet', '')).strip()
+                    
+            if comment:
+                steward = comment
+            elif mem_snippet:
+                steward = f"{mem_snippet} | {raw_summary}" if (raw_summary and raw_summary.lower() not in ['', 'nan', 'none']) else mem_snippet
+            elif raw_summary and raw_summary.lower() not in ['', 'nan', 'none']:
+                steward = raw_summary
+            else:
+                steward = "Clear Record"
+                
+            if row.get('has_overseas_form') == 1 and is_gear_matched:
+                steward = f"Overseas Form + Proven HK Winning Gear | {steward}"
+                
+            vet_notes.append(vet)
+            steward_notes.append(steward)
+            photo_hist.append(photo)
 
                 
         df_runners['vet_findings'] = vet_notes
@@ -2134,11 +2155,22 @@ with tab1:
                 </div>
                 '''), unsafe_allow_html=True)
 
+                raw_gear_map = {r.get('no'): str(r.get('horse_gear', '')).strip() for r in race.get('runners', []) if r.get('no') is not None}
+                def _fmt_display_gear(r_row):
+                    hg = raw_gear_map.get(r_row.get('no'), str(r_row.get('horse_gear', '')).strip())
+                    lg = str(r_row.get('last_gear', '')).strip()
+                    if hg and hg.upper() not in ['', '-', '--', 'NAN', 'NONE']:
+                        return hg
+                    if lg and lg.upper() not in ['', '-', '--', 'NAN', 'NONE']:
+                        return f"-- (prev: {lg})"
+                    return "--"
+
+                df_runners['display_gear'] = [_fmt_display_gear(r_row) for _, r_row in df_runners.iterrows()]
                 df_runners['name_link'] = [
                     f"{get_hkjc_profile_url(r_row)}#{urllib.parse.quote(str(r_row.get('name', '')) + ' ↗')}"
                     for _, r_row in df_runners.iterrows()
                 ]
-                df_display = df_runners[['no', 'name_link', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
+                df_display = df_runners[['no', 'name_link', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'display_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
                 if 'is_primary' in df_runners.columns:
                     df_display['is_primary'] = df_runners['is_primary']
                     df_display = df_display.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
@@ -2147,9 +2179,19 @@ with tab1:
                     df_display = df_display.sort_values(by='gs_score', ascending=False)
                 
                 # Fill NAs and ensure string type for object columns to avoid PyArrow serialization errors
-                df_display['last_win_rating'] = df_display['last_win_rating'].astype(str).replace('nan', '-')
-                df_display['ST_vs_HV_pref'] = df_display['ST_vs_HV_pref'].fillna('Neutral').astype(str)
-                df_display['last_form_going'] = df_display['last_form_going'].fillna('Unknown').astype(str)
+                def _fmt_lwr(val):
+                    if pd.isna(val) or str(val).strip().lower() in ['', 'nan', 'none', '-']:
+                        return '-'
+                    try:
+                        return str(int(float(val)))
+                    except Exception:
+                        return str(val)
+                df_display['last_win_rating'] = df_display['last_win_rating'].apply(_fmt_lwr)
+                df_display['ST_vs_HV_pref'] = df_display['ST_vs_HV_pref'].fillna('Neutral').astype(str).replace({'nan': 'Neutral', 'None': 'Neutral'})
+                df_display['last_form_going'] = df_display['last_form_going'].fillna('Unknown').astype(str).replace({'nan': 'Unknown', 'None': 'Unknown'})
+                df_display['photo_finish'] = df_display['photo_finish'].fillna('❌ No').astype(str).replace({'nan': '❌ No', 'None': '❌ No'})
+                df_display['vet_findings'] = df_display['vet_findings'].fillna('No Active Findings').astype(str).replace({'nan': 'No Active Findings', 'None': 'No Active Findings'})
+                df_display['steward_notes'] = df_display['steward_notes'].fillna('Clear Record').astype(str).replace({'nan': 'Clear Record', 'None': 'Clear Record'})
                 
                 st.dataframe(
                     df_display,
@@ -2167,7 +2209,7 @@ with tab1:
                         "recent_avg_pos": st.column_config.NumberColumn("Rec Pos", format="%.1f", width="small"),
                         "distance_win_rate": st.column_config.NumberColumn("Dist Win%", format="%.2f", width="small"),
                         "gear_win_rate": st.column_config.NumberColumn("Gear Win%", format="%.2f", width="small"),
-                        "last_gear": st.column_config.TextColumn("Gear", width="small"),
+                        "display_gear": st.column_config.TextColumn("Gear", width="small"),
                         "days_since_last_run": st.column_config.NumberColumn("Days Off", width="small"),
                         "gear_changed": st.column_config.NumberColumn("Gear Chg", width="small"),
                         "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),
