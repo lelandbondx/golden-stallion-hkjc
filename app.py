@@ -1864,6 +1864,7 @@ with tab1:
             for _, r_item in df_runners.iterrows():
                 r_no = r_item.get('no')
                 r_name = str(r_item.get('name', '')).strip().upper()
+                r_item_link = format_horse_link(r_item, '#')
                 r_comment = str(last_comments.get(r_name, '')).strip()
                 r_vet_status = pd.to_numeric(r_item.get('prev_run_vet_finding', 0), errors='coerce')
                 r_vet_notes = str(r_item.get('vet_findings', '')).strip()
@@ -1878,7 +1879,7 @@ with tab1:
                         'color': '#ef4444',
                         'bg': 'rgba(239, 68, 68, 0.10)',
                         'border': 'rgba(239, 68, 68, 0.4)',
-                        'text': f"<b>#{r_no} {r_name}</b>: {clean_snippet}"
+                        'text': f"<b>{r_item_link}</b>: {clean_snippet}"
                     })
                     
                 # 2. Specific Medical / Veterinary Recovery Tag
@@ -1913,7 +1914,7 @@ with tab1:
                         'color': '#f97316',
                         'bg': 'rgba(249, 115, 22, 0.10)',
                         'border': 'rgba(249, 115, 22, 0.4)',
-                        'text': f"<b>#{r_no} {r_name}</b>: [{specific_vet_tag}] {detail_note}"
+                        'text': f"<b>{r_item_link}</b>: [{specific_vet_tag}] {detail_note}"
                     })
                     
                 # 3. First-Up / Fresh Layoff
@@ -1923,7 +1924,7 @@ with tab1:
                         'color': '#3b82f6',
                         'bg': 'rgba(59, 130, 246, 0.10)',
                         'border': 'rgba(59, 130, 246, 0.4)',
-                        'text': f"<b>#{r_no} {r_name}</b>: Resuming after {int(r_days_off)} days off"
+                        'text': f"<b>{r_item_link}</b>: Resuming after {int(r_days_off)} days off"
                     })
                     
                 # 4. Barrier Trial Speed Outlier
@@ -1935,7 +1936,7 @@ with tab1:
                             'color': '#10b981',
                             'bg': 'rgba(16, 185, 129, 0.10)',
                             'border': 'rgba(16, 185, 129, 0.4)',
-                            'text': f"<b>#{r_no} {r_name}</b>: Blistering barrier trial speed (+{spd:.2f}s faster than course standard)"
+                            'text': f"<b>{r_item_link}</b>: Blistering barrier trial speed (+{spd:.2f}s faster than course standard)"
                         })
 
                 # 5. Tactical Incident & Trip Badges (From Stewards Memory)
@@ -1962,7 +1963,7 @@ with tab1:
                             'color': b_col,
                             'bg': b_bg,
                             'border': b_bord,
-                            'text': f"<b>#{r_no} {r_name}</b>: {b.get('text', '')}"
+                            'text': f"<b>{r_item_link}</b>: {b.get('text', '')}"
                         })
                 except Exception as e:
                     pass
@@ -1981,9 +1982,10 @@ with tab1:
             has_do_you_just = any(str(r.get('code', '')).upper() == 'L094' for r in race.get('runners', []))
             if has_do_you_just:
                 do_you_just_no = next((r.get('no') for r in race.get('runners', []) if str(r.get('code', '')).upper() == 'L094'), 12)
+                dyj_link = format_horse_link({'no': do_you_just_no, 'name': 'DO YOU JUST', 'code': 'L094'}, '#')
                 st.markdown(clean_html(f'''
                 <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); padding: 14px 20px; border-radius: 8px; border: 2px solid #38bdf8; margin-bottom: 15px; font-size:0.95rem; color:#f8fafc; font-family:'Inter', sans-serif; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
-                    🚨 <b style="color:#38bdf8;">EXOTIC SLEEPER ALERT (TACTICAL INSIDER PICK)</b>: <b style="color:#ffffff;">#{do_you_just_no} DO YOU JUST</b> (Code L094) has won his last 2 races. Form indicates high effectiveness when putting Cheek Pieces (CP) back on and removing the Hood. Crucial exotic addition for exotic ticket structures!
+                    🚨 <b style="color:#38bdf8;">EXOTIC SLEEPER ALERT (TACTICAL INSIDER PICK)</b>: <b style="color:#ffffff;">{dyj_link}</b> (Code L094) has won his last 2 races. Form indicates high effectiveness when putting Cheek Pieces (CP) back on and removing the Hood. Crucial exotic addition for exotic ticket structures!
                 </div>
                 '''), unsafe_allow_html=True)
             
@@ -2106,20 +2108,37 @@ with tab1:
                             Our quantitative models have identified a significant probabilistic upside on <b style="color:#ffffff;">{format_horse_link(bold_pick, '#')}</b> relative to the current market implied probability at <b style="color:#38bdf8;">{bold_pick['win_odds']:.0f}</b> odds. 
                             (Jockey: <i style="color:#cbd5e1;">{bold_pick['jockey']}</i> | Trainer: <i style="color:#cbd5e1;">{bold_pick['trainer']}</i>)
                         </div>
-                        <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Optimal Exacta/Quinella Pairing:</b> Couple the primary statistical leader <b>#{best['no']}</b> with the identified outlier <b>#{bold_pick['no']}</b> for maximal expected value.</div>
-                        <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Trifecta Structure:</b> Use <b>#{best['no']}</b> and <b>#{bold_pick['no']}</b> as dual bankers, combined with <b>#{second['no']}</b> and <b>#{third['no']}</b> for the remaining legs.</div>
-                        <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Cross-Race Leverage Target:</b> Deploy <b>#{bold_pick['no']}</b> strictly as a <u>Place (To Finish Top 3)</u> anchor in sequential combinations to compound probabilistic edge.</div>
+                        <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Optimal Exacta/Quinella Pairing:</b> Couple the primary statistical leader <b>{format_horse_link(best, '#')}</b> with the identified outlier <b>{format_horse_link(bold_pick, '#')}</b> for maximal expected value.</div>
+                        <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Trifecta Structure:</b> Use <b>{format_horse_link(best, '#')}</b> and <b>{format_horse_link(bold_pick, '#')}</b> as dual bankers, combined with <b>{format_horse_link(second, '#')}</b> and <b>{format_horse_link(third, '#')}</b> for the remaining legs.</div>
+                        <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Cross-Race Leverage Target:</b> Deploy <b>{format_horse_link(bold_pick, '#')}</b> strictly as a <u>Place (To Finish Top 3)</u> anchor in sequential combinations to compound probabilistic edge.</div>
                     </div>
                     '''), unsafe_allow_html=True)
 
             with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=False):
+                import urllib.parse
                 # Ensure missing columns exist
                 for col in ['last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'class_diff', 'rating_diff', 'days_since_last_run', 'gear_changed', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'photo_finish', 'vet_findings', 'steward_notes']:
                     if col not in df_runners.columns:
                         df_runners[col] = '-'
 
-                df_runners['hkjc_profile'] = [get_hkjc_profile_url(r_row) for _, r_row in df_runners.iterrows()]
-                df_display = df_runners[['no', 'name', 'hkjc_profile', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
+                # Render one-tap clickable pill directory for all horses in the race
+                df_by_no = df_runners.sort_values(by='no', ascending=True)
+                runner_pills_html = " ".join([
+                    f'<span class="ticket-pill" style="margin:3px 4px; padding:4px 10px; font-size:0.88rem;">{format_horse_link(r_row, "#")}</span>'
+                    for _, r_row in df_by_no.iterrows()
+                ])
+                st.markdown(clean_html(f'''
+                <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.96), rgba(20, 3, 6, 0.98)); padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.45); margin-bottom: 10px;">
+                    <div style="color:#38bdf8; font-family:'Montserrat'; font-weight:800; font-size:0.85rem; margin-bottom:6px; letter-spacing:0.5px;">🐎 DIRECT HKJC PROFILES — ALL RACE {race.get('race_no')} RUNNERS (TAP ANY HORSE):</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:4px;">{runner_pills_html}</div>
+                </div>
+                '''), unsafe_allow_html=True)
+
+                df_runners['name_link'] = [
+                    f"{get_hkjc_profile_url(r_row)}#{urllib.parse.quote(str(r_row.get('name', '')) + ' ↗')}"
+                    for _, r_row in df_runners.iterrows()
+                ]
+                df_display = df_runners[['no', 'name_link', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
                 if 'is_primary' in df_runners.columns:
                     df_display['is_primary'] = df_runners['is_primary']
                     df_display = df_display.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
@@ -2136,8 +2155,7 @@ with tab1:
                     df_display,
                     column_config={
                         "no": st.column_config.NumberColumn("No.", width="small"),
-                        "name": st.column_config.TextColumn("Horse Name", width="medium"),
-                        "hkjc_profile": st.column_config.LinkColumn("HKJC Profile", display_text="Official Profile ↗", width="small"),
+                        "name_link": st.column_config.LinkColumn("Horse Name", display_text=r"#(.+)$", width="medium"),
                         "jockey": st.column_config.TextColumn("Jockey", width="small"),
                         "trainer": st.column_config.TextColumn("Trainer", width="medium"),
                         "draw": st.column_config.NumberColumn("Draw", width="small"),
