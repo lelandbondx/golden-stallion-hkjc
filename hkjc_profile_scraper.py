@@ -303,6 +303,95 @@ def get_horse_profile_stats(horse_code):
         print(f"Error scraping {horse_code}: {e}")
         return None
 
+def ensure_meeting_profiles_synced(meeting):
+    """
+    Checks if all runners in the active meeting exist in data/latest_horse_stats.csv
+    with populated horse_code and last_run_summary. If any are missing, automatically
+    scrapes their official HKJC profiles in parallel and updates latest_horse_stats.csv
+    and precomputed_features.json so no column in EXPAND FULL RACE DATA is ever blank.
+    """
+    if not meeting or not meeting.get('races'):
+        return 0
+    horses_in_meeting = {}
+    for race in meeting.get('races', []):
+        for runner in race.get('runners', []):
+            code = str(runner.get('code', '') or '').strip().upper()
+            name = str(runner.get('name', '') or '').strip().upper()
+            if code and name:
+                horses_in_meeting[name] = code
+    if not horses_in_meeting:
+        return 0
+
+    try:
+        if os.path.exists('data/latest_horse_stats.csv'):
+            stats_df = pd.read_csv('data/latest_horse_stats.csv')
+        else:
+            stats_df = pd.DataFrame(columns=['clean_name', 'horse_code', 'last_run_summary'])
+    except Exception:
+        stats_df = pd.DataFrame(columns=['clean_name', 'horse_code', 'last_run_summary'])
+
+    existing_complete = set()
+    if not stats_df.empty and 'clean_name' in stats_df.columns:
+        for _, row in stats_df.iterrows():
+            c_name = str(row.get('clean_name', '') or '').strip().upper()
+            h_code = str(row.get('horse_code', '') or '').strip()
+            l_sum = str(row.get('last_run_summary', '') or '').strip()
+            if c_name and h_code not in ['', 'nan', 'None'] and l_sum not in ['', 'nan', 'None']:
+                existing_complete.add(c_name)
+
+    missing_horses = {
+        code: name for name, code in horses_in_meeting.items()
+        if name not in existing_complete
+    }
+    if not missing_horses:
+        return 0
+
+    print(f"[Auto-Sync] Syncing {len(missing_horses)} missing/incomplete HKJC horse profiles for live card...")
+    new_rows = []
+    import concurrent.futures
+
+    def _fetch_missing(code, name):
+        stats = get_horse_profile_stats(code)
+        if stats:
+            stats['clean_name'] = name
+            return stats
+        return None
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        futures = [executor.submit(_fetch_missing, c, n) for c, n in missing_horses.items()]
+        for future in concurrent.futures.as_completed(futures):
+            res = future.result()
+            if res:
+                new_rows.append(res)
+
+    if new_rows:
+        new_df = pd.DataFrame(new_rows)
+        combined = pd.concat([stats_df, new_df], ignore_index=True)
+        combined['clean_name'] = combined['clean_name'].astype(str).str.strip().str.upper()
+        combined = combined.drop_duplicates(subset=['clean_name'], keep='last')
+        combined.to_csv('data/latest_horse_stats.csv', index=False)
+
+        try:
+            precomputed_file = 'data/precomputed_features.json'
+            precomputed_data = {"winning_gears": {}, "running_styles": {}, "last_comments": {}, "sectional_bursts": {}}
+            if os.path.exists(precomputed_file):
+                with open(precomputed_file, 'r', encoding='utf-8') as pf:
+                    precomputed_data = json.load(pf)
+            for r in new_rows:
+                c_name = str(r.get('clean_name', '')).strip().upper()
+                if not c_name:
+                    continue
+                if 'avg_first_pos' in r and pd.notnull(r['avg_first_pos']):
+                    precomputed_data.setdefault('running_styles', {})[c_name] = float(r['avg_first_pos'])
+                if 'winning_gears' in r and r['winning_gears']:
+                    precomputed_data.setdefault('winning_gears', {})[c_name] = r['winning_gears']
+            with open(precomputed_file, 'w', encoding='utf-8') as pf:
+                json.dump(precomputed_data, pf, indent=4)
+        except Exception as sync_e:
+            print(f"[Auto-Sync] Warning syncing precomputed_features.json: {sync_e}")
+    return len(new_rows)
+
+
 def update_latest_stats():
     from scraper import get_live_meeting_data
     data = get_live_meeting_data()

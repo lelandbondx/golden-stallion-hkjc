@@ -57,6 +57,13 @@ def run():
     meeting = data['meetings'][0]
     venue_name = meeting.get('venue', 'Happy Valley')
     print(f"Meeting: {venue_name} - {meeting.get('date')} - Going: {meeting.get('going')}")
+
+    # Ensure all active card runners have synced HKJC profiles before predicting/freezing
+    try:
+        from hkjc_profile_scraper import ensure_meeting_profiles_synced
+        ensure_meeting_profiles_synced(meeting)
+    except Exception as e:
+        print("Warning in ensure_meeting_profiles_synced:", e)
     
     # Cache live odds for this meeting (if any are scraped/positive)
     try:

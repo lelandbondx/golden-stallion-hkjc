@@ -628,6 +628,22 @@ selected_index = meeting_options.index(selected_meeting_str)
 meeting = meetings[selected_index]
 races = meeting.get('races', [])
 
+# Proactively ensure all runners on the selected meeting card have complete HKJC profiles synced
+try:
+    from hkjc_profile_scraper import ensure_meeting_profiles_synced
+    synced_count = ensure_meeting_profiles_synced(meeting)
+    if synced_count > 0:
+        fetch_horse_stats.clear()
+        load_precomputed_data.clear()
+        horse_stats_df = fetch_horse_stats()
+        precomputed = load_precomputed_data()
+        last_comments = precomputed.get('last_comments', {})
+        winning_gears = {k: set(v) for k, v in precomputed.get('winning_gears', {}).items()}
+        running_styles = precomputed.get('running_styles', {})
+        sectional_bursts = precomputed.get('sectional_bursts', {})
+except Exception as e:
+    print("Warning in ensure_meeting_profiles_synced:", e)
+
 # Cache live odds for this meeting (if any are scraped/positive)
 try:
     odds_tracker.cache_live_odds(meeting.get('date'), meeting.get('venue'), races)
