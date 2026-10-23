@@ -434,6 +434,67 @@ st.markdown("""
         border-bottom-color: #38bdf8 !important; 
         text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
     }
+
+    /* Official HKJC Horse Profile Direct Links */
+    .horse-profile-link,
+    .horse-profile-link:link,
+    .horse-profile-link:visited {
+        color: #ffffff !important;
+        text-decoration: none !important;
+        transition: color 0.15s ease, text-shadow 0.15s ease;
+        cursor: pointer;
+    }
+    .horse-profile-link:hover,
+    .horse-profile-link:active {
+        color: #38bdf8 !important;
+        text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
+        text-decoration: none !important;
+    }
+    .hkjc-link-arrow {
+        font-size: 0.78em;
+        color: #38bdf8 !important;
+        font-weight: 800;
+        margin-left: 3px;
+        display: inline-block;
+        transition: transform 0.15s ease;
+    }
+    .horse-profile-link:hover .hkjc-link-arrow {
+        transform: translate(2px, -2px);
+    }
+
+    /* Distinct Non-Distracting Pick Card Accents & Quick-Glance Ticket Pills */
+    .pick-card-1 {
+        border-left: 5px solid #38bdf8 !important;
+        border-top: 2px solid rgba(56, 189, 248, 0.85) !important;
+        box-shadow: -4px 0 16px rgba(56, 189, 248, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    }
+    .pick-card-2 {
+        border-left: 5px solid #0ea5e9 !important;
+        box-shadow: -4px 0 14px rgba(14, 165, 233, 0.35), 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+    }
+    .pick-card-3 {
+        border-left: 5px solid #0284c7 !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+    }
+    .pick-card-4 {
+        border-left: 5px solid #0369a1 !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+    }
+    .pick-card-5 {
+        border-left: 5px solid #7dd3fc !important;
+        border-top: 1.5px dashed rgba(125, 211, 252, 0.6) !important;
+        box-shadow: -4px 0 14px rgba(125, 211, 252, 0.3), 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+    }
+    .ticket-pill {
+        background: rgba(56, 189, 248, 0.14);
+        border: 1px solid rgba(56, 189, 248, 0.5);
+        color: #ffffff !important;
+        padding: 2px 9px;
+        border-radius: 6px;
+        font-weight: 800;
+        display: inline-block;
+        margin: 2px 0;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -590,6 +651,46 @@ def get_match_badge(runner, search_term):
     if search_term in jockey_str or search_term in trainer_str:
         return '<span style="background:#22c55e; color:#ffffff; padding:2px 6px; border-radius:4px; font-size:0.75rem; font-weight:bold; float:right;">🔍 MATCH</span>'
     return ""
+
+# Build fast horse code lookup from horse_stats_df for official HKJC profile links
+horse_code_lookup = {}
+if not horse_stats_df.empty and 'clean_name' in horse_stats_df.columns and 'horse_code' in horse_stats_df.columns:
+    for _, h_row in horse_stats_df.iterrows():
+        c_name = str(h_row.get('clean_name', '')).strip().upper()
+        h_code = str(h_row.get('horse_code', '')).strip().upper()
+        if c_name and h_code and h_code not in ['', 'NAN', 'NONE', '-']:
+            horse_code_lookup[c_name] = h_code
+
+def get_hkjc_profile_url(runner):
+    import urllib.parse
+    code = runner.get('code') if hasattr(runner, 'get') else None
+    if not code or pd.isna(code) or str(code).strip() in ['', 'nan', 'None', '-']:
+        code = runner.get('horse_code') if hasattr(runner, 'get') else None
+    if not code or pd.isna(code) or str(code).strip() in ['', 'nan', 'None', '-']:
+        r_name = (runner.get('clean_name') or runner.get('name') or '') if hasattr(runner, 'get') else ''
+        code = horse_code_lookup.get(str(r_name).strip().upper())
+    if code and not pd.isna(code) and str(code).strip() not in ['', 'nan', 'None', '-']:
+        clean_code = str(code).strip().upper()
+        if clean_code.startswith('HK_'):
+            return f"https://racing.hkjc.com/racing/information/English/Horse/Horse.aspx?HorseId={clean_code}"
+        return f"https://racing.hkjc.com/racing/information/English/Horse/Horse.aspx?HorseNo={clean_code}"
+    name = str(runner.get('name', '') if hasattr(runner, 'get') else '').strip()
+    if name:
+        return f"https://racing.hkjc.com/racing/information/English/Horse/SelectHorse.aspx?HorseName={urllib.parse.quote(name)}"
+    return "https://racing.hkjc.com/racing/information/English/Horse/SelectHorse.aspx"
+
+def format_horse_link(runner, prefix="", show_arrow=True):
+    url = get_hkjc_profile_url(runner)
+    name = runner.get('name', 'Unknown') if hasattr(runner, 'get') else str(runner)
+    no_val = runner.get('no', '') if hasattr(runner, 'get') else ''
+    if prefix == "#":
+        prefix_str = f"#{no_val} "
+    elif prefix == ".":
+        prefix_str = f"{no_val}. "
+    else:
+        prefix_str = prefix
+    arrow_html = '<span class="hkjc-link-arrow">↗</span>' if show_arrow else ''
+    return f'<a href="{url}" target="_blank" rel="noopener noreferrer" class="horse-profile-link" title="View Official HKJC Horse Profile">{prefix_str}{name}{arrow_html}</a>'
 
 search_term = st.text_input("🔍 Highlight Jockey or Trainer (e.g., PURTON, FOWNES)", "").strip().upper()
 
@@ -1450,6 +1551,7 @@ with tab1:
                         "race_no": r.get("race_no"),
                         "no": row['no'],
                         "name": row['name'],
+                        "link": format_horse_link(row, prefix="#"),
                         "jockey": row['jockey'],
                         "base": base_odds,
                         "curr": curr_odds,
@@ -1477,10 +1579,12 @@ with tab1:
                 "race_no": r.get("race_no"),
                 "p1_no": p1_sel['no'],
                 "p1_name": p1_sel['name'],
+                "p1_link": format_horse_link(p1_sel, prefix="#"),
                 "p1_odds": float(p1_sel.get('win_odds', 20.0)),
                 "p1_status": p1_sel.get('primary_reason', ''),
                 "p5_no": p5_sel['no'],
                 "p5_name": p5_sel['name'],
+                "p5_link": format_horse_link(p5_sel, prefix="#"),
                 "p5_odds": float(p5_sel.get('win_odds', 20.0)),
                 "p5_ev": float(p5_sel.get('value_diff', 0.0))
             })
@@ -1490,10 +1594,10 @@ with tab1:
             col_bb1, col_bb2 = st.columns(2)
             with col_bb1:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel border-accent-gold" style="background: linear-gradient(145deg, rgba(42, 6, 13, 0.96), rgba(24, 3, 7, 0.98)); min-height: 160px; {check_highlight(top_pick_today, search_term)}">
+                <div class="tech-panel pick-card-1" style="background: linear-gradient(145deg, rgba(42, 6, 13, 0.96), rgba(24, 3, 7, 0.98)); min-height: 160px; {check_highlight(top_pick_today, search_term)}">
                     {get_match_badge(top_pick_today, search_term)}
                     <div class="data-label" style="color:#38bdf8; font-size:0.90rem; font-weight:800;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
-                    <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_pick_today['race_no']} – #{top_pick_today['no']} {top_pick_today['name']}</div>
+                    <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_pick_today['race_no']} – {format_horse_link(top_pick_today, '#')}</div>
                     <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{top_pick_today['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{top_pick_today['confidence']}%</b></div>
                 </div>
                 '''), unsafe_allow_html=True)
@@ -1501,14 +1605,14 @@ with tab1:
                 top_gs_pick = global_best_bets_sorted_by_gs[0] if global_best_bets_sorted_by_gs else None
                 if top_gs_pick:
                     st.markdown(clean_html(f'''
-                    <div class="tech-panel border-accent-blue" style="background: linear-gradient(145deg, rgba(42, 6, 13, 0.96), rgba(24, 3, 7, 0.98)); min-height: 160px; {check_highlight(top_gs_pick, search_term)}">
+                    <div class="tech-panel pick-card-1" style="background: linear-gradient(145deg, rgba(42, 6, 13, 0.96), rgba(24, 3, 7, 0.98)); min-height: 160px; {check_highlight(top_gs_pick, search_term)}">
                         {get_match_badge(top_gs_pick, search_term)}
                         <div class="data-label" style="color:#38bdf8; font-size:0.90rem; font-weight:800;">💎 AI STRONGEST CONFIDENCE (BEST BET)</div>
-                        <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_gs_pick['race_no']} – #{top_gs_pick['no']} {top_gs_pick['name']}</div>
+                        <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_gs_pick['race_no']} – {format_horse_link(top_gs_pick, '#')}</div>
                         <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{top_gs_pick['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{top_gs_pick['confidence']}%</b></div>
                     </div>
                     '''), unsafe_allow_html=True)
-            parlay_str = " + ".join([f"R{bb.get('race_no')} #{bb.get('no')} {bb.get('name')}" for bb in parlay_sorted[:3]])
+            parlay_str = " + ".join([f"R{bb.get('race_no')} " + format_horse_link(bb, "#") for bb in parlay_sorted[:3]])
             st.markdown(f"<div style='margin-top:12px; font-family:\"Inter\"; font-size:1.15rem; color:#f1f5f9;'><b>Optimized Multi-Leg Sequence (Excl. Class 5):</b> <span style='color:#38bdf8; font-weight:800;'>{parlay_str}</span></div>", unsafe_allow_html=True)
             if len(parlay_sorted) >= 2:
                 b1 = parlay_sorted[0]
@@ -1524,20 +1628,22 @@ with tab1:
                     p2_gs = float(runner.get('p2_gs', 0.0))
                     p1_gs = float(runner.get('gs_score', 0.0))
                     combined_gs = p1_gs + p2_gs
+                    r_link = format_horse_link(runner, "#")
 
                     if win_active and ev >= 0.035:
                         return {
                             "pool": "WIN (獨贏)",
                             "badge_bg": "#15803d",
-                            "pick": f"#{runner['no']} {runner['name']}",
+                            "pick": r_link,
                             "odds_label": f"{odds:.1f}",
                             "rationale": f"High Expected Value (+{ev:.3f} EV) & dominant win conversion"
                         }
                     elif p2_no and combined_gs >= 36.0:
+                        p2_link = format_horse_link({'no': p2_no, 'name': p2_name}, "#")
                         return {
                             "pool": "QUINELLA (連贏 Q)",
                             "badge_bg": "#b45309",
-                            "pick": f"#{runner['no']} + #{p2_no} {p2_name}",
+                            "pick": f"{r_link} + {p2_link}",
                             "odds_label": f"Q Box ({odds:.1f} / {runner.get('p2_odds', 0):.1f})",
                             "rationale": f"1-2 Lock: Combined GS Score {combined_gs:.1f} across top two runners"
                         }
@@ -1546,7 +1652,7 @@ with tab1:
                         return {
                             "pool": "PLACE (位置)",
                             "badge_bg": "#0284c7",
-                            "pick": f"#{runner['no']} {runner['name']}",
+                            "pick": r_link,
                             "odds_label": f"Est. ~{est_place:.1f}",
                             "rationale": f"Top GS Score ({p1_gs:.1f}) podium anchor (>80% top-3 safety buffer)"
                         }
@@ -1593,8 +1699,8 @@ with tab1:
                     dual_html += clean_html(f'''
                     <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); padding: 12px 18px; border-radius: 8px; border: 1.5px solid rgba(56, 189, 248, 0.45); font-size:0.95rem; color:#f8fafc; line-height:1.5; min-width: 250px; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
                         <b style="color:#38bdf8;">Race {bet['race_no']} Bet Selection:</b><br>
-                        🎯 Anchor (Rank 1): <span style="color:#ffffff; font-weight:800;">#{bet['p1_no']} {bet['p1_name']}</span> (<span style="color:#38bdf8; font-weight:700;">{bet['p1_odds']:.1f}</span>)<br>
-                        💣 Sleeper (Rank 5): <span style="color:#38bdf8; font-weight:800;">#{bet['p5_no']} {bet['p5_name']}</span> (<span style="color:#38bdf8; font-weight:700;">{bet['p5_odds']:.1f}</span>)
+                        🎯 Anchor (Rank 1): <span style="color:#ffffff; font-weight:800;">{bet['p1_link']}</span> (<span style="color:#38bdf8; font-weight:700;">{bet['p1_odds']:.1f}</span>)<br>
+                        💣 Sleeper (Rank 5): <span style="color:#38bdf8; font-weight:800;">{bet['p5_link']}</span> (<span style="color:#38bdf8; font-weight:700;">{bet['p5_odds']:.1f}</span>)
                     </div>
                     ''')
                 dual_html += '</div>'
@@ -1609,7 +1715,7 @@ with tab1:
                     pct_str = f"{alert['pct'] * 100:.0f}%"
                     steam_html += clean_html(f'''
                     <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); padding: 12px 18px; border-radius: 8px; border: 1.5px solid rgba(56, 189, 248, 0.5); font-size:0.95rem; color:#f8fafc; line-height:1.5; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
-                        <b style="color:#ffffff;">R{alert['race_no']} #{alert['no']} {alert['name']}</b><br>
+                        <b style="color:#ffffff;">R{alert['race_no']} {alert['link']}</b><br>
                         <span style="color:#38bdf8; font-weight:800;">Steam: {pct_str}</span> (<span style="color:#cbd5e1;">{alert['base']:.1f} → <b style="color:#38bdf8;">{alert['curr']:.1f}</b></span>) | <i style="color:#94a3b8;">{alert['jockey']}</i>
                     </div>
                     ''')
@@ -1905,17 +2011,17 @@ with tab1:
                 stake_badge = '<span style="background:#10b981; color:#ffffff; padding:4px 10px; border-radius:6px; font-weight:700; font-size:0.85rem; letter-spacing:0.5px;">🟢 WIN STAKE ACTIVE (Half Unit Win + Place)</span>'
             elif not other_win_active.empty:
                 shifted_h = other_win_active.iloc[0]
-                stake_badge = f'<span style="background:#334155; color:#cbd5e1; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.85rem;">⚪ Pick 1 Key Only</span> &nbsp; <span style="background:#10b981; color:#ffffff; padding:4px 10px; border-radius:6px; font-weight:700; font-size:0.85rem;">⚡ Shifted Win Stake: #{shifted_h["no"]} {shifted_h["name"]} ({shifted_h["win_odds"]:.1f})</span>'
+                stake_badge = f'<span style="background:#334155; color:#cbd5e1; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.82rem;">⚪ Pick 1 Key Only</span> &nbsp; <span style="background:#10b981; color:#ffffff; padding:4px 10px; border-radius:6px; font-weight:700; font-size:0.85rem;">⚡ Shifted Win Stake: {format_horse_link(shifted_h, "#")} ({shifted_h["win_odds"]:.1f})</span>'
             else:
-                stake_badge = '<span style="background:#334155; color:#cbd5e1; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.85rem;">⚪ Winning-horse pick / exotic key only — no win stake</span>'
+                stake_badge = '<span style="background:#334155; color:#cbd5e1; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.82rem;">⚪ EXOTIC KEY ONLY</span>'
 
             st.markdown(clean_html(f'''
-            <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.96), rgba(20, 3, 6, 0.98)); padding: 14px 20px; border-radius: 8px; border: 1.5px solid rgba(56, 189, 248, 0.55); margin-bottom: 12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
-                <div style="color:#f8fafc;">
+            <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.96), rgba(20, 3, 6, 0.98)); padding: 14px 20px; border-radius: 10px; border: 1.5px solid rgba(56, 189, 248, 0.55); margin-bottom: 12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
+                <div style="color:#f8fafc; line-height:1.8;">
                     <b style="font-size:1.05rem; color:#38bdf8;">Official Window Tickets:</b> &nbsp;
-                    <span style="color:#cbd5e1; font-weight:700;">🎯 Quinella Box:</span> <b style="color:#ffffff;">#{best['no']}, #{second['no']}, #{third['no']}</b> &nbsp;|&nbsp; 
-                    <span style="color:#cbd5e1; font-weight:700;">💠 Trio Box:</span> <b style="color:#ffffff;">#{best['no']}, #{second['no']}, #{third['no']}, #{fourth['no']}</b> &nbsp;|&nbsp; 
-                    <span style="color:#cbd5e1; font-weight:700;">💣 Dual-Stake:</span> <b style="color:#ffffff;">Anchor #{best['no']} + Sleeper #{fifth['no']}</b>
+                    <span style="color:#cbd5e1; font-weight:700;">🎯 Quinella Box:</span> <span class="ticket-pill">#{best['no']}, #{second['no']}, #{third['no']}</span> &nbsp;
+                    <span style="color:#cbd5e1; font-weight:700;">💠 Trio Box:</span> <span class="ticket-pill">#{best['no']}, #{second['no']}, #{third['no']}, #{fourth['no']}</span> &nbsp;
+                    <span style="color:#cbd5e1; font-weight:700;">💣 Dual-Stake:</span> <span class="ticket-pill">Anchor #{best['no']} + Sleeper #{fifth['no']}</span>
                 </div>
                 <div>{stake_badge}</div>
             </div>
@@ -1924,10 +2030,10 @@ with tab1:
             pc1, pc2, pc3, pc4, pc5 = st.columns(5)
             with pc1:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel border-accent-gold" style="{check_highlight(best, search_term)}">
+                <div class="tech-panel pick-card-1" style="{check_highlight(best, search_term)}">
                     {get_match_badge(best, search_term)}
                     <div class="data-label" style="color:#38bdf8; font-size:0.85rem; font-weight:800;">🏆 PICK 1 — WINNING HORSE</div>
-                    <div class="data-value" style="font-size:1.35rem; color:#ffffff; font-weight:800;">{best['no']}. {best['name']}</div>
+                    <div class="data-value" style="font-size:1.35rem; color:#ffffff; font-weight:800;">{format_horse_link(best, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{best['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{best['trainer']}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{best['win_odds']:.1f}</span>{get_shift_badge(best)}
@@ -1937,10 +2043,10 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc2:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel border-accent-blue" style="{check_highlight(second, search_term)}">
+                <div class="tech-panel pick-card-2" style="{check_highlight(second, search_term)}">
                     {get_match_badge(second, search_term)}
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">🎯 PICK 2 — EXACTA/QUINELLA</div>
-                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{second['no']}. {second['name']}</div>
+                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(second, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{second['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{second['trainer']}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{second['win_odds']:.1f}</span>{get_shift_badge(second)}
@@ -1950,10 +2056,10 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc3:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel" style="border-left: 5px solid #0284c7; {check_highlight(third, search_term)}">
+                <div class="tech-panel pick-card-3" style="{check_highlight(third, search_term)}">
                     {get_match_badge(third, search_term)}
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">💠 PICK 3 — TRIO PODIUM</div>
-                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{third['no']}. {third['name']}</div>
+                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(third, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{third['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{third['trainer']}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{third['win_odds']:.1f}</span>{get_shift_badge(third)}
@@ -1963,10 +2069,10 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc4:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel" style="border-left: 5px solid #0369a1; {check_highlight(fourth, search_term)}">
+                <div class="tech-panel pick-card-4" style="{check_highlight(fourth, search_term)}">
                     {get_match_badge(fourth, search_term)}
                     <div class="data-label" style="font-size:0.85rem; color:#cbd5e1; font-weight:800;">📊 PICK 4 — 4TH TRIO BOX</div>
-                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{fourth['no']}. {fourth['name']}</div>
+                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(fourth, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{fourth['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{fourth['trainer']}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{fourth['win_odds']:.1f}</span>{get_shift_badge(fourth)}
@@ -1976,10 +2082,10 @@ with tab1:
                 '''), unsafe_allow_html=True)
             with pc5:
                 st.markdown(clean_html(f'''
-                <div class="tech-panel border-accent-gold" style="border-left: 5px solid #38bdf8; {check_highlight(fifth, search_term)}">
+                <div class="tech-panel pick-card-5" style="{check_highlight(fifth, search_term)}">
                     {get_match_badge(fifth, search_term)}
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">💣 PICK 5 — DUAL-STAKE SLEEPER</div>
-                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{fifth['no']}. {fifth['name']}</div>
+                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(fifth, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{fifth['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{fifth['trainer']}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{fifth['win_odds']:.1f}</span>{get_shift_badge(fifth)}
@@ -1995,9 +2101,9 @@ with tab1:
                 with st.expander(f"🔥 HIGH-CONVEXITY OPPORTUNITIES & EXOTIC STRUCTURES", expanded=False):
                     st.markdown(clean_html(f'''
                     <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.96), rgba(20, 3, 6, 0.98)); padding: 20px; border-radius: 8px; border: 1.5px dashed rgba(56, 189, 248, 0.6); margin-bottom: 5px; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
-                        <div style="color:#38bdf8; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: #{bold_pick['no']} {bold_pick['name']}</div>
+                        <div style="color:#38bdf8; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: {format_horse_link(bold_pick, '#')}</div>
                         <div style="color:#f8fafc; font-size:1rem; margin-bottom: 15px; line-height:1.5;">
-                            Our quantitative models have identified a significant probabilistic upside on <b style="color:#ffffff;">#{bold_pick['no']} {bold_pick['name']}</b> relative to the current market implied probability at <b style="color:#38bdf8;">{bold_pick['win_odds']:.0f}</b> odds. 
+                            Our quantitative models have identified a significant probabilistic upside on <b style="color:#ffffff;">{format_horse_link(bold_pick, '#')}</b> relative to the current market implied probability at <b style="color:#38bdf8;">{bold_pick['win_odds']:.0f}</b> odds. 
                             (Jockey: <i style="color:#cbd5e1;">{bold_pick['jockey']}</i> | Trainer: <i style="color:#cbd5e1;">{bold_pick['trainer']}</i>)
                         </div>
                         <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Optimal Exacta/Quinella Pairing:</b> Couple the primary statistical leader <b>#{best['no']}</b> with the identified outlier <b>#{bold_pick['no']}</b> for maximal expected value.</div>
@@ -2012,7 +2118,8 @@ with tab1:
                     if col not in df_runners.columns:
                         df_runners[col] = '-'
 
-                df_display = df_runners[['no', 'name', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
+                df_runners['hkjc_profile'] = [get_hkjc_profile_url(r_row) for _, r_row in df_runners.iterrows()]
+                df_display = df_runners[['no', 'name', 'hkjc_profile', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
                 if 'is_primary' in df_runners.columns:
                     df_display['is_primary'] = df_runners['is_primary']
                     df_display = df_display.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
@@ -2030,6 +2137,7 @@ with tab1:
                     column_config={
                         "no": st.column_config.NumberColumn("No.", width="small"),
                         "name": st.column_config.TextColumn("Horse Name", width="medium"),
+                        "hkjc_profile": st.column_config.LinkColumn("HKJC Profile", display_text="Official Profile ↗", width="small"),
                         "jockey": st.column_config.TextColumn("Jockey", width="small"),
                         "trainer": st.column_config.TextColumn("Trainer", width="medium"),
                         "draw": st.column_config.NumberColumn("Draw", width="small"),
