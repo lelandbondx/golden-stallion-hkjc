@@ -1128,8 +1128,9 @@ with tab1:
         st_closer_boost = np.where(is_st_turf & (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.8) & (distance >= 1200), 0.01, 0.0)
 
         # Rating Dominance in Open/Group or Top Class races (Rating >= 15 pts above field median) (Calibrated to 5% boost)
-        median_rtg = pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40).median()
-        rating_dom_boost = np.where((pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40) - median_rtg >= 15) & (recent_pos <= 4.0) & (vet_issue == 0), 0.05, 0.0)
+        horse_ratings = get_series(df_runners, 'rtg', 40) if 'rtg' in df_runners.columns else get_series(df_runners, 'horse_rating', 40)
+        median_rtg = horse_ratings.median()
+        rating_dom_boost = np.where((horse_ratings - median_rtg >= 15) & (recent_pos <= 4.0) & (vet_issue == 0), 0.05, 0.0)
 
         # Non-First Start for New Trainer with Good Rating (1.5% Boost)
         good_rating_thresh = 38 if class_int == 5 else 50
