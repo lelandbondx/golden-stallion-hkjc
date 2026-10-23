@@ -93,12 +93,12 @@ def get_hero_banner_b64():
 def render_hero_banner():
     b64 = get_hero_banner_b64()
     if b64:
-        st.markdown(f'''
+        st.markdown(clean_html(f'''
         <div class="banner-outer-hero">
             <img src="data:image/jpeg;base64,{b64}" alt="SILKS.AI Banner" class="banner-hero-img" />
         </div>
         <div class="hero-chinese-subtitle">香港賽馬會智能預測終端</div>
-        ''', unsafe_allow_html=True)
+        '''), unsafe_allow_html=True)
     else:
         col_l, col_center, col_r = st.columns([0.5, 11, 0.5])
         with col_center:
