@@ -272,6 +272,13 @@ def get_horse_profile_stats(horse_code):
         winning_gears = sorted(list(set(wins['Gear'].astype(str).str.strip().str.upper().tolist()))) if not wins.empty else []
         winning_gears = [g for g in winning_gears if g and g not in ['-', '--', 'NAN']]
 
+        # Latest / winning body weight
+        latest_body_weight = None
+        if not race_df.empty and 'Declar. Horse Wt.' in race_df.columns:
+            bw_series = pd.to_numeric(race_df['Declar. Horse Wt.'], errors='coerce').dropna()
+            if not bw_series.empty:
+                latest_body_weight = float(bw_series.iloc[0])
+
         return {
             "horse_code": horse_code,
             "last_win_rating": last_win_rating,
@@ -294,6 +301,7 @@ def get_horse_profile_stats(horse_code):
             "prev_run_vet_finding": prev_run_vet_finding,
             "has_overseas_form": has_overseas_form,
             "winning_gears": winning_gears,
+            "latest_body_weight": latest_body_weight,
             "latest_vet_note": latest_vet_note,
             "photo_finish_hist": photo_finish_hist,
             "last_run_summary": last_run_summary

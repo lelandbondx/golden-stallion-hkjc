@@ -1,6 +1,10 @@
 import requests
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+_orig_get = requests.get
+_orig_post = requests.post
+requests.get = lambda *args, **kwargs: _orig_get(*args, **{**kwargs, 'verify': False})
+requests.post = lambda *args, **kwargs: _orig_post(*args, **{**kwargs, 'verify': False})
 
 import json
 from datetime import datetime
@@ -233,6 +237,80 @@ query racing($date: String, $venueCode: String, $oddsTypes: [OddsType], $raceNo:
 }
 """.strip()
 
+
+def _refresh_cached_meetings_with_live_odds(cached_data, url, headers):
+    """
+    Updates cached meeting runners with live WIN odds and removes scratched ('SCR')
+    horses using the whitelisted ODDS_GRAPHQL_QUERY endpoint.
+    """
+    if not cached_data or not cached_data.get("meetings"):
+        return cached_data
+    updated_any = False
+    for m in cached_data.get("meetings", []):
+        venue_str = m.get("venue", "")
+        venue_code = "ST" if venue_str == "Sha Tin" else ("HV" if venue_str == "Happy Valley" else venue_str)
+        date_str = m.get("date")
+        if not date_str or venue_code not in ["ST", "HV"]:
+            continue
+        odds_variables = {
+            "date": date_str,
+            "venueCode": venue_code,
+            "oddsTypes": ["WIN"]
+        }
+        odds_lookup = {}
+        scratched_set = set()
+        try:
+            odds_res = requests.post(url, json={"query": ODDS_GRAPHQL_QUERY, "variables": odds_variables}, headers=headers, timeout=4.0)
+            if odds_res.status_code == 200:
+                odds_data = odds_res.json()
+                if "errors" not in odds_data and "data" in odds_data:
+                    rm_list = odds_data["data"].get("raceMeetings") or []
+                    pools = rm_list[0].get("pmPools", []) if rm_list else []
+                    for p in pools:
+                        if p.get("oddsType") == "WIN":
+                            leg_races = p.get("leg", {}).get("races")
+                            if leg_races:
+                                race_no = int(leg_races[0])
+                                for node in p.get("oddsNodes", []):
+                                    comb = node.get("combString")
+                                    val_str = str(node.get("oddsValue") or "").strip()
+                                    if comb and val_str:
+                                        try:
+                                            runner_no = int(comb)
+                                            if val_str.upper() == "SCR":
+                                                scratched_set.add((race_no, runner_no))
+                                            else:
+                                                odds_lookup[(race_no, runner_no)] = float(val_str)
+                                        except ValueError:
+                                            pass
+        except Exception as e:
+            print("Failed to refresh live odds on cached meeting:", e)
+
+        if odds_lookup or scratched_set:
+            updated_any = True
+            for r in m.get("races", []):
+                r_no = int(r.get("race_no") or 0)
+                active_runners = []
+                for runner in r.get("runners", []):
+                    runner_no = int(runner.get("no") or 0)
+                    if (r_no, runner_no) in scratched_set:
+                        continue
+                    if (r_no, runner_no) in odds_lookup:
+                        runner["win_odds"] = odds_lookup[(r_no, runner_no)]
+                    active_runners.append(runner)
+                r["runners"] = active_runners
+
+    if updated_any:
+        try:
+            import os
+            os.makedirs('data', exist_ok=True)
+            with open('data/last_scraped_meeting.json', 'w', encoding='utf-8') as f:
+                json.dump(cached_data, f, indent=2)
+        except Exception as e:
+            print("Failed to save refreshed cached meeting:", e)
+    return cached_data
+
+
 def get_live_meeting_data(force_network=False):
     cached_data = None
     try:
@@ -264,11 +342,11 @@ def get_live_meeting_data(force_network=False):
             url, 
             json={"query": GRAPHQL_QUERY, "variables": {}},
             headers=headers,
-            timeout=2.0
+            timeout=3.0
         )
         if res.status_code == 200:
             data = res.json()
-            if "errors" not in data and "data" in data and "activeMeetings" in data["data"]:
+            if "errors" not in data and "data" in data and data["data"].get("activeMeetings"):
                 meetings = data["data"].get("activeMeetings", [])
                 out_meetings = []
                 for m in meetings:
@@ -279,7 +357,7 @@ def get_live_meeting_data(force_network=False):
 
                     # Fetch detailed races for the meeting
                     variables = {"date": m.get("date"), "venueCode": m.get("venueCode")}
-                    detail_res = requests.post(url, json={"query": GRAPHQL_QUERY, "variables": variables}, headers=headers, timeout=2.0)
+                    detail_res = requests.post(url, json={"query": GRAPHQL_QUERY, "variables": variables}, headers=headers, timeout=3.0)
                     detail_data = detail_res.json()
                     
                     meeting_detail = detail_data.get("data", {}).get("raceMeetings", [{}])[0]
@@ -292,8 +370,9 @@ def get_live_meeting_data(force_network=False):
                         "oddsTypes": ["WIN"]
                     }
                     odds_lookup = {}
+                    scratched_set = set()
                     try:
-                        odds_res = requests.post(url, json={"query": ODDS_GRAPHQL_QUERY, "variables": odds_variables}, headers=headers, timeout=2.0)
+                        odds_res = requests.post(url, json={"query": ODDS_GRAPHQL_QUERY, "variables": odds_variables}, headers=headers, timeout=3.0)
                         if odds_res.status_code == 200:
                             odds_data = odds_res.json()
                             if "errors" not in odds_data and "data" in odds_data:
@@ -305,11 +384,14 @@ def get_live_meeting_data(force_network=False):
                                             race_no = leg_races[0]
                                             for node in p.get("oddsNodes", []):
                                                 comb = node.get("combString")
-                                                val_str = node.get("oddsValue")
+                                                val_str = str(node.get("oddsValue") or "").strip()
                                                 if comb and val_str:
                                                     try:
                                                         runner_no = int(comb)
-                                                        odds_lookup[(race_no, runner_no)] = float(val_str)
+                                                        if val_str.upper() == "SCR":
+                                                            scratched_set.add((race_no, runner_no))
+                                                        else:
+                                                            odds_lookup[(race_no, runner_no)] = float(val_str)
                                                     except ValueError:
                                                         pass
                     except Exception as e:
@@ -349,6 +431,10 @@ def get_live_meeting_data(force_network=False):
                             if runner.get("status") in ["Standby", "Scratched", "Withdrawn"]:
                                 continue
                             
+                            runner_no = int(runner.get("no") or 0)
+                            if (race_no, runner_no) in scratched_set:
+                                continue
+
                             jockey_dict = runner.get("jockey") or {}
                             trainer_dict = runner.get("trainer") or {}
                             horse_dict = runner.get("horse") or {}
@@ -356,7 +442,6 @@ def get_live_meeting_data(force_network=False):
                             jockey_name = jockey_dict.get("name_en") or "Unknown"
                             trainer_name = trainer_dict.get("name_en") or "Unknown"
                             
-                            runner_no = int(runner.get("no") or 0)
                             win_odds_val = odds_lookup.get((race_no, runner_no), 0.0)
                             if win_odds_val == 0.0:
                                 try:
@@ -398,7 +483,7 @@ def get_live_meeting_data(force_network=False):
         pass
 
     if cached_data and cached_data.get('status') == 'success' and cached_data.get('meetings'):
-        return cached_data
+        return _refresh_cached_meetings_with_live_odds(cached_data, url, headers)
 
     return build_fallback_live_data()
 
@@ -548,7 +633,21 @@ def get_live_tips_index():
     if os.path.exists('data/tips_cache.json'):
         try:
             with open('data/tips_cache.json', 'r', encoding='utf-8') as f:
-                return json.load(f)
+                raw = json.load(f)
+            out = {}
+            for rk, rv in raw.items():
+                if isinstance(rv, dict):
+                    inner = {}
+                    for hk, hv in rv.items():
+                        try:
+                            inner[int(hk)] = float(hv)
+                        except Exception:
+                            inner[hk] = hv
+                    try:
+                        out[int(rk)] = inner
+                    except Exception:
+                        out[rk] = inner
+            return out
         except Exception:
             pass
     return {}

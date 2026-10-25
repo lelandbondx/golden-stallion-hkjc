@@ -1,20 +1,10 @@
 {
   "raceday_metadata": {
-    "date": "2026-09-06",
+    "date": "2026-10-25",
     "venue": "Sha Tin",
-    "total_races": 10
+    "total_races": 11
   },
-  "key_runners": [
-    {"horse_name": "CONRAD THE GREAT"},
-    {"horse_name": "I AM BACK"},
-    {"horse_name": "CASA ROCHESTER"},
-    {"horse_name": "LIGHT YEARS GLORY"},
-    {"horse_name": "PEJIBAYE"},
-    {"horse_name": "DOUBLE ALPHA"},
-    {"horse_name": "SOMELOVEFROMABOVE"},
-    {"horse_name": "BOTTOMUPTOGETHER"},
-    {"horse_name": "THUNDER KIT"}
-  ],
+  "key_runners": [],
   "first_time_starters": [],
   "trainers_championship_standings": {
     "1": {"trainer": "C Fownes", "wins": 69},
