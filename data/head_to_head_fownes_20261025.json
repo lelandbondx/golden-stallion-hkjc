@@ -1,0 +1,388 @@
+{
+  "summary": {
+    "silks_p1_wins": 4,
+    "fownes_p1_wins": 3,
+    "silks_top5_wins": 8,
+    "fownes_top5_wins": 11,
+    "silks_quinellas": 4,
+    "fownes_quinellas": 7,
+    "silks_trios": 3,
+    "fownes_trios": 7
+  },
+  "races": [
+    {
+      "race": 1,
+      "winner": "#6 HAPPY PEGASUS (4.4)",
+      "finish_top3": [
+        6,
+        8,
+        1
+      ],
+      "silks_p1": 2,
+      "silks_picks": [
+        2,
+        6,
+        10,
+        1,
+        5
+      ],
+      "fownes_p1": 2,
+      "fownes_picks": [
+        2,
+        8,
+        7,
+        6,
+        1
+      ],
+      "silks_hit_win": true,
+      "fownes_hit_win": false,
+      "silks_top5_win": true,
+      "fownes_top5_win": true,
+      "silks_qin": false,
+      "fownes_qin": true,
+      "silks_trio": false,
+      "fownes_trio": true,
+      "shifted_won": true
+    },
+    {
+      "race": 2,
+      "winner": "#2 TYCOON EXPRESS (11.0)",
+      "finish_top3": [
+        2,
+        6,
+        10
+      ],
+      "silks_p1": 12,
+      "silks_picks": [
+        12,
+        4,
+        9,
+        2,
+        11
+      ],
+      "fownes_p1": 12,
+      "fownes_picks": [
+        12,
+        5,
+        2,
+        4,
+        13
+      ],
+      "silks_hit_win": false,
+      "fownes_hit_win": false,
+      "silks_top5_win": true,
+      "fownes_top5_win": true,
+      "silks_qin": false,
+      "fownes_qin": false,
+      "silks_trio": false,
+      "fownes_trio": false,
+      "shifted_won": false
+    },
+    {
+      "race": 3,
+      "winner": "#14 SMART FAT CAT (2.2)",
+      "finish_top3": [
+        14,
+        6,
+        11
+      ],
+      "silks_p1": 9,
+      "silks_picks": [
+        9,
+        3,
+        13,
+        11,
+        2
+      ],
+      "fownes_p1": 14,
+      "fownes_picks": [
+        14,
+        4,
+        11,
+        6,
+        13
+      ],
+      "silks_hit_win": false,
+      "fownes_hit_win": true,
+      "silks_top5_win": false,
+      "fownes_top5_win": true,
+      "silks_qin": false,
+      "fownes_qin": true,
+      "silks_trio": false,
+      "fownes_trio": true,
+      "shifted_won": false
+    },
+    {
+      "race": 4,
+      "winner": "#7 POCKETING (8.5)",
+      "finish_top3": [
+        7,
+        5,
+        1
+      ],
+      "silks_p1": 5,
+      "silks_picks": [
+        5,
+        1,
+        10,
+        3,
+        2
+      ],
+      "fownes_p1": 5,
+      "fownes_picks": [
+        5,
+        10,
+        1,
+        4,
+        7
+      ],
+      "silks_hit_win": false,
+      "fownes_hit_win": false,
+      "silks_top5_win": false,
+      "fownes_top5_win": true,
+      "silks_qin": false,
+      "fownes_qin": true,
+      "silks_trio": false,
+      "fownes_trio": true,
+      "shifted_won": false
+    },
+    {
+      "race": 5,
+      "winner": "#13 SPEEDY POWER (1.4)",
+      "finish_top3": [
+        13,
+        1,
+        12
+      ],
+      "silks_p1": 8,
+      "silks_picks": [
+        8,
+        5,
+        9,
+        1,
+        7
+      ],
+      "fownes_p1": 13,
+      "fownes_picks": [
+        13,
+        6,
+        5,
+        9,
+        8
+      ],
+      "silks_hit_win": false,
+      "fownes_hit_win": true,
+      "silks_top5_win": false,
+      "fownes_top5_win": true,
+      "silks_qin": false,
+      "fownes_qin": false,
+      "silks_trio": false,
+      "fownes_trio": false,
+      "shifted_won": false
+    },
+    {
+      "race": 6,
+      "winner": "#6 KA YING LIGHTNING (2.9)",
+      "finish_top3": [
+        6,
+        3,
+        2
+      ],
+      "silks_p1": 6,
+      "silks_picks": [
+        6,
+        7,
+        3,
+        2,
+        5
+      ],
+      "fownes_p1": 6,
+      "fownes_picks": [
+        6,
+        3,
+        7,
+        2,
+        10
+      ],
+      "silks_hit_win": true,
+      "fownes_hit_win": true,
+      "silks_top5_win": true,
+      "fownes_top5_win": true,
+      "silks_qin": true,
+      "fownes_qin": true,
+      "silks_trio": true,
+      "fownes_trio": true,
+      "shifted_won": false
+    },
+    {
+      "race": 7,
+      "winner": "#1 RAGING BLIZZARD (4.6)",
+      "finish_top3": [
+        1,
+        7,
+        4
+      ],
+      "silks_p1": 7,
+      "silks_picks": [
+        7,
+        4,
+        3,
+        1,
+        2
+      ],
+      "fownes_p1": 7,
+      "fownes_picks": [
+        7,
+        1,
+        2,
+        3,
+        4
+      ],
+      "silks_hit_win": false,
+      "fownes_hit_win": false,
+      "silks_top5_win": true,
+      "fownes_top5_win": true,
+      "silks_qin": true,
+      "fownes_qin": true,
+      "silks_trio": true,
+      "fownes_trio": true,
+      "shifted_won": false
+    },
+    {
+      "race": 8,
+      "winner": "#1 STORM MIRROR (3.5)",
+      "finish_top3": [
+        1,
+        10,
+        3
+      ],
+      "silks_p1": 1,
+      "silks_picks": [
+        1,
+        8,
+        3,
+        5,
+        2
+      ],
+      "fownes_p1": 3,
+      "fownes_picks": [
+        3,
+        5,
+        1,
+        7,
+        2
+      ],
+      "silks_hit_win": true,
+      "fownes_hit_win": false,
+      "silks_top5_win": true,
+      "fownes_top5_win": true,
+      "silks_qin": false,
+      "fownes_qin": false,
+      "silks_trio": false,
+      "fownes_trio": false,
+      "shifted_won": false
+    },
+    {
+      "race": 9,
+      "winner": "#4 CHILL EASY (4.6)",
+      "finish_top3": [
+        4,
+        10,
+        8
+      ],
+      "silks_p1": 4,
+      "silks_picks": [
+        4,
+        10,
+        5,
+        13,
+        3
+      ],
+      "fownes_p1": 10,
+      "fownes_picks": [
+        10,
+        11,
+        8,
+        4,
+        2
+      ],
+      "silks_hit_win": true,
+      "fownes_hit_win": false,
+      "silks_top5_win": true,
+      "fownes_top5_win": true,
+      "silks_qin": true,
+      "fownes_qin": true,
+      "silks_trio": false,
+      "fownes_trio": true,
+      "shifted_won": false
+    },
+    {
+      "race": 10,
+      "winner": "#4 MEGASTAR HEART (1.6)",
+      "finish_top3": [
+        4,
+        2,
+        12
+      ],
+      "silks_p1": 2,
+      "silks_picks": [
+        2,
+        3,
+        4,
+        12,
+        7
+      ],
+      "fownes_p1": 2,
+      "fownes_picks": [
+        2,
+        3,
+        4,
+        11,
+        12
+      ],
+      "silks_hit_win": false,
+      "fownes_hit_win": false,
+      "silks_top5_win": true,
+      "fownes_top5_win": true,
+      "silks_qin": true,
+      "fownes_qin": true,
+      "silks_trio": true,
+      "fownes_trio": true,
+      "shifted_won": false
+    },
+    {
+      "race": 11,
+      "winner": "#10 PACKING GLORY (3.8)",
+      "finish_top3": [
+        10,
+        1,
+        2
+      ],
+      "silks_p1": 4,
+      "silks_picks": [
+        4,
+        2,
+        10,
+        8,
+        6
+      ],
+      "fownes_p1": 2,
+      "fownes_picks": [
+        2,
+        10,
+        8,
+        3,
+        4
+      ],
+      "silks_hit_win": false,
+      "fownes_hit_win": false,
+      "silks_top5_win": true,
+      "fownes_top5_win": true,
+      "silks_qin": false,
+      "fownes_qin": false,
+      "silks_trio": false,
+      "fownes_trio": false,
+      "shifted_won": false
+    }
+  ]
+}
