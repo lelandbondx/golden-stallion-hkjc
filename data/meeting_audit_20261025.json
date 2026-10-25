@@ -1,0 +1,1669 @@
+[
+  {
+    "race": 1,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 6,
+        "name": "HAPPY PEGASUS",
+        "odds": 4.4
+      },
+      {
+        "pla": 2,
+        "no": 8,
+        "name": "SAINT JOSE PATCH",
+        "odds": 13.0
+      },
+      {
+        "pla": 3,
+        "no": 1,
+        "name": "ALMIGHTY WARRIOR",
+        "odds": 6.6
+      },
+      {
+        "pla": 4,
+        "no": 9,
+        "name": "SUNNY BOSS",
+        "odds": 61.0
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "6",
+          "div": 44.5
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "6",
+          "div": 15.0
+        },
+        {
+          "comb": "8",
+          "div": 39.0
+        },
+        {
+          "comb": "1",
+          "div": 17.0
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "68",
+          "div": 292.5
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "68",
+          "div": 97.5
+        },
+        {
+          "comb": "16",
+          "div": 55.5
+        },
+        {
+          "comb": "18",
+          "div": 116.5
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "68",
+          "div": 596.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "681",
+          "div": 3452.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "168",
+          "div": 670.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1689",
+          "div": 4913.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "6819",
+          "div": 89942.0
+        }
+      ]
+    },
+    "p1": {
+      "no": 2,
+      "name": "JEDI SPURS",
+      "odds": 2.5
+    },
+    "p2": {
+      "no": 6,
+      "name": "HAPPY PEGASUS",
+      "odds": 9.0
+    },
+    "p3": {
+      "no": 10,
+      "name": "CHANCHENG SPARKLE",
+      "odds": 9.1
+    },
+    "p4": {
+      "no": 1,
+      "name": "ALMIGHTY WARRIOR",
+      "odds": 5.8
+    },
+    "p5": {
+      "no": 5,
+      "name": "GREEN SUMMIT",
+      "odds": 31.0
+    },
+    "winner_no": 6,
+    "winner_name": "HAPPY PEGASUS",
+    "winner_odds": 4.4,
+    "p1_won": false,
+    "shifted_won": true,
+    "top4_hit_win": true,
+    "qin_hit": false,
+    "trio_hit": false,
+    "winner_in_silks_rank": 2
+  },
+  {
+    "race": 2,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 2,
+        "name": "TYCOON EXPRESS",
+        "odds": 11.0
+      },
+      {
+        "pla": 2,
+        "no": 6,
+        "name": "INCANTO STAR",
+        "odds": 11.0
+      },
+      {
+        "pla": 3,
+        "no": 10,
+        "name": "DRACO",
+        "odds": 9.9
+      },
+      {
+        "pla": 4,
+        "no": 14,
+        "name": "MANYTHANKS FOREVER",
+        "odds": 10.0
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "2",
+          "div": 119.5
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "2",
+          "div": 37.5
+        },
+        {
+          "comb": "6",
+          "div": 30.0
+        },
+        {
+          "comb": "10",
+          "div": 28.0
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "26",
+          "div": 578.0
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "26",
+          "div": 192.0
+        },
+        {
+          "comb": "210",
+          "div": 209.0
+        },
+        {
+          "comb": "610",
+          "div": 152.5
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "26",
+          "div": 843.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "2610",
+          "div": 8809.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "2610",
+          "div": 1671.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "261014",
+          "div": 1990.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "261014",
+          "div": 51518.0
+        }
+      ],
+      "1ST DOUBLE": [
+        {
+          "comb": "6/2",
+          "div": 437.0
+        },
+        {
+          "comb": "6/6",
+          "div": 91.0
+        }
+      ]
+    },
+    "p1": {
+      "no": 12,
+      "name": "ONLY U",
+      "odds": 3.3
+    },
+    "p2": {
+      "no": 4,
+      "name": "GOR GOR",
+      "odds": 9.5
+    },
+    "p3": {
+      "no": 9,
+      "name": "MULTISUPERSTAR",
+      "odds": 10.0
+    },
+    "p4": {
+      "no": 2,
+      "name": "TYCOON EXPRESS",
+      "odds": 7.0
+    },
+    "p5": {
+      "no": 11,
+      "name": "GROOVY FEELING",
+      "odds": 48.0
+    },
+    "winner_no": 2,
+    "winner_name": "TYCOON EXPRESS",
+    "winner_odds": 11.0,
+    "p1_won": false,
+    "shifted_won": false,
+    "top4_hit_win": true,
+    "qin_hit": false,
+    "trio_hit": false,
+    "winner_in_silks_rank": 4
+  },
+  {
+    "race": 3,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 14,
+        "name": "SMART FAT CAT",
+        "odds": 2.2
+      },
+      {
+        "pla": 2,
+        "no": 6,
+        "name": "KINGMAN REEF",
+        "odds": 12.0
+      },
+      {
+        "pla": 3,
+        "no": 11,
+        "name": "POLAR PATCH",
+        "odds": 6.5
+      },
+      {
+        "pla": 4,
+        "no": 12,
+        "name": "LOVELY MILES",
+        "odds": 68.0
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "14",
+          "div": 22.0
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "14",
+          "div": 13.5
+        },
+        {
+          "comb": "6",
+          "div": 41.5
+        },
+        {
+          "comb": "11",
+          "div": 18.0
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "614",
+          "div": 211.5
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "614",
+          "div": 76.0
+        },
+        {
+          "comb": "1114",
+          "div": 30.5
+        },
+        {
+          "comb": "611",
+          "div": 163.5
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "146",
+          "div": 340.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "14611",
+          "div": 1563.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "61114",
+          "div": 388.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "6111214",
+          "div": 4878.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "1461112",
+          "div": 45401.0
+        }
+      ],
+      "2ND DOUBLE": [
+        {
+          "comb": "2/14",
+          "div": 346.0
+        },
+        {
+          "comb": "2/6",
+          "div": 90.5
+        }
+      ],
+      "1ST DOUBLE TRIO": [
+        {
+          "comb": "2,6,10/6,11,14",
+          "div": 74271.0
+        }
+      ]
+    },
+    "p1": {
+      "no": 9,
+      "name": "GOOD LUCK BABE",
+      "odds": 10.0
+    },
+    "p2": {
+      "no": 3,
+      "name": "ABSOLUTE AWAKENED",
+      "odds": 8.1
+    },
+    "p3": {
+      "no": 13,
+      "name": "AMAZING DUCK",
+      "odds": 5.6
+    },
+    "p4": {
+      "no": 11,
+      "name": "POLAR PATCH",
+      "odds": 11.0
+    },
+    "p5": {
+      "no": 2,
+      "name": "CIRCUIT FIERY",
+      "odds": 29.0
+    },
+    "winner_no": 14,
+    "winner_name": "SMART FAT CAT",
+    "winner_odds": 2.2,
+    "p1_won": false,
+    "shifted_won": false,
+    "top4_hit_win": false,
+    "qin_hit": false,
+    "trio_hit": false,
+    "winner_in_silks_rank": 99
+  },
+  {
+    "race": 4,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 7,
+        "name": "POCKETING",
+        "odds": 8.5
+      },
+      {
+        "pla": 2,
+        "no": 5,
+        "name": "BIG RETURN",
+        "odds": 4.9
+      },
+      {
+        "pla": 3,
+        "no": 1,
+        "name": "SERAPH GABRIEL",
+        "odds": 2.8
+      },
+      {
+        "pla": 4,
+        "no": 3,
+        "name": "KA YING GENERATION",
+        "odds": 15.0
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "7",
+          "div": 85.5
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "7",
+          "div": 20.5
+        },
+        {
+          "comb": "5",
+          "div": 16.5
+        },
+        {
+          "comb": "1",
+          "div": 12.5
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "57",
+          "div": 199.5
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "57",
+          "div": 61.5
+        },
+        {
+          "comb": "17",
+          "div": 46.0
+        },
+        {
+          "comb": "15",
+          "div": 31.0
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "75",
+          "div": 442.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "751",
+          "div": 1615.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "157",
+          "div": 203.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1357",
+          "div": 424.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "7513",
+          "div": 10612.0
+        }
+      ],
+      "3RD DOUBLE": [
+        {
+          "comb": "14/7",
+          "div": 220.0
+        },
+        {
+          "comb": "14/5",
+          "div": 23.5
+        }
+      ]
+    },
+    "p1": {
+      "no": 5,
+      "name": "BIG RETURN",
+      "odds": 6.0
+    },
+    "p2": {
+      "no": 1,
+      "name": "SERAPH GABRIEL",
+      "odds": 4.7
+    },
+    "p3": {
+      "no": 10,
+      "name": "SUPER GOLDENDRAGON",
+      "odds": 3.8
+    },
+    "p4": {
+      "no": 3,
+      "name": "KA YING GENERATION",
+      "odds": 7.3
+    },
+    "p5": {
+      "no": 2,
+      "name": "WITHOUT COMPARE",
+      "odds": 33.0
+    },
+    "winner_no": 7,
+    "winner_name": "POCKETING",
+    "winner_odds": 8.5,
+    "p1_won": false,
+    "shifted_won": false,
+    "top4_hit_win": false,
+    "qin_hit": false,
+    "trio_hit": false,
+    "winner_in_silks_rank": 99
+  },
+  {
+    "race": 5,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 13,
+        "name": "SPEEDY POWER",
+        "odds": 1.4
+      },
+      {
+        "pla": 2,
+        "no": 1,
+        "name": "THOUSAND SPIRIT",
+        "odds": 28.0
+      },
+      {
+        "pla": 3,
+        "no": 12,
+        "name": "NOBLE PATCH",
+        "odds": 49.0
+      },
+      {
+        "pla": 4,
+        "no": 11,
+        "name": "DOUBLE ALPHA",
+        "odds": 31.0
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "13",
+          "div": 14.5
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "13",
+          "div": 11.5
+        },
+        {
+          "comb": "1",
+          "div": 51.0
+        },
+        {
+          "comb": "12",
+          "div": 97.0
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "113",
+          "div": 232.0
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "113",
+          "div": 89.0
+        },
+        {
+          "comb": "1213",
+          "div": 131.5
+        },
+        {
+          "comb": "112",
+          "div": 998.0
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "131",
+          "div": 290.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "13112",
+          "div": 4002.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "11213",
+          "div": 1795.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1111213",
+          "div": 7697.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "1311211",
+          "div": 54665.0
+        }
+      ],
+      "4TH DOUBLE": [
+        {
+          "comb": "7/13",
+          "div": 138.0
+        },
+        {
+          "comb": "7/1",
+          "div": 206.0
+        }
+      ],
+      "1ST TREBLE": [
+        {
+          "comb": "14/7/13",
+          "div": 394.0
+        },
+        {
+          "comb": "14/7/1",
+          "div": 845.0
+        }
+      ],
+      "2ND DOUBLE TRIO": [
+        {
+          "comb": "1,5,7/1,12,13",
+          "div": 23071.0
+        }
+      ]
+    },
+    "p1": {
+      "no": 8,
+      "name": "GLORY PATCH",
+      "odds": 11.0
+    },
+    "p2": {
+      "no": 5,
+      "name": "COPARTNER A I",
+      "odds": 10.0
+    },
+    "p3": {
+      "no": 9,
+      "name": "HANDSOME HERO",
+      "odds": 11.0
+    },
+    "p4": {
+      "no": 1,
+      "name": "THOUSAND SPIRIT",
+      "odds": 9.8
+    },
+    "p5": {
+      "no": 7,
+      "name": "GENIUS MASTERMIND",
+      "odds": 33.0
+    },
+    "winner_no": 13,
+    "winner_name": "SPEEDY POWER",
+    "winner_odds": 1.4,
+    "p1_won": false,
+    "shifted_won": false,
+    "top4_hit_win": false,
+    "qin_hit": false,
+    "trio_hit": false,
+    "winner_in_silks_rank": 99
+  },
+  {
+    "race": 6,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 6,
+        "name": "KA YING LIGHTNING",
+        "odds": 2.9
+      },
+      {
+        "pla": 2,
+        "no": 3,
+        "name": "YEE CHEONG BRIGHT",
+        "odds": 4.6
+      },
+      {
+        "pla": 3,
+        "no": 2,
+        "name": "FULL METAL",
+        "odds": 22.0
+      },
+      {
+        "pla": 4,
+        "no": 7,
+        "name": "LIGHTNESS OF MUSIC",
+        "odds": 3.8
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "6",
+          "div": 29.0
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "6",
+          "div": 13.5
+        },
+        {
+          "comb": "3",
+          "div": 18.0
+        },
+        {
+          "comb": "2",
+          "div": 51.5
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "36",
+          "div": 66.5
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "36",
+          "div": 30.0
+        },
+        {
+          "comb": "26",
+          "div": 95.0
+        },
+        {
+          "comb": "23",
+          "div": 108.0
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "63",
+          "div": 125.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "632",
+          "div": 1140.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "236",
+          "div": 333.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "2367",
+          "div": 273.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "6327",
+          "div": 4262.0
+        }
+      ],
+      "5TH DOUBLE": [
+        {
+          "comb": "13/6",
+          "div": 36.5
+        },
+        {
+          "comb": "13/3",
+          "div": 18.0
+        }
+      ],
+      "1ST SIX UP": [
+        {
+          "comb": "6,8/2,6/6,14/5,7/1,13/3,6",
+          "div": 3140.0
+        },
+        {
+          "comb": "6/2/14/7/13/6",
+          "div": 107495.0
+        }
+      ]
+    },
+    "p1": {
+      "no": 6,
+      "name": "KA YING LIGHTNING",
+      "odds": 2.2
+    },
+    "p2": {
+      "no": 7,
+      "name": "LIGHTNESS OF MUSIC",
+      "odds": 8.7
+    },
+    "p3": {
+      "no": 3,
+      "name": "YEE CHEONG BRIGHT",
+      "odds": 6.7
+    },
+    "p4": {
+      "no": 2,
+      "name": "FULL METAL",
+      "odds": 17.0
+    },
+    "p5": {
+      "no": 5,
+      "name": "DYNAMIC BROSE",
+      "odds": 35.0
+    },
+    "winner_no": 6,
+    "winner_name": "KA YING LIGHTNING",
+    "winner_odds": 2.9,
+    "p1_won": true,
+    "shifted_won": false,
+    "top4_hit_win": true,
+    "qin_hit": true,
+    "trio_hit": true,
+    "winner_in_silks_rank": 1
+  },
+  {
+    "race": 7,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 1,
+        "name": "RAGING BLIZZARD",
+        "odds": 4.6
+      },
+      {
+        "pla": 2,
+        "no": 7,
+        "name": "KA YING ATTACK",
+        "odds": 2.8
+      },
+      {
+        "pla": 3,
+        "no": 4,
+        "name": "CRIMSON FLASH",
+        "odds": 9.2
+      },
+      {
+        "pla": 4,
+        "no": 8,
+        "name": "AERIS NOVA",
+        "odds": 7.2
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "1",
+          "div": 46.5
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "1",
+          "div": 14.5
+        },
+        {
+          "comb": "7",
+          "div": 14.5
+        },
+        {
+          "comb": "4",
+          "div": 22.5
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "17",
+          "div": 80.0
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "17",
+          "div": 34.0
+        },
+        {
+          "comb": "14",
+          "div": 66.0
+        },
+        {
+          "comb": "47",
+          "div": 47.5
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "17",
+          "div": 173.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "174",
+          "div": 649.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "147",
+          "div": 118.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1478",
+          "div": 230.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "1748",
+          "div": 3912.0
+        }
+      ],
+      "6TH DOUBLE": [
+        {
+          "comb": "6/1",
+          "div": 107.5
+        },
+        {
+          "comb": "6/7",
+          "div": 10.5
+        }
+      ],
+      "3RD DOUBLE TRIO": [
+        {
+          "comb": "2,3,6/1,4,7",
+          "div": 4903.0
+        }
+      ],
+      "TRIPLE TRIO": [
+        {
+          "comb": "1,12,13/2,3,6/1,4,7",
+          "div": 334353.0
+        }
+      ],
+      "TRIPLE TRIO(CONSOLATION)": [
+        {
+          "comb": "1,12,13/2,3,6/Any Combination",
+          "div": 6687.0
+        }
+      ]
+    },
+    "p1": {
+      "no": 7,
+      "name": "KA YING ATTACK",
+      "odds": 3.4
+    },
+    "p2": {
+      "no": 4,
+      "name": "CRIMSON FLASH",
+      "odds": 5.8
+    },
+    "p3": {
+      "no": 3,
+      "name": "COPARTNER PRANCE",
+      "odds": 8.6
+    },
+    "p4": {
+      "no": 1,
+      "name": "RAGING BLIZZARD",
+      "odds": 3.6
+    },
+    "p5": {
+      "no": 2,
+      "name": "COLOURFUL KING",
+      "odds": 9.2
+    },
+    "winner_no": 1,
+    "winner_name": "RAGING BLIZZARD",
+    "winner_odds": 4.6,
+    "p1_won": false,
+    "shifted_won": false,
+    "top4_hit_win": true,
+    "qin_hit": true,
+    "trio_hit": true,
+    "winner_in_silks_rank": 4
+  },
+  {
+    "race": 8,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 1,
+        "name": "STORM MIRROR",
+        "odds": 3.5
+      },
+      {
+        "pla": 2,
+        "no": 10,
+        "name": "PRESTIGE COME",
+        "odds": 15.0
+      },
+      {
+        "pla": 3,
+        "no": 3,
+        "name": "MR COOL",
+        "odds": 5.3
+      },
+      {
+        "pla": 4,
+        "no": 2,
+        "name": "TANG HEART",
+        "odds": 60.0
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "1",
+          "div": 35.5
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "1",
+          "div": 14.0
+        },
+        {
+          "comb": "10",
+          "div": 37.5
+        },
+        {
+          "comb": "3",
+          "div": 19.5
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "110",
+          "div": 283.5
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "110",
+          "div": 107.0
+        },
+        {
+          "comb": "13",
+          "div": 39.5
+        },
+        {
+          "comb": "310",
+          "div": 132.0
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "110",
+          "div": 440.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "1103",
+          "div": 2269.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "1310",
+          "div": 469.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "12310",
+          "div": 4918.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "11032",
+          "div": 50170.0
+        }
+      ],
+      "7TH DOUBLE": [
+        {
+          "comb": "1/1",
+          "div": 190.5
+        },
+        {
+          "comb": "1/10",
+          "div": 96.5
+        }
+      ]
+    },
+    "p1": {
+      "no": 1,
+      "name": "STORM MIRROR",
+      "odds": 7.0
+    },
+    "p2": {
+      "no": 8,
+      "name": "ROAD TO GLORY",
+      "odds": 7.0
+    },
+    "p3": {
+      "no": 3,
+      "name": "MR COOL",
+      "odds": 8.3
+    },
+    "p4": {
+      "no": 5,
+      "name": "GRAND PATCH",
+      "odds": 6.4
+    },
+    "p5": {
+      "no": 2,
+      "name": "TANG HEART",
+      "odds": 21.0
+    },
+    "winner_no": 1,
+    "winner_name": "STORM MIRROR",
+    "winner_odds": 3.5,
+    "p1_won": true,
+    "shifted_won": false,
+    "top4_hit_win": true,
+    "qin_hit": false,
+    "trio_hit": false,
+    "winner_in_silks_rank": 1
+  },
+  {
+    "race": 9,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 4,
+        "name": "CHILL EASY",
+        "odds": 4.6
+      },
+      {
+        "pla": 2,
+        "no": 10,
+        "name": "INFINITE RESOLVE",
+        "odds": 5.6
+      },
+      {
+        "pla": 3,
+        "no": 8,
+        "name": "CALIFORNIATOTALITY",
+        "odds": 20.0
+      },
+      {
+        "pla": 4,
+        "no": 12,
+        "name": "AWESOME FLUKE",
+        "odds": 27.0
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "4",
+          "div": 46.5
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "4",
+          "div": 18.0
+        },
+        {
+          "comb": "10",
+          "div": 21.5
+        },
+        {
+          "comb": "8",
+          "div": 54.0
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "410",
+          "div": 169.5
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "410",
+          "div": 65.0
+        },
+        {
+          "comb": "48",
+          "div": 161.5
+        },
+        {
+          "comb": "810",
+          "div": 119.5
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "410",
+          "div": 312.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "4108",
+          "div": 5073.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "4810",
+          "div": 743.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "481012",
+          "div": 4057.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "410812",
+          "div": 77069.0
+        }
+      ],
+      "8TH DOUBLE": [
+        {
+          "comb": "1/4",
+          "div": 252.5
+        },
+        {
+          "comb": "1/10",
+          "div": 26.5
+        }
+      ],
+      "4TH DOUBLE TRIO": [
+        {
+          "comb": "1,3,10/4,8,10",
+          "div": 24531.0
+        }
+      ]
+    },
+    "p1": {
+      "no": 4,
+      "name": "CHILL EASY",
+      "odds": 8.2
+    },
+    "p2": {
+      "no": 10,
+      "name": "INFINITE RESOLVE",
+      "odds": 5.1
+    },
+    "p3": {
+      "no": 5,
+      "name": "ROMANTIC THOR",
+      "odds": 15.0
+    },
+    "p4": {
+      "no": 13,
+      "name": "DROMBEG BANNER",
+      "odds": 11.0
+    },
+    "p5": {
+      "no": 3,
+      "name": "MAX QUE",
+      "odds": 11.0
+    },
+    "winner_no": 4,
+    "winner_name": "CHILL EASY",
+    "winner_odds": 4.6,
+    "p1_won": true,
+    "shifted_won": false,
+    "top4_hit_win": true,
+    "qin_hit": true,
+    "trio_hit": false,
+    "winner_in_silks_rank": 1
+  },
+  {
+    "race": 10,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 4,
+        "name": "MEGASTAR HEART",
+        "odds": 1.6
+      },
+      {
+        "pla": 2,
+        "no": 2,
+        "name": "PI LEGEND",
+        "odds": 6.5
+      },
+      {
+        "pla": 3,
+        "no": 12,
+        "name": "MASK WARRIOR",
+        "odds": 16.0
+      },
+      {
+        "pla": 4,
+        "no": 11,
+        "name": "LUCRATIVE EIGHT",
+        "odds": 14.0
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "4",
+          "div": 16.5
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "4",
+          "div": 12.0
+        },
+        {
+          "comb": "2",
+          "div": 16.5
+        },
+        {
+          "comb": "12",
+          "div": 39.5
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "24",
+          "div": 54.5
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "24",
+          "div": 25.5
+        },
+        {
+          "comb": "412",
+          "div": 59.0
+        },
+        {
+          "comb": "212",
+          "div": 108.0
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "42",
+          "div": 77.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "4212",
+          "div": 751.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "2412",
+          "div": 244.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "241112",
+          "div": 487.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "421211",
+          "div": 4296.0
+        }
+      ],
+      "9TH DOUBLE": [
+        {
+          "comb": "4/4",
+          "div": 134.0
+        },
+        {
+          "comb": "4/2",
+          "div": 56.5
+        }
+      ]
+    },
+    "p1": {
+      "no": 2,
+      "name": "PI LEGEND",
+      "odds": 5.7
+    },
+    "p2": {
+      "no": 3,
+      "name": "AURIO",
+      "odds": 6.5
+    },
+    "p3": {
+      "no": 4,
+      "name": "MEGASTAR HEART",
+      "odds": 3.6
+    },
+    "p4": {
+      "no": 12,
+      "name": "MASK WARRIOR",
+      "odds": 9.9
+    },
+    "p5": {
+      "no": 7,
+      "name": "BLUE LIGHTNING",
+      "odds": 26.0
+    },
+    "winner_no": 4,
+    "winner_name": "MEGASTAR HEART",
+    "winner_odds": 1.6,
+    "p1_won": false,
+    "shifted_won": false,
+    "top4_hit_win": true,
+    "qin_hit": true,
+    "trio_hit": true,
+    "winner_in_silks_rank": 3
+  },
+  {
+    "race": 11,
+    "finish": [
+      {
+        "pla": 1,
+        "no": 10,
+        "name": "PACKING GLORY",
+        "odds": 3.8
+      },
+      {
+        "pla": 2,
+        "no": 1,
+        "name": "AEROVOLANIC",
+        "odds": 15.0
+      },
+      {
+        "pla": 3,
+        "no": 2,
+        "name": "CIRCUIT CHAMPION",
+        "odds": 2.6
+      },
+      {
+        "pla": 4,
+        "no": 9,
+        "name": "HAPPY BOSS",
+        "odds": 9.9
+      }
+    ],
+    "divs": {
+      "WIN": [
+        {
+          "comb": "10",
+          "div": 38.0
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "10",
+          "div": 14.5
+        },
+        {
+          "comb": "1",
+          "div": 38.5
+        },
+        {
+          "comb": "2",
+          "div": 13.5
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "110",
+          "div": 262.0
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "110",
+          "div": 82.0
+        },
+        {
+          "comb": "210",
+          "div": 25.0
+        },
+        {
+          "comb": "12",
+          "div": 58.0
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "101",
+          "div": 461.0
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "1012",
+          "div": 1290.0
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "1210",
+          "div": 184.0
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "12910",
+          "div": 400.0
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "10129",
+          "div": 10578.0
+        }
+      ],
+      "10TH DOUBLE": [
+        {
+          "comb": "4/10",
+          "div": 113.5
+        },
+        {
+          "comb": "4/1",
+          "div": 66.5
+        }
+      ],
+      "2ND TREBLE": [
+        {
+          "comb": "4/4/10",
+          "div": 429.0
+        },
+        {
+          "comb": "4/4/1",
+          "div": 245.0
+        }
+      ],
+      "5TH DOUBLE TRIO": [
+        {
+          "comb": "2,4,12/1,2,10",
+          "div": 3514.0
+        }
+      ],
+      "2ND SIX UP": [
+        {
+          "comb": "3,6/1,7/1,10/4,10/2,4/1,10",
+          "div": 479.0
+        },
+        {
+          "comb": "6/1/1/4/4/10",
+          "div": 12582.0
+        }
+      ]
+    },
+    "p1": {
+      "no": 4,
+      "name": "EFFORTLESS WIN",
+      "odds": 11.0
+    },
+    "p2": {
+      "no": 2,
+      "name": "CIRCUIT CHAMPION",
+      "odds": 4.7
+    },
+    "p3": {
+      "no": 10,
+      "name": "PACKING GLORY",
+      "odds": 9.5
+    },
+    "p4": {
+      "no": 8,
+      "name": "ALMIGHTY LIGHTNING",
+      "odds": 8.8
+    },
+    "p5": {
+      "no": 6,
+      "name": "POWER OF VITAM",
+      "odds": 13.0
+    },
+    "winner_no": 10,
+    "winner_name": "PACKING GLORY",
+    "winner_odds": 3.8,
+    "p1_won": false,
+    "shifted_won": false,
+    "top4_hit_win": true,
+    "qin_hit": false,
+    "trio_hit": false,
+    "winner_in_silks_rank": 3
+  }
+]
