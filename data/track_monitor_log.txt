@@ -6661,3 +6661,124 @@ error: failed to push some refs to 'https://github.com/lelandbondx/golden-stalli
 [2026-10-19 23:00:01] 💓 Heartbeat: Checked 9 races (102 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
 [2026-10-19 23:02:05] 💓 Heartbeat: Checked 9 races (102 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
 [2026-10-19 23:04:07] 💓 Heartbeat: Checked 9 races (102 runners). Goings: R1:GOOD, R2:GOOD, R3:GOOD, R4:GOOD, R5:GOOD, R6:GOOD, R7:GOOD, R8:GOOD, R9:GOOD. 0 changes.
+[2026-10-24 21:22:39] 🚀 Golden Stallion AI Live Telemetry Monitor Initialized
+[2026-10-24 21:22:39] Monitoring Happy Valley & Sha Tin goings, scratches, and jockey changes live from HKJC API...
+[2026-10-24 21:22:40] 🆕 Race 10 registered with going: GOOD
+[2026-10-24 21:22:40] 🆕 Race 11 registered with going: GOOD
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 1: Horses #{4}
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 2: Horses #set()
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 3: Horses #set()
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 4: Horses #{11, 12}
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 5: Horses #set()
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 6: Horses #set()
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 7: Horses #{10, 11, 12}
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 8: Horses #set()
+[2026-10-24 21:22:40] 🚨 ALERT: Scratching detected in Race 9: Horses #set()
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 1 on #1: 'J ORMAN' -> 'Z PURTON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 1 on #2: 'C Y HO' -> 'H Y YUEN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 1 on #3: 'P N WONG' -> 'L FERRARIS'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 1 on #5: 'M L YEUNG' -> 'J ORMAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 1 on #6: 'Z PURTON' -> 'C L CHAU'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 1 on #8: 'M CHADWICK' -> 'E C W WONG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 1 on #10: 'E C W WONG' -> 'L HEWITSON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 1 on #11: 'A ATZENI' -> 'M L YEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #1: 'Z PURTON' -> 'L HEWITSON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #2: 'B AVDULLA' -> 'E C W WONG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #3: 'L FERRARIS' -> 'H BENTLEY'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #4: 'C L CHAU' -> 'K TEETAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #5: 'K C LEUNG' -> 'C L CHAU'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #6: 'J ORMAN' -> 'B AVDULLA'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #7: 'L HEWITSON' -> 'R KINGSCOTE'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #8: 'A ATZENI' -> 'M F POON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #9: 'H Y YUEN' -> 'L FERRARIS'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #10: 'H BENTLEY' -> 'K C LEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #11: 'C Y HO' -> 'Y L CHUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 2 on #12: 'M F POON' -> 'Z PURTON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #1: 'H Y YUEN' -> 'R KINGSCOTE'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #2: 'L HEWITSON' -> 'H Y YUEN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #3: 'Z PURTON' -> 'K C LEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #4: 'K C LEUNG' -> 'Z PURTON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #5: 'B AVDULLA' -> 'C L CHAU'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #6: 'C L CHAU' -> 'B AVDULLA'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #7: 'R KINGSCOTE' -> 'M L YEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #8: 'C Y HO' -> 'M F POON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #9: 'M F POON' -> 'Y L CHUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 3 on #10: 'A ATZENI' -> 'E C W WONG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #1: 'M F POON' -> 'Z PURTON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #2: 'R KINGSCOTE' -> 'E C W WONG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #3: 'J ORMAN' -> 'A ATZENI'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #4: 'H Y YUEN' -> 'C Y HO'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #5: 'A ATZENI' -> 'A BADEL'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #6: 'H BENTLEY' -> 'C L CHAU'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #7: 'L FERRARIS' -> 'B AVDULLA'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #8: 'P N WONG' -> 'L FERRARIS'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 4 on #9: 'L HEWITSON' -> 'J ORMAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #1: 'B AVDULLA' -> 'H Y YUEN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #2: 'H Y YUEN' -> 'J ORMAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #3: 'Y L CHUNG' -> 'M L YEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #4: 'K C LEUNG' -> 'L FERRARIS'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #5: 'A BADEL' -> 'C Y HO'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #6: 'M F POON' -> 'H BENTLEY'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #7: 'P N WONG' -> 'B AVDULLA'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #8: 'H BENTLEY' -> 'A ATZENI'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #9: 'C Y HO' -> 'C L CHAU'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #10: 'E C W WONG' -> 'K TEETAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #11: 'M L YEUNG' -> 'M F POON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 5 on #12: 'M CHADWICK' -> 'K C LEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #1: 'Z PURTON' -> 'H Y YUEN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #2: 'H Y YUEN' -> 'K TEETAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #3: 'Y L CHUNG' -> 'J ORMAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #4: 'A ATZENI' -> 'M F POON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #5: 'H BENTLEY' -> 'M L YEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #6: 'H T MO' -> 'A ATZENI'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #7: 'M L YEUNG' -> 'Z PURTON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #8: 'A BADEL' -> 'Y L CHUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #9: 'P N WONG' -> 'K C LEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 6 on #10: 'M CHADWICK' -> 'C Y HO'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #1: 'A ATZENI' -> 'B AVDULLA'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #2: 'J ORMAN' -> 'C L CHAU'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #3: 'C L CHAU' -> 'M L YEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #4: 'B AVDULLA' -> 'A ATZENI'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #5: 'Z PURTON' -> 'A BADEL'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #6: 'L FERRARIS' -> 'H BENTLEY'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #7: 'L HEWITSON' -> 'M F POON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #8: 'H BENTLEY' -> 'K C LEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 7 on #9: 'K C LEUNG' -> 'M CHADWICK'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #1: 'K C LEUNG' -> 'H Y YUEN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #2: 'C Y HO' -> 'E C W WONG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #3: 'J ORMAN' -> 'K TEETAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #4: 'H BENTLEY' -> 'L FERRARIS'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #5: 'L FERRARIS' -> 'C Y HO'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #6: 'Z PURTON' -> 'P N WONG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #7: 'B AVDULLA' -> 'K C LEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #8: 'C L CHAU' -> 'Z PURTON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #9: 'H Y YUEN' -> 'J ORMAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #10: 'A BADEL' -> 'R KINGSCOTE'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #11: 'M CHADWICK' -> 'M L YEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 8 on #12: 'E C W WONG' -> 'A BADEL'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #1: 'L FERRARIS' -> 'J ORMAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #2: 'A BADEL' -> 'L FERRARIS'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #3: 'K C LEUNG' -> 'A BADEL'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #4: 'J ORMAN' -> 'C L CHAU'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #5: 'H Y YUEN' -> 'M F POON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #6: 'L HEWITSON' -> 'C Y HO'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #7: 'H BENTLEY' -> 'K TEETAN'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #8: 'P N WONG' -> 'B AVDULLA'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #9: 'C L CHAU' -> 'Z PURTON'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #10: 'E C W WONG' -> 'A ATZENI'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #11: 'C Y HO' -> 'K C LEUNG'
+[2026-10-24 21:22:40] 🚨 ALERT: Jockey change in Race 9 on #12: 'M F POON' -> 'H Y YUEN'
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 1! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 2! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 3! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 4! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 5! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 6! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 7! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 8! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 9! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 10! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🚨 ALERT: Live HKJC Win Odds pool opened for Race 11! Recalculating EV and stakes...
+[2026-10-24 21:22:40] 🔄 Triggering prediction update...
+[2026-10-24 21:22:45] ✅ Predictions successfully updated. Selections written to data/overnight_predictions_snapshot.txt
+[2026-10-24 21:22:45] 📡 Auto-syncing updated data to origin main...
