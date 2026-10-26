@@ -21,6 +21,7 @@ from data.incident_engine import (
 )
 from monitoring.contracts import (
     compute_sha_tin_calibrations,
+    compute_telemetry_harmony_multipliers,
     validate_racecard_contract,
     validate_odds_contract,
     validate_incident_contract,
@@ -201,6 +202,123 @@ class TestShaTinCalibrations(unittest.TestCase):
         # Must not fire on 1200m sprint or Happy Valley
         res_1200 = compute_sha_tin_calibrations(df, is_st=True, is_awt_race=False, distance=1200, class_int=3)
         self.assertTrue(np.all(res_1200["st_route_sec400_boost"] == 0.0))
+
+    def test_telemetry_harmony_multipliers(self):
+        """
+        Verify all 4 Telemetry Harmony pillars:
+        1. Local HK AWT specialist (has_overseas_form == 0, AWT_win_rate >= 0.20, AWT_starts >= 2)
+           gets +2.5% base + 1.5% specialist = +4.0% on AWT races.
+        2. Tactical incident memory (traffic_trouble / wide_no_cover / trip_regression) flows into
+           tactical_incident_multiplier, blocked if vet_issue == 1 without strong trial.
+        3. 30-day trackwork conditioning (+1.5% for gallops_30d >= 4 & swims_30d >= 10 or Conghua,
+           -1.5% for >=45d layoff with 0 gallops and no strong trial).
+        4. Active vet risk penalty (-2.0% when prev_run_vet_finding == 1 and not has_strong_trial).
+        """
+        df = pd.DataFrame([
+            {
+                "no": 1,
+                "name": "LOCAL DIRT KING",
+                "clean_name": "LOCAL DIRT KING",
+                "has_overseas_form": 0,
+                "AWT_win_rate": 0.33,
+                "AWT_starts": 3,
+                "AWT_vs_Turf_pref": "AWT",
+                "gallops_30d": 5,
+                "swims_30d": 12,
+                "is_in_conghua": 0,
+                "days_since_last_run": 18,
+                "prev_run_vet_finding": 0,
+                "draw": 4,
+                "actual_weight": 125,
+                "win_odds": 4.5,
+            },
+            {
+                "no": 2,
+                "name": "UNLUCKY CLOSER",
+                "clean_name": "UNLUCKY CLOSER",
+                "has_overseas_form": 0,
+                "AWT_win_rate": 0.0,
+                "AWT_starts": 1,
+                "AWT_vs_Turf_pref": "Turf",
+                "gallops_30d": 3,
+                "swims_30d": 6,
+                "is_in_conghua": 1,
+                "days_since_last_run": 14,
+                "prev_run_vet_finding": 0,
+                "draw": 3,
+                "actual_weight": 122,
+                "win_odds": 6.0,
+            },
+            {
+                "no": 3,
+                "name": "UNCLEARED VET",
+                "clean_name": "UNCLEARED VET",
+                "has_overseas_form": 0,
+                "AWT_win_rate": 0.0,
+                "AWT_starts": 0,
+                "AWT_vs_Turf_pref": "Turf",
+                "gallops_30d": 0,
+                "swims_30d": 2,
+                "is_in_conghua": 0,
+                "days_since_last_run": 60,
+                "prev_run_vet_finding": 1,
+                "draw": 10,
+                "actual_weight": 130,
+                "win_odds": 15.0,
+            },
+        ])
+        mock_memory = {
+            "UNLUCKY CLOSER": {
+                "horse_name": "UNLUCKY CLOSER",
+                "runs": [{
+                    "race_date": "2026-10-19",
+                    "race_id": "20261019_R5",
+                    "finish_pos": 3,
+                    "beaten_lengths": 1.0,
+                    "sp": 5.5,
+                    "barrier": 8,
+                    "interference_severity": 3,
+                    "incident_flags": [{"flag": "traffic_trouble", "severity": 3, "snippet": "Badly held up"}],
+                }],
+            },
+            "UNCLEARED VET": {
+                "horse_name": "UNCLEARED VET",
+                "runs": [{
+                    "race_date": "2026-08-20",
+                    "race_id": "20260820_R2",
+                    "finish_pos": 2,
+                    "beaten_lengths": 0.8,
+                    "sp": 4.0,
+                    "barrier": 2,
+                    "ground_saved_score": 1.0,
+                    "interference_severity": 3,
+                    "incident_flags": [{"flag": "traffic_trouble", "severity": 3, "snippet": "Held up"}],
+                }],
+            },
+        }
+        res = compute_telemetry_harmony_multipliers(
+            df_runners=df,
+            is_st=True,
+            is_hv=False,
+            is_awt_race=True,
+            distance=1200,
+            class_int=4,
+            has_strong_trial=np.array([False, False, False]),
+            horse_memory=mock_memory,
+        )
+
+        # Runner 1: Local HK AWT specialist (+0.040) + peak trackwork (+0.015)
+        self.assertAlmostEqual(res["awt_specialist_boost"][0], 0.040)
+        self.assertAlmostEqual(res["trackwork_conditioning_multiplier"][0], 0.015)
+        self.assertAlmostEqual(res["active_vet_risk_penalty"][0], 0.0)
+
+        # Runner 2: Unlucky closer (+0.025 tactical incident) + Conghua prep (+0.015)
+        self.assertAlmostEqual(res["tactical_incident_multiplier"][1], 0.025)
+        self.assertAlmostEqual(res["trackwork_conditioning_multiplier"][1], 0.015)
+
+        # Runner 3: Uncleared vet (-0.020 vet risk) + underprepared layoff (-0.015)
+        self.assertAlmostEqual(res["active_vet_risk_penalty"][2], -0.020)
+        self.assertAlmostEqual(res["trackwork_conditioning_multiplier"][2], -0.015)
 
 
 class TestAppMultipliers(unittest.TestCase):

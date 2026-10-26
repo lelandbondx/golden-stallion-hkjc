@@ -164,6 +164,224 @@ def compute_sha_tin_calibrations(
     }
 
 
+def compute_telemetry_harmony_multipliers(
+    df_runners: pd.DataFrame,
+    is_st: bool,
+    is_hv: bool,
+    is_awt_race: bool,
+    distance: int,
+    class_int: int,
+    has_strong_trial=None,
+    horse_memory: dict = None,
+) -> dict:
+    """
+    Harmonizes all live telemetry pipelines into calibrated win-probability multipliers:
+    1. `awt_specialist_boost`:
+       - Fixes the AWT condition so proven local HK AWT winners (`AWT_win_rate > 0` or
+         `AWT_vs_Turf_pref == 'AWT'`) receive +2.5% (+0.025) on AWT races even when
+         `has_overseas_form == 0`, plus +1.5% (+0.015) extra for proven AWT dirt specialists
+         (`AWT_win_rate >= 0.20` and `AWT_starts >= 2` and `vet_issue == 0`).
+    2. `tactical_incident_multiplier`:
+       - Connects `data/horse_incident_memory.json` and `evaluate_tactical_scores()` directly
+         into live probability adjustments (forgiven traffic trouble +2.5%, wide-without-cover
+         merit +2.0%, sectional eye-catcher with barrier relief +2.0%, trip regression -2.0%),
+         clipped to [-3.5%, +3.5%]. Positive boosts are blocked if the runner has an uncleared
+         veterinary finding.
+    3. `trackwork_conditioning_multiplier`:
+       - Connects 30-day trackwork telemetry (`gallops_30d`, `swims_30d`, `is_in_conghua`):
+         +1.5% (+0.015) for healthy runners with peak work (`gallops_30d >= 4` & `swims_30d >= 10`,
+         or Conghua preparation `is_in_conghua == 1` & `gallops_30d >= 3`);
+         -1.5% (-0.015) for runners returning from a >=45-day layoff with zero 30-day gallops
+         and no strong barrier trial.
+    4. `active_vet_risk_penalty`:
+       - Connects official HKJC veterinary records (`prev_run_vet_finding == 1` from `ovehorse.aspx`
+         and `overecord`): -2.0% (-0.020) penalty when a horse has an active 180-day veterinary
+         finding and has not proven recovery via a strong barrier trial (`~has_strong_trial`).
+    """
+    from data.incident_engine import evaluate_tactical_scores, load_horse_memory
+
+    n = len(df_runners)
+    zeros = np.zeros(n, dtype=float)
+    if n == 0:
+        return {
+            "awt_specialist_boost": zeros.copy(),
+            "tactical_incident_multiplier": zeros.copy(),
+            "trackwork_conditioning_multiplier": zeros.copy(),
+            "active_vet_risk_penalty": zeros.copy(),
+            "telemetry_harmony_multiplier": zeros.copy(),
+            "tactical_badges": [],
+        }
+
+    if has_strong_trial is None:
+        strong_trial_arr = np.zeros(n, dtype=bool)
+    else:
+        strong_trial_arr = np.asarray(has_strong_trial, dtype=bool)
+
+    vet_issue = (
+        pd.to_numeric(
+            df_runners.get("prev_run_vet_finding", pd.Series(0, index=df_runners.index)),
+            errors="coerce",
+        )
+        .fillna(0)
+        .values
+    )
+    draws = (
+        pd.to_numeric(df_runners.get("draw", pd.Series(6, index=df_runners.index)), errors="coerce")
+        .fillna(6)
+        .values
+    )
+    actual_weights = (
+        pd.to_numeric(
+            df_runners.get("actual_weight", pd.Series(125, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(125)
+        .values
+    )
+    win_odds = (
+        pd.to_numeric(df_runners.get("win_odds", pd.Series(10.0, index=df_runners.index)), errors="coerce")
+        .fillna(10.0)
+        .values
+    )
+
+    # -------------------------------------------------------------------------
+    # 1. All-Weather Track (AWT / Dirt) Specialist Harmony
+    # -------------------------------------------------------------------------
+    if bool(is_awt_race):
+        awt_wr = (
+            pd.to_numeric(
+                df_runners.get("AWT_win_rate", pd.Series(0.0, index=df_runners.index)), errors="coerce"
+            )
+            .fillna(0.0)
+            .values
+        )
+        awt_starts = (
+            pd.to_numeric(
+                df_runners.get("AWT_starts", pd.Series(0, index=df_runners.index)), errors="coerce"
+            )
+            .fillna(0)
+            .values
+        )
+        awt_pref = (
+            df_runners.get("AWT_vs_Turf_pref", pd.Series("", index=df_runners.index))
+            .astype(str)
+            .str.strip()
+            .str.upper()
+            .values
+        )
+        has_overseas = (
+            pd.to_numeric(
+                df_runners.get("has_overseas_form", pd.Series(0, index=df_runners.index)), errors="coerce"
+            )
+            .fillna(0)
+            .values
+            == 1
+        )
+        last_going_poly = (
+            df_runners.get("last_form_going", pd.Series("", index=df_runners.index))
+            .astype(str)
+            .str.upper()
+            .str.contains("POLY|SYNTH|AWT|STAND|TAPETA", na=False)
+            .values
+        )
+
+        has_awt_edge = (awt_wr > 0) | (awt_pref == "AWT") | (has_overseas & last_going_poly)
+        base_awt_boost = np.where(has_awt_edge, 0.025, 0.0)
+        is_elite_awt_specialist = (awt_wr >= 0.20) & (awt_starts >= 2) & (vet_issue == 0)
+        awt_specialist_boost = base_awt_boost + np.where(is_elite_awt_specialist, 0.015, 0.0)
+    else:
+        awt_specialist_boost = zeros.copy()
+
+    # -------------------------------------------------------------------------
+    # 2. Tactical Stewards' Incident & Replay Memory Multiplier
+    # -------------------------------------------------------------------------
+    if horse_memory is None:
+        horse_memory = load_horse_memory()
+
+    tactical_incident_multiplier = np.zeros(n, dtype=float)
+    tactical_badges = []
+    venue_label = "Happy Valley" if is_hv else "Sha Tin"
+    surface_label = "AWT" if is_awt_race else "TURF"
+
+    for idx, (_, row) in enumerate(df_runners.iterrows()):
+        clean_name = str(row.get("clean_name") or row.get("name") or "").strip().upper()
+        t_ctx = {
+            "barrier": int(draws[idx]),
+            "venue": venue_label,
+            "surface": surface_label,
+            "distance": int(distance),
+            "sp": float(win_odds[idx]),
+            "weight_carried": float(actual_weights[idx]),
+            "winner_weight": 125.0,
+        }
+        t_res = evaluate_tactical_scores(clean_name, t_ctx, memory_dict=horse_memory)
+        live_adj_pct = float(t_res.get("live_adjustment", 0.0))
+        adj_mult = np.clip(live_adj_pct / 100.0, -0.035, 0.035)
+        # Uncleared vet finding blocks positive incident forgiveness
+        if vet_issue[idx] != 0 and not strong_trial_arr[idx] and adj_mult > 0:
+            adj_mult = 0.0
+        tactical_incident_multiplier[idx] = adj_mult
+        tactical_badges.append(t_res.get("badges", []))
+
+    # -------------------------------------------------------------------------
+    # 3. 30-Day Trackwork Conditioning & Conghua Harmony
+    # -------------------------------------------------------------------------
+    gallops_30d = (
+        pd.to_numeric(
+            df_runners.get("gallops_30d", pd.Series(0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(0)
+        .values
+    )
+    swims_30d = (
+        pd.to_numeric(
+            df_runners.get("swims_30d", pd.Series(0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(0)
+        .values
+    )
+    is_conghua = (
+        pd.to_numeric(
+            df_runners.get("is_in_conghua", pd.Series(0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(0)
+        .values
+        == 1
+    )
+    days_since = (
+        pd.to_numeric(
+            df_runners.get("days_since_last_run", pd.Series(21, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(21)
+        .values
+    )
+
+    is_peak_work = (vet_issue == 0) & (
+        ((gallops_30d >= 4) & (swims_30d >= 10)) | (is_conghua & (gallops_30d >= 3))
+    )
+    is_underprepared_layoff = (days_since >= 45) & (gallops_30d == 0) & (~strong_trial_arr)
+    trackwork_conditioning_multiplier = np.where(
+        is_peak_work, 0.015, np.where(is_underprepared_layoff, -0.015, 0.0)
+    )
+
+    # -------------------------------------------------------------------------
+    # 4. Official Veterinary Records Risk Penalty (Uncleared 180-Day Vet Finding)
+    # -------------------------------------------------------------------------
+    active_vet_risk_penalty = np.where((vet_issue != 0) & (~strong_trial_arr), -0.020, 0.0)
+
+    telemetry_harmony_multiplier = (
+        tactical_incident_multiplier + trackwork_conditioning_multiplier + active_vet_risk_penalty
+    )
+
+    return {
+        "awt_specialist_boost": awt_specialist_boost,
+        "tactical_incident_multiplier": tactical_incident_multiplier,
+        "trackwork_conditioning_multiplier": trackwork_conditioning_multiplier,
+        "active_vet_risk_penalty": active_vet_risk_penalty,
+        "telemetry_harmony_multiplier": telemetry_harmony_multiplier,
+        "tactical_badges": tactical_badges,
+    }
+
+
 # -------------------------------------------------------------------------
 # Per-Source Contract Validators
 # -------------------------------------------------------------------------

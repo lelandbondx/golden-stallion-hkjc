@@ -849,21 +849,34 @@ def evaluate_tactical_scores(horse_key, today_context, memory_dict=None):
         'weight_merit': 0.0
     }
 
-    # 1. FORGIVEN RUN
+    # 1. FORGIVEN RUN (Traffic Trouble or Wide-Without-Cover Merit)
     last_interf = last_run.get('interference_severity', 0)
     last_sp = last_run.get('sp', 99.0)
     last_lbw = last_run.get('beaten_lengths', 99.0)
-    has_vet = any(f.get('vet_blocked', False) for f in last_run.get('incident_flags', []))
+    last_finish = last_run.get('finish_pos', 99)
+    inc_flags = last_run.get('incident_flags', [])
+    has_vet = any(f.get('vet_blocked', False) for f in inc_flags)
+    wide_flags = [f for f in inc_flags if f.get('flag') == 'wide_no_cover']
+    wide_sev = max((f.get('severity', 0) for f in wide_flags), default=0)
 
-    if last_interf >= 2 and (last_sp < 8.0 or last_sp <= 10.0) and last_lbw <= 1.5 and not has_vet:
+    if last_interf >= 2 and (last_sp <= 12.0) and (last_lbw <= 2.5 or last_finish <= 4) and not has_vet:
         scores['forgiven_run'] = seeds.get('forgiven_run', 2.5)
-        snippet = next((f['snippet'] for f in last_run.get('incident_flags', []) if f['flag'] == 'traffic_trouble'), "Held up late")
+        snippet = next((f['snippet'] for f in inc_flags if f['flag'] == 'traffic_trouble'), "Held up late")
         badges.append({
             'type': 'credit',
             'badge': '🎯 UNLUCKY RUNNER',
             'text': f"Blocked in straight ({snippet[:40]}); beaten only {last_lbw}L"
         })
-    elif last_interf >= 2 and last_lbw <= 3.0 and not has_vet:
+    elif wide_sev >= 2 and (last_finish <= 4 or last_lbw <= 2.5) and not has_vet:
+        scores['forgiven_run'] = seeds.get('wide_merit', 2.0)
+        snippet = next((f['snippet'] for f in wide_flags), "Raced wide without cover")
+        badges.append({
+            'type': 'credit',
+            'badge': '🔥 WIDE-TRIP MERIT',
+            'text': f"Tough wide trip ({snippet[:40]}); finished #{last_finish}"
+        })
+    elif last_interf >= 2 and last_lbw <= 3.5 and not has_vet:
+        scores['forgiven_run'] = 1.5
         badges.append({
             'type': 'credit',
             'badge': '🎯 PLACE LEAN',
@@ -871,7 +884,6 @@ def evaluate_tactical_scores(horse_key, today_context, memory_dict=None):
         })
 
     # 2. TRIP REGRESSION
-    last_finish = last_run.get('finish_pos', 99)
     last_saved_ground = last_run.get('ground_saved_score', 0.0) >= 0.8
     last_draw = last_run.get('barrier', 8)
 
@@ -908,13 +920,14 @@ def evaluate_tactical_scores(horse_key, today_context, memory_dict=None):
     total_clip = config.get('total_clip', 3.5)
     net_seed_clipped = max(min(net_seed, total_clip), -total_clip)
 
-    # Live adjustment (Defaults to 0.0 unless apply_tactical_overlay is True)
+    # Live adjustment (in percentage points, clipped to [-total_clip, +total_clip])
     if apply_overlay:
         live_adj = sum([
-            (scores['forgiven_run'] / seeds.get('forgiven_run', 2.5)) * live_coeffs.get('forgiven_run', 0.0) if seeds.get('forgiven_run') else 0.0,
-            (scores['trip_regression'] / seeds.get('trip_regression', -2.0)) * live_coeffs.get('trip_regression', 0.0) if seeds.get('trip_regression') else 0.0,
-            (scores['sectional_eye_catcher'] / seeds.get('sectional_eye_catcher', 2.0)) * live_coeffs.get('sectional_eye_catcher', 0.0) if seeds.get('sectional_eye_catcher') else 0.0
+            (scores['forgiven_run'] / seeds.get('forgiven_run', 2.5)) * live_coeffs.get('forgiven_run', 2.5) if seeds.get('forgiven_run') else 0.0,
+            (scores['trip_regression'] / seeds.get('trip_regression', -2.0)) * live_coeffs.get('trip_regression', -2.0) if seeds.get('trip_regression') else 0.0,
+            (scores['sectional_eye_catcher'] / seeds.get('sectional_eye_catcher', 2.0)) * live_coeffs.get('sectional_eye_catcher', 2.0) if seeds.get('sectional_eye_catcher') else 0.0
         ])
+        live_adj = max(min(live_adj, total_clip), -total_clip)
     else:
         live_adj = 0.0
 

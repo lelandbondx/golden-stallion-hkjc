@@ -1340,7 +1340,26 @@ with tab1:
         # Stacked Geometry Penalty Cap: max -10.0%
         stacked_geom_pen = np.clip(hv_c_course_penalty + st_1000_draw_penalty + st_wide_draw_penalty, -0.10, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
+        # Telemetry Harmony Multipliers (AWT specialist fix, Stewards' Incident/Replay Memory,
+        # 30-Day Trackwork/Conghua Conditioning, and Official Vet Record Risk Penalty)
+        from monitoring.contracts import compute_telemetry_harmony_multipliers
+        th_cal = compute_telemetry_harmony_multipliers(
+            df_runners=df_runners,
+            is_st=is_st,
+            is_hv=is_hv,
+            is_awt_race=is_awt_race,
+            distance=distance,
+            class_int=class_int,
+            has_strong_trial=has_strong_trial,
+        )
+        polytrack_awt_boost = th_cal["awt_specialist_boost"]
+        telemetry_harmony_multiplier = th_cal["telemetry_harmony_multiplier"]
+        df_runners["awt_specialist_boost"] = polytrack_awt_boost
+        df_runners["tactical_incident_multiplier"] = th_cal["tactical_incident_multiplier"]
+        df_runners["trackwork_conditioning_multiplier"] = th_cal["trackwork_conditioning_multiplier"]
+        df_runners["active_vet_risk_penalty"] = th_cal["active_vet_risk_penalty"]
+
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + telemetry_harmony_multiplier
 
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         
