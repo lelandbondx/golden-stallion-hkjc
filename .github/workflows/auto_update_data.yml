@@ -2,53 +2,65 @@ name: Auto-Update Horse Database
 
 on:
   schedule:
-    # Run twice daily: 
+    # Run twice daily:
     # - 10:00 UTC (6:00 PM HKT) to capture overnight odds & initialize baseline
     # - 04:00 UTC (12:00 PM HKT) to capture any late-morning vet/gear updates
     - cron: '0 4,10 * * *'
   workflow_dispatch: # Allow manual trigger from GitHub UI
 
+concurrency:
+  group: auto-update-data
+  cancel-in-progress: false
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-        
+        uses: actions/checkout@v4
+
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install lxml html5lib
-          
-      - name: Run Full Golden Stallion Pipeline
+
+      - name: Build Historical Database & Features
         run: |
           python build_db.py
           python build_features.py
           python build_features_results.py
+
+      - name: Sync Offseason & Horse Profiles
+        run: |
           python sync_offseason_data.py
           python hkjc_profile_scraper.py
-          python initialize_baseline_odds.py
-          python scratch_train.py
-          
-      - name: Ping Space URLs
-        run: |
-          curl -s https://silks-ai.onrender.com/ > /dev/null || true
-          curl -s https://huggingface.co/spaces/lelandbondx/golden-stallion > /dev/null || true
-          curl -s https://huggingface.co/spaces/lelandbondx/golden-stallion-hkjc > /dev/null || true
 
-      - name: Commit and Push Changes
+      - name: Update Incident Memory & Initialize Baseline Odds
+        run: |
+          python data/incident_engine.py
+          python initialize_baseline_odds.py
+
+      - name: Train Model & Record Metadata
+        run: |
+          python train_model.py
+
+      - name: Commit and Push Changes to Render
         run: |
           git config --global user.name 'Golden Stallion Automator'
           git config --global user.email 'automator@golden-stallion.local'
           git add data/ model.joblib
-          # Only commit if there are changes
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update live models, odds, and track conditions" && git push)
+          git diff --quiet && git diff --staged --quiet || (git pull origin main -X ours && git commit -m "Auto-update live models, incident memory, odds, and health state" && git push origin main)
+
+      - name: Verify Live Render App Health
+        run: |
+          curl -s -f -o /dev/null -w "HTTP %{http_code}\n" https://silks-ai.onrender.com/?health=1

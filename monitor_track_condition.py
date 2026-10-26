@@ -9,6 +9,7 @@ from datetime import datetime
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from scraper import get_live_meeting_data
+from monitoring.health import record as record_health
 
 LOG_FILE = "data/track_monitor_log.txt"
 STATE_FILE = "data/current_going_state.json"
@@ -31,15 +32,11 @@ def log_message(msg):
         with open(LOG_FILE, "a", encoding="utf-8") as f:
             f.write(formatted_msg + "\n")
     except Exception as e:
-        try:
-            print(f"Failed to write to log file: {e}")
-        except Exception:
-            pass
+        print(f"Failed to write to log file: {e}")
 
 def run_prediction_update():
     log_message("🔄 Triggering prediction update...")
     try:
-        # Run run_predictions.py and capture output
         res = subprocess.run(
             [sys.executable, "run_predictions.py"],
             capture_output=True,
@@ -48,13 +45,12 @@ def run_prediction_update():
             check=True
         )
         
-        # Write stdout to snapshot file
         with open(PREDICTIONS_SNAPSHOT, "w", encoding="utf-8") as f:
             f.write(res.stdout)
             
         log_message(f"✅ Predictions successfully updated. Selections written to {PREDICTIONS_SNAPSHOT}")
         
-        # Immediate Git Push Protocol to sync live Streamlit app
+        # Immediate Git Push Protocol to sync live Render app (https://silks-ai.onrender.com/)
         try:
             log_message("📡 Auto-syncing updated data to origin main...")
             subprocess.run(["git", "add", "data/"], check=True, capture_output=True)
@@ -62,15 +58,21 @@ def run_prediction_update():
             subprocess.run(["git", "pull", "origin", "main", "-X", "ours"], check=False, capture_output=True)
             push_res = subprocess.run(["git", "push", "origin", "main"], check=False, capture_output=True, text=True)
             if push_res.returncode == 0:
-                log_message("🚀 Live Streamlit app successfully synchronized with origin main.")
+                log_message("🚀 Live Render app (https://silks-ai.onrender.com/) successfully synchronized with origin main.")
+                record_health("monitor_track_condition", "ok", metrics={"git_push": "success"})
             else:
-                log_message(f"⚠️ Git push note: {push_res.stderr.strip()}")
+                err_txt = push_res.stderr.strip()
+                log_message(f"⚠️ Git push error: {err_txt}")
+                record_health("monitor_track_condition", "fail", metrics={"git_push": "failed"}, error=err_txt)
         except Exception as git_err:
             log_message(f"⚠️ Git auto-sync exception: {git_err}")
+            record_health("monitor_track_condition", "fail", error=str(git_err))
     except subprocess.CalledProcessError as e:
         log_message(f"❌ Error running predictions script: {e.stderr}")
+        record_health("monitor_track_condition", "fail", error=str(e.stderr))
     except Exception as e:
         log_message(f"❌ Unexpected error updating predictions: {e}")
+        record_health("monitor_track_condition", "fail", error=str(e))
 
 def load_previous_state():
     if os.path.exists(STATE_FILE):
@@ -79,6 +81,7 @@ def load_previous_state():
                 return json.load(f)
         except Exception as e:
             log_message(f"Warning: Failed to load state file: {e}")
+            record_health("monitor_track_condition", "warn", error=f"Corrupted state file: {e}")
     return {}
 
 def save_current_state(state):
@@ -88,21 +91,21 @@ def save_current_state(state):
             json.dump(state, f, indent=4)
     except Exception as e:
         log_message(f"Error saving state file: {e}")
+        record_health("monitor_track_condition", "fail", error=f"Save state error: {e}")
 
 def main():
-    log_message("🚀 Golden Stallion AI Live Telemetry Monitor Initialized")
+    log_message("🚀 Silks.AI Live Telemetry Monitor Initialized")
     log_message("Monitoring Happy Valley & Sha Tin goings, scratches, and jockey changes live from HKJC API...")
     
-    # Load previously stored track state
     previous_state = load_previous_state()
     is_first_run = not bool(previous_state)
     
     while True:
         try:
-            # Poll live data
             data = get_live_meeting_data()
             if data.get('status') != 'success' or not data.get('meetings'):
                 log_message("⚠️ Failed to poll live meeting data from HKJC. Retrying in 120s...")
+                record_health("monitor_track_condition", "warn", error=data.get("reason", "No live meeting data"))
                 time.sleep(120)
                 continue
                 
@@ -111,7 +114,6 @@ def main():
             date_str = meeting.get('date', 'today')
             races = meeting.get('races', [])
             
-            # Construct comprehensive state mapping: goings, active runners, jockeys, and whether live odds have opened
             current_state = {
                 "goings": {},
                 "runners": {},
@@ -144,7 +146,6 @@ def main():
                 time.sleep(120)
                 continue
                 
-            # If first run, initialize and log current state
             if is_first_run:
                 log_message(f"📊 Initialized Live Monitor for {venue} - {date_str}:")
                 for race_no, going in sorted(current_state["goings"].items(), key=lambda x: int(x[0])):
@@ -154,8 +155,6 @@ def main():
                 save_current_state(current_state)
                 previous_state = current_state.copy()
                 is_first_run = False
-                
-                # Run predictions on start to ensure files are fresh
                 run_prediction_update()
             else:
                 has_changed = False
@@ -164,7 +163,6 @@ def main():
                 prev_jockeys = previous_state.get("jockeys", {}) if isinstance(previous_state, dict) else {}
                 prev_odds_opened = previous_state.get("odds_opened", {}) if isinstance(previous_state, dict) else {}
                 
-                # 1. Check going changes
                 for race_no, going in current_state["goings"].items():
                     prev_going = prev_goings.get(race_no)
                     if prev_going is None:
@@ -174,7 +172,6 @@ def main():
                         log_message(f"🚨 ALERT: Race {race_no} track condition changed from '{prev_going}' to '{going}'!")
                         has_changed = True
                         
-                # 2. Check scratches / runner withdrawals
                 for race_no, curr_r_list in current_state["runners"].items():
                     prev_r_list = prev_runners.get(race_no, [])
                     if prev_r_list and set(prev_r_list) != set(curr_r_list):
@@ -182,7 +179,6 @@ def main():
                         log_message(f"🚨 ALERT: Scratching detected in Race {race_no}: Horses #{scratched}")
                         has_changed = True
                         
-                # 3. Check jockey changes
                 for race_no, curr_j_map in current_state["jockeys"].items():
                     prev_j_map = prev_jockeys.get(race_no, {})
                     for r_no, j_name in curr_j_map.items():
@@ -191,7 +187,6 @@ def main():
                             log_message(f"🚨 ALERT: Jockey change in Race {race_no} on #{r_no}: '{prev_j}' -> '{j_name}'")
                             has_changed = True
 
-                # 4. Check if live market odds just opened for any race
                 for race_no, is_open in current_state["odds_opened"].items():
                     was_open = prev_odds_opened.get(race_no, False)
                     if is_open and not was_open:
@@ -205,9 +200,11 @@ def main():
                 else:
                     going_summary = ", ".join([f"R{r}:{g}" for r, g in sorted(current_state["goings"].items(), key=lambda x: int(x[0]))])
                     log_message(f"💓 Heartbeat: Checked {len(current_state['goings'])} races ({sum(len(v) for v in current_state['runners'].values())} runners). Goings: {going_summary}. 0 changes.")
+                    record_health("monitor_track_condition", "ok", metrics={"venue": venue, "date": date_str, "races": len(current_state["goings"])})
                     
         except Exception as e:
             log_message(f"❌ Exception in monitoring loop: {e}")
+            record_health("monitor_track_condition", "fail", error=str(e))
             
         time.sleep(120)
 

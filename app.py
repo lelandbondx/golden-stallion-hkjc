@@ -579,6 +579,16 @@ horse_memory = fetch_horse_memory()
 jt_partnerships_df = fetch_jt_partnerships()
 meetings = data.get('meetings', [])
 
+# Lightweight ?health=1 JSON inspection support on Render
+try:
+    q_params = st.query_params if hasattr(st, "query_params") else st.experimental_get_query_params()
+    if str(q_params.get("health", "")) in ("1", "['1']", "true"):
+        from monitoring.health import get_pipeline_health
+        st.json(get_pipeline_health())
+        st.stop()
+except Exception:
+    pass
+
 try:
     with open('data/gemini_intel.json', 'r') as f:
         intel_data = json.load(f)
@@ -586,9 +596,13 @@ try:
 except Exception:
     key_runners = []
 
-if not meetings:
-    st.error("No active or recently closed meetings found on HKJC.")
+if data.get('status') == 'error' or not meetings:
+    err_reason = data.get('reason', 'No active or recently closed meetings found on HKJC.')
+    st.error(f"🚨 Live data unavailable: {err_reason}")
     st.stop()
+
+if data.get('source') == 'cache' and data.get('cache_age_s') and float(data.get('cache_age_s', 0)) > 21600:
+    st.warning(f"⚠️ Showing cached HKJC meeting data (cached {int(float(data.get('cache_age_s', 0)) // 60)} min ago).")
 
 # Build meeting selectbox options
 meeting_options = [f"{m.get('date')} - {m.get('venue')}" for m in meetings]
@@ -750,13 +764,16 @@ with tab1:
         df_runners = pd.DataFrame(race['runners'])
         # Load win_odds from cache if the scraper returns 0.0 (completed races)
         if 'win_odds' in df_runners.columns:
-            df_runners['win_odds'] = df_runners.apply(
+            raw_cached = df_runners.apply(
                 lambda row: odds_tracker.get_cached_odds(
                     meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['win_odds']
                 ), axis=1
             )
+            df_runners['odds_missing'] = raw_cached.isna() | (pd.to_numeric(raw_cached, errors='coerce').fillna(0.0) <= 0.0)
+            df_runners['win_odds'] = pd.to_numeric(raw_cached, errors='coerce').fillna(20.0).replace(0.0, 20.0)
             df_runners['scraped_win_odds'] = df_runners['win_odds'].copy()
         else:
+            df_runners['odds_missing'] = True
             df_runners['win_odds'] = 20.0
             df_runners['scraped_win_odds'] = 20.0
         
@@ -797,11 +814,13 @@ with tab1:
                 
                 if 'no' in df_runners.columns:
                     df_runners['scraped_win_odds'] = df_runners['no'].map(live_odds_dict).fillna(df_runners.get('win_odds', 20.0))
-                    df_runners['scraped_win_odds'] = df_runners.apply(
+                    raw_live_cached = df_runners.apply(
                         lambda row: odds_tracker.get_cached_odds(
                             meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['scraped_win_odds']
                         ), axis=1
                     )
+                    df_runners['odds_missing'] = raw_live_cached.isna() | (pd.to_numeric(raw_live_cached, errors='coerce').fillna(0.0) <= 0.0)
+                    df_runners['scraped_win_odds'] = pd.to_numeric(raw_live_cached, errors='coerce').fillna(20.0).replace(0.0, 20.0)
                     df_runners['win_odds'] = df_runners['scraped_win_odds'].copy()
                     
                     # Recalculate implied probability and EV
@@ -1193,10 +1212,22 @@ with tab1:
             is_fownes = df_runners['trainer'].astype(str).str.strip().str.upper() == 'C FOWNES'
             fownes_hv_boost = np.where(is_fownes & (~is_hv_wide_heavy) & (jockey_trainer_boost == 0), 0.03, 0.0)
 
-        # Sha Tin Straight 1000m Outside Rail Draw Bias
-        is_st_straight_1000 = is_st and (distance == 1000) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
-        st_1000_draw_boost = np.where(is_st_straight_1000 & (draws >= 10), 0.027, 0.0)
-        st_1000_draw_penalty = np.where(is_st_straight_1000 & (draws <= 4), -0.025, 0.0)
+        # Calibrated Sha Tin Multipliers (from monitoring.contracts):
+        from monitoring.contracts import compute_sha_tin_calibrations, validate_odds_contract
+        st_cal = compute_sha_tin_calibrations(
+            df_runners=df_runners,
+            is_st=is_st,
+            is_awt_race=is_awt_race,
+            distance=distance,
+            class_int=class_int,
+        )
+        st_1000_draw_boost = st_cal["st_1000_draw_boost"]
+        st_1000_draw_penalty = st_cal["st_1000_draw_penalty"]
+        st_straight_outside_rail_multiplier = st_cal["st_straight_outside_rail_multiplier"]
+        st_c3_1600_topweight_penalty = st_cal["st_c3_1600_topweight_penalty"]
+        st_route_sec400_boost = st_cal["st_route_sec400_boost"]
+        df_runners["rank_sec400"] = st_cal["rank_sec400"]
+        df_runners["st_straight_outside_rail_multiplier"] = st_straight_outside_rail_multiplier
 
         # Sha Tin 1200m-1600m Bend Draw Bias
         is_st_bend = is_st and (distance >= 1200) and (distance <= 1600) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
@@ -1309,7 +1340,7 @@ with tab1:
         # Stacked Geometry Penalty Cap: max -10.0%
         stacked_geom_pen = np.clip(hv_c_course_penalty + st_1000_draw_penalty + st_wide_draw_penalty, -0.10, 0.0)
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost
 
         multiplier = np.maximum(multiplier, 0.1) # Floor at 10% of original model_prob
         

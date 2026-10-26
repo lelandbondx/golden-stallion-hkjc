@@ -311,25 +311,34 @@ def _refresh_cached_meetings_with_live_odds(cached_data, url, headers):
     return cached_data
 
 
-def get_live_meeting_data(force_network=False):
+def get_live_meeting_data(force_network=False, cache_path='data/last_scraped_meeting.json', max_cache_age_seconds=None):
+    import os
+    import time
+    from datetime import datetime, timezone
+    from monitoring.health import record as record_health
+
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     cached_data = None
+    cache_age_s = None
     try:
-        import os
-        if os.path.exists('data/last_scraped_meeting.json'):
-            with open('data/last_scraped_meeting.json', 'r', encoding='utf-8') as f:
+        if cache_path and os.path.exists(cache_path):
+            mtime = os.path.getmtime(cache_path)
+            cache_age_s = round(time.time() - mtime, 1)
+            with open(cache_path, 'r', encoding='utf-8') as f:
                 cached_data = json.load(f)
     except Exception as e:
-        print("Failed to read last_scraped_meeting.json:", e)
+        print("Failed to read cached meeting file:", e)
+        record_health("scraper_cache_read", "warn", error=str(e))
 
     # Fast-path: return cached data only if under 20 seconds old to ensure odds stay live
     if not force_network and cached_data and cached_data.get('status') == 'success' and cached_data.get('meetings'):
-        import time
-        try:
-            mtime = os.path.getmtime('data/last_scraped_meeting.json')
-            if (time.time() - mtime) < 20:
-                return cached_data
-        except Exception:
-            pass
+        if cache_age_s is not None and cache_age_s < 20:
+            first_date = cached_data['meetings'][0].get('date') if cached_data.get('meetings') else None
+            cached_data.setdefault('source', 'cache')
+            cached_data.setdefault('fetched_at', now_iso)
+            cached_data.setdefault('meeting_date', first_date)
+            cached_data['cache_age_s'] = cache_age_s
+            return cached_data
 
     url = "https://info.cld.hkjc.com/graphql/base/"
     headers = {
@@ -337,6 +346,7 @@ def get_live_meeting_data(force_network=False):
         "Content-Type": "application/json"
     }
 
+    last_error = "GraphQL returned empty activeMeetings"
     try:
         res = requests.post(
             url, 
@@ -470,28 +480,87 @@ def get_live_meeting_data(force_network=False):
                     out_meetings.append(meeting_out)
                 
                 if out_meetings:
+                    first_date = out_meetings[0].get("date")
+                    live_payload = {
+                        "status": "success",
+                        "source": "live",
+                        "fetched_at": now_iso,
+                        "meeting_date": first_date,
+                        "meetings": out_meetings
+                    }
                     try:
-                        import os
-                        os.makedirs('data', exist_ok=True)
-                        with open('data/last_scraped_meeting.json', 'w', encoding='utf-8') as f:
-                            json.dump({"status": "success", "meetings": out_meetings}, f, indent=2)
+                        if cache_path:
+                            os.makedirs(os.path.dirname(cache_path) or 'data', exist_ok=True)
+                            with open(cache_path, 'w', encoding='utf-8') as f:
+                                json.dump(live_payload, f, indent=2)
                     except Exception as e:
                         print("Failed to save last scraped meeting:", e)
-                    return {"status": "success", "meetings": out_meetings}
+                    record_health(
+                        "scraper",
+                        "ok",
+                        metrics={
+                            "source": "live",
+                            "meeting_date": first_date,
+                            "meetings_count": len(out_meetings),
+                            "races_count": len(out_meetings[0].get("races", [])),
+                        },
+                    )
+                    return live_payload
+        else:
+            last_error = f"HTTP {res.status_code} from HKJC GraphQL"
     except Exception as e:
-        print("Live scraper timeout/error:", str(e))
-        pass
+        last_error = f"{type(e).__name__}: {e}"
+        print("Live scraper timeout/error:", last_error)
 
     if cached_data and cached_data.get('status') == 'success' and cached_data.get('meetings'):
-        return _refresh_cached_meetings_with_live_odds(cached_data, url, headers)
+        if max_cache_age_seconds is not None and cache_age_s is not None and cache_age_s > max_cache_age_seconds:
+            reason = f"Cached meeting data is stale ({cache_age_s}s old > {max_cache_age_seconds}s threshold) and live scrape failed ({last_error})"
+            record_health("scraper", "fail", metrics={"source": "stale_cache", "cache_age_s": cache_age_s}, error=reason)
+            return {
+                "status": "error",
+                "source": "stale_cache",
+                "fetched_at": now_iso,
+                "reason": reason,
+                "meetings": []
+            }
 
-    return build_fallback_live_data()
+        refreshed = _refresh_cached_meetings_with_live_odds(cached_data, url, headers)
+        first_date = refreshed['meetings'][0].get('date') if refreshed.get('meetings') else None
+        refreshed['source'] = 'cache'
+        refreshed['fetched_at'] = now_iso
+        refreshed['meeting_date'] = first_date
+        refreshed['cache_age_s'] = cache_age_s
+        record_health(
+            "scraper",
+            "warn",
+            metrics={
+                "source": "cache",
+                "meeting_date": first_date,
+                "cache_age_s": cache_age_s,
+            },
+            error=f"Fell back to cached meeting after live error: {last_error}",
+        )
+        return refreshed
+
+    # Fail-loud in production: NEVER return fabricated 'KASA PAPA' racecards when live and cache both fail.
+    reason = f"Live HKJC GraphQL unavailable ({last_error}) and no valid cached meeting available."
+    record_health("scraper", "fail", metrics={"source": "error"}, error=reason)
+    return {
+        "status": "error",
+        "source": "error",
+        "fetched_at": now_iso,
+        "reason": reason,
+        "meetings": []
+    }
 
 
-def build_fallback_live_data():
+def build_fallback_live_data(_test_only=True):
     """
-    Guarantees fully fleshed out race cards for future dates as fallback.
+    Test-only fixture generator. Removed from all production paths to prevent
+    predicting on fabricated races ('KASA PAPA').
     """
+    if not _test_only:
+        raise RuntimeError("build_fallback_live_data() is forbidden in production paths.")
     from datetime import datetime, timedelta
     now = datetime.now()
     

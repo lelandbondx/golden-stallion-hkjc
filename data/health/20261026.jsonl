@@ -1,0 +1,4 @@
+{"component": "scraper", "status": "fail", "timestamp": "2026-10-26T20:05:37Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "incident_memory", "status": "ok", "timestamp": "2026-10-26T20:06:57Z", "metrics": {"horses": 1521, "flagged_horses": 56}, "error": null}
+{"component": "scraper", "status": "warn", "timestamp": "2026-10-26T20:08:08Z", "metrics": {"source": "cache", "meeting_date": "2026-10-25", "cache_age_s": 153797.2}, "error": "Fell back to cached meeting after live error: GraphQL returned empty activeMeetings"}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-10-26T20:08:08Z", "metrics": {"meeting_date": "2026-10-25", "venue": "Sha Tin", "races_predicted": 11}, "error": null}

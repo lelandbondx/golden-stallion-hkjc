@@ -9,7 +9,8 @@ on:
 jobs:
   ping-app:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Send keep-alive ping to Render
+      - name: Send fail-loud keep-alive health check to Render
         run: |
-          curl -s -I -o /dev/null -w "%{http_code}" https://silks-ai.onrender.com/
+          curl -s -f -o /dev/null -w "Render Health HTTP %{http_code}\n" https://silks-ai.onrender.com/?health=1

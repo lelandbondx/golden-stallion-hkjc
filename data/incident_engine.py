@@ -14,6 +14,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 # -------------------------------------------------------------------------
@@ -258,12 +260,89 @@ def parse_incident(text, target_horse_name=None):
 # Web Scraper for Official HKJC Incident Reports
 # -------------------------------------------------------------------------
 
-def scrape_meeting_incidents(date_str):
+def _clean_horse_name(raw_text: str) -> str:
+    """Strips brand codes like (J123) and normalizes horse name to uppercase."""
+    if not raw_text:
+        return ""
+    cleaned = re.sub(r"\s*\([A-Z0-9]+\)", "", str(raw_text)).strip().upper()
+    return cleaned
+
+
+def parse_hkjc_racereport_html(html_text: str, expect_date: str = None) -> dict:
+    """
+    Parses HKJC `racereportfull` HTML content into {clean_horse_name: incident_text}.
+    Asserts the page's 'Race Meeting: DD/MM/YYYY' header matches `expect_date` (via hkjc_guard)
+    and identifies the Horse and Incident columns properly instead of reading Placing (tds[0]).
+    """
+    from monitoring.hkjc_guard import validate_hkjc_html
+
+    validate_hkjc_html(html_text, expect_date=expect_date)
+    soup = BeautifulSoup(html_text, "html.parser")
+    meeting_incidents = {}
+
+    for table in soup.find_all("table"):
+        # Detect column indices from header row if present
+        horse_col_idx = None
+        incident_col_idx = None
+
+        rows = table.find_all("tr")
+        for tr in rows:
+            header_cells = tr.find_all(["th", "td"])
+            header_texts = [c.get_text(strip=True).upper() for c in header_cells]
+            if any("INCIDENT" in h for h in header_texts) and any("HORSE" in h for h in header_texts):
+                for idx, h in enumerate(header_texts):
+                    if h in ("HORSE", "HORSE NAME") or ("HORSE" in h and "NO" not in h):
+                        horse_col_idx = idx
+                    elif "INCIDENT" in h or "REPORT" in h:
+                        incident_col_idx = idx
+                continue
+
+            tds = tr.find_all("td")
+            if len(tds) < 2:
+                continue
+
+            if horse_col_idx is not None and incident_col_idx is not None and len(tds) > max(horse_col_idx, incident_col_idx):
+                h_raw = tds[horse_col_idx].get_text(strip=True)
+                inc_text = tds[incident_col_idx].get_text(strip=True)
+            elif len(tds) >= 5:
+                # Standard HKJC 5-column layout: [Pla., Horse No., Horse, Jockey, Incident]
+                h_raw = tds[2].get_text(strip=True)
+                inc_text = tds[-1].get_text(strip=True)
+            elif len(tds) == 4:
+                # 4-column layout: [Pla./No., Horse, Jockey, Incident]
+                h_raw = tds[1].get_text(strip=True) if tds[0].get_text(strip=True).isdigit() else tds[2].get_text(strip=True)
+                inc_text = tds[-1].get_text(strip=True)
+            elif len(tds) == 3:
+                # 3-column layout: [Horse No., Horse, Incident]
+                h_raw = tds[1].get_text(strip=True)
+                inc_text = tds[2].get_text(strip=True)
+            else:
+                # 2-column layout: [Horse, Incident]
+                h_raw = tds[0].get_text(strip=True)
+                inc_text = tds[1].get_text(strip=True)
+
+            h_clean = _clean_horse_name(h_raw)
+            if (
+                h_clean
+                and not h_clean.isdigit()
+                and h_clean not in ("HORSE", "PLA.", "PLACING", "HORSE NO.", "NO.")
+                and len(inc_text) > 3
+            ):
+                meeting_incidents[h_clean] = inc_text
+
+    return meeting_incidents
+
+
+def scrape_meeting_incidents(date_str, html_content=None):
     """
     Scrapes official HKJC full race incident reports.
     date_str format: 'YYYY/MM/DD' or 'YYYY-MM-DD' or 'YYYYMMDD'
-    Returns: dict of race -> runners incident reports
+    Returns: dict of clean_horse_name -> incident report string
+    Raises HKJCDateMismatch if HKJC returns a report for a different meeting date.
     """
+    from monitoring.health import record as record_health
+    from monitoring.hkjc_guard import HKJCDateMismatch, HKJCFetchError
+
     clean_date = date_str.replace('-', '').replace('/', '')
     if len(clean_date) == 8:
         formatted_date = f"{clean_date[:4]}/{clean_date[4:6]}/{clean_date[6:]}"
@@ -276,29 +355,33 @@ def scrape_meeting_incidents(date_str):
     }
 
     try:
-        logging.info(f"Fetching HKJC Incident Report from {url}...")
-        resp = requests.get(url, headers=headers, timeout=12)
-        if resp.status_code != 200:
-            logging.warning(f"Failed to fetch HKJC Incident Report (Status {resp.status_code}) for {date_str}")
-            return {}
+        if html_content is None:
+            logging.info(f"Fetching HKJC Incident Report from {url}...")
+            resp = requests.get(url, headers=headers, timeout=12)
+            if resp.status_code != 200:
+                msg = f"Failed to fetch HKJC Incident Report (Status {resp.status_code}) for {date_str}"
+                logging.warning(msg)
+                record_health("incident_engine", "fail", metrics={"date": date_str, "url": url}, error=msg)
+                return {}
+            html_text = resp.text
+        else:
+            html_text = html_content
 
-        soup = BeautifulSoup(resp.content, "html.parser")
-        meeting_incidents = {}
-        
-        # Look for incident report tables / paragraphs
-        for table in soup.find_all("table"):
-            for tr in table.find_all("tr"):
-                tds = tr.find_all("td")
-                if len(tds) >= 2:
-                    h_text = tds[0].get_text(strip=True)
-                    inc_text = tds[1].get_text(strip=True)
-                    if len(inc_text) > 10 and h_text:
-                        meeting_incidents[h_text] = inc_text
-            
-        logging.info(f"Parsed {len(meeting_incidents)} incident records from HKJC report.")
+        meeting_incidents = parse_hkjc_racereport_html(html_text, expect_date=date_str)
+        logging.info(f"Parsed {len(meeting_incidents)} incident records from HKJC report for {date_str}.")
+        status = "ok" if len(meeting_incidents) > 0 else "warn"
+        record_health(
+            "incident_engine",
+            status,
+            metrics={"date": date_str, "rows": len(meeting_incidents), "source_url": url},
+        )
         return meeting_incidents
+    except (HKJCDateMismatch, HKJCFetchError) as guard_err:
+        record_health("incident_engine", "fail", metrics={"date": date_str, "source_url": url}, error=str(guard_err))
+        raise
     except Exception as e:
         logging.warning(f"Error scraping HKJC incident report for {date_str}: {e}")
+        record_health("incident_engine", "fail", metrics={"date": date_str, "source_url": url}, error=str(e))
         return {}
 
 
@@ -315,8 +398,8 @@ def load_tactical_config():
         try:
             with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
                 return json.load(f)
-        except Exception:
-            pass
+        except Exception as e:
+            logging.warning(f"Failed to read {CONFIG_FILE}: {e}")
     return {
         "seeds": {"forgiven_run": 2.5, "trip_regression": -2.0, "sectional_eye_catcher": 2.0},
         "total_clip": 3.5,
@@ -348,10 +431,24 @@ def build_horse_incident_memory(force_rebuild=False):
     """
     Builds the complete incident and trip memory across all available race data, comments, and stats.
     """
+    from monitoring.health import record as record_health
+
     logging.info("Building / Updating Tactical Incident Memory Bank...")
     memory = load_horse_memory() if not force_rebuild else {}
 
-    # 1. Initialize from latest_horse_stats.csv
+    # 1. Load precomputed last_comments (keyed by clean horse name)
+    comments_dict = {}
+    if os.path.exists('data/precomputed_features.json'):
+        try:
+            with open('data/precomputed_features.json', 'r', encoding='utf-8') as f:
+                precomp = json.load(f)
+                for h_name, c_text in (precomp.get('last_comments') or {}).items():
+                    if h_name and c_text:
+                        comments_dict[str(h_name).strip().upper()] = str(c_text)
+        except Exception as e:
+            logging.warning(f"Error loading precomputed_features.json comments: {e}")
+
+    # 2. Initialize from latest_horse_stats.csv and harvest last_run_summary / latest_vet_note
     if os.path.exists('data/latest_horse_stats.csv'):
         lhs = pd.read_csv('data/latest_horse_stats.csv')
         for _, r in lhs.iterrows():
@@ -368,20 +465,43 @@ def build_horse_incident_memory(force_rebuild=False):
                 if hcode and hcode != 'NAN' and hcode not in memory:
                     memory[hcode] = memory[cname]
 
-    # 2. Ingest comments from comments.csv
-    comments_dict = {}
-    if os.path.exists('data/comments.csv'):
-        try:
-            cdf = pd.read_csv('data/comments.csv')
-            for _, r in cdf.iterrows():
-                h_name = str(r.get('horse_name', '')).strip().upper()
-                c_text = str(r.get('comment', ''))
-                if h_name:
-                    comments_dict[h_name] = c_text
-        except Exception as e:
-            logging.warning(f"Error loading comments.csv: {e}")
+                summary_txt = str(r.get('last_run_summary', '')).strip()
+                vet_txt = str(r.get('latest_vet_note', '')).strip()
+                combined_note = " ".join(
+                    [t for t in (comments_dict.get(cname, ''), summary_txt, vet_txt) if t and t.lower() not in ('nan', 'none', 'no findings')]
+                ).strip()
+                if combined_note:
+                    comments_dict[cname] = combined_note
+                    flags = parse_incident(combined_note, target_horse_name=cname)
+                    lrd = str(r.get('last_run_date', '')).strip()
+                    if flags and not memory[cname]['runs']:
+                        max_interf = max([f['severity'] for f in flags if f['flag'] == 'traffic_trouble'], default=0)
+                        saved_g_flag = any(f['flag'] == 'saved_ground' for f in flags)
+                        memory[cname]['runs'].append({
+                            'race_date': lrd if lrd and lrd.lower() != 'nan' else '2026-10-01',
+                            'race_id': f"{lrd or 'profile'}_LAST",
+                            'venue': str(r.get('ST_vs_HV_pref', 'Sha Tin')),
+                            'course_rail': 'A',
+                            'surface': str(r.get('AWT_vs_Turf_pref', 'TURF')).upper(),
+                            'going': str(r.get('last_form_going', 'GOOD')),
+                            'distance': 1200,
+                            'class': f"Class {int(float(r.get('last_race_class_int', 4) or 4))}",
+                            'barrier': 6,
+                            'finish_pos': int(float(r.get('recent_avg_pos', 6) or 6)),
+                            'beaten_lengths': 2.0,
+                            'sp': 8.0,
+                            'weight_carried': 125.0,
+                            'early_pos': float(r.get('avg_first_pos', 6.0) or 6.0),
+                            'final_section_time': 22.8,
+                            'final_section_rank': 4,
+                            'field_size': 12,
+                            'incident_flags': flags,
+                            'ground_saved_score': 1.0 if saved_g_flag else 0.5,
+                            'interference_severity': max_interf,
+                            'gate_speed_proven': any(f['flag'] == 'gate_speed' for f in flags)
+                        })
 
-    # 3. Ingest scraped results files (e.g. 20261001)
+    # 3. Ingest scraped results files (e.g. 20261001, etc.) and last_scraped_meeting.json
     for res_file in sorted(glob.glob('data/scraped_results_*.json')):
         date_match = re.search(r'(\d{8})', res_file)
         r_date = date_match.group(1) if date_match else "20261001"
@@ -390,7 +510,13 @@ def build_horse_incident_memory(force_rebuild=False):
             with open(res_file, 'r', encoding='utf-8') as f:
                 res_data = json.load(f)
                 for r_num, runners in res_data.items():
+                    if isinstance(runners, dict):
+                        runners = runners.get('runners') or runners.get('top4') or []
+                    if not isinstance(runners, list):
+                        continue
                     for r in runners:
+                        if not isinstance(r, dict):
+                            continue
                         raw_name = r.get('horse_name', '')
                         clean_name = re.sub(r'\s*\([A-Z0-9]+\)', '', raw_name).strip().upper()
                         code_match = re.search(r'\(([A-Z0-9]+)\)', raw_name)
@@ -423,7 +549,7 @@ def build_horse_incident_memory(force_rebuild=False):
                                     lbw = float(frac[0]) / float(frac[1])
                                 else:
                                     lbw = float(lbw_str)
-                            except:
+                            except ValueError:
                                 lbw = 2.0
 
                         comm = comments_dict.get(clean_name, '')
@@ -458,9 +584,72 @@ def build_horse_incident_memory(force_rebuild=False):
                         runs_list = memory[key]['runs']
                         if not any(x.get('race_id') == run_rec['race_id'] for x in runs_list):
                             runs_list.insert(0, run_rec)
-                            memory[key]['runs'] = runs_list[:6]
+                        else:
+                            for existing_r in runs_list:
+                                if existing_r.get('race_id') == run_rec['race_id'] and incident_flags:
+                                    existing_r['incident_flags'] = incident_flags
+                                    existing_r['interference_severity'] = max_interf
+                        memory[key]['runs'] = runs_list[:6]
         except Exception as e:
             logging.warning(f"Error parsing {res_file}: {e}")
+
+    # Also ingest latest completed meeting from last_scraped_meeting.json if present
+    if os.path.exists('data/last_scraped_meeting.json'):
+        try:
+            with open('data/last_scraped_meeting.json', 'r', encoding='utf-8') as f:
+                lsm = json.load(f)
+                for m in (lsm.get('meetings') or []):
+                    m_date = str(m.get('date', '2026-10-21'))
+                    m_venue = str(m.get('venue', 'Happy Valley'))
+                    for race in (m.get('races') or []):
+                        r_no = race.get('race_no', 1)
+                        for runner in (race.get('runners') or []):
+                            fin = runner.get('final_position')
+                            if fin is None:
+                                continue
+                            cname = _clean_horse_name(runner.get('name', ''))
+                            if not cname:
+                                continue
+                            if cname not in memory:
+                                memory[cname] = {
+                                    'horse_name': cname,
+                                    'horse_code': str(runner.get('code') or ''),
+                                    'runs': [],
+                                    'trial_note': None
+                                }
+                            comm = comments_dict.get(cname, '')
+                            flags = parse_incident(comm, target_horse_name=cname)
+                            max_interf = max([fl['severity'] for fl in flags if fl['flag'] == 'traffic_trouble'], default=0)
+                            race_id = f"{m_date.replace('-', '')}_R{r_no}"
+                            run_rec = {
+                                'race_date': m_date,
+                                'race_id': race_id,
+                                'venue': m_venue,
+                                'course_rail': str(race.get('course', 'C')),
+                                'surface': 'TURF',
+                                'going': str(m.get('going', 'GOOD')),
+                                'distance': int(race.get('distance', 1200) or 1200),
+                                'class': str(race.get('class_dist', 'Class 4')),
+                                'barrier': int(runner.get('draw', 6) or 6),
+                                'finish_pos': int(fin),
+                                'beaten_lengths': 0.0 if int(fin) == 1 else 2.0,
+                                'sp': float(runner.get('win_odds', 10.0) or 10.0),
+                                'weight_carried': float(runner.get('actual_weight', 125.0) or 125.0),
+                                'early_pos': 5.0,
+                                'final_section_time': 22.8,
+                                'final_section_rank': 4,
+                                'field_size': len(race.get('runners') or []),
+                                'incident_flags': flags,
+                                'ground_saved_score': 0.5,
+                                'interference_severity': max_interf,
+                                'gate_speed_proven': any(fl['flag'] == 'gate_speed' for fl in flags)
+                            }
+                            runs_list = memory[cname]['runs']
+                            if not any(x.get('race_id') == race_id for x in runs_list):
+                                runs_list.insert(0, run_rec)
+                                memory[cname]['runs'] = runs_list[:6]
+        except Exception as e:
+            logging.warning(f"Error ingesting last_scraped_meeting.json into incident memory: {e}")
 
     # 4. Attach secondary trial note (Trials cannot outrank races)
     if os.path.exists('data/engineered_trial_features.json'):
@@ -479,7 +668,16 @@ def build_horse_incident_memory(force_rebuild=False):
             logging.warning(f"Error loading trial notes: {e}")
 
     save_horse_memory(memory)
-    logging.info(f"Memory Bank successfully built with {len(memory)} active horse keys.")
+    flagged_count = sum(
+        1 for v in memory.values()
+        if isinstance(v, dict) and any(r.get('incident_flags') for r in (v.get('runs') or []))
+    )
+    record_health(
+        "incident_memory",
+        "ok" if flagged_count > 0 else "warn",
+        metrics={"horses": len(memory), "flagged_horses": flagged_count},
+    )
+    logging.info(f"Memory Bank successfully built with {len(memory)} active horse keys ({flagged_count} with incident flags).")
     return memory
 
 
