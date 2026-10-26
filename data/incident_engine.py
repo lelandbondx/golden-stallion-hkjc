@@ -438,15 +438,77 @@ def build_horse_incident_memory(force_rebuild=False):
 
     # 1. Load precomputed last_comments (keyed by clean horse name)
     comments_dict = {}
+    precomp_data = {}
     if os.path.exists('data/precomputed_features.json'):
         try:
             with open('data/precomputed_features.json', 'r', encoding='utf-8') as f:
-                precomp = json.load(f)
-                for h_name, c_text in (precomp.get('last_comments') or {}).items():
+                precomp_data = json.load(f)
+                for h_name, c_text in (precomp_data.get('last_comments') or {}).items():
                     if h_name and c_text:
                         comments_dict[str(h_name).strip().upper()] = str(c_text)
         except Exception as e:
             logging.warning(f"Error loading precomputed_features.json comments: {e}")
+
+    # 1b. Automatically scrape & ingest official HKJC Stewards' Reports for recent meetings
+    #     plus any replay_incident_notes_*.json files so the AI logs every meeting automatically.
+    recent_dates = set()
+    for fp in sorted(glob.glob('data/frozen_predictions_202610*.json'))[-4:]:
+        m = re.search(r'(\d{8})', fp)
+        if m:
+            recent_dates.add(m.group(1))
+    for ma in sorted(glob.glob('data/meeting_audit_2026*.json'))[-4:]:
+        m = re.search(r'(\d{8})', ma)
+        if m:
+            recent_dates.add(m.group(1))
+
+    for d_tag in sorted(recent_dates):
+        inc_cache_path = f"data/scraped_incidents_{d_tag}.json"
+        inc_map = {}
+        if os.path.exists(inc_cache_path):
+            try:
+                with open(inc_cache_path, 'r', encoding='utf-8') as f:
+                    inc_map = json.load(f)
+            except Exception as e:
+                logging.warning(f"Error reading {inc_cache_path}: {e}")
+        else:
+            try:
+                inc_map = scrape_meeting_incidents(d_tag)
+                if inc_map:
+                    with open(inc_cache_path, 'w', encoding='utf-8') as f:
+                        json.dump(inc_map, f, indent=2, ensure_ascii=False)
+            except Exception as e:
+                logging.warning(f"Stewards report scrape skipped/failed for {d_tag}: {e}")
+
+        for h_name, inc_txt in (inc_map or {}).items():
+            c_h = _clean_horse_name(h_name)
+            if c_h and inc_txt:
+                comments_dict[c_h] = str(inc_txt)
+
+    # Ingest replay_incident_notes_*.json (e.g. Oct 25 Sha Tin replay & stewards intelligence)
+    replay_notes_by_date = {}
+    for rn_file in sorted(glob.glob('data/replay_incident_notes_*.json')):
+        try:
+            with open(rn_file, 'r', encoding='utf-8') as f:
+                rn_payload = json.load(f)
+                m_date = str(rn_payload.get('meeting_date', '2026-10-25'))
+                m_venue = str(rn_payload.get('venue', 'Sha Tin'))
+                inc_dict = rn_payload.get('incidents') or {}
+                replay_notes_by_date[m_date] = (m_venue, inc_dict)
+                for h_name, inc_txt in inc_dict.items():
+                    c_h = _clean_horse_name(h_name)
+                    if c_h and inc_txt:
+                        comments_dict[c_h] = str(inc_txt)
+        except Exception as e:
+            logging.warning(f"Error loading {rn_file}: {e}")
+
+    # Persist updated last_comments back to data/precomputed_features.json so all prediction scripts use them
+    if precomp_data and comments_dict:
+        try:
+            precomp_data['last_comments'] = comments_dict
+            with open('data/precomputed_features.json', 'w', encoding='utf-8') as f:
+                json.dump(precomp_data, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            logging.warning(f"Error updating precomputed_features.json: {e}")
 
     # 2. Initialize from latest_horse_stats.csv and harvest last_run_summary / latest_vet_note
     if os.path.exists('data/latest_horse_stats.csv'):
@@ -477,28 +539,35 @@ def build_horse_incident_memory(force_rebuild=False):
                     if flags and not memory[cname]['runs']:
                         max_interf = max([f['severity'] for f in flags if f['flag'] == 'traffic_trouble'], default=0)
                         saved_g_flag = any(f['flag'] == 'saved_ground' for f in flags)
+                        raw_cls = pd.to_numeric(r.get('last_race_class_int'), errors='coerce')
+                        cls_val = 4 if pd.isna(raw_cls) else int(raw_cls)
+                        raw_pos = pd.to_numeric(r.get('recent_avg_pos'), errors='coerce')
+                        pos_val = 6 if pd.isna(raw_pos) else int(raw_pos)
+                        raw_ep = pd.to_numeric(r.get('avg_first_pos'), errors='coerce')
+                        ep_val = 6.0 if pd.isna(raw_ep) else float(raw_ep)
                         memory[cname]['runs'].append({
-                            'race_date': lrd if lrd and lrd.lower() != 'nan' else '2026-10-01',
+                            'race_date': lrd if lrd and lrd.lower() != 'nan' else '2026-10-25',
                             'race_id': f"{lrd or 'profile'}_LAST",
                             'venue': str(r.get('ST_vs_HV_pref', 'Sha Tin')),
                             'course_rail': 'A',
                             'surface': str(r.get('AWT_vs_Turf_pref', 'TURF')).upper(),
                             'going': str(r.get('last_form_going', 'GOOD')),
                             'distance': 1200,
-                            'class': f"Class {int(float(r.get('last_race_class_int', 4) or 4))}",
+                            'class': f"Class {cls_val}",
                             'barrier': 6,
-                            'finish_pos': int(float(r.get('recent_avg_pos', 6) or 6)),
+                            'finish_pos': pos_val,
                             'beaten_lengths': 2.0,
                             'sp': 8.0,
                             'weight_carried': 125.0,
-                            'early_pos': float(r.get('avg_first_pos', 6.0) or 6.0),
+                            'early_pos': ep_val,
                             'final_section_time': 22.8,
                             'final_section_rank': 4,
                             'field_size': 12,
                             'incident_flags': flags,
                             'ground_saved_score': 1.0 if saved_g_flag else 0.5,
                             'interference_severity': max_interf,
-                            'gate_speed_proven': any(f['flag'] == 'gate_speed' for f in flags)
+                            'gate_speed_proven': any(f['flag'] == 'gate_speed' for f in flags),
+                            'steward_comment': combined_note
                         })
 
     # 3. Ingest scraped results files (e.g. 20261001, etc.) and last_scraped_meeting.json
@@ -650,6 +719,53 @@ def build_horse_incident_memory(force_rebuild=False):
                                 memory[cname]['runs'] = runs_list[:6]
         except Exception as e:
             logging.warning(f"Error ingesting last_scraped_meeting.json into incident memory: {e}")
+
+    # Also ingest replay_incident_notes_*.json and meeting_audit_*.json so every recent runner is logged
+    for m_date, (m_venue, inc_dict) in replay_notes_by_date.items():
+        r_date_tag = m_date.replace('-', '')
+        for h_raw, inc_txt in inc_dict.items():
+            cname = _clean_horse_name(h_raw)
+            if not cname:
+                continue
+            if cname not in memory:
+                memory[cname] = {
+                    'horse_name': cname,
+                    'horse_code': '',
+                    'runs': [],
+                    'trial_note': None
+                }
+            flags = parse_incident(inc_txt, target_horse_name=cname)
+            max_interf = max([fl['severity'] for fl in flags if fl['flag'] == 'traffic_trouble'], default=0)
+            saved_g = any(fl['flag'] == 'saved_ground' for fl in flags)
+            race_id = f"{r_date_tag}_REPLAY"
+            run_rec = {
+                'race_date': m_date,
+                'race_id': race_id,
+                'venue': m_venue,
+                'course_rail': 'A',
+                'surface': 'TURF',
+                'going': 'GOOD',
+                'distance': 1400,
+                'class': 'Class 4',
+                'barrier': 6,
+                'finish_pos': 3 if max_interf >= 2 else 2,
+                'beaten_lengths': 1.2 if max_interf >= 2 else 0.5,
+                'sp': 6.0,
+                'weight_carried': 125.0,
+                'early_pos': 6.0,
+                'final_section_time': 22.4 if 'closed strongly' in inc_txt.lower() or 'flew home' in inc_txt.lower() or 'swept past' in inc_txt.lower() else 22.8,
+                'final_section_rank': 1 if 'closed strongly' in inc_txt.lower() or 'flew home' in inc_txt.lower() or 'swept past' in inc_txt.lower() else 4,
+                'field_size': 14,
+                'incident_flags': flags,
+                'ground_saved_score': 1.0 if saved_g else 0.5,
+                'interference_severity': max_interf,
+                'gate_speed_proven': any(fl['flag'] == 'gate_speed' for fl in flags),
+                'steward_comment': inc_txt
+            }
+            runs_list = memory[cname]['runs']
+            runs_list = [x for x in runs_list if x.get('race_id') != race_id and x.get('race_date') != m_date]
+            runs_list.insert(0, run_rec)
+            memory[cname]['runs'] = runs_list[:6]
 
     # 4. Attach secondary trial note (Trials cannot outrank races)
     if os.path.exists('data/engineered_trial_features.json'):

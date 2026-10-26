@@ -1,6 +1,6 @@
 {
   "overall_status": "warn",
-  "updated_at": "2026-10-26T20:08:08Z",
+  "updated_at": "2026-10-26T20:17:28Z",
   "components": {
     "scraper": {
       "status": "warn",
@@ -15,11 +15,11 @@
     },
     "incident_memory": {
       "status": "ok",
-      "last_attempt_at": "2026-10-26T20:06:57Z",
-      "last_success_at": "2026-10-26T20:06:57Z",
+      "last_attempt_at": "2026-10-26T20:17:28Z",
+      "last_success_at": "2026-10-26T20:17:28Z",
       "metrics": {
-        "horses": 1521,
-        "flagged_horses": 56
+        "horses": 1522,
+        "flagged_horses": 409
       },
       "error": null
     },
@@ -31,6 +31,17 @@
         "meeting_date": "2026-10-25",
         "venue": "Sha Tin",
         "races_predicted": 11
+      },
+      "error": null
+    },
+    "incident_engine": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T20:16:24Z",
+      "last_success_at": "2026-10-26T20:16:24Z",
+      "metrics": {
+        "date": "20261025",
+        "rows": 146,
+        "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/25"
       },
       "error": null
     }

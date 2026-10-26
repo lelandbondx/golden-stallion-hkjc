@@ -2,3 +2,8 @@
 {"component": "incident_memory", "status": "ok", "timestamp": "2026-10-26T20:06:57Z", "metrics": {"horses": 1521, "flagged_horses": 56}, "error": null}
 {"component": "scraper", "status": "warn", "timestamp": "2026-10-26T20:08:08Z", "metrics": {"source": "cache", "meeting_date": "2026-10-25", "cache_age_s": 153797.2}, "error": "Fell back to cached meeting after live error: GraphQL returned empty activeMeetings"}
 {"component": "run_predictions", "status": "ok", "timestamp": "2026-10-26T20:08:08Z", "metrics": {"meeting_date": "2026-10-25", "venue": "Sha Tin", "races_predicted": 11}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-10-26T20:16:18Z", "metrics": {"date": "20261014", "rows": 105, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/14"}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-10-26T20:16:20Z", "metrics": {"date": "20261019", "rows": 151, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/19"}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-10-26T20:16:22Z", "metrics": {"date": "20261021", "rows": 107, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/21"}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-10-26T20:16:24Z", "metrics": {"date": "20261025", "rows": 146, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/25"}, "error": null}
+{"component": "incident_memory", "status": "ok", "timestamp": "2026-10-26T20:17:28Z", "metrics": {"horses": 1522, "flagged_horses": 409}, "error": null}
