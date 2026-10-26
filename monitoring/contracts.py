@@ -368,8 +368,146 @@ def compute_telemetry_harmony_multipliers(
     # -------------------------------------------------------------------------
     active_vet_risk_penalty = np.where((vet_issue != 0) & (~strong_trial_arr), -0.020, 0.0)
 
+    # -------------------------------------------------------------------------
+    # 5. Ronan Tactical Racing Harmony:
+    #    (a) 1000m & 1200m Sprint Gate-Speed Crosser Boost (overcoming outside draws
+    #        via proven early speed without needing to be a G1/class-dropper horse).
+    #    (b) High-Pace Setup (3+ speed horses or 4+ on-pace horses) -> boost runners
+    #        lying 6th-12th (`5.5 <= avg_first_pos <= 12.5`) with strong late finish
+    #        (`best_last_sec <= 22.75` or `rank_sec400 <= 3`).
+    #    (c) "False Favourite" Market-Respect Guard: strengthen penalty (-0.5% extra,
+    #        total -3.5%) if drifting, but DO NOT rule out if the market continues to
+    #        wager on the favourite (waive/soften penalty on steam or firm <=2.8 odds).
+    # -------------------------------------------------------------------------
+    avg_first_pos = (
+        pd.to_numeric(
+            df_runners.get("avg_first_pos", pd.Series(6.0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(6.0)
+        .values
+    )
+    best_last_sec = (
+        pd.to_numeric(
+            df_runners.get("best_last_sec", pd.Series(99.0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(99.0)
+        .values
+    )
+    recent_pos = (
+        pd.to_numeric(
+            df_runners.get("recent_avg_pos", pd.Series(7.0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(7.0)
+        .values
+    )
+    last_comments_col = (
+        df_runners.get("last_comment", pd.Series("", index=df_runners.index))
+        .astype(str)
+        .str.lower()
+    )
+    has_comment_gate_speed = last_comments_col.str.contains(
+        "jumped well|began speedily|led early|raced prominently|crossed|fast into stride",
+        case=False,
+        na=False,
+    ).values
+    has_proven_gate_speed = (avg_first_pos <= 3.5) | has_comment_gate_speed
+
+    speed_count = int(np.sum(avg_first_pos <= 3.5))
+    on_pace_count = int(np.sum(avg_first_pos <= 4.2))
+
+    # (a) 1000m & 1200m Sprint Gate-Speed Crosser Boost
+    if int(distance) <= 1200:
+        is_wide_crosser = has_proven_gate_speed & (draws >= 8) & (vet_issue == 0)
+        is_natural_sprint_speed = (
+            has_proven_gate_speed & (draws < 8) & (speed_count <= 3) & (vet_issue == 0)
+        )
+        sprint_gate_speed_crosser_boost = np.where(
+            is_wide_crosser,
+            0.025,
+            np.where(is_natural_sprint_speed, 0.015, 0.0),
+        )
+    else:
+        sprint_gate_speed_crosser_boost = zeros.copy()
+
+    # (b) High-Pace Setup -> Mid-to-Back (6th-12th) Strong Late Finishers
+    if "rank_sec400" in df_runners.columns:
+        rank_sec = (
+            pd.to_numeric(df_runners["rank_sec400"], errors="coerce").fillna(7).astype(int).values
+        )
+    else:
+        rank_sec = (
+            pd.Series(best_last_sec).rank(ascending=True, method="min").fillna(7).astype(int).values
+        )
+
+    is_high_pace_race = (speed_count >= 3) or (on_pace_count >= 4)
+    if is_high_pace_race:
+        is_6th_to_12th_strong_closer = (
+            (avg_first_pos >= 5.5)
+            & (avg_first_pos <= 12.5)
+            & ((best_last_sec <= 22.75) | (rank_sec <= 3))
+            & (vet_issue == 0)
+        )
+        high_pace_strong_closer_boost = np.where(is_6th_to_12th_strong_closer, 0.020, 0.0)
+    else:
+        high_pace_strong_closer_boost = zeros.copy()
+
+    # (c) "False Favourite" Market-Respect Guard
+    baseline_odds = (
+        pd.to_numeric(
+            df_runners.get("baseline_odds", pd.Series(win_odds, index=df_runners.index)),
+            errors="coerce",
+        )
+        .fillna(pd.Series(win_odds, index=df_runners.index))
+        .values
+    )
+    class_drop = (
+        pd.to_numeric(
+            df_runners.get("class_diff", pd.Series(0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(0)
+        .values
+    )
+    had_excuse = (
+        df_runners.get("had_excuse", pd.Series(False, index=df_runners.index))
+        .astype(bool)
+        .values
+    )
+    implied_prob = (
+        pd.to_numeric(
+            df_runners.get("implied_prob", pd.Series(0.0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(0.0)
+        .values
+    )
+    is_flagged_false_fav = (
+        ((implied_prob > 0.20) | ((win_odds > 0) & (win_odds < 5.0)))
+        & (recent_pos > 6.0)
+        & (class_drop <= 0)
+        & (~had_excuse)
+    )
+    market_steaming = (baseline_odds > 0) & (win_odds > 0) & (win_odds <= baseline_odds * 0.92)
+    market_firm_fav = (win_odds > 0) & (win_odds <= 2.8)
+    market_drifting = (baseline_odds > 0) & (win_odds >= baseline_odds * 1.10)
+
+    # Refund the -0.03 false_fav_penalty if market continues to wager (steam or strong trial -> +0.030 waiver;
+    # firm <=2.8 favourite -> +0.020 partial waiver so net is -0.010; drifting -> extra -0.005 so net is -0.035)
+    false_fav_market_guard = np.where(
+        is_flagged_false_fav,
+        np.where(
+            market_steaming | strong_trial_arr,
+            0.030,
+            np.where(market_firm_fav, 0.020, np.where(market_drifting, -0.005, 0.0)),
+        ),
+        0.0,
+    )
+
     telemetry_harmony_multiplier = (
-        tactical_incident_multiplier + trackwork_conditioning_multiplier + active_vet_risk_penalty
+        tactical_incident_multiplier
+        + trackwork_conditioning_multiplier
+        + active_vet_risk_penalty
+        + sprint_gate_speed_crosser_boost
+        + high_pace_strong_closer_boost
+        + false_fav_market_guard
     )
 
     return {
@@ -377,6 +515,9 @@ def compute_telemetry_harmony_multipliers(
         "tactical_incident_multiplier": tactical_incident_multiplier,
         "trackwork_conditioning_multiplier": trackwork_conditioning_multiplier,
         "active_vet_risk_penalty": active_vet_risk_penalty,
+        "sprint_gate_speed_crosser_boost": sprint_gate_speed_crosser_boost,
+        "high_pace_strong_closer_boost": high_pace_strong_closer_boost,
+        "false_fav_market_guard": false_fav_market_guard,
         "telemetry_harmony_multiplier": telemetry_harmony_multiplier,
         "tactical_badges": tactical_badges,
     }

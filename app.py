@@ -1304,11 +1304,17 @@ with tab1:
         is_optimal_weight_zone = (opt_body_weights.notna()) & (opt_body_weights > 800) & (np.abs(declared_weights - opt_body_weights) <= 15)
         optimal_weight_boost = np.where(is_optimal_weight_zone, 0.01, 0.0)
 
-        # Disguised Form & Weight-Carrying Resilience Cushion (Sha Tin only, 0.0% at Happy Valley)
-        is_resilient_weight_carrier = (actual_weights >= 130) & (draws >= 8) & (recent_pos <= 6.0) & (vet_issue == 0) & (
-            (get_series(df_runners, 'avg_first_pos', 6.0) >= 7.0) | (get_series(df_runners, 'recent_win_rate', 0) > 0) | (get_series(df_runners, 'gear_win_rate', 0) > 0.10)
+        # Handicap Topweight (130-135 lb) Class & Weight-Carrying Resilience Cushion across ALL distances and draws (Sha Tin Turf & AWT)
+        st_wr_s = get_series(df_runners, 'ST_win_rate', 0)
+        awt_wr_s = get_series(df_runners, 'AWT_win_rate', 0)
+        dist_wr_s = get_series(df_runners, 'distance_win_rate', 0)
+        rec_wr_s = get_series(df_runners, 'recent_win_rate', 0)
+        gear_wr_s = get_series(df_runners, 'gear_win_rate', 0)
+        is_resilient_weight_carrier = (actual_weights >= 130) & (recent_pos <= 6.0) & (vet_issue == 0) & (
+            (rec_wr_s > 0) | (st_wr_s > 0) | (awt_wr_s > 0) | (dist_wr_s > 0) | (gear_wr_s > 0.10) |
+            (df_runners['avg_first_pos'] <= 3.5) | (df_runners['best_last_sec'] <= 22.75) | (get_series(df_runners, 'avg_first_pos', 6.0) >= 7.0)
         )
-        weight_resilience_boost = np.where(is_st & is_resilient_weight_carrier, 0.025, 0.0)
+        weight_resilience_boost = np.where((is_st | is_awt_race) & is_resilient_weight_carrier, 0.025, 0.0)
 
         # Surface Switch & Trial Delta Boost (+2.0% Boost for true 1st-time switchers, 0 if poor trial or if trial_boost already fired)
         awt_starts = pd.to_numeric(df_runners['AWT_starts'], errors='coerce').fillna(0) if 'AWT_starts' in df_runners.columns else 0
@@ -1340,8 +1346,11 @@ with tab1:
         # Stacked Geometry Penalty Cap: max -10.0%
         stacked_geom_pen = np.clip(hv_c_course_penalty + st_1000_draw_penalty + st_wide_draw_penalty, -0.10, 0.0)
 
+        df_runners['baseline_odds'] = df_runners.apply(lambda row: odds_tracker.get_baseline_odds(
+            meeting.get('date', 'today'), meeting.get('venue', 'HK'), race.get('race_no', 0), row['no'], row['scraped_win_odds'], minutes_to_post), axis=1)
+
         # Telemetry Harmony Multipliers (AWT specialist fix, Stewards' Incident/Replay Memory,
-        # 30-Day Trackwork/Conghua Conditioning, and Official Vet Record Risk Penalty)
+        # 30-Day Trackwork/Conghua Conditioning, Official Vet Record Risk Penalty, and Ronan Tactical Rules)
         from monitoring.contracts import compute_telemetry_harmony_multipliers
         th_cal = compute_telemetry_harmony_multipliers(
             df_runners=df_runners,

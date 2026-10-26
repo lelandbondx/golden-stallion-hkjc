@@ -84,17 +84,19 @@ def calculate_odds_shift_bonus(baseline_odds, current_odds, recent_pos, vet_issu
     if shift_pct <= -0.20:
         if recent_pos <= 4.0 and vet_issue == 0:
             return 8.0  # Smart money on proven form
-        elif vet_issue == 1 or recent_pos >= 8.0:
-            return 2.0  # Speculative move on questionable form
+        elif vet_issue == 0:
+            return 5.5  # Strong market conviction on unexposed / rebounding runner (do not rule out backed "false fav")
         else:
-            return 4.0
+            return 2.0  # Speculative move with active vet issue
 
     # Mild steam (10% to 20% drop)
     elif shift_pct <= -0.10:
         if recent_pos <= 4.0 and vet_issue == 0:
             return 4.0
+        elif vet_issue == 0:
+            return 3.0  # Sustained market support
         else:
-            return 2.0
+            return 1.5
 
     # Moderate drift (15% to 30% drift)
     elif shift_pct >= 0.15 and shift_pct < 0.30:

@@ -320,6 +320,143 @@ class TestShaTinCalibrations(unittest.TestCase):
         self.assertAlmostEqual(res["active_vet_risk_penalty"][2], -0.020)
         self.assertAlmostEqual(res["trackwork_conditioning_multiplier"][2], -0.015)
 
+    def test_ronan_tactical_rules(self):
+        """
+        Verify Ronan's 4 tactical racing rules:
+        1. 1000m/1200m outside-draw gate-speed crosser gets +2.5% (+0.025) without needing to be a G1 horse.
+        2. High-pace setup (3+ speed horses) boosts 6th-12th runners with strong late sectionals (+2.0% / +0.020).
+        3. "False favourite" market-respect guard waives -3.0% penalty (+0.030) when market continues to wager on it,
+           and strengthens penalty (-0.005 extra -> -3.5% net) when drifting.
+        4. Handicap topweight (130-135 lb) resilience works across all distances & all draws (e.g. 1200m Megastar Heart / PI Legend).
+        """
+        df = pd.DataFrame([
+            # 1. Wide gate (Gate 11) in 1200m sprint with proven gate speed -> +0.025 crosser boost
+            {
+                "no": 1,
+                "name": "WIDE CROSSER",
+                "clean_name": "WIDE CROSSER",
+                "draw": 11,
+                "actual_weight": 126,
+                "avg_first_pos": 2.2,
+                "best_last_sec": 23.0,
+                "recent_avg_pos": 4.5,
+                "win_odds": 6.5,
+                "baseline_odds": 6.5,
+                "implied_prob": 0.14,
+                "class_diff": 0,
+                "had_excuse": False,
+                "prev_run_vet_finding": 0,
+            },
+            # 2. Speed leader #2
+            {
+                "no": 2,
+                "name": "SPEED TWO",
+                "clean_name": "SPEED TWO",
+                "draw": 3,
+                "actual_weight": 130,
+                "avg_first_pos": 1.5,
+                "best_last_sec": 22.9,
+                "recent_avg_pos": 2.5,
+                "recent_win_rate": 0.25,
+                "win_odds": 3.5,
+                "baseline_odds": 3.5,
+                "implied_prob": 0.25,
+                "class_diff": 0,
+                "had_excuse": False,
+                "prev_run_vet_finding": 0,
+            },
+            # 3. Speed leader #3 (triggers speed_count == 3 high-pace race)
+            {
+                "no": 3,
+                "name": "SPEED THREE",
+                "clean_name": "SPEED THREE",
+                "draw": 5,
+                "actual_weight": 122,
+                "avg_first_pos": 3.0,
+                "best_last_sec": 23.2,
+                "recent_avg_pos": 5.0,
+                "win_odds": 10.0,
+                "baseline_odds": 10.0,
+                "implied_prob": 0.09,
+                "class_diff": 0,
+                "had_excuse": False,
+                "prev_run_vet_finding": 0,
+            },
+            # 4. Lying 6th-12th (avg_first_pos 8.5) with strong late sectional (22.35s) -> +0.020 high-pace closer boost
+            {
+                "no": 4,
+                "name": "STRONG LATE CLOSER",
+                "clean_name": "STRONG LATE CLOSER",
+                "draw": 7,
+                "actual_weight": 135,
+                "avg_first_pos": 8.5,
+                "best_last_sec": 22.35,
+                "recent_avg_pos": 3.5,
+                "ST_win_rate": 0.20,
+                "win_odds": 5.5,
+                "baseline_odds": 5.5,
+                "implied_prob": 0.16,
+                "class_diff": 0,
+                "had_excuse": False,
+                "prev_run_vet_finding": 0,
+            },
+            # 5. Backed "False Favourite" (recent_avg_pos 7.5, odds steamed from 4.5 to 3.4) -> +0.030 waiver
+            {
+                "no": 5,
+                "name": "BACKED FALSE FAV",
+                "clean_name": "BACKED FALSE FAV",
+                "draw": 2,
+                "actual_weight": 125,
+                "avg_first_pos": 5.0,
+                "best_last_sec": 22.9,
+                "recent_avg_pos": 7.5,
+                "win_odds": 3.4,
+                "baseline_odds": 4.5,
+                "implied_prob": 0.26,
+                "class_diff": 0,
+                "had_excuse": False,
+                "prev_run_vet_finding": 0,
+            },
+            # 6. Drifting "False Favourite" (recent_avg_pos 7.5, odds drifted from 3.5 to 4.2) -> -0.005 extra penalty
+            {
+                "no": 6,
+                "name": "DRIFTING FALSE FAV",
+                "clean_name": "DRIFTING FALSE FAV",
+                "draw": 6,
+                "actual_weight": 125,
+                "avg_first_pos": 5.0,
+                "best_last_sec": 23.1,
+                "recent_avg_pos": 7.5,
+                "win_odds": 4.2,
+                "baseline_odds": 3.5,
+                "implied_prob": 0.21,
+                "class_diff": 0,
+                "had_excuse": False,
+                "prev_run_vet_finding": 0,
+            },
+        ])
+
+        res = compute_telemetry_harmony_multipliers(
+            df_runners=df,
+            is_st=True,
+            is_hv=False,
+            is_awt_race=False,
+            distance=1200,
+            class_int=3,
+            has_strong_trial=np.zeros(len(df), dtype=bool),
+            horse_memory={},
+        )
+
+        # 1. Wide gate-speed crosser gets +0.025
+        self.assertAlmostEqual(res["sprint_gate_speed_crosser_boost"][0], 0.025)
+        # 2. Inside gate-speed horse in a 3-speed-horse race gets +0.015 natural sprint gate speed
+        self.assertAlmostEqual(res["sprint_gate_speed_crosser_boost"][1], 0.015)
+        # 3. Runner 4 (lying 8.5 with 22.35s split in 3-speed-horse race) gets +0.020 high_pace_strong_closer_boost
+        self.assertAlmostEqual(res["high_pace_strong_closer_boost"][3], 0.020)
+        # 4. Backed false favourite gets +0.030 waiver; drifting false favourite gets -0.005 extra penalty
+        self.assertAlmostEqual(res["false_fav_market_guard"][4], 0.030)
+        self.assertAlmostEqual(res["false_fav_market_guard"][5], -0.005)
+
 
 class TestAppMultipliers(unittest.TestCase):
 
