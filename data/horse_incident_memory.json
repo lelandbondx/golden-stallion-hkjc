@@ -372,7 +372,41 @@
   "ARMOUR WAR EAGLE": {
     "horse_name": "ARMOUR WAR EAGLE",
     "horse_code": "J039",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 3,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.75,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin 01 (LBW HD) | RunPos: 11 10 1 05/05/2024: On arrival at the barriers was examine",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin 01 (LBW HD) | RunPos: 11 10 1 05/05/2024: On arrival at the barriers was examined and found to be lame in its left front leg. Withdrawn from racing. (Passed: 13/09/2024)"
+      }
+    ],
     "trial_note": null
   },
   "J039": {
@@ -559,7 +593,16 @@
         "final_section_time": 22.8,
         "final_section_rank": 4,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (01/10/26 ST / Turf / \"A\" 1200m): Fin 04 (LBW 1-1/2) | RunPos: 7 7 4 01/01/2026: Disappointing performance. (Pa",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false
@@ -660,7 +703,41 @@
   "BUSTLING CITY": {
     "horse_name": "BUSTLING CITY",
     "horse_code": "L210",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 1,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin 02 (LBW 1/2) | RunPos: 2 1 2 25/02/2026: Disappointing performance. (Passed: 30/",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin 02 (LBW 1/2) | RunPos: 2 1 2 25/02/2026: Disappointing performance. (Passed: 30/03/2026)"
+      }
+    ],
     "trial_note": null
   },
   "L210": {
@@ -960,7 +1037,41 @@
   "COLOURFUL WINNER": {
     "horse_name": "COLOURFUL WINNER",
     "horse_code": "J312",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.833333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 05 (LBW 3-1/2) | RunPos: 2 4 3 5 07/12/2025: Bled from both nostrils afte",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 05 (LBW 3-1/2) | RunPos: 2 4 3 5 07/12/2025: Bled from both nostrils after racing. (Passed: 19/03/2026)"
+      }
+    ],
     "trial_note": null
   },
   "J312": {
@@ -1020,7 +1131,41 @@
   "DAILY TROPHY": {
     "horse_name": "DAILY TROPHY",
     "horse_code": "H283",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.5,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin 04 (LBW 1-1/4) | RunPos: 11 11 4 07/02/2024: Disappointing performance and subst",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin 04 (LBW 1-1/4) | RunPos: 11 11 4 07/02/2024: Disappointing performance and substantial mucus in trachea noted on post-race scoping. (Passed: 29/02/2024)"
+      }
+    ],
     "trial_note": null
   },
   "H283": {
@@ -1768,7 +1913,41 @@
   "GIANT LEAP": {
     "horse_name": "GIANT LEAP",
     "horse_code": "J143",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 4,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 3.583333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin 02 (LBW HD) | RunPos: 2 2 2 18/09/2024: Unacceptable barrier manners and disappo",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin 02 (LBW HD) | RunPos: 2 2 2 18/09/2024: Unacceptable barrier manners and disappointing performance. (Passed: 04/10/2024)"
+      }
+    ],
     "trial_note": null
   },
   "J143": {
@@ -1864,8 +2043,48 @@
   "GOOD LUCK HAPPY": {
     "horse_name": "GOOD LUCK HAPPY",
     "horse_code": "K301",
-    "runs": [],
-    "trial_note": null
+    "runs": [
+      {
+        "race_date": "2026-09-09",
+        "race_id": "2026-09-09_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 4.428571428571429,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (09/09/26 HV / Turf / \"A\" 1200m): Fin 09 (LBW 4-1/4) | RunPos: 2 2 9 25/03/2025: Lame left hind. (Passed: 14/10",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (09/09/26 HV / Turf / \"A\" 1200m): Fin 09 (LBW 4-1/4) | RunPos: 2 2 9 25/03/2025: Lame left hind. (Passed: 14/10/2025)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.1,
+      "best_trial_speed_diff": 0.0799999999999983,
+      "jockeys": [
+        "Y L CHUNG"
+      ]
+    }
   },
   "K301": {
     "horse_name": "GOOD LUCK HAPPY",
@@ -2201,7 +2420,13 @@
     "horse_name": "HOTT SHOTT",
     "horse_code": "L147",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.14285714285714285,
+      "best_trial_speed_diff": -0.1700000000000017,
+      "jockeys": [
+        "M F POON"
+      ]
+    }
   },
   "L147": {
     "horse_name": "HOTT SHOTT",
@@ -2868,7 +3093,41 @@
   "LUCY IN THE SKY": {
     "horse_name": "LUCY IN THE SKY",
     "horse_code": "J275",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 2,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.583333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin 03 (LBW 2-1/2) | RunPos: 3 3 3 23/11/2025: Bled from both nostrils after racing.",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin 03 (LBW 2-1/2) | RunPos: 3 3 3 23/11/2025: Bled from both nostrils after racing. (Passed: 10/02/2026)"
+      }
+    ],
     "trial_note": null
   },
   "J275": {
@@ -2905,7 +3164,13 @@
     "horse_name": "MACANESE MASTER",
     "horse_code": "J532",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.125,
+      "best_trial_speed_diff": 0.3199999999999932,
+      "jockeys": [
+        "H Y YUEN"
+      ]
+    }
   },
   "J532": {
     "horse_name": "MACANESE MASTER",
@@ -2989,7 +3254,13 @@
     "horse_name": "MIGHTY STEED",
     "horse_code": "J384",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.16666666666666666,
+      "best_trial_speed_diff": -1.1200000000000045,
+      "jockeys": [
+        "C M THABANA"
+      ]
+    }
   },
   "J384": {
     "horse_name": "MIGHTY STEED",
@@ -3264,8 +3535,48 @@
   "NOISY BOY": {
     "horse_name": "NOISY BOY",
     "horse_code": "J536",
-    "runs": [],
-    "trial_note": null
+    "runs": [
+      {
+        "race_date": "2026-09-16",
+        "race_id": "2026-09-16_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.75,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (16/09/26 HV / Turf / \"B\" 1800m): Fin 12 (LBW 14) | RunPos: 4 1 1 2 12 16/09/2026: Disappointing performance. (",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (16/09/26 HV / Turf / \"B\" 1800m): Fin 12 (LBW 14) | RunPos: 4 1 1 2 12 16/09/2026: Disappointing performance. (Passed: 09/10/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": 0.6400000000000006,
+      "jockeys": [
+        "Z PURTON"
+      ]
+    }
   },
   "J536": {
     "horse_name": "NOISY BOY",
@@ -3276,7 +3587,41 @@
   "NOTTHESILLYONE": {
     "horse_name": "NOTTHESILLYONE",
     "horse_code": "J383",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 9,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.4166666666666665,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / Turf / \"B\" 1000m): Fin 11 (LBW 5-1/4) | RunPos: 7 8 11 04/01/2026: Disappointing performance. (P",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / Turf / \"B\" 1000m): Fin 11 (LBW 5-1/4) | RunPos: 7 8 11 04/01/2026: Disappointing performance. (Passed: 20/01/2026)"
+      }
+    ],
     "trial_note": null
   },
   "J383": {
@@ -3524,7 +3869,41 @@
   "QUANTUM LEGEND": {
     "horse_name": "QUANTUM LEGEND",
     "horse_code": "L268",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "04/10/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 20/10/2026)",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "04/10/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 20/10/2026)"
+      }
+    ],
     "trial_note": null
   },
   "L268": {
@@ -3621,7 +4000,13 @@
     "horse_name": "ROBOT KNIGHT",
     "horse_code": "H464",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.125,
+      "best_trial_speed_diff": -0.23000000000000398,
+      "jockeys": [
+        "E C W WONG"
+      ]
+    }
   },
   "H464": {
     "horse_name": "ROBOT KNIGHT",
@@ -3948,7 +4333,41 @@
   "SO MY FOLKS": {
     "horse_name": "SO MY FOLKS",
     "horse_code": "K456",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 4.909090909090909,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin 07 (LBW 2-1/2) | RunPos: 7 7 7 05/04/2026: Bled from both nostrils after trackwo",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin 07 (LBW 2-1/2) | RunPos: 7 7 7 05/04/2026: Bled from both nostrils after trackwork. Withdrawn from racing. (Passed: 22/06/2026)"
+      }
+    ],
     "trial_note": null
   },
   "K456": {
@@ -4070,7 +4489,41 @@
   "SOVEREIGN FUND": {
     "horse_name": "SOVEREIGN FUND",
     "horse_code": "J402",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-09-13",
+        "race_id": "2026-09-13_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.083333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (13/09/26 ST / Turf / \"B\" 1400m): Fin 09 (LBW 3-3/4) | RunPos: 4 4 4 9 03/11/2024: Abnormal respiratory noise r",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (13/09/26 ST / Turf / \"B\" 1400m): Fin 09 (LBW 3-3/4) | RunPos: 4 4 4 9 03/11/2024: Abnormal respiratory noise reported during racing. (Passed: 07/11/2024)"
+      }
+    ],
     "trial_note": null
   },
   "J402": {
@@ -4094,8 +4547,48 @@
   "SPEEDY TRIDENT": {
     "horse_name": "SPEEDY TRIDENT",
     "horse_code": "K230",
-    "runs": [],
-    "trial_note": null
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 7.333333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 13 (LBW 17-3/4) | RunPos: 5 10 13 13 13/09/2026: Substantial blood in tra",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 13 (LBW 17-3/4) | RunPos: 5 10 13 13 13/09/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 28/09/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.375,
+      "best_trial_speed_diff": -0.23000000000000398,
+      "jockeys": [
+        "S SHAFRIZAL"
+      ]
+    }
   },
   "K230": {
     "horse_name": "SPEEDY TRIDENT",
@@ -4274,7 +4767,41 @@
   "SUPERB GUY": {
     "horse_name": "SUPERB GUY",
     "horse_code": "K323",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.25,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 06 (LBW 3-3/4) | RunPos: 14 14 10 6 02/07/2026: Lame right front leg on t",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 06 (LBW 3-3/4) | RunPos: 14 14 10 6 02/07/2026: Lame right front leg on the day after racing. (Passed: 31/08/2026)"
+      }
+    ],
     "trial_note": null
   },
   "K323": {
@@ -4298,7 +4825,41 @@
   "SWAGGER BRO": {
     "horse_name": "SWAGGER BRO",
     "horse_code": "K089",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.090909090909091,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 09 (LBW 8-3/4) | RunPos: 4 4 4 9 28/05/2025: After being loaded into the barrier",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 09 (LBW 8-3/4) | RunPos: 4 4 4 9 28/05/2025: After being loaded into the barriers, reared and sat down behind. Was found to be lame in its left hind leg. Withdrawn from racing. Update: Left pelvis injury. (Passed: 27/10/2025)"
+      }
+    ],
     "trial_note": null
   },
   "K089": {
@@ -4394,8 +4955,48 @@
   "THUNDER BLAZE": {
     "horse_name": "THUNDER BLAZE",
     "horse_code": "L188",
-    "runs": [],
-    "trial_note": null
+    "runs": [
+      {
+        "race_date": "2026-09-27",
+        "race_id": "2026-09-27_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 4,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 5.5,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (27/09/26 ST / Turf / \"C+3\" 1400m): Fin 04 (LBW 4-3/4) | RunPos: 3 3 4 4 23/05/2026: Lame right fore. Withdrawn",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (27/09/26 ST / Turf / \"C+3\" 1400m): Fin 04 (LBW 4-3/4) | RunPos: 3 3 4 4 23/05/2026: Lame right fore. Withdrawn from racing. (Passed: 24/08/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.3333333333333333,
+      "best_trial_speed_diff": -0.730000000000004,
+      "jockeys": [
+        "Z ZURIMAN"
+      ]
+    }
   },
   "L188": {
     "horse_name": "THUNDER BLAZE",
@@ -4430,7 +5031,41 @@
   "TURBO JEFFERIES": {
     "horse_name": "TURBO JEFFERIES",
     "horse_code": "L328",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.142857142857142,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 11 (LBW 15-1/4) | RunPos: 4 5 6 11 22/04/2026: Substantial blood in trach",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 11 (LBW 15-1/4) | RunPos: 4 5 6 11 22/04/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 07/05/2026)"
+      }
+    ],
     "trial_note": null
   },
   "L328": {
@@ -4514,7 +5149,41 @@
   "VIEW ALL THINGS": {
     "horse_name": "VIEW ALL THINGS",
     "horse_code": "K101",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 7.833333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 06 (LBW 3-3/4) | RunPos: 6 6 6 6 06/04/2025: Disappointing performance. (",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / Turf / \"B\" 1400m): Fin 06 (LBW 3-3/4) | RunPos: 6 6 6 6 06/04/2025: Disappointing performance. (Passed: 14/04/2025)"
+      }
+    ],
     "trial_note": null
   },
   "K101": {
@@ -4739,7 +5408,13 @@
     "horse_name": "RAGING WARRIOR",
     "horse_code": "L401",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.7142857142857143,
+      "best_trial_speed_diff": -0.1700000000000017,
+      "jockeys": [
+        "J ORMAN"
+      ]
+    }
   },
   "L401": {
     "horse_name": "RAGING WARRIOR",
@@ -4907,7 +5582,13 @@
     "horse_name": "LOVING VIBES",
     "horse_code": "J359",
     "runs": [],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": 0.3199999999999932,
+      "jockeys": [
+        "L HEWITSON"
+      ]
+    }
   },
   "J359": {
     "horse_name": "LOVING VIBES",
@@ -5354,7 +6035,41 @@
   "GLORIOUS ST PAUL'S": {
     "horse_name": "GLORIOUS ST PAUL'S",
     "horse_code": "K524",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-07",
+        "race_id": "2026-10-07_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.285714285714286,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (07/10/26 HV / Turf / \"C+3\" 1650m): Fin 09 (LBW 10) | RunPos: 8 9 10 9 07/06/2026: Bled from both nostrils afte",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (07/10/26 HV / Turf / \"C+3\" 1650m): Fin 09 (LBW 10) | RunPos: 8 9 10 9 07/06/2026: Bled from both nostrils after racing. (Passed: 07/09/2026)"
+      }
+    ],
     "trial_note": null
   },
   "K524": {
@@ -5798,7 +6513,41 @@
   "CALIFORNIA BAY": {
     "horse_name": "CALIFORNIA BAY",
     "horse_code": "K364",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-07",
+        "race_id": "2026-10-07_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.166666666666667,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (07/10/26 HV / Turf / \"C+3\" 1200m): Fin 03 (LBW 1/2) | RunPos: 5 4 3 22/10/2025: Disappointing performance. (Pa",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (07/10/26 HV / Turf / \"C+3\" 1200m): Fin 03 (LBW 1/2) | RunPos: 5 4 3 22/10/2025: Disappointing performance. (Passed: 04/11/2025)"
+      }
+    ],
     "trial_note": null
   },
   "K364": {
@@ -5810,7 +6559,41 @@
   "VIEW OF COSMOS": {
     "horse_name": "VIEW OF COSMOS",
     "horse_code": "L060",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-07",
+        "race_id": "2026-10-07_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 12,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.4,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (07/10/26 HV / Turf / \"C+3\" 1200m): Fin 11 (LBW 10-3/4) | RunPos: 6 7 11 29/03/2026: Unacceptable performance a",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (07/10/26 HV / Turf / \"C+3\" 1200m): Fin 11 (LBW 10-3/4) | RunPos: 6 7 11 29/03/2026: Unacceptable performance and respiratory noise reported during racing. (Passed: 13/04/2026)"
+      }
+    ],
     "trial_note": null
   },
   "L060": {
@@ -7339,7 +8122,16 @@
         "final_section_time": 22.8,
         "final_section_rank": 4,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "On jumping became unbalanced when bumped by CHEERFUL WONGCHOY.  Sent for sampling post-race. Last Run (14/10/26 HV / Tur",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false
@@ -9952,7 +10744,41 @@
   "EVERSTAR": {
     "horse_name": "EVERSTAR",
     "horse_code": "K264",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-14",
+        "race_id": "2026-10-14_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 7.818181818181818,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "In the early stages raced keenly.  For some distance near the 900 Metres was steadied to avoid DAN ATTACK.  Again near t",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "In the early stages raced keenly.  For some distance near the 900 Metres was steadied to avoid DAN ATTACK.  Again near the 800 Metres became unbalanced when it got its head up whilst being steadied away from DAN ATTACK.  K Teetan reported that his mount raced keenly during the event due to the slow pace and refused to settle.  He said near the 450 Metres EVERSTAR, which was laying out, was then steadied to avoid BROWNNEEDSFURTHER when that runner was taken in by FREE PONY.  A veterinary inspection immediately following the race found that horse to be a \"roarer” which had previously been reported. Last Run (14/10/26 HV / Turf / \"A\" 1200m): Fin 09 (LBW 4-1/2) | RunPos: 5 8 9 10/07/2025: Lame left front leg on the day after racing. (Passed: 12/09/2025)"
+      }
+    ],
     "trial_note": null
   },
   "K264": {
@@ -13733,19 +14559,27 @@
         "field_size": 14,
         "incident_flags": [
           {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Jumped only fairly.  Bumped near the 1300 Metres.  Raced very wide and without cover for the majority of the event. Last",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
             "flag": "wide_no_cover",
             "severity": 3,
             "marker": "start",
-            "snippet": "Jumped only fairly.  Bumped near the 1300 Metres.  Raced very wide and without cover for the majority of the event.",
-            "vet_blocked": false,
+            "snippet": "Jumped only fairly.  Bumped near the 1300 Metres.  Raced very wide and without cover for the majority of the event. Last",
+            "vet_blocked": true,
             "is_victim": true
           },
           {
             "flag": "slow_start",
             "severity": 1,
             "marker": "start",
-            "snippet": "Jumped only fairly.  Bumped near the 1300 Metres.  Raced very wide and without cover for the majority of the event.",
-            "vet_blocked": false,
+            "snippet": "Jumped only fairly.  Bumped near the 1300 Metres.  Raced very wide and without cover for the majority of the event. Last",
+            "vet_blocked": true,
             "is_victim": true
           }
         ],
@@ -17182,7 +18016,41 @@
   "HONEST WITNESS": {
     "horse_name": "HONEST WITNESS",
     "horse_code": "K283",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-19",
+        "race_id": "2026-10-19_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.333333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "The tongue tie was refitted at the Start. Last Run (19/10/26 ST / Turf / \"C+3\" 1200m): Fin 04 (LBW 2-1/4) | RunPos: 1 1 ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "The tongue tie was refitted at the Start. Last Run (19/10/26 ST / Turf / \"C+3\" 1200m): Fin 04 (LBW 2-1/4) | RunPos: 1 1 4 27/05/2026: Disappointing performance. (Passed: 12/06/2026)"
+      }
+    ],
     "trial_note": null
   },
   "K283": {
@@ -19772,7 +20640,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "final_400m",
-            "snippet": "Settled rearward and made up significant late ground in the straight to finish 3rd. Last Run (01/10/26 ST / Turf / \"A\" 1",
+            "snippet": "Settled rearward and made up significant late ground in the straight to finish 3rd. Last Run (25/10/26 ST / Turf / \"A\" 1",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -20303,9 +21171,8 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.45454545454545453,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": -0.060000000000002274,
       "jockeys": [
-        "C L CHAU",
         "C L CHAU"
       ]
     }
@@ -22730,7 +23597,7 @@
             "flag": "wide_no_cover",
             "severity": 3,
             "marker": "mid",
-            "snippet": "Raced very wide and without cover for the majority of the event. Last Run (01/10/26 ST / Turf / \"A\" 1200m): Fin 01 (LBW ",
+            "snippet": "Raced very wide and without cover for the majority of the event. Last Run (25/10/26 ST / Turf / \"A\" 1200m): Fin 08 (LBW ",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -22871,19 +23738,11 @@
         "field_size": 14,
         "incident_flags": [
           {
-            "flag": "vet_or_merit",
-            "severity": 2,
-            "marker": "final_200m",
-            "snippet": "When questioned regarding his riding in the Home Straight J Orman stated that he followed SPEEDY POWER during the runnin",
-            "vet_blocked": true,
-            "is_victim": false
-          },
-          {
             "flag": "traffic_trouble",
             "severity": 2,
             "marker": "final_200m",
             "snippet": "When questioned regarding his riding in the Home Straight J Orman stated that he followed SPEEDY POWER during the runnin",
-            "vet_blocked": true,
+            "vet_blocked": false,
             "is_victim": true
           }
         ],
@@ -23521,7 +24380,7 @@
             "flag": "traffic_trouble",
             "severity": 3,
             "marker": "final_400m",
-            "snippet": "Held up and boxed in until near the 250m, bumped another runner when shifting out and sprinted clear to win. Last Run (0",
+            "snippet": "Held up and boxed in until near the 250m, bumped another runner when shifting out and sprinted clear to win. Last Run (2",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -24559,7 +25418,7 @@
             "flag": "gate_speed",
             "severity": 2,
             "marker": "start",
-            "snippet": "Began speedily, led early along the outside rail over 1000m and won impressively. Last Run (01/10/26 ST / Turf / \"A\" 100",
+            "snippet": "Began speedily, led early along the outside rail over 1000m and won impressively. Last Run (25/10/26 ST / Turf / \"A\" 100",
             "vet_blocked": false,
             "is_victim": false
           }
@@ -25048,7 +25907,7 @@
             "flag": "traffic_trouble",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Between the 350 Metres and the 250 Metres had difficulty obtaining clear running. Last Run (01/10/26 ST / Turf / \"A\" 100",
+            "snippet": "Between the 350 Metres and the 250 Metres had difficulty obtaining clear running. Last Run (25/10/26 ST / Turf / \"A\" 120",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -25652,7 +26511,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Sent for sampling post-race. Last Run (01/10/26 ST / Turf / \"A\" 1000m): Fin 04 (LBW 2-3/4) | RunPos: 7 6 4 14/04/2024: L",
+            "snippet": "Sent for sampling post-race. Last Run (25/10/26 ST / Turf / \"A\" 1200m): Fin 01 (LBW HD) | RunPos: 7 5 1 14/04/2024: Lame",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -27253,7 +28112,7 @@
             "flag": "wide_no_cover",
             "severity": 3,
             "marker": "mid",
-            "snippet": "Raced three to four wide without cover throughout the event and still sustained a strong run to win. Last Run (01/10/26 ",
+            "snippet": "Raced three to four wide without cover throughout the event and still sustained a strong run to win. Last Run (25/10/26 ",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -29681,7 +30540,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "final_400m",
-            "snippet": "Raced prominently setting the early pace before fading out in the home straight. Last Run (01/10/26 ST / Turf / \"A\" 1400",
+            "snippet": "Raced prominently setting the early pace before fading out in the home straight. Last Run (25/10/26 ST / Turf / \"A\" 1600",
             "vet_blocked": true,
             "is_victim": false
           },
@@ -29689,7 +30548,7 @@
             "flag": "gate_speed",
             "severity": 2,
             "marker": "start",
-            "snippet": "Raced prominently setting the early pace before fading out in the home straight. Last Run (01/10/26 ST / Turf / \"A\" 1400",
+            "snippet": "Raced prominently setting the early pace before fading out in the home straight. Last Run (25/10/26 ST / Turf / \"A\" 1600",
             "vet_blocked": false,
             "is_victim": false
           }
@@ -30388,9 +31247,12 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 0.0,
-      "jockeys": []
+      "best_trial_pos_ratio": 0.6,
+      "best_trial_speed_diff": 1.2800000000000011,
+      "jockeys": [
+        "C L CHAU",
+        "M CHADWICK"
+      ]
     }
   },
   "L405": {
@@ -30759,13 +31621,28 @@
         "final_section_time": 22.8,
         "final_section_rank": 4,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (01/10/26 ST / Turf / \"A\" 1200m): Fin 13 (LBW 11) | RunPos: 11 13 13 04/07/2024: Substantial mucus in trachea n",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false
       }
     ],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": 0.3199999999999932,
+      "jockeys": [
+        "K TEETAN"
+      ]
+    }
   },
   "J176": {
     "horse_name": "YEE CHEONG RAIDER",
@@ -31323,7 +32200,13 @@
         "gate_speed_proven": false
       }
     ],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.25,
+      "best_trial_speed_diff": 0.3199999999999932,
+      "jockeys": [
+        "L HEWITSON"
+      ]
+    }
   },
   "L182": {
     "horse_name": "DIAMOND SPARKLE",
@@ -32217,7 +33100,13 @@
         "gate_speed_proven": false
       }
     ],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.8571428571428571,
+      "best_trial_speed_diff": -0.1700000000000017,
+      "jockeys": [
+        "M CHADWICK"
+      ]
+    }
   },
   "L274": {
     "horse_name": "LUCKY BID",
@@ -32337,7 +33226,13 @@
         "gate_speed_proven": false
       }
     ],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5714285714285714,
+      "best_trial_speed_diff": 0.14000000000000057,
+      "jockeys": [
+        "J ORMAN"
+      ]
+    }
   },
   "J481": {
     "horse_name": "TOP DRAGON",
@@ -32991,13 +33886,28 @@
         "final_section_time": 22.8,
         "final_section_rank": 4,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (01/10/26 ST / Turf / \"A\" 1200m): Fin 10 (LBW 3-3/4) | RunPos: 4 4 10 08/04/2026: Disappointing performance. La",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false
       }
     ],
-    "trial_note": null
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": -0.4099999999999966,
+      "jockeys": [
+        "Z ZURIMAN"
+      ]
+    }
   },
   "L195": {
     "horse_name": "RED SEA",
@@ -33506,6 +34416,1832 @@
         "gate_speed_proven": false
       }
     ],
+    "trial_note": null
+  },
+  "ANOTHER WORLD": {
+    "horse_name": "ANOTHER WORLD",
+    "horse_code": "K005",
+    "runs": [],
+    "trial_note": null
+  },
+  "K005": {
+    "horse_name": "ANOTHER WORLD",
+    "horse_code": "K005",
+    "runs": [],
+    "trial_note": null
+  },
+  "BLAZING WIND": {
+    "horse_name": "BLAZING WIND",
+    "horse_code": "J157",
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 2",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 4.545454545454546,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / Turf / \"C\" 1200m): Fin 11 (LBW 5-1/2) | RunPos: 5 5 11 09/01/2024: Bled from both nostrils after",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / Turf / \"C\" 1200m): Fin 11 (LBW 5-1/2) | RunPos: 5 5 11 09/01/2024: Bled from both nostrils after barrier trial. (Passed: 17/05/2024)"
+      }
+    ],
+    "trial_note": null
+  },
+  "J157": {
+    "horse_name": "BLAZING WIND",
+    "horse_code": "J157",
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 2",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 4.545454545454546,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / Turf / \"C\" 1200m): Fin 11 (LBW 5-1/2) | RunPos: 5 5 11 09/01/2024: Bled from both nostrils after",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / Turf / \"C\" 1200m): Fin 11 (LBW 5-1/2) | RunPos: 5 5 11 09/01/2024: Bled from both nostrils after barrier trial. (Passed: 17/05/2024)"
+      }
+    ],
+    "trial_note": null
+  },
+  "BULL ATTITUDE": {
+    "horse_name": "BULL ATTITUDE",
+    "horse_code": "K305",
+    "runs": [],
+    "trial_note": null
+  },
+  "K305": {
+    "horse_name": "BULL ATTITUDE",
+    "horse_code": "K305",
+    "runs": [],
+    "trial_note": null
+  },
+  "BULLISH PRIDE": {
+    "horse_name": "BULLISH PRIDE",
+    "horse_code": "K181",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.7142857142857143,
+      "best_trial_speed_diff": -0.6499999999999986,
+      "jockeys": [
+        "S SHAFRIZAL"
+      ]
+    }
+  },
+  "K181": {
+    "horse_name": "BULLISH PRIDE",
+    "horse_code": "K181",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.7142857142857143,
+      "best_trial_speed_diff": -0.6499999999999986,
+      "jockeys": [
+        "S SHAFRIZAL"
+      ]
+    }
+  },
+  "CALIFORNIA STAR": {
+    "horse_name": "CALIFORNIA STAR",
+    "horse_code": "J123",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.42857142857142855,
+      "best_trial_speed_diff": 0.5100000000000051,
+      "jockeys": [
+        "Y L CHUNG"
+      ]
+    }
+  },
+  "J123": {
+    "horse_name": "CALIFORNIA STAR",
+    "horse_code": "J123",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.42857142857142855,
+      "best_trial_speed_diff": 0.5100000000000051,
+      "jockeys": [
+        "Y L CHUNG"
+      ]
+    }
+  },
+  "CALL ME SUCCESS": {
+    "horse_name": "CALL ME SUCCESS",
+    "horse_code": "K462",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.3,
+      "best_trial_speed_diff": 1.2900000000000063,
+      "jockeys": [
+        "K TEETAN",
+        "K TEETAN"
+      ]
+    }
+  },
+  "K462": {
+    "horse_name": "CALL ME SUCCESS",
+    "horse_code": "K462",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.3,
+      "best_trial_speed_diff": 1.2900000000000063,
+      "jockeys": [
+        "K TEETAN",
+        "K TEETAN"
+      ]
+    }
+  },
+  "CELESTIAL HARMONY": {
+    "horse_name": "CELESTIAL HARMONY",
+    "horse_code": "K059",
+    "runs": [],
+    "trial_note": null
+  },
+  "K059": {
+    "horse_name": "CELESTIAL HARMONY",
+    "horse_code": "K059",
+    "runs": [],
+    "trial_note": null
+  },
+  "CHILL KAKA": {
+    "horse_name": "CHILL KAKA",
+    "horse_code": "J486",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 4,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 4.5,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 11 (LBW 6-3/4) | RunPos: 4 4 5 11 28/06/2025: Disappointing performance and epig",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 11 (LBW 6-3/4) | RunPos: 4 4 5 11 28/06/2025: Disappointing performance and epiglottic entrapment noted after racing. (Passed: 29/08/2025)"
+      }
+    ],
+    "trial_note": null
+  },
+  "J486": {
+    "horse_name": "CHILL KAKA",
+    "horse_code": "J486",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 4,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 4.5,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 11 (LBW 6-3/4) | RunPos: 4 4 5 11 28/06/2025: Disappointing performance and epig",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 11 (LBW 6-3/4) | RunPos: 4 4 5 11 28/06/2025: Disappointing performance and epiglottic entrapment noted after racing. (Passed: 29/08/2025)"
+      }
+    ],
+    "trial_note": null
+  },
+  "FLYING SNIPER": {
+    "horse_name": "FLYING SNIPER",
+    "horse_code": "L270",
+    "runs": [],
+    "trial_note": null
+  },
+  "L270": {
+    "horse_name": "FLYING SNIPER",
+    "horse_code": "L270",
+    "runs": [],
+    "trial_note": null
+  },
+  "GO GO GO": {
+    "horse_name": "GO GO GO",
+    "horse_code": "H196",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.166666666666667,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 07 (LBW 6-1/4) | RunPos: 6 6 6 7 06/11/2024: Lame left fore. (Passed: 21/11/2024",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 07 (LBW 6-1/4) | RunPos: 6 6 6 7 06/11/2024: Lame left fore. (Passed: 21/11/2024)"
+      }
+    ],
+    "trial_note": null
+  },
+  "H196": {
+    "horse_name": "GO GO GO",
+    "horse_code": "H196",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.166666666666667,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 07 (LBW 6-1/4) | RunPos: 6 6 6 7 06/11/2024: Lame left fore. (Passed: 21/11/2024",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 07 (LBW 6-1/4) | RunPos: 6 6 6 7 06/11/2024: Lame left fore. (Passed: 21/11/2024)"
+      }
+    ],
+    "trial_note": null
+  },
+  "GOOD CHAP": {
+    "horse_name": "GOOD CHAP",
+    "horse_code": "J499",
+    "runs": [],
+    "trial_note": null
+  },
+  "J499": {
+    "horse_name": "GOOD CHAP",
+    "horse_code": "J499",
+    "runs": [],
+    "trial_note": null
+  },
+  "GORGEOUS WIN": {
+    "horse_name": "GORGEOUS WIN",
+    "horse_code": "J008",
+    "runs": [],
+    "trial_note": null
+  },
+  "J008": {
+    "horse_name": "GORGEOUS WIN",
+    "horse_code": "J008",
+    "runs": [],
+    "trial_note": null
+  },
+  "HAILTOTHEVICTORS": {
+    "horse_name": "HAILTOTHEVICTORS",
+    "horse_code": "J508",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.333333333333334,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 06 (LBW 6) | RunPos: 14 12 11 6 31/10/2024: Lame right front leg on the day afte",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 06 (LBW 6) | RunPos: 14 12 11 6 31/10/2024: Lame right front leg on the day after racing. (Passed: 15/11/2024)"
+      }
+    ],
+    "trial_note": null
+  },
+  "J508": {
+    "horse_name": "HAILTOTHEVICTORS",
+    "horse_code": "J508",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.333333333333334,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 06 (LBW 6) | RunPos: 14 12 11 6 31/10/2024: Lame right front leg on the day afte",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 06 (LBW 6) | RunPos: 14 12 11 6 31/10/2024: Lame right front leg on the day after racing. (Passed: 15/11/2024)"
+      }
+    ],
+    "trial_note": null
+  },
+  "HAPPY TERCENTENARY": {
+    "horse_name": "HAPPY TERCENTENARY",
+    "horse_code": "L185",
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 11.4,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / Turf / \"C\" 1400m): Fin 06 (LBW 5-3/4) | RunPos: 13 11 11 6 08/05/2026: Lame left hind. Withdrawn",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / Turf / \"C\" 1400m): Fin 06 (LBW 5-3/4) | RunPos: 13 11 11 6 08/05/2026: Lame left hind. Withdrawn from racing. (Passed: 23/06/2026)"
+      }
+    ],
+    "trial_note": null
+  },
+  "L185": {
+    "horse_name": "HAPPY TERCENTENARY",
+    "horse_code": "L185",
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 11.4,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / Turf / \"C\" 1400m): Fin 06 (LBW 5-3/4) | RunPos: 13 11 11 6 08/05/2026: Lame left hind. Withdrawn",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / Turf / \"C\" 1400m): Fin 06 (LBW 5-3/4) | RunPos: 13 11 11 6 08/05/2026: Lame left hind. Withdrawn from racing. (Passed: 23/06/2026)"
+      }
+    ],
+    "trial_note": null
+  },
+  "HAPPY UNIVERSE": {
+    "horse_name": "HAPPY UNIVERSE",
+    "horse_code": "J533",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.454545454545454,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 03 (LBW SH) | RunPos: 10 10 8 3 09/11/2025: Substantial blood in trachea noted o",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 03 (LBW SH) | RunPos: 10 10 8 3 09/11/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 11/12/2025)"
+      }
+    ],
+    "trial_note": null
+  },
+  "J533": {
+    "horse_name": "HAPPY UNIVERSE",
+    "horse_code": "J533",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.454545454545454,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 03 (LBW SH) | RunPos: 10 10 8 3 09/11/2025: Substantial blood in trachea noted o",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 03 (LBW SH) | RunPos: 10 10 8 3 09/11/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 11/12/2025)"
+      }
+    ],
+    "trial_note": null
+  },
+  "HAPPYDEARHAPPYDEER": {
+    "horse_name": "HAPPYDEARHAPPYDEER",
+    "horse_code": "J002",
+    "runs": [],
+    "trial_note": null
+  },
+  "J002": {
+    "horse_name": "HAPPYDEARHAPPYDEER",
+    "horse_code": "J002",
+    "runs": [],
+    "trial_note": null
+  },
+  "KOLACHI": {
+    "horse_name": "KOLACHI",
+    "horse_code": "J395",
+    "runs": [],
+    "trial_note": null
+  },
+  "J395": {
+    "horse_name": "KOLACHI",
+    "horse_code": "J395",
+    "runs": [],
+    "trial_note": null
+  },
+  "LEAPING STAR": {
+    "horse_name": "LEAPING STAR",
+    "horse_code": "L189",
+    "runs": [],
+    "trial_note": null
+  },
+  "L189": {
+    "horse_name": "LEAPING STAR",
+    "horse_code": "L189",
+    "runs": [],
+    "trial_note": null
+  },
+  "LUCKY SECRET": {
+    "horse_name": "LUCKY SECRET",
+    "horse_code": "L073",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.8333333333333334,
+      "best_trial_speed_diff": -0.12000000000000455,
+      "jockeys": [
+        "E C W WONG"
+      ]
+    }
+  },
+  "L073": {
+    "horse_name": "LUCKY SECRET",
+    "horse_code": "L073",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.8333333333333334,
+      "best_trial_speed_diff": -0.12000000000000455,
+      "jockeys": [
+        "E C W WONG"
+      ]
+    }
+  },
+  "MAZING GRACE": {
+    "horse_name": "MAZING GRACE",
+    "horse_code": "K166",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": -0.8100000000000023,
+      "jockeys": [
+        "R KINGSCOTE"
+      ]
+    }
+  },
+  "K166": {
+    "horse_name": "MAZING GRACE",
+    "horse_code": "K166",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": -0.8100000000000023,
+      "jockeys": [
+        "R KINGSCOTE"
+      ]
+    }
+  },
+  "MEGA CAPTAIN": {
+    "horse_name": "MEGA CAPTAIN",
+    "horse_code": "L287",
+    "runs": [],
+    "trial_note": null
+  },
+  "L287": {
+    "horse_name": "MEGA CAPTAIN",
+    "horse_code": "L287",
+    "runs": [],
+    "trial_note": null
+  },
+  "MUST GO": {
+    "horse_name": "MUST GO",
+    "horse_code": "J133",
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.636363636363637,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin WV (LBW --) | RunPos: -- 08/02/2026: Substantial blood in trachea noted on post-",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin WV (LBW --) | RunPos: -- 08/02/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 27/02/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 1.0,
+      "best_trial_speed_diff": 0.29000000000000625,
+      "jockeys": [
+        "K TEETAN"
+      ]
+    }
+  },
+  "J133": {
+    "horse_name": "MUST GO",
+    "horse_code": "J133",
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.636363636363637,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin WV (LBW --) | RunPos: -- 08/02/2026: Substantial blood in trachea noted on post-",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin WV (LBW --) | RunPos: -- 08/02/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 27/02/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 1.0,
+      "best_trial_speed_diff": 0.29000000000000625,
+      "jockeys": [
+        "K TEETAN"
+      ]
+    }
+  },
+  "MY FLYING ANGEL": {
+    "horse_name": "MY FLYING ANGEL",
+    "horse_code": "J174",
+    "runs": [],
+    "trial_note": null
+  },
+  "J174": {
+    "horse_name": "MY FLYING ANGEL",
+    "horse_code": "J174",
+    "runs": [],
+    "trial_note": null
+  },
+  "NEZHA": {
+    "horse_name": "NEZHA",
+    "horse_code": "K494",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 10.416666666666666,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 02 (LBW SH) | RunPos: 11 8 6 2 27/05/2026: Lame left fore. (Passed: 16/06/2026)",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 02 (LBW SH) | RunPos: 11 8 6 2 27/05/2026: Lame left fore. (Passed: 16/06/2026)"
+      }
+    ],
+    "trial_note": null
+  },
+  "K494": {
+    "horse_name": "NEZHA",
+    "horse_code": "K494",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 10.416666666666666,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 02 (LBW SH) | RunPos: 11 8 6 2 27/05/2026: Lame left fore. (Passed: 16/06/2026)",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 02 (LBW SH) | RunPos: 11 8 6 2 27/05/2026: Lame left fore. (Passed: 16/06/2026)"
+      }
+    ],
+    "trial_note": null
+  },
+  "NIGHT PUROSANGUE": {
+    "horse_name": "NIGHT PUROSANGUE",
+    "horse_code": "J510",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 3.583333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 09 (LBW 2-1/2) | RunPos: 1 1 1 9 13/04/2025: Substantial mucus in trachea noted ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 09 (LBW 2-1/2) | RunPos: 1 1 1 9 13/04/2025: Substantial mucus in trachea noted on post-race scoping. (Passed: -)"
+      }
+    ],
+    "trial_note": null
+  },
+  "J510": {
+    "horse_name": "NIGHT PUROSANGUE",
+    "horse_code": "J510",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 3.583333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 09 (LBW 2-1/2) | RunPos: 1 1 1 9 13/04/2025: Substantial mucus in trachea noted ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 09 (LBW 2-1/2) | RunPos: 1 1 1 9 13/04/2025: Substantial mucus in trachea noted on post-race scoping. (Passed: -)"
+      }
+    ],
+    "trial_note": null
+  },
+  "ONE MAN SHOW": {
+    "horse_name": "ONE MAN SHOW",
+    "horse_code": "K409",
+    "runs": [
+      {
+        "race_date": "2026-06-13",
+        "race_id": "2026-06-13_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 3.272727272727273,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (13/06/26 ST / AWT 1200m): Fin 11 (LBW 9) | RunPos: 3 4 11 13/06/2026: Diagnosed to be a \"roarer\" and substanti",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (13/06/26 ST / AWT 1200m): Fin 11 (LBW 9) | RunPos: 3 4 11 13/06/2026: Diagnosed to be a \"roarer\" and substantial blood in trachea noted on post-race scoping. (Passed: 23/09/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.375,
+      "best_trial_speed_diff": 0.3199999999999932,
+      "jockeys": [
+        "M F POON",
+        "M F POON"
+      ]
+    }
+  },
+  "K409": {
+    "horse_name": "ONE MAN SHOW",
+    "horse_code": "K409",
+    "runs": [
+      {
+        "race_date": "2026-06-13",
+        "race_id": "2026-06-13_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 3.272727272727273,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (13/06/26 ST / AWT 1200m): Fin 11 (LBW 9) | RunPos: 3 4 11 13/06/2026: Diagnosed to be a \"roarer\" and substanti",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (13/06/26 ST / AWT 1200m): Fin 11 (LBW 9) | RunPos: 3 4 11 13/06/2026: Diagnosed to be a \"roarer\" and substantial blood in trachea noted on post-race scoping. (Passed: 23/09/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.375,
+      "best_trial_speed_diff": 0.3199999999999932,
+      "jockeys": [
+        "M F POON",
+        "M F POON"
+      ]
+    }
+  },
+  "PERFECT TEAM": {
+    "horse_name": "PERFECT TEAM",
+    "horse_code": "H120",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 11.25,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 08 (LBW 1-3/4) | RunPos: 13 13 11 8 19/03/2023: Substantial blood in trachea not",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 08 (LBW 1-3/4) | RunPos: 13 13 11 8 19/03/2023: Substantial blood in trachea noted on post-race scoping. (Passed: 24/04/2023)"
+      }
+    ],
+    "trial_note": null
+  },
+  "H120": {
+    "horse_name": "PERFECT TEAM",
+    "horse_code": "H120",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 11.25,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 08 (LBW 1-3/4) | RunPos: 13 13 11 8 19/03/2023: Substantial blood in trachea not",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 08 (LBW 1-3/4) | RunPos: 13 13 11 8 19/03/2023: Substantial blood in trachea noted on post-race scoping. (Passed: 24/04/2023)"
+      }
+    ],
+    "trial_note": null
+  },
+  "PRAY FOR JUSTICE": {
+    "horse_name": "PRAY FOR JUSTICE",
+    "horse_code": "K473",
+    "runs": [
+      {
+        "race_date": "2026-06-27",
+        "race_id": "2026-06-27_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.75,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (27/06/26 ST / AWT 1650m): Fin 02 (LBW 1-3/4) | RunPos: 4 4 3 2 13/12/2025: Lame left hind. Withdrawn from raci",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (27/06/26 ST / AWT 1650m): Fin 02 (LBW 1-3/4) | RunPos: 4 4 3 2 13/12/2025: Lame left hind. Withdrawn from racing. (Passed: 23/02/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.75,
+      "best_trial_speed_diff": -0.12000000000000455,
+      "jockeys": [
+        "Y L CHUNG"
+      ]
+    }
+  },
+  "K473": {
+    "horse_name": "PRAY FOR JUSTICE",
+    "horse_code": "K473",
+    "runs": [
+      {
+        "race_date": "2026-06-27",
+        "race_id": "2026-06-27_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.75,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (27/06/26 ST / AWT 1650m): Fin 02 (LBW 1-3/4) | RunPos: 4 4 3 2 13/12/2025: Lame left hind. Withdrawn from raci",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (27/06/26 ST / AWT 1650m): Fin 02 (LBW 1-3/4) | RunPos: 4 4 3 2 13/12/2025: Lame left hind. Withdrawn from racing. (Passed: 23/02/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.75,
+      "best_trial_speed_diff": -0.12000000000000455,
+      "jockeys": [
+        "Y L CHUNG"
+      ]
+    }
+  },
+  "SELF IMPROVEMENT": {
+    "horse_name": "SELF IMPROVEMENT",
+    "horse_code": "H337",
+    "runs": [],
+    "trial_note": null
+  },
+  "H337": {
+    "horse_name": "SELF IMPROVEMENT",
+    "horse_code": "H337",
+    "runs": [],
+    "trial_note": null
+  },
+  "SKY CAP": {
+    "horse_name": "SKY CAP",
+    "horse_code": "K125",
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.4166666666666665,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin 04 (LBW 3-1/4) | RunPos: 6 4 4 27/05/2026: Disappointing performance. (Passed: 1",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin 04 (LBW 3-1/4) | RunPos: 6 4 4 27/05/2026: Disappointing performance. (Passed: 12/06/2026)"
+      }
+    ],
+    "trial_note": null
+  },
+  "K125": {
+    "horse_name": "SKY CAP",
+    "horse_code": "K125",
+    "runs": [
+      {
+        "race_date": "2026-10-11",
+        "race_id": "2026-10-11_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.4166666666666665,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (11/10/26 ST / AWT 1200m): Fin 04 (LBW 3-1/4) | RunPos: 6 4 4 27/05/2026: Disappointing performance. (Passed: 1",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (11/10/26 ST / AWT 1200m): Fin 04 (LBW 3-1/4) | RunPos: 6 4 4 27/05/2026: Disappointing performance. (Passed: 12/06/2026)"
+      }
+    ],
+    "trial_note": null
+  },
+  "SKY VINO": {
+    "horse_name": "SKY VINO",
+    "horse_code": "K054",
+    "runs": [],
+    "trial_note": null
+  },
+  "K054": {
+    "horse_name": "SKY VINO",
+    "horse_code": "K054",
+    "runs": [],
+    "trial_note": null
+  },
+  "STORM RUNNER": {
+    "horse_name": "STORM RUNNER",
+    "horse_code": "J452",
+    "runs": [
+      {
+        "race_date": "2026-07-15",
+        "race_id": "2026-07-15_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 9,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 5.666666666666667,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (15/07/26 HV / Turf / \"C\" 1800m): Fin 06 (LBW 3) | RunPos: 7 2 2 2 6 29/03/2026: Disappointing performance. (Pa",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (15/07/26 HV / Turf / \"C\" 1800m): Fin 06 (LBW 3) | RunPos: 7 2 2 2 6 29/03/2026: Disappointing performance. (Passed: 16/04/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6666666666666666,
+      "best_trial_speed_diff": -0.5300000000000011,
+      "jockeys": [
+        "C Y HO",
+        "C Y HO"
+      ]
+    }
+  },
+  "J452": {
+    "horse_name": "STORM RUNNER",
+    "horse_code": "J452",
+    "runs": [
+      {
+        "race_date": "2026-07-15",
+        "race_id": "2026-07-15_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 9,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 5.666666666666667,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (15/07/26 HV / Turf / \"C\" 1800m): Fin 06 (LBW 3) | RunPos: 7 2 2 2 6 29/03/2026: Disappointing performance. (Pa",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (15/07/26 HV / Turf / \"C\" 1800m): Fin 06 (LBW 3) | RunPos: 7 2 2 2 6 29/03/2026: Disappointing performance. (Passed: 16/04/2026)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6666666666666666,
+      "best_trial_speed_diff": -0.5300000000000011,
+      "jockeys": [
+        "C Y HO",
+        "C Y HO"
+      ]
+    }
+  },
+  "SUPREME AGILITY": {
+    "horse_name": "SUPREME AGILITY",
+    "horse_code": "J267",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.75,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 01 (LBW NOSE) | RunPos: 6 7 7 2 26/11/2025: Substantial blood in trachea noted o",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 01 (LBW NOSE) | RunPos: 6 7 7 2 26/11/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 18/12/2025)"
+      }
+    ],
+    "trial_note": null
+  },
+  "J267": {
+    "horse_name": "SUPREME AGILITY",
+    "horse_code": "J267",
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.75,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (04/10/26 ST / AWT 1650m): Fin 01 (LBW NOSE) | RunPos: 6 7 7 2 26/11/2025: Substantial blood in trachea noted o",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (04/10/26 ST / AWT 1650m): Fin 01 (LBW NOSE) | RunPos: 6 7 7 2 26/11/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 18/12/2025)"
+      }
+    ],
+    "trial_note": null
+  },
+  "TROPHY RAIDER": {
+    "horse_name": "TROPHY RAIDER",
+    "horse_code": "M020",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.3,
+      "best_trial_speed_diff": 0.759999999999998,
+      "jockeys": [
+        "A BADEL",
+        "E C W WONG"
+      ]
+    }
+  },
+  "M020": {
+    "horse_name": "TROPHY RAIDER",
+    "horse_code": "M020",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.3,
+      "best_trial_speed_diff": 0.759999999999998,
+      "jockeys": [
+        "A BADEL",
+        "E C W WONG"
+      ]
+    }
+  },
+  "TURIN MASCOT": {
+    "horse_name": "TURIN MASCOT",
+    "horse_code": "H165",
+    "runs": [],
+    "trial_note": null
+  },
+  "H165": {
+    "horse_name": "TURIN MASCOT",
+    "horse_code": "H165",
+    "runs": [],
+    "trial_note": null
+  },
+  "UNITED HUA STEED": {
+    "horse_name": "UNITED HUA STEED",
+    "horse_code": "L505",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6666666666666666,
+      "best_trial_speed_diff": -1.1200000000000045,
+      "jockeys": [
+        "M KELLADY"
+      ]
+    }
+  },
+  "L505": {
+    "horse_name": "UNITED HUA STEED",
+    "horse_code": "L505",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6666666666666666,
+      "best_trial_speed_diff": -1.1200000000000045,
+      "jockeys": [
+        "M KELLADY"
+      ]
+    }
+  },
+  "VIVA TASTE": {
+    "horse_name": "VIVA TASTE",
+    "horse_code": "K415",
+    "runs": [],
+    "trial_note": null
+  },
+  "K415": {
+    "horse_name": "VIVA TASTE",
+    "horse_code": "K415",
+    "runs": [],
+    "trial_note": null
+  },
+  "YODA'S CHOICE": {
+    "horse_name": "YODA'S CHOICE",
+    "horse_code": "J146",
+    "runs": [
+      {
+        "race_date": "2026-06-07",
+        "race_id": "2026-06-07_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 4,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.9166666666666665,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (07/06/26 ST / AWT 1800m): Fin 04 (LBW 4) | RunPos: 2 1 1 1 4 09/04/2025: Disappointing performance. (Passed: 2",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (07/06/26 ST / AWT 1800m): Fin 04 (LBW 4) | RunPos: 2 1 1 1 4 09/04/2025: Disappointing performance. (Passed: 25/04/2025)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.375,
+      "best_trial_speed_diff": 0.6700000000000017,
+      "jockeys": [
+        "Y SALIM",
+        "E C W WONG"
+      ]
+    }
+  },
+  "J146": {
+    "horse_name": "YODA'S CHOICE",
+    "horse_code": "J146",
+    "runs": [
+      {
+        "race_date": "2026-06-07",
+        "race_id": "2026-06-07_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 4,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 2.9166666666666665,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (07/06/26 ST / AWT 1800m): Fin 04 (LBW 4) | RunPos: 2 1 1 1 4 09/04/2025: Disappointing performance. (Passed: 2",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (07/06/26 ST / AWT 1800m): Fin 04 (LBW 4) | RunPos: 2 1 1 1 4 09/04/2025: Disappointing performance. (Passed: 25/04/2025)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.375,
+      "best_trial_speed_diff": 0.6700000000000017,
+      "jockeys": [
+        "Y SALIM",
+        "E C W WONG"
+      ]
+    }
+  },
+  "YOUNG ACHIEVER": {
+    "horse_name": "YOUNG ACHIEVER",
+    "horse_code": "J291",
+    "runs": [
+      {
+        "race_date": "2026-01-21",
+        "race_id": "2026-01-21_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 10.77777777777778,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (21/01/26 ST / AWT 1650m): Fin 14 (LBW 10-3/4) | RunPos: 7 7 9 14 13/10/2024: Substantial mucus in trachea note",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (21/01/26 ST / AWT 1650m): Fin 14 (LBW 10-3/4) | RunPos: 7 7 9 14 13/10/2024: Substantial mucus in trachea noted on post-race scoping. (Passed: -)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6,
+      "best_trial_speed_diff": 0.5100000000000051,
+      "jockeys": [
+        "A BADEL"
+      ]
+    }
+  },
+  "J291": {
+    "horse_name": "YOUNG ACHIEVER",
+    "horse_code": "J291",
+    "runs": [
+      {
+        "race_date": "2026-01-21",
+        "race_id": "2026-01-21_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 10.77777777777778,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Last Run (21/01/26 ST / AWT 1650m): Fin 14 (LBW 10-3/4) | RunPos: 7 7 9 14 13/10/2024: Substantial mucus in trachea note",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Last Run (21/01/26 ST / AWT 1650m): Fin 14 (LBW 10-3/4) | RunPos: 7 7 9 14 13/10/2024: Substantial mucus in trachea noted on post-race scoping. (Passed: -)"
+      }
+    ],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.6,
+      "best_trial_speed_diff": 0.5100000000000051,
+      "jockeys": [
+        "A BADEL"
+      ]
+    }
+  },
+  "YOUNG BRAVO": {
+    "horse_name": "YOUNG BRAVO",
+    "horse_code": "K178",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": 0.25,
+      "jockeys": [
+        "Z ZURIMAN"
+      ]
+    }
+  },
+  "K178": {
+    "horse_name": "YOUNG BRAVO",
+    "horse_code": "K178",
+    "runs": [],
+    "trial_note": {
+      "best_trial_pos_ratio": 0.5,
+      "best_trial_speed_diff": 0.25,
+      "jockeys": [
+        "Z ZURIMAN"
+      ]
+    }
+  },
+  "ZHUANG YUAN GLORY": {
+    "horse_name": "ZHUANG YUAN GLORY",
+    "horse_code": "L546",
+    "runs": [],
+    "trial_note": null
+  },
+  "L546": {
+    "horse_name": "ZHUANG YUAN GLORY",
+    "horse_code": "L546",
+    "runs": [],
     "trial_note": null
   }
 }

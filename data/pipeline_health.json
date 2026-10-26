@@ -1,36 +1,34 @@
 {
-  "overall_status": "warn",
-  "updated_at": "2026-10-26T20:17:28Z",
+  "overall_status": "fail",
+  "updated_at": "2026-10-26T21:48:59Z",
   "components": {
     "scraper": {
-      "status": "warn",
-      "last_attempt_at": "2026-10-26T20:08:08Z",
-      "last_success_at": null,
+      "status": "fail",
+      "last_attempt_at": "2026-10-26T21:48:59Z",
+      "last_success_at": "2026-10-26T21:47:34Z",
       "metrics": {
-        "source": "cache",
-        "meeting_date": "2026-10-25",
-        "cache_age_s": 153797.2
+        "source": "error"
       },
-      "error": "Fell back to cached meeting after live error: GraphQL returned empty activeMeetings"
+      "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."
     },
     "incident_memory": {
       "status": "ok",
-      "last_attempt_at": "2026-10-26T20:17:28Z",
-      "last_success_at": "2026-10-26T20:17:28Z",
+      "last_attempt_at": "2026-10-26T21:46:51Z",
+      "last_success_at": "2026-10-26T21:46:51Z",
       "metrics": {
-        "horses": 1522,
-        "flagged_horses": 409
+        "horses": 1604,
+        "flagged_horses": 470
       },
       "error": null
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-10-26T20:08:08Z",
-      "last_success_at": "2026-10-26T20:08:08Z",
+      "last_attempt_at": "2026-10-26T21:47:39Z",
+      "last_success_at": "2026-10-26T21:47:39Z",
       "metrics": {
-        "meeting_date": "2026-10-25",
+        "meeting_date": "2026-10-28",
         "venue": "Sha Tin",
-        "races_predicted": 11
+        "races_predicted": 9
       },
       "error": null
     },
@@ -42,6 +40,106 @@
         "date": "20261025",
         "rows": 146,
         "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/25"
+      },
+      "error": null
+    },
+    "barrier_trials_scraper": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T21:43:24Z",
+      "last_success_at": "2026-10-26T21:43:24Z",
+      "metrics": {
+        "meeting_date": "2026/10/28",
+        "venue": "ST",
+        "races_scraped": 9,
+        "new_trials": 51,
+        "total_trials": 172,
+        "unique_horses": 85
+      },
+      "error": null
+    },
+    "trial_features": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T21:43:24Z",
+      "last_success_at": "2026-10-26T21:43:24Z",
+      "metrics": {
+        "total_horses": 85,
+        "updated_horses": 85,
+        "elite_trials_flagged": 4
+      },
+      "error": null
+    },
+    "veterinary_records": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T21:45:07Z",
+      "last_success_at": "2026-10-26T21:45:07Z",
+      "metrics": {
+        "declared_vet_records": 11,
+        "unique_horses": 11,
+        "recent_180d_flags": 10,
+        "source_url": "https://racing.hkjc.com/en-us/local/information/overecord"
+      },
+      "error": null
+    },
+    "horse_profiles_and_vet": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T21:45:07Z",
+      "last_success_at": "2026-10-26T21:45:07Z",
+      "metrics": {
+        "total_profiles": 768,
+        "updated_this_run": 248,
+        "active_vet_flags": 135,
+        "horses_with_vet_notes": 156,
+        "declared_starters_vet_records": 11
+      },
+      "error": null
+    },
+    "trackwork_telemetry": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T21:46:51Z",
+      "last_success_at": "2026-10-26T21:46:51Z",
+      "metrics": {
+        "horses_harvested": 110,
+        "horses_with_30d_gallops": 105,
+        "horses_in_conghua": 0,
+        "horses_with_body_weight": 108
+      },
+      "error": null
+    },
+    "precomputed_features": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T21:46:52Z",
+      "last_success_at": "2026-10-26T21:46:52Z",
+      "metrics": {
+        "winning_gears_horses": 675,
+        "running_styles_horses": 2498,
+        "last_comments_horses": 1798,
+        "sectional_bursts_horses": 3934
+      },
+      "error": null
+    },
+    "telemetry_master_sync": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T21:46:52Z",
+      "last_success_at": "2026-10-26T21:46:52Z",
+      "metrics": {
+        "target_meeting": "2026-10-28",
+        "venue": "ST",
+        "trials_rows": 172,
+        "trial_featured_horses": 85,
+        "incident_memory_horses": 1604
+      },
+      "error": null
+    },
+    "baseline_odds": {
+      "status": "ok",
+      "last_attempt_at": "2026-10-26T21:47:34Z",
+      "last_success_at": "2026-10-26T21:47:34Z",
+      "metrics": {
+        "meeting_date": "2026-10-28",
+        "venue": "Sha Tin",
+        "runners_checked": 111,
+        "runners_with_live_baseline_price": 0,
+        "file": "data/baseline_odds_20261028.json"
       },
       "error": null
     }

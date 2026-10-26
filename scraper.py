@@ -311,6 +311,182 @@ def _refresh_cached_meetings_with_live_odds(cached_data, url, headers):
     return cached_data
 
 
+def _scrape_html_racecard(graphql_url, graphql_headers):
+    """
+    Scrapes the official HKJC HTML racecard (/en-us/local/information/racecard)
+    when the GraphQL raceMeetings query returns WHITELIST_ERROR or empty activeMeetings,
+    and overlays live WIN odds and scratchings via the whitelisted ODDS_GRAPHQL_QUERY.
+    """
+    import re
+    import concurrent.futures
+    from datetime import datetime
+
+    base_rc_url = "https://racing.hkjc.com/en-us/local/information/racecard"
+    html_headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    res1 = requests.get(base_rc_url, headers=html_headers, timeout=6.0)
+    if res1.status_code != 200:
+        raise RuntimeError(f"HKJC HTML racecard returned HTTP {res1.status_code}")
+
+    def _parse_race_html(html_bytes, expected_rn=None):
+        soup = BeautifulSoup(html_bytes, "html.parser")
+        flat_text = " ".join(soup.get_text().split())
+        hdr_re = re.compile(
+            r"Race\s+(\d+)\s*-\s*([^\n\r]+?)"
+            r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s+"
+            r"([A-Za-z]+\s+\d+,\s+\d{4}),\s*(Sha Tin|Happy Valley),\s*(\d{2}:\d{2})\s*"
+            r"(.*?)\s*Prize Money:.*?Class\s+([0-9A-Za-z]+)"
+        )
+        m = hdr_re.search(flat_text)
+        if not m:
+            return None
+        rn_str, race_name, date_human, venue_name, post_hm, track_raw, cls_tok = m.groups()
+        rn_int = int(rn_str)
+        if expected_rn is not None and rn_int != int(expected_rn):
+            return None
+        dt_obj = datetime.strptime(date_human.strip(), "%B %d, %Y")
+        date_iso = dt_obj.strftime("%Y-%m-%d")
+        date_slash = dt_obj.strftime("%Y/%m/%d")
+
+        # Extract track, course, distance, going
+        dist_m = re.search(r"(\d{3,4})M", track_raw.upper())
+        dist_val = int(dist_m.group(1)) if dist_m else 1200
+        if "ALL WEATHER" in track_raw.upper() or "AWT" in track_raw.upper():
+            track_desc = "ALL WEATHER TRACK"
+            course_desc = "ALL WEATHER TRACK"
+        else:
+            track_desc = "TURF"
+            c_m = re.search(r'"([A-Z0-9\+]+)"\s*Course', track_raw, re.I)
+            course_desc = c_m.group(1).upper() if c_m else "A"
+
+        going_m = re.search(r"Going\s*:\s*([A-Za-z\s]+?)(?:Prize|Course|$)", track_raw, re.I)
+        going_desc = going_m.group(1).strip().upper() if going_m else "GOOD"
+
+        # Extract horse brand codes from horseid links
+        code_map = {}
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            cm = re.search(r"horseid=HK_\d+_([A-Z0-9]+)", href, re.I)
+            if not cm:
+                cm = re.search(r"HorseNo=([A-Z0-9]+)", href, re.I)
+            if cm and a.get_text(strip=True):
+                code_map[a.get_text(strip=True).upper()] = cm.group(1).upper()
+
+        dfs = pd.read_html(html_bytes)
+        starter_df = None
+        for d in dfs:
+            cols_str = [str(c).strip() for c in d.columns]
+            if "Horse No." in cols_str and "Horse" in cols_str and "Jockey" in cols_str:
+                starter_df = d
+                break
+        if starter_df is None or starter_df.empty:
+            return None
+
+        runners = []
+        for _, row in starter_df.iterrows():
+            r_no_val = pd.to_numeric(row.get("Horse No."), errors="coerce")
+            if pd.isna(r_no_val) or int(r_no_val) <= 0:
+                continue
+            r_no_int = int(r_no_val)
+            h_name = str(row.get("Horse", "")).strip()
+            if not h_name or h_name.lower() == "nan":
+                continue
+            prio_str = str(row.get("Priority", "")).strip().upper()
+            if "STANDBY" in prio_str or "WITHDRAWN" in prio_str or "SCR" in prio_str:
+                continue
+            draw_val = pd.to_numeric(row.get("Draw"), errors="coerce")
+            wt_val = pd.to_numeric(row.get("Wt."), errors="coerce")
+            if pd.isna(draw_val) and pd.isna(wt_val):
+                continue
+
+            raw_jockey = str(row.get("Jockey", "Unknown")).strip()
+            clean_jockey = re.sub(r"\s*\([^)]*\)", "", raw_jockey).strip()
+            raw_trainer = str(row.get("Trainer", "Unknown")).strip()
+            rtg_val = pd.to_numeric(row.get("Rtg."), errors="coerce")
+            dec_wt_val = pd.to_numeric(row.get("Horse Wt. (Declaration)"), errors="coerce")
+            raw_gear = str(row.get("Gear", "")).strip()
+            if raw_gear.lower() in ("nan", "none", "-", "--"):
+                raw_gear = ""
+
+            runners.append({
+                "no": r_no_int,
+                "name": h_name,
+                "code": code_map.get(h_name.upper()),
+                "jockey": clean_jockey,
+                "trainer": raw_trainer,
+                "draw": int(draw_val) if not pd.isna(draw_val) else 0,
+                "actual_weight": int(wt_val) if not pd.isna(wt_val) else 125,
+                "declared_weight": int(dec_wt_val) if not pd.isna(dec_wt_val) else 1100,
+                "rtg": int(rtg_val) if not pd.isna(rtg_val) else 50,
+                "win_odds": 0.0,
+                "final_position": None,
+                "horse_gear": raw_gear,
+            })
+
+        runners.sort(key=lambda r: r["no"])
+        return {
+            "date_iso": date_iso,
+            "date_slash": date_slash,
+            "venue": venue_name,
+            "venue_code": "ST" if venue_name == "Sha Tin" else "HV",
+            "race": {
+                "race_no": rn_int,
+                "time": f"{date_iso}T{post_hm}:00+08:00",
+                "class_dist": f"Class {cls_tok.strip()} - {dist_val}m",
+                "track": track_desc,
+                "course": course_desc,
+                "going": going_desc,
+                "runners": runners,
+            },
+        }
+
+    first_parsed = _parse_race_html(res1.content, expected_rn=1)
+    if not first_parsed:
+        raise RuntimeError("Could not parse Race 1 header/table from HKJC HTML racecard")
+
+    date_iso = first_parsed["date_iso"]
+    date_slash = first_parsed["date_slash"]
+    venue_name = first_parsed["venue"]
+    venue_code = first_parsed["venue_code"]
+    races_list = [first_parsed["race"]]
+
+    def _fetch_rn(rn):
+        u = f"{base_rc_url}?racedate={date_slash}&Racecourse={venue_code}&RaceNo={rn}"
+        r = requests.get(u, headers=html_headers, timeout=6.0)
+        if r.status_code != 200:
+            return None
+        parsed = _parse_race_html(r.content, expected_rn=rn)
+        if parsed and parsed["date_iso"] == date_iso:
+            return parsed["race"]
+        return None
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+        futs = {ex.submit(_fetch_rn, rn): rn for rn in range(2, 13)}
+        for fut in concurrent.futures.as_completed(futs):
+            try:
+                r_obj = fut.result()
+                if r_obj:
+                    races_list.append(r_obj)
+            except Exception:
+                pass
+
+    races_list.sort(key=lambda x: x["race_no"])
+    first_course = races_list[0].get("course", "") if races_list else ""
+    first_going = races_list[0].get("going", "GOOD") if races_list else "GOOD"
+
+    meeting_out = {
+        "venue": venue_name,
+        "date": date_iso,
+        "status": "UPCOMING",
+        "going": first_going,
+        "course": first_course,
+        "weather": "Live Feed Connected",
+        "races": races_list,
+    }
+    temp_payload = {"status": "success", "meetings": [meeting_out]}
+    temp_payload = _refresh_cached_meetings_with_live_odds(temp_payload, graphql_url, graphql_headers)
+    return temp_payload["meetings"][0]
+
+
 def get_live_meeting_data(force_network=False, cache_path='data/last_scraped_meeting.json', max_cache_age_seconds=None):
     import os
     import time
@@ -506,6 +682,50 @@ def get_live_meeting_data(force_network=False, cache_path='data/last_scraped_mee
                         },
                     )
                     return live_payload
+            else:
+                # GraphQL returned 200 but activeMeetings is empty or WHITELIST_ERROR:
+                # Scrape the official HKJC HTML racecard and overlay live odds via ODDS_GRAPHQL_QUERY
+                try:
+                    html_meeting = _scrape_html_racecard(url, headers)
+                    if html_meeting and html_meeting.get("races"):
+                        out_meetings = [html_meeting]
+                        if cached_data and cached_data.get("meetings"):
+                            for prev_m in cached_data.get("meetings", []):
+                                if prev_m.get("date") and prev_m.get("date") != html_meeting.get("date"):
+                                    prev_copy = dict(prev_m)
+                                    if prev_copy.get("date", "") < html_meeting.get("date", ""):
+                                        prev_copy["status"] = "CLOSED"
+                                    out_meetings.append(prev_copy)
+                                    if len(out_meetings) >= 2:
+                                        break
+                        first_date = html_meeting.get("date")
+                        live_payload = {
+                            "status": "success",
+                            "source": "live",
+                            "fetched_at": now_iso,
+                            "meeting_date": first_date,
+                            "meetings": out_meetings,
+                        }
+                        try:
+                            if cache_path:
+                                os.makedirs(os.path.dirname(cache_path) or "data", exist_ok=True)
+                                with open(cache_path, "w", encoding="utf-8") as f:
+                                    json.dump(live_payload, f, indent=2)
+                        except Exception as e:
+                            print("Failed to save last scraped meeting:", e)
+                        record_health(
+                            "scraper",
+                            "ok",
+                            metrics={
+                                "source": "live_html_racecard",
+                                "meeting_date": first_date,
+                                "meetings_count": len(out_meetings),
+                                "races_count": len(html_meeting.get("races", [])),
+                            },
+                        )
+                        return live_payload
+                except Exception as html_e:
+                    last_error = f"GraphQL empty/whitelist & HTML racecard error: {html_e}"
         else:
             last_error = f"HTTP {res.status_code} from HKJC GraphQL"
     except Exception as e:

@@ -4,7 +4,7 @@ on:
   schedule:
     # Run twice daily:
     # - 10:00 UTC (6:00 PM HKT) to capture overnight odds & initialize baseline
-    # - 04:00 UTC (12:00 PM HKT) to capture any late-morning vet/gear updates
+    # - 04:00 UTC (12:00 PM HKT) to capture any late-morning vet/gear/trial updates
     - cron: '0 4,10 * * *'
   workflow_dispatch: # Allow manual trigger from GitHub UI
 
@@ -40,26 +40,22 @@ jobs:
           python build_features.py
           python build_features_results.py
 
-      - name: Sync Offseason & Horse Profiles
+      - name: Sync All Telemetry (Trials, Profiles, Vet Records, Trackwork, Incidents, Precomputed Features)
         run: |
-          python sync_offseason_data.py
-          python hkjc_profile_scraper.py
-
-      - name: Update Incident Memory & Initialize Baseline Odds
-        run: |
-          python data/incident_engine.py
+          python sync_offseason_data.py 150
           python initialize_baseline_odds.py
 
-      - name: Train Model & Record Metadata
+      - name: Train Model & Generate Live Predictions
         run: |
           python train_model.py
+          python run_predictions.py
 
       - name: Commit and Push Changes to Render
         run: |
           git config --global user.name 'Golden Stallion Automator'
           git config --global user.email 'automator@golden-stallion.local'
           git add data/ model.joblib
-          git diff --quiet && git diff --staged --quiet || (git pull origin main -X ours && git commit -m "Auto-update live models, incident memory, odds, and health state" && git push origin main)
+          git diff --quiet && git diff --staged --quiet || (git pull origin main -X ours && git commit -m "Auto-update live models, trials, vet records, incident memory, odds, and predictions" && git push origin main)
 
       - name: Verify Live Render App Health
         run: |

@@ -252,16 +252,24 @@ def get_horse_profile_stats(horse_code):
                         if raw_details and raw_details.lower() not in ['nan', 'none', ''] and 'no record' not in details:
                             latest_vet_note = f"{date_str}: {raw_details}" + (f" (Passed: {passed_date})" if passed_date and passed_date.lower() not in ['nan', 'none', ''] else "")
                         
-                        vet_keywords = ['lame', 'blood', 'trachea', 'heart', 'irregularity', 'mucus', 'surgery', 'abnormal', 'infection', 'fever']
+                        vet_keywords = [
+                            'lame', 'blood', 'trachea', 'heart', 'irregularity', 'mucus',
+                            'surgery', 'abnormal', 'infection', 'fever', 'unacceptable',
+                            'disappointing', 'withdrawn', 'barrier trial', 'roarer',
+                            'epiglottic', 'tendon', 'suspensory', 'colic', 'fracture', 'bone'
+                        ]
                         if any(k in details for k in vet_keywords):
                             try:
-                                date = pd.to_datetime(date_str, format="%d/%m/%y")
-                                today = pd.to_datetime(datetime.now().date())
-                                days_diff = (today - date).days
-                                if days_diff <= 180:
+                                date = pd.to_datetime(date_str, dayfirst=True, errors='coerce')
+                                if pd.notnull(date):
+                                    today = pd.to_datetime(datetime.now().date())
+                                    days_diff = (today - date).days
+                                    if days_diff <= 180:
+                                        prev_run_vet_finding = 1
+                                elif '2026' in date_str:
                                     prev_run_vet_finding = 1
                             except Exception:
-                                if '2026' in date_str or '2025' in date_str:
+                                if '2026' in date_str:
                                     prev_run_vet_finding = 1
             except Exception as e:
                 print(f"Error parsing vet history for {horse_code}: {e}")
@@ -499,6 +507,145 @@ def update_latest_stats():
             print(f"Warning: Failed to sync to precomputed_features.json: {sync_e}")
     else:
         print("No new horses to add.")
+
+    # Always scrape the official Veterinary Records of Declared Starters (/en-us/local/information/overecord)
+    vet_records = scrape_declared_starters_vet_records()
+
+    try:
+        from monitoring.health import record as record_health
+        final_df = pd.read_csv('data/latest_horse_stats.csv') if os.path.exists('data/latest_horse_stats.csv') else pd.DataFrame()
+        vet_flagged = int((pd.to_numeric(final_df.get('prev_run_vet_finding', 0), errors='coerce').fillna(0) == 1).sum()) if not final_df.empty else 0
+        vet_notes_count = int(final_df['latest_vet_note'].dropna().apply(lambda x: str(x).strip() not in ['', 'No Findings', 'nan', 'None']).sum()) if ('latest_vet_note' in final_df.columns) else 0
+        record_health(
+            "horse_profiles_and_vet",
+            "ok",
+            metrics={
+                "total_profiles": len(final_df),
+                "updated_this_run": len(new_rows),
+                "active_vet_flags": vet_flagged,
+                "horses_with_vet_notes": vet_notes_count,
+                "declared_starters_vet_records": len(vet_records),
+            },
+        )
+    except Exception as he:
+        print(f"Warning recording profile scraper health: {he}")
+
+
+def scrape_declared_starters_vet_records():
+    """
+    Scrapes the official HKJC 'Veterinary Records of Declared Starters' table
+    (https://racing.hkjc.com/en-us/local/information/overecord), saves to
+    data/declared_vet_records.json, updates data/latest_horse_stats.csv,
+    and records pipeline health for veterinary_records.
+    """
+    from monitoring.health import record as record_health
+    url = "https://racing.hkjc.com/en-us/local/information/overecord"
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    records_out = []
+    try:
+        res = requests.get(url, headers=headers, timeout=8)
+        if res.status_code != 200:
+            record_health("veterinary_records", "warn", error=f"HTTP {res.status_code} from {url}")
+            return []
+        dfs = pd.read_html(res.content)
+        if not dfs:
+            record_health("veterinary_records", "warn", error="No tables found on overecord")
+            return []
+
+        df = dfs[0]
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = [str(c[-1]).strip() for c in df.columns]
+        else:
+            df.columns = [str(c).strip() for c in df.columns]
+
+        current_race = None
+        today = pd.to_datetime(datetime.now().date())
+        vet_keywords = [
+            'lame', 'blood', 'trachea', 'heart', 'irregularity', 'mucus',
+            'surgery', 'abnormal', 'infection', 'fever', 'unacceptable',
+            'disappointing', 'withdrawn', 'barrier trial', 'roarer',
+            'epiglottic', 'tendon', 'suspensory', 'colic', 'fracture', 'bone'
+        ]
+
+        for _, row in df.iterrows():
+            first_val = str(row.iloc[0]).strip() if len(row) > 0 else ""
+            if first_val.upper().startswith("RACE "):
+                current_race = first_val
+                continue
+            h_name = str(row.get("Horse Name", "")).strip().upper()
+            b_no = str(row.get("Brand No.", "")).strip().upper()
+            date_str = str(row.get("Date", "")).strip()
+            details_raw = str(row.get("Details", "")).strip()
+            passed_str = str(row.get("Passed On", "")).strip()
+            if not h_name or h_name in ("NAN", "NONE", "HORSE NAME") or h_name.startswith("RACE "):
+                continue
+
+            is_recent_flag = 0
+            if any(k in details_raw.lower() for k in vet_keywords):
+                dt = pd.to_datetime(date_str, dayfirst=True, errors="coerce")
+                if pd.notnull(dt) and (today - dt).days <= 180:
+                    is_recent_flag = 1
+                elif "2026" in date_str:
+                    is_recent_flag = 1
+
+            note_str = f"{date_str}: {details_raw}"
+            if passed_str and passed_str.lower() not in ("nan", "none", ""):
+                note_str += f" (Passed: {passed_str})"
+
+            records_out.append({
+                "race": current_race,
+                "horse_name": h_name,
+                "horse_code": b_no,
+                "date": date_str,
+                "details": details_raw,
+                "passed_on": passed_str,
+                "latest_vet_note": note_str,
+                "prev_run_vet_finding": is_recent_flag,
+            })
+
+        os.makedirs("data", exist_ok=True)
+        with open("data/declared_vet_records.json", "w", encoding="utf-8") as f:
+            json.dump(records_out, f, indent=2)
+
+        if records_out and os.path.exists("data/latest_horse_stats.csv"):
+            stats_df = pd.read_csv("data/latest_horse_stats.csv")
+            if "latest_vet_note" not in stats_df.columns:
+                stats_df["latest_vet_note"] = "No Findings"
+            stats_df["latest_vet_note"] = stats_df["latest_vet_note"].astype(object)
+            if "prev_run_vet_finding" not in stats_df.columns:
+                stats_df["prev_run_vet_finding"] = 0
+
+            # Group by horse_name (keep first/latest entry on overecord)
+            seen_horses = set()
+            for rec in records_out:
+                hn = rec["horse_name"]
+                if hn in seen_horses:
+                    continue
+                seen_horses.add(hn)
+                mask = stats_df["clean_name"].astype(str).str.strip().str.upper() == hn
+                if mask.any():
+                    stats_df.loc[mask, "latest_vet_note"] = rec["latest_vet_note"]
+                    if rec["prev_run_vet_finding"] == 1:
+                        stats_df.loc[mask, "prev_run_vet_finding"] = 1
+            stats_df.to_csv("data/latest_horse_stats.csv", index=False)
+
+        record_health(
+            "veterinary_records",
+            "ok",
+            metrics={
+                "declared_vet_records": len(records_out),
+                "unique_horses": len({r["horse_name"] for r in records_out}),
+                "recent_180d_flags": sum(r["prev_run_vet_finding"] for r in records_out),
+                "source_url": url,
+            },
+        )
+        print(f"[Vet Monitor] Synced {len(records_out)} official declared-starter veterinary records.")
+        return records_out
+    except Exception as e:
+        print(f"Warning scraping declared starters vet records: {e}")
+        record_health("veterinary_records", "warn", error=str(e))
+        return []
+
 
 if __name__ == '__main__':
     update_latest_stats()
