@@ -873,8 +873,21 @@ with tab1:
                             # Keep core rankings completely stable and frozen based on model_prob so picks never jump around before post time
                             df_runners['gs_score'] = df_runners['model_prob'] * 100
 
-                        # Dynamic win stake shift check on live odds update
+                        # Dynamic win stake shift & Pick 5 EV sleeper refresh on live odds update
                         if 'card_rank' in df_runners.columns:
+                            # Refresh Pick 5 (card_rank == 5) to the highest live EV survivor outside Picks 1-4
+                            rem_mask = ~df_runners['card_rank'].isin([1, 2, 3, 4])
+                            df_runners.loc[rem_mask, 'card_rank'] = 99
+                            rem_df = df_runners[rem_mask].copy()
+                            is_hv_frozen = ('HAPPY VALLEY' in str(meeting.get('venue', '')).upper()) or (meeting.get('venue') == 'Happy Valley')
+                            if is_hv_frozen and not rem_df.empty:
+                                rem_elig = rem_df[~((pd.to_numeric(rem_df.get('draw', 6), errors='coerce').fillna(6) >= 9) & (pd.to_numeric(rem_df.get('actual_weight', 125), errors='coerce').fillna(125) >= 132))]
+                                if not rem_elig.empty:
+                                    rem_df = rem_elig
+                            if not rem_df.empty and 'value_diff' in rem_df.columns:
+                                best_p5 = rem_df.sort_values(by='value_diff', ascending=False).iloc[0]
+                                df_runners.loc[df_runners['no'] == best_p5['no'], 'card_rank'] = 5
+
                             p1_mask = df_runners['card_rank'] == 1
                             if p1_mask.any():
                                 p1_idx = df_runners[p1_mask].index[0]
@@ -884,6 +897,7 @@ with tab1:
                                 p1_pass = p1_live and (p1_p * p1_o > 1.0)
                                 
                                 df_runners['win_stake_active'] = 0
+                                df_runners.loc[df_runners['card_rank'] != 1, 'primary_reason'] = ""
                                 if p1_pass:
                                     df_runners.loc[p1_idx, 'win_stake_active'] = 1
                                     df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({df_runners.loc[p1_idx, 'gs_score']:.1f}) - WIN STAKE ACTIVE (Half Unit Win + Place)"
@@ -1232,10 +1246,11 @@ with tab1:
         df_runners["rank_sec400"] = st_cal["rank_sec400"]
         df_runners["st_straight_outside_rail_multiplier"] = st_straight_outside_rail_multiplier
 
-        # Sha Tin 1200m-1600m Bend Draw Bias
+        # Sha Tin 1200m-1600m Turf Bend & 1200m-1800m AWT Oval Draw Bias (Inside Rail Gates 1-4 vs Wide Trap Gates 11-14)
         is_st_bend = is_st and (distance >= 1200) and (distance <= 1600) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
-        st_inside_draw_boost = np.where(is_st_bend & (draws <= 4), 0.02, 0.0)
-        st_wide_draw_penalty = np.where(is_st_bend & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
+        is_st_awt_oval = is_st and is_awt_race and (distance >= 1200) and (distance <= 1800)
+        st_inside_draw_boost = np.where(is_st_bend & (draws <= 4), 0.02, np.where(is_st_awt_oval & (draws <= 4), 0.015, 0.0))
+        st_wide_draw_penalty = np.where((is_st_bend | is_st_awt_oval) & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
 
         # Quantitative Barrier Trial Multipliers
         trial_boost = []

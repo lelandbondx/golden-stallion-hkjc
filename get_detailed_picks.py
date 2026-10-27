@@ -424,10 +424,11 @@ def run():
         df_runners["rank_sec400"] = st_cal["rank_sec400"]
         df_runners["st_straight_outside_rail_multiplier"] = st_straight_outside_rail_multiplier
 
-        # Sha Tin 1200m-1600m Bend Draw Bias
+        # Sha Tin 1200m-1600m Turf Bend & 1200m-1800m AWT Oval Draw Bias (Inside Rail Gates 1-4 vs Wide Trap Gates 11-14)
         is_st_bend = is_st and (distance >= 1200) and (distance <= 1600) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
-        st_inside_draw_boost = np.where(is_st_bend & (draws <= 4), 0.02, 0.0)
-        st_wide_draw_penalty = np.where(is_st_bend & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
+        is_st_awt_oval = is_st and is_awt_race and (distance >= 1200) and (distance <= 1800)
+        st_inside_draw_boost = np.where(is_st_bend & (draws <= 4), 0.02, np.where(is_st_awt_oval & (draws <= 4), 0.015, 0.0))
+        st_wide_draw_penalty = np.where((is_st_bend | is_st_awt_oval) & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
 
         # Quantitative Barrier Trial Multipliers
         trial_boost = []

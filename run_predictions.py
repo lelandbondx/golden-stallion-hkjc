@@ -457,10 +457,11 @@ def run():
         df_runners["rank_sec400"] = st_cal["rank_sec400"]
         df_runners["st_straight_outside_rail_multiplier"] = st_straight_outside_rail_multiplier
 
-        # Sha Tin 1200m-1600m Bend Draw Bias (Inside Rail Advantage Gates 1-4 vs Wide Trap Gates 11-14)
+        # Sha Tin 1200m-1600m Turf Bend & 1200m-1800m AWT Oval Draw Bias (Inside Rail Gates 1-4 vs Wide Trap Gates 11-14)
         is_st_bend = is_st and (distance >= 1200) and (distance <= 1600) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
-        st_inside_draw_boost = np.where(is_st_bend & (draws <= 4), 0.02, 0.0)
-        st_wide_draw_penalty = np.where(is_st_bend & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
+        is_st_awt_oval = is_st and is_awt_race and (distance >= 1200) and (distance <= 1800)
+        st_inside_draw_boost = np.where(is_st_bend & (draws <= 4), 0.02, np.where(is_st_awt_oval & (draws <= 4), 0.015, 0.0))
+        st_wide_draw_penalty = np.where((is_st_bend | is_st_awt_oval) & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
 
         # Quantitative Barrier Trial Multipliers
         trial_boost = []
@@ -807,6 +808,8 @@ def run():
         global_best_bets.append(best)
         
         # Populate vet_findings, steward_notes, and photo_finish for full parity with app.py
+        from data.incident_engine import load_horse_memory
+        horse_memory = load_horse_memory()
         vet_notes = []
         steward_notes = []
         photo_hist = []
@@ -840,8 +843,18 @@ def run():
             else:
                 photo = "❌ No"
 
+            mem_entry = horse_memory.get(c_name, {}) if isinstance(horse_memory, dict) else {}
+            mem_runs = mem_entry.get('runs', []) if isinstance(mem_entry, dict) else []
+            mem_snippet = ""
+            if mem_runs and isinstance(mem_runs[0], dict):
+                flags = mem_runs[0].get('incident_flags', [])
+                if flags and isinstance(flags[0], dict):
+                    mem_snippet = str(flags[0].get('snippet', '')).strip()
+
             if comment:
                 steward = comment
+            elif mem_snippet:
+                steward = f"{mem_snippet} | {raw_summary}" if (raw_summary and raw_summary.lower() not in ['', 'nan', 'none']) else mem_snippet
             elif raw_summary and raw_summary.lower() not in ['', 'nan', 'none']:
                 steward = raw_summary
             else:

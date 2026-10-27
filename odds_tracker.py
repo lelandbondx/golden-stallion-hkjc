@@ -39,9 +39,11 @@ def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds, minutes_
         baseline_data = {}
 
     key = f"{venue}_R{race_no}_H{horse_no}"
+    existing_val = _safe_float(baseline_data.get(key), 0.0)
 
-    # If more than 2 hours before post time, always update baseline to current
-    if minutes_to_post > 120.0:
+    # Preserve true opening baseline price once recorded; only initialize or replace
+    # if missing (<= 0) or if upgrading from a pre-market 20.0 placeholder to real live odds.
+    if existing_val <= 0 or (existing_val == 20.0 and cur_val > 0 and cur_val != 20.0):
         if cur_val > 0:
             baseline_data[key] = cur_val
             try:
@@ -51,22 +53,9 @@ def get_baseline_odds(date_str, venue, race_no, horse_no, current_odds, minutes_
             except Exception as e:
                 print(f"[WARNING] Could not save baseline odds to file: {e}")
             return cur_val
+        return None
 
-    # If within 2 hours, load baseline or initialize it
-    if key not in baseline_data or _safe_float(baseline_data.get(key), 0.0) <= 0:
-        if cur_val > 0:
-            baseline_data[key] = cur_val
-            try:
-                os.makedirs(os.path.dirname(filename), exist_ok=True)
-                with open(filename, 'w', encoding='utf-8') as f:
-                    json.dump(baseline_data, f, indent=4)
-            except Exception as e:
-                print(f"[WARNING] Could not save baseline odds to file: {e}")
-            return cur_val
-        else:
-            return None
-
-    return float(baseline_data[key])
+    return float(existing_val)
 
 
 def calculate_odds_shift_bonus(baseline_odds, current_odds, recent_pos, vet_issue):
