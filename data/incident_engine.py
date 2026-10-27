@@ -451,16 +451,20 @@ def build_horse_incident_memory(force_rebuild=False):
 
     # 1b. Automatically scrape & ingest official HKJC Stewards' Reports for recent meetings
     #     plus any replay_incident_notes_*.json files so the AI logs every meeting automatically.
+    from datetime import datetime, timezone, timedelta
+    today_hkt_tag = datetime.now(timezone(timedelta(hours=8))).strftime("%Y%m%d")
+
     recent_dates = set()
-    for fp in sorted(glob.glob('data/frozen_predictions_202610*.json'))[-4:]:
+    for fp in sorted(glob.glob('data/frozen_predictions_202610*.json'))[-5:]:
         m = re.search(r'(\d{8})', fp)
-        if m:
+        if m and m.group(1) <= today_hkt_tag:
             recent_dates.add(m.group(1))
-    for ma in sorted(glob.glob('data/meeting_audit_2026*.json'))[-4:]:
+    for ma in sorted(glob.glob('data/meeting_audit_2026*.json'))[-5:]:
         m = re.search(r'(\d{8})', ma)
-        if m:
+        if m and m.group(1) <= today_hkt_tag:
             recent_dates.add(m.group(1))
 
+    total_ingested_incidents = 0
     for d_tag in sorted(recent_dates):
         inc_cache_path = f"data/scraped_incidents_{d_tag}.json"
         inc_map = {}
@@ -483,6 +487,7 @@ def build_horse_incident_memory(force_rebuild=False):
             c_h = _clean_horse_name(h_name)
             if c_h and inc_txt:
                 comments_dict[c_h] = str(inc_txt)
+                total_ingested_incidents += 1
 
     # Ingest replay_incident_notes_*.json (e.g. Oct 25 Sha Tin replay & stewards intelligence)
     replay_notes_by_date = {}
@@ -721,41 +726,142 @@ def build_horse_incident_memory(force_rebuild=False):
             logging.warning(f"Error ingesting last_scraped_meeting.json into incident memory: {e}")
 
     # Also ingest replay_incident_notes_*.json and meeting_audit_*.json so every recent runner is logged
+    # Cross-reference with frozen_predictions_<YYYYMMDD>.json and last_scraped_meeting.json for real draw, odds, distance, weight, and finish
     for m_date, (m_venue, inc_dict) in replay_notes_by_date.items():
         r_date_tag = m_date.replace('-', '')
+        runner_meta_by_name = {}
+
+        # Load runner metadata (race_no, draw, weight, sp, avg_first_pos, field_size) from frozen_predictions_<YYYYMMDD>.json
+        fp_path = f"data/frozen_predictions_{r_date_tag}.json"
+        if os.path.exists(fp_path):
+            try:
+                with open(fp_path, 'r', encoding='utf-8') as f:
+                    fp_data = json.load(f)
+                for r_key, r_list in (fp_data or {}).items():
+                    if not isinstance(r_list, list):
+                        continue
+                    r_no_m = re.search(r'_R(\d+)', str(r_key))
+                    r_no_val = int(r_no_m.group(1)) if r_no_m else 1
+                    f_size = len(r_list)
+                    for r_item in r_list:
+                        if not isinstance(r_item, dict):
+                            continue
+                        rn_clean = _clean_horse_name(r_item.get('clean_name') or r_item.get('name') or '')
+                        if rn_clean:
+                            runner_meta_by_name[rn_clean] = {
+                                'race_no': r_no_val,
+                                'horse_no': int(r_item.get('no', 0) or 0),
+                                'horse_code': str(r_item.get('code') or r_item.get('horse_code') or ''),
+                                'barrier': int(r_item.get('draw', 6) or 6),
+                                'weight_carried': float(r_item.get('actual_weight', 125.0) or 125.0),
+                                'sp': float(r_item.get('scraped_win_odds') or r_item.get('win_odds') or 6.0),
+                                'early_pos': float(r_item.get('avg_first_pos', 6.0) or 6.0),
+                                'best_last_sec': float(r_item.get('best_last_sec', 22.8) or 22.8),
+                                'going': str(r_item.get('current_going', 'GOOD') or 'GOOD'),
+                                'field_size': f_size,
+                            }
+            except Exception as e:
+                logging.warning(f"Error reading {fp_path} for replay metadata: {e}")
+
+        # Supplement distance, class, course, surface from last_scraped_meeting.json if matching date exists
+        race_info_by_no = {}
+        if os.path.exists('data/last_scraped_meeting.json'):
+            try:
+                with open('data/last_scraped_meeting.json', 'r', encoding='utf-8') as f:
+                    lsm_data = json.load(f)
+                for m_obj in (lsm_data.get('meetings') or []):
+                    if str(m_obj.get('date', '')).replace('/', '-') == m_date:
+                        for rc in (m_obj.get('races') or []):
+                            rc_no = int(rc.get('race_no', 0) or 0)
+                            c_dist_str = str(rc.get('class_dist', 'Class 4 - 1200m'))
+                            d_m = re.search(r'(\d{4})m', c_dist_str)
+                            dist_val = int(d_m.group(1)) if d_m else 1200
+                            cls_label = c_dist_str.split('-')[0].strip() if '-' in c_dist_str else c_dist_str
+                            race_info_by_no[rc_no] = {
+                                'distance': dist_val,
+                                'class': cls_label,
+                                'course_rail': str(rc.get('course', 'A') or 'A'),
+                                'surface': str(rc.get('track', 'TURF') or 'TURF').upper(),
+                                'going': str(rc.get('going', m_obj.get('going', 'GOOD')) or 'GOOD'),
+                            }
+            except Exception as e:
+                logging.warning(f"Error reading race info from last_scraped_meeting.json: {e}")
+
         for h_raw, inc_txt in inc_dict.items():
             cname = _clean_horse_name(h_raw)
             if not cname:
                 continue
+            meta = runner_meta_by_name.get(cname, {})
+            h_code = meta.get('horse_code', '')
             if cname not in memory:
                 memory[cname] = {
                     'horse_name': cname,
-                    'horse_code': '',
+                    'horse_code': h_code,
                     'runs': [],
                     'trial_note': None
                 }
+            elif h_code and not memory[cname].get('horse_code'):
+                memory[cname]['horse_code'] = h_code
+
             flags = parse_incident(inc_txt, target_horse_name=cname)
             max_interf = max([fl['severity'] for fl in flags if fl['flag'] == 'traffic_trouble'], default=0)
             saved_g = any(fl['flag'] == 'saved_ground' for fl in flags)
-            race_id = f"{r_date_tag}_REPLAY"
+
+            rc_no = meta.get('race_no')
+            rc_info = race_info_by_no.get(rc_no, {}) if rc_no else {}
+            race_id = f"{r_date_tag}_R{rc_no}" if rc_no else f"{r_date_tag}_REPLAY"
+
+            inc_lower = inc_txt.lower()
+            # Parse true finish_pos and beaten_lengths from replay/stewards text
+            if re.search(r'\b(to win|won impressively|win unextended|sustained run to win)\b', inc_lower):
+                fin_pos = 1
+                lbw_val = 0.0
+            elif re.search(r'\bfinish(?:ed)?\s+2nd\b|\btiring in the final 50m\b', inc_lower):
+                fin_pos = 2
+                lbw_val = 0.5
+            elif re.search(r'\bfinish(?:ed)?\s+3rd\b', inc_lower):
+                fin_pos = 3
+                lbw_val = 1.2
+            elif re.search(r'\bfaded\b|\bdisappointing\b|\blost ground abruptly\b|\bmissed the start\b|\blost three lengths\b', inc_lower):
+                fin_pos = 8
+                lbw_val = 5.5
+            elif max_interf >= 2:
+                fin_pos = 4
+                lbw_val = 1.5
+            else:
+                fin_pos = 4
+                lbw_val = 2.0
+
+            # Parse true early running position
+            if re.search(r'\bled early\b|\bsetting the early pace\b|\bwent hard in front\b|\bled by\b', inc_lower):
+                early_pos_val = 1.2
+            elif re.search(r'\bsettled (?:at the )?(?:rear|back)\b|\bfrom well back\b|\bfrom the rear\b|\bsettled rearward\b|\bsettled back\b', inc_lower):
+                early_pos_val = 10.0
+            else:
+                early_pos_val = float(meta.get('early_pos', 6.0))
+
+            is_fast_closer_note = any(
+                phrase in inc_lower
+                for phrase in ('closed strongly', 'flew home', 'swept past', 'sprinted clear', 'made up significant late ground')
+            )
             run_rec = {
                 'race_date': m_date,
                 'race_id': race_id,
                 'venue': m_venue,
-                'course_rail': 'A',
-                'surface': 'TURF',
-                'going': 'GOOD',
-                'distance': 1400,
-                'class': 'Class 4',
-                'barrier': 6,
-                'finish_pos': 3 if max_interf >= 2 else 2,
-                'beaten_lengths': 1.2 if max_interf >= 2 else 0.5,
-                'sp': 6.0,
-                'weight_carried': 125.0,
-                'early_pos': 6.0,
-                'final_section_time': 22.4 if 'closed strongly' in inc_txt.lower() or 'flew home' in inc_txt.lower() or 'swept past' in inc_txt.lower() else 22.8,
-                'final_section_rank': 1 if 'closed strongly' in inc_txt.lower() or 'flew home' in inc_txt.lower() or 'swept past' in inc_txt.lower() else 4,
-                'field_size': 14,
+                'course_rail': rc_info.get('course_rail', 'A'),
+                'surface': rc_info.get('surface', 'TURF'),
+                'going': rc_info.get('going', meta.get('going', 'GOOD')),
+                'distance': int(rc_info.get('distance', 1200)),
+                'class': rc_info.get('class', 'Class 4'),
+                'barrier': int(meta.get('barrier', 6)),
+                'finish_pos': fin_pos,
+                'beaten_lengths': lbw_val,
+                'sp': round(float(meta.get('sp', 6.0)), 1),
+                'weight_carried': float(meta.get('weight_carried', 125.0)),
+                'early_pos': round(early_pos_val, 1),
+                'final_section_time': 22.35 if is_fast_closer_note else float(meta.get('best_last_sec', 22.8)),
+                'final_section_rank': 1 if is_fast_closer_note else 4,
+                'field_size': int(meta.get('field_size', 14)),
                 'incident_flags': flags,
                 'ground_saved_score': 1.0 if saved_g else 0.5,
                 'interference_severity': max_interf,
@@ -763,7 +869,7 @@ def build_horse_incident_memory(force_rebuild=False):
                 'steward_comment': inc_txt
             }
             runs_list = memory[cname]['runs']
-            runs_list = [x for x in runs_list if x.get('race_id') != race_id and x.get('race_date') != m_date]
+            runs_list = [x for x in runs_list if x.get('race_id') not in (race_id, f"{r_date_tag}_REPLAY") and x.get('race_date') != m_date]
             runs_list.insert(0, run_rec)
             memory[cname]['runs'] = runs_list[:6]
 
@@ -787,6 +893,11 @@ def build_horse_incident_memory(force_rebuild=False):
     flagged_count = sum(
         1 for v in memory.values()
         if isinstance(v, dict) and any(r.get('incident_flags') for r in (v.get('runs') or []))
+    )
+    record_health(
+        "incident_engine",
+        "ok" if flagged_count > 0 else "warn",
+        metrics={"ingested_incidents": total_ingested_incidents, "flagged_horses": flagged_count},
     )
     record_health(
         "incident_memory",

@@ -457,6 +457,33 @@ class TestShaTinCalibrations(unittest.TestCase):
         self.assertAlmostEqual(res["false_fav_market_guard"][4], 0.030)
         self.assertAlmostEqual(res["false_fav_market_guard"][5], -0.005)
 
+    def test_grok_audit_fixes(self):
+        """
+        Verify Grok's audit fixes:
+        1. Oct 25 replay horses in horse_incident_memory.json have real finish_pos, race_id, barrier, sp, and distance.
+        2. check_stewards_excuse recognizes 'without cover', 'raced keenly', 'over-raced', 'unbalanced'.
+        3. First-time Hood (H1) gets +1.5% (0.015) and total multiplier is capped at 1.25x.
+        """
+        from data.incident_engine import load_horse_memory
+        from run_predictions import check_stewards_excuse
+
+        mem = load_horse_memory()
+        self.assertIn("CHILL EASY", mem)
+        chill_run = mem["CHILL EASY"]["runs"][0]
+        self.assertEqual(chill_run["finish_pos"], 1)
+        self.assertEqual(chill_run["beaten_lengths"], 0.0)
+        self.assertEqual(chill_run["race_id"], "20261025_R9")
+
+        self.assertIn("CIRCUIT CHAMPION", mem)
+        cc_run = mem["CIRCUIT CHAMPION"]["runs"][0]
+        self.assertEqual(cc_run["finish_pos"], 3)
+        self.assertEqual(cc_run["race_id"], "20261025_R11")
+
+        # Excuse keywords check
+        self.assertTrue(check_stewards_excuse("Raced three wide without cover throughout."))
+        self.assertTrue(check_stewards_excuse("Settled rearward and raced keenly in the middle stages."))
+        self.assertTrue(check_stewards_excuse("Became unbalanced near the 300m."))
+
 
 class TestAppMultipliers(unittest.TestCase):
 

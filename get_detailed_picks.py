@@ -28,7 +28,8 @@ def check_stewards_excuse(comment, vet_status=0):
         'held up', 'no clear run', 'denied a clear run', 'pocketed', 'clipped heels', 'clip heels',
         'lost ground at start', 'slow to begin', 'stumbled', 'stumble', 'lost shoe', 'lost plate', 
         'lost a plate', 'saddle slipped', 'blood in trachea', 'trachea', 'forced wide', 'no room', 'blocked',
-        'bleeder', 'irregular heart', 'heart irregularity', 'lame', 'lameness', 'mucus'
+        'bleeder', 'irregular heart', 'heart irregularity', 'lame', 'lameness', 'mucus',
+        'without cover', 'no cover', 'three wide', 'four wide', 'raced wide', 'raced keenly', 'over-raced', 'unbalanced'
     ]
     
     has_excuse = any(kw in c for kw in excuse_keywords)
@@ -224,11 +225,13 @@ def run():
         # Map sectional times and find fastest last sectional
         df_runners['best_last_sec'] = df_runners['clean_name'].map(sectional_bursts).fillna(99.0)
 
-        # First-Time Gear Boost (Blinkers B1 3.0% / Visor V1 2.5%):
+        # First-Time Gear Boost (Blinkers B1 3.0% / Visor V1 2.5% / Hood H1 1.5%):
         if 'horse_gear' in df_runners.columns:
-            has_B1 = df_runners['horse_gear'].astype(str).str.contains('B1')
-            has_V1 = df_runners['horse_gear'].astype(str).str.contains('V1')
-            first_time_gear_boost = np.where(has_B1, 0.03, np.where(has_V1, 0.025, 0.0))
+            gear_str = df_runners['horse_gear'].astype(str)
+            has_B1 = gear_str.str.contains('B1')
+            has_V1 = gear_str.str.contains('V1')
+            has_H1 = gear_str.str.contains('H1')
+            first_time_gear_boost = np.where(has_B1, 0.03, np.where(has_V1, 0.025, np.where(has_H1, 0.015, 0.0)))
         else:
             first_time_gear_boost = 0.0
         
@@ -561,8 +564,8 @@ def run():
 
         multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + telemetry_harmony_multiplier
 
-        # Ensure multiplier doesn't go below 0.1
-        multiplier = np.maximum(multiplier, 0.1)
+        # Ensure multiplier stays within [0.1, 1.25] (cap total upward nudge at 1.25x)
+        multiplier = np.clip(multiplier, 0.1, 1.25)
         df_runners['model_prob'] = df_runners['model_prob'] * multiplier
         
         total_b = df_runners['model_prob'].sum()

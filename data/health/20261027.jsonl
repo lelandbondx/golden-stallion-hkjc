@@ -1,0 +1,7 @@
+{"component": "incident_engine", "status": "fail", "timestamp": "2026-10-27T02:19:35Z", "metrics": {"date": "20261028", "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/28"}, "error": "HKJC page returned 'No information.' with no data tables."}
+{"component": "incident_memory", "status": "ok", "timestamp": "2026-10-27T02:19:35Z", "metrics": {"horses": 1604, "flagged_horses": 405}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-10-27T02:21:06Z", "metrics": {"ingested_incidents": 509, "flagged_horses": 497}, "error": null}
+{"component": "incident_memory", "status": "ok", "timestamp": "2026-10-27T02:21:06Z", "metrics": {"horses": 1604, "flagged_horses": 497}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-10-27T02:22:07Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "scraper", "status": "ok", "timestamp": "2026-10-27T02:22:46Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-10-28", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-10-27T02:22:47Z", "metrics": {"meeting_date": "2026-10-28", "venue": "Sha Tin", "races_predicted": 9}, "error": null}
