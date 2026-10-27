@@ -64,12 +64,12 @@ def compute_sha_tin_calibrations(
 
     # -------------------------------------------------------------------------
     # 1. Sha Tin 1000m Straight Outside Rail Bias
-    #    +4.5% boost for gates 10-14; -3.5% penalty for gates 1-4
+    #    +1.5% boost for gates 10-14; -1.5% penalty for gates 1-5
     # -------------------------------------------------------------------------
     is_st_straight_1000 = is_st_turf and (int(distance) == 1000)
     if is_st_straight_1000:
-        st_1000_draw_boost = np.where((draws >= 10) & (draws <= 14), 0.045, 0.0)
-        st_1000_draw_penalty = np.where((draws >= 1) & (draws <= 4), -0.035, 0.0)
+        st_1000_draw_boost = np.where((draws >= 10) & (draws <= 14), 0.015, 0.0)
+        st_1000_draw_penalty = np.where((draws >= 1) & (draws <= 5), -0.015, 0.0)
     else:
         st_1000_draw_boost = zeros.copy()
         st_1000_draw_penalty = zeros.copy()
@@ -415,16 +415,41 @@ def compute_telemetry_harmony_multipliers(
     speed_count = int(np.sum(avg_first_pos <= 3.5))
     on_pace_count = int(np.sum(avg_first_pos <= 4.2))
 
-    # (a) 1000m & 1200m Sprint Gate-Speed Crosser Boost
+    # (a) 1000m & 1200m Sprint Gate-Speed Tiering & Wide Crosser Boost:
+    #     - Wide draws (Gates 9+): +2.5% (+0.025) ONLY if < 3 fast horses are drawn inside
+    #       (blocked at 0.0% if >= 3 fast horses are drawn inside, avoiding trapped-wide burn).
+    #     - Mid draws (Gates 5-8): +0.75% (+0.0075) when < 3 fast horses drawn inside.
+    #     - Inside draws (Gates 1-4): +1.5% (+0.015) when speed_count <= 3.
     if int(distance) <= 1200:
-        is_wide_crosser = has_proven_gate_speed & (draws >= 8) & (vet_issue == 0)
-        is_natural_sprint_speed = (
-            has_proven_gate_speed & (draws < 8) & (speed_count <= 3) & (vet_issue == 0)
+        inside_speed_counts = np.array(
+            [int(np.sum(has_proven_gate_speed & (draws < draws[idx]))) for idx in range(n)],
+            dtype=int,
+        )
+        is_wide_crosser = (
+            has_proven_gate_speed & (draws >= 9) & (inside_speed_counts < 3) & (vet_issue == 0)
+        )
+        is_mid_gate_speed = (
+            has_proven_gate_speed
+            & (draws >= 5)
+            & (draws <= 8)
+            & (inside_speed_counts < 3)
+            & (vet_issue == 0)
+        )
+        is_inside_gate_speed = (
+            has_proven_gate_speed
+            & (draws >= 1)
+            & (draws <= 4)
+            & (speed_count <= 3)
+            & (vet_issue == 0)
         )
         sprint_gate_speed_crosser_boost = np.where(
             is_wide_crosser,
             0.025,
-            np.where(is_natural_sprint_speed, 0.015, 0.0),
+            np.where(
+                is_inside_gate_speed,
+                0.015,
+                np.where(is_mid_gate_speed, 0.0075, 0.0),
+            ),
         )
     else:
         sprint_gate_speed_crosser_boost = zeros.copy()

@@ -119,24 +119,26 @@ class TestShaTinCalibrations(unittest.TestCase):
     def test_st_straight_1000m_outside_rail_multiplier(self):
         """
         Calibration 1: Sha Tin 1000m sprints only:
-        - +4.5% (+0.045) win-probability boost for gates 10-14
-        - -3.5% (-0.035) penalty for gates 1-4
-        - 0.0 for middle gates 5-9 or non-1000m / HV races
+        - +1.5% (+0.015) win-probability boost for gates 10-14
+        - -1.5% (-0.015) penalty for gates 1-5
+        - 0.0 for middle gates 6-9 or non-1000m / HV races
         """
         df = pd.DataFrame([
             {"no": 1, "name": "INSIDE TRAP", "draw": 2, "actual_weight": 125},
-            {"no": 2, "name": "MIDDLE GATE", "draw": 7, "actual_weight": 125},
-            {"no": 3, "name": "STANDS RAIL", "draw": 12, "actual_weight": 125},
-            {"no": 4, "name": "OUTSIDE 14", "draw": 14, "actual_weight": 125},
+            {"no": 2, "name": "GATE FIVE", "draw": 5, "actual_weight": 125},
+            {"no": 3, "name": "MIDDLE GATE", "draw": 7, "actual_weight": 125},
+            {"no": 4, "name": "STANDS RAIL", "draw": 12, "actual_weight": 125},
+            {"no": 5, "name": "OUTSIDE 14", "draw": 14, "actual_weight": 125},
         ])
 
         res_st_1000 = compute_sha_tin_calibrations(df, is_st=True, is_awt_race=False, distance=1000, class_int=4)
         mult = res_st_1000["st_straight_outside_rail_multiplier"]
 
-        self.assertAlmostEqual(mult[0], -0.035)  # Gate 2 -> -3.5%
-        self.assertAlmostEqual(mult[1], 0.0)     # Gate 7 -> 0.0%
-        self.assertAlmostEqual(mult[2], 0.045)   # Gate 12 -> +4.5%
-        self.assertAlmostEqual(mult[3], 0.045)   # Gate 14 -> +4.5%
+        self.assertAlmostEqual(mult[0], -0.015)  # Gate 2 -> -1.5%
+        self.assertAlmostEqual(mult[1], -0.015)  # Gate 5 -> -1.5%
+        self.assertAlmostEqual(mult[2], 0.0)     # Gate 7 -> 0.0%
+        self.assertAlmostEqual(mult[3], 0.015)   # Gate 12 -> +1.5%
+        self.assertAlmostEqual(mult[4], 0.015)   # Gate 14 -> +1.5%
 
         # Verify does NOT fire on Sha Tin 1200m or Happy Valley 1000m
         res_st_1200 = compute_sha_tin_calibrations(df, is_st=True, is_awt_race=False, distance=1200, class_int=4)
@@ -447,15 +449,32 @@ class TestShaTinCalibrations(unittest.TestCase):
             horse_memory={},
         )
 
-        # 1. Wide gate-speed crosser gets +0.025
+        # 1. Wide gate-speed crosser (Gate 11, with only 2 speed horses inside in Gates 3 & 5) gets +0.025
         self.assertAlmostEqual(res["sprint_gate_speed_crosser_boost"][0], 0.025)
-        # 2. Inside gate-speed horse in a 3-speed-horse race gets +0.015 natural sprint gate speed
+        # 2. Inside gate-speed horse (Gate 3, in 1-4 tier) gets +0.015
         self.assertAlmostEqual(res["sprint_gate_speed_crosser_boost"][1], 0.015)
-        # 3. Runner 4 (lying 8.5 with 22.35s split in 3-speed-horse race) gets +0.020 high_pace_strong_closer_boost
+        # 3. Mid gate-speed horse (Gate 5, in 5-8 tier) gets +0.0075
+        self.assertAlmostEqual(res["sprint_gate_speed_crosser_boost"][2], 0.0075)
+        # 4. Runner 4 (lying 8.5 with 22.35s split in 3-speed-horse race) gets +0.020 high_pace_strong_closer_boost
         self.assertAlmostEqual(res["high_pace_strong_closer_boost"][3], 0.020)
-        # 4. Backed false favourite gets +0.030 waiver; drifting false favourite gets -0.005 extra penalty
+        # 5. Backed false favourite gets +0.030 waiver; drifting false favourite gets -0.005 extra penalty
         self.assertAlmostEqual(res["false_fav_market_guard"][4], 0.030)
         self.assertAlmostEqual(res["false_fav_market_guard"][5], -0.005)
+
+        # Verify Trapped-Wide Guard: if 3+ fast horses are drawn inside (Gates 1, 3, 5), Gate 11 crosser gets 0.0%
+        df_trapped = df.copy()
+        df_trapped.loc[4, "avg_first_pos"] = 2.0  # Gate 2 now also has speed -> Gates 2, 3, 5 (3 inside speed horses!)
+        res_trapped = compute_telemetry_harmony_multipliers(
+            df_runners=df_trapped,
+            is_st=True,
+            is_hv=False,
+            is_awt_race=False,
+            distance=1200,
+            class_int=3,
+            has_strong_trial=np.zeros(len(df_trapped), dtype=bool),
+            horse_memory={},
+        )
+        self.assertAlmostEqual(res_trapped["sprint_gate_speed_crosser_boost"][0], 0.0)
 
     def test_grok_audit_fixes(self):
         """
