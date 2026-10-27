@@ -8,3 +8,7 @@
 {"component": "scraper", "status": "fail", "timestamp": "2026-10-27T03:11:42Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
 {"component": "scraper", "status": "ok", "timestamp": "2026-10-27T03:12:37Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-10-28", "meetings_count": 2, "races_count": 9}, "error": null}
 {"component": "run_predictions", "status": "ok", "timestamp": "2026-10-27T03:12:38Z", "metrics": {"meeting_date": "2026-10-28", "venue": "Sha Tin", "races_predicted": 9}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-10-27T15:53:55Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-10-28", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "baseline_odds", "status": "ok", "timestamp": "2026-10-27T15:53:56Z", "metrics": {"meeting_date": "2026-10-28", "venue": "Sha Tin", "runners_checked": 111, "runners_with_live_baseline_price": 111, "file": "data/baseline_odds_20261028.json"}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-10-27T15:56:50Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-10-28", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-10-27T15:56:51Z", "metrics": {"meeting_date": "2026-10-28", "venue": "Sha Tin", "races_predicted": 9}, "error": null}
