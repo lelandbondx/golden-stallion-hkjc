@@ -286,7 +286,11 @@ def compute_telemetry_harmony_multipliers(
 
         has_awt_edge = (awt_wr > 0) | (awt_pref == "AWT") | (has_overseas & last_going_poly)
         base_awt_boost = np.where(has_awt_edge, 0.025, 0.0)
-        is_elite_awt_specialist = (awt_wr >= 0.20) & (awt_starts >= 2) & (vet_issue == 0)
+        if "AWT_starts" in df_runners.columns:
+            has_multi_awt_starts = awt_starts >= 2
+        else:
+            has_multi_awt_starts = awt_wr >= 0.20
+        is_elite_awt_specialist = (awt_wr >= 0.20) & has_multi_awt_starts & (vet_issue == 0)
         awt_specialist_boost = base_awt_boost + np.where(is_elite_awt_specialist, 0.015, 0.0)
     else:
         awt_specialist_boost = zeros.copy()

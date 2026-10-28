@@ -420,14 +420,18 @@ def run():
             frontrunner_pace_penalty = np.where(is_iron_horse_dropper, 0.0, frontrunner_pace_penalty)
             standout_boost += np.where(is_iron_horse_dropper, 0.14, 0.0)
             
-            # 2. hv_c_course_boost:
-            # Gates 1-4 & avg_first_pos <= 3.5: +3.0%.
-            # On C or C+3, if also weight <= 124 lb: set to +4.0% (replaces +3.0%, does not stack).
+            # 2. hv_c_course_boost (Official HKJC HV Course Chart: C=22.5m/334m, C+3=19.5m/335m, B+2/B+3=23.5-24.5m/338m, A/A+2=28.5-30.5m/310-312m):
+            # Gates 1-4 & avg_first_pos <= 3.5: +3.0% base.
+            # On C or C+3 (19.5m-22.5m narrowest rail), if weight <= 124 lb: +4.0% (replaces +3.0%).
+            # On B+2 or B+3 (23.5m-24.5m worked-back rail), if weight <= 124 lb: +3.5% (replaces +3.0%).
             # Geometry boost cap +5.0%.
             is_inside_speed = (df_runners['avg_first_pos'] <= 3.5) & (draws <= 4)
-            is_c_rail = ('C' in str(race.get('course', '')).upper()) or ('C' in str(meeting.get('course', '')).upper()) or True
+            course_str_hv = (str(race.get('course', '')) + ' ' + str(meeting.get('course', ''))).upper()
+            is_c_rail = ('C' in course_str_hv)
+            is_b_narrow_rail = ('B+2' in course_str_hv) or ('B+3' in course_str_hv)
             is_light_c = is_inside_speed & is_c_rail & (actual_weights <= 124)
-            hv_c_course_boost = np.where(is_light_c, 0.04, np.where(is_inside_speed, 0.03, 0.0))
+            is_light_b_narrow = is_inside_speed & is_b_narrow_rail & (actual_weights <= 124)
+            hv_c_course_boost = np.where(is_light_c, 0.04, np.where(is_light_b_narrow, 0.035, np.where(is_inside_speed, 0.03, 0.0)))
             hv_c_course_boost = np.clip(hv_c_course_boost, 0.0, 0.05)
             
         # Caspar Fownes Happy Valley Specialist Boost (+0.03 on home track)
@@ -457,11 +461,22 @@ def run():
         df_runners["rank_sec400"] = st_cal["rank_sec400"]
         df_runners["st_straight_outside_rail_multiplier"] = st_straight_outside_rail_multiplier
 
-        # Sha Tin 1200m-1600m Turf Bend & 1200m-1800m AWT Oval Draw Bias (Inside Rail Gates 1-4 vs Wide Trap Gates 11-14)
+        # Sha Tin 1200m-1600m Turf Bend (430m straight) & Sha Tin AWT Oval (365m straight, 22.8m width) Draw Bias:
+        # - AWT 1650m/1800m (home-straight start, short run to first turn, 2 turns): Gates 1-4 +2.0%, Gates 11-14 (avg_first_pos > 3.5) -2.5%
+        # - AWT 1200m (backstretch chute start, long backstretch run, 1 turn): Gates 1-4 +1.0%, Gates 11-14 (avg_first_pos > 3.5) -1.5%
         is_st_bend = is_st and (distance >= 1200) and (distance <= 1600) and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
-        is_st_awt_oval = is_st and is_awt_race and (distance >= 1200) and (distance <= 1800)
-        st_inside_draw_boost = np.where(is_st_bend & (draws <= 4), 0.02, np.where(is_st_awt_oval & (draws <= 4), 0.015, 0.0))
-        st_wide_draw_penalty = np.where((is_st_bend | is_st_awt_oval) & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.025, 0.0)
+        is_st_awt_2turn = is_st and is_awt_race and (distance >= 1650) and (distance <= 1800)
+        is_st_awt_1turn = is_st and is_awt_race and (distance == 1200)
+        st_inside_draw_boost = np.where(
+            (is_st_bend | is_st_awt_2turn) & (draws <= 4),
+            0.02,
+            np.where(is_st_awt_1turn & (draws <= 4), 0.01, 0.0),
+        )
+        st_wide_draw_penalty = np.where(
+            (is_st_bend | is_st_awt_2turn) & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5),
+            -0.025,
+            np.where(is_st_awt_1turn & (draws >= 11) & (df_runners['avg_first_pos'] > 3.5), -0.015, 0.0),
+        )
 
         # Quantitative Barrier Trial Multipliers
         trial_boost = []
@@ -544,18 +559,27 @@ def run():
         )
         weight_resilience_boost = np.where((is_st | is_awt_race) & is_resilient_weight_carrier, 0.025, 0.0)
 
-        # Surface Switch & Trial Delta Boost (+2.0% Boost for true 1st-time switchers, 0 if poor trial or if trial_boost already fired)
-        awt_starts = pd.to_numeric(df_runners['AWT_starts'], errors='coerce').fillna(0) if 'AWT_starts' in df_runners.columns else 0
-        turf_starts = pd.to_numeric(df_runners['Turf_starts'], errors='coerce').fillna(0) if 'Turf_starts' in df_runners.columns else 0
+        # Surface Switch & Trial Delta Boost (+2.0% Boost for true 1st-time switchers with strong trial; ZERO penalty for unexposed surface/going)
+        last_summary_upper = df_runners.get('last_run_summary', pd.Series('', index=df_runners.index)).astype(str).str.upper()
+        awt_pref_upper = df_runners.get('AWT_vs_Turf_pref', pd.Series('Neutral', index=df_runners.index)).astype(str).str.upper()
+        turf_wr_s = pd.to_numeric(df_runners.get('Turf_win_rate', 0), errors='coerce').fillna(0)
+        if 'AWT_starts' in df_runners.columns:
+            no_prior_awt = pd.to_numeric(df_runners['AWT_starts'], errors='coerce').fillna(0) == 0
+        else:
+            no_prior_awt = (awt_wr_s == 0) & (awt_pref_upper != 'AWT') & (~last_summary_upper.str.contains('AWT', na=False))
+        if 'Turf_starts' in df_runners.columns:
+            no_prior_turf = pd.to_numeric(df_runners['Turf_starts'], errors='coerce').fillna(0) == 0
+        else:
+            no_prior_turf = (turf_wr_s == 0) & (awt_pref_upper == 'AWT')
         is_first_time_surface = (
-            (is_awt_race & (awt_starts == 0)) | 
-            ((not is_awt_race) & (turf_starts == 0))
+            (is_awt_race & no_prior_awt) | 
+            ((not is_awt_race) & no_prior_turf)
         )
         is_poor_trial = np.array([
             (clean_name in trial_features and (trial_features[clean_name].get('best_trial_pos_ratio', 0.5) >= 0.90 or trial_features[clean_name].get('best_trial_speed_diff', 0.0) <= -1.0))
             for clean_name in df_runners['clean_name'].astype(str).str.upper().str.strip()
         ])
-        surface_switch_trial_boost = np.where(is_first_time_surface & (~is_poor_trial) & (trial_boost == 0.0), 0.02, 0.0)
+        surface_switch_trial_boost = np.where(is_first_time_surface & has_strong_trial & (~is_poor_trial) & (trial_boost == 0.0), 0.02, 0.0)
 
         # Late-Closer Win Conversion Boost: Closers who possess elite closing burst (<= 22.4s) in races >= 1200m
         is_elite_finisher = (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.4) & (distance >= 1200)

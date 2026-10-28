@@ -1,15 +1,18 @@
 {
-  "overall_status": "fail",
-  "updated_at": "2026-10-28T01:06:31Z",
+  "overall_status": "ok",
+  "updated_at": "2026-10-28T01:22:38Z",
   "components": {
     "scraper": {
-      "status": "fail",
-      "last_attempt_at": "2026-10-28T01:06:31Z",
-      "last_success_at": "2026-10-27T23:27:21Z",
+      "status": "ok",
+      "last_attempt_at": "2026-10-28T01:22:37Z",
+      "last_success_at": "2026-10-28T01:22:37Z",
       "metrics": {
-        "source": "error"
+        "source": "live_html_racecard",
+        "meeting_date": "2026-10-28",
+        "meetings_count": 2,
+        "races_count": 9
       },
-      "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."
+      "error": null
     },
     "incident_memory": {
       "status": "ok",
@@ -23,8 +26,8 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-10-27T23:27:22Z",
-      "last_success_at": "2026-10-27T23:27:22Z",
+      "last_attempt_at": "2026-10-28T01:22:38Z",
+      "last_success_at": "2026-10-28T01:22:38Z",
       "metrics": {
         "meeting_date": "2026-10-28",
         "venue": "Sha Tin",
