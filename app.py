@@ -742,7 +742,7 @@ with tab1:
         going_display = meeting.get('going') or 'GOOD'
         course_display = meeting.get('course') or ''
         if course_display and course_display not in going_display:
-            cond_label = f"{going_display} ({course_display} Course)" if "COURSE" not in course_display.upper() else f"{going_display} ({course_display})"
+            cond_label = f"{going_display} ({course_display} Course)" if not any(w in course_display.upper() for w in ["COURSE", "TRACK", "AWT"]) else f"{going_display} ({course_display})"
         else:
             cond_label = going_display
         st.markdown('<div class="tech-panel border-accent-gold"><div class="data-label" style="color:#38bdf8; font-weight:800;">Track Conditions</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(cond_label), unsafe_allow_html=True)
