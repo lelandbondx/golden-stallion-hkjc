@@ -1,0 +1,3022 @@
+{
+  "1": {
+    "race_no": 1,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 4",
+    "distance": 1200,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 6,
+        "horse_name": "HAPPY PEGASUS &NBSP;",
+        "horse_code": "M046",
+        "jockey": "C L Chau",
+        "trainer": "C S Shum",
+        "act_wt": 122,
+        "horse_wt": 1150,
+        "draw": 3,
+        "lbw": 0,
+        "running_positions": [
+          4,
+          4,
+          1
+        ],
+        "early_pos": 4,
+        "win_odds": 4.4,
+        "incident": "Near the 100 Metres was accidentally struck across the head by the whip of E C W Wong, rider of SAINT JOSE PATCH. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 8,
+        "horse_name": "SAINT JOSE PATCH &NBSP;",
+        "horse_code": "L509",
+        "jockey": "E C W Wong",
+        "trainer": "K L Man",
+        "act_wt": 121,
+        "horse_wt": 1217,
+        "draw": 8,
+        "lbw": 2,
+        "running_positions": [
+          3,
+          3,
+          2
+        ],
+        "early_pos": 3,
+        "win_odds": 13,
+        "incident": "Bumped at the start. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 1,
+        "horse_name": "ALMIGHTY WARRIOR &NBSP;",
+        "horse_code": "L245",
+        "jockey": "Z Purton",
+        "trainer": "K W Lui",
+        "act_wt": 132,
+        "horse_wt": 921,
+        "draw": 2,
+        "lbw": 3.5,
+        "running_positions": [
+          6,
+          5,
+          3
+        ],
+        "early_pos": 6,
+        "win_odds": 6.6,
+        "incident": "Near the 1000 Metres was steadied to avoid HAPPY PEGASUS. After improving to the inside of HAPPY PEGASUS (C L Chau) leaving the 500 Metres was then steadied when HAPPY PEGASUS shifted in. C L Chau was advised to exercise more care."
+      },
+      {
+        "finish_pos": 99,
+        "horse_no": 9,
+        "horse_name": "SUNNY BOSS &NBSP;",
+        "horse_code": "L351",
+        "jockey": "R Kingscote",
+        "trainer": "D J Whyte",
+        "act_wt": 124,
+        "horse_wt": 1028,
+        "draw": 9,
+        "lbw": 4,
+        "running_positions": [
+          9,
+          8,
+          4
+        ],
+        "early_pos": 9,
+        "win_odds": 61,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 7,
+        "horse_name": "I AM THE WALRUS &NBSP;",
+        "horse_code": "L457",
+        "jockey": "K C Leung",
+        "trainer": "P C Ng",
+        "act_wt": 124,
+        "horse_wt": 1090,
+        "draw": 4,
+        "lbw": 4,
+        "running_positions": [
+          2,
+          2,
+          5
+        ],
+        "early_pos": 2,
+        "win_odds": 6.7,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 10,
+        "horse_name": "CHANCHENG SPARKLE &NBSP;",
+        "horse_code": "L051",
+        "jockey": "L Hewitson",
+        "trainer": "K W Lui",
+        "act_wt": 121,
+        "horse_wt": 989,
+        "draw": 1,
+        "lbw": 4.5,
+        "running_positions": [
+          8,
+          7,
+          6
+        ],
+        "early_pos": 8,
+        "win_odds": 16,
+        "incident": "Jumped only fairly. Near the 1000 Metres was momentarily crowded by ALMIGHTY WARRIOR which shifted in when being steadied to avoid HAPPY PEGASUS (C L Chau) which shifted in when not clear. C L Chau was reprimanded. Approaching the winning post shifted out and became unbalanced when it made contact with AGENT."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 3,
+        "horse_name": "AGENT &NBSP;",
+        "horse_code": "L444",
+        "jockey": "L Ferraris",
+        "trainer": "P F Yiu",
+        "act_wt": 124,
+        "horse_wt": 1040,
+        "draw": 7,
+        "lbw": 4.5,
+        "running_positions": [
+          7,
+          9,
+          7
+        ],
+        "early_pos": 7,
+        "win_odds": 31,
+        "incident": "Jumped only fairly and then was bumped by SAINT JOSE PATCH. Passing the 500 Metres was eased to avoid CHANCHENG SPARKLE which shifted out to improve. Approaching the winning post made contact with CHANCHENG SPARKLE which shifted out."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 2,
+        "horse_name": "JEDI SPURS &NBSP;",
+        "horse_code": "L441",
+        "jockey": "H Y Yuen",
+        "trainer": "D A Hayes",
+        "act_wt": 125,
+        "horse_wt": 1151,
+        "draw": 5,
+        "lbw": 9.25,
+        "running_positions": [
+          1,
+          1,
+          8
+        ],
+        "early_pos": 1,
+        "win_odds": 2,
+        "incident": "When questioned Apprentice H Y Yuen stated that her instructions were to go forward and lead. She said having regard to her instructions she rode her mount along in the early stages to ensure JEDI SPURS showed sufficient pace to cross runners to its inside. She said after obtaining a margin in advance of HAPPY PEGASUS in the early stages she then commenced to restrain her mount when she was satisfied that JEDI SPURS would be able to lead as instructed. She said as she commenced to restrain her mount approaching the 1000 Metres JEDI SPURS raced keenly and would not respond to her efforts to set a slower pace. She said making the turn leaving the 900 Metres as she applied more pressure to steady the horse to set a more sustainable pace JEDI SPURS became unbalanced when it got its head up and shifted out and from this point she was unable to control the horse in the lead. She added that soon after entering the Home Straight JEDI SPURS came under pressure before giving ground noticeably over the final 200 Metres. Trainer D A Hayes advised the horse had pleased him leading into the race and was of the opinion JEDI SPURS raced too keenly, particularly when ridden along in the early stages to go forward. He added that he would now place a hood on the horse for its next race start and use the services of a senior rider. A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea. The performance of JEDI SPURS was considered disappointing. Before being allowed to race again, JEDI SPURS will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 5,
+        "horse_name": "GREEN SUMMIT &NBSP;",
+        "horse_code": "L250",
+        "jockey": "J Orman",
+        "trainer": "C W Chang",
+        "act_wt": 124,
+        "horse_wt": 1152,
+        "draw": 6,
+        "lbw": 9.5,
+        "running_positions": [
+          10,
+          10,
+          9
+        ],
+        "early_pos": 10,
+        "win_odds": 78,
+        "incident": "Slow to begin. Near the 1000 Metres was steadied to avoid CHANCHENG SPARKLE."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 11,
+        "horse_name": "ULTRA BOLT &NBSP;",
+        "horse_code": "L387",
+        "jockey": "M L Yeung",
+        "trainer": "C H Yip",
+        "act_wt": 120,
+        "horse_wt": 1143,
+        "draw": 10,
+        "lbw": 11.25,
+        "running_positions": [
+          5,
+          6,
+          10
+        ],
+        "early_pos": 5,
+        "win_odds": 103,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 99,
+        "horse_no": 4,
+        "horse_name": "CELESTIAL ZOUS &NBSP;",
+        "horse_code": "L455",
+        "jockey": "A Badel",
+        "trainer": "D J Whyte",
+        "act_wt": 124,
+        "horse_wt": 1100,
+        "draw": 8,
+        "lbw": 0,
+        "running_positions": [],
+        "early_pos": 99,
+        "win_odds": 10,
+        "incident": "Withdrawn on 24.10.26 by order of the Stewards acting on veterinary advice (irregular heart rhythm). Before being allowed to race again, CELESTIAL ZOUS will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ]
+  },
+  "2": {
+    "race_no": 2,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 5",
+    "distance": 1400,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 2,
+        "horse_name": "TYCOON EXPRESS &NBSP;",
+        "horse_code": "K376",
+        "jockey": "E C W Wong",
+        "trainer": "C Fownes",
+        "act_wt": 132,
+        "horse_wt": 1124,
+        "draw": 8,
+        "lbw": 0,
+        "running_positions": [
+          12,
+          13,
+          12,
+          1
+        ],
+        "early_pos": 12,
+        "win_odds": 11,
+        "incident": "Shifted out at the start and was bumped. From a wide barrier was then shifted across behind runners in the early stages. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 6,
+        "horse_name": "INCANTO STAR &NBSP;",
+        "horse_code": "K343",
+        "jockey": "B Avdulla",
+        "trainer": "D J Hall",
+        "act_wt": 131,
+        "horse_wt": 1076,
+        "draw": 7,
+        "lbw": 1.25,
+        "running_positions": [
+          11,
+          8,
+          8,
+          2
+        ],
+        "early_pos": 11,
+        "win_odds": 11,
+        "incident": "Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 10,
+        "horse_name": "DRACO &NBSP;",
+        "horse_code": "J115",
+        "jockey": "K C Leung",
+        "trainer": "W K Mo",
+        "act_wt": 127,
+        "horse_wt": 1222,
+        "draw": 12,
+        "lbw": 2,
+        "running_positions": [
+          9,
+          7,
+          6,
+          3
+        ],
+        "early_pos": 9,
+        "win_odds": 9.9,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 4,
+        "horse_no": 14,
+        "horse_name": "MANYTHANKS FOREVER &NBSP;",
+        "horse_code": "J065",
+        "jockey": "M L Yeung",
+        "trainer": "W Y So",
+        "act_wt": 117,
+        "horse_wt": 1128,
+        "draw": 3,
+        "lbw": 2.75,
+        "running_positions": [
+          2,
+          1,
+          1,
+          4
+        ],
+        "early_pos": 2,
+        "win_odds": 10,
+        "incident": "M L Yeung was reprimanded in relation to using his whip in a manner where the hand holding the whip was above shoulder height on one occasion near the 50 Metres."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 13,
+        "horse_name": "SUPREME WINNER &NBSP;",
+        "horse_code": "J255",
+        "jockey": "A Badel",
+        "trainer": "D J Whyte",
+        "act_wt": 120,
+        "horse_wt": 1136,
+        "draw": 9,
+        "lbw": 3.5,
+        "running_positions": [
+          6,
+          6,
+          7,
+          5
+        ],
+        "early_pos": 6,
+        "win_odds": 32,
+        "incident": "Bumped on jumping. Between the 400 Metres and the 300 Metres was held up for clear running."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 4,
+        "horse_name": "GOR GOR &NBSP;",
+        "horse_code": "K104",
+        "jockey": "K Teetan",
+        "trainer": "B Crawford",
+        "act_wt": 134,
+        "horse_wt": 1128,
+        "draw": 6,
+        "lbw": 3.75,
+        "running_positions": [
+          4,
+          5,
+          4,
+          6
+        ],
+        "early_pos": 4,
+        "win_odds": 24,
+        "incident": "Between the 300 Metres and the 200 Metres was held up for clear running behind MANYTHANKS FOREVER. After improving to the inside of MANYTHANKS FOREVER passing the 200 Metres then had some difficulty obtaining clear running near the 100 Metres."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 9,
+        "horse_name": "MULTISUPERSTAR &NBSP;",
+        "horse_code": "L163",
+        "jockey": "L Ferraris",
+        "trainer": "A S Cruz",
+        "act_wt": 128,
+        "horse_wt": 1115,
+        "draw": 10,
+        "lbw": 4.5,
+        "running_positions": [
+          1,
+          4,
+          5,
+          7
+        ],
+        "early_pos": 1,
+        "win_odds": 11,
+        "incident": "On jumping became unbalanced when bumped by SUPREME WINNER which was taken out by TYCOON EXPRESS. Between the 400 Metres and the 200 Metres was held up for clear running. After the 200 Metres improved into a narrow run between VIGOR ELLEEGANT and THE CONCENTRATION and then raced tight between those two runners for a short distance thereafter. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 12,
+        "horse_name": "ONLY U &NBSP;",
+        "horse_code": "J037",
+        "jockey": "Z Purton",
+        "trainer": "J Cummings",
+        "act_wt": 123,
+        "horse_wt": 1105,
+        "draw": 1,
+        "lbw": 5,
+        "running_positions": [
+          7,
+          10,
+          9,
+          8
+        ],
+        "early_pos": 7,
+        "win_odds": 2.3,
+        "incident": "When questioned Z Purton stated that after jumping reasonably well he rode his mount along to endeavour to hold a handy position. He said when positioned to the inside of SUPREME WINNER in the early stages he was unable to hold that position despite his efforts to encourage his mount to do so. He said entering the Home Straight he improved to the inside of SUPREME WINNER but then was unable to obtain clear running over the final 250 Metres when held up behind GOR GOR. A veterinary inspection immediately following the race did not show any significant findings. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 7,
+        "horse_name": "PRESTIGE SUPERIOR &NBSP;",
+        "horse_code": "K383",
+        "jockey": "R Kingscote",
+        "trainer": "C W Chang",
+        "act_wt": 130,
+        "horse_wt": 1038,
+        "draw": 5,
+        "lbw": 5,
+        "running_positions": [
+          10,
+          11,
+          13,
+          9
+        ],
+        "early_pos": 10,
+        "win_odds": 43,
+        "incident": "Jumped only fairly. A veterinary inspection immediately following the race did not show any significant findings. &lt;26/10/2026 Additional Veterinary Reports&gt;After the race, PRESTIGE SUPERIOR was examined by the Veterinary Officer who said at that time there were no significant findings. PRESTIGE SUPERIOR was again examined by the Veterinary Officer at the stables of Trainer C W Chang this morning. He said at this time he noted the horse to be lame in its left front leg. Before being allowed to race again, PRESTIGE SUPERIOR will be subjected to an official veterinary examination."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 5,
+        "horse_name": "VIGOR ELLEEGANT &NBSP;",
+        "horse_code": "J375",
+        "jockey": "C L Chau",
+        "trainer": "K L Man",
+        "act_wt": 132,
+        "horse_wt": 1211,
+        "draw": 13,
+        "lbw": 5.25,
+        "running_positions": [
+          5,
+          3,
+          3,
+          10
+        ],
+        "early_pos": 5,
+        "win_odds": 5.5,
+        "incident": "C L Chau reported that his mount was disadvantaged by being obliged to race wide and without cover for the majority of the event, particularly with the middle stages being run inside of standard time. A veterinary inspection immediately following the race found that horse to be a &quot;roarer” which had previously been reported."
+      },
+      {
+        "finish_pos": 11,
+        "horse_no": 3,
+        "horse_name": "BRIGHT INHERITANCE &NBSP;",
+        "horse_code": "J215",
+        "jockey": "H Bentley",
+        "trainer": "C H Yip",
+        "act_wt": 134,
+        "horse_wt": 1136,
+        "draw": 2,
+        "lbw": 5.75,
+        "running_positions": [
+          14,
+          14,
+          14,
+          11
+        ],
+        "early_pos": 14,
+        "win_odds": 73,
+        "incident": "Slow to begin."
+      },
+      {
+        "finish_pos": 12,
+        "horse_no": 8,
+        "horse_name": "THE CONCENTRATION &NBSP;",
+        "horse_code": "H465",
+        "jockey": "M F Poon",
+        "trainer": "P F Yiu",
+        "act_wt": 130,
+        "horse_wt": 1111,
+        "draw": 14,
+        "lbw": 7.25,
+        "running_positions": [
+          3,
+          2,
+          2,
+          12
+        ],
+        "early_pos": 3,
+        "win_odds": 90,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 13,
+        "horse_no": 1,
+        "horse_name": "APOLAR FIGHTER &NBSP;",
+        "horse_code": "J169",
+        "jockey": "L Hewitson",
+        "trainer": "D Eustace",
+        "act_wt": 135,
+        "horse_wt": 1074,
+        "draw": 11,
+        "lbw": 8.75,
+        "running_positions": [
+          13,
+          12,
+          10,
+          13
+        ],
+        "early_pos": 13,
+        "win_odds": 83,
+        "incident": "Jumped awkwardly. Shortly after the start was steadied to avoid MULTISUPERSTAR which was taken out. From a wide barrier was then shifted across behind runners in the early stages."
+      },
+      {
+        "finish_pos": 14,
+        "horse_no": 11,
+        "horse_name": "GROOVY FEELING &NBSP;",
+        "horse_code": "J515",
+        "jockey": "Y L Chung",
+        "trainer": "J Richards",
+        "act_wt": 124,
+        "horse_wt": 1135,
+        "draw": 4,
+        "lbw": 9,
+        "running_positions": [
+          8,
+          9,
+          11,
+          14
+        ],
+        "early_pos": 8,
+        "win_odds": 122,
+        "incident": "Y L Chung stated that the instructions were to settle the horse where comfortable. He said in the early stages he elected to position his mount behind MANYTHANKS FOREVER, however, GROOVY FEELING did not show sufficient pace to hold a more forward position."
+      }
+    ]
+  },
+  "3": {
+    "race_no": 3,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 4",
+    "distance": 1600,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 14,
+        "horse_name": "SMART FAT CAT &NBSP;",
+        "horse_code": "K280",
+        "jockey": "K Teetan",
+        "trainer": "P C Ng",
+        "act_wt": 116,
+        "horse_wt": 1224,
+        "draw": 7,
+        "lbw": 0,
+        "running_positions": [
+          9,
+          9,
+          4,
+          1
+        ],
+        "early_pos": 9,
+        "win_odds": 2.2,
+        "incident": "Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 6,
+        "horse_name": "KINGMAN REEF &NBSP;",
+        "horse_code": "L446",
+        "jockey": "B Avdulla",
+        "trainer": "J Size",
+        "act_wt": 124,
+        "horse_wt": 1040,
+        "draw": 11,
+        "lbw": 0.5,
+        "running_positions": [
+          10,
+          10,
+          10,
+          2
+        ],
+        "early_pos": 10,
+        "win_odds": 12,
+        "incident": "Shifted in at the start and was bumped. From a wide barrier was then shifted across behind runners in the early stages. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 11,
+        "horse_name": "POLAR PATCH &NBSP;",
+        "horse_code": "L211",
+        "jockey": "A Atzeni",
+        "trainer": "M Newnham",
+        "act_wt": 119,
+        "horse_wt": 1215,
+        "draw": 4,
+        "lbw": 2.75,
+        "running_positions": [
+          5,
+          5,
+          5,
+          3
+        ],
+        "early_pos": 5,
+        "win_odds": 6.5,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 99,
+        "horse_no": 12,
+        "horse_name": "LOVELY MILES &NBSP;",
+        "horse_code": "L165",
+        "jockey": "H T Mo",
+        "trainer": "P F Yiu",
+        "act_wt": 116,
+        "horse_wt": 1144,
+        "draw": 10,
+        "lbw": 3.25,
+        "running_positions": [
+          11,
+          11,
+          12,
+          4
+        ],
+        "early_pos": 11,
+        "win_odds": 68,
+        "incident": "Shortly after the start became unbalanced when bumped by KINGMAN REEF which shifted in."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 4,
+        "horse_name": "CAVA PIONEER &NBSP;",
+        "horse_code": "L359",
+        "jockey": "Z Purton",
+        "trainer": "C H Yip",
+        "act_wt": 128,
+        "horse_wt": 1081,
+        "draw": 5,
+        "lbw": 3.5,
+        "running_positions": [
+          7,
+          7,
+          7,
+          5
+        ],
+        "early_pos": 7,
+        "win_odds": 11,
+        "incident": "When questioned Z Purton stated that with the early and middle stages being run inside of standard time his mount was under pressure throughout the race to maintain its position. He said near the 500 Metres when positioned behind POLAR PATCH he was reluctant to shift out to improve at that point given the manner in which his mount had raced in the early and middle stages. He said when SMART FAT CAT improved quickly to his outside at the 500 Metres he then remained racing behind POLAR PATCH and followed SMART FAT CAT into the Home Straight when able to shift to the outside of POLAR PATCH. He added under pressure in the Home Straight CAVA PIONEER continued to respond to his riding but finished the race off in a one-paced manner."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 5,
+        "horse_name": "JOY TOGETHER &NBSP;",
+        "horse_code": "L227",
+        "jockey": "C L Chau",
+        "trainer": "C W Chang",
+        "act_wt": 123,
+        "horse_wt": 1092,
+        "draw": 12,
+        "lbw": 3.75,
+        "running_positions": [
+          12,
+          12,
+          11,
+          6
+        ],
+        "early_pos": 12,
+        "win_odds": 100,
+        "incident": "From a wide barrier was shifted across behind runners in the early stages."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 3,
+        "horse_name": "ABSOLUTE AWAKENED &NBSP;",
+        "horse_code": "K039",
+        "jockey": "K C Leung",
+        "trainer": "D A Hayes",
+        "act_wt": 129,
+        "horse_wt": 1076,
+        "draw": 6,
+        "lbw": 4.25,
+        "running_positions": [
+          8,
+          8,
+          9,
+          7
+        ],
+        "early_pos": 8,
+        "win_odds": 9.4,
+        "incident": "Between the 300 Metres and the 100 Metres was held up for clear running."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 13,
+        "horse_name": "AMAZING DUCK &NBSP;",
+        "horse_code": "H392",
+        "jockey": "H Bentley",
+        "trainer": "K H Ting",
+        "act_wt": 116,
+        "horse_wt": 1129,
+        "draw": 1,
+        "lbw": 5,
+        "running_positions": [
+          2,
+          2,
+          1,
+          8
+        ],
+        "early_pos": 2,
+        "win_odds": 8.1,
+        "incident": "H Bentley stated that his mount was disadvantaged by being pressured in the early stages by CIRCUIT FIERY which went forward to lead. He said as a result his mount was unable to finish the race off in the Home Straight, particularly with the early and middle stages being run inside of standard time. A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea. Before being allowed to race again, AMAZING DUCK will be subjected to an official veterinary examination."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 9,
+        "horse_name": "GOOD LUCK BABE &NBSP;",
+        "horse_code": "K016",
+        "jockey": "Y L Chung",
+        "trainer": "A S Cruz",
+        "act_wt": 118,
+        "horse_wt": 1146,
+        "draw": 8,
+        "lbw": 6.25,
+        "running_positions": [
+          3,
+          3,
+          3,
+          9
+        ],
+        "early_pos": 3,
+        "win_odds": 18,
+        "incident": "Raced wide and without cover for the majority of the event."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 1,
+        "horse_name": "MORGAN SUCCESS &NBSP;",
+        "horse_code": "K203",
+        "jockey": "R Kingscote",
+        "trainer": "D J Whyte",
+        "act_wt": 135,
+        "horse_wt": 1087,
+        "draw": 3,
+        "lbw": 6.25,
+        "running_positions": [
+          6,
+          6,
+          8,
+          10
+        ],
+        "early_pos": 6,
+        "win_odds": 78,
+        "incident": "Shortly after the start bumped with SOO KOO."
+      },
+      {
+        "finish_pos": 11,
+        "horse_no": 2,
+        "horse_name": "CIRCUIT FIERY &NBSP;",
+        "horse_code": "H475",
+        "jockey": "H Y Yuen",
+        "trainer": "W Y So",
+        "act_wt": 124,
+        "horse_wt": 1115,
+        "draw": 9,
+        "lbw": 6.75,
+        "running_positions": [
+          1,
+          1,
+          2,
+          11
+        ],
+        "early_pos": 1,
+        "win_odds": 34,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 12,
+        "horse_no": 7,
+        "horse_name": "SOO KOO &NBSP;",
+        "horse_code": "L008",
+        "jockey": "M L Yeung",
+        "trainer": "K W Lui",
+        "act_wt": 122,
+        "horse_wt": 1156,
+        "draw": 2,
+        "lbw": 10,
+        "running_positions": [
+          4,
+          4,
+          6,
+          12
+        ],
+        "early_pos": 4,
+        "win_odds": 20,
+        "incident": "Shortly after the start became unbalanced when it bumped with MORGAN SUCCESS. Near the 900 Metres lay in and made contact with the running rail. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 13,
+        "horse_no": 8,
+        "horse_name": "FLYING AMANI &NBSP;",
+        "horse_code": "K152",
+        "jockey": "M F Poon",
+        "trainer": "D J Hall",
+        "act_wt": 121,
+        "horse_wt": 1038,
+        "draw": 14,
+        "lbw": 12,
+        "running_positions": [
+          13,
+          13,
+          14,
+          13
+        ],
+        "early_pos": 13,
+        "win_odds": 34,
+        "incident": "From the outside barrier was shifted across behind runners in the early stages."
+      },
+      {
+        "finish_pos": 14,
+        "horse_no": 10,
+        "horse_name": "PRESIDENT PEGASUS &NBSP;",
+        "horse_code": "L241",
+        "jockey": "E C W Wong",
+        "trainer": "C S Shum",
+        "act_wt": 118,
+        "horse_wt": 1099,
+        "draw": 13,
+        "lbw": 12.75,
+        "running_positions": [
+          14,
+          14,
+          13,
+          14
+        ],
+        "early_pos": 14,
+        "win_odds": 101,
+        "incident": "No report."
+      }
+    ]
+  },
+  "4": {
+    "race_no": 4,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 3",
+    "distance": 2000,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 7,
+        "horse_name": "POCKETING &NBSP;",
+        "horse_code": "L396",
+        "jockey": "B Avdulla",
+        "trainer": "D A Hayes",
+        "act_wt": 127,
+        "horse_wt": 1091,
+        "draw": 1,
+        "lbw": 0,
+        "running_positions": [
+          6,
+          7,
+          7,
+          6,
+          1
+        ],
+        "early_pos": 6,
+        "win_odds": 8.5,
+        "incident": "Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 5,
+        "horse_name": "BIG RETURN &NBSP;",
+        "horse_code": "K192",
+        "jockey": "A Badel",
+        "trainer": "J Richards",
+        "act_wt": 127,
+        "horse_wt": 1118,
+        "draw": 5,
+        "lbw": 0.1,
+        "running_positions": [
+          7,
+          8,
+          8,
+          8,
+          2
+        ],
+        "early_pos": 7,
+        "win_odds": 4.9,
+        "incident": "Shifted in on jumping and made contact with KA YING GENERATION. In the early stages raced keenly and near the 1800 Metres got its head up when being steadied to avoid THE AUSPICIOUS. BIG RETURN continued to race keenly in the middle stages and near the 1500 Metres got its head up when being checked to avoid THE AUSPICIOUS, shifted out and made contact with SUPER GOLDENDRAGON. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 99,
+        "horse_no": 1,
+        "horse_name": "SERAPH GABRIEL &NBSP;",
+        "horse_code": "L108",
+        "jockey": "Z Purton",
+        "trainer": "D Eustace",
+        "act_wt": 135,
+        "horse_wt": 1055,
+        "draw": 6,
+        "lbw": 1,
+        "running_positions": [
+          2,
+          4,
+          5,
+          4,
+          3
+        ],
+        "early_pos": 2,
+        "win_odds": 2.8,
+        "incident": "Leaving the 900 Metres was steadied when crowded between SUPER GOLDENDRAGON which lay in and LO RIDER which shifted out. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 4,
+        "horse_no": 3,
+        "horse_name": "KA YING GENERATION &NBSP;",
+        "horse_code": "J075",
+        "jockey": "A Atzeni",
+        "trainer": "P C Ng",
+        "act_wt": 133,
+        "horse_wt": 1191,
+        "draw": 4,
+        "lbw": 1.25,
+        "running_positions": [
+          9,
+          10,
+          10,
+          10,
+          4
+        ],
+        "early_pos": 9,
+        "win_odds": 15,
+        "incident": "Bumped on jumping and then raced tight between BIG RETURN and THE AUSPICIOUS which shifted out slightly."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 4,
+        "horse_name": "LO RIDER &NBSP;",
+        "horse_code": "K161",
+        "jockey": "C Y Ho",
+        "trainer": "C Fownes",
+        "act_wt": 128,
+        "horse_wt": 1052,
+        "draw": 2,
+        "lbw": 1.5,
+        "running_positions": [
+          4,
+          5,
+          4,
+          5,
+          5
+        ],
+        "early_pos": 4,
+        "win_odds": 11,
+        "incident": "Approaching the 500 Metres made contact with SUPER GOLDENDRAGON as it endeavoured to improve to the outside of CALL ME MAGNIFIQUE."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 10,
+        "horse_name": "SUPER GOLDENDRAGON &NBSP;",
+        "horse_code": "K458",
+        "jockey": "K C Leung",
+        "trainer": "W K Mo",
+        "act_wt": 119,
+        "horse_wt": 1106,
+        "draw": 8,
+        "lbw": 2.75,
+        "running_positions": [
+          8,
+          2,
+          3,
+          3,
+          6
+        ],
+        "early_pos": 8,
+        "win_odds": 4.1,
+        "incident": "Jumped awkwardly, resulting in its rider K C Leung becoming unbalanced. Approaching the 500 Metres was contacted by LO RIDER which shifted out. Near the 150 Metres K C Leung dropped his whip. Between the 150 Metres and the 100 Metres raced in restricted room to the inside of SERAPH GABRIEL which shifted in. When questioned Jockey Leung stated that after settling in a midfield position to the outside of BIG RETURN, when the pace of the event eased near the 1500 Metres his mount became unbalanced when bumped by BIG RETURN which shifted out when being checked. He said as a result SUPER GOLDENDRAGON then commenced to race keenly and he allowed it to stride forward. He said as he improved forward the pace of the race increased and when CALL ME MAGNIFIQUE held its position to his inside he was unable to cross that runner approaching the turn near the 900 Metres. He said as a consequence he elected to remain racing to the outside of CALL ME MAGNIFIQUE before being able to obtain cover near the 700 Metres. He added that under pressure in the Home Straight his mount finished the race off only fairly which he attributed to the race not being run to suit. A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of mucus in the horse’s trachea."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 6,
+        "horse_name": "CALL ME MAGNIFIQUE &NBSP;",
+        "horse_code": "L339",
+        "jockey": "C L Chau",
+        "trainer": "C S Shum",
+        "act_wt": 125,
+        "horse_wt": 1179,
+        "draw": 7,
+        "lbw": 3,
+        "running_positions": [
+          3,
+          3,
+          2,
+          1,
+          7
+        ],
+        "early_pos": 3,
+        "win_odds": 17,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 8,
+        "horse_name": "MIGHTY STRENGTH &NBSP;",
+        "horse_code": "H450",
+        "jockey": "L Ferraris",
+        "trainer": "P F Yiu",
+        "act_wt": 125,
+        "horse_wt": 1043,
+        "draw": 9,
+        "lbw": 3.25,
+        "running_positions": [
+          10,
+          9,
+          9,
+          9,
+          8
+        ],
+        "early_pos": 10,
+        "win_odds": 44,
+        "incident": "L Ferraris advised that from his wide barrier he was instructed to ride the horse in a conservative manner in the early stages. Trainer P F Yiu confirmed the instructions and stated he issued those instructions to offset the wide barrier draw."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 9,
+        "horse_name": "THE AUSPICIOUS &NBSP;",
+        "horse_code": "K004",
+        "jockey": "J Orman",
+        "trainer": "Y S Tsui",
+        "act_wt": 125,
+        "horse_wt": 1117,
+        "draw": 3,
+        "lbw": 9.25,
+        "running_positions": [
+          5,
+          6,
+          6,
+          7,
+          9
+        ],
+        "early_pos": 5,
+        "win_odds": 29,
+        "incident": "Leaving the 900 Metres shifted out when being steadied away from SERAPH GABRIEL."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 2,
+        "horse_name": "WITHOUT COMPARE &NBSP;",
+        "horse_code": "L151",
+        "jockey": "E C W Wong",
+        "trainer": "C S Shum",
+        "act_wt": 132,
+        "horse_wt": 1150,
+        "draw": 10,
+        "lbw": 18.25,
+        "running_positions": [
+          1,
+          1,
+          1,
+          2,
+          10
+        ],
+        "early_pos": 1,
+        "win_odds": 34,
+        "incident": "E C W Wong stated that his instructions were to go forward but to obtain cover. He said when he was caught wide in the early stages he elected to allow his mount to stride forward and lead to avoid covering additional ground. A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea. Before being allowed to race again, WITHOUT COMPARE will be subjected to an official veterinary examination."
+      },
+      {
+        "finish_pos": 99,
+        "horse_no": 11,
+        "horse_name": "NUCLEOZOR &NBSP;",
+        "horse_code": "K285",
+        "jockey": "K Teetan",
+        "trainer": "B Crawford",
+        "act_wt": 117,
+        "horse_wt": 1100,
+        "draw": 8,
+        "lbw": 0,
+        "running_positions": [],
+        "early_pos": 99,
+        "win_odds": 10,
+        "incident": "Withdrawn on 22.10.26 by order of the Stewards acting on veterinary advice (lame left hind). Before being allowed to race again, NUCLEOZOR will be subjected to an official veterinary examination."
+      }
+    ]
+  },
+  "5": {
+    "race_no": 5,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 4",
+    "distance": 1200,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 13,
+        "horse_name": "SPEEDY POWER &NBSP;",
+        "horse_code": "L362",
+        "jockey": "Z Purton",
+        "trainer": "J Cummings",
+        "act_wt": 120,
+        "horse_wt": 1062,
+        "draw": 2,
+        "lbw": 0,
+        "running_positions": [
+          10,
+          10,
+          1
+        ],
+        "early_pos": 10,
+        "win_odds": 1.4,
+        "incident": "Jumped only fairly and then shortly after the start became unbalanced when bumped by E HO HO which shifted in after making contact with HANDSOME HERO. Between the 350 Metres and the 250 Metres was held up for clear running. Near the 250 Metres was shifted to the outside of COPARTNER A I to obtain clear running and made contact with PRIVATE WEALTH. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 1,
+        "horse_name": "THOUSAND SPIRIT &NBSP;",
+        "horse_code": "K365",
+        "jockey": "H Y Yuen",
+        "trainer": "M Newnham",
+        "act_wt": 128,
+        "horse_wt": 1049,
+        "draw": 9,
+        "lbw": 1,
+        "running_positions": [
+          1,
+          1,
+          2
+        ],
+        "early_pos": 1,
+        "win_odds": 28,
+        "incident": "Knuckled over shortly after the start. Trainer M Newnham confirmed the instructions from a wide barrier were to go forward and lead if possible. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 12,
+        "horse_name": "NOBLE PATCH &NBSP;",
+        "horse_code": "L282",
+        "jockey": "K C Leung",
+        "trainer": "P C Ng",
+        "act_wt": 122,
+        "horse_wt": 1089,
+        "draw": 7,
+        "lbw": 1.25,
+        "running_positions": [
+          14,
+          14,
+          3
+        ],
+        "early_pos": 14,
+        "win_odds": 49,
+        "incident": "Bumped on jumping."
+      },
+      {
+        "finish_pos": 4,
+        "horse_no": 11,
+        "horse_name": "DOUBLE ALPHA &NBSP;",
+        "horse_code": "L291",
+        "jockey": "M F Poon",
+        "trainer": "C S Shum",
+        "act_wt": 122,
+        "horse_wt": 1037,
+        "draw": 5,
+        "lbw": 1.5,
+        "running_positions": [
+          3,
+          4,
+          4
+        ],
+        "early_pos": 3,
+        "win_odds": 31,
+        "incident": "After being crossed by THOUSAND SPIRIT near the 900 Metres commenced to race keenly. Approaching the 800 Metres shifted out and was then steadied to avoid RIDING HIGH (L Hewitson) which shifted in. L Hewitson was advised to exercise more care."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 9,
+        "horse_name": "HANDSOME HERO &NBSP;",
+        "horse_code": "L346",
+        "jockey": "C L Chau",
+        "trainer": "B Crawford",
+        "act_wt": 125,
+        "horse_wt": 1218,
+        "draw": 4,
+        "lbw": 2,
+        "running_positions": [
+          6,
+          6,
+          5
+        ],
+        "early_pos": 6,
+        "win_odds": 10,
+        "incident": "Bumped on jumping. Lay in in the Home Straight. Approaching the 100 Metres was shifted to the inside of THOUSAND SPIRIT to continue into clear running."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 5,
+        "horse_name": "COPARTNER A I &NBSP;",
+        "horse_code": "L280",
+        "jockey": "C Y Ho",
+        "trainer": "K W Lui",
+        "act_wt": 128,
+        "horse_wt": 1111,
+        "draw": 12,
+        "lbw": 3,
+        "running_positions": [
+          5,
+          5,
+          6
+        ],
+        "early_pos": 5,
+        "win_odds": 22,
+        "incident": "Raced wide and without cover for the majority of the event."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 4,
+        "horse_name": "LIGHT YEARS GLORY &NBSP;",
+        "horse_code": "K204",
+        "jockey": "L Ferraris",
+        "trainer": "D Eustace",
+        "act_wt": 131,
+        "horse_wt": 1154,
+        "draw": 14,
+        "lbw": 3,
+        "running_positions": [
+          13,
+          11,
+          7
+        ],
+        "early_pos": 13,
+        "win_odds": 22,
+        "incident": "Trainer D Eustace confirmed that from the outside barrier he instructed for the horse to be ridden in a conservative manner in the early stages. He said whilst LIGHT YEARS GLORY had raced in a more forward position at its last start on 1 October 2026 this was not the instruction he issued to Jockey L Ferraris on that occasion."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 3,
+        "horse_name": "CAVAMAZING &NBSP;",
+        "horse_code": "L344",
+        "jockey": "M L Yeung",
+        "trainer": "W Y So",
+        "act_wt": 132,
+        "horse_wt": 1165,
+        "draw": 13,
+        "lbw": 3.25,
+        "running_positions": [
+          9,
+          9,
+          8
+        ],
+        "early_pos": 9,
+        "win_odds": 14,
+        "incident": "Raced very wide and without cover for the majority of the event."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 2,
+        "horse_name": "YEE CHEONG GLORY &NBSP;",
+        "horse_code": "K074",
+        "jockey": "J Orman",
+        "trainer": "J Richards",
+        "act_wt": 133,
+        "horse_wt": 1216,
+        "draw": 11,
+        "lbw": 3.75,
+        "running_positions": [
+          12,
+          13,
+          9
+        ],
+        "early_pos": 12,
+        "win_odds": 51,
+        "incident": "When questioned regarding his riding in the Home Straight J Orman stated that he followed SPEEDY POWER during the running of the race. He said after entering the Home Straight when SPEEDY POWER shifted out to improve he made ground to the inside of SPEEDY POWER where he was presented with the option to continue to improve to its inside behind DOUBLE ALPHA. He said he was reluctant to commit to this position as he was concerned that DOUBLE ALPHA would not take him into the race and therefore he elected to follow SPEEDY POWER. He said whilst this resulted in YEE CHEONG GLORY having some difficulty obtaining clear running between the 400 Metres and the 300 Metres he felt this was the best option to provide it with clear running. He added when SPEEDY POWER quickened near the 250 Metres his mount took some time to respond to his riding and after laying in and away from PRIVATE WEALTH when obtaining a narrow run between PRIVATE WEALTH and COPARTNER A I near the 100 Metres he was satisfied with his mount’s finishing effort over the concluding stages."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 10,
+        "horse_name": "PRIVATE WEALTH &NBSP;",
+        "horse_code": "L177",
+        "jockey": "K Teetan",
+        "trainer": "D J Hall",
+        "act_wt": 125,
+        "horse_wt": 1067,
+        "draw": 8,
+        "lbw": 4,
+        "running_positions": [
+          7,
+          7,
+          10
+        ],
+        "early_pos": 7,
+        "win_odds": 91,
+        "incident": "Bumped on jumping. In the middle stages raced keenly. Near the 250 Metres was hampered when bumped by SPEEDY POWER. Between the 200 Metres and the 100 Metres was held up for clear running behind CAVAMAZING."
+      },
+      {
+        "finish_pos": 11,
+        "horse_no": 8,
+        "horse_name": "GLORY PATCH &NBSP;",
+        "horse_code": "L534",
+        "jockey": "A Atzeni",
+        "trainer": "J Size",
+        "act_wt": 127,
+        "horse_wt": 1140,
+        "draw": 6,
+        "lbw": 4.25,
+        "running_positions": [
+          11,
+          12,
+          11
+        ],
+        "early_pos": 11,
+        "win_odds": 14,
+        "incident": "Jumped only fairly. Near the 250 Metres was steadied to avoid PRIVATE WEALTH which shifted out after being bumped. Approaching the 150 Metres was steadied when disappointed for clear running between PRIVATE WEALTH and CAVAMAZING."
+      },
+      {
+        "finish_pos": 12,
+        "horse_no": 6,
+        "horse_name": "E HO HO &NBSP;",
+        "horse_code": "L119",
+        "jockey": "H Bentley",
+        "trainer": "K L Man",
+        "act_wt": 127,
+        "horse_wt": 1268,
+        "draw": 3,
+        "lbw": 4.5,
+        "running_positions": [
+          4,
+          3,
+          12
+        ],
+        "early_pos": 4,
+        "win_odds": 19,
+        "incident": "Bumped on jumping. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 13,
+        "horse_no": 14,
+        "horse_name": "RIDING HIGH &NBSP;",
+        "horse_code": "J403",
+        "jockey": "L Hewitson",
+        "trainer": "D J Whyte",
+        "act_wt": 119,
+        "horse_wt": 1077,
+        "draw": 10,
+        "lbw": 6.75,
+        "running_positions": [
+          2,
+          2,
+          13
+        ],
+        "early_pos": 2,
+        "win_odds": 67,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 14,
+        "horse_no": 7,
+        "horse_name": "GENIUS MASTERMIND &NBSP;",
+        "horse_code": "L217",
+        "jockey": "B Avdulla",
+        "trainer": "D A Hayes",
+        "act_wt": 127,
+        "horse_wt": 1141,
+        "draw": 1,
+        "lbw": 9,
+        "running_positions": [
+          8,
+          8,
+          14
+        ],
+        "early_pos": 8,
+        "win_odds": 92,
+        "incident": "Bumped shortly after the start. B Avdulla reported that he was not satisfied with his mount’s action in the Home Straight. A veterinary inspection immediately following the race did not show any significant findings. Before being allowed to race again, GENIUS MASTERMIND will be subjected to an official veterinary examination."
+      }
+    ]
+  },
+  "6": {
+    "race_no": 6,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 3",
+    "distance": 1000,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 6,
+        "horse_name": "KA YING LIGHTNING &NBSP;",
+        "horse_code": "L137",
+        "jockey": "A Atzeni",
+        "trainer": "D J Hall",
+        "act_wt": 125,
+        "horse_wt": 1132,
+        "draw": 14,
+        "lbw": 0,
+        "running_positions": [
+          2,
+          2,
+          1
+        ],
+        "early_pos": 2,
+        "win_odds": 2.9,
+        "incident": "Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 3,
+        "horse_name": "YEE CHEONG BRIGHT &NBSP;",
+        "horse_code": "M068",
+        "jockey": "J Orman",
+        "trainer": "J Cummings",
+        "act_wt": 129,
+        "horse_wt": 1236,
+        "draw": 7,
+        "lbw": 0.1,
+        "running_positions": [
+          5,
+          6,
+          2
+        ],
+        "early_pos": 5,
+        "win_odds": 4.6,
+        "incident": "Shifted in at the start and was bumped. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 2,
+        "horse_name": "FULL METAL &NBSP;",
+        "horse_code": "L544",
+        "jockey": "K Teetan",
+        "trainer": "B Crawford",
+        "act_wt": 130,
+        "horse_wt": 1209,
+        "draw": 6,
+        "lbw": 1.75,
+        "running_positions": [
+          9,
+          9,
+          3
+        ],
+        "early_pos": 9,
+        "win_odds": 22,
+        "incident": "On jumping was crowded between LIGHTNESS OF MUSIC and YEE CHEONG BRIGHT which shifted in. Near the 800 Metres, when racing keenly, was steadied to avoid YEE CHEONG BRIGHT when obtaining a position with cover behind YEE CHEONG BRIGHT. Between the 400 Metres and the 350 Metres had some difficulty obtaining clear running."
+      },
+      {
+        "finish_pos": 4,
+        "horse_no": 7,
+        "horse_name": "LIGHTNESS OF MUSIC &NBSP;",
+        "horse_code": "K436",
+        "jockey": "Z Purton",
+        "trainer": "C S Shum",
+        "act_wt": 125,
+        "horse_wt": 1128,
+        "draw": 5,
+        "lbw": 2.5,
+        "running_positions": [
+          7,
+          8,
+          4
+        ],
+        "early_pos": 7,
+        "win_odds": 3.8,
+        "incident": "Bumped at the start."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 11,
+        "horse_name": "JIN SHENG &NBSP;",
+        "horse_code": "L399",
+        "jockey": "C L Chau",
+        "trainer": "K L Man",
+        "act_wt": 121,
+        "horse_wt": 1168,
+        "draw": 10,
+        "lbw": 3.75,
+        "running_positions": [
+          1,
+          1,
+          5
+        ],
+        "early_pos": 1,
+        "win_odds": 24,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 1,
+        "horse_name": "FAST RESPONDER &NBSP;",
+        "horse_code": "J295",
+        "jockey": "H Y Yuen",
+        "trainer": "D J Whyte",
+        "act_wt": 128,
+        "horse_wt": 1053,
+        "draw": 13,
+        "lbw": 5,
+        "running_positions": [
+          8,
+          7,
+          6
+        ],
+        "early_pos": 8,
+        "win_odds": 26,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 9,
+        "horse_name": "KING OF THE SKY &NBSP;",
+        "horse_code": "L459",
+        "jockey": "K C Leung",
+        "trainer": "K W Lui",
+        "act_wt": 123,
+        "horse_wt": 1033,
+        "draw": 12,
+        "lbw": 5.75,
+        "running_positions": [
+          13,
+          13,
+          7
+        ],
+        "early_pos": 13,
+        "win_odds": 96,
+        "incident": "Shortly after the start was steadied when crowded by LAHORE which shifted out."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 13,
+        "horse_name": "DEVAS TWELVE &NBSP;",
+        "horse_code": "H435",
+        "jockey": "P N Wong",
+        "trainer": "W Y So",
+        "act_wt": 113,
+        "horse_wt": 1117,
+        "draw": 8,
+        "lbw": 6.25,
+        "running_positions": [
+          4,
+          5,
+          8
+        ],
+        "early_pos": 4,
+        "win_odds": 78,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 12,
+        "horse_name": "VULCANUS &NBSP;",
+        "horse_code": "J150",
+        "jockey": "H T Mo",
+        "trainer": "Y S Tsui",
+        "act_wt": 119,
+        "horse_wt": 1147,
+        "draw": 1,
+        "lbw": 6.25,
+        "running_positions": [
+          10,
+          10,
+          9
+        ],
+        "early_pos": 10,
+        "win_odds": 124,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 4,
+        "horse_name": "CASA OF HONOR &NBSP;",
+        "horse_code": "K310",
+        "jockey": "M F Poon",
+        "trainer": "C W Chang",
+        "act_wt": 125,
+        "horse_wt": 1182,
+        "draw": 9,
+        "lbw": 6.75,
+        "running_positions": [
+          6,
+          3,
+          10
+        ],
+        "early_pos": 6,
+        "win_odds": 19,
+        "incident": "Jumped only fairly. M F Poon reported that his mount gave ground over the final 200 Metres but could offer no explanation for the disappointing performance. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 11,
+        "horse_no": 14,
+        "horse_name": "LAHORE &NBSP;",
+        "horse_code": "K043",
+        "jockey": "A Badel",
+        "trainer": "J Richards",
+        "act_wt": 120,
+        "horse_wt": 1166,
+        "draw": 11,
+        "lbw": 7,
+        "running_positions": [
+          3,
+          4,
+          11
+        ],
+        "early_pos": 3,
+        "win_odds": 7.2,
+        "incident": "Shifted out at the start and was bumped. A veterinary inspection immediately following the race found that horse to have bled from both nostrils. As this was the second occasion that LAHORE had bled, the horse is ineligible to run in any race conducted by the Club in the future."
+      },
+      {
+        "finish_pos": 12,
+        "horse_no": 10,
+        "horse_name": "TURBO GRANNY &NBSP;",
+        "horse_code": "M036",
+        "jockey": "C Y Ho",
+        "trainer": "C Fownes",
+        "act_wt": 123,
+        "horse_wt": 1267,
+        "draw": 2,
+        "lbw": 8,
+        "running_positions": [
+          14,
+          14,
+          12
+        ],
+        "early_pos": 14,
+        "win_odds": 42,
+        "incident": "TURBO GRANNY, which was standing awkwardly in the starting gates, was slow to begin."
+      },
+      {
+        "finish_pos": 13,
+        "horse_no": 5,
+        "horse_name": "DYNAMIC BROSE &NBSP;",
+        "horse_code": "L470",
+        "jockey": "M L Yeung",
+        "trainer": "D A Hayes",
+        "act_wt": 125,
+        "horse_wt": 1144,
+        "draw": 3,
+        "lbw": 8.25,
+        "running_positions": [
+          12,
+          11,
+          13
+        ],
+        "early_pos": 12,
+        "win_odds": 71,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 14,
+        "horse_no": 8,
+        "horse_name": "CALIFORNIA COMMAND &NBSP;",
+        "horse_code": "L430",
+        "jockey": "Y L Chung",
+        "trainer": "A S Cruz",
+        "act_wt": 121,
+        "horse_wt": 1074,
+        "draw": 4,
+        "lbw": 10.25,
+        "running_positions": [
+          11,
+          12,
+          14
+        ],
+        "early_pos": 11,
+        "win_odds": 86,
+        "incident": "Shifted out on jumping and made contact with LIGHTNESS OF MUSIC."
+      }
+    ]
+  },
+  "7": {
+    "race_no": 7,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 4",
+    "distance": 1200,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 1,
+        "horse_name": "RAGING BLIZZARD &NBSP;",
+        "horse_code": "H368",
+        "jockey": "B Avdulla",
+        "trainer": "J Size",
+        "act_wt": 135,
+        "horse_wt": 1119,
+        "draw": 3,
+        "lbw": 0,
+        "running_positions": [
+          7,
+          5,
+          1
+        ],
+        "early_pos": 7,
+        "win_odds": 4.6,
+        "incident": "Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 7,
+        "horse_name": "KA YING ATTACK &NBSP;",
+        "horse_code": "J391",
+        "jockey": "M F Poon",
+        "trainer": "D J Hall",
+        "act_wt": 119,
+        "horse_wt": 1128,
+        "draw": 8,
+        "lbw": 0.1,
+        "running_positions": [
+          1,
+          1,
+          2
+        ],
+        "early_pos": 1,
+        "win_odds": 2.8,
+        "incident": "Trainer D J Hall confirmed the instructions were to go forward today. He said at its last start on 11 October 2026 he had made the decision to ride the horse in a conservative manner on that occasion as he anticipated fast early pace during the event. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 4,
+        "horse_name": "CRIMSON FLASH &NBSP;",
+        "horse_code": "K173",
+        "jockey": "A Atzeni",
+        "trainer": "M Newnham",
+        "act_wt": 127,
+        "horse_wt": 1092,
+        "draw": 2,
+        "lbw": 0.5,
+        "running_positions": [
+          5,
+          6,
+          3
+        ],
+        "early_pos": 5,
+        "win_odds": 9.2,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 4,
+        "horse_no": 8,
+        "horse_name": "AERIS NOVA &NBSP;",
+        "horse_code": "J534",
+        "jockey": "K C Leung",
+        "trainer": "W K Mo",
+        "act_wt": 117,
+        "horse_wt": 1222,
+        "draw": 4,
+        "lbw": 1.75,
+        "running_positions": [
+          8,
+          9,
+          4
+        ],
+        "early_pos": 8,
+        "win_odds": 7.2,
+        "incident": "Near the 200 Metres was eased and shifted to the outside of CRIMSON FLASH to continue into clear running."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 3,
+        "horse_name": "COPARTNER PRANCE &NBSP;",
+        "horse_code": "H408",
+        "jockey": "M L Yeung",
+        "trainer": "K W Lui",
+        "act_wt": 131,
+        "horse_wt": 1117,
+        "draw": 5,
+        "lbw": 2,
+        "running_positions": [
+          3,
+          2,
+          5
+        ],
+        "early_pos": 3,
+        "win_odds": 5.8,
+        "incident": "When questioned M L Yeung stated that his instructions were to go forward and lead if possible. He said after commencing well he rode his mount forward as instructed. He said approaching the 1000 Metres when joined in the lead by KA YING ATTACK his mount then did not appreciate racing to the inside of that horse and came under pressure when it shifted in and away from KA YING ATTACK. He added that, in his view, COPARTNER PRANCE races best when able to dictate in the lead. When questioned if there was an opportunity to apply more pressure to his mount to contest the lead Jockey Yeung stated that he was of the opinion his mount was travelling at its top when challenged by KA YING ATTACK and it would not have been able to show sufficient pace to maintain the lead."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 9,
+        "horse_name": "SING DRAGON &NBSP;",
+        "horse_code": "J141",
+        "jockey": "M Chadwick",
+        "trainer": "W Y So",
+        "act_wt": 115,
+        "horse_wt": 1189,
+        "draw": 1,
+        "lbw": 3,
+        "running_positions": [
+          4,
+          3,
+          6
+        ],
+        "early_pos": 4,
+        "win_odds": 18,
+        "incident": "Passing the 900 Metres was steadied when momentarily crowded by COPARTNER PRANCE (M L Yeung) which shifted in before being corrected. M L Yeung was advised to exercise more care."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 2,
+        "horse_name": "COLOURFUL KING &NBSP;",
+        "horse_code": "K227",
+        "jockey": "C L Chau",
+        "trainer": "D Eustace",
+        "act_wt": 132,
+        "horse_wt": 1112,
+        "draw": 9,
+        "lbw": 3.25,
+        "running_positions": [
+          9,
+          7,
+          7
+        ],
+        "early_pos": 9,
+        "win_odds": 9.1,
+        "incident": "From a wide barrier was shifted behind runners in the early stages. Between the 350 Metres and the 250 Metres had difficulty obtaining clear running."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 6,
+        "horse_name": "TOMODACHI KOKOROE &NBSP;",
+        "horse_code": "H303",
+        "jockey": "H Bentley",
+        "trainer": "D A Hayes",
+        "act_wt": 122,
+        "horse_wt": 1220,
+        "draw": 7,
+        "lbw": 10,
+        "running_positions": [
+          6,
+          8,
+          8
+        ],
+        "early_pos": 6,
+        "win_odds": 27,
+        "incident": "H Bentley stated that his mount was disadvantaged by having to race very wide and without cover for the majority of the event. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 5,
+        "horse_name": "BEAUTY WAVES &NBSP;",
+        "horse_code": "H294",
+        "jockey": "A Badel",
+        "trainer": "A S Cruz",
+        "act_wt": 124,
+        "horse_wt": 1164,
+        "draw": 6,
+        "lbw": 14.5,
+        "running_positions": [
+          2,
+          4,
+          9
+        ],
+        "early_pos": 2,
+        "win_odds": 46,
+        "incident": "Raced wide and without cover for the majority of the event. A veterinary inspection immediately following the race did not show any significant findings."
+      }
+    ]
+  },
+  "8": {
+    "race_no": 8,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 4",
+    "distance": 1400,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 1,
+        "horse_name": "STORM MIRROR &NBSP;",
+        "horse_code": "L179",
+        "jockey": "H Y Yuen",
+        "trainer": "P C Ng",
+        "act_wt": 128,
+        "horse_wt": 1179,
+        "draw": 7,
+        "lbw": 0,
+        "running_positions": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "early_pos": 1,
+        "win_odds": 3.5,
+        "incident": "When placed under pressure in the Home Straight shifted out abruptly near the 150 Metres, resulting in its rider Apprentice H Y Yuen having to stop riding and straighten her mount. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 10,
+        "horse_name": "PRESTIGE COME &NBSP;",
+        "horse_code": "L261",
+        "jockey": "R Kingscote",
+        "trainer": "P F Yiu",
+        "act_wt": 124,
+        "horse_wt": 1178,
+        "draw": 8,
+        "lbw": 2.75,
+        "running_positions": [
+          6,
+          4,
+          2,
+          2
+        ],
+        "early_pos": 6,
+        "win_odds": 15,
+        "incident": "After travelling a short distance became unbalanced when racing tight to the inside of MR COOL. Over the final 200 Metres lay in under pressure. R Kingscote stated that the instructions were to hold a midfield position. He said when caught wide in the early stages and the pace of the event was being run outside of standard time he elected to allow his mount to stride forward to obtain a position closer to the rail. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 3,
+        "horse_name": "MR COOL &NBSP;",
+        "horse_code": "K184",
+        "jockey": "K Teetan",
+        "trainer": "F C Lor",
+        "act_wt": 134,
+        "horse_wt": 1049,
+        "draw": 9,
+        "lbw": 3.25,
+        "running_positions": [
+          8,
+          5,
+          5,
+          3
+        ],
+        "early_pos": 8,
+        "win_odds": 5.3,
+        "incident": "Near the 400 Metres was bumped by FLASH CURRENT which attempted to shift out. When questioned K Teetan stated that his instructions were to settle the horse where comfortable but not to ride it along in the early stages. He said those instructions were issued as MR COOL had not finished its races off last season when ridden in a forward position. He said at its last start win on 4 October 2026 MR COOL was able to obtain a handy position without being ridden along to do so and his intention was to ride the horse in a similar manner today. He said whilst MR COOL jumped well he was of the opinion he would have had to make too much use of the horse in the early stages to cross runners to his inside and for this reason he elected to restrain his mount to attempt to obtain a position with cover behind PRESTIGE COME. He said when GENIUS BABY and GRAND PATCH improved to his inside he was unable to obtain cover and as a result was obliged to race very wide and without cover in the early stages. He said as the pace of the event was being run outside of standard time he then elected to ride MR COOL forward from the 900 Metres to cross GRAND PATCH where he then raced wide and without cover for the remainder of the middle stages. Trainer F C Lor confirmed the instructions issued and expressed satisfaction with the ride of Jockey Teetan. After considering his explanation the Stewards advised Jockey Teetan that he had made an error of judgement in the early stages in not attempting to cross runners to his inside, particularly when MR COOL had jumped well and the early and middle stages of the event were being run outside of standard time."
+      },
+      {
+        "finish_pos": 99,
+        "horse_no": 2,
+        "horse_name": "TANG HEART &NBSP;",
+        "horse_code": "L373",
+        "jockey": "E C W Wong",
+        "trainer": "C Fownes",
+        "act_wt": 132,
+        "horse_wt": 1141,
+        "draw": 11,
+        "lbw": 4.5,
+        "running_positions": [
+          11,
+          13,
+          13,
+          4
+        ],
+        "early_pos": 11,
+        "win_odds": 60,
+        "incident": "Shifted out at the start and made contact with GRAND PATCH. From a wide barrier was shifted across behind runners in the early stages. Between the 400 Metres and the 300 Metres was held up for clear running."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 7,
+        "horse_name": "FLASH CURRENT &NBSP;",
+        "horse_code": "J500",
+        "jockey": "K C Leung",
+        "trainer": "J Cummings",
+        "act_wt": 129,
+        "horse_wt": 1064,
+        "draw": 6,
+        "lbw": 4.5,
+        "running_positions": [
+          4,
+          6,
+          6,
+          5
+        ],
+        "early_pos": 4,
+        "win_odds": 4.9,
+        "incident": "In the middle stages raced keenly and near the 700 Metres was checked to avoid PRESTIGE COME. Near the 400 Metres shifted out and made contact with MR COOL when attempting to shift to the outside of PRESTIGE COME."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 4,
+        "horse_name": "OLDTOWN &NBSP;",
+        "horse_code": "K105",
+        "jockey": "L Ferraris",
+        "trainer": "M Newnham",
+        "act_wt": 131,
+        "horse_wt": 1107,
+        "draw": 5,
+        "lbw": 5,
+        "running_positions": [
+          7,
+          8,
+          10,
+          6
+        ],
+        "early_pos": 7,
+        "win_odds": 62,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 12,
+        "horse_name": "GENIUS BABY &NBSP;",
+        "horse_code": "K132",
+        "jockey": "A Badel",
+        "trainer": "B Crawford",
+        "act_wt": 121,
+        "horse_wt": 1052,
+        "draw": 13,
+        "lbw": 5.25,
+        "running_positions": [
+          12,
+          12,
+          9,
+          7
+        ],
+        "early_pos": 12,
+        "win_odds": 72,
+        "incident": "From a wide barrier was shifted across behind runners in the early stages."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 13,
+        "horse_name": "LET&#39;S HAVE FUN &NBSP;",
+        "horse_code": "L118",
+        "jockey": "M F Poon",
+        "trainer": "D A Hayes",
+        "act_wt": 121,
+        "horse_wt": 1287,
+        "draw": 10,
+        "lbw": 5.75,
+        "running_positions": [
+          10,
+          11,
+          12,
+          8
+        ],
+        "early_pos": 10,
+        "win_odds": 12,
+        "incident": "M F Poon stated that he was obliged to settle further back in the field than intended to ensure he obtained a position with cover. He said LET’S HAVE FUN was obliged to race three wide during the race before finishing the race off only fairly in the Home Straight. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 6,
+        "horse_name": "NATURAL HIGH &NBSP;",
+        "horse_code": "J365",
+        "jockey": "P N Wong",
+        "trainer": "C H Yip",
+        "act_wt": 123,
+        "horse_wt": 1148,
+        "draw": 3,
+        "lbw": 6,
+        "running_positions": [
+          2,
+          2,
+          3,
+          9
+        ],
+        "early_pos": 2,
+        "win_odds": 78,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 9,
+        "horse_name": "KING ZOOM &NBSP;",
+        "horse_code": "L279",
+        "jockey": "J Orman",
+        "trainer": "K W Lui",
+        "act_wt": 126,
+        "horse_wt": 1325,
+        "draw": 4,
+        "lbw": 6,
+        "running_positions": [
+          9,
+          10,
+          11,
+          10
+        ],
+        "early_pos": 9,
+        "win_odds": 138,
+        "incident": "Slow to begin. When questioned regarding his riding in the Home Straight and the reason he did not shift to the inside of ROAD TO GLORY sooner, J Orman stated that after following ROAD TO GLORY into the Home Straight he was content to remain racing behind that runner whilst encouraging his horse to improve. He said when ROAD TO GLORY did not improve into the race as he had expected he then shifted to the inside of that runner near the 300 Metres to secure clear running. He added that his mount then commenced to finish the race off well but over the final 100 Metres could not be ridden out when it improved close to FLASH CURRENT. The Stewards advised Jockey Orman that, in their opinion, he had made an error of judgement in not improving to the inside of ROAD TO GLORY sooner than what he did to ensure that his mount was provided with the first available opportunity to improve."
+      },
+      {
+        "finish_pos": 11,
+        "horse_no": 8,
+        "horse_name": "ROAD TO GLORY &NBSP;",
+        "horse_code": "L415",
+        "jockey": "Z Purton",
+        "trainer": "J Richards",
+        "act_wt": 127,
+        "horse_wt": 1112,
+        "draw": 1,
+        "lbw": 6.25,
+        "running_positions": [
+          5,
+          7,
+          7,
+          11
+        ],
+        "early_pos": 5,
+        "win_odds": 7.8,
+        "incident": "Z Purton stated that his mount, which is relatively inexperienced, did not appreciate racing in amongst other horses and finished the race off only fairly in the Home Straight. Trainer J Richards advised that, in his view, ROAD TO GLORY would be suited by being stepped up in distance for its next race start and also may not have appreciated the &quot;Good to Firm” track conditions. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 12,
+        "horse_no": 11,
+        "horse_name": "TURF QUEST &NBSP;",
+        "horse_code": "L146",
+        "jockey": "M L Yeung",
+        "trainer": "W Y So",
+        "act_wt": 124,
+        "horse_wt": 1162,
+        "draw": 2,
+        "lbw": 6.75,
+        "running_positions": [
+          3,
+          3,
+          4,
+          12
+        ],
+        "early_pos": 3,
+        "win_odds": 69,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 13,
+        "horse_no": 5,
+        "horse_name": "GRAND PATCH &NBSP;",
+        "horse_code": "L293",
+        "jockey": "C Y Ho",
+        "trainer": "K L Man",
+        "act_wt": 130,
+        "horse_wt": 1247,
+        "draw": 12,
+        "lbw": 7.5,
+        "running_positions": [
+          13,
+          9,
+          8,
+          13
+        ],
+        "early_pos": 13,
+        "win_odds": 6.4,
+        "incident": "Bumped at the start. From a wide barrier was shifted across behind runners in the early stages. C Y Ho reported that his mount was obliged to race wide and without cover for the majority of the event and as a result found it difficult to run on in the Home Straight. A veterinary inspection immediately following the race did not show any significant findings. Near the 800 Metres, when racing keenly, was steadied to avoid MR COOL which shifted in slightly and OLDTOWN which shifted out when being steadied to avoid FLASH CURRENT."
+      },
+      {
+        "finish_pos": 14,
+        "horse_no": 14,
+        "horse_name": "ALABAMA SONG &NBSP;",
+        "horse_code": "K480",
+        "jockey": "A Atzeni",
+        "trainer": "J Size",
+        "act_wt": 118,
+        "horse_wt": 1183,
+        "draw": 14,
+        "lbw": 9.25,
+        "running_positions": [
+          14,
+          14,
+          14,
+          14
+        ],
+        "early_pos": 14,
+        "win_odds": 31,
+        "incident": "From the outside barrier was shifted across behind runners in the early stages."
+      }
+    ]
+  },
+  "9": {
+    "race_no": 9,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 2",
+    "distance": 1600,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 4,
+        "horse_name": "CHILL EASY &NBSP;",
+        "horse_code": "L148",
+        "jockey": "C L Chau",
+        "trainer": "P F Yiu",
+        "act_wt": 122,
+        "horse_wt": 1115,
+        "draw": 12,
+        "lbw": 0,
+        "running_positions": [
+          6,
+          6,
+          4,
+          1
+        ],
+        "early_pos": 6,
+        "win_odds": 4.6,
+        "incident": "(See AWESOME FLUKE). Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 10,
+        "horse_name": "INFINITE RESOLVE &NBSP;",
+        "horse_code": "K369",
+        "jockey": "A Atzeni",
+        "trainer": "M Newnham",
+        "act_wt": 121,
+        "horse_wt": 1078,
+        "draw": 9,
+        "lbw": 1.25,
+        "running_positions": [
+          9,
+          7,
+          7,
+          2
+        ],
+        "early_pos": 9,
+        "win_odds": 5.6,
+        "incident": "Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 8,
+        "horse_name": "CALIFORNIATOTALITY &NBSP;",
+        "horse_code": "H418",
+        "jockey": "B Avdulla",
+        "trainer": "A S Cruz",
+        "act_wt": 122,
+        "horse_wt": 1111,
+        "draw": 8,
+        "lbw": 1.5,
+        "running_positions": [
+          4,
+          5,
+          6,
+          3
+        ],
+        "early_pos": 4,
+        "win_odds": 20,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 4,
+        "horse_no": 12,
+        "horse_name": "AWESOME FLUKE &NBSP;",
+        "horse_code": "J050",
+        "jockey": "H Y Yuen",
+        "trainer": "P F Yiu",
+        "act_wt": 112,
+        "horse_wt": 1203,
+        "draw": 6,
+        "lbw": 1.75,
+        "running_positions": [
+          5,
+          3,
+          1,
+          4
+        ],
+        "early_pos": 5,
+        "win_odds": 27,
+        "incident": "When questioned Apprentice H Y Yuen stated that her instructions were to go forward and lead if circumstances permitted. She said in accordance with her instructions she rode her mount along in the early stages, however, AWESOME FLUKE took some time to muster speed which resulted in a number of runners crossing her mount in the early stages. She said when left without cover near the 1400 Metres AWESOME FLUKE then commenced to race keenly and her intention was to endeavour to obtain a position with cover behind DEFINITIVE. She said when CALIFORNIATOTALITY maintained its position one-off behind DEFINITIVE, this resulted in AWESOME FLUKE being obliged to race wide and without cover. When questioned if there was an opportunity to go forward from the 1300 Metres having regard to the early stages being run outside of standard time, Apprentice Yuen agreed with the Stewards that in retrospect she had made an error of judgement in not allowing her mount to stride forward, particularly as it was racing keenly. She added that when positioned to the outside of DEFINITIVE she was mindful not to crowd runners to her inside and for this reason she remained racing three wide and without cover from the 900 Metres and into the Home Straight. Trainer P F Yiu confirmed the instructions were to go forward and agreed with the Stewards that in retrospect Apprentice Yuen should have taken the initiative to go forward and cross DEFINITIVE. When questioned regarding the tactics adopted on the stablemate CHILL EASY, Mr Yiu advised that he had expected the horse to hold a midfield position and was surprised that AWESOME FLUKE remained three deep during the race, particularly from barrier 6 having regard to the instructions. He said it was not the intention of the stable for this to occur and in the circumstances it was Apprentice Yuen’s riding which led to CHILL EASY being able to obtain cover behind AWESOME FLUKE."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 9,
+        "horse_name": "BRAVEFIELD &NBSP;",
+        "horse_code": "L513",
+        "jockey": "Z Purton",
+        "trainer": "C S Shum",
+        "act_wt": 121,
+        "horse_wt": 1004,
+        "draw": 10,
+        "lbw": 2.5,
+        "running_positions": [
+          11,
+          11,
+          11,
+          5
+        ],
+        "early_pos": 11,
+        "win_odds": 27,
+        "incident": "On jumping was steadied when crowded between INFINITE RESOLVE and REGAL GEM, both of which shifted ground. Approaching the 400 Metres was shifted to the inside of STUNNING PEACH to obtain clear running. Lay in under pressure in the Home Straight."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 6,
+        "horse_name": "STUNNING PEACH &NBSP;",
+        "horse_code": "J301",
+        "jockey": "C Y Ho",
+        "trainer": "A S Cruz",
+        "act_wt": 124,
+        "horse_wt": 1078,
+        "draw": 2,
+        "lbw": 3,
+        "running_positions": [
+          8,
+          8,
+          8,
+          6
+        ],
+        "early_pos": 8,
+        "win_odds": 23,
+        "incident": "Shortly after the start DROMBEG BANNER shifted in and made contact with STUNNING PEACH."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 3,
+        "horse_name": "MAX QUE &NBSP;",
+        "horse_code": "J514",
+        "jockey": "A Badel",
+        "trainer": "M Newnham",
+        "act_wt": 126,
+        "horse_wt": 1131,
+        "draw": 5,
+        "lbw": 4.75,
+        "running_positions": [
+          7,
+          9,
+          10,
+          7
+        ],
+        "early_pos": 7,
+        "win_odds": 14,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 7,
+        "horse_name": "DEFINITIVE &NBSP;",
+        "horse_code": "K037",
+        "jockey": "K Teetan",
+        "trainer": "D Eustace",
+        "act_wt": 123,
+        "horse_wt": 1108,
+        "draw": 4,
+        "lbw": 4.75,
+        "running_positions": [
+          3,
+          2,
+          3,
+          8
+        ],
+        "early_pos": 3,
+        "win_odds": 16,
+        "incident": "Bumped at the start."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 5,
+        "horse_name": "ROMANTIC THOR &NBSP;",
+        "horse_code": "K012",
+        "jockey": "M F Poon",
+        "trainer": "C S Shum",
+        "act_wt": 124,
+        "horse_wt": 1099,
+        "draw": 7,
+        "lbw": 6,
+        "running_positions": [
+          10,
+          10,
+          9,
+          9
+        ],
+        "early_pos": 10,
+        "win_odds": 17,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 2,
+        "horse_name": "SIX PACK &NBSP;",
+        "horse_code": "K061",
+        "jockey": "L Ferraris",
+        "trainer": "D J Whyte",
+        "act_wt": 132,
+        "horse_wt": 1304,
+        "draw": 1,
+        "lbw": 6.5,
+        "running_positions": [
+          2,
+          4,
+          5,
+          10
+        ],
+        "early_pos": 2,
+        "win_odds": 12,
+        "incident": "Between the 300 Metres and the 100 Metres was held up for clear running behind DROMBEG BANNER."
+      },
+      {
+        "finish_pos": 11,
+        "horse_no": 11,
+        "horse_name": "REGAL GEM &NBSP;",
+        "horse_code": "K258",
+        "jockey": "K C Leung",
+        "trainer": "F C Lor",
+        "act_wt": 121,
+        "horse_wt": 1112,
+        "draw": 11,
+        "lbw": 6.75,
+        "running_positions": [
+          12,
+          12,
+          12,
+          11
+        ],
+        "early_pos": 12,
+        "win_odds": 8.1,
+        "incident": "From a wide barrier was shifted across behind runners in the early stages. K C Leung reported that his mount settled back in the field and found it difficult to make up ground from that position in the Home Straight. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 12,
+        "horse_no": 13,
+        "horse_name": "DROMBEG BANNER &NBSP;",
+        "horse_code": "H117",
+        "jockey": "Y L Chung",
+        "trainer": "P C Ng",
+        "act_wt": 117,
+        "horse_wt": 1111,
+        "draw": 3,
+        "lbw": 8.5,
+        "running_positions": [
+          1,
+          1,
+          2,
+          12
+        ],
+        "early_pos": 1,
+        "win_odds": 4.3,
+        "incident": "Shifted out at the start and made contact with DEFINITIVE. Shifted in shortly after the start and was bumped. Y L Chung stated that he was able to lead the event in the early stages as expected. He said from the 750 Metres DROMBEG BANNER was disadvantaged when pressured in the lead by AWESOME FLUKE and this resulted in DROMBEG BANNER not being able to finish the race off in the Home Straight. A veterinary inspection immediately following the race did not show any significant findings. The performance of DROMBEG BANNER was considered disappointing. Before being allowed to race again, DROMBEG BANNER will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 13,
+        "horse_no": 1,
+        "horse_name": "ENSUED &NBSP;",
+        "horse_code": "H452",
+        "jockey": "J Orman",
+        "trainer": "J Size",
+        "act_wt": 135,
+        "horse_wt": 1111,
+        "draw": 13,
+        "lbw": 9,
+        "running_positions": [
+          13,
+          13,
+          13,
+          13
+        ],
+        "early_pos": 13,
+        "win_odds": 28,
+        "incident": "From the outside barrier was shifted across behind runners in the early stages. A veterinary inspection immediately following the race did not show any significant findings."
+      }
+    ]
+  },
+  "10": {
+    "race_no": 10,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 3",
+    "distance": 1200,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 4,
+        "horse_name": "MEGASTAR HEART &NBSP;",
+        "horse_code": "L056",
+        "jockey": "L Ferraris",
+        "trainer": "C Fownes",
+        "act_wt": 130,
+        "horse_wt": 1256,
+        "draw": 1,
+        "lbw": 0,
+        "running_positions": [
+          2,
+          1,
+          1
+        ],
+        "early_pos": 2,
+        "win_odds": 1.6,
+        "incident": "Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 2,
+        "horse_name": "PI LEGEND &NBSP;",
+        "horse_code": "L117",
+        "jockey": "K Teetan",
+        "trainer": "B Crawford",
+        "act_wt": 135,
+        "horse_wt": 1175,
+        "draw": 4,
+        "lbw": 2,
+        "running_positions": [
+          6,
+          5,
+          2
+        ],
+        "early_pos": 6,
+        "win_odds": 6.5,
+        "incident": "Shifted in after travelling a short distance and made contact with ANOTHER ZONDA. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 3,
+        "horse_no": 12,
+        "horse_name": "MASK WARRIOR &NBSP;",
+        "horse_code": "L518",
+        "jockey": "A Badel",
+        "trainer": "J Cummings",
+        "act_wt": 120,
+        "horse_wt": 1043,
+        "draw": 7,
+        "lbw": 4.25,
+        "running_positions": [
+          4,
+          4,
+          3
+        ],
+        "early_pos": 4,
+        "win_odds": 16,
+        "incident": "On jumping shifted in and made contact with RADIANT PATH."
+      },
+      {
+        "finish_pos": 4,
+        "horse_no": 11,
+        "horse_name": "LUCRATIVE EIGHT &NBSP;",
+        "horse_code": "K542",
+        "jockey": "K C Leung",
+        "trainer": "P F Yiu",
+        "act_wt": 120,
+        "horse_wt": 1101,
+        "draw": 11,
+        "lbw": 4.5,
+        "running_positions": [
+          7,
+          7,
+          4
+        ],
+        "early_pos": 7,
+        "win_odds": 14,
+        "incident": "On jumping was bumped heavily by SPICY STANDARD which shifted out abruptly."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 1,
+        "horse_name": "PAKISTAN LEGACY &NBSP;",
+        "horse_code": "J363",
+        "jockey": "H Y Yuen",
+        "trainer": "W Y So",
+        "act_wt": 128,
+        "horse_wt": 1209,
+        "draw": 14,
+        "lbw": 5.25,
+        "running_positions": [
+          3,
+          3,
+          5
+        ],
+        "early_pos": 3,
+        "win_odds": 27,
+        "incident": "Raced wide and without cover for the majority of the event."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 13,
+        "horse_name": "ANODE &NBSP;",
+        "horse_code": "K367",
+        "jockey": "M F Poon",
+        "trainer": "C S Shum",
+        "act_wt": 118,
+        "horse_wt": 1161,
+        "draw": 2,
+        "lbw": 5.75,
+        "running_positions": [
+          11,
+          9,
+          6
+        ],
+        "early_pos": 11,
+        "win_odds": 52,
+        "incident": "Bumped after travelling a short distance. After the race an endoscopic examination was conducted on ANODE at the request of Trainer C S Shum. The Veterinary Surgeon said this examination showed a substantial amount of blood in the horse’s trachea. Before being allowed to race again, ANODE will be subjected to an official veterinary examination."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 7,
+        "horse_name": "BLUE LIGHTNING &NBSP;",
+        "horse_code": "L520",
+        "jockey": "B Avdulla",
+        "trainer": "D Eustace",
+        "act_wt": 125,
+        "horse_wt": 1138,
+        "draw": 12,
+        "lbw": 5.75,
+        "running_positions": [
+          13,
+          10,
+          7
+        ],
+        "early_pos": 13,
+        "win_odds": 81,
+        "incident": "On jumping was steadied when crowded between GREAT LEGEND and LUCRATIVE EIGHT."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 3,
+        "horse_name": "AURIO &NBSP;",
+        "horse_code": "K056",
+        "jockey": "Z Purton",
+        "trainer": "K L Man",
+        "act_wt": 131,
+        "horse_wt": 1162,
+        "draw": 5,
+        "lbw": 5.75,
+        "running_positions": [
+          9,
+          12,
+          8
+        ],
+        "early_pos": 9,
+        "win_odds": 9.1,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 5,
+        "horse_name": "DO YOU JUST &NBSP;",
+        "horse_code": "L094",
+        "jockey": "Y L Chung",
+        "trainer": "A S Cruz",
+        "act_wt": 124,
+        "horse_wt": 1159,
+        "draw": 8,
+        "lbw": 6.5,
+        "running_positions": [
+          5,
+          6,
+          9
+        ],
+        "early_pos": 5,
+        "win_odds": 52,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 9,
+        "horse_name": "SPICY STANDARD &NBSP;",
+        "horse_code": "J520",
+        "jockey": "A Atzeni",
+        "trainer": "J Size",
+        "act_wt": 122,
+        "horse_wt": 1103,
+        "draw": 10,
+        "lbw": 7,
+        "running_positions": [
+          8,
+          8,
+          10
+        ],
+        "early_pos": 8,
+        "win_odds": 12,
+        "incident": "Shifted out abruptly at the start and made heavy contact with LUCRATIVE EIGHT. Raced keenly throughout the early stages. Near the 1000 Metres was steadied to avoid LUCRATIVE EIGHT (K C Leung) which shifted in when not sufficiently clear. K C Leung was advised to exercise more care. Raced very wide and without cover for the majority of the event."
+      },
+      {
+        "finish_pos": 11,
+        "horse_no": 10,
+        "horse_name": "ANOTHER ZONDA &NBSP;",
+        "horse_code": "K176",
+        "jockey": "M Chadwick",
+        "trainer": "Y S Tsui",
+        "act_wt": 121,
+        "horse_wt": 1128,
+        "draw": 3,
+        "lbw": 8.5,
+        "running_positions": [
+          10,
+          11,
+          11
+        ],
+        "early_pos": 10,
+        "win_odds": 112,
+        "incident": "M Chadwick reported that his mount jumped only fairly and after being crowded shortly after the start by PI LEGEND which shifted in and away from AURIO, his mount settled further back than intended."
+      },
+      {
+        "finish_pos": 12,
+        "horse_no": 6,
+        "horse_name": "RADIANT PATH &NBSP;",
+        "horse_code": "L407",
+        "jockey": "C Y Ho",
+        "trainer": "W K Mo",
+        "act_wt": 126,
+        "horse_wt": 1096,
+        "draw": 6,
+        "lbw": 9.5,
+        "running_positions": [
+          14,
+          14,
+          12
+        ],
+        "early_pos": 14,
+        "win_odds": 184,
+        "incident": "Crowded at the start. Made the turn near the 800 Metres awkwardly and got its head up."
+      },
+      {
+        "finish_pos": 13,
+        "horse_no": 14,
+        "horse_name": "GREAT LEGEND &NBSP;",
+        "horse_code": "L409",
+        "jockey": "P N Wong",
+        "trainer": "D J Hall",
+        "act_wt": 111,
+        "horse_wt": 1078,
+        "draw": 13,
+        "lbw": 10,
+        "running_positions": [
+          12,
+          13,
+          13
+        ],
+        "early_pos": 12,
+        "win_odds": 152,
+        "incident": "Bumped at the start."
+      },
+      {
+        "finish_pos": 14,
+        "horse_no": 8,
+        "horse_name": "METRO POWER &NBSP;",
+        "horse_code": "K408",
+        "jockey": "J Orman",
+        "trainer": "D A Hayes",
+        "act_wt": 123,
+        "horse_wt": 1116,
+        "draw": 9,
+        "lbw": 15,
+        "running_positions": [
+          1,
+          2,
+          14
+        ],
+        "early_pos": 1,
+        "win_odds": 32,
+        "incident": "J Orman reported that when he placed his mount under pressure in the early stages of the Home Straight it failed to respond to his riding and weakened noticeably. A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm. Before being allowed to race again, METRO POWER will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ]
+  },
+  "11": {
+    "race_no": 11,
+    "race_date": "2026-10-25",
+    "venue": "Sha Tin",
+    "class": "Class 3",
+    "distance": 1400,
+    "runners": [
+      {
+        "finish_pos": 1,
+        "horse_no": 10,
+        "horse_name": "PACKING GLORY &NBSP;",
+        "horse_code": "L013",
+        "jockey": "H Y Yuen",
+        "trainer": "P F Yiu",
+        "act_wt": 117,
+        "horse_wt": 1137,
+        "draw": 13,
+        "lbw": 0,
+        "running_positions": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "early_pos": 3,
+        "win_odds": 3.8,
+        "incident": "Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 2,
+        "horse_no": 1,
+        "horse_name": "AEROVOLANIC &NBSP;",
+        "horse_code": "K400",
+        "jockey": "K C Leung",
+        "trainer": "P C Ng",
+        "act_wt": 135,
+        "horse_wt": 1152,
+        "draw": 7,
+        "lbw": 0.1,
+        "running_positions": [
+          2,
+          3,
+          4,
+          2
+        ],
+        "early_pos": 2,
+        "win_odds": 15,
+        "incident": "Approaching the 200 Metres shifted in under pressure, resulting in its rider having to stop riding and straighten. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 99,
+        "horse_no": 2,
+        "horse_name": "CIRCUIT CHAMPION &NBSP;",
+        "horse_code": "J428",
+        "jockey": "Z Purton",
+        "trainer": "C S Shum",
+        "act_wt": 134,
+        "horse_wt": 1261,
+        "draw": 14,
+        "lbw": 1.25,
+        "running_positions": [
+          6,
+          5,
+          7,
+          3
+        ],
+        "early_pos": 6,
+        "win_odds": 2.6,
+        "incident": "Raced wide and without cover for the majority of the event. Sent for sampling post-race."
+      },
+      {
+        "finish_pos": 4,
+        "horse_no": 9,
+        "horse_name": "HAPPY BOSS &NBSP;",
+        "horse_code": "K453",
+        "jockey": "L Hewitson",
+        "trainer": "D Eustace",
+        "act_wt": 124,
+        "horse_wt": 1105,
+        "draw": 3,
+        "lbw": 1.25,
+        "running_positions": [
+          4,
+          4,
+          2,
+          4
+        ],
+        "early_pos": 4,
+        "win_odds": 9.9,
+        "incident": "No report."
+      },
+      {
+        "finish_pos": 5,
+        "horse_no": 6,
+        "horse_name": "POWER OF VITAM &NBSP;",
+        "horse_code": "L171",
+        "jockey": "J Orman",
+        "trainer": "D J Hall",
+        "act_wt": 130,
+        "horse_wt": 1092,
+        "draw": 12,
+        "lbw": 2.75,
+        "running_positions": [
+          14,
+          14,
+          13,
+          5
+        ],
+        "early_pos": 14,
+        "win_odds": 12,
+        "incident": "Between the 400 Metres and the 300 Metres was held up for clear running when being shifted to the outside of ENDEARED."
+      },
+      {
+        "finish_pos": 6,
+        "horse_no": 8,
+        "horse_name": "ALMIGHTY LIGHTNING &NBSP;",
+        "horse_code": "L126",
+        "jockey": "L Ferraris",
+        "trainer": "K L Man",
+        "act_wt": 128,
+        "horse_wt": 1083,
+        "draw": 1,
+        "lbw": 3,
+        "running_positions": [
+          8,
+          8,
+          5,
+          6
+        ],
+        "early_pos": 8,
+        "win_odds": 10,
+        "incident": "Jumped only fairly."
+      },
+      {
+        "finish_pos": 7,
+        "horse_no": 5,
+        "horse_name": "ENTERPRISE TRIUMPH &NBSP;",
+        "horse_code": "L435",
+        "jockey": "K Teetan",
+        "trainer": "Y S Tsui",
+        "act_wt": 130,
+        "horse_wt": 1203,
+        "draw": 5,
+        "lbw": 5.25,
+        "running_positions": [
+          5,
+          6,
+          6,
+          7
+        ],
+        "early_pos": 5,
+        "win_odds": 45,
+        "incident": "When being crossed by AEROVOLANIC leaving the 900 Metres was steadied when racing keenly."
+      },
+      {
+        "finish_pos": 8,
+        "horse_no": 7,
+        "horse_name": "ENDEARED &NBSP;",
+        "horse_code": "H161",
+        "jockey": "A Atzeni",
+        "trainer": "J Size",
+        "act_wt": 129,
+        "horse_wt": 1072,
+        "draw": 6,
+        "lbw": 5.25,
+        "running_positions": [
+          12,
+          12,
+          8,
+          8
+        ],
+        "early_pos": 12,
+        "win_odds": 60,
+        "incident": "Jumped only fairly."
+      },
+      {
+        "finish_pos": 9,
+        "horse_no": 4,
+        "horse_name": "EFFORTLESS WIN &NBSP;",
+        "horse_code": "L310",
+        "jockey": "C L Chau",
+        "trainer": "F C Lor",
+        "act_wt": 128,
+        "horse_wt": 1140,
+        "draw": 4,
+        "lbw": 7.5,
+        "running_positions": [
+          1,
+          2,
+          3,
+          9
+        ],
+        "early_pos": 1,
+        "win_odds": 23,
+        "incident": "C L Chau reported that with his mount stepping up in distance it raced keenly in the lead in the early stages, particularly when pressured by PACKING GLORY. He added that as a result EFFORTLESS WIN gave ground in the Home Straight. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 10,
+        "horse_no": 12,
+        "horse_name": "ALL&#39;S WELL &NBSP;",
+        "horse_code": "K294",
+        "jockey": "H Bentley",
+        "trainer": "C H Yip",
+        "act_wt": 122,
+        "horse_wt": 1072,
+        "draw": 2,
+        "lbw": 7.5,
+        "running_positions": [
+          10,
+          10,
+          9,
+          10
+        ],
+        "early_pos": 10,
+        "win_odds": 24,
+        "incident": "Jumped only fairly."
+      },
+      {
+        "finish_pos": 11,
+        "horse_no": 3,
+        "horse_name": "BEAUTY CRESCENT &NBSP;",
+        "horse_code": "H334",
+        "jockey": "Y L Chung",
+        "trainer": "A S Cruz",
+        "act_wt": 130,
+        "horse_wt": 1092,
+        "draw": 11,
+        "lbw": 9.25,
+        "running_positions": [
+          9,
+          9,
+          10,
+          11
+        ],
+        "early_pos": 9,
+        "win_odds": 26,
+        "incident": "Y L Chung advised that his mount was disadvantaged by racing very wide and without cover for the majority of the event. A veterinary inspection immediately following the race did not show any significant findings."
+      },
+      {
+        "finish_pos": 12,
+        "horse_no": 11,
+        "horse_name": "SAINT OF THE SEA &NBSP;",
+        "horse_code": "M034",
+        "jockey": "B Avdulla",
+        "trainer": "J Cummings",
+        "act_wt": 123,
+        "horse_wt": 1175,
+        "draw": 10,
+        "lbw": 10.5,
+        "running_positions": [
+          13,
+          13,
+          12,
+          12
+        ],
+        "early_pos": 13,
+        "win_odds": 61,
+        "incident": "In the early stages raced keenly and near the 900 Metres was steadied to avoid ALL’S WELL. Again near the 700 Metres was steadied to avoid ALL’S WELL when it continued to race keenly."
+      },
+      {
+        "finish_pos": 13,
+        "horse_no": 13,
+        "horse_name": "BLAZING STAR &NBSP;",
+        "horse_code": "L405",
+        "jockey": "M Chadwick",
+        "trainer": "W K Mo",
+        "act_wt": 122,
+        "horse_wt": 1154,
+        "draw": 9,
+        "lbw": 10.75,
+        "running_positions": [
+          11,
+          11,
+          14,
+          13
+        ],
+        "early_pos": 11,
+        "win_odds": 105,
+        "incident": "Jumped only fairly. Noted to have blood in the mouth after the race."
+      },
+      {
+        "finish_pos": 14,
+        "horse_no": 14,
+        "horse_name": "COME FAST FAY FAY &NBSP;",
+        "horse_code": "K121",
+        "jockey": "M L Yeung",
+        "trainer": "K H Ting",
+        "act_wt": 120,
+        "horse_wt": 1114,
+        "draw": 8,
+        "lbw": 19.75,
+        "running_positions": [
+          7,
+          7,
+          11,
+          14
+        ],
+        "early_pos": 7,
+        "win_odds": 21,
+        "incident": "M L Yeung reported that his mount, which was racing first up, would derive a fitness benefit from today’s performance. A veterinary inspection immediately following the race did not show any significant findings. The performance of COME FAST FAY FAY was considered disappointing. Before being allowed to race again, COME FAST FAY FAY will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ]
+  }
+}

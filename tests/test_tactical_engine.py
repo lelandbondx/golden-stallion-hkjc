@@ -113,6 +113,34 @@ class TestTacticalIncidentEngine(unittest.TestCase):
         scores = evaluate_tactical_scores("HORSE X", {"barrier": 4, "sp": 4.0}, mem)
         self.assertEqual(scores['forgiven_run'], 2.5)
 
+    def test_hot_lead_fade_penalty(self):
+        """Test hot-lead fade receives -1.0 trip regression and badge."""
+        mem = {
+            "PACEMAKER": {
+                "horse_name": "PACEMAKER",
+                "runs": [{
+                    "race_date": "2026-10-25",
+                    "race_id": "20261025_R9",
+                    "finish_pos": 12,
+                    "beaten_lengths": 8.5,
+                    "sp": 4.3,
+                    "early_pos": 1.0,
+                    "incident_flags": []
+                }]
+            }
+        }
+        scores = evaluate_tactical_scores("PACEMAKER", {"barrier": 5, "sp": 5.0}, mem)
+        self.assertEqual(scores['trip_regression'], -1.0)
+        self.assertTrue(any("HOT-LEAD FADE" in b.get('badge', '') for b in scores['badges']))
+
+    def test_roarer_and_unacceptable_flag(self):
+        """Test roarer and unacceptable performance trigger vet_or_merit flag."""
+        flags_roarer = parse_incident("Tailed out, roarer on endoscopic examination.")
+        self.assertTrue(any(f['flag'] == 'vet_or_merit' and f['vet_blocked'] for f in flags_roarer))
+
+        flags_unacceptable = parse_incident("Disappointing performance, unacceptable; must trial.")
+        self.assertTrue(any(f['flag'] == 'vet_or_merit' and f['vet_blocked'] for f in flags_unacceptable))
+
 
 class TestShaTinCalibrations(unittest.TestCase):
 

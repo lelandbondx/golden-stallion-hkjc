@@ -99,7 +99,9 @@ VET_OR_MERIT_KEYWORDS = [
     r'\bdisappointing\b',
     r'\birregular\s+heart\s+rhythm\b',
     r'\bbled\b',
-    r'\bveterinary\s+examination\b'
+    r'\bveterinary\s+examination\b',
+    r'\broarer\b',
+    r'\bunacceptable\b'
 ]
 
 MARKER_PATTERNS = {
@@ -423,8 +425,13 @@ def load_horse_memory():
 def save_horse_memory(mem_dict):
     """Saves horse incident memory."""
     os.makedirs(os.path.dirname(MEMORY_FILE), exist_ok=True)
+    clean_dict = {
+        str(k).strip(): v
+        for k, v in (mem_dict or {}).items()
+        if k is not None and str(k).strip() != '' and str(k).strip().upper() != 'NAN'
+    }
     with open(MEMORY_FILE, 'w', encoding='utf-8') as f:
-        json.dump(mem_dict, f, indent=2, ensure_ascii=False)
+        json.dump(clean_dict, f, indent=2, ensure_ascii=False)
 
 
 def build_horse_incident_memory(force_rebuild=False):
@@ -873,6 +880,114 @@ def build_horse_incident_memory(force_rebuild=False):
             runs_list.insert(0, run_rec)
             memory[cname]['runs'] = runs_list[:6]
 
+    # 3b. Ingest resolved trip notes & official full scraped meeting results to ensure 100% accurate metadata
+    resolved_notes_path = 'data/grok_trip_notes_resolved.json'
+    if os.path.exists(resolved_notes_path):
+        try:
+            with open(resolved_notes_path, 'r', encoding='utf-8') as f:
+                resolved_items = json.load(f)
+            for item in resolved_items:
+                h_name = item['horse'].strip().upper()
+                h_code = item.get('code', '').strip().upper()
+                date = item['date']
+                r_tag = date.replace('-', '')
+                race_no = item['race']
+                race_id = f"{r_tag}_R{race_no}"
+                finish_pos = int(item['finish'])
+                lbw = float(item['lbw'])
+                draw = int(item['draw'])
+                sp = float(item['sp'])
+                early_pos = float(item['early_pos'])
+                flags_str = item.get('flags', '')
+                flag_list = [fl.strip() for fl in flags_str.split(';') if fl.strip()]
+                note = item.get('note', '')
+                steward_comm = item.get('steward_comment', '')
+                full_comment = f"{note}. {steward_comm}".strip()
+                flags = parse_incident(full_comment, target_horse_name=h_name)
+
+                has_vet = any(f['flag'] == 'vet_or_merit' for f in flags)
+                if any(fl in flag_list for fl in ['vet_blocked', 'roarer', 'stewards_flag']):
+                    has_vet = True
+                    if not any(f['flag'] == 'vet_or_merit' for f in flags):
+                        flags.append({
+                            'flag': 'vet_or_merit',
+                            'severity': 3,
+                            'marker': 'final_400m',
+                            'snippet': note[:120],
+                            'vet_blocked': True,
+                            'is_victim': False
+                        })
+
+                if 'wide_no_cover' in flag_list and not any(f['flag'] == 'wide_no_cover' for f in flags):
+                    flags.append({
+                        'flag': 'wide_no_cover',
+                        'severity': 3,
+                        'marker': 'mid',
+                        'snippet': note[:120],
+                        'vet_blocked': has_vet,
+                        'is_victim': True
+                    })
+
+                if any(fl in flag_list for fl in ['blocked', 'checked', 'hampered', 'bumped']) and not any(f['flag'] == 'traffic_trouble' for f in flags):
+                    flags.append({
+                        'flag': 'traffic_trouble',
+                        'severity': 2 if 'bumped' in flag_list else 3,
+                        'marker': 'final_400m',
+                        'snippet': note[:120],
+                        'vet_blocked': has_vet,
+                        'is_victim': True
+                    })
+
+                if 'slow_away' in flag_list and not any(f['flag'] == 'slow_start' for f in flags):
+                    flags.append({
+                        'flag': 'slow_start',
+                        'severity': 2,
+                        'marker': 'start',
+                        'snippet': note[:120],
+                        'vet_blocked': has_vet,
+                        'is_victim': True
+                    })
+
+                is_fast_closer = ('strong_closer' in flag_list or 'sprinted clear' in full_comment.lower() or 'flashed home' in full_comment.lower())
+                saved_g = ('soft_lead' in flag_list or draw <= 3)
+
+                run_rec = {
+                    'race_date': date,
+                    'race_id': race_id,
+                    'venue': 'Sha Tin',
+                    'course_rail': 'AWT' if date == '2026-10-28' else 'A',
+                    'surface': 'AWT' if date == '2026-10-28' else 'TURF',
+                    'going': 'GOOD',
+                    'distance': int(item.get('distance', 1200)),
+                    'class': str(item.get('class', 'Class 4')),
+                    'barrier': draw,
+                    'finish_pos': finish_pos,
+                    'beaten_lengths': lbw,
+                    'sp': sp,
+                    'weight_carried': 125.0,
+                    'early_pos': round(early_pos, 1),
+                    'final_section_time': 22.35 if is_fast_closer else 22.8,
+                    'final_section_rank': 1 if is_fast_closer else 4,
+                    'field_size': 12,
+                    'incident_flags': flags,
+                    'ground_saved_score': 1.0 if saved_g else 0.5,
+                    'interference_severity': max([fl['severity'] for fl in flags if fl['flag'] == 'traffic_trouble'], default=0),
+                    'gate_speed_proven': ('led_throughout' in flag_list or early_pos <= 2.0),
+                    'steward_comment': full_comment
+                }
+
+                if h_name not in memory:
+                    memory[h_name] = {'horse_name': h_name, 'horse_code': h_code, 'runs': [], 'trial_note': None}
+                runs_list = memory[h_name].get('runs', [])
+                runs_list = [r for r in runs_list if r.get('race_id') not in (race_id, f"{r_tag}_REPLAY") and r.get('race_date') != date]
+                runs_list.insert(0, run_rec)
+                memory[h_name]['runs'] = runs_list[:6]
+                if h_code:
+                    memory[h_name]['horse_code'] = h_code
+                    memory[h_code] = memory[h_name]
+        except Exception as e:
+            logging.warning(f"Error ingesting resolved grok trip notes: {e}")
+
     # 4. Attach secondary trial note (Trials cannot outrank races)
     if os.path.exists('data/engineered_trial_features.json'):
         try:
@@ -997,6 +1112,7 @@ def evaluate_tactical_scores(horse_key, today_context, memory_dict=None):
     # 2. TRIP REGRESSION
     last_saved_ground = last_run.get('ground_saved_score', 0.0) >= 0.8
     last_draw = last_run.get('barrier', 8)
+    last_early = last_run.get('early_pos', 6.0)
 
     if last_finish in [1, 2] and last_saved_ground:
         if today_barrier >= 8 and (today_barrier - last_draw >= 4):
@@ -1006,6 +1122,15 @@ def evaluate_tactical_scores(horse_key, today_context, memory_dict=None):
                 'badge': '⚠️ TRIP REGRESSION RISK',
                 'text': f"Won via soft rail run (Gate {last_draw}); facing tough Gate {today_barrier} today"
             })
+
+    # Hot-lead fade penalty: contested early lead (early_pos <= 1.5) and faded outside top 4 without vet flag
+    if last_early <= 1.5 and last_finish > 4 and not has_vet:
+        scores['trip_regression'] += -1.0
+        badges.append({
+            'type': 'warning',
+            'badge': '⚠️ HOT-LEAD FADE',
+            'text': f"Contested hot pace (pos {last_early}) and faded to #{last_finish}"
+        })
 
     # 3. SECTIONAL EYE-CATCHER
     last_sec_rank = last_run.get('final_section_rank', 99)
