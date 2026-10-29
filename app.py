@@ -814,7 +814,9 @@ with tab1:
                         b = df_runners['win_odds'] - 1
                         p = df_runners['model_prob']
                         q = 1.0 - p
-                        f = np.where(b > 0, (b * p - q) / b, 0)
+                        has_health_col_f = df_runners['has_health_risk'].astype(bool) if 'has_health_risk' in df_runners.columns else pd.Series(False, index=df_runners.index)
+                        passes_price_f = (df_runners['win_odds'] > 0) & (df_runners['win_odds'] <= 13.0) & (~has_health_col_f) & (df_runners['model_prob'] * df_runners['win_odds'] > 1.0)
+                        f = np.where((b > 0) & passes_price_f, (b * p - q) / b, 0)
                         df_runners['kelly_stake'] = np.clip(f * 0.25, 0, 1)
                         
                         # Parse class_int to apply Class 5 Volatility Guard
@@ -871,8 +873,9 @@ with tab1:
                                 p1_idx = df_runners[p1_mask].index[0]
                                 p1_o = float(df_runners.loc[p1_idx, 'win_odds'])
                                 p1_p = float(df_runners.loc[p1_idx, 'model_prob'])
+                                p1_h = bool(df_runners.loc[p1_idx, 'has_health_risk']) if 'has_health_risk' in df_runners.columns else False
                                 p1_live = (p1_o > 0) and (p1_o < 20.0)
-                                p1_pass = p1_live and (p1_p * p1_o > 1.0)
+                                p1_pass = p1_live and (p1_o <= 13.0) and (not p1_h) and (p1_p * p1_o > 1.0)
                                 
                                 df_runners['win_stake_active'] = 0
                                 df_runners.loc[df_runners['card_rank'] != 1, 'primary_reason'] = ""
@@ -880,12 +883,14 @@ with tab1:
                                     df_runners.loc[p1_idx, 'win_stake_active'] = 1
                                     df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({df_runners.loc[p1_idx, 'gs_score']:.1f}) - WIN STAKE ACTIVE (Half Unit Win + Place)"
                                 elif p1_live:
-                                    df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({df_runners.loc[p1_idx, 'gs_score']:.1f}) - Winning-horse pick / exotic key only — no win stake"
-                                    # Pick 1 failed -> find best passing candidate among Picks 2-4
-                                    p24_mask = df_runners['card_rank'].isin([2, 3, 4])
+                                    p1_reason_suffix = "Exotic / Place key only — odds > 13.0 win cap" if p1_o > 13.0 else "Winning-horse pick / exotic key only — no win stake"
+                                    df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({df_runners.loc[p1_idx, 'gs_score']:.1f}) - {p1_reason_suffix}"
+                                    # Pick 1 failed -> check strictly Pick 2 (Picks 3-4 restricted to exotics only)
+                                    p24_mask = df_runners['card_rank'] == 2
                                     p24_df = df_runners[p24_mask].copy()
                                     if not p24_df.empty:
-                                        p24_pass = p24_df[(p24_df['win_odds'] > 0) & (p24_df['win_odds'] < 20.0) & (p24_df['model_prob'] * p24_df['win_odds'] > 1.0)].copy()
+                                        p2_h_col = p24_df['has_health_risk'].astype(bool) if 'has_health_risk' in p24_df.columns else pd.Series(False, index=p24_df.index)
+                                        p24_pass = p24_df[(p24_df['win_odds'] > 0) & (p24_df['win_odds'] <= 13.0) & (~p2_h_col) & (p24_df['model_prob'] * p24_df['win_odds'] > 1.0)].copy()
                                         if not p24_pass.empty:
                                             p24_pass['ev_mult'] = p24_pass['model_prob'] * p24_pass['win_odds']
                                             best_s = p24_pass.sort_values(by='ev_mult', ascending=False).iloc[0]
@@ -1425,7 +1430,8 @@ with tab1:
         p = df_runners['model_prob']
         q = 1.0 - p
         has_live_price = (df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 20.0)
-        passes_price = has_live_price & (df_runners['model_prob'] * df_runners['win_odds'] > 1.0)
+        has_health_risk_col = df_runners['has_health_risk'].astype(bool) if 'has_health_risk' in df_runners.columns else pd.Series(False, index=df_runners.index)
+        passes_price = has_live_price & (df_runners['win_odds'] <= 13.0) & (~has_health_risk_col) & (df_runners['model_prob'] * df_runners['win_odds'] > 1.0)
         f = np.where((b > 0) & passes_price, (b * p - q) / b, 0)
         df_runners['kelly_stake'] = np.clip(f * 0.25, 0, 1) 
         
@@ -1499,8 +1505,9 @@ with tab1:
         p1_first_pos = float(pd.to_numeric(p1.get('avg_first_pos', 6.0), errors='coerce'))
         p1_recent_pos = float(pd.to_numeric(p1.get('recent_avg_pos', 7.0), errors='coerce'))
         p1_is_crosser = (p1_first_pos <= 3.5) or (p1_recent_pos <= 3.5)
+        p1_has_health_risk = bool(p1.get('has_health_risk', False))
         p1_live = (p1_odds > 0) and (p1_odds < 20.0)
-        p1_passes_val = p1_live and (p1_prob * p1_odds > 1.0)
+        p1_passes_val = p1_live and (p1_odds <= 13.0) and (not p1_has_health_risk) and (p1_prob * p1_odds > 1.0)
         
         # Check sprint wide+heavy split rule:
         is_sprint = (distance <= 1200)
@@ -1509,15 +1516,16 @@ with tab1:
         shifted_win_runner = None
         shifted_from_rank = None
         
-        # Helper to find best candidate among Picks 2-4 that passes price test (model_prob * decimal_odds > 1.0)
+        # Helper to find if Pick 2 passes price & <=13.0 win-cap test (Picks 3-4 restricted to exotics only)
         def get_best_p24_shifted():
-            p24_cands = [(p2, 2), (p3, 3), (p4, 4)]
+            p24_cands = [(p2, 2)]
             valid = []
             for cand, r_idx in p24_cands:
                 if cand is not None:
                     c_odds = float(cand.get('win_odds', 20.0))
                     c_prob = float(cand.get('model_prob', 0.0))
-                    if (c_odds > 0) and (c_odds < 20.0) and (c_prob * c_odds > 1.0):
+                    c_health = bool(cand.get('has_health_risk', False))
+                    if (not c_health) and (c_odds > 0) and (c_odds <= 13.0) and (c_prob * c_odds > 1.0):
                         valid.append((cand, r_idx, c_prob * c_odds))
             if valid:
                 valid.sort(key=lambda x: x[2], reverse=True)
@@ -1546,7 +1554,7 @@ with tab1:
                 df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] * 0.5
             else:
                 p1_passes_test = False
-                p1_status = "Winning-horse pick / exotic key only — no win stake"
+                p1_status = "Exotic / Place key only — odds > 13.0 win cap" if p1_odds > 13.0 else "Winning-horse pick / exotic key only — no win stake"
                 df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
                 shifted_win_runner, shifted_from_rank = get_best_p24_shifted()
         else:
@@ -1556,7 +1564,7 @@ with tab1:
                 p1_status = "WIN STAKE ACTIVE (Half Unit Win + Place)"
             else:
                 p1_passes_test = False
-                p1_status = "Winning-horse pick / exotic key only — no win stake"
+                p1_status = "Exotic / Place key only — odds > 13.0 win cap" if p1_odds > 13.0 else "Winning-horse pick / exotic key only — no win stake"
                 df_runners.loc[df_runners['no'] == p1['no'], 'kelly_stake'] = 0.0
                 shifted_win_runner, shifted_from_rank = get_best_p24_shifted()
 

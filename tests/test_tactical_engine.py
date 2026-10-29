@@ -609,24 +609,33 @@ class TestAppMultipliers(unittest.TestCase):
         purton_total_boost = np.minimum(jockey_trainer_boost + elite_jockey_boost, 0.02)
         self.assertEqual(purton_total_boost, 0.02)
 
-    def test_shifted_win_stake_p24(self):
-        """Test win stake shift selects best of Picks 2-4 passing price test (model_prob * odds > 1.0)."""
-        p2 = {'no': 2, 'name': 'HORSE B', 'win_odds': 4.0, 'model_prob': 0.20}
-        p3 = {'no': 3, 'name': 'HORSE C', 'win_odds': 5.0, 'model_prob': 0.25}
-        p4 = {'no': 4, 'name': 'HORSE D', 'win_odds': 8.0, 'model_prob': 0.18}
+    def test_shifted_win_stake_p2_only_and_13_cap(self):
+        """Test win stake shift restricts strictly to Pick 2 with <= 13.0 odds and no health risk (Picks 3-4 excluded)."""
+        p2 = {'no': 2, 'name': 'HORSE B', 'win_odds': 7.9, 'model_prob': 0.16, 'has_health_risk': False}
+        p3 = {'no': 3, 'name': 'HORSE C', 'win_odds': 5.0, 'model_prob': 0.25, 'has_health_risk': False}
+        p4 = {'no': 4, 'name': 'HORSE D', 'win_odds': 8.0, 'model_prob': 0.18, 'has_health_risk': False}
 
-        p24_cands = [(p2, 2), (p3, 3), (p4, 4)]
+        p24_cands = [(p2, 2)]
         valid = []
         for cand, r_idx in p24_cands:
             c_odds = float(cand.get('win_odds', 20.0))
             c_prob = float(cand.get('model_prob', 0.0))
-            if (c_odds > 0) and (c_odds < 20.0) and (c_prob * c_odds > 1.0):
+            c_health = bool(cand.get('has_health_risk', False))
+            if (not c_health) and (c_odds > 0) and (c_odds <= 13.0) and (c_prob * c_odds > 1.0):
                 valid.append((cand, r_idx, c_prob * c_odds))
 
-        valid.sort(key=lambda x: x[2], reverse=True)
+        self.assertEqual(len(valid), 1)
         shifted_win_runner, shifted_from_rank = valid[0][0], valid[0][1]
-        self.assertEqual(shifted_win_runner['no'], 4)
-        self.assertEqual(shifted_from_rank, 4)
+        self.assertEqual(shifted_win_runner['no'], 2)
+        self.assertEqual(shifted_from_rank, 2)
+
+        # Verify Pick 2 priced > 13.0 is blocked from win stake shift
+        p2_longshot = {'no': 2, 'name': 'LONGSHOT B', 'win_odds': 15.0, 'model_prob': 0.10, 'has_health_risk': False}
+        valid_long = [
+            (cand, r_idx) for cand, r_idx in [(p2_longshot, 2)]
+            if (not cand['has_health_risk']) and (0 < cand['win_odds'] <= 13.0) and (cand['model_prob'] * cand['win_odds'] > 1.0)
+        ]
+        self.assertEqual(len(valid_long), 0)
 
 
 class TestFailLoudMonitoringRegressions(unittest.TestCase):
@@ -712,6 +721,22 @@ class TestFailLoudMonitoringRegressions(unittest.TestCase):
                     os.path.exists(full_script_path),
                     f"Workflow {fname} references non-existent script '{script_rel}'",
                 )
+
+    def test_staking_audit_filters_enforced_across_scripts(self):
+        """
+        Verify the 189-race audit staking guards are present in run_predictions.py,
+        get_detailed_picks.py, and app.py:
+        1. Pure win stakes capped at <= 13.0 odds (13/1).
+        2. Shifted win stakes restricted strictly to Pick 2 (p24_cands = [(p2, 2)]).
+        3. Medical health risk guard (~has_health_risk) blocks win_stake_active.
+        """
+        for fname in ["run_predictions.py", "get_detailed_picks.py", "app.py"]:
+            fpath = os.path.join(PROJECT_ROOT, fname)
+            with open(fpath, "r", encoding="utf-8") as f:
+                src = f.read()
+            self.assertIn("p24_cands = [(p2, 2)]", src, f"{fname} must restrict shifted win stakes to Pick 2 only")
+            self.assertIn("<= 13.0", src, f"{fname} must cap pure win stakes at <= 13.0 odds")
+            self.assertIn("has_health_risk", src, f"{fname} must enforce medical health risk guard on win stakes")
 
 
 if __name__ == '__main__':
