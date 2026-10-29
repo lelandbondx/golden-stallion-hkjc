@@ -1,0 +1,3152 @@
+[
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "HAPPYDEARHAPPYDEER",
+    "horse_code": "J002",
+    "last400": 23.46,
+    "sectionals": [
+      28.34,
+      23.14,
+      23.54,
+      23.46
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "SUPERB GUY",
+    "horse_code": "K323",
+    "last400": 23.84,
+    "sectionals": [
+      28.7,
+      22.94,
+      23.34,
+      23.84
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "HAPPY ACTION",
+    "horse_code": "K399",
+    "last400": 24,
+    "sectionals": [
+      28.3,
+      23.14,
+      23.5,
+      24
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "GO GO GO",
+    "horse_code": "H196",
+    "last400": 23.57,
+    "sectionals": [
+      28.82,
+      23.1,
+      23.46,
+      23.57
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "HAILTOTHEVICTORS",
+    "horse_code": "J508",
+    "last400": 23.54,
+    "sectionals": [
+      29.14,
+      23.1,
+      23.22,
+      23.54
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "YEE CHEONG RAIDER",
+    "horse_code": "J176",
+    "last400": 23.85,
+    "sectionals": [
+      29.3,
+      22.98,
+      23.14,
+      23.85
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "MY FLYING ANGEL",
+    "horse_code": "J174",
+    "last400": 24.21,
+    "sectionals": [
+      28.54,
+      23.18,
+      23.5,
+      24.21
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "TURF PHOENIX",
+    "horse_code": "J294",
+    "last400": 24.33,
+    "sectionals": [
+      28.54,
+      23.06,
+      23.62,
+      24.33
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "TEAM HAPPY",
+    "horse_code": "J218",
+    "last400": 24.96,
+    "sectionals": [
+      28.1,
+      23.06,
+      23.62,
+      24.96
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "LUCKY SECRET",
+    "horse_code": "L073",
+    "last400": 24.49,
+    "sectionals": [
+      29.06,
+      23.1,
+      23.42,
+      24.49
+    ]
+  },
+  {
+    "race": 1,
+    "date": "28/10/2026",
+    "horse_name": "KOLACHI",
+    "horse_code": "J395",
+    "last400": 25.32,
+    "sectionals": [
+      28.34,
+      22.9,
+      23.74,
+      25.32
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "SPEEDY TRIDENT",
+    "horse_code": "K230",
+    "last400": 23.5,
+    "sectionals": [
+      28.49,
+      23.08,
+      23.93,
+      23.5
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "KASA PAPA",
+    "horse_code": "G312",
+    "last400": 23.75,
+    "sectionals": [
+      28.37,
+      23.16,
+      23.93,
+      23.75
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "MAZING GRACE",
+    "horse_code": "K166",
+    "last400": 23.63,
+    "sectionals": [
+      27.97,
+      23.28,
+      24.37,
+      23.63
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "VIVA TASTE",
+    "horse_code": "K415",
+    "last400": 24.06,
+    "sectionals": [
+      28.25,
+      23.12,
+      23.93,
+      24.06
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "CELESTIAL HARMONY",
+    "horse_code": "K059",
+    "last400": 23.85,
+    "sectionals": [
+      28.09,
+      23.32,
+      24.25,
+      23.85
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "WINNING DIAMOND",
+    "horse_code": "K216",
+    "last400": 24.11,
+    "sectionals": [
+      27.81,
+      23.4,
+      24.21,
+      24.11
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "ORIENTAL SURPRISE",
+    "horse_code": "K028",
+    "last400": 24.39,
+    "sectionals": [
+      27.73,
+      23.2,
+      24.21,
+      24.39
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "HE WAS ME",
+    "horse_code": "J535",
+    "last400": 25.85,
+    "sectionals": [
+      27.49,
+      23.16,
+      24.37,
+      25.85
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "FLYING SNIPER",
+    "horse_code": "L270",
+    "last400": 25.55,
+    "sectionals": [
+      28.17,
+      23,
+      24.37,
+      25.55
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "THE CONCENTRATION",
+    "horse_code": "H465",
+    "last400": 26.46,
+    "sectionals": [
+      27.49,
+      23.24,
+      24.45,
+      26.46
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "DIAMOND SPARKLE",
+    "horse_code": "L182",
+    "last400": 26.72,
+    "sectionals": [
+      27.57,
+      23.36,
+      24.33,
+      26.72
+    ]
+  },
+  {
+    "race": 2,
+    "date": "28/10/2026",
+    "horse_name": "FLASH STAR",
+    "horse_code": "K431",
+    "last400": 26.95,
+    "sectionals": [
+      27.73,
+      23.28,
+      24.41,
+      26.95
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "MACANESE MASTER",
+    "horse_code": "J532",
+    "last400": 23.16,
+    "sectionals": [
+      23.55,
+      22.28,
+      23.16
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "COLOURFUL WINNER",
+    "horse_code": "J312",
+    "last400": 23.06,
+    "sectionals": [
+      23.71,
+      22.28,
+      23.06
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "SWAGGER BRO",
+    "horse_code": "K089",
+    "last400": 22.99,
+    "sectionals": [
+      24.07,
+      22.12,
+      22.99
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "CONRAD THE GREAT",
+    "horse_code": "K217",
+    "last400": 23.87,
+    "sectionals": [
+      23.47,
+      21.92,
+      23.87
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "BULLISH PRIDE",
+    "horse_code": "K181",
+    "last400": 22.83,
+    "sectionals": [
+      24.07,
+      22.4,
+      22.83
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "VIEW ALL THINGS",
+    "horse_code": "K101",
+    "last400": 23.07,
+    "sectionals": [
+      23.87,
+      22.4,
+      23.07
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "VIVA CHALEUR",
+    "horse_code": "G368",
+    "last400": 23.46,
+    "sectionals": [
+      23.67,
+      22.24,
+      23.46
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "SO MY FOLKS",
+    "horse_code": "K456",
+    "last400": 23.83,
+    "sectionals": [
+      23.47,
+      22.08,
+      23.83
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "QUICK MONEY",
+    "horse_code": "K377",
+    "last400": 23.5,
+    "sectionals": [
+      23.91,
+      22,
+      23.5
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "ROBOT KNIGHT",
+    "horse_code": "H464",
+    "last400": 23.47,
+    "sectionals": [
+      23.87,
+      22.36,
+      23.47
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "DAILY TROPHY",
+    "horse_code": "H283",
+    "last400": 23.62,
+    "sectionals": [
+      23.95,
+      22.32,
+      23.62
+    ]
+  },
+  {
+    "race": 3,
+    "date": "28/10/2026",
+    "horse_name": "TURBO JEFFERIES",
+    "horse_code": "L328",
+    "last400": 25.12,
+    "sectionals": [
+      23.59,
+      22.16,
+      25.12
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "S CHOICE",
+    "horse_code": "J146",
+    "last400": 23.69,
+    "sectionals": [
+      23.23,
+      23.38,
+      23.8,
+      23.69
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "S",
+    "horse_code": "K524",
+    "last400": 23.6,
+    "sectionals": [
+      23.27,
+      23.46,
+      23.8,
+      23.6
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "STORM RUNNER",
+    "horse_code": "J452",
+    "last400": 23.91,
+    "sectionals": [
+      22.95,
+      23.3,
+      23.76,
+      23.91
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "YOUNG BRAVO",
+    "horse_code": "K178",
+    "last400": 23.35,
+    "sectionals": [
+      23.27,
+      23.46,
+      23.48,
+      23.35
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "BULL ATTITUDE",
+    "horse_code": "K305",
+    "last400": 23.39,
+    "sectionals": [
+      23.43,
+      23.14,
+      23.76,
+      23.39
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "TURIN MASCOT",
+    "horse_code": "H165",
+    "last400": 23.56,
+    "sectionals": [
+      23.35,
+      23.42,
+      23.8,
+      23.56
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "PRECISION HOPE",
+    "horse_code": "L047",
+    "last400": 23.68,
+    "sectionals": [
+      23.15,
+      23.42,
+      23.64,
+      23.68
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "NOISY BOY",
+    "horse_code": "J536",
+    "last400": 24.21,
+    "sectionals": [
+      23.23,
+      23.1,
+      23.6,
+      24.21
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "SUPREME MASTERMIND",
+    "horse_code": "K387",
+    "last400": 23.64,
+    "sectionals": [
+      23.39,
+      23.34,
+      23.84,
+      23.64
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "LEAPING STAR",
+    "horse_code": "L189",
+    "last400": 23.78,
+    "sectionals": [
+      23.59,
+      23.14,
+      23.8,
+      23.78
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "FIREFOOT",
+    "horse_code": "J183",
+    "last400": 24.33,
+    "sectionals": [
+      23.39,
+      23.42,
+      23.84,
+      24.33
+    ]
+  },
+  {
+    "race": 4,
+    "date": "28/10/2026",
+    "horse_name": "RAGGA BOMB",
+    "horse_code": "K162",
+    "last400": 25.36,
+    "sectionals": [
+      23.11,
+      23.46,
+      24.04,
+      25.36
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "CENTRAL BANK",
+    "horse_code": "L222",
+    "last400": 22.79,
+    "sectionals": [
+      23.49,
+      22.12,
+      22.79
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "RAGING WARRIOR",
+    "horse_code": "L401",
+    "last400": 22.73,
+    "sectionals": [
+      24.05,
+      21.88,
+      22.73
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "ARMOUR WAR EAGLE",
+    "horse_code": "J039",
+    "last400": 22.5,
+    "sectionals": [
+      24.17,
+      22,
+      22.5
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "GOOD LUCK HAPPY",
+    "horse_code": "K301",
+    "last400": 22.62,
+    "sectionals": [
+      23.93,
+      22.2,
+      22.62
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "LEADING DRAGON",
+    "horse_code": "L083",
+    "last400": 23.31,
+    "sectionals": [
+      23.53,
+      22,
+      23.31
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "FLOWING RICHES",
+    "horse_code": "K293",
+    "last400": 22.48,
+    "sectionals": [
+      23.93,
+      22.44,
+      22.48
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "GOOD POWER",
+    "horse_code": "L228",
+    "last400": 23.1,
+    "sectionals": [
+      23.61,
+      22.36,
+      23.1
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "STARRY SHOW",
+    "horse_code": "L074",
+    "last400": 23.48,
+    "sectionals": [
+      23.73,
+      22.08,
+      23.48
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "ENDURANCE EXPRESS",
+    "horse_code": "L397",
+    "last400": 22.91,
+    "sectionals": [
+      23.89,
+      22.56,
+      22.91
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "BETTER AND BETTER",
+    "horse_code": "K277",
+    "last400": 24.13,
+    "sectionals": [
+      23.65,
+      22.04,
+      24.13
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "EVERSTAR",
+    "horse_code": "K264",
+    "last400": 23.98,
+    "sectionals": [
+      24.29,
+      22,
+      23.98
+    ]
+  },
+  {
+    "race": 5,
+    "date": "28/10/2026",
+    "horse_name": "VIEW OF COSMOS",
+    "horse_code": "L060",
+    "last400": 24.43,
+    "sectionals": [
+      23.73,
+      22.56,
+      24.43
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "HAPPY UNIVERSE",
+    "horse_code": "J533",
+    "last400": 23.18,
+    "sectionals": [
+      28.83,
+      23.28,
+      23.16,
+      23.18
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "HERO RISING",
+    "horse_code": "L294",
+    "last400": 23.56,
+    "sectionals": [
+      28.15,
+      23.44,
+      23.32,
+      23.56
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "JOLTIN",
+    "horse_code": "L186",
+    "last400": 22.92,
+    "sectionals": [
+      29.11,
+      23.24,
+      23.28,
+      22.92
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "FAMILY KNIGHT",
+    "horse_code": "K490",
+    "last400": 23,
+    "sectionals": [
+      28.67,
+      23.48,
+      23.44,
+      23
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "PERFECT TEAM",
+    "horse_code": "H120",
+    "last400": 23.45,
+    "sectionals": [
+      28.95,
+      23.24,
+      23.12,
+      23.45
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "HAPPY TERCENTENARY",
+    "horse_code": "L185",
+    "last400": 22.87,
+    "sectionals": [
+      29.35,
+      23.16,
+      23.4,
+      22.87
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "CHILL KAKA",
+    "horse_code": "J486",
+    "last400": 23.1,
+    "sectionals": [
+      29.59,
+      23.04,
+      23.16,
+      23.1
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "NIGHT PUROSANGUE",
+    "horse_code": "J510",
+    "last400": 23.98,
+    "sectionals": [
+      28.27,
+      23.4,
+      23.28,
+      23.98
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "MASSIVE GLORY",
+    "horse_code": "K205",
+    "last400": 23.27,
+    "sectionals": [
+      28.95,
+      23.32,
+      23.52,
+      23.27
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "ANOTHER WORLD",
+    "horse_code": "K005",
+    "last400": 23.31,
+    "sectionals": [
+      29.43,
+      23.28,
+      23.12,
+      23.31
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "KYOTO SPRING",
+    "horse_code": "L190",
+    "last400": 23.59,
+    "sectionals": [
+      29.19,
+      23.28,
+      23.12,
+      23.59
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "CALIFORNIA STAR",
+    "horse_code": "J123",
+    "last400": 23.62,
+    "sectionals": [
+      29.31,
+      23.24,
+      23.32,
+      23.62
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "EXCELLENCE VALUE",
+    "horse_code": "K093",
+    "last400": 24.38,
+    "sectionals": [
+      28.55,
+      23.28,
+      23.4,
+      24.38
+    ]
+  },
+  {
+    "race": 6,
+    "date": "28/10/2026",
+    "horse_name": "LUCKY BID",
+    "horse_code": "L274",
+    "last400": 24.35,
+    "sectionals": [
+      28.47,
+      23.44,
+      23.6,
+      24.35
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "GIANT LEAP",
+    "horse_code": "J143",
+    "last400": 22.57,
+    "sectionals": [
+      23.66,
+      22.18,
+      22.57
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "MEGA CAPTAIN",
+    "horse_code": "L287",
+    "last400": 22.31,
+    "sectionals": [
+      24.3,
+      21.82,
+      22.31
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "HONEST WITNESS",
+    "horse_code": "K283",
+    "last400": 23.14,
+    "sectionals": [
+      23.3,
+      22.06,
+      23.14
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "CALIFORNIA BAY",
+    "horse_code": "K364",
+    "last400": 22.57,
+    "sectionals": [
+      24.46,
+      21.7,
+      22.57
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "LOVING VIBES",
+    "horse_code": "J359",
+    "last400": 22.74,
+    "sectionals": [
+      24.06,
+      21.98,
+      22.74
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "CALL ME SUCCESS",
+    "horse_code": "K462",
+    "last400": 22.89,
+    "sectionals": [
+      23.78,
+      22.14,
+      22.89
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "GOOD CHAP",
+    "horse_code": "J499",
+    "last400": 22.74,
+    "sectionals": [
+      24.42,
+      21.98,
+      22.74
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "ONE MAN SHOW",
+    "horse_code": "K409",
+    "last400": 23.46,
+    "sectionals": [
+      23.42,
+      22.26,
+      23.46
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "RISING FROM ASHES",
+    "horse_code": "G209",
+    "last400": 23.57,
+    "sectionals": [
+      24.3,
+      22.34,
+      23.57
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "TROPHY RAIDER",
+    "horse_code": "M020",
+    "last400": 23.96,
+    "sectionals": [
+      24.14,
+      22.54,
+      23.96
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "WOLF COMING",
+    "horse_code": "K353",
+    "last400": 25.32,
+    "sectionals": [
+      23.94,
+      22.78,
+      25.32
+    ]
+  },
+  {
+    "race": 7,
+    "date": "28/10/2026",
+    "horse_name": "NOBLE DELUXE",
+    "horse_code": "K052",
+    "last400": 26.32,
+    "sectionals": [
+      23.54,
+      22.26,
+      26.32
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "BUSTLING CITY",
+    "horse_code": "L210",
+    "last400": 23.2,
+    "sectionals": [
+      22.77,
+      21.6,
+      23.2
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "LUCY IN THE SKY",
+    "horse_code": "J275",
+    "last400": 23.64,
+    "sectionals": [
+      22.85,
+      21.6,
+      23.64
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "SKY CAP",
+    "horse_code": "K125",
+    "last400": 23.72,
+    "sectionals": [
+      23.09,
+      21.6,
+      23.72
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "BLAZING WIND",
+    "horse_code": "J157",
+    "last400": 23.49,
+    "sectionals": [
+      23.09,
+      21.84,
+      23.49
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "STRAIGHT TO GLORY",
+    "horse_code": "K340",
+    "last400": 23.25,
+    "sectionals": [
+      23.29,
+      21.92,
+      23.25
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "NOTTHESILLYONE",
+    "horse_code": "J383",
+    "last400": 23.98,
+    "sectionals": [
+      22.93,
+      21.8,
+      23.98
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "ZHUANG YUAN GLORY",
+    "horse_code": "L546",
+    "last400": 23.78,
+    "sectionals": [
+      23.49,
+      21.48,
+      23.78
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "SELF IMPROVEMENT",
+    "horse_code": "H337",
+    "last400": 23.41,
+    "sectionals": [
+      23.77,
+      21.72,
+      23.41
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "MUST GO",
+    "horse_code": "J133",
+    "last400": 23.24,
+    "sectionals": [
+      24.09,
+      21.64,
+      23.24
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "CAUSEWAY KING",
+    "horse_code": "L196",
+    "last400": 24.33,
+    "sectionals": [
+      22.89,
+      21.92,
+      24.33
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "HOTT SHOTT",
+    "horse_code": "L147",
+    "last400": 23.79,
+    "sectionals": [
+      23.57,
+      21.8,
+      23.79
+    ]
+  },
+  {
+    "race": 8,
+    "date": "28/10/2026",
+    "horse_name": "RED SEA",
+    "horse_code": "L195",
+    "last400": 25.72,
+    "sectionals": [
+      23.09,
+      21.88,
+      25.72
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "LUCKY SAM GOR",
+    "horse_code": "K114",
+    "last400": 22.81,
+    "sectionals": [
+      28.58,
+      22.99,
+      23.13,
+      22.81
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "PRAY FOR JUSTICE",
+    "horse_code": "K473",
+    "last400": 23.4,
+    "sectionals": [
+      27.78,
+      22.91,
+      23.45,
+      23.4
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "TOP DRAGON",
+    "horse_code": "J481",
+    "last400": 23.01,
+    "sectionals": [
+      28.1,
+      22.99,
+      23.49,
+      23.01
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "YOUNG ACHIEVER",
+    "horse_code": "J291",
+    "last400": 22.98,
+    "sectionals": [
+      28.78,
+      23.03,
+      23.09,
+      22.98
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "SKY VINO",
+    "horse_code": "K054",
+    "last400": 22.82,
+    "sectionals": [
+      29.06,
+      22.83,
+      23.17,
+      22.82
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "MIGHTY STEED",
+    "horse_code": "J384",
+    "last400": 23.51,
+    "sectionals": [
+      28.02,
+      22.87,
+      23.49,
+      23.51
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "NEZHA",
+    "horse_code": "K494",
+    "last400": 23.09,
+    "sectionals": [
+      28.54,
+      22.83,
+      23.45,
+      23.09
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "ALL ROUND WINNER",
+    "horse_code": "K382",
+    "last400": 23.63,
+    "sectionals": [
+      28.26,
+      22.67,
+      23.37,
+      23.63
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "GORGEOUS WIN",
+    "horse_code": "J008",
+    "last400": 23.59,
+    "sectionals": [
+      27.82,
+      23.07,
+      23.49,
+      23.59
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "SUPREME AGILITY",
+    "horse_code": "J267",
+    "last400": 23.28,
+    "sectionals": [
+      28.9,
+      22.75,
+      23.21,
+      23.28
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "DRAGON AIR FORCE",
+    "horse_code": "J279",
+    "last400": 23.54,
+    "sectionals": [
+      28.5,
+      22.83,
+      23.49,
+      23.54
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "THUNDER BLAZE",
+    "horse_code": "L188",
+    "last400": 24.77,
+    "sectionals": [
+      27.5,
+      22.87,
+      23.73,
+      24.77
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "UNITED HUA STEED",
+    "horse_code": "L505",
+    "last400": 24.04,
+    "sectionals": [
+      28.74,
+      22.95,
+      23.41,
+      24.04
+    ]
+  },
+  {
+    "race": 9,
+    "date": "28/10/2026",
+    "horse_name": "SOVEREIGN FUND",
+    "horse_code": "J402",
+    "last400": 24.62,
+    "sectionals": [
+      28.22,
+      22.99,
+      23.49,
+      24.62
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "HAPPY PEGASUS",
+    "horse_code": "M046",
+    "last400": 22.69,
+    "sectionals": [
+      23.57,
+      22.15,
+      22.69
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "SAINT JOSE PATCH",
+    "horse_code": "L509",
+    "last400": 23.28,
+    "sectionals": [
+      23.29,
+      22.15,
+      23.28
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "ALMIGHTY WARRIOR",
+    "horse_code": "L245",
+    "last400": 23.07,
+    "sectionals": [
+      23.89,
+      21.99,
+      23.07
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "SUNNY BOSS",
+    "horse_code": "L351",
+    "last400": 22.96,
+    "sectionals": [
+      24.37,
+      21.71,
+      22.96
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "I AM THE WALRUS",
+    "horse_code": "L457",
+    "last400": 24.05,
+    "sectionals": [
+      23.13,
+      21.87,
+      24.05
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "CHANCHENG SPARKLE",
+    "horse_code": "L051",
+    "last400": 23.15,
+    "sectionals": [
+      24.17,
+      21.79,
+      23.15
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "AGENT",
+    "horse_code": "L444",
+    "last400": 22.94,
+    "sectionals": [
+      24.13,
+      22.07,
+      22.94
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "JEDI SPURS",
+    "horse_code": "L441",
+    "last400": 25.48,
+    "sectionals": [
+      22.77,
+      21.63,
+      25.48
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "GREEN SUMMIT",
+    "horse_code": "L250",
+    "last400": 23.34,
+    "sectionals": [
+      24.45,
+      22.15,
+      23.34
+    ]
+  },
+  {
+    "race": 1,
+    "date": "25/10/2026",
+    "horse_name": "ULTRA BOLT",
+    "horse_code": "L387",
+    "last400": 24.32,
+    "sectionals": [
+      23.81,
+      22.07,
+      24.32
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "TYCOON EXPRESS",
+    "horse_code": "K376",
+    "last400": 21.31,
+    "sectionals": [
+      21.66,
+      22.64,
+      22.85,
+      21.31
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "INCANTO STAR",
+    "horse_code": "K343",
+    "last400": 21.5,
+    "sectionals": [
+      21.42,
+      22.6,
+      23.44,
+      21.5
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "DRACO",
+    "horse_code": "J115",
+    "last400": 21.64,
+    "sectionals": [
+      21.14,
+      22.76,
+      23.7,
+      21.64
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "MANYTHANKS FOREVER",
+    "horse_code": "J065",
+    "last400": 21.73,
+    "sectionals": [
+      21.06,
+      22.88,
+      24.23,
+      21.73
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "SUPREME WINNER",
+    "horse_code": "J255",
+    "last400": 21.89,
+    "sectionals": [
+      21.42,
+      22.8,
+      23.91,
+      21.89
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "GOR GOR",
+    "horse_code": "K104",
+    "last400": 21.91,
+    "sectionals": [
+      21.34,
+      22.76,
+      24.17,
+      21.91
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "MULTISUPERSTAR",
+    "horse_code": "L163",
+    "last400": 22.02,
+    "sectionals": [
+      21.38,
+      22.84,
+      24.24,
+      22.02
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "ONLY U",
+    "horse_code": "J037",
+    "last400": 22.11,
+    "sectionals": [
+      21.7,
+      22.68,
+      23.89,
+      22.11
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "PRESTIGE SUPERIOR",
+    "horse_code": "K383",
+    "last400": 22.13,
+    "sectionals": [
+      21.7,
+      22.76,
+      23.63,
+      22.13
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "VIGOR ELLEEGANT",
+    "horse_code": "J375",
+    "last400": 22.15,
+    "sectionals": [
+      21.14,
+      22.88,
+      24.45,
+      22.15
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "BRIGHT INHERITANCE",
+    "horse_code": "J215",
+    "last400": 22.22,
+    "sectionals": [
+      21.74,
+      22.6,
+      23.56,
+      22.22
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "THE CONCENTRATION",
+    "horse_code": "H465",
+    "last400": 22.48,
+    "sectionals": [
+      21.14,
+      22.8,
+      24.94,
+      22.48
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "APOLAR FIGHTER",
+    "horse_code": "J169",
+    "last400": 22.71,
+    "sectionals": [
+      21.5,
+      22.52,
+      24.41,
+      22.71
+    ]
+  },
+  {
+    "race": 2,
+    "date": "25/10/2026",
+    "horse_name": "GROOVY FEELING",
+    "horse_code": "J515",
+    "last400": 22.73,
+    "sectionals": [
+      21.62,
+      22.8,
+      24.39,
+      22.73
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "SMART FAT CAT",
+    "horse_code": "K280",
+    "last400": 23.57,
+    "sectionals": [
+      25.06,
+      22.31,
+      22.71,
+      23.57
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "KINGMAN REEF",
+    "horse_code": "L446",
+    "last400": 23.26,
+    "sectionals": [
+      25.38,
+      22.23,
+      22.87,
+      23.26
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "POLAR PATCH",
+    "horse_code": "L211",
+    "last400": 23.91,
+    "sectionals": [
+      24.42,
+      22.39,
+      23.35,
+      23.91
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "LOVELY MILES",
+    "horse_code": "L165",
+    "last400": 23.5,
+    "sectionals": [
+      25.46,
+      22.23,
+      22.99,
+      23.5
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "CAVA PIONEER",
+    "horse_code": "L359",
+    "last400": 23.84,
+    "sectionals": [
+      24.86,
+      22.31,
+      23.19,
+      23.84
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "JOY TOGETHER",
+    "horse_code": "L227",
+    "last400": 23.59,
+    "sectionals": [
+      25.74,
+      22.23,
+      22.71,
+      23.59
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "ABSOLUTE AWAKENED",
+    "horse_code": "K039",
+    "last400": 23.88,
+    "sectionals": [
+      25.02,
+      22.19,
+      23.23,
+      23.88
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "AMAZING DUCK",
+    "horse_code": "H392",
+    "last400": 24.53,
+    "sectionals": [
+      24.02,
+      22.35,
+      23.55,
+      24.53
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "GOOD LUCK BABE",
+    "horse_code": "K016",
+    "last400": 24.64,
+    "sectionals": [
+      24.1,
+      22.39,
+      23.51,
+      24.64
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "MORGAN SUCCESS",
+    "horse_code": "K203",
+    "last400": 24.29,
+    "sectionals": [
+      24.42,
+      22.47,
+      23.47,
+      24.29
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "CIRCUIT FIERY",
+    "horse_code": "H475",
+    "last400": 24.75,
+    "sectionals": [
+      23.94,
+      22.19,
+      23.83,
+      24.75
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "SOO KOO",
+    "horse_code": "L008",
+    "last400": 24.99,
+    "sectionals": [
+      24.22,
+      22.43,
+      23.63,
+      24.99
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "FLYING AMANI",
+    "horse_code": "K152",
+    "last400": 24.44,
+    "sectionals": [
+      25.9,
+      22.31,
+      22.91,
+      24.44
+    ]
+  },
+  {
+    "race": 3,
+    "date": "25/10/2026",
+    "horse_name": "PRESIDENT PEGASUS",
+    "horse_code": "L241",
+    "last400": 24.66,
+    "sectionals": [
+      26.06,
+      22.31,
+      22.67,
+      24.66
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "POCKETING",
+    "horse_code": "L396",
+    "last400": 23.21,
+    "sectionals": [
+      26.51,
+      24.82,
+      22.81,
+      23.71,
+      23.21
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "BIG RETURN",
+    "horse_code": "K192",
+    "last400": 23.16,
+    "sectionals": [
+      26.59,
+      24.74,
+      22.97,
+      23.67,
+      23.16
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "SERAPH GABRIEL",
+    "horse_code": "L108",
+    "last400": 23.58,
+    "sectionals": [
+      25.99,
+      24.7,
+      23.25,
+      23.71,
+      23.58
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "KA YING GENERATION",
+    "horse_code": "J075",
+    "last400": 22.89,
+    "sectionals": [
+      26.87,
+      25.02,
+      22.65,
+      23.83,
+      22.89
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "LO RIDER",
+    "horse_code": "K161",
+    "last400": 23.61,
+    "sectionals": [
+      26.23,
+      24.66,
+      22.85,
+      23.95,
+      23.61
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "SUPER GOLDENDRAGON",
+    "horse_code": "K458",
+    "last400": 23.86,
+    "sectionals": [
+      26.63,
+      23.94,
+      23.13,
+      23.95,
+      23.86
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "CALL ME MAGNIFIQUE",
+    "horse_code": "L339",
+    "last400": 24.04,
+    "sectionals": [
+      26.15,
+      24.46,
+      22.93,
+      23.95,
+      24.04
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "MIGHTY STRENGTH",
+    "horse_code": "H450",
+    "last400": 23.51,
+    "sectionals": [
+      26.91,
+      24.7,
+      22.85,
+      23.63,
+      23.51
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "THE AUSPICIOUS",
+    "horse_code": "K004",
+    "last400": 24.59,
+    "sectionals": [
+      26.39,
+      24.54,
+      23.17,
+      23.87,
+      24.59
+    ]
+  },
+  {
+    "race": 4,
+    "date": "25/10/2026",
+    "horse_name": "WITHOUT COMPARE",
+    "horse_code": "L151",
+    "last400": 26.4,
+    "sectionals": [
+      25.79,
+      24.74,
+      22.89,
+      24.15,
+      26.4
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "SPEEDY POWER",
+    "horse_code": "L362",
+    "last400": 22.21,
+    "sectionals": [
+      24.25,
+      22.36,
+      22.21
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "THOUSAND SPIRIT",
+    "horse_code": "K365",
+    "last400": 22.97,
+    "sectionals": [
+      23.61,
+      22.4,
+      22.97
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "NOBLE PATCH",
+    "horse_code": "L282",
+    "last400": 22.17,
+    "sectionals": [
+      24.77,
+      22.08,
+      22.17
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "DOUBLE ALPHA",
+    "horse_code": "L291",
+    "last400": 22.82,
+    "sectionals": [
+      23.85,
+      22.4,
+      22.82
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "HANDSOME HERO",
+    "horse_code": "L346",
+    "last400": 22.7,
+    "sectionals": [
+      24.09,
+      22.36,
+      22.7
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "COPARTNER A I",
+    "horse_code": "L280",
+    "last400": 23.01,
+    "sectionals": [
+      23.93,
+      22.36,
+      23.01
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "LIGHT YEARS GLORY",
+    "horse_code": "K204",
+    "last400": 22.7,
+    "sectionals": [
+      24.53,
+      22.08,
+      22.7
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "CAVAMAZING",
+    "horse_code": "L344",
+    "last400": 22.85,
+    "sectionals": [
+      24.21,
+      22.28,
+      22.85
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "YEE CHEONG GLORY",
+    "horse_code": "K074",
+    "last400": 22.6,
+    "sectionals": [
+      24.45,
+      22.36,
+      22.6
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "PRIVATE WEALTH",
+    "horse_code": "L177",
+    "last400": 22.97,
+    "sectionals": [
+      24.13,
+      22.36,
+      22.97
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "GLORY PATCH",
+    "horse_code": "L534",
+    "last400": 22.85,
+    "sectionals": [
+      24.33,
+      22.32,
+      22.85
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "E HO HO",
+    "horse_code": "L119",
+    "last400": 23.33,
+    "sectionals": [
+      23.89,
+      22.32,
+      23.33
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "RIDING HIGH",
+    "horse_code": "J403",
+    "last400": 23.81,
+    "sectionals": [
+      23.69,
+      22.4,
+      23.81
+    ]
+  },
+  {
+    "race": 5,
+    "date": "25/10/2026",
+    "horse_name": "GENIUS MASTERMIND",
+    "horse_code": "L217",
+    "last400": 23.78,
+    "sectionals": [
+      24.17,
+      22.32,
+      23.78
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "KA YING LIGHTNING",
+    "horse_code": "L137",
+    "last400": 22.34,
+    "sectionals": [
+      20.72,
+      22.34
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "YEE CHEONG BRIGHT",
+    "horse_code": "M068",
+    "last400": 22.08,
+    "sectionals": [
+      20.92,
+      22.08
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "FULL METAL",
+    "horse_code": "L544",
+    "last400": 22.16,
+    "sectionals": [
+      20.88,
+      22.16
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "LIGHTNESS OF MUSIC",
+    "horse_code": "K436",
+    "last400": 22.28,
+    "sectionals": [
+      20.92,
+      22.28
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "JIN SHENG",
+    "horse_code": "L399",
+    "last400": 22.95,
+    "sectionals": [
+      20.76,
+      22.95
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "FAST RESPONDER",
+    "horse_code": "J295",
+    "last400": 22.78,
+    "sectionals": [
+      20.84,
+      22.78
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "KING OF THE SKY",
+    "horse_code": "L459",
+    "last400": 22.12,
+    "sectionals": [
+      21.08,
+      22.12
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "DEVAS TWELVE",
+    "horse_code": "H435",
+    "last400": 23.01,
+    "sectionals": [
+      20.96,
+      23.01
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "VULCANUS",
+    "horse_code": "J150",
+    "last400": 22.51,
+    "sectionals": [
+      21.04,
+      22.51
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "CASA OF HONOR",
+    "horse_code": "K310",
+    "last400": 23.19,
+    "sectionals": [
+      20.72,
+      23.19
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "LAHORE",
+    "horse_code": "K043",
+    "last400": 23.23,
+    "sectionals": [
+      20.92,
+      23.23
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "TURBO GRANNY",
+    "horse_code": "M036",
+    "last400": 22.14,
+    "sectionals": [
+      21.2,
+      22.14
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "DYNAMIC BROSE",
+    "horse_code": "L470",
+    "last400": 22.75,
+    "sectionals": [
+      21.12,
+      22.75
+    ]
+  },
+  {
+    "race": 6,
+    "date": "25/10/2026",
+    "horse_name": "CALIFORNIA COMMAND",
+    "horse_code": "L430",
+    "last400": 22.97,
+    "sectionals": [
+      21.2,
+      22.97
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "RAGING BLIZZARD",
+    "horse_code": "H368",
+    "last400": 22.02,
+    "sectionals": [
+      24.18,
+      21.51,
+      22.02
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "KA YING ATTACK",
+    "horse_code": "J391",
+    "last400": 22.53,
+    "sectionals": [
+      23.7,
+      21.51,
+      22.53
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "CRIMSON FLASH",
+    "horse_code": "K173",
+    "last400": 21.97,
+    "sectionals": [
+      24.02,
+      21.79,
+      21.97
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "AERIS NOVA",
+    "horse_code": "J534",
+    "last400": 22.01,
+    "sectionals": [
+      24.22,
+      21.75,
+      22.01
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "COPARTNER PRANCE",
+    "horse_code": "H408",
+    "last400": 22.58,
+    "sectionals": [
+      23.86,
+      21.59,
+      22.58
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "SING DRAGON",
+    "horse_code": "J141",
+    "last400": 22.64,
+    "sectionals": [
+      23.98,
+      21.55,
+      22.64
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "COLOURFUL KING",
+    "horse_code": "K227",
+    "last400": 22.43,
+    "sectionals": [
+      24.3,
+      21.51,
+      22.43
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "TOMODACHI KOKOROE",
+    "horse_code": "H303",
+    "last400": 23.44,
+    "sectionals": [
+      24.14,
+      21.75,
+      23.44
+    ]
+  },
+  {
+    "race": 7,
+    "date": "25/10/2026",
+    "horse_name": "BEAUTY WAVES",
+    "horse_code": "H294",
+    "last400": 24.35,
+    "sectionals": [
+      23.82,
+      21.87,
+      24.35
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "STORM MIRROR",
+    "horse_code": "L179",
+    "last400": 21.32,
+    "sectionals": [
+      22.01,
+      23.28,
+      22.5,
+      21.32
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "PRESTIGE COME",
+    "horse_code": "L261",
+    "last400": 21.76,
+    "sectionals": [
+      21.93,
+      23.04,
+      22.82,
+      21.76
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "MR COOL",
+    "horse_code": "K184",
+    "last400": 21.84,
+    "sectionals": [
+      22.01,
+      23.08,
+      22.66,
+      21.84
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "TANG HEART",
+    "horse_code": "L373",
+    "last400": 22.05,
+    "sectionals": [
+      22.33,
+      23.12,
+      22.27,
+      22.05
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "FLASH CURRENT",
+    "horse_code": "J500",
+    "last400": 22.05,
+    "sectionals": [
+      22.25,
+      23.12,
+      22.83,
+      22.05
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "OLDTOWN",
+    "horse_code": "K105",
+    "last400": 22.12,
+    "sectionals": [
+      22.33,
+      23.28,
+      22.54,
+      22.12
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "GENIUS BABY",
+    "horse_code": "K132",
+    "last400": 22.15,
+    "sectionals": [
+      22.29,
+      22.92,
+      22.61,
+      22.15
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "S HAVE FUN",
+    "horse_code": "L118",
+    "last400": 22.23,
+    "sectionals": [
+      22.37,
+      23.16,
+      22.49,
+      22.23
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "NATURAL HIGH",
+    "horse_code": "J365",
+    "last400": 22.29,
+    "sectionals": [
+      22.13,
+      23.28,
+      23.31,
+      22.29
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "KING ZOOM",
+    "horse_code": "L279",
+    "last400": 22.3,
+    "sectionals": [
+      22.29,
+      23.24,
+      22.64,
+      22.3
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "ROAD TO GLORY",
+    "horse_code": "L415",
+    "last400": 22.31,
+    "sectionals": [
+      22.25,
+      23.2,
+      22.97,
+      22.31
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "TURF QUEST",
+    "horse_code": "L146",
+    "last400": 22.4,
+    "sectionals": [
+      22.05,
+      23.36,
+      23.22,
+      22.4
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "GRAND PATCH",
+    "horse_code": "L293",
+    "last400": 22.52,
+    "sectionals": [
+      21.93,
+      23.12,
+      23.06,
+      22.52
+    ]
+  },
+  {
+    "race": 8,
+    "date": "25/10/2026",
+    "horse_name": "ALABAMA SONG",
+    "horse_code": "K480",
+    "last400": 22.82,
+    "sectionals": [
+      22.37,
+      23,
+      22.88,
+      22.82
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "CHILL EASY",
+    "horse_code": "L148",
+    "last400": 22.45,
+    "sectionals": [
+      25.16,
+      22.81,
+      22.84,
+      22.45
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "INFINITE RESOLVE",
+    "horse_code": "K369",
+    "last400": 22.46,
+    "sectionals": [
+      25.32,
+      22.81,
+      22.88,
+      22.46
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "CALIFORNIATOTALITY",
+    "horse_code": "H418",
+    "last400": 22.53,
+    "sectionals": [
+      24.96,
+      22.97,
+      23.04,
+      22.53
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "AWESOME FLUKE",
+    "horse_code": "J050",
+    "last400": 22.89,
+    "sectionals": [
+      25,
+      22.73,
+      22.92,
+      22.89
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "BRAVEFIELD",
+    "horse_code": "L513",
+    "last400": 22.28,
+    "sectionals": [
+      25.48,
+      23.01,
+      22.88,
+      22.28
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "STUNNING PEACH",
+    "horse_code": "J301",
+    "last400": 22.59,
+    "sectionals": [
+      25.24,
+      22.97,
+      22.92,
+      22.59
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "MAX QUE",
+    "horse_code": "J514",
+    "last400": 22.73,
+    "sectionals": [
+      25.2,
+      23.05,
+      23.04,
+      22.73
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "DEFINITIVE",
+    "horse_code": "K037",
+    "last400": 23.26,
+    "sectionals": [
+      24.76,
+      22.97,
+      23.04,
+      23.26
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "ROMANTIC THOR",
+    "horse_code": "K012",
+    "last400": 23.06,
+    "sectionals": [
+      25.4,
+      23.05,
+      22.72,
+      23.06
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "SIX PACK",
+    "horse_code": "K061",
+    "last400": 23.38,
+    "sectionals": [
+      24.76,
+      23.05,
+      23.12,
+      23.38
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "REGAL GEM",
+    "horse_code": "K258",
+    "last400": 22.95,
+    "sectionals": [
+      25.68,
+      22.97,
+      22.72,
+      22.95
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "DROMBEG BANNER",
+    "horse_code": "H117",
+    "last400": 23.99,
+    "sectionals": [
+      24.6,
+      22.97,
+      23.08,
+      23.99
+    ]
+  },
+  {
+    "race": 9,
+    "date": "25/10/2026",
+    "horse_name": "ENSUED",
+    "horse_code": "H452",
+    "last400": 23.12,
+    "sectionals": [
+      25.76,
+      23.05,
+      22.76,
+      23.12
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "MEGASTAR HEART",
+    "horse_code": "L056",
+    "last400": 22.09,
+    "sectionals": [
+      23.63,
+      22.03,
+      22.09
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "PI LEGEND",
+    "horse_code": "L117",
+    "last400": 22.11,
+    "sectionals": [
+      24.19,
+      21.79,
+      22.11
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "MASK WARRIOR",
+    "horse_code": "L518",
+    "last400": 22.56,
+    "sectionals": [
+      23.91,
+      21.95,
+      22.56
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "LUCRATIVE EIGHT",
+    "horse_code": "K542",
+    "last400": 22.43,
+    "sectionals": [
+      24.19,
+      21.87,
+      22.43
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "PAKISTAN LEGACY",
+    "horse_code": "J363",
+    "last400": 22.78,
+    "sectionals": [
+      23.83,
+      21.99,
+      22.78
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "ANODE",
+    "horse_code": "K367",
+    "last400": 22.41,
+    "sectionals": [
+      24.39,
+      21.87,
+      22.41
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "BLUE LIGHTNING",
+    "horse_code": "L520",
+    "last400": 22.38,
+    "sectionals": [
+      24.71,
+      21.59,
+      22.38
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "AURIO",
+    "horse_code": "K056",
+    "last400": 22.35,
+    "sectionals": [
+      24.39,
+      21.95,
+      22.35
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "DO YOU JUST",
+    "horse_code": "L094",
+    "last400": 22.78,
+    "sectionals": [
+      23.95,
+      22.07,
+      22.78
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "SPICY STANDARD",
+    "horse_code": "J520",
+    "last400": 22.74,
+    "sectionals": [
+      24.31,
+      21.83,
+      22.74
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "ANOTHER ZONDA",
+    "horse_code": "K176",
+    "last400": 22.83,
+    "sectionals": [
+      24.39,
+      21.91,
+      22.83
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "RADIANT PATH",
+    "horse_code": "L407",
+    "last400": 22.58,
+    "sectionals": [
+      24.91,
+      21.79,
+      22.58
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "GREAT LEGEND",
+    "horse_code": "L409",
+    "last400": 22.85,
+    "sectionals": [
+      24.67,
+      21.83,
+      22.85
+    ]
+  },
+  {
+    "race": 10,
+    "date": "25/10/2026",
+    "horse_name": "METRO POWER",
+    "horse_code": "K408",
+    "last400": 24.46,
+    "sectionals": [
+      23.43,
+      22.27,
+      24.46
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "PACKING GLORY",
+    "horse_code": "L013",
+    "last400": 20.51,
+    "sectionals": [
+      21.43,
+      22.84,
+      22.81,
+      20.51
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "AEROVOLANIC",
+    "horse_code": "K400",
+    "last400": 20.56,
+    "sectionals": [
+      21.79,
+      22.8,
+      22.58,
+      20.56
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "CIRCUIT CHAMPION",
+    "horse_code": "J428",
+    "last400": 20.71,
+    "sectionals": [
+      21.71,
+      22.84,
+      22.57,
+      20.71
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "HAPPY BOSS",
+    "horse_code": "K453",
+    "last400": 20.73,
+    "sectionals": [
+      21.79,
+      22.52,
+      22.91,
+      20.73
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "POWER OF VITAM",
+    "horse_code": "L171",
+    "last400": 20.93,
+    "sectionals": [
+      21.83,
+      22.52,
+      22.39,
+      20.93
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "ALMIGHTY LIGHTNING",
+    "horse_code": "L126",
+    "last400": 20.97,
+    "sectionals": [
+      21.83,
+      22.48,
+      22.91,
+      20.97
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "ENTERPRISE TRIUMPH",
+    "horse_code": "L435",
+    "last400": 21.35,
+    "sectionals": [
+      21.83,
+      22.76,
+      23.21,
+      21.35
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "ENDEARED",
+    "horse_code": "H161",
+    "last400": 21.35,
+    "sectionals": [
+      21.87,
+      22.48,
+      23.05,
+      21.35
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "EFFORTLESS WIN",
+    "horse_code": "L310",
+    "last400": 21.69,
+    "sectionals": [
+      21.67,
+      22.88,
+      23.83,
+      21.69
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "S WELL",
+    "horse_code": "K294",
+    "last400": 21.72,
+    "sectionals": [
+      21.83,
+      22.68,
+      23.42,
+      21.72
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "BEAUTY CRESCENT",
+    "horse_code": "H334",
+    "last400": 21.98,
+    "sectionals": [
+      21.87,
+      22.72,
+      23.64,
+      21.98
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "SAINT OF THE SEA",
+    "horse_code": "M034",
+    "last400": 22.17,
+    "sectionals": [
+      21.87,
+      22.64,
+      23.67,
+      22.17
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "BLAZING STAR",
+    "horse_code": "L405",
+    "last400": 22.23,
+    "sectionals": [
+      22.03,
+      22.88,
+      23.53,
+      22.23
+    ]
+  },
+  {
+    "race": 11,
+    "date": "25/10/2026",
+    "horse_name": "COME FAST FAY FAY",
+    "horse_code": "K121",
+    "last400": 23.67,
+    "sectionals": [
+      21.79,
+      22.88,
+      25.25,
+      23.67
+    ]
+  }
+]

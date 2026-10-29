@@ -13,30 +13,7 @@ from scraper import get_live_meeting_data, get_live_tips_index
 from model import predict_probabilities, load_model
 import odds_tracker
 
-def check_stewards_excuse(comment, vet_status=0):
-    if not comment or pd.isna(comment):
-        return vet_status != 0
-    c = str(comment).lower()
-    
-    # Check for negations / clean run phrases
-    clean_phrases = ['without interruption', 'no interference', 'not checked', 'no incident', 'clear run throughout', 'without impediment']
-    if any(cp in c for cp in clean_phrases):
-        return False
-        
-    # True excuses:
-    excuse_keywords = [
-        'badly checked', 'severely checked', 'checked', 'check ', 'crowded', 'hampered', 
-        'held up', 'no clear run', 'denied a clear run', 'pocketed', 'clipped heels', 'clip heels',
-        'lost ground at start', 'slow to begin', 'stumbled', 'stumble', 'lost shoe', 'lost plate', 
-        'lost a plate', 'saddle slipped', 'blood in trachea', 'trachea', 'forced wide', 'no room', 'blocked',
-        'bleeder', 'irregular heart', 'heart irregularity', 'lame', 'lameness', 'mucus',
-        'without cover', 'no cover', 'three wide', 'four wide', 'raced wide', 'raced keenly', 'over-raced', 'unbalanced'
-    ]
-    
-    has_excuse = any(kw in c for kw in excuse_keywords)
-    if vet_status != 0:
-        has_excuse = True
-    return has_excuse
+from features.stewards import check_stewards_excuse, check_health_risk
 
 def run():
     print("Loading data...")
@@ -265,10 +242,15 @@ def run():
         else:
             first_time_gear_boost = 0.0
         
-        # False Favorite Penalty: -3.0% only if odds < 5.0 / implied > 20%, recent_pos > 6.0, no class drop, and run is not excused
-        df_runners['had_excuse'] = df_runners.apply(
-            lambda r: check_stewards_excuse(r.get('last_comment', ''), r.get('prev_run_vet_finding', 0)), axis=1
+        # Distinct Medical Health Risk vs Tactical Stewards Excuse separation:
+        df_runners['has_health_risk'] = df_runners.apply(
+            lambda r: check_health_risk(r.get('last_comment', ''), r.get('prev_run_vet_finding', 0), r.get('latest_vet_note', '')), axis=1
         )
+        # Tactical excuse ONLY applies if the runner has NO active medical risk
+        df_runners['had_excuse'] = df_runners.apply(
+            lambda r: check_stewards_excuse(r.get('last_comment', '')) and not r.get('has_health_risk', False), axis=1
+        )
+        # False Favorite Penalty: -3.0% only if odds < 5.0 / implied > 20%, recent_pos > 6.0, no class drop, and run is not excused
         false_fav_penalty = np.where(
             ((df_runners['implied_prob'] > 0.20) | ((df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 5.0))) & 
             (recent_pos > 6.0) & 
@@ -277,6 +259,8 @@ def run():
             -0.03, 
             0.0
         )
+        # Direct Health Risk Penalty: -3.0% for horses with active medical, bleeder, or lameness issues
+        health_risk_penalty = np.where(df_runners['has_health_risk'] & (~is_super_standout), -0.03, 0.0)
         
         # Consensus intel boost (gentle tie breaker capped at +3.5%)
         consensus_boost = np.where(consensus > 0, 0.01 * np.minimum(consensus, 3.5), 0.0)
@@ -632,7 +616,7 @@ def run():
         df_runners["trackwork_conditioning_multiplier"] = th_cal["trackwork_conditioning_multiplier"]
         df_runners["active_vet_risk_penalty"] = th_cal["active_vet_risk_penalty"]
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + apprentice_turf_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + telemetry_harmony_multiplier
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + health_risk_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + apprentice_turf_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + telemetry_harmony_multiplier
 
         # Ensure multiplier stays within [0.1, 1.25] (cap total upward nudge at 1.25x)
         multiplier = np.clip(multiplier, 0.1, 1.25)

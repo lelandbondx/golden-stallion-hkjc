@@ -531,6 +531,12 @@ class TestShaTinCalibrations(unittest.TestCase):
         self.assertTrue(check_stewards_excuse("Settled rearward and raced keenly in the middle stages."))
         self.assertTrue(check_stewards_excuse("Became unbalanced near the 300m."))
 
+        # Health risk vs Excuse separation check: medical issues must NOT be excused
+        from features.stewards import check_health_risk
+        self.assertFalse(check_stewards_excuse("Substantial blood in trachea after racing."))
+        self.assertTrue(check_health_risk("Substantial blood in trachea after racing."))
+        self.assertTrue(check_health_risk("Veterinary examination revealed horse to be lame right fore."))
+
 
 class TestAppMultipliers(unittest.TestCase):
 

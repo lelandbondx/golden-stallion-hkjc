@@ -1,11 +1,11 @@
 {
   "overall_status": "fail",
-  "updated_at": "2026-10-29T17:28:56Z",
+  "updated_at": "2026-10-29T17:38:15Z",
   "components": {
     "scraper": {
       "status": "fail",
-      "last_attempt_at": "2026-10-29T17:28:23Z",
-      "last_success_at": "2026-10-28T03:59:52Z",
+      "last_attempt_at": "2026-10-29T17:38:15Z",
+      "last_success_at": "2026-10-29T17:37:37Z",
       "metrics": {
         "source": "error"
       },
