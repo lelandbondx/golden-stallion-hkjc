@@ -411,6 +411,18 @@ def run():
             is_fownes = df_runners['trainer'].astype(str).str.strip().str.upper() == 'C FOWNES'
             fownes_hv_boost = np.where(is_fownes & (~is_hv_wide_heavy) & (jockey_trainer_boost == 0), 0.03, 0.0)
 
+        # Turf Apprentice Claim Inside Speed Boost (+2.0% for 5-10 lb claiming apprentices drawn inside Gates 1-5 with early speed)
+        # ZERO boost on wide barriers (Gates 8+) to avoid traffic traps on tight Valley turns
+        apprentice_turf_boost = 0.0
+        if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
+            jockeys_upper = df_runners['jockey'].astype(str).str.strip().str.upper()
+            APPRENTICE_RIDERS = {'P N WONG', 'H Y YUEN', 'Y L CHUNG', 'ELLIS WONG', 'NICHOLA YUEN', 'ANGUS CHUNG'}
+            is_apprentice_rider = jockeys_upper.apply(lambda j: any(ar in j for ar in APPRENTICE_RIDERS))
+            has_claim_allowance = pd.to_numeric(df_runners.get('allowance', 0), errors='coerce').fillna(0) >= 5
+            is_claiming = is_apprentice_rider | has_claim_allowance
+            is_front_inside = (draws <= 5) & (df_runners['avg_first_pos'] <= 3.5)
+            apprentice_turf_boost = np.where(is_claiming & is_front_inside, 0.02, 0.0)
+
         # Calibrated Sha Tin Multipliers (from monitoring.contracts):
         from monitoring.contracts import compute_sha_tin_calibrations, validate_odds_contract
         st_cal = compute_sha_tin_calibrations(
@@ -587,7 +599,7 @@ def run():
         df_runners["trackwork_conditioning_multiplier"] = th_cal["trackwork_conditioning_multiplier"]
         df_runners["active_vet_risk_penalty"] = th_cal["active_vet_risk_penalty"]
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + telemetry_harmony_multiplier
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + apprentice_turf_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + telemetry_harmony_multiplier
 
         # Ensure multiplier stays within [0.1, 1.25] (cap total upward nudge at 1.25x)
         multiplier = np.clip(multiplier, 0.1, 1.25)
