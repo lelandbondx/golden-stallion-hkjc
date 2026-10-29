@@ -432,7 +432,8 @@ def run():
             jockeys_upper = df_runners['jockey'].astype(str).str.strip().str.upper()
             APPRENTICE_RIDERS = {'P N WONG', 'H Y YUEN', 'Y L CHUNG', 'ELLIS WONG', 'NICHOLA YUEN', 'ANGUS CHUNG'}
             is_apprentice_rider = jockeys_upper.apply(lambda j: any(ar in j for ar in APPRENTICE_RIDERS))
-            has_claim_allowance = pd.to_numeric(df_runners.get('allowance', 0), errors='coerce').fillna(0) >= 5
+            allowance_col = df_runners['allowance'] if 'allowance' in df_runners.columns else pd.Series(0, index=df_runners.index)
+            has_claim_allowance = pd.to_numeric(allowance_col, errors='coerce').fillna(0) >= 5
             is_claiming = is_apprentice_rider | has_claim_allowance
             is_front_inside = (draws <= 5) & (df_runners['avg_first_pos'] <= 3.5)
             apprentice_turf_boost = np.where(is_claiming & is_front_inside, 0.02, 0.0)
