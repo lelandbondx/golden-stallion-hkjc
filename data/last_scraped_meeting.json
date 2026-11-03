@@ -1,7 +1,7 @@
 {
   "status": "success",
   "source": "live",
-  "fetched_at": "2026-11-03T20:38:35Z",
+  "fetched_at": "2026-11-03T20:51:45Z",
   "meeting_date": "2026-11-04",
   "meetings": [
     {
@@ -386,7 +386,7 @@
               "actual_weight": 135,
               "declared_weight": 1223,
               "rtg": 60,
-              "win_odds": 4.1,
+              "win_odds": 4.2,
               "final_position": null,
               "horse_gear": "V/TT"
             },
@@ -400,7 +400,7 @@
               "actual_weight": 133,
               "declared_weight": 1131,
               "rtg": 58,
-              "win_odds": 26.0,
+              "win_odds": 25.0,
               "final_position": null,
               "horse_gear": "TT"
             },
@@ -540,7 +540,7 @@
               "actual_weight": 116,
               "declared_weight": 1083,
               "rtg": 41,
-              "win_odds": 29.0,
+              "win_odds": 28.0,
               "final_position": null,
               "horse_gear": "B/TT"
             }
@@ -868,7 +868,7 @@
               "actual_weight": 120,
               "declared_weight": 1012,
               "rtg": 45,
-              "win_odds": 30.0,
+              "win_odds": 31.0,
               "final_position": null,
               "horse_gear": "B/TT"
             },
@@ -976,7 +976,7 @@
               "actual_weight": 132,
               "declared_weight": 1162,
               "rtg": 57,
-              "win_odds": 8.3,
+              "win_odds": 8.2,
               "final_position": null,
               "horse_gear": "B"
             },
@@ -1224,7 +1224,7 @@
               "actual_weight": 121,
               "declared_weight": 1049,
               "rtg": 64,
-              "win_odds": 7.6,
+              "win_odds": 7.4,
               "final_position": null,
               "horse_gear": ""
             },

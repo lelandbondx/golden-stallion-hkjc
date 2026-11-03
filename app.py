@@ -2331,8 +2331,7 @@ with tab1:
                     '''), unsafe_allow_html=True)
 
             with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=False):
-                import urllib.parse
-                # Ensure missing columns exist with safe types
+                # Ensure missing numeric/text columns exist with safe types
                 num_cols = ['no', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'days_since_last_run', 'gear_changed', 'confidence', 'gs_score']
                 for nc in num_cols:
                     if nc not in df_runners.columns:
@@ -2359,21 +2358,105 @@ with tab1:
                 '''), unsafe_allow_html=True)
 
                 raw_gear_map = {r.get('no'): str(r.get('horse_gear', '')).strip() for r in race.get('runners', []) if r.get('no') is not None}
+                
+                # Intelligent, zero-clutter racing data formatters
                 def _fmt_display_gear(r_row):
                     hg = raw_gear_map.get(r_row.get('no'), str(r_row.get('horse_gear', '')).strip())
-                    lg = str(r_row.get('last_gear', '')).strip()
-                    if hg and hg.upper() not in ['', '-', '--', 'NAN', 'NONE']:
-                        return hg
-                    if lg and lg.upper() not in ['', '-', '--', 'NAN', 'NONE']:
-                        return f"-- (prev: {lg})"
-                    return "--"
+                    chg = safe_num(r_row.get('gear_changed', 0))
+                    gwr = safe_num(r_row.get('gear_win_rate', 0.0))
+                    if not hg or hg.upper() in ['', '-', '--', 'NONE', 'NAN']:
+                        return "--"
+                    prefix = "🔄 " if chg == 1 else ""
+                    suffix = " (New)" if chg == 1 else (f" ({int(round(gwr * 100))}% W)" if gwr > 0 else "")
+                    return f"{prefix}{hg}{suffix}"
 
-                df_runners['display_gear'] = [_fmt_display_gear(r_row) for _, r_row in df_runners.iterrows()]
+                def _fmt_class_move(r_row):
+                    cd = safe_num(r_row.get('class_diff', 0.0))
+                    if cd > 0:
+                        return f"⬇ Drop (+{int(cd)})"
+                    elif cd < 0:
+                        return f"⬆ Rise ({int(cd)})"
+                    return "Same Class"
+
+                def _fmt_dist_win(r_row):
+                    dwr = safe_num(r_row.get('distance_win_rate', 0.0))
+                    if dwr > 0:
+                        return f"{int(round(dwr * 100))}%"
+                    return "0% (Maiden)"
+
+                def _fmt_lwr(val):
+                    if pd.isna(val) or str(val).strip().lower() in ['', 'nan', 'none', '-', '0', '0.0']:
+                        return "Maiden"
+                    try:
+                        return f"Rtg {int(float(val))}"
+                    except Exception:
+                        return str(val)
+
+                def _fmt_days(val):
+                    if pd.isna(val) or val is None:
+                        return "--"
+                    try:
+                        d = int(float(val))
+                        return f"{d}d (Fresh)" if d >= 60 else f"{d}d"
+                    except Exception:
+                        return str(val)
+
+                def _fmt_tips(val):
+                    v = safe_num(val)
+                    return f"{int(v)} pts" if v > 0 else "--"
+
+                def _fmt_vet(val):
+                    s = str(val or '').strip()
+                    if not s or s.lower() in ['none', 'nan', 'no active findings', 'clear record', '-']:
+                        return "✅ Clear Record"
+                    if not s.startswith("⚠️"):
+                        return f"⚠️ {s}"
+                    return s
+
+                def _fmt_stewards(val):
+                    s = str(val or '').strip()
+                    if not s or s.lower() in ['none', 'nan', 'clear record', 'clear run', '-']:
+                        return "✅ Clear Run"
+                    return s
+
+                def _fmt_photo(val):
+                    s = str(val or '').strip()
+                    if 'yes' in s.lower():
+                        return "✅ Fought Photo"
+                    if 'debut' in s.lower():
+                        return "Debutant"
+                    return "❌ None"
+
+                # Populate transformed columns
                 df_runners['name_link'] = [
-                    f"{get_hkjc_profile_url(r_row)}#{urllib.parse.quote(str(r_row.get('name', '')) + ' ↗')}"
+                    f"{get_hkjc_profile_url(r_row)}#{str(r_row.get('name', '')).strip()} ↗"
                     for _, r_row in df_runners.iterrows()
                 ]
-                df_display = df_runners[['no', 'name_link', 'jockey', 'trainer', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'display_gear', 'days_since_last_run', 'gear_changed', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'confidence', 'photo_finish', 'vet_findings', 'steward_notes', 'gs_score']].copy()
+                df_runners['display_gear'] = [_fmt_display_gear(r_row) for _, r_row in df_runners.iterrows()]
+                df_runners['class_move'] = [_fmt_class_move(r_row) for _, r_row in df_runners.iterrows()]
+                df_runners['dist_record'] = [_fmt_dist_win(r_row) for _, r_row in df_runners.iterrows()]
+                df_runners['last_win_rating_fmt'] = df_runners['last_win_rating'].apply(_fmt_lwr)
+                df_runners['days_off'] = df_runners['days_since_last_run'].apply(_fmt_days)
+                df_runners['tipster_pts'] = df_runners['consensus_score'].apply(_fmt_tips)
+                df_runners['ST_vs_HV_pref_fmt'] = df_runners['ST_vs_HV_pref'].fillna('Neutral').astype(str).replace({'nan': 'Neutral', 'None': 'Neutral', '': 'Neutral'})
+                df_runners['last_form_going_fmt'] = df_runners['last_form_going'].fillna('Good').astype(str).replace({'nan': 'Good', 'None': 'Good', '': 'Good', 'Unknown': 'Good'})
+                df_runners['photo_hist'] = df_runners['photo_finish'].apply(_fmt_photo)
+                df_runners['vet_status'] = df_runners['vet_findings'].apply(_fmt_vet)
+                df_runners['steward_status'] = df_runners['steward_notes'].apply(_fmt_stewards)
+
+                display_cols = [
+                    'no', 'name_link', 'draw', 'jockey', 'trainer', 'rtg', 'win_odds',
+                    'gs_score', 'confidence', 'recent_avg_pos', 'dist_record', 'class_move',
+                    'display_gear', 'last_win_rating_fmt', 'days_off', 'tipster_pts',
+                    'ST_vs_HV_pref_fmt', 'last_form_going_fmt', 'photo_hist', 'vet_status', 'steward_status'
+                ]
+                df_display = df_runners[display_cols].copy()
+                df_display.rename(columns={
+                    'last_win_rating_fmt': 'last_win_rating',
+                    'ST_vs_HV_pref_fmt': 'ST_vs_HV_pref',
+                    'last_form_going_fmt': 'last_form_going'
+                }, inplace=True)
+
                 if 'is_primary' in df_runners.columns:
                     df_display['is_primary'] = df_runners['is_primary']
                     df_display = df_display.sort_values(by=['is_primary', 'gs_score'], ascending=[False, False])
@@ -2381,57 +2464,42 @@ with tab1:
                 else:
                     df_display = df_display.sort_values(by='gs_score', ascending=False)
                 
-                # Fill NAs and ensure string type for object columns to avoid PyArrow serialization errors
-                def _fmt_lwr(val):
-                    if pd.isna(val) or str(val).strip().lower() in ['', 'nan', 'none', '-']:
-                        return '-'
-                    try:
-                        return str(int(float(val)))
-                    except Exception:
-                        return str(val)
-                df_display['last_win_rating'] = df_display['last_win_rating'].apply(_fmt_lwr)
-                df_display['ST_vs_HV_pref'] = df_display['ST_vs_HV_pref'].fillna('Neutral').astype(str).replace({'nan': 'Neutral', 'None': 'Neutral', '': 'Neutral'})
-                df_display['last_form_going'] = df_display['last_form_going'].fillna('Unknown').astype(str).replace({'nan': 'Unknown', 'None': 'Unknown', '': 'Unknown'})
-                df_display['photo_finish'] = df_display['photo_finish'].fillna('❌ No').astype(str).replace({'nan': '❌ No', 'None': '❌ No', '': '❌ No'})
-                df_display['vet_findings'] = df_display['vet_findings'].fillna('No Active Findings').astype(str).replace({'nan': 'No Active Findings', 'None': 'No Active Findings', '': 'No Active Findings'})
-                df_display['steward_notes'] = df_display['steward_notes'].fillna('Clear Record').astype(str).replace({'nan': 'Clear Record', 'None': 'Clear Record', '': 'Clear Record'})
-                
                 try:
                     st.dataframe(
                         df_display,
                         column_config={
                             "no": st.column_config.NumberColumn("No.", width="small"),
                             "name_link": st.column_config.LinkColumn("Horse Name", display_text=r"#(.+)$", width="medium"),
+                            "draw": st.column_config.NumberColumn("Draw", width="small"),
                             "jockey": st.column_config.TextColumn("Jockey", width="small"),
                             "trainer": st.column_config.TextColumn("Trainer", width="medium"),
-                            "draw": st.column_config.NumberColumn("Draw", width="small"),
                             "rtg": st.column_config.NumberColumn("Rating", width="small"),
                             "win_odds": st.column_config.NumberColumn("Odds", format="%.1f", width="small"),
-                            "consensus_score": st.column_config.NumberColumn("Tipster Pts", width="small"),
-                            "class_diff": st.column_config.NumberColumn("Class Diff", width="small"),
-                            "rating_diff": st.column_config.NumberColumn("Rtg Diff", width="small"),
-                            "recent_avg_pos": st.column_config.NumberColumn("Rec Pos", format="%.1f", width="small"),
-                            "distance_win_rate": st.column_config.NumberColumn("Dist Win%", format="%.2f", width="small"),
-                            "gear_win_rate": st.column_config.NumberColumn("Gear Win%", format="%.2f", width="small"),
-                            "display_gear": st.column_config.TextColumn("Gear", width="small"),
-                            "days_since_last_run": st.column_config.NumberColumn("Days Off", width="small"),
-                            "gear_changed": st.column_config.NumberColumn("Gear Chg", width="small"),
-                            "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),
-                            "ST_vs_HV_pref": st.column_config.TextColumn("Track Pref", width="medium"),
-                            "last_form_going": st.column_config.TextColumn("Fav Cond", width="medium"),
-                            "gs_score": st.column_config.NumberColumn("GS Score", format="%.1f", width="small"),
+                            "gs_score": st.column_config.NumberColumn("AI Score", format="%.1f", width="small"),
                             "confidence": st.column_config.ProgressColumn(
                                 "AI Confidence %",
                                 min_value=0,
                                 max_value=100,
                             ),
-                            "photo_finish": st.column_config.TextColumn("Photo Finish Hist?", width="small"),
-                            "vet_findings": st.column_config.TextColumn("Vet Findings", width="medium"),
-                            "steward_notes": st.column_config.TextColumn("Steward Notes", width="large"),
+                            "recent_avg_pos": st.column_config.NumberColumn("Rec Pos", format="%.1f", width="small"),
+                            "dist_record": st.column_config.TextColumn("Dist Win%", width="small"),
+                            "class_move": st.column_config.TextColumn("Class Move", width="small"),
+                            "display_gear": st.column_config.TextColumn("Gear & Changes", width="medium"),
+                            "last_win_rating": st.column_config.TextColumn("Last Win Mark", width="small"),
+                            "days_off": st.column_config.TextColumn("Days Off", width="small"),
+                            "tipster_pts": st.column_config.TextColumn("Media Tips", width="small"),
+                            "ST_vs_HV_pref": st.column_config.TextColumn("Track Pref", width="small"),
+                            "last_form_going": st.column_config.TextColumn("Fav Going", width="small"),
+                            "photo_hist": st.column_config.TextColumn("Photo Hist", width="small"),
+                            "vet_status": st.column_config.TextColumn("Vet Findings", width="medium"),
+                            "steward_status": st.column_config.TextColumn("Stewards Notes", width="large"),
                         },
                         hide_index=True,
                         use_container_width=True
                     )
+                except Exception as err:
+                    print(f"Error rendering race dataframe: {err}")
+                    st.dataframe(df_display, hide_index=True, use_container_width=True)
                 except Exception as err:
                     print(f"Error rendering race dataframe: {err}")
                     st.dataframe(df_display, hide_index=True, use_container_width=True)
