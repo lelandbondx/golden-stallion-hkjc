@@ -3,11 +3,13 @@ services:
     name: silks-ai
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python patch_index.py && streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    startCommand: python patch_index.py && streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true --client.showErrorDetails false
     envVars:
       - key: STREAMLIT_SERVER_HEADLESS
         value: "true"
       - key: STREAMLIT_SERVER_ENABLE_CORS
         value: "false"
       - key: STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION
+        value: "false"
+      - key: STREAMLIT_CLIENT_SHOW_ERROR_DETAILS
         value: "false"

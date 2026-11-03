@@ -506,9 +506,9 @@ def get_live_meeting_data(force_network=False, cache_path='data/last_scraped_mee
         print("Failed to read cached meeting file:", e)
         record_health("scraper_cache_read", "warn", error=str(e))
 
-    # Fast-path: return cached data only if under 20 seconds old to ensure odds stay live
+    # Fast-path: return cached data only if under 60 seconds old to ensure fast rendering without network lag
     if not force_network and cached_data and cached_data.get('status') == 'success' and cached_data.get('meetings'):
-        if cache_age_s is not None and cache_age_s < 20:
+        if cache_age_s is not None and cache_age_s < 60:
             first_date = cached_data['meetings'][0].get('date') if cached_data.get('meetings') else None
             cached_data.setdefault('source', 'cache')
             cached_data.setdefault('fetched_at', now_iso)

@@ -20,6 +20,26 @@ except Exception:
 def clean_html(html_str):
     return "\n".join(line.lstrip() for line in html_str.split("\n"))
 
+def safe_num(val, default=0.0):
+    if val is None or pd.isna(val):
+        return default
+    try:
+        return float(val)
+    except (ValueError, TypeError):
+        return default
+
+def safe_int(val, default=0):
+    if val is None or pd.isna(val):
+        return default
+    try:
+        return int(float(val))
+    except (ValueError, TypeError):
+        return default
+
+def safe_fmt(val, default=0.0, decimals=1):
+    num = safe_num(val, default)
+    return f"{num:.{decimals}f}"
+
 from features.stewards import check_stewards_excuse, check_health_risk
 
 try:
@@ -580,16 +600,17 @@ if data.get('status') == 'error' or not meetings:
     st.error(f"🚨 Live data unavailable: {err_reason}")
     st.stop()
 
-if data.get('source') == 'cache' and data.get('cache_age_s') and float(data.get('cache_age_s', 0)) > 21600:
-    st.warning(f"⚠️ Showing cached HKJC meeting data (cached {int(float(data.get('cache_age_s', 0)) // 60)} min ago).")
+cache_age_val = safe_num(data.get('cache_age_s'), 0.0)
+if data.get('source') == 'cache' and cache_age_val > 21600:
+    st.warning(f"⚠️ Showing cached HKJC meeting data (cached {safe_int(cache_age_val // 60)} min ago).")
 
 # Build meeting selectbox options
 meeting_options = [f"{m.get('date')} - {m.get('venue')}" for m in meetings]
 
 default_index = 0
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 # Calculate today's date in Hong Kong Time (HKT is UTC+8)
-hkt_today = (datetime.utcnow() + timedelta(hours=8)).strftime('%Y-%m-%d')
+hkt_today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime('%Y-%m-%d')
 
 found_today = False
 for i, m in enumerate(meetings):
@@ -620,26 +641,6 @@ with col_ref:
 selected_index = meeting_options.index(selected_meeting_str)
 meeting = meetings[selected_index]
 races = meeting.get('races', [])
-
-def safe_num(val, default=0.0):
-    if val is None or pd.isna(val):
-        return default
-    try:
-        return float(val)
-    except (ValueError, TypeError):
-        return default
-
-def safe_int(val, default=0):
-    if val is None or pd.isna(val):
-        return default
-    try:
-        return int(float(val))
-    except (ValueError, TypeError):
-        return default
-
-def safe_fmt(val, default=0.0, decimals=1):
-    num = safe_num(val, default)
-    return f"{num:.{decimals}f}"
 
 # Proactively ensure all runners on the active card have complete HKJC profiles synced (once per session)
 try:
@@ -944,7 +945,6 @@ with tab1:
                     best_gs['p2_name'] = p2_dict.get('name')
                     best_gs['p2_odds'] = safe_num(p2_dict.get('win_odds'), 20.0)
                     best_gs['p2_gs'] = safe_num(p2_dict.get('gs_score'), 0.0)
-                    best_gs['p2_gs'] = float(p2_dict.get('gs_score', 0.0))
                 class_str_frozen = str(race.get("class_dist", ""))
                 best_gs.update({"race_no": race.get("race_no"), "class_dist": class_str_frozen})
                 # Strictly veto volatile Class 5 races from All Up / Parlay multi-leg bankers
@@ -2191,7 +2191,7 @@ with tab1:
             fifth = p5_match.iloc[0] if not p5_match.empty else (df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1])
             
             # Official betting ticket badges for clients at the window
-            p1_is_win_active = int(best.get('win_stake_active', 0)) == 1
+            p1_is_win_active = safe_int(best.get('win_stake_active'), 0) == 1
             other_win_active = df_runners[(df_runners['win_stake_active'] == 1) & (df_runners['no'] != best['no'])]
             
             if p1_is_win_active:

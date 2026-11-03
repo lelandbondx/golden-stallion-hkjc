@@ -23,23 +23,13 @@ def patch_index():
     <meta name="twitter:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />
         """.strip()
 
-        if "<title>Streamlit</title>" in html:
+        if "SILKS.AI | Quantitative HKJC Intelligence" in html:
+            return True
+        elif "<title>Streamlit</title>" in html:
             html = html.replace("<title>Streamlit</title>", new_metadata)
             with open(index_path, "w", encoding="utf-8") as f:
                 f.write(html)
             print("Successfully patched index.html with SILKS.AI metadata.")
-            return True
-        elif "SILKS.AI" in html:
-            import re
-            html = re.sub(r'<title>SILKS\.AI.*?</title>', '<title>SILKS.AI | Quantitative HKJC Intelligence</title>', html)
-            html = re.sub(r'<meta property="og:title" content=".*?" />', '<meta property="og:title" content="SILKS.AI | Quantitative HKJC Intelligence" />', html)
-            html = re.sub(r'<meta name="twitter:title" content=".*?" />', '<meta name="twitter:title" content="SILKS.AI | Quantitative HKJC Intelligence" />', html)
-            html = re.sub(r'<meta property="og:description" content=".*?" />', '<meta property="og:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />', html)
-            html = re.sub(r'<meta name="twitter:description" content=".*?" />', '<meta name="twitter:description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />', html)
-            html = re.sub(r'<meta name="description" content=".*?" />', '<meta name="description" content="AI-Powered Real-Time Hong Kong Jockey Club Quantitative Intelligence & Win Predictor" />', html)
-            with open(index_path, "w", encoding="utf-8") as f:
-                f.write(html)
-            print("Successfully updated index.html with SILKS.AI | Quantitative HKJC Intelligence.")
             return True
         return False
     except Exception as e:
