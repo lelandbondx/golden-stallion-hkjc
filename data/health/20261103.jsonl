@@ -1,0 +1,8 @@
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-03T03:58:39Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-04", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-03T03:59:08Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-04", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-03T03:59:29Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-03T04:02:36Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-04", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-03T04:16:00Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-03T04:16:28Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-03T04:16:41Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-04", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-03T04:17:23Z", "metrics": {"meeting_date": "2026-11-04", "venue": "Happy Valley", "races_predicted": 9}, "error": null}

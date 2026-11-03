@@ -552,6 +552,217 @@ def compute_telemetry_harmony_multipliers(
     }
 
 
+def compute_hv_course_calibrations(
+    df_runners: pd.DataFrame,
+    course_str: str,
+    distance: int,
+    is_hv: bool = True,
+    is_awt_race: bool = False,
+) -> dict:
+    """
+    Computes Happy Valley course-specific draw and apprentice calibrations,
+    backward-compatible with C / C+3 while implementing Course "A" (30.5m width) scalars:
+    1. Course "A" Rail Sensitivity:
+       - Inside speed boost (Gates 1-4 & avg_first_pos <= 3.5) scaled to +2.5% (+0.025) on Course A
+         (vs +4.0% lightweight / +3.0% base on C/C+3, +3.5% on B+2/B+3).
+       - Wide-gate sprint penalty (Gates 9+ on <=1200m) reduced from -4.0% (-0.04) to -3.0% (-0.03) on Course A.
+       - All 1650m+ distance multipliers remain unchanged (-2.0% base draw penalty).
+    2. Apprentice Jockey Barrier Window:
+       - On Course A, restricts the +2.0% (+0.02) early-speed boost for 5-10 lb claiming apprentices
+         (Ellis Wong, Angus Chung, Nichola Yuen, H Y Yuen, P N Wong, Y L Chung) strictly to Gates 1-4 (draws <= 4).
+       - Preserves Gates 1-5 on C/C+3.
+    """
+    n = len(df_runners)
+    if n == 0 or (not is_hv) or is_awt_race:
+        zeros = np.zeros(n, dtype=float)
+        return {
+            "is_a_rail": False,
+            "hv_c_course_boost": zeros,
+            "hv_c_course_penalty": zeros,
+            "apprentice_turf_boost": zeros,
+            "is_iron_horse_dropper": np.zeros(n, dtype=bool),
+        }
+
+    draws = (
+        pd.to_numeric(df_runners.get("draw", pd.Series(6, index=df_runners.index)), errors="coerce")
+        .fillna(6)
+        .values
+    )
+    actual_weights = (
+        pd.to_numeric(
+            df_runners.get("actual_weight", pd.Series(125, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(125)
+        .values
+    )
+    avg_first_pos = (
+        pd.to_numeric(
+            df_runners.get("avg_first_pos", pd.Series(6.0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(6.0)
+        .values
+    )
+    recent_pos = (
+        pd.to_numeric(
+            df_runners.get("recent_avg_pos", pd.Series(7.0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(7.0)
+        .values
+    )
+    class_drop = (
+        pd.to_numeric(
+            df_runners.get("class_diff", pd.Series(0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(0)
+        .values
+    )
+    vet_issue = (
+        pd.to_numeric(
+            df_runners.get("prev_run_vet_finding", pd.Series(0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(0)
+        .values
+    )
+
+    course_upper = str(course_str or "").upper()
+    course_tokens = set(
+        course_upper.replace('"', " ").replace("'", " ").replace("-", " ").replace(",", " ").split()
+    )
+    is_c_rail = ("C" in course_tokens) or ("C+3" in course_tokens) or ("COURSE C" in course_upper)
+    is_b_narrow_rail = ("B+2" in course_tokens) or ("B+3" in course_tokens) or ("B" in course_tokens)
+    is_a_rail = (
+        (not is_c_rail)
+        and (not is_b_narrow_rail)
+        and (("A" in course_tokens) or ("A+2" in course_tokens) or ("COURSE A" in course_upper))
+    )
+
+    # 1. Wide-gate draw penalty (Course A sprint: -3.0%, C/C+3 sprint: -4.0%, 1650m+ routes: -2.0% unchanged)
+    is_wide_gate = draws >= 9
+    is_sprint = int(distance) <= 1200
+    sprint_wide_pen = -0.03 if is_a_rail else -0.04
+    base_draw_pen = np.where(is_wide_gate, sprint_wide_pen if is_sprint else -0.02, 0.0)
+
+    is_heavy = actual_weights >= 132
+    base_wt_extra = np.where(is_wide_gate & is_heavy, -0.02 if is_sprint else -0.01, 0.0)
+    is_on_pace_crosser = (avg_first_pos <= 3.5) | (recent_pos <= 3.5)
+    eff_wt_extra = np.where(is_on_pace_crosser, base_wt_extra * 0.5, base_wt_extra)
+
+    hv_c_course_penalty = np.clip(base_draw_pen + eff_wt_extra, -0.06, 0.0)
+
+    is_iron_horse_dropper = (class_drop > 0) & (recent_pos <= 3.0) & (vet_issue == 0)
+    hv_c_course_penalty = np.where(is_iron_horse_dropper, 0.0, hv_c_course_penalty)
+
+    # 2. Inside-speed rail boost (Course A: +2.5% for Gates 1-4; C/C+3: +4.0% light / +3.0% base; B+2/B+3: +3.5% light)
+    is_inside_speed = (avg_first_pos <= 3.5) & (draws <= 4)
+    if is_a_rail:
+        hv_c_course_boost = np.where(is_inside_speed, 0.025, 0.0)
+    else:
+        is_light_c = is_inside_speed & is_c_rail & (actual_weights <= 124)
+        is_light_b_narrow = is_inside_speed & is_b_narrow_rail & (actual_weights <= 124)
+        hv_c_course_boost = np.where(
+            is_light_c,
+            0.04,
+            np.where(is_light_b_narrow, 0.035, np.where(is_inside_speed, 0.03, 0.0)),
+        )
+    hv_c_course_boost = np.clip(hv_c_course_boost, 0.0, 0.05)
+
+    # 3. Apprentice Jockey Barrier Window (Course A: Gates 1-4 only; C/C+3: Gates 1-5)
+    jockeys_upper = (
+        df_runners.get("jockey", pd.Series("", index=df_runners.index))
+        .astype(str)
+        .str.strip()
+        .str.upper()
+    )
+    APPRENTICE_RIDERS = {"P N WONG", "H Y YUEN", "Y L CHUNG", "ELLIS WONG", "NICHOLA YUEN", "ANGUS CHUNG"}
+    is_apprentice_rider = jockeys_upper.apply(lambda j: any(ar in j for ar in APPRENTICE_RIDERS)).values
+    allowance_col = (
+        df_runners["allowance"] if "allowance" in df_runners.columns else pd.Series(0, index=df_runners.index)
+    )
+    has_claim_allowance = (pd.to_numeric(allowance_col, errors="coerce").fillna(0) >= 5).values
+    is_claiming = is_apprentice_rider | has_claim_allowance
+    max_apprentice_gate = 4 if is_a_rail else 5
+    is_front_inside = (draws <= max_apprentice_gate) & (avg_first_pos <= 3.5)
+    apprentice_turf_boost = np.where(is_claiming & is_front_inside, 0.02, 0.0)
+
+    return {
+        "is_a_rail": bool(is_a_rail),
+        "hv_c_course_boost": hv_c_course_boost,
+        "hv_c_course_penalty": hv_c_course_penalty,
+        "apprentice_turf_boost": apprentice_turf_boost,
+        "is_iron_horse_dropper": is_iron_horse_dropper,
+    }
+
+
+def evaluate_exotic_class_droppers(df_runners: pd.DataFrame) -> dict:
+    """
+    Identifies longshot class droppers for automatic Trio box inclusion (and Tierce box
+    inclusion if ranked in the model's raw top-6) while strictly preserving 0 win units on >13.0 odds:
+    Qualifies when ALL of the following hold:
+      • Market odds >= 16.0 (or post-multiplier model_prob >= 0.05 when odds > 13.0)
+      • Genuine class drop of >= 1 full class (class_diff >= 1)
+      • Last start <= 35 days AND (recent_avg_pos <= 6.0 OR positive 400m sectional residual)
+      • No active medical health risk (~has_health_risk)
+    """
+    if df_runners.empty:
+        return {"trio_dropper_nos": [], "tierce_dropper_nos": [], "mask": pd.Series(dtype=bool)}
+
+    win_odds = pd.to_numeric(
+        df_runners.get("win_odds", pd.Series(20.0, index=df_runners.index)), errors="coerce"
+    ).fillna(20.0)
+    model_prob = pd.to_numeric(
+        df_runners.get("model_prob", pd.Series(0.0, index=df_runners.index)), errors="coerce"
+    ).fillna(0.0)
+    class_diff = pd.to_numeric(
+        df_runners.get("class_diff", pd.Series(0, index=df_runners.index)), errors="coerce"
+    ).fillna(0)
+    days_since = pd.to_numeric(
+        df_runners.get("days_since_last_run", pd.Series(21, index=df_runners.index)), errors="coerce"
+    ).fillna(21)
+    recent_pos = pd.to_numeric(
+        df_runners.get("recent_avg_pos", pd.Series(7.0, index=df_runners.index)), errors="coerce"
+    ).fillna(7.0)
+    best_last_sec = pd.to_numeric(
+        df_runners.get("best_last_sec", pd.Series(99.0, index=df_runners.index)), errors="coerce"
+    ).fillna(99.0)
+    has_health = (
+        df_runners["has_health_risk"].astype(bool)
+        if "has_health_risk" in df_runners.columns
+        else pd.Series(False, index=df_runners.index)
+    )
+
+    valid_secs = best_last_sec[best_last_sec < 90.0]
+    sec_median = float(valid_secs.median()) if not valid_secs.empty else 22.85
+    has_pos_sec_residual = (best_last_sec < 90.0) & (best_last_sec < sec_median)
+
+    odds_or_prob_cond = (win_odds >= 16.0) | ((win_odds > 13.0) & (model_prob >= 0.05))
+    class_drop_cond = class_diff >= 1
+    recency_and_form_cond = (days_since <= 35) & ((recent_pos <= 6.0) | has_pos_sec_residual)
+
+    qualifies = odds_or_prob_cond & class_drop_cond & recency_and_form_cond & (~has_health)
+
+    # Determine raw model rank (top-6 eligibility for Tierce)
+    if "gs_score" in df_runners.columns:
+        raw_ranks = df_runners["gs_score"].rank(ascending=False, method="min")
+    else:
+        raw_ranks = model_prob.rank(ascending=False, method="min")
+
+    trio_df = df_runners[qualifies].copy()
+    if not trio_df.empty and "gs_score" in trio_df.columns:
+        trio_df = trio_df.sort_values(by="gs_score", ascending=False)
+
+    trio_nos = [int(x) for x in trio_df["no"].tolist()] if not trio_df.empty else []
+    tierce_df = df_runners[qualifies & (raw_ranks <= 6)].copy()
+    if not tierce_df.empty and "gs_score" in tierce_df.columns:
+        tierce_df = tierce_df.sort_values(by="gs_score", ascending=False)
+    tierce_nos = [int(x) for x in tierce_df["no"].tolist()] if not tierce_df.empty else []
+
+    return {
+        "trio_dropper_nos": trio_nos,
+        "tierce_dropper_nos": tierce_nos,
+        "mask": qualifies,
+    }
+
+
 # -------------------------------------------------------------------------
 # Per-Source Contract Validators
 # -------------------------------------------------------------------------

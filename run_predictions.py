@@ -378,45 +378,23 @@ def run():
         # Purton Total Boost Cap: Cap Purton at +2.0% total (elite_jockey_boost and jockey_trainer_boost must not stack past +2.0%)
         purton_total_boost = np.minimum(jockey_trainer_boost + elite_jockey_boost, 0.02)
         
-        # Happy Valley C-Course Draw Bias Adjustments
-        hv_c_course_boost = 0.0
-        hv_c_course_penalty = 0.0
+        # Happy Valley Course Draw Bias & Apprentice Barrier Calibrations (Course A 30.5m vs C/C+3 19.5m-22.5m)
+        from monitoring.contracts import compute_hv_course_calibrations
+        course_str_hv = (str(race.get('course', '')) + ' ' + str(meeting.get('course', ''))).upper()
+        hv_cal = compute_hv_course_calibrations(
+            df_runners=df_runners,
+            course_str=course_str_hv,
+            distance=distance,
+            is_hv=is_hv,
+            is_awt_race=("ALL WEATHER" in race_track_type or "AWT" in race_track_type),
+        )
+        hv_c_course_boost = hv_cal["hv_c_course_boost"]
+        hv_c_course_penalty = hv_cal["hv_c_course_penalty"]
+        apprentice_turf_boost = hv_cal["apprentice_turf_boost"]
+        is_iron_horse_dropper = hv_cal["is_iron_horse_dropper"]
         if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
-            # 1. hv_c_course_penalty:
-            # 1000m / 1200m: gates 9-12 -4.0%. If weight >= 132: extra -2.0% (total -6.0%).
-            # 1650m / 1800m / 2200m: gates 9-12 -2.0%. If weight >= 132: extra -1.0% (total -3.0%).
-            # If avg_first_pos <= 3.5: halve the weight extra only (do not zero draw penalty).
-            is_wide_gate = (draws >= 9)
-            is_sprint = (distance <= 1200)
-            base_draw_pen = np.where(is_wide_gate, np.where(is_sprint, -0.04, -0.02), 0.0)
-            
-            is_heavy = (actual_weights >= 132)
-            base_wt_extra = np.where(is_wide_gate & is_heavy, np.where(is_sprint, -0.02, -0.01), 0.0)
-            is_on_pace_crosser = (df_runners['avg_first_pos'] <= 3.5) | (pd.to_numeric(df_runners.get('recent_avg_pos', 7.0), errors='coerce').fillna(7.0) <= 3.5)
-            eff_wt_extra = np.where(is_on_pace_crosser, base_wt_extra * 0.5, base_wt_extra)
-            
-            hv_c_course_penalty = base_draw_pen + eff_wt_extra
-            hv_c_course_penalty = np.clip(hv_c_course_penalty, -0.06, 0.0)
-            
-            # Iron-Horse Class-Dropper Top-4 Consistency Rule (e.g. proven wide-draw/weight top-4 consistency dropping in class)
-            is_iron_horse_dropper = (class_drop > 0) & (recent_pos <= 3.0) & (vet_issue == 0)
-            hv_c_course_penalty = np.where(is_iron_horse_dropper, 0.0, hv_c_course_penalty)
             frontrunner_pace_penalty = np.where(is_iron_horse_dropper, 0.0, frontrunner_pace_penalty)
             standout_boost += np.where(is_iron_horse_dropper, 0.14, 0.0)
-            
-            # 2. hv_c_course_boost (Official HKJC HV Course Chart: C=22.5m/334m, C+3=19.5m/335m, B+2/B+3=23.5-24.5m/338m, A/A+2=28.5-30.5m/310-312m):
-            # Gates 1-4 & avg_first_pos <= 3.5: +3.0% base.
-            # On C or C+3 (19.5m-22.5m narrowest rail), if weight <= 124 lb: +4.0% (replaces +3.0%).
-            # On B+2 or B+3 (23.5m-24.5m worked-back rail), if weight <= 124 lb: +3.5% (replaces +3.0%).
-            # Geometry boost cap +5.0%.
-            is_inside_speed = (df_runners['avg_first_pos'] <= 3.5) & (draws <= 4)
-            course_str_hv = (str(race.get('course', '')) + ' ' + str(meeting.get('course', ''))).upper()
-            is_c_rail = ('C' in course_str_hv)
-            is_b_narrow_rail = ('B+2' in course_str_hv) or ('B+3' in course_str_hv)
-            is_light_c = is_inside_speed & is_c_rail & (actual_weights <= 124)
-            is_light_b_narrow = is_inside_speed & is_b_narrow_rail & (actual_weights <= 124)
-            hv_c_course_boost = np.where(is_light_c, 0.04, np.where(is_light_b_narrow, 0.035, np.where(is_inside_speed, 0.03, 0.0)))
-            hv_c_course_boost = np.clip(hv_c_course_boost, 0.0, 0.05)
             
         # Caspar Fownes Happy Valley Specialist Boost (+0.03 on home track)
         # ZERO on wide topweight (Gates 9-12 & >= 132 lbs), and ZERO if jockey_trainer_boost already fired
@@ -424,19 +402,6 @@ def run():
         if is_hv:
             is_fownes = df_runners['trainer'].astype(str).str.strip().str.upper() == 'C FOWNES'
             fownes_hv_boost = np.where(is_fownes & (~is_hv_wide_heavy) & (jockey_trainer_boost == 0), 0.03, 0.0)
-
-        # Turf Apprentice Claim Inside Speed Boost (+2.0% for 5-10 lb claiming apprentices drawn inside Gates 1-5 with early speed)
-        # ZERO boost on wide barriers (Gates 8+) to avoid traffic traps on tight Valley turns
-        apprentice_turf_boost = 0.0
-        if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
-            jockeys_upper = df_runners['jockey'].astype(str).str.strip().str.upper()
-            APPRENTICE_RIDERS = {'P N WONG', 'H Y YUEN', 'Y L CHUNG', 'ELLIS WONG', 'NICHOLA YUEN', 'ANGUS CHUNG'}
-            is_apprentice_rider = jockeys_upper.apply(lambda j: any(ar in j for ar in APPRENTICE_RIDERS))
-            allowance_col = df_runners['allowance'] if 'allowance' in df_runners.columns else pd.Series(0, index=df_runners.index)
-            has_claim_allowance = pd.to_numeric(allowance_col, errors='coerce').fillna(0) >= 5
-            is_claiming = is_apprentice_rider | has_claim_allowance
-            is_front_inside = (draws <= 5) & (df_runners['avg_first_pos'] <= 3.5)
-            apprentice_turf_boost = np.where(is_claiming & is_front_inside, 0.02, 0.0)
 
         # Calibrated Sha Tin Multipliers (from monitoring.contracts):
         # 1. ST 1000m Straight Outside Rail Bias (`st_straight_outside_rail_multiplier`: +4.5% gates 10-14, -3.5% gates 1-4)
@@ -673,6 +638,11 @@ def run():
             df_runners['kelly_stake'] = df_runners['kelly_stake'] * 0.5
             
         # MANDATES & 5-HORSE SELECTION CARD ARCHITECTURE:
+        from monitoring.contracts import evaluate_exotic_class_droppers
+        exotic_cd = evaluate_exotic_class_droppers(df_runners)
+        df_runners['is_exotic_class_dropper'] = exotic_cd['mask']
+        df_runners['is_tierce_class_dropper'] = df_runners['no'].isin(exotic_cd['tierce_dropper_nos'])
+
         # Sort runners strictly by gs_score descending
         df_sorted_gs = df_runners.sort_values(by='gs_score', ascending=False).reset_index(drop=True)
         
@@ -681,7 +651,7 @@ def run():
         p3 = df_sorted_gs.iloc[2] if len(df_sorted_gs) > 2 else None
         p4 = df_sorted_gs.iloc[3] if len(df_sorted_gs) > 3 else None
         
-        # Pick 5 is highest EV survivor (model_prob - implied_prob) not wide+heavy vetoed
+        # Pick 5 is highest EV survivor (or qualified Longshot Exotic Class Dropper) not wide+heavy vetoed
         top4_nos = [p1['no']]
         if p2 is not None: top4_nos.append(p2['no'])
         if p3 is not None: top4_nos.append(p3['no'])
@@ -696,7 +666,11 @@ def run():
             rem_eligible = rem
             
         if not rem_eligible.empty:
-            p5 = rem_eligible.sort_values(by='value_diff', ascending=False).iloc[0]
+            rem_droppers = rem_eligible[rem_eligible['is_exotic_class_dropper']]
+            if not rem_droppers.empty:
+                p5 = rem_droppers.sort_values(by='gs_score', ascending=False).iloc[0]
+            else:
+                p5 = rem_eligible.sort_values(by='value_diff', ascending=False).iloc[0]
         else:
             p5 = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
             
@@ -808,7 +782,11 @@ def run():
         # Exotic Tickets:
         q_nos = [str(x['no']) for x in [p1, p2, p3] if x is not None]
         trio_nos = [str(x['no']) for x in [p1, p2, p3, p4] if x is not None]
-        print(f"🎫 TICKETS: Quinella Box 1-3 ({', '.join(q_nos)}) | Trio Box 1-4 ({', '.join(trio_nos)}) | Dual-Stake: #{p1['no']} + #{p5['no']}")
+        for cd_no in exotic_cd['trio_dropper_nos']:
+            if str(cd_no) not in trio_nos:
+                trio_nos.append(str(cd_no))
+        tierce_cd_str = f" | Tierce Class-Dropper Include: {', '.join('#'+str(n) for n in exotic_cd['tierce_dropper_nos'])}" if exotic_cd['tierce_dropper_nos'] else ""
+        print(f"🎫 TICKETS: Quinella Box 1-3 ({', '.join(q_nos)}) | Trio Box ({', '.join(trio_nos)}){tierce_cd_str} | Dual-Stake: #{p1['no']} + #{p5['no']}")
 
         dual_staking_wagers.append({
             "race_no": race.get("race_no"),

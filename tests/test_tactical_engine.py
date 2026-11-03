@@ -20,8 +20,10 @@ from data.incident_engine import (
     parse_hkjc_racereport_html,
 )
 from monitoring.contracts import (
+    compute_hv_course_calibrations,
     compute_sha_tin_calibrations,
     compute_telemetry_harmony_multipliers,
+    evaluate_exotic_class_droppers,
     validate_racecard_contract,
     validate_odds_contract,
     validate_incident_contract,
@@ -636,6 +638,70 @@ class TestAppMultipliers(unittest.TestCase):
             if (not cand['has_health_risk']) and (0 < cand['win_odds'] <= 13.0) and (cand['model_prob'] * cand['win_odds'] > 1.0)
         ]
         self.assertEqual(len(valid_long), 0)
+
+    def test_hv_course_a_vs_c3_calibrations_and_exotic_class_droppers(self):
+        """
+        Verify Grok's 4 Happy Valley Course "A" (30.5m width) adjustments:
+        1. Course A Rail Sensitivity:
+           - Inside-speed boost (Gates 1-4 & avg_first_pos <= 3.5) is +2.5% (+0.025) on Course A vs +4.0% (+0.04) lightweight on C+3.
+           - Wide-gate sprint penalty (Gates 9+ on <=1200m) is -3.0% (-0.03) on Course A vs -4.0% (-0.04) on C+3.
+           - 1650m+ route draw penalty remains unchanged (-2.0% / -0.02 base).
+        2. Apprentice Jockey Barrier Window:
+           - Claiming apprentices (Ellis Wong, Angus Chung, Nichola Yuen, H Y Yuen) get +2.0% (+0.02) on Gates 1-4 only on Course A (0.0% at Gate 5), vs Gates 1-5 on C+3.
+        3. Longshot Class Droppers in Exotics:
+           - Included in Trio when odds >= 16.0 (or model_prob >= 5%), class_diff >= 1, days_since_last_run <= 35, and (recent_avg_pos <= 6.0 or positive 400m sectional residual).
+           - Included in Tierce only if ranked in raw top 6.
+           - Hard win cap preserved: zero win units on >13.0 odds.
+        """
+        df = pd.DataFrame([
+            # 1. Inside speed runner (Gate 1, 120 lb, avg_first_pos 2.0)
+            {"no": 1, "name": "LIVE WIRE", "draw": 1, "actual_weight": 120, "avg_first_pos": 2.0, "recent_avg_pos": 3.5, "jockey": "Z Purton", "allowance": 0},
+            # 2. Apprentice in Gate 4 with early speed -> +0.02 on both Course A and C+3
+            {"no": 2, "name": "APPRENTICE GATE 4", "draw": 4, "actual_weight": 118, "avg_first_pos": 2.5, "recent_avg_pos": 4.5, "jockey": "E C W Wong (Ellis Wong)", "allowance": 7},
+            # 3. Apprentice in Gate 5 with early speed -> 0.0 on Course A, +0.02 on C+3
+            {"no": 3, "name": "APPRENTICE GATE 5", "draw": 5, "actual_weight": 118, "avg_first_pos": 2.5, "recent_avg_pos": 4.5, "jockey": "Y L Chung (Angus Chung)", "allowance": 5},
+            # 4. Wide sprint runner (Gate 10, 125 lb, avg_first_pos 6.0) -> -0.03 on Course A, -0.04 on C+3
+            {"no": 4, "name": "WIDE SPRINTER", "draw": 10, "actual_weight": 125, "avg_first_pos": 6.0, "recent_avg_pos": 5.5, "jockey": "K Teetan", "allowance": 0},
+        ])
+
+        cal_a_sprint = compute_hv_course_calibrations(df, course_str='TURF - "A" COURSE', distance=1200, is_hv=True, is_awt_race=False)
+        cal_c3_sprint = compute_hv_course_calibrations(df, course_str='TURF - "C+3" COURSE', distance=1200, is_hv=True, is_awt_race=False)
+        cal_a_route = compute_hv_course_calibrations(df, course_str='TURF - "A" COURSE', distance=1650, is_hv=True, is_awt_race=False)
+
+        self.assertTrue(cal_a_sprint["is_a_rail"])
+        self.assertFalse(cal_c3_sprint["is_a_rail"])
+
+        # Inside speed boost: +0.025 on Course A vs +0.04 on C+3 lightweight
+        self.assertAlmostEqual(cal_a_sprint["hv_c_course_boost"][0], 0.025)
+        self.assertAlmostEqual(cal_c3_sprint["hv_c_course_boost"][0], 0.040)
+
+        # Wide sprint penalty: -0.03 on Course A vs -0.04 on C+3; 1650m route unchanged at -0.02
+        self.assertAlmostEqual(cal_a_sprint["hv_c_course_penalty"][3], -0.030)
+        self.assertAlmostEqual(cal_c3_sprint["hv_c_course_penalty"][3], -0.040)
+        self.assertAlmostEqual(cal_a_route["hv_c_course_penalty"][3], -0.020)
+
+        # Apprentice barrier window: Gate 4 gets +0.02 on Course A; Gate 5 gets 0.0 on Course A but +0.02 on C+3
+        self.assertAlmostEqual(cal_a_sprint["apprentice_turf_boost"][1], 0.020)
+        self.assertAlmostEqual(cal_a_sprint["apprentice_turf_boost"][2], 0.000)
+        self.assertAlmostEqual(cal_c3_sprint["apprentice_turf_boost"][2], 0.020)
+
+        # Longshot Class Droppers in Exotics
+        df_exotic = pd.DataFrame([
+            {"no": 1, "name": "FAV", "win_odds": 2.8, "model_prob": 0.30, "gs_score": 30.0, "class_diff": 0, "days_since_last_run": 14, "recent_avg_pos": 2.0, "best_last_sec": 22.80, "has_health_risk": False},
+            {"no": 2, "name": "SECOND", "win_odds": 5.0, "model_prob": 0.18, "gs_score": 18.0, "class_diff": 0, "days_since_last_run": 21, "recent_avg_pos": 3.5, "best_last_sec": 22.85, "has_health_risk": False},
+            {"no": 3, "name": "THIRD", "win_odds": 7.5, "model_prob": 0.13, "gs_score": 13.0, "class_diff": 0, "days_since_last_run": 21, "recent_avg_pos": 4.0, "best_last_sec": 22.90, "has_health_risk": False},
+            {"no": 4, "name": "FOURTH", "win_odds": 9.0, "model_prob": 0.10, "gs_score": 10.0, "class_diff": 0, "days_since_last_run": 21, "recent_avg_pos": 4.5, "best_last_sec": 22.95, "has_health_risk": False},
+            # Rank 5: Top-6 Longshot Class Dropper (odds 18.0, class_diff 1, 21d ago, recent_avg_pos 5.5) -> Trio AND Tierce
+            {"no": 5, "name": "TOP6 DROPPER", "win_odds": 18.0, "model_prob": 0.07, "gs_score": 8.5, "class_diff": 1, "days_since_last_run": 21, "recent_avg_pos": 5.5, "best_last_sec": 23.00, "has_health_risk": False},
+            {"no": 6, "name": "SIXTH", "win_odds": 12.0, "model_prob": 0.08, "gs_score": 8.0, "class_diff": 0, "days_since_last_run": 28, "recent_avg_pos": 5.0, "best_last_sec": 23.05, "has_health_risk": False},
+            # Rank 7: Longshot Class Dropper outside top-6 with positive 400m sectional residual (22.50 < median) -> Trio only (NOT Tierce)
+            {"no": 7, "name": "DEEP SEC DROPPER", "win_odds": 22.0, "model_prob": 0.055, "gs_score": 6.5, "class_diff": 1, "days_since_last_run": 28, "recent_avg_pos": 7.5, "best_last_sec": 22.50, "has_health_risk": False},
+            # Rank 8: Longshot Class Dropper with stale layoff (45d > 35d) -> Excluded
+            {"no": 8, "name": "STALE DROPPER", "win_odds": 20.0, "model_prob": 0.05, "gs_score": 5.0, "class_diff": 1, "days_since_last_run": 45, "recent_avg_pos": 5.0, "best_last_sec": 22.60, "has_health_risk": False},
+        ])
+        exotic_res = evaluate_exotic_class_droppers(df_exotic)
+        self.assertEqual(exotic_res["trio_dropper_nos"], [5, 7])
+        self.assertEqual(exotic_res["tierce_dropper_nos"], [5])
 
 
 class TestFailLoudMonitoringRegressions(unittest.TestCase):
