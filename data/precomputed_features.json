@@ -2393,6 +2393,12 @@
         ],
         "KING MILES": [
             "B/TT"
+        ],
+        "ROMANTIC SON": [
+            "CP"
+        ],
+        "YOUNG CHAMPION": [
+            "B"
         ]
     },
     "running_styles": {
@@ -4526,7 +4532,7 @@
         "KEMPES": 10.5,
         "KING MILES": 7.333333333333333,
         "KING OBERON": 5.0,
-        "KING OF FIGHTERS": 9.833333333333334,
+        "KING OF FIGHTERS": 10.583333333333334,
         "KING OF SELECTION": 8.9,
         "KING OF THE SKY": 13,
         "KING ZOOM": 8.5,
@@ -4704,7 +4710,7 @@
         "ROBOT LUCKY STAR": 6.111111111111111,
         "ROMANTIC FANTASY": 8.75,
         "ROMANTIC GLADIATOR": 4.333333333333333,
-        "ROMANTIC LAOS": 7,
+        "ROMANTIC LAOS": 7.666666666666667,
         "ROMANTIC THOR": 4.25,
         "ROSEWOOD FLEETFOOT": 8.181818181818182,
         "RUBY THRIVE": 4.666666666666667,
@@ -4816,7 +4822,7 @@
         "THE AZURE": 9.416666666666666,
         "THE BOOM BOX": 10.416666666666666,
         "THE CONCENTRATION": 5.5,
-        "THE HEIR": 8.083333333333334,
+        "THE HEIR": 8.0,
         "THE LION KING": 4.416666666666667,
         "THE PERFECT MATCH": 7.333333333333333,
         "THOUSAND CUPS": 2.1666666666666665,
@@ -4967,7 +4973,9 @@
         "YOUNG EMPEROR": 8.416666666666666,
         "STORMI": 1.6666666666666667,
         "FORTUNE LINK": 7.2,
-        "IT IS YOU": 6.0
+        "IT IS YOU": 6.0,
+        "ROMANTIC SON": 6.636363636363637,
+        "YOUNG CHAMPION": 8.083333333333334
     },
     "last_comments": {
         "BABA MAMA": "Began well, raced 2 wide in midfield, slightly improved     from 600M, finished off strongly to get 2nd.                                                                                                                                        ",

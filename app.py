@@ -621,19 +621,43 @@ selected_index = meeting_options.index(selected_meeting_str)
 meeting = meetings[selected_index]
 races = meeting.get('races', [])
 
-# Proactively ensure all runners on the selected meeting card have complete HKJC profiles synced
+def safe_num(val, default=0.0):
+    if val is None or pd.isna(val):
+        return default
+    try:
+        return float(val)
+    except (ValueError, TypeError):
+        return default
+
+def safe_int(val, default=0):
+    if val is None or pd.isna(val):
+        return default
+    try:
+        return int(float(val))
+    except (ValueError, TypeError):
+        return default
+
+def safe_fmt(val, default=0.0, decimals=1):
+    num = safe_num(val, default)
+    return f"{num:.{decimals}f}"
+
+# Proactively ensure all runners on the active card have complete HKJC profiles synced (once per session)
 try:
-    from hkjc_profile_scraper import ensure_meeting_profiles_synced
-    synced_count = ensure_meeting_profiles_synced(meeting)
-    if synced_count > 0:
-        fetch_horse_stats.clear()
-        load_precomputed_data.clear()
-        horse_stats_df = fetch_horse_stats()
-        precomputed = load_precomputed_data()
-        last_comments = precomputed.get('last_comments', {})
-        winning_gears = {k: set(v) for k, v in precomputed.get('winning_gears', {}).items()}
-        running_styles = precomputed.get('running_styles', {})
-        sectional_bursts = precomputed.get('sectional_bursts', {})
+    if str(meeting.get('status', 'UPCOMING')).upper() != 'CLOSED':
+        sync_key = f"profiles_synced_{meeting.get('date')}_{meeting.get('venue')}"
+        if not st.session_state.get(sync_key, False):
+            from hkjc_profile_scraper import ensure_meeting_profiles_synced
+            synced_count = ensure_meeting_profiles_synced(meeting)
+            st.session_state[sync_key] = True
+            if synced_count > 0:
+                fetch_horse_stats.clear()
+                load_precomputed_data.clear()
+                horse_stats_df = fetch_horse_stats()
+                precomputed = load_precomputed_data()
+                last_comments = precomputed.get('last_comments', {})
+                winning_gears = {k: set(v) for k, v in precomputed.get('winning_gears', {}).items()}
+                running_styles = precomputed.get('running_styles', {})
+                sectional_bursts = precomputed.get('sectional_bursts', {})
 except Exception as e:
     print("Warning in ensure_meeting_profiles_synced:", e)
 
@@ -871,8 +895,8 @@ with tab1:
                             p1_mask = df_runners['card_rank'] == 1
                             if p1_mask.any():
                                 p1_idx = df_runners[p1_mask].index[0]
-                                p1_o = float(df_runners.loc[p1_idx, 'win_odds'])
-                                p1_p = float(df_runners.loc[p1_idx, 'model_prob'])
+                                p1_o = safe_num(df_runners.loc[p1_idx, 'win_odds'])
+                                p1_p = safe_num(df_runners.loc[p1_idx, 'model_prob'])
                                 p1_h = bool(df_runners.loc[p1_idx, 'has_health_risk']) if 'has_health_risk' in df_runners.columns else False
                                 p1_live = (p1_o > 0) and (p1_o < 20.0)
                                 p1_pass = p1_live and (p1_o <= 13.0) and (not p1_h) and (p1_p * p1_o > 1.0)
@@ -881,10 +905,10 @@ with tab1:
                                 df_runners.loc[df_runners['card_rank'] != 1, 'primary_reason'] = ""
                                 if p1_pass:
                                     df_runners.loc[p1_idx, 'win_stake_active'] = 1
-                                    df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({df_runners.loc[p1_idx, 'gs_score']:.1f}) - WIN STAKE ACTIVE (Half Unit Win + Place)"
+                                    df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({safe_fmt(df_runners.loc[p1_idx, 'gs_score'])}) - WIN STAKE ACTIVE (Half Unit Win + Place)"
                                 elif p1_live:
                                     p1_reason_suffix = "Exotic / Place key only — odds > 13.0 win cap" if p1_o > 13.0 else "Winning-horse pick / exotic key only — no win stake"
-                                    df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({df_runners.loc[p1_idx, 'gs_score']:.1f}) - {p1_reason_suffix}"
+                                    df_runners.loc[p1_idx, 'primary_reason'] = f"Top GS Score ({safe_fmt(df_runners.loc[p1_idx, 'gs_score'])}) - {p1_reason_suffix}"
                                     # Pick 1 failed -> check strictly Pick 2 (Picks 3-4 restricted to exotics only)
                                     p24_mask = df_runners['card_rank'] == 2
                                     p24_df = df_runners[p24_mask].copy()
@@ -895,7 +919,7 @@ with tab1:
                                             p24_pass['ev_mult'] = p24_pass['model_prob'] * p24_pass['win_odds']
                                             best_s = p24_pass.sort_values(by='ev_mult', ascending=False).iloc[0]
                                             df_runners.loc[df_runners['no'] == best_s['no'], 'win_stake_active'] = 1
-                                            df_runners.loc[df_runners['no'] == best_s['no'], 'primary_reason'] = f"Shifted Win Stake (Pick {int(best_s['card_rank'])} - EV +{best_s.get('value_diff', 0):.3f})"
+                                            df_runners.loc[df_runners['no'] == best_s['no'], 'primary_reason'] = f"Shifted Win Stake (Pick {safe_int(best_s.get('card_rank'))} - EV +{safe_fmt(best_s.get('value_diff'), default=0.0, decimals=3)})"
             
             if 'clean_name' not in df_runners.columns:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
@@ -918,7 +942,8 @@ with tab1:
                     p2_dict = race_picks_gs.iloc[1].to_dict()
                     best_gs['p2_no'] = p2_dict.get('no')
                     best_gs['p2_name'] = p2_dict.get('name')
-                    best_gs['p2_odds'] = float(p2_dict.get('win_odds', 20.0))
+                    best_gs['p2_odds'] = safe_num(p2_dict.get('win_odds'), 20.0)
+                    best_gs['p2_gs'] = safe_num(p2_dict.get('gs_score'), 0.0)
                     best_gs['p2_gs'] = float(p2_dict.get('gs_score', 0.0))
                 class_str_frozen = str(race.get("class_dist", ""))
                 best_gs.update({"race_no": race.get("race_no"), "class_dist": class_str_frozen})
@@ -1478,12 +1503,12 @@ with tab1:
             p5 = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
             
         # Price Test & Split Rule on Sprints (1000m / 1200m) for Pick 1:
-        p1_odds = float(p1.get('win_odds', 20.0))
-        p1_prob = float(p1.get('model_prob', 0.0))
-        p1_draw = int(pd.to_numeric(p1.get('draw', 6), errors='coerce'))
-        p1_wt = float(pd.to_numeric(p1.get('actual_weight', 125), errors='coerce'))
-        p1_first_pos = float(pd.to_numeric(p1.get('avg_first_pos', 6.0), errors='coerce'))
-        p1_recent_pos = float(pd.to_numeric(p1.get('recent_avg_pos', 7.0), errors='coerce'))
+        p1_odds = safe_num(p1.get('win_odds'), 20.0)
+        p1_prob = safe_num(p1.get('model_prob'), 0.0)
+        p1_draw = safe_int(p1.get('draw'), 6)
+        p1_wt = safe_num(p1.get('actual_weight'), 125.0)
+        p1_first_pos = safe_num(p1.get('avg_first_pos'), 6.0)
+        p1_recent_pos = safe_num(p1.get('recent_avg_pos'), 7.0)
         p1_is_crosser = (p1_first_pos <= 3.5) or (p1_recent_pos <= 3.5)
         p1_has_health_risk = bool(p1.get('has_health_risk', False))
         p1_live = (p1_odds > 0) and (p1_odds < 20.0)
@@ -1502,8 +1527,8 @@ with tab1:
             valid = []
             for cand, r_idx in p24_cands:
                 if cand is not None:
-                    c_odds = float(cand.get('win_odds', 20.0))
-                    c_prob = float(cand.get('model_prob', 0.0))
+                    c_odds = safe_num(cand.get('win_odds'), 20.0)
+                    c_prob = safe_num(cand.get('model_prob'), 0.0)
                     c_health = bool(cand.get('has_health_risk', False))
                     if (not c_health) and (c_odds > 0) and (c_odds <= 13.0) and (c_prob * c_odds > 1.0):
                         valid.append((cand, r_idx, c_prob * c_odds))
@@ -1556,13 +1581,13 @@ with tab1:
                 df_runners.loc[df_runners['no'] == runner_obj['no'], 'card_rank'] = rank_idx + 1
 
         df_runners['is_primary'] = (df_runners['no'] == p1['no']).astype(int)
-        df_runners['primary_reason'] = np.where(df_runners['no'] == p1['no'], f"Top GS Score ({p1['gs_score']:.1f}) - {p1_status}", "")
+        df_runners['primary_reason'] = np.where(df_runners['no'] == p1['no'], f"Top GS Score ({safe_fmt(p1.get('gs_score'))}) - {p1_status}", "")
         df_runners['win_stake_active'] = np.where((df_runners['no'] == p1['no']) & p1_passes_test, 1, 0)
         
         # If win stake shifted to another runner in Picks 2-4, flag it
         if shifted_win_runner is not None:
             df_runners.loc[df_runners['no'] == shifted_win_runner['no'], 'win_stake_active'] = 1
-            df_runners.loc[df_runners['no'] == shifted_win_runner['no'], 'primary_reason'] = f"Shifted Win Stake (Pick {shifted_from_rank} - EV +{shifted_win_runner['value_diff']:.3f})"
+            df_runners.loc[df_runners['no'] == shifted_win_runner['no'], 'primary_reason'] = f"Shifted Win Stake (Pick {shifted_from_rank} - EV +{safe_fmt(shifted_win_runner.get('value_diff'), default=0.0, decimals=3)})"
 
         # Add historical records
         if 'clean_name' not in df_runners.columns:
@@ -1654,8 +1679,8 @@ with tab1:
         if p2 is not None:
             best_gs['p2_no'] = p2.get('no')
             best_gs['p2_name'] = p2.get('name')
-            best_gs['p2_odds'] = float(p2.get('win_odds', 20.0))
-            best_gs['p2_gs'] = float(p2.get('gs_score', 0.0))
+            best_gs['p2_odds'] = safe_num(p2.get('win_odds'), 20.0)
+            best_gs['p2_gs'] = safe_num(p2.get('gs_score'), 0.0)
         best_gs.update({"race_no": race.get("race_no"), "primary_reason": p1_status, "class_dist": class_str})
         if "class 5" not in str(class_str).lower():
             parlay_candidates.append(best_gs)
@@ -1665,28 +1690,28 @@ with tab1:
     for r in races:
         if 'processed_runners' not in r: continue
         for _, row in r['processed_runners'].iterrows():
-            base_odds = float(row.get('baseline_odds', 0.0))
-            curr_odds = float(row.get('win_odds', 0.0))
+            base_odds = safe_num(row.get('baseline_odds'), 0.0)
+            curr_odds = safe_num(row.get('win_odds'), 0.0)
             if base_odds > 0 and curr_odds > 0:
                 shift_pct = (curr_odds - base_odds) / base_odds
                 if shift_pct < -0.15: # dropped by more than 15%
                     steam_alerts.append({
                         "race_no": r.get("race_no"),
-                        "no": row['no'],
-                        "name": row['name'],
+                        "no": row.get('no'),
+                        "name": row.get('name'),
                         "link": format_horse_link(row, prefix="#"),
-                        "jockey": row['jockey'],
+                        "jockey": row.get('jockey', 'Unknown'),
                         "base": base_odds,
                         "curr": curr_odds,
                         "pct": shift_pct
                     })
 
-    global_best_bets_sorted_by_gs = sorted(global_best_bets, key=lambda x: x.get('gs_score', 0), reverse=True)
-    global_best_bets_sorted_by_ev = sorted(global_best_bets, key=lambda x: x.get('value_diff', 0), reverse=True)
+    global_best_bets_sorted_by_gs = sorted(global_best_bets, key=lambda x: safe_num(x.get('gs_score')), reverse=True)
+    global_best_bets_sorted_by_ev = sorted(global_best_bets, key=lambda x: safe_num(x.get('value_diff')), reverse=True)
     top_pick_today = global_best_bets_sorted_by_ev[0] if global_best_bets_sorted_by_ev else None
     
     # Sort parlay candidates strictly from the 1st Picks of each race
-    parlay_sorted = sorted(parlay_candidates, key=lambda x: x.get('gs_score', 0), reverse=True)
+    parlay_sorted = sorted(parlay_candidates, key=lambda x: safe_num(x.get('gs_score')), reverse=True)
     
     dual_staking_bets = []
     for r in races:
@@ -1703,13 +1728,13 @@ with tab1:
                 "p1_no": p1_sel['no'],
                 "p1_name": p1_sel['name'],
                 "p1_link": format_horse_link(p1_sel, prefix="#"),
-                "p1_odds": float(p1_sel.get('win_odds', 20.0)),
+                "p1_odds": safe_num(p1_sel.get('win_odds'), 20.0),
                 "p1_status": p1_sel.get('primary_reason', ''),
                 "p5_no": p5_sel['no'],
                 "p5_name": p5_sel['name'],
                 "p5_link": format_horse_link(p5_sel, prefix="#"),
-                "p5_odds": float(p5_sel.get('win_odds', 20.0)),
-                "p5_ev": float(p5_sel.get('value_diff', 0.0))
+                "p5_odds": safe_num(p5_sel.get('win_odds'), 20.0),
+                "p5_ev": safe_num(p5_sel.get('value_diff'), 0.0)
             })
 
     with st.expander("Macro Insights & Global Best Bets", expanded=True):
@@ -1721,7 +1746,7 @@ with tab1:
                     {get_match_badge(top_pick_today, search_term)}
                     <div class="data-label" style="color:#38bdf8; font-size:0.90rem; font-weight:800;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
                     <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_pick_today['race_no']} – {format_horse_link(top_pick_today, '#')}</div>
-                    <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{top_pick_today['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{top_pick_today['confidence']}%</b></div>
+                    <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{safe_fmt(top_pick_today.get('win_odds'))}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{safe_fmt(top_pick_today.get('confidence'), 50, 0)}%</b></div>
                 </div>
                 '''), unsafe_allow_html=True)
             with col_bb2:
@@ -1732,7 +1757,7 @@ with tab1:
                         {get_match_badge(top_gs_pick, search_term)}
                         <div class="data-label" style="color:#38bdf8; font-size:0.90rem; font-weight:800;">💎 AI STRONGEST CONFIDENCE (BEST BET)</div>
                         <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_gs_pick['race_no']} – {format_horse_link(top_gs_pick, '#')}</div>
-                        <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{top_gs_pick['win_odds']:.1f}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{top_gs_pick['confidence']}%</b></div>
+                        <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{safe_fmt(top_gs_pick.get('win_odds'))}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{safe_fmt(top_gs_pick.get('confidence'), 50, 0)}%</b></div>
                     </div>
                     '''), unsafe_allow_html=True)
             parlay_str = " + ".join([f"R{bb.get('race_no')} " + format_horse_link(bb, "#") for bb in parlay_sorted[:3]])
@@ -1742,14 +1767,14 @@ with tab1:
                 b2 = parlay_sorted[1]
 
                 def get_leg_bet_type(runner):
-                    ev = float(runner.get('value_diff', 0.0))
-                    odds = float(runner.get('win_odds', 20.0))
+                    ev = safe_num(runner.get('value_diff'), 0.0)
+                    odds = safe_num(runner.get('win_odds'), 20.0)
                     reason = str(runner.get('primary_reason', ''))
                     win_active = bool(runner.get('win_stake_active', 0)) or ('WIN STAKE ACTIVE' in reason)
                     p2_no = runner.get('p2_no')
                     p2_name = runner.get('p2_name')
-                    p2_gs = float(runner.get('p2_gs', 0.0))
-                    p1_gs = float(runner.get('gs_score', 0.0))
+                    p2_gs = safe_num(runner.get('p2_gs'), 0.0)
+                    p1_gs = safe_num(runner.get('gs_score'), 0.0)
                     combined_gs = p1_gs + p2_gs
                     r_link = format_horse_link(runner, "#")
 
@@ -1758,8 +1783,8 @@ with tab1:
                             "pool": "WIN (獨贏)",
                             "badge_bg": "#15803d",
                             "pick": r_link,
-                            "odds_label": f"{odds:.1f}",
-                            "rationale": f"High Expected Value (+{ev:.3f} EV) & dominant win conversion"
+                            "odds_label": f"{safe_fmt(odds)}",
+                            "rationale": f"High Expected Value (+{safe_fmt(ev, 0.0, 3)} EV) & dominant win conversion"
                         }
                     elif p2_no and combined_gs >= 36.0:
                         p2_link = format_horse_link({'no': p2_no, 'name': p2_name}, "#")
@@ -1767,8 +1792,8 @@ with tab1:
                             "pool": "QUINELLA (連贏 Q)",
                             "badge_bg": "#b45309",
                             "pick": f"{r_link} + {p2_link}",
-                            "odds_label": f"Q Box ({odds:.1f} / {runner.get('p2_odds', 0):.1f})",
-                            "rationale": f"1-2 Lock: Combined GS Score {combined_gs:.1f} across top two runners"
+                            "odds_label": f"Q Box ({safe_fmt(odds)} / {safe_fmt(runner.get('p2_odds'))})",
+                            "rationale": f"1-2 Lock: Combined GS Score {safe_fmt(combined_gs)} across top two runners"
                         }
                     else:
                         est_place = max(1.3, round(1.0 + (odds - 1.0) * 0.28, 1))
@@ -1776,8 +1801,8 @@ with tab1:
                             "pool": "PLACE (位置)",
                             "badge_bg": "#0284c7",
                             "pick": r_link,
-                            "odds_label": f"Est. ~{est_place:.1f}",
-                            "rationale": f"Top GS Score ({p1_gs:.1f}) podium anchor (>80% top-3 safety buffer)"
+                            "odds_label": f"Est. ~{safe_fmt(est_place)}",
+                            "rationale": f"Top GS Score ({safe_fmt(p1_gs)}) podium anchor (>80% top-3 safety buffer)"
                         }
 
                 l1 = get_leg_bet_type(b1)
@@ -1810,7 +1835,7 @@ with tab1:
                     <div style="margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.08); font-size:0.85rem; color:#94a3b8; display:flex; flex-wrap:wrap; gap:16px;">
                         <span>🛡️ <b>Safe Option (PLACE 2x3):</b> R{b1.get('race_no')} #{b1.get('no')} Pl × R{b2.get('race_no')} #{b2.get('no')} Pl</span>
                         <span>⚡ <b>AI Optimal:</b> R{b1.get('race_no')} ({l1['pool']}) × R{b2.get('race_no')} ({l2['pool']})</span>
-                        <span>🚀 <b>Alpha Option (WIN 2x3):</b> R{b1.get('race_no')} #{b1.get('no')} Win ({b1.get('win_odds', 0):.1f}) × R{b2.get('race_no')} #{b2.get('no')} Win ({b2.get('win_odds', 0):.1f})</span>
+                        <span>🚀 <b>Alpha Option (WIN 2x3):</b> R{b1.get('race_no')} #{b1.get('no')} Win ({safe_fmt(b1.get('win_odds'))}) × R{b2.get('race_no')} #{b2.get('no')} Win ({safe_fmt(b2.get('win_odds'))})</span>
                     </div>
                 </div>
                 '''), unsafe_allow_html=True)
@@ -1822,8 +1847,8 @@ with tab1:
                     dual_html += clean_html(f'''
                     <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); padding: 12px 18px; border-radius: 8px; border: 1.5px solid rgba(56, 189, 248, 0.45); font-size:0.95rem; color:#f8fafc; line-height:1.5; min-width: 250px; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
                         <b style="color:#38bdf8;">Race {bet['race_no']} Bet Selection:</b><br>
-                        🎯 Anchor (Rank 1): <span style="color:#ffffff; font-weight:800;">{bet['p1_link']}</span> (<span style="color:#38bdf8; font-weight:700;">{bet['p1_odds']:.1f}</span>)<br>
-                        💣 Sleeper (Rank 5): <span style="color:#38bdf8; font-weight:800;">{bet['p5_link']}</span> (<span style="color:#38bdf8; font-weight:700;">{bet['p5_odds']:.1f}</span>)
+                        🎯 Anchor (Rank 1): <span style="color:#ffffff; font-weight:800;">{bet['p1_link']}</span> (<span style="color:#38bdf8; font-weight:700;">{safe_fmt(bet.get('p1_odds'))}</span>)<br>
+                        💣 Sleeper (Rank 5): <span style="color:#38bdf8; font-weight:800;">{bet['p5_link']}</span> (<span style="color:#38bdf8; font-weight:700;">{safe_fmt(bet.get('p5_odds'))}</span>)
                     </div>
                     ''')
                 dual_html += '</div>'
@@ -1833,13 +1858,13 @@ with tab1:
             if steam_alerts:
                 steam_html = '<div style="margin-top:20px; font-family:\'Montserrat\'; font-weight:800; font-size:1.1rem; color:#38bdf8; letter-spacing:0.5px;">⚡ LIVE MARKET STEAM ALERTS (SMART MONEY ACTION)</div>'
                 steam_html += '<div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;">'
-                sorted_steam = sorted(steam_alerts, key=lambda x: x['pct'])
+                sorted_steam = sorted(steam_alerts, key=lambda x: safe_num(x.get('pct')))
                 for alert in sorted_steam[:6]: # Show top 6
-                    pct_str = f"{alert['pct'] * 100:.0f}%"
+                    pct_str = f"{safe_num(alert.get('pct')) * 100:.0f}%"
                     steam_html += clean_html(f'''
                     <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); padding: 12px 18px; border-radius: 8px; border: 1.5px solid rgba(56, 189, 248, 0.5); font-size:0.95rem; color:#f8fafc; line-height:1.5; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
-                        <b style="color:#ffffff;">R{alert['race_no']} {alert['link']}</b><br>
-                        <span style="color:#38bdf8; font-weight:800;">Steam: {pct_str}</span> (<span style="color:#cbd5e1;">{alert['base']:.1f} → <b style="color:#38bdf8;">{alert['curr']:.1f}</b></span>) | <i style="color:#94a3b8;">{alert['jockey']}</i>
+                        <b style="color:#ffffff;">R{alert.get('race_no')} {alert.get('link')}</b><br>
+                        <span style="color:#38bdf8; font-weight:800;">Steam: {pct_str}</span> (<span style="color:#cbd5e1;">{safe_fmt(alert.get('base'))} → <b style="color:#38bdf8;">{safe_fmt(alert.get('curr'))}</b></span>) | <i style="color:#94a3b8;">{alert.get('jockey', 'Unknown')}</i>
                     </div>
                     ''')
                 steam_html += '</div>'
@@ -1847,8 +1872,8 @@ with tab1:
     st.markdown("---")
     
     def get_shift_badge(row):
-        base = float(row.get('baseline_odds', 0.0))
-        curr = float(row.get('win_odds', 0.0))
+        base = safe_num(row.get('baseline_odds'), 0.0)
+        curr = safe_num(row.get('win_odds'), 0.0)
         if base > 0 and curr > 0:
             pct = (curr - base) / base
             if pct < -0.15:
@@ -2047,12 +2072,12 @@ with tab1:
                         'color': '#3b82f6',
                         'bg': 'rgba(59, 130, 246, 0.10)',
                         'border': 'rgba(59, 130, 246, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: Resuming after {int(r_days_off)} days off"
+                        'text': f"<b>{r_item_link}</b>: Resuming after {safe_int(r_days_off)} days off"
                     })
                     
                 # 4. Barrier Trial Speed Outlier
                 if r_name in trial_features:
-                    spd = float(trial_features[r_name].get('best_trial_speed_diff', 0.0))
+                    spd = safe_num(trial_features[r_name].get('best_trial_speed_diff'), 0.0)
                     if spd >= 0.5:
                         tactical_radar_items.append({
                             'type': '🔥 TRIAL SPEED OUTLIER',
@@ -2066,14 +2091,14 @@ with tab1:
                 try:
                     from data.incident_engine import evaluate_tactical_scores
                     t_ctx = {
-                        'barrier': int(r_item.get('draw', 8)),
+                        'barrier': safe_int(r_item.get('draw'), 8),
                         'venue': meeting.get('venue', 'Sha Tin'),
                         'surface': race_track_type,
                         'going': race_going_type,
                         'distance': distance,
-                        'sp': float(r_item.get('win_odds', 10.0)),
+                        'sp': safe_num(r_item.get('win_odds'), 10.0),
                         'winner_weight': 125.0,
-                        'weight_carried': float(r_item.get('actual_weight', 125.0))
+                        'weight_carried': safe_num(r_item.get('actual_weight'), 125.0)
                     }
                     t_eval = evaluate_tactical_scores(r_name, t_ctx, horse_memory)
                     for b in t_eval.get('badges', []):
@@ -2099,7 +2124,7 @@ with tab1:
                         'color': '#38bdf8',
                         'bg': 'rgba(56, 189, 248, 0.10)',
                         'border': 'rgba(56, 189, 248, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: Genuine class dropper at {float(r_item.get('win_odds', 20.0)):.1f} odds (≤35d recency & competitive form/sectional) — auto-included in Trio{tierce_tag} box (0 win stake >13.0 cap)."
+                        'text': f"<b>{r_item_link}</b>: Genuine class dropper at {safe_fmt(r_item.get('win_odds'), default=20.0)} odds (≤35d recency & competitive form/sectional) — auto-included in Trio{tierce_tag} box (0 win stake >13.0 cap)."
                     })
 
                 # 7. Happy Valley Course "A" Card-Specific Awareness Flags (Wed 4 Nov 2026)
@@ -2109,7 +2134,7 @@ with tab1:
                         'color': '#10b981',
                         'bg': 'rgba(16, 185, 129, 0.10)',
                         'border': 'rgba(16, 185, 129, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: High-confidence inside-speed candidate (Gate {int(r_item.get('draw', 1))}, Z Purton) under Happy Valley Course A (30.5m) rail parameters."
+                        'text': f"<b>{r_item_link}</b>: High-confidence inside-speed candidate (Gate {safe_int(r_item.get('draw'), 1)}, Z Purton) under Happy Valley Course A (30.5m) rail parameters."
                     })
                 elif r_name == 'COPARTNER FLEET':
                     tactical_radar_items.append({
@@ -2117,7 +2142,7 @@ with tab1:
                         'color': '#f59e0b',
                         'bg': 'rgba(245, 158, 11, 0.10)',
                         'border': 'rgba(245, 158, 11, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: Mid-draw risk (Gate {int(r_item.get('draw', 7))}) if early tempo is hot on Course A; prefer place/exotic coverage."
+                        'text': f"<b>{r_item_link}</b>: Mid-draw risk (Gate {safe_int(r_item.get('draw'), 7)}) if early tempo is hot on Course A; prefer place/exotic coverage."
                     })
                 elif r_name == 'ACE CHAMPION':
                     tactical_radar_items.append({
@@ -2125,7 +2150,7 @@ with tab1:
                         'color': '#38bdf8',
                         'bg': 'rgba(56, 189, 248, 0.10)',
                         'border': 'rgba(56, 189, 248, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: Acceptable mid draw (Gate {int(r_item.get('draw', 5))}) on Course A; monitor for moderate-hot tempo favoring closers with strong 400m sectionals."
+                        'text': f"<b>{r_item_link}</b>: Acceptable mid draw (Gate {safe_int(r_item.get('draw'), 5)}) on Course A; monitor for moderate-hot tempo favoring closers with strong 400m sectionals."
                     })
 
             if tactical_radar_items:
@@ -2173,19 +2198,38 @@ with tab1:
                 stake_badge = '<span style="background:#10b981; color:#ffffff; padding:4px 10px; border-radius:6px; font-weight:700; font-size:0.85rem; letter-spacing:0.5px;">🟢 WIN STAKE ACTIVE (Half Unit Win + Place)</span>'
             elif not other_win_active.empty:
                 shifted_h = other_win_active.iloc[0]
-                stake_badge = f'<span style="background:#334155; color:#cbd5e1; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.82rem;">⚪ Pick 1 Key Only</span> &nbsp; <span style="background:#10b981; color:#ffffff; padding:4px 10px; border-radius:6px; font-weight:700; font-size:0.85rem;">⚡ Shifted Win Stake: {format_horse_link(shifted_h, "#")} ({shifted_h["win_odds"]:.1f})</span>'
+                stake_badge = f'<span style="background:#334155; color:#cbd5e1; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.82rem;">⚪ Pick 1 Key Only</span> &nbsp; <span style="background:#10b981; color:#ffffff; padding:4px 10px; border-radius:6px; font-weight:700; font-size:0.85rem;">⚡ Shifted Win Stake: {format_horse_link(shifted_h, "#")} ({safe_fmt(shifted_h.get("win_odds"))})</span>'
             else:
                 stake_badge = '<span style="background:#334155; color:#cbd5e1; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.82rem;">⚪ EXOTIC KEY ONLY</span>'
 
-            trio_box_nos = [int(best['no']), int(second['no']), int(third['no']), int(fourth['no'])]
+            trio_box_nos = []
+            for p_cand in [best, second, third, fourth]:
+                if p_cand is not None and 'no' in p_cand:
+                    try:
+                        n_c = int(pd.to_numeric(p_cand['no'], errors='coerce'))
+                        if n_c > 0 and n_c not in trio_box_nos:
+                            trio_box_nos.append(n_c)
+                    except Exception:
+                        pass
             if 'is_exotic_class_dropper' in df_runners.columns:
                 for cd_no in df_runners[df_runners['is_exotic_class_dropper']]['no'].tolist():
-                    if int(cd_no) not in trio_box_nos:
-                        trio_box_nos.append(int(cd_no))
+                    try:
+                        n_cd = int(pd.to_numeric(cd_no, errors='coerce'))
+                        if n_cd > 0 and n_cd not in trio_box_nos:
+                            trio_box_nos.append(n_cd)
+                    except Exception:
+                        pass
             trio_pill_str = ", ".join(f"#{n}" for n in trio_box_nos)
             tierce_cd_pill = ""
             if 'is_tierce_class_dropper' in df_runners.columns:
-                t_cd_nos = [int(n) for n in df_runners[df_runners['is_tierce_class_dropper']]['no'].tolist()]
+                t_cd_nos = []
+                for n in df_runners[df_runners['is_tierce_class_dropper']]['no'].tolist():
+                    try:
+                        n_t = int(pd.to_numeric(n, errors='coerce'))
+                        if n_t > 0:
+                            t_cd_nos.append(n_t)
+                    except Exception:
+                        pass
                 if t_cd_nos:
                     tierce_cd_pill = f' &nbsp; <span style="color:#cbd5e1; font-weight:700;">💎 Tierce Class-Dropper:</span> <span class="ticket-pill">{", ".join(f"#{n}" for n in t_cd_nos)}</span>'
 
@@ -2193,9 +2237,9 @@ with tab1:
             <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.96), rgba(20, 3, 6, 0.98)); padding: 14px 20px; border-radius: 10px; border: 1.5px solid rgba(56, 189, 248, 0.55); margin-bottom: 12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
                 <div style="color:#f8fafc; line-height:1.8;">
                     <b style="font-size:1.05rem; color:#38bdf8;">Official Window Tickets:</b> &nbsp;
-                    <span style="color:#cbd5e1; font-weight:700;">🎯 Quinella Box:</span> <span class="ticket-pill">#{best['no']}, #{second['no']}, #{third['no']}</span> &nbsp;
+                    <span style="color:#cbd5e1; font-weight:700;">🎯 Quinella Box:</span> <span class="ticket-pill">#{best.get('no')}, #{second.get('no')}, #{third.get('no')}</span> &nbsp;
                     <span style="color:#cbd5e1; font-weight:700;">💠 Trio Box:</span> <span class="ticket-pill">{trio_pill_str}</span> &nbsp;
-                    <span style="color:#cbd5e1; font-weight:700;">💣 Dual-Stake:</span> <span class="ticket-pill">Anchor #{best['no']} + Sleeper #{fifth['no']}</span>{tierce_cd_pill}
+                    <span style="color:#cbd5e1; font-weight:700;">💣 Dual-Stake:</span> <span class="ticket-pill">Anchor #{best.get('no')} + Sleeper #{fifth.get('no')}</span>{tierce_cd_pill}
                 </div>
                 <div>{stake_badge}</div>
             </div>
@@ -2209,10 +2253,10 @@ with tab1:
                     <div class="data-label" style="color:#38bdf8; font-size:0.85rem; font-weight:800;">🏆 PICK 1 — WINNING HORSE</div>
                     <div class="data-value" style="font-size:1.35rem; color:#ffffff; font-weight:800;">{format_horse_link(best, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
-                        J: <span style="color:#ffffff; font-weight:800;">{best['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{best['trainer']}</span>
-                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{best['win_odds']:.1f}</span>{get_shift_badge(best)}
+                        J: <span style="color:#ffffff; font-weight:800;">{best.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{best.get('trainer', 'Unknown')}</span>
+                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(best.get('win_odds'))}</span>{get_shift_badge(best)}
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {best.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{best['confidence']}%</span></div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {safe_fmt(best.get('gs_score'))} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{best.get('confidence', 50)}%</span></div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc2:
@@ -2222,10 +2266,10 @@ with tab1:
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">🎯 PICK 2 — EXACTA/QUINELLA</div>
                     <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(second, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
-                        J: <span style="color:#ffffff; font-weight:800;">{second['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{second['trainer']}</span>
-                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{second['win_odds']:.1f}</span>{get_shift_badge(second)}
+                        J: <span style="color:#ffffff; font-weight:800;">{second.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{second.get('trainer', 'Unknown')}</span>
+                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(second.get('win_odds'))}</span>{get_shift_badge(second)}
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {second.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{second['confidence']}%</span></div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {safe_fmt(second.get('gs_score'))} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{second.get('confidence', 50)}%</span></div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc3:
@@ -2235,10 +2279,10 @@ with tab1:
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">💠 PICK 3 — TRIO PODIUM</div>
                     <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(third, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
-                        J: <span style="color:#ffffff; font-weight:800;">{third['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{third['trainer']}</span>
-                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{third['win_odds']:.1f}</span>{get_shift_badge(third)}
+                        J: <span style="color:#ffffff; font-weight:800;">{third.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{third.get('trainer', 'Unknown')}</span>
+                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(third.get('win_odds'))}</span>{get_shift_badge(third)}
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {third.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{third['confidence']}%</span></div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {safe_fmt(third.get('gs_score'))} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{third.get('confidence', 50)}%</span></div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc4:
@@ -2248,10 +2292,10 @@ with tab1:
                     <div class="data-label" style="font-size:0.85rem; color:#cbd5e1; font-weight:800;">📊 PICK 4 — 4TH TRIO BOX</div>
                     <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(fourth, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
-                        J: <span style="color:#ffffff; font-weight:800;">{fourth['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{fourth['trainer']}</span>
-                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{fourth['win_odds']:.1f}</span>{get_shift_badge(fourth)}
+                        J: <span style="color:#ffffff; font-weight:800;">{fourth.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{fourth.get('trainer', 'Unknown')}</span>
+                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(fourth.get('win_odds'))}</span>{get_shift_badge(fourth)}
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {fourth.get('gs_score', 0):.1f} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{fourth['confidence']}%</span></div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {safe_fmt(fourth.get('gs_score'))} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{fourth.get('confidence', 50)}%</span></div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc5:
@@ -2261,10 +2305,10 @@ with tab1:
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">💣 PICK 5 — DUAL-STAKE SLEEPER</div>
                     <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(fifth, '.')}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
-                        J: <span style="color:#ffffff; font-weight:800;">{fifth['jockey']}</span> | T: <span style="color:#ffffff; font-weight:800;">{fifth['trainer']}</span>
-                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{fifth['win_odds']:.1f}</span>{get_shift_badge(fifth)}
+                        J: <span style="color:#ffffff; font-weight:800;">{fifth.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{fifth.get('trainer', 'Unknown')}</span>
+                        <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(fifth.get('win_odds'))}</span>{get_shift_badge(fifth)}
                     </div>
-                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">EV: {fifth.get('value_diff', 0):.3f} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{fifth['confidence']}%</span></div>
+                    <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">EV: {safe_fmt(fifth.get('value_diff'), default=0.0, decimals=3)} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{fifth.get('confidence', 50)}%</span></div>
                 </div>
                 '''), unsafe_allow_html=True)
                 
@@ -2277,8 +2321,8 @@ with tab1:
                     <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.96), rgba(20, 3, 6, 0.98)); padding: 20px; border-radius: 8px; border: 1.5px dashed rgba(56, 189, 248, 0.6); margin-bottom: 5px; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
                         <div style="color:#38bdf8; font-family:'Montserrat'; font-weight:800; font-size:1.15rem; margin-bottom:8px; letter-spacing: 1px;">STATISTICAL OUTLIER DETECTED: {format_horse_link(bold_pick, '#')}</div>
                         <div style="color:#f8fafc; font-size:1rem; margin-bottom: 15px; line-height:1.5;">
-                            Our quantitative models have identified a significant probabilistic upside on <b style="color:#ffffff;">{format_horse_link(bold_pick, '#')}</b> relative to the current market implied probability at <b style="color:#38bdf8;">{bold_pick['win_odds']:.0f}</b> odds. 
-                            (Jockey: <i style="color:#cbd5e1;">{bold_pick['jockey']}</i> | Trainer: <i style="color:#cbd5e1;">{bold_pick['trainer']}</i>)
+                            Our quantitative models have identified a significant probabilistic upside on <b style="color:#ffffff;">{format_horse_link(bold_pick, '#')}</b> relative to the current market implied probability at <b style="color:#38bdf8;">{safe_fmt(bold_pick.get('win_odds'), decimals=0)}</b> odds. 
+                            (Jockey: <i style="color:#cbd5e1;">{bold_pick.get('jockey', 'Unknown')}</i> | Trainer: <i style="color:#cbd5e1;">{bold_pick.get('trainer', 'Unknown')}</i>)
                         </div>
                         <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Optimal Exacta/Quinella Pairing:</b> Couple the primary statistical leader <b>{format_horse_link(best, '#')}</b> with the identified outlier <b>{format_horse_link(bold_pick, '#')}</b> for maximal expected value.</div>
                         <div style="color:#f8fafc; font-size:1rem; margin-top:8px;">⭐ <b style="color:#38bdf8;">Trifecta Structure:</b> Use <b>{format_horse_link(best, '#')}</b> and <b>{format_horse_link(bold_pick, '#')}</b> as dual bankers, combined with <b>{format_horse_link(second, '#')}</b> and <b>{format_horse_link(third, '#')}</b> for the remaining legs.</div>
@@ -2288,10 +2332,18 @@ with tab1:
 
             with st.expander(f"EXPAND FULL RACE DATA – RACE {race.get('race_no')}", expanded=False):
                 import urllib.parse
-                # Ensure missing columns exist
-                for col in ['last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'class_diff', 'rating_diff', 'days_since_last_run', 'gear_changed', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'last_gear', 'photo_finish', 'vet_findings', 'steward_notes']:
-                    if col not in df_runners.columns:
-                        df_runners[col] = '-'
+                # Ensure missing columns exist with safe types
+                num_cols = ['no', 'draw', 'rtg', 'win_odds', 'consensus_score', 'class_diff', 'rating_diff', 'recent_avg_pos', 'distance_win_rate', 'gear_win_rate', 'days_since_last_run', 'gear_changed', 'confidence', 'gs_score']
+                for nc in num_cols:
+                    if nc not in df_runners.columns:
+                        df_runners[nc] = np.nan
+                    else:
+                        df_runners[nc] = pd.to_numeric(df_runners[nc], errors='coerce')
+
+                text_cols = ['jockey', 'trainer', 'last_win_rating', 'ST_vs_HV_pref', 'last_form_going', 'photo_finish', 'vet_findings', 'steward_notes']
+                for tc in text_cols:
+                    if tc not in df_runners.columns:
+                        df_runners[tc] = '-'
 
                 # Render one-tap clickable pill directory for all horses in the race
                 df_by_no = df_runners.sort_values(by='no', ascending=True)
@@ -2338,47 +2390,51 @@ with tab1:
                     except Exception:
                         return str(val)
                 df_display['last_win_rating'] = df_display['last_win_rating'].apply(_fmt_lwr)
-                df_display['ST_vs_HV_pref'] = df_display['ST_vs_HV_pref'].fillna('Neutral').astype(str).replace({'nan': 'Neutral', 'None': 'Neutral'})
-                df_display['last_form_going'] = df_display['last_form_going'].fillna('Unknown').astype(str).replace({'nan': 'Unknown', 'None': 'Unknown'})
-                df_display['photo_finish'] = df_display['photo_finish'].fillna('❌ No').astype(str).replace({'nan': '❌ No', 'None': '❌ No'})
-                df_display['vet_findings'] = df_display['vet_findings'].fillna('No Active Findings').astype(str).replace({'nan': 'No Active Findings', 'None': 'No Active Findings'})
-                df_display['steward_notes'] = df_display['steward_notes'].fillna('Clear Record').astype(str).replace({'nan': 'Clear Record', 'None': 'Clear Record'})
+                df_display['ST_vs_HV_pref'] = df_display['ST_vs_HV_pref'].fillna('Neutral').astype(str).replace({'nan': 'Neutral', 'None': 'Neutral', '': 'Neutral'})
+                df_display['last_form_going'] = df_display['last_form_going'].fillna('Unknown').astype(str).replace({'nan': 'Unknown', 'None': 'Unknown', '': 'Unknown'})
+                df_display['photo_finish'] = df_display['photo_finish'].fillna('❌ No').astype(str).replace({'nan': '❌ No', 'None': '❌ No', '': '❌ No'})
+                df_display['vet_findings'] = df_display['vet_findings'].fillna('No Active Findings').astype(str).replace({'nan': 'No Active Findings', 'None': 'No Active Findings', '': 'No Active Findings'})
+                df_display['steward_notes'] = df_display['steward_notes'].fillna('Clear Record').astype(str).replace({'nan': 'Clear Record', 'None': 'Clear Record', '': 'Clear Record'})
                 
-                st.dataframe(
-                    df_display,
-                    column_config={
-                        "no": st.column_config.NumberColumn("No.", width="small"),
-                        "name_link": st.column_config.LinkColumn("Horse Name", display_text=r"#(.+)$", width="medium"),
-                        "jockey": st.column_config.TextColumn("Jockey", width="small"),
-                        "trainer": st.column_config.TextColumn("Trainer", width="medium"),
-                        "draw": st.column_config.NumberColumn("Draw", width="small"),
-                        "rtg": st.column_config.NumberColumn("Rating", width="small"),
-                        "win_odds": st.column_config.NumberColumn("Odds", format="%.1f", width="small"),
-                        "consensus_score": st.column_config.NumberColumn("Tipster Pts", width="small"),
-                        "class_diff": st.column_config.NumberColumn("Class Diff", width="small"),
-                        "rating_diff": st.column_config.NumberColumn("Rtg Diff", width="small"),
-                        "recent_avg_pos": st.column_config.NumberColumn("Rec Pos", format="%.1f", width="small"),
-                        "distance_win_rate": st.column_config.NumberColumn("Dist Win%", format="%.2f", width="small"),
-                        "gear_win_rate": st.column_config.NumberColumn("Gear Win%", format="%.2f", width="small"),
-                        "display_gear": st.column_config.TextColumn("Gear", width="small"),
-                        "days_since_last_run": st.column_config.NumberColumn("Days Off", width="small"),
-                        "gear_changed": st.column_config.NumberColumn("Gear Chg", width="small"),
-                        "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),
-                        "ST_vs_HV_pref": st.column_config.TextColumn("Track Pref", width="medium"),
-                        "last_form_going": st.column_config.TextColumn("Fav Cond", width="medium"),
-                        "gs_score": st.column_config.NumberColumn("GS Score", format="%.1f", width="small"),
-                        "confidence": st.column_config.ProgressColumn(
-                            "AI Confidence %",
-                            min_value=0,
-                            max_value=100,
-                        ),
-                        "photo_finish": st.column_config.TextColumn("Photo Finish Hist?", width="small"),
-                        "vet_findings": st.column_config.TextColumn("Vet Findings", width="medium"),
-                        "steward_notes": st.column_config.TextColumn("Steward Notes", width="large"),
-                    },
-                    hide_index=True,
-                    use_container_width=True
-                )
+                try:
+                    st.dataframe(
+                        df_display,
+                        column_config={
+                            "no": st.column_config.NumberColumn("No.", width="small"),
+                            "name_link": st.column_config.LinkColumn("Horse Name", display_text=r"#(.+)$", width="medium"),
+                            "jockey": st.column_config.TextColumn("Jockey", width="small"),
+                            "trainer": st.column_config.TextColumn("Trainer", width="medium"),
+                            "draw": st.column_config.NumberColumn("Draw", width="small"),
+                            "rtg": st.column_config.NumberColumn("Rating", width="small"),
+                            "win_odds": st.column_config.NumberColumn("Odds", format="%.1f", width="small"),
+                            "consensus_score": st.column_config.NumberColumn("Tipster Pts", width="small"),
+                            "class_diff": st.column_config.NumberColumn("Class Diff", width="small"),
+                            "rating_diff": st.column_config.NumberColumn("Rtg Diff", width="small"),
+                            "recent_avg_pos": st.column_config.NumberColumn("Rec Pos", format="%.1f", width="small"),
+                            "distance_win_rate": st.column_config.NumberColumn("Dist Win%", format="%.2f", width="small"),
+                            "gear_win_rate": st.column_config.NumberColumn("Gear Win%", format="%.2f", width="small"),
+                            "display_gear": st.column_config.TextColumn("Gear", width="small"),
+                            "days_since_last_run": st.column_config.NumberColumn("Days Off", width="small"),
+                            "gear_changed": st.column_config.NumberColumn("Gear Chg", width="small"),
+                            "last_win_rating": st.column_config.TextColumn("Last Win Rtg", width="small"),
+                            "ST_vs_HV_pref": st.column_config.TextColumn("Track Pref", width="medium"),
+                            "last_form_going": st.column_config.TextColumn("Fav Cond", width="medium"),
+                            "gs_score": st.column_config.NumberColumn("GS Score", format="%.1f", width="small"),
+                            "confidence": st.column_config.ProgressColumn(
+                                "AI Confidence %",
+                                min_value=0,
+                                max_value=100,
+                            ),
+                            "photo_finish": st.column_config.TextColumn("Photo Finish Hist?", width="small"),
+                            "vet_findings": st.column_config.TextColumn("Vet Findings", width="medium"),
+                            "steward_notes": st.column_config.TextColumn("Steward Notes", width="large"),
+                        },
+                        hide_index=True,
+                        use_container_width=True
+                    )
+                except Exception as err:
+                    print(f"Error rendering race dataframe: {err}")
+                    st.dataframe(df_display, hide_index=True, use_container_width=True)
 
 with tab2:
     st.markdown("<h3 style='font-family:\"Montserrat\";'>Historical Archive & Gallery</h3>", unsafe_allow_html=True)
