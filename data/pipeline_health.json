@@ -1,11 +1,11 @@
 {
   "overall_status": "ok",
-  "updated_at": "2026-11-03T04:17:23Z",
+  "updated_at": "2026-11-03T04:22:03Z",
   "components": {
     "scraper": {
       "status": "ok",
-      "last_attempt_at": "2026-11-03T04:16:41Z",
-      "last_success_at": "2026-11-03T04:16:41Z",
+      "last_attempt_at": "2026-11-03T04:22:03Z",
+      "last_success_at": "2026-11-03T04:22:03Z",
       "metrics": {
         "source": "live_html_racecard",
         "meeting_date": "2026-11-04",
