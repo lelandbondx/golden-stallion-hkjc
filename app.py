@@ -2500,9 +2500,6 @@ with tab1:
                 except Exception as err:
                     print(f"Error rendering race dataframe: {err}")
                     st.dataframe(df_display, hide_index=True, use_container_width=True)
-                except Exception as err:
-                    print(f"Error rendering race dataframe: {err}")
-                    st.dataframe(df_display, hide_index=True, use_container_width=True)
 
 with tab2:
     st.markdown("<h3 style='font-family:\"Montserrat\";'>Historical Archive & Gallery</h3>", unsafe_allow_html=True)
