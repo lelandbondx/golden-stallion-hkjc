@@ -1,0 +1,1 @@
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-04T01:36:05Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
