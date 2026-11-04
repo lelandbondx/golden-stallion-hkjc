@@ -159,7 +159,7 @@ def run():
         recent_win = pd.to_numeric(df_runners.get('recent_win_rate', 0.0), errors='coerce').fillna(0.0)
         track_match = (df_runners.get('ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
         going_match = (df_runners.get('last_form_going', 'Unknown') == race_going).astype(int)
-        vet_issue = pd.to_numeric(df_runners.get('prev_run_vet_finding', 0), errors='coerce').fillna(0)
+        vet_issue = pd.Series(0, index=df_runners.index)
         class_drop = pd.to_numeric(df_runners.get('class_diff', 0), errors='coerce').fillna(0)
         
         # Super Standout condition: 
@@ -184,17 +184,23 @@ def run():
             except Exception as e:
                 print(f"Error loading engineered trial features: {e}")
                 
-        # Determine if debutant has strong trials
+        # Determine if runner has strong trials or multiple top-2 recent trials
         has_strong_trial = []
+        has_multi_top2_trials = []
         for name in df_runners['clean_name'].astype(str).str.upper().str.strip():
             strong = False
+            multi_top2 = False
             if name in trial_features:
                 t_pos = trial_features[name].get('best_trial_pos_ratio', 1.0)
                 t_speed = trial_features[name].get('best_trial_speed_diff', 0.0)
                 if t_pos <= 0.35 or t_speed > 0.0:
                     strong = True
+                if int(trial_features[name].get('recent_top2_trials', 0)) >= 2:
+                    multi_top2 = True
             has_strong_trial.append(strong)
+            has_multi_top2_trials.append(multi_top2)
         has_strong_trial = np.array(has_strong_trial)
+        has_multi_top2_trials = np.array(has_multi_top2_trials)
             
         # If consensus from trials is strong OR we have a strong trial, waive it
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
@@ -213,13 +219,12 @@ def run():
         else:
             first_time_gear_boost = 0.0
         
-        # Distinct Medical Health Risk vs Tactical Stewards Excuse separation:
-        df_runners['has_health_risk'] = df_runners.apply(
-            lambda r: check_health_risk(r.get('last_comment', ''), r.get('prev_run_vet_finding', 0), r.get('latest_vet_note', '')), axis=1
-        )
-        # Tactical excuse ONLY applies if the runner has NO active medical risk
+        # All horses declared to race have passed an official HKJC barrier trial or veterinary exam.
+        # Keep clinical vet notes in UI tables, but remove rating/staking demotions.
+        df_runners['has_health_risk'] = False
+        # Tactical excuse ONLY applies if the runner had no medical flag on that specific run
         df_runners['had_excuse'] = df_runners.apply(
-            lambda r: check_stewards_excuse(r.get('last_comment', '')) and not r.get('has_health_risk', False), axis=1
+            lambda r: check_stewards_excuse(r.get('last_comment', '')) and not check_health_risk(r.get('last_comment', ''), r.get('prev_run_vet_finding', 0), r.get('latest_vet_note', '')), axis=1
         )
         # False Favorite Penalty: -3.0% only if odds < 5.0 / implied > 20%, recent_pos > 6.0, no class drop, and run is not excused
         false_fav_penalty = np.where(
@@ -286,11 +291,13 @@ def run():
             is_purton_leader = df_runners['jockey'].astype(str).str.strip().str.upper() == 'Z PURTON'
             lone_speed_boost = np.where((df_runners['avg_first_pos'] <= 3.5) & ((recent_pos <= 5.5) | is_purton_leader), 0.02, 0.0)
             
-            # Race-proven gate speed check (Races outrank trials: trials cannot exempt closer penalty)
+            # Race-proven gate speed check (disregard closer penalty if top-2 in >1 recent trial unless proven slow in races)
             has_race_gate_speed = (df_runners['avg_first_pos'] <= 4.5) | df_runners['last_comment'].str.contains('jumped well|began speedily|led early|raced prominently', case=False, na=False)
+            proven_slow_in_races = (~is_debutant) & (df_runners['avg_first_pos'] > 6.0) & (~has_race_gate_speed)
+            waive_closer_for_trials = has_multi_top2_trials & (~proven_slow_in_races)
             
             # Closer penalty in sprints (<=1200m)
-            is_sprint_slow_closer = (distance <= 1200) & (df_runners['avg_first_pos'] > 6.0) & (recent_pos > 4.0) & (df_runners['best_last_sec'] >= 22.5) & (~has_race_gate_speed)
+            is_sprint_slow_closer = (distance <= 1200) & (df_runners['avg_first_pos'] > 6.0) & (recent_pos > 4.0) & (df_runners['best_last_sec'] >= 22.5) & (~has_race_gate_speed) & (~waive_closer_for_trials)
             # Closer penalty on HV 1650/1800/2200m only if avg_first_pos >= 8.0 AND draw 9-12 AND best_last_sec >= 22.5 (waived if verified sub-22.5s last 400m)
             is_hv_route_slow_closer = is_hv & (distance >= 1650) & (df_runners['avg_first_pos'] >= 8.0) & (df_runners['draw'] >= 9) & (df_runners['best_last_sec'] >= 22.5)
             
@@ -365,7 +372,7 @@ def run():
         is_iron_horse_dropper = hv_cal["is_iron_horse_dropper"]
         if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
             frontrunner_pace_penalty = np.where(is_iron_horse_dropper, 0.0, frontrunner_pace_penalty)
-            standout_boost += np.where(is_iron_horse_dropper, 0.14, 0.0)
+            standout_boost += np.where(is_iron_horse_dropper, np.where(draws <= 8, 0.10, 0.04), 0.0)
             
         # Caspar Fownes Happy Valley Specialist Boost (+0.03 on home track)
         # ZERO on wide topweight (Gates 9-12 & >= 132 lbs), and ZERO if jockey_trainer_boost already fired
@@ -449,9 +456,9 @@ def run():
         is_st_turf = is_st and ("ALL WEATHER" not in race_track_type and "AWT" not in race_track_type)
         st_closer_boost = np.where(is_st_turf & (df_runners['avg_first_pos'] > 5.0) & (df_runners['best_last_sec'] <= 22.8) & (distance >= 1200), 0.01, 0.0)
 
-        # Rating Dominance in Open/Group or Top Class races (Rating >= 15 pts above field median) (Calibrated to 5% boost)
+        # Rating Dominance in Open/Group or Top Class races (Rating >= 15 pts above field median) (Gate-sensitive: 5% inside/mid, 1.5% wide)
         median_rtg = pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40).median()
-        rating_dom_boost = np.where((pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40) - median_rtg >= 15) & (recent_pos <= 4.0) & (vet_issue == 0), 0.05, 0.0)
+        rating_dom_boost = np.where((pd.to_numeric(df_runners['horse_rating'], errors='coerce').fillna(40) - median_rtg >= 15) & (recent_pos <= 4.0) & (vet_issue == 0), np.where(draws <= 8, 0.05, 0.015), 0.0)
 
         # Non-First Start for New Trainer with Good Rating (1.5% Boost)
         good_rating_thresh = 38 if class_int == 5 else 50
@@ -554,7 +561,29 @@ def run():
 
         # Ensure multiplier stays within [0.1, 1.25] (cap total upward nudge at 1.25x)
         multiplier = np.clip(multiplier, 0.1, 1.25)
-        df_runners['model_prob'] = df_runners['model_prob'] * multiplier
+
+        # Structural Happy Valley Sprint Geometry & Back-to-Back C&D Winner Calibration:
+        hv_win_s = pd.to_numeric(df_runners.get('HV_win_rate', 0), errors='coerce').fillna(0)
+        structural_hv_adj = np.ones(len(df_runners), dtype=float)
+        if is_hv and not is_awt_race:
+            is_hv_cd_streak = (rec_wr_s >= 0.50) & (hv_win_s >= 0.25) & (dist_wr_s >= 0.25) & (draws <= 6)
+            structural_hv_adj = np.where(is_hv_cd_streak, structural_hv_adj * 1.42, structural_hv_adj)
+            if distance <= 1200:
+                is_fownes_runner = df_runners['trainer'].astype(str).str.strip().str.upper() == 'C FOWNES'
+                is_hv_drop_leader = is_fownes_runner & (draws <= 4) & (class_drop > 0) & (df_runners['avg_first_pos'] <= 2.5)
+                is_hv_trial_debut = (draws <= 2) & is_debutant & has_multi_top2_trials
+                is_hv_rail_stalker = (draws == 1) & (df_runners['avg_first_pos'] > 9.0) & (recent_pos <= 5.0)
+                is_hv_wire_winner = (draws <= 4) & (rec_wr_s >= 0.25) & (actual_weights <= 125)
+                is_hv_carpark_closer = (draws >= 9) & (df_runners['avg_first_pos'] >= 7.5) & (recent_pos <= 3.0)
+                is_hv_midwide_maid = (draws == 7) & (recent_pos > 5.0) & (rec_wr_s == 0) & (df_runners['avg_first_pos'] > 5.0) & (df_runners['avg_first_pos'] < 6.5)
+                structural_hv_adj = np.where(is_hv_drop_leader, structural_hv_adj * 1.78, structural_hv_adj)
+                structural_hv_adj = np.where(is_hv_trial_debut, structural_hv_adj * 1.38, structural_hv_adj)
+                structural_hv_adj = np.where(is_hv_rail_stalker, structural_hv_adj * 1.26, structural_hv_adj)
+                structural_hv_adj = np.where(is_hv_wire_winner, structural_hv_adj * 1.05, structural_hv_adj)
+                structural_hv_adj = np.where(is_hv_carpark_closer, structural_hv_adj * 0.86, structural_hv_adj)
+                structural_hv_adj = np.where(is_hv_midwide_maid, structural_hv_adj * 0.78, structural_hv_adj)
+
+        df_runners['model_prob'] = df_runners['model_prob'] * multiplier * structural_hv_adj
         
         total_b = df_runners['model_prob'].sum()
         if total_b > 0:

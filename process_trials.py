@@ -121,6 +121,7 @@ def process_trials(meeting_date_str=None):
 
             trials_list.append({
                 "days_since": days_since,
+                "pos": pos,
                 "pos_ratio": pos_ratio,
                 "speed_diff": speed_diff,
                 "jockey": jockey_name,
@@ -136,6 +137,7 @@ def process_trials(meeting_date_str=None):
         best_speed_diff = max([t["speed_diff"] for t in trials_30d]) if trials_30d else max([t["speed_diff"] for t in trials_list])
         trial_jockeys = [t["jockey"] for t in (trials_30d if trials_30d else trials_list)]
         high_quality_trial = any(t["pos_ratio"] <= 0.35 and t["is_elite_jockey"] for t in (trials_30d if trials_30d else trials_list))
+        recent_top2_trials = sum(1 for t in trials_list if t["pos"] <= 2.0)
         if high_quality_trial:
             elite_trial_count += 1
 
@@ -144,7 +146,8 @@ def process_trials(meeting_date_str=None):
             "best_trial_pos_ratio": float(best_pos_ratio),
             "best_trial_speed_diff": float(best_speed_diff),
             "trial_jockeys": trial_jockeys,
-            "high_quality_trial": high_quality_trial
+            "high_quality_trial": high_quality_trial,
+            "recent_top2_trials": int(recent_top2_trials),
         }
         updated_count += 1
 

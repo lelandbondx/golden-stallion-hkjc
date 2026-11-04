@@ -1,15 +1,18 @@
 {
-  "overall_status": "fail",
-  "updated_at": "2026-11-04T01:36:05Z",
+  "overall_status": "ok",
+  "updated_at": "2026-11-04T06:59:44Z",
   "components": {
     "scraper": {
-      "status": "fail",
-      "last_attempt_at": "2026-11-04T01:36:05Z",
-      "last_success_at": "2026-11-03T20:51:49Z",
+      "status": "ok",
+      "last_attempt_at": "2026-11-04T06:59:44Z",
+      "last_success_at": "2026-11-04T06:59:44Z",
       "metrics": {
-        "source": "error"
+        "source": "live_html_racecard",
+        "meeting_date": "2026-11-04",
+        "meetings_count": 2,
+        "races_count": 8
       },
-      "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."
+      "error": null
     },
     "incident_memory": {
       "status": "ok",
@@ -23,8 +26,8 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-03T04:17:23Z",
-      "last_success_at": "2026-11-03T04:17:23Z",
+      "last_attempt_at": "2026-11-04T06:59:09Z",
+      "last_success_at": "2026-11-04T06:59:09Z",
       "metrics": {
         "meeting_date": "2026-11-04",
         "venue": "Happy Valley",
@@ -44,26 +47,26 @@
     },
     "barrier_trials_scraper": {
       "status": "ok",
-      "last_attempt_at": "2026-10-26T21:43:24Z",
-      "last_success_at": "2026-10-26T21:43:24Z",
+      "last_attempt_at": "2026-11-04T04:54:17Z",
+      "last_success_at": "2026-11-04T04:54:17Z",
       "metrics": {
-        "meeting_date": "2026/10/28",
-        "venue": "ST",
+        "meeting_date": "2026/11/04",
+        "venue": "HV",
         "races_scraped": 9,
-        "new_trials": 51,
-        "total_trials": 172,
-        "unique_horses": 85
+        "new_trials": 58,
+        "total_trials": 230,
+        "unique_horses": 113
       },
       "error": null
     },
     "trial_features": {
       "status": "ok",
-      "last_attempt_at": "2026-10-26T21:43:24Z",
-      "last_success_at": "2026-10-26T21:43:24Z",
+      "last_attempt_at": "2026-11-04T04:55:32Z",
+      "last_success_at": "2026-11-04T04:55:32Z",
       "metrics": {
-        "total_horses": 85,
-        "updated_horses": 85,
-        "elite_trials_flagged": 4
+        "total_horses": 113,
+        "updated_horses": 113,
+        "elite_trials_flagged": 7
       },
       "error": null
     },

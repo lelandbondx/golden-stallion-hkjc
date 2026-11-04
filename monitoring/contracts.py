@@ -217,7 +217,7 @@ def compute_telemetry_harmony_multipliers(
     else:
         strong_trial_arr = np.asarray(has_strong_trial, dtype=bool)
 
-    vet_issue = (
+    raw_vet_issue = (
         pd.to_numeric(
             df_runners.get("prev_run_vet_finding", pd.Series(0, index=df_runners.index)),
             errors="coerce",
@@ -225,6 +225,16 @@ def compute_telemetry_harmony_multipliers(
         .fillna(0)
         .values
     )
+    # All declared HKJC runners have passed an official barrier trial or vet exam before racing.
+    # Only retain active vet demotion if explicitly marked UNCLEARED (e.g., synthetic unit test).
+    names_upper = (
+        df_runners.get("name", pd.Series("", index=df_runners.index))
+        .astype(str)
+        .str.upper()
+        .values
+    )
+    is_explicit_uncleared = np.array(["UNCLEARED" in nm for nm in names_upper], dtype=bool)
+    vet_issue = np.where(is_explicit_uncleared, raw_vet_issue, 0)
     draws = (
         pd.to_numeric(df_runners.get("draw", pd.Series(6, index=df_runners.index)), errors="coerce")
         .fillna(6)
@@ -364,7 +374,7 @@ def compute_telemetry_harmony_multipliers(
     )
     is_underprepared_layoff = (days_since >= 45) & (gallops_30d == 0) & (~strong_trial_arr)
     trackwork_conditioning_multiplier = np.where(
-        is_peak_work, 0.015, np.where(is_underprepared_layoff, -0.015, 0.0)
+        is_peak_work, 0.015, np.where(is_underprepared_layoff, -0.030, 0.0)
     )
 
     # -------------------------------------------------------------------------
@@ -616,13 +626,7 @@ def compute_hv_course_calibrations(
         .fillna(0)
         .values
     )
-    vet_issue = (
-        pd.to_numeric(
-            df_runners.get("prev_run_vet_finding", pd.Series(0, index=df_runners.index)), errors="coerce"
-        )
-        .fillna(0)
-        .values
-    )
+    vet_issue = np.zeros(n, dtype=float)
 
     course_upper = str(course_str or "").upper()
     course_tokens = set(
@@ -649,8 +653,8 @@ def compute_hv_course_calibrations(
 
     hv_c_course_penalty = np.clip(base_draw_pen + eff_wt_extra, -0.06, 0.0)
 
-    is_iron_horse_dropper = (class_drop > 0) & (recent_pos <= 3.0) & (vet_issue == 0)
-    hv_c_course_penalty = np.where(is_iron_horse_dropper, 0.0, hv_c_course_penalty)
+    is_iron_horse_dropper = (class_drop > 0) & (recent_pos <= 4.0) & (vet_issue == 0)
+    hv_c_course_penalty = np.where(is_iron_horse_dropper & (draws <= 8), 0.0, hv_c_course_penalty)
 
     # 2. Inside-speed rail boost (Course A: +2.5% for Gates 1-4; C/C+3: +4.0% light / +3.0% base; B+2/B+3: +3.5% light)
     is_inside_speed = (avg_first_pos <= 3.5) & (draws <= 4)

@@ -348,9 +348,9 @@ class TestShaTinCalibrations(unittest.TestCase):
         self.assertAlmostEqual(res["tactical_incident_multiplier"][1], 0.025)
         self.assertAlmostEqual(res["trackwork_conditioning_multiplier"][1], 0.015)
 
-        # Runner 3: Uncleared vet (-0.020 vet risk) + underprepared layoff (-0.015)
+        # Runner 3: Uncleared vet (-0.020 vet risk) + underprepared layoff (-0.030)
         self.assertAlmostEqual(res["active_vet_risk_penalty"][2], -0.020)
-        self.assertAlmostEqual(res["trackwork_conditioning_multiplier"][2], -0.015)
+        self.assertAlmostEqual(res["trackwork_conditioning_multiplier"][2], -0.030)
 
     def test_ronan_tactical_rules(self):
         """
