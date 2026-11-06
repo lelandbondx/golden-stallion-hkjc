@@ -537,8 +537,15 @@ def fetch_horse_stats():
 def fetch_tips():
     return get_live_tips_index()
 
-@st.cache_data(ttl=86400)
+@st.cache_data(ttl=3600)
 def fetch_trial_features():
+    try:
+        from data.automated_feeds import load_trial_bot_feed
+        trials, _ = load_trial_bot_feed()
+        if trials:
+            return trials
+    except Exception:
+        pass
     try:
         with open('data/engineered_trial_features.json', 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -1027,14 +1034,9 @@ with tab1:
         if class_int == 5:
             debutant_penalty_val = debutant_penalty_val * 0.5
             
-        # Load engineered trials
-        trial_features = {}
-        if os.path.exists('data/engineered_trial_features.json'):
-            try:
-                with open('data/engineered_trial_features.json', 'r', encoding='utf-8') as f:
-                    trial_features = json.load(f)
-            except Exception as e:
-                print(f"Error loading engineered trial features: {e}")
+        # Authoritative Trial Bot Feed (with fallback to engineered trials)
+        if not trial_features:
+            trial_features = fetch_trial_features()
                 
         # Determine if runner has strong trials or multiple top-2 recent trials
         has_strong_trial = []

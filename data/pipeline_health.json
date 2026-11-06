@@ -1,16 +1,16 @@
 {
   "overall_status": "ok",
-  "updated_at": "2026-11-04T06:59:44Z",
+  "updated_at": "2026-11-06T21:42:18Z",
   "components": {
     "scraper": {
       "status": "ok",
-      "last_attempt_at": "2026-11-04T06:59:44Z",
-      "last_success_at": "2026-11-04T06:59:44Z",
+      "last_attempt_at": "2026-11-06T21:42:18Z",
+      "last_success_at": "2026-11-06T21:42:18Z",
       "metrics": {
         "source": "live_html_racecard",
-        "meeting_date": "2026-11-04",
+        "meeting_date": "2026-11-08",
         "meetings_count": 2,
-        "races_count": 8
+        "races_count": 11
       },
       "error": null
     },
@@ -26,12 +26,12 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-04T06:59:09Z",
-      "last_success_at": "2026-11-04T06:59:09Z",
+      "last_attempt_at": "2026-11-06T21:41:28Z",
+      "last_success_at": "2026-11-06T21:41:28Z",
       "metrics": {
-        "meeting_date": "2026-11-04",
-        "venue": "Happy Valley",
-        "races_predicted": 9
+        "meeting_date": "2026-11-08",
+        "venue": "Sha Tin",
+        "races_predicted": 11
       },
       "error": null
     },

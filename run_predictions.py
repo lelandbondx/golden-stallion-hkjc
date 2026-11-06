@@ -52,6 +52,14 @@ def run():
     # Load model
     load_model()
     
+    # Ingest Automated Feeds: Trial Bot (06:00 HKT), Replay Bot (2h post-meeting), Steward Bot (2h post-meeting)
+    from data.automated_feeds import sync_and_log_automated_feeds
+    target_meeting_label = f"{meeting.get('date')} {venue_name}"
+    trial_features, replay_notes, steward_clearances, feeds_telem = sync_and_log_automated_feeds(target_meeting_label)
+    print(f"\n[Automated Feeds Ingestion] Active for {target_meeting_label}")
+    for bot_name, bot_info in feeds_telem.get("standing_bots", {}).items():
+        print(f"  [{bot_name.upper()}] File: {bot_info.get('file_used')} | Timestamp: {bot_info.get('timestamp_hkt')} | Records: {bot_info.get('record_count')}")
+
     # Load precomputed running styles, winning gears, comments, and sectional bursts
     running_styles = {}
     winning_gears = {}
@@ -204,14 +212,10 @@ def run():
         if class_int == 5:
             debutant_penalty_val = debutant_penalty_val * 0.5
             
-        # Load engineered trials
-        trial_features = {}
-        if os.path.exists('data/engineered_trial_features.json'):
-            try:
-                with open('data/engineered_trial_features.json', 'r', encoding='utf-8') as f:
-                    trial_features = json.load(f)
-            except Exception as e:
-                print(f"Error loading engineered trial features: {e}")
+        # Authoritative Trial Bot Feed (with fallback to engineered trials)
+        if not trial_features:
+            from data.automated_feeds import load_trial_bot_feed
+            trial_features, _ = load_trial_bot_feed()
                 
         # Determine if runner has strong trials or multiple top-2 recent trials
         has_strong_trial = []

@@ -51,11 +51,25 @@ def check_stewards_excuse(comment):
     return any(kw in c for kw in TACTICAL_EXCUSE_KEYWORDS)
 
 
-def check_health_risk(comment='', vet_status=0, latest_vet_note=''):
+def check_health_risk(comment='', vet_status=0, latest_vet_note='', horse_name=None, steward_clearances=None):
     """
     Returns True if an active or recent medical unsoundness flag is detected.
     Includes bleeders, respiratory issues, lameness, heart irregularities, and roarers.
+    Steward Bot acts as the final medical and integrity clearance gate.
     """
+    # Final medical/integrity gate via Steward Bot
+    if horse_name and steward_clearances and isinstance(steward_clearances, dict):
+        c_name = str(horse_name).strip().upper()
+        if c_name in steward_clearances:
+            gate = steward_clearances[c_name]
+            if isinstance(gate, dict):
+                status = str(gate.get('status', '')).upper()
+                cleared = gate.get('cleared')
+                if cleared is False or status in ('BARRED', 'FAILED', 'UNFIT', 'NOT_CLEARED'):
+                    return True
+                if cleared is True or status in ('CLEARED', 'PASSED', 'FIT'):
+                    return False
+
     if vet_status and vet_status != 0 and str(vet_status).lower() not in ('0', 'false', 'none', 'nan'):
         return True
 

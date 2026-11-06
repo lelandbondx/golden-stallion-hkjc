@@ -1,0 +1,34 @@
+{
+  "updated_at_utc": "2026-11-06T21:41:26Z",
+  "target_meeting": "2026-11-08 Sha Tin",
+  "first_automated_meeting": "2026-11-08 Sha Tin",
+  "standing_bots": {
+    "trial_bot": {
+      "duty": "Daily 06:00 HKT (HKJC 48h declared barrier trials)",
+      "file_used": "engineered_trial_features.json",
+      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\engineered_trial_features.json",
+      "timestamp_hkt": "2026-11-04 12:55:32 HKT",
+      "timestamp_utc": "2026-11-04T04:55:32Z",
+      "record_count": 113,
+      "status": "loaded"
+    },
+    "replay_bot": {
+      "duty": "2h post-meeting (Official replays + stewards trip notes & excuses)",
+      "file_used": "grok_trip_notes_resolved.json",
+      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\grok_trip_notes_resolved.json",
+      "timestamp_hkt": "2026-10-30 01:15:27 HKT",
+      "timestamp_utc": "2026-10-29T17:15:27Z",
+      "record_count": 62,
+      "status": "loaded"
+    },
+    "steward_bot": {
+      "duty": "2h post-meeting (Cross-checks medical/vet flags & final integrity gate)",
+      "file_used": "declared_vet_records.json",
+      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\declared_vet_records.json",
+      "timestamp_hkt": "2026-10-27 05:45:07 HKT",
+      "timestamp_utc": "2026-10-26T21:45:07Z",
+      "record_count": 11,
+      "status": "loaded"
+    }
+  }
+}

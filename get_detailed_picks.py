@@ -175,9 +175,14 @@ def run():
         if class_int == 5:
             debutant_penalty_val = debutant_penalty_val * 0.5
             
-        # Load engineered trials
+        # Authoritative Trial Bot Feed (with fallback to engineered trials)
         trial_features = {}
-        if os.path.exists('data/engineered_trial_features.json'):
+        try:
+            from data.automated_feeds import load_trial_bot_feed
+            trial_features, _ = load_trial_bot_feed()
+        except Exception:
+            pass
+        if not trial_features and os.path.exists('data/engineered_trial_features.json'):
             try:
                 with open('data/engineered_trial_features.json', 'r', encoding='utf-8') as f:
                     trial_features = json.load(f)

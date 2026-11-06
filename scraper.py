@@ -334,12 +334,13 @@ def _scrape_html_racecard(graphql_url, graphql_headers):
             r"Race\s+(\d+)\s*-\s*([^\n\r]+?)"
             r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s+"
             r"([A-Za-z]+\s+\d+,\s+\d{4}),\s*(Sha Tin|Happy Valley),\s*(\d{2}:\d{2})\s*"
-            r"(.*?)\s*Prize Money:.*?Class\s+([0-9A-Za-z]+)"
+            r"(.*?)\s*Prize Money:.*?(?:Class\s+([0-9A-Za-z]+)|(Group\s+[A-Za-z0-9]+)|(Griffin))"
         )
         m = hdr_re.search(flat_text)
         if not m:
             return None
-        rn_str, race_name, date_human, venue_name, post_hm, track_raw, cls_tok = m.groups()
+        rn_str, race_name, date_human, venue_name, post_hm, track_raw, cls_tok, grp_tok, grf_tok = m.groups()
+        cls_val = cls_tok or grp_tok or grf_tok or "Open"
         rn_int = int(rn_str)
         if expected_rn is not None and rn_int != int(expected_rn):
             return None
@@ -431,7 +432,7 @@ def _scrape_html_racecard(graphql_url, graphql_headers):
             "race": {
                 "race_no": rn_int,
                 "time": f"{date_iso}T{post_hm}:00+08:00",
-                "class_dist": f"Class {cls_tok.strip()} - {dist_val}m",
+                "class_dist": f"{cls_val.strip()} - {dist_val}m" if ("Group" in cls_val or "Griffin" in cls_val) else f"Class {cls_val.strip()} - {dist_val}m",
                 "track": track_desc,
                 "course": course_desc,
                 "going": going_desc,
@@ -449,17 +450,21 @@ def _scrape_html_racecard(graphql_url, graphql_headers):
     venue_code = first_parsed["venue_code"]
     races_list = [first_parsed["race"]]
 
-    def _fetch_rn(rn):
+    def _fetch_rn(rn, retries=3):
         u = f"{base_rc_url}?racedate={date_slash}&Racecourse={venue_code}&RaceNo={rn}"
-        r = requests.get(u, headers=html_headers, timeout=6.0)
-        if r.status_code != 200:
-            return None
-        parsed = _parse_race_html(r.content, expected_rn=rn)
-        if parsed and parsed["date_iso"] == date_iso:
-            return parsed["race"]
+        for attempt in range(retries):
+            try:
+                r = requests.get(u, headers=html_headers, timeout=10.0)
+                if r.status_code == 200:
+                    parsed = _parse_race_html(r.content, expected_rn=rn)
+                    if parsed and parsed["date_iso"] == date_iso:
+                        return parsed["race"]
+            except Exception:
+                import time
+                time.sleep(0.4 * (attempt + 1))
         return None
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as ex:
         futs = {ex.submit(_fetch_rn, rn): rn for rn in range(2, 13)}
         for fut in concurrent.futures.as_completed(futs):
             try:
@@ -468,6 +473,21 @@ def _scrape_html_racecard(graphql_url, graphql_headers):
                     races_list.append(r_obj)
             except Exception:
                 pass
+
+    # Sequential Gap-Filler: Verify that no intermediate race is missing!
+    fetched_rnos = {r["race_no"] for r in races_list}
+    if fetched_rnos:
+        max_rn = max(fetched_rnos)
+        for expected_rn in range(1, max_rn + 1):
+            if expected_rn not in fetched_rnos:
+                print(f"[RaceCard Scraper] Missing Race {expected_rn} detected! Retrying synchronously...")
+                missing_race = _fetch_rn(expected_rn, retries=4)
+                if missing_race:
+                    races_list.append(missing_race)
+                    fetched_rnos.add(expected_rn)
+                    print(f"[RaceCard Scraper] Successfully recovered Race {expected_rn}!")
+                else:
+                    print(f"[RaceCard Scraper] Warning: Could not recover Race {expected_rn}")
 
     races_list.sort(key=lambda x: x["race_no"])
     first_course = races_list[0].get("course", "") if races_list else ""
