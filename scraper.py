@@ -247,6 +247,8 @@ def _refresh_cached_meetings_with_live_odds(cached_data, url, headers):
         return cached_data
     updated_any = False
     for m in cached_data.get("meetings", []):
+        if str(m.get("status", "")).upper() == "CLOSED":
+            continue
         venue_str = m.get("venue", "")
         venue_code = "ST" if venue_str == "Sha Tin" else ("HV" if venue_str == "Happy Valley" else venue_str)
         date_str = m.get("date")
@@ -702,52 +704,52 @@ def get_live_meeting_data(force_network=False, cache_path='data/last_scraped_mee
                         },
                     )
                     return live_payload
-            else:
-                # GraphQL returned 200 but activeMeetings is empty or WHITELIST_ERROR:
-                # Scrape the official HKJC HTML racecard and overlay live odds via ODDS_GRAPHQL_QUERY
-                try:
-                    html_meeting = _scrape_html_racecard(url, headers)
-                    if html_meeting and html_meeting.get("races"):
-                        out_meetings = [html_meeting]
-                        if cached_data and cached_data.get("meetings"):
-                            for prev_m in cached_data.get("meetings", []):
-                                if prev_m.get("date") and prev_m.get("date") != html_meeting.get("date"):
-                                    prev_copy = dict(prev_m)
-                                    if prev_copy.get("date", "") < html_meeting.get("date", ""):
-                                        prev_copy["status"] = "CLOSED"
-                                    out_meetings.append(prev_copy)
-                                    if len(out_meetings) >= 2:
-                                        break
-                        first_date = html_meeting.get("date")
-                        live_payload = {
-                            "status": "success",
-                            "source": "live",
-                            "fetched_at": now_iso,
-                            "meeting_date": first_date,
-                            "meetings": out_meetings,
-                        }
-                        try:
-                            if cache_path:
-                                os.makedirs(os.path.dirname(cache_path) or "data", exist_ok=True)
-                                with open(cache_path, "w", encoding="utf-8") as f:
-                                    json.dump(live_payload, f, indent=2)
-                        except Exception as e:
-                            print("Failed to save last scraped meeting:", e)
-                        record_health(
-                            "scraper",
-                            "ok",
-                            metrics={
-                                "source": "live_html_racecard",
-                                "meeting_date": first_date,
-                                "meetings_count": len(out_meetings),
-                                "races_count": len(html_meeting.get("races", [])),
-                            },
-                        )
-                        return live_payload
-                except Exception as html_e:
-                    last_error = f"GraphQL empty/whitelist & HTML racecard error: {html_e}"
         else:
             last_error = f"HTTP {res.status_code} from HKJC GraphQL"
+
+        # GraphQL returned empty activeMeetings or WHITELIST_ERROR (HTTP 400):
+        # Scrape the official HKJC HTML racecard and overlay live odds via ODDS_GRAPHQL_QUERY
+        try:
+            html_meeting = _scrape_html_racecard(url, headers)
+            if html_meeting and html_meeting.get("races"):
+                out_meetings = [html_meeting]
+                if cached_data and cached_data.get("meetings"):
+                    for prev_m in cached_data.get("meetings", []):
+                        if prev_m.get("date") and prev_m.get("date") != html_meeting.get("date"):
+                            prev_copy = dict(prev_m)
+                            if prev_copy.get("date", "") < html_meeting.get("date", ""):
+                                prev_copy["status"] = "CLOSED"
+                            out_meetings.append(prev_copy)
+                            if len(out_meetings) >= 2:
+                                break
+                first_date = html_meeting.get("date")
+                live_payload = {
+                    "status": "success",
+                    "source": "live",
+                    "fetched_at": now_iso,
+                    "meeting_date": first_date,
+                    "meetings": out_meetings,
+                }
+                try:
+                    if cache_path:
+                        os.makedirs(os.path.dirname(cache_path) or "data", exist_ok=True)
+                        with open(cache_path, "w", encoding="utf-8") as f:
+                            json.dump(live_payload, f, indent=2)
+                except Exception as e:
+                    print("Failed to save last scraped meeting:", e)
+                record_health(
+                    "scraper",
+                    "ok",
+                    metrics={
+                        "source": "live_html_racecard",
+                        "meeting_date": first_date,
+                        "meetings_count": len(out_meetings),
+                        "races_count": len(html_meeting.get("races", [])),
+                    },
+                )
+                return live_payload
+        except Exception as html_e:
+            last_error = f"GraphQL ({last_error}) & HTML racecard error: {html_e}"
     except Exception as e:
         last_error = f"{type(e).__name__}: {e}"
         print("Live scraper timeout/error:", last_error)

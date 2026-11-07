@@ -2553,6 +2553,9 @@
         ],
         "ENDUED": [
             "E/TT"
+        ],
+        "WAVE GARDEN": [
+            "CP-/XB/TT-"
         ]
     },
     "running_styles": {
@@ -5180,7 +5183,8 @@
         "MUGEN": 10.0,
         "STORM RIDER": 4.75,
         "BEAUTY ALLIANCE": 4.583333333333333,
-        "COLOURFUL STAR": 6.0
+        "COLOURFUL STAR": 6.0,
+        "WAVE GARDEN": 6.583333333333333
     },
     "last_comments": {
         "BABA MAMA": "Began well, raced 2 wide in midfield, slightly improved     from 600M, finished off strongly to get 2nd.                                                                                                                                        ",

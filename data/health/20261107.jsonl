@@ -1,0 +1,4 @@
+{"component": "scraper", "status": "warn", "timestamp": "2026-11-07T23:45:58Z", "metrics": {"source": "cache", "meeting_date": "2026-11-08", "cache_age_s": 93812.2}, "error": "Fell back to cached meeting after live error: GraphQL empty/whitelist & HTML racecard error: HTTPSConnectionPool(host='racing.hkjc.com', port=443): Read timed out. (read timeout=6.0)"}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-07T23:49:36Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-07T23:50:05Z", "metrics": {"meeting_date": "2026-11-08", "venue": "Sha Tin", "races_predicted": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-07T23:51:23Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
