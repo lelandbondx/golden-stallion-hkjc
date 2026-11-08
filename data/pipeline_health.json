@@ -1,11 +1,11 @@
 {
   "overall_status": "ok",
-  "updated_at": "2026-11-07T23:53:55Z",
+  "updated_at": "2026-11-08T02:03:24Z",
   "components": {
     "scraper": {
       "status": "ok",
-      "last_attempt_at": "2026-11-07T23:53:52Z",
-      "last_success_at": "2026-11-07T23:53:52Z",
+      "last_attempt_at": "2026-11-08T02:03:23Z",
+      "last_success_at": "2026-11-08T02:03:23Z",
       "metrics": {
         "source": "live_html_racecard",
         "meeting_date": "2026-11-08",
@@ -26,8 +26,8 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-07T23:53:55Z",
-      "last_success_at": "2026-11-07T23:53:55Z",
+      "last_attempt_at": "2026-11-08T02:03:24Z",
+      "last_success_at": "2026-11-08T02:03:24Z",
       "metrics": {
         "meeting_date": "2026-11-08",
         "venue": "Sha Tin",
@@ -154,6 +154,17 @@
         "backtest_races": 1500,
         "top1_win_rate": 31.67,
         "win_roi": -11.76
+      },
+      "error": null
+    },
+    "monitor_track_condition": {
+      "status": "ok",
+      "last_attempt_at": "2026-11-08T02:02:09Z",
+      "last_success_at": "2026-11-08T02:02:09Z",
+      "metrics": {
+        "venue": "Sha Tin",
+        "date": "2026-11-08",
+        "races": 11
       },
       "error": null
     }

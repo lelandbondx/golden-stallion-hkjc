@@ -1,0 +1,120 @@
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:00:16Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:00:16Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:02:21Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:02:21Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:04:29Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:04:29Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:06:36Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:06:36Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:08:41Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:08:41Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:10:47Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:10:47Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:12:54Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:12:54Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:15:03Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:15:03Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:17:08Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:17:08Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:19:15Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:19:15Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:21:20Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:21:20Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:23:27Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:23:27Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:25:33Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:25:33Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:27:39Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:27:39Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:29:47Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:29:47Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:31:53Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:31:53Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:33:58Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:33:58Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:36:03Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:36:03Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:38:09Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:38:09Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:40:16Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:40:16Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:42:21Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:42:21Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:44:27Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:44:27Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:46:35Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:46:35Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:48:40Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:48:40Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:50:45Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:50:45Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:52:53Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:52:53Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:54:59Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:54:59Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:57:05Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:57:05Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T00:59:10Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T00:59:10Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:01:16Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:01:16Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:03:21Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:03:21Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:05:26Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:05:26Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:07:31Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:07:31Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:09:37Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:09:37Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:11:45Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:11:45Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:13:50Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:13:50Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:15:55Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:15:55Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:18:01Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:18:01Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:20:07Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:20:07Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:22:13Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:22:13Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:24:18Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:24:18Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:26:26Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:26:26Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:28:32Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:28:32Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:30:38Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:30:38Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:32:45Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:32:45Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:34:50Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:34:50Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:36:56Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:36:56Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:39:03Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:39:03Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:41:08Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:41:08Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:43:15Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:43:15Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:45:21Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:45:21Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:47:31Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:47:31Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:49:35Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:49:35Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:51:41Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:51:41Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:53:48Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:53:48Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:55:53Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:55:53Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T01:57:58Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T01:57:58Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T02:00:03Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T02:00:03Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T02:02:09Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-08T02:02:09Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-08", "races": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-08T02:03:23Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-08", "meetings_count": 1, "races_count": 11}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-08T02:03:24Z", "metrics": {"meeting_date": "2026-11-08", "venue": "Sha Tin", "races_predicted": 11}, "error": null}
