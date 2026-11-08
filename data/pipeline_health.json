@@ -1,18 +1,15 @@
 {
-  "overall_status": "ok",
-  "updated_at": "2026-11-08T02:03:24Z",
+  "overall_status": "fail",
+  "updated_at": "2026-11-08T02:58:21Z",
   "components": {
     "scraper": {
-      "status": "ok",
-      "last_attempt_at": "2026-11-08T02:03:23Z",
-      "last_success_at": "2026-11-08T02:03:23Z",
+      "status": "fail",
+      "last_attempt_at": "2026-11-08T02:58:21Z",
+      "last_success_at": "2026-11-08T02:57:55Z",
       "metrics": {
-        "source": "live_html_racecard",
-        "meeting_date": "2026-11-08",
-        "meetings_count": 1,
-        "races_count": 11
+        "source": "error"
       },
-      "error": null
+      "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."
     },
     "incident_memory": {
       "status": "ok",
@@ -26,8 +23,8 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-08T02:03:24Z",
-      "last_success_at": "2026-11-08T02:03:24Z",
+      "last_attempt_at": "2026-11-08T02:57:57Z",
+      "last_success_at": "2026-11-08T02:57:57Z",
       "metrics": {
         "meeting_date": "2026-11-08",
         "venue": "Sha Tin",
@@ -47,26 +44,26 @@
     },
     "barrier_trials_scraper": {
       "status": "ok",
-      "last_attempt_at": "2026-11-04T04:54:17Z",
-      "last_success_at": "2026-11-04T04:54:17Z",
+      "last_attempt_at": "2026-11-08T02:49:35Z",
+      "last_success_at": "2026-11-08T02:49:35Z",
       "metrics": {
-        "meeting_date": "2026/11/04",
-        "venue": "HV",
-        "races_scraped": 9,
-        "new_trials": 58,
-        "total_trials": 230,
-        "unique_horses": 113
+        "meeting_date": "2026/11/08",
+        "venue": "ST",
+        "races_scraped": 11,
+        "new_trials": 115,
+        "total_trials": 345,
+        "unique_horses": 174
       },
       "error": null
     },
     "trial_features": {
       "status": "ok",
-      "last_attempt_at": "2026-11-04T04:55:32Z",
-      "last_success_at": "2026-11-04T04:55:32Z",
+      "last_attempt_at": "2026-11-08T02:49:35Z",
+      "last_success_at": "2026-11-08T02:49:35Z",
       "metrics": {
-        "total_horses": 113,
-        "updated_horses": 113,
-        "elite_trials_flagged": 7
+        "total_horses": 174,
+        "updated_horses": 174,
+        "elite_trials_flagged": 16
       },
       "error": null
     },
@@ -159,14 +156,21 @@
     },
     "monitor_track_condition": {
       "status": "ok",
-      "last_attempt_at": "2026-11-08T02:02:09Z",
-      "last_success_at": "2026-11-08T02:02:09Z",
+      "last_attempt_at": "2026-11-08T02:10:26Z",
+      "last_success_at": "2026-11-08T02:10:26Z",
       "metrics": {
         "venue": "Sha Tin",
         "date": "2026-11-08",
         "races": 11
       },
       "error": null
+    },
+    "frozen_predictions": {
+      "status": "fail",
+      "last_attempt_at": "2026-11-08T02:56:01Z",
+      "last_success_at": null,
+      "metrics": {},
+      "error": "Write error C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\frozen_predictions_20261108.json: [Errno 22] Invalid argument: 'C:\\\\Users\\\\lelan\\\\Desktop\\\\golden-stallion-hkjc\\\\data\\\\frozen_predictions_20261108.json'"
     }
   }
 }
