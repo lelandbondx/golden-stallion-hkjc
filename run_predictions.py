@@ -254,10 +254,11 @@ def run():
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         debutant_penalty = np.where((consensus > 5.0) | has_strong_trial, 0.0, debutant_penalty_val)
 
-        # Damp true first-starters (zero starts) at odds >= 20.0 without a strong trial so they do not rank above proven horses on default neutral stats
+        # Damp true first-starters (zero starts) at odds >= 20.0 without a strong trial, and 30-1+ longshots with severe poor race form (avg >= 10th & last run >= 10th)
         unbacked_longshot_debutant = is_debutant & (df_runners['win_odds'] >= 20.0) & (~has_strong_trial)
+        out_of_form_longshot = (~is_debutant) & (df_runners['win_odds'] >= 30.0) & (recent_pos >= 10.0) & (parsed_last_fin.fillna(7.0) >= 10.0)
         df_runners['model_prob'] = np.where(
-            unbacked_longshot_debutant,
+            unbacked_longshot_debutant | out_of_form_longshot,
             np.minimum(df_runners['model_prob'] * 0.5, df_runners['implied_prob'] * 1.5),
             df_runners['model_prob'],
         )
@@ -488,16 +489,17 @@ def run():
                 t_pos = t_data.get('best_trial_pos_ratio', 1.0)
                 t_speed = t_data.get('best_trial_speed_diff', 0.0)
                 
-                # 1. Raw speed trial (speed diff >= 0.5s faster than standard)
-                if t_speed >= 0.5:
+                # 1. Raw speed trial (speed diff >= 0.5s faster than standard and top-half finish)
+                if t_speed >= 0.5 and t_pos <= 0.50:
                     t_boost += 0.02
                     
                 # 2. High quality trial vs top competition
                 if t_data.get('high_quality_trial', False):
                     t_boost += 0.02
                     
-                # 3. Poor trial (bottom 10% and slow)
-                if t_pos >= 0.90 and t_speed <= -1.0:
+                # 3. Poor trial (bottom 10% and slow) — waive for proven race form (<= 6.0), route stayers (>= 1600m), or Class 5 wide-rating heats
+                r_rec_pos = float(recent_pos.loc[idx]) if idx in recent_pos.index else 7.0
+                if t_pos >= 0.90 and t_speed <= -1.0 and r_rec_pos > 6.0 and distance < 1600 and class_int < 5:
                     t_penalty -= 0.03
                     
             trial_boost.append(t_boost)
