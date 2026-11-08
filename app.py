@@ -1016,6 +1016,19 @@ with tab1:
         # Targeted Standout Boost Logic
         recent_pos = get_series(df_runners, 'recent_avg_pos', 7.0)
         recent_win = get_series(df_runners, 'recent_win_rate', 0.0)
+        last_summary_str = get_str_series(df_runners, 'last_run_summary', '').str.strip()
+        last_run_date_s = df_runners.get('last_run_date', pd.Series(None, index=df_runners.index))
+        has_actual_last_run = (
+            last_summary_str.str.contains(r'Fin\s+\d+|Last Run', case=False, regex=True, na=False) |
+            (last_run_date_s.notna() & (~last_run_date_s.astype(str).str.strip().isin(['', 'nan', 'None', 'NaT'])))
+        )
+        parsed_last_fin = pd.to_numeric(
+            last_summary_str.str.extract(r'Fin\s+0*(\d+)', expand=False), errors='coerce'
+        )
+        recent_pos = pd.Series(
+            np.where((recent_pos == 7.0) & has_actual_last_run & parsed_last_fin.notna(), parsed_last_fin, recent_pos),
+            index=df_runners.index,
+        )
         track_match = (get_str_series(df_runners, 'ST_vs_HV_pref', 'Neutral') == meeting.get('venue')).astype(int)
         going_match = (get_str_series(df_runners, 'last_form_going', 'Unknown') == race_going).astype(int)
         vet_issue = pd.Series(0, index=df_runners.index)
@@ -1028,8 +1041,8 @@ with tab1:
         standout_boost = np.where(is_super_standout, 0.02, 0.0) # 2% boost for true standouts
         standout_boost += np.where(is_class_dropper_standout, 0.05, 0.0) # 5% boost for dangerous class droppers
         
-        # Scale debutant penalty:
-        is_debutant = (recent_pos == 7.0) & (recent_win == 0.0)
+        # Scale debutant penalty (strictly zero race starts; never flag horses with an actual last_run_summary/last_run_date):
+        is_debutant = (recent_pos == 7.0) & (recent_win == 0.0) & (~has_actual_last_run)
         debutant_penalty_val = np.where(is_debutant, -0.05, 0.0)
         if class_int == 5:
             debutant_penalty_val = debutant_penalty_val * 0.5
@@ -1047,9 +1060,11 @@ with tab1:
             if name in trial_features:
                 t_pos = trial_features[name].get('best_trial_pos_ratio', 1.0)
                 t_speed = trial_features[name].get('best_trial_speed_diff', 0.0)
-                if t_pos <= 0.35 or t_speed > 0.0:
+                t_hq = bool(trial_features[name].get('high_quality_trial', False))
+                t_top2 = int(trial_features[name].get('recent_top2_trials', 0))
+                if t_pos <= 0.35 and (t_hq or (t_top2 >= 1 and t_speed > 0.0)):
                     strong = True
-                if int(trial_features[name].get('recent_top2_trials', 0)) >= 2:
+                if t_top2 >= 2:
                     multi_top2 = True
             has_strong_trial.append(strong)
             has_multi_top2_trials.append(multi_top2)
@@ -1059,6 +1074,14 @@ with tab1:
         # If consensus from trials is strong OR we have a strong trial, waive it
         consensus = get_series(df_runners, 'consensus_score', 0)
         debutant_penalty = np.where((consensus > 5.0) | has_strong_trial, 0.0, debutant_penalty_val)
+
+        # Damp true first-starters (zero starts) at odds >= 20.0 without a strong trial so they do not rank above proven horses on default neutral stats
+        unbacked_longshot_debutant = is_debutant & (df_runners['win_odds'] >= 20.0) & (~has_strong_trial)
+        df_runners['model_prob'] = np.where(
+            unbacked_longshot_debutant,
+            np.minimum(df_runners['model_prob'] * 0.5, df_runners['implied_prob'] * 1.5),
+            df_runners['model_prob'],
+        )
         
         # Map sectional times and find fastest last sectional
         df_runners['best_last_sec'] = df_runners['clean_name'].map(sectional_bursts).fillna(99.0)
