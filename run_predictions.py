@@ -708,8 +708,10 @@ def run():
         p2 = df_sorted_gs.iloc[1] if len(df_sorted_gs) > 1 else None
         p3 = df_sorted_gs.iloc[2] if len(df_sorted_gs) > 2 else None
         p4 = df_sorted_gs.iloc[3] if len(df_sorted_gs) > 3 else None
+        true_p5_fallback = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
         
-        # Pick 5 is highest EV survivor (or qualified Longshot Exotic Class Dropper) not wide+heavy vetoed
+        # Pick 5 is highest EV survivor (or qualified Longshot Exotic Class Dropper) not wide+heavy vetoed,
+        # filtered by Ronan's Outlier Rule: Scrap massive outliers with low AI confidence in favor of True 5th.
         top4_nos = [p1['no']]
         if p2 is not None: top4_nos.append(p2['no'])
         if p3 is not None: top4_nos.append(p3['no'])
@@ -728,9 +730,20 @@ def run():
             if not rem_droppers.empty:
                 p5 = rem_droppers.sort_values(by='gs_score', ascending=False).iloc[0]
             else:
-                p5 = rem_eligible.sort_values(by='value_diff', ascending=False).iloc[0]
+                best_sleeper = rem_eligible.sort_values(by='value_diff', ascending=False).iloc[0]
+                s_odds = float(best_sleeper.get('win_odds', 20.0))
+                s_conf = float(best_sleeper.get('confidence', 30))
+                s_gs = float(best_sleeper.get('gs_score', 5.0))
+                # Ronan's Outlier Filter:
+                # Keep sleeper if AI has real conviction (odds <= 20.0 or confidence >= 50% or strong GS >= 8.0)
+                # Scrap if massive low-confidence outlier (odds > 20.0 with conf < 50% or extreme odds >= 30.0 or GS < 5.0)
+                is_low_conf_outlier = (s_odds > 20.0 and s_conf < 50) or (s_odds >= 30.0) or (s_gs < 5.0)
+                if is_low_conf_outlier:
+                    p5 = true_p5_fallback
+                else:
+                    p5 = best_sleeper
         else:
-            p5 = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
+            p5 = true_p5_fallback
             
         # Price Test & Split Rule on Sprints (1000m / 1200m) for Pick 1:
         p1_odds = float(p1.get('win_odds', 20.0))
@@ -839,7 +852,7 @@ def run():
             
         # Exotic Tickets:
         q_nos = [str(x['no']) for x in [p1, p2, p3] if x is not None]
-        trio_nos = [str(x['no']) for x in [p1, p2, p3, p4] if x is not None]
+        trio_nos = [str(x['no']) for x in [p1, p2, p3, p4, p5] if x is not None]
         for cd_no in exotic_cd['trio_dropper_nos']:
             if str(cd_no) not in trio_nos:
                 trio_nos.append(str(cd_no))

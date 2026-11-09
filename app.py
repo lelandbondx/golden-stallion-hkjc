@@ -896,9 +896,19 @@ with tab1:
                                 rem_elig = rem_df[~((pd.to_numeric(rem_df.get('draw', 6), errors='coerce').fillna(6) >= 9) & (pd.to_numeric(rem_df.get('actual_weight', 125), errors='coerce').fillna(125) >= 132))]
                                 if not rem_elig.empty:
                                     rem_df = rem_elig
-                            if not rem_df.empty and 'value_diff' in rem_df.columns:
-                                best_p5 = rem_df.sort_values(by='value_diff', ascending=False).iloc[0]
-                                df_runners.loc[df_runners['no'] == best_p5['no'], 'card_rank'] = 5
+                            if not rem_df.empty:
+                                true_p5_fb = rem_df.sort_values(by='gs_score', ascending=False).iloc[0]
+                                if 'value_diff' in rem_df.columns:
+                                    best_p5 = rem_df.sort_values(by='value_diff', ascending=False).iloc[0]
+                                    s_odds = float(safe_num(best_p5.get('win_odds'), 20.0))
+                                    s_conf = float(safe_num(best_p5.get('confidence'), 30))
+                                    s_gs = float(safe_num(best_p5.get('gs_score'), 5.0))
+                                    # Ronan's Outlier Filter: scrap sleeper if it is a massive low-confidence outlier
+                                    is_outlier = (s_odds > 20.0 and s_conf < 50) or (s_odds >= 30.0) or (s_gs < 5.0)
+                                    chosen_p5 = true_p5_fb if is_outlier else best_p5
+                                else:
+                                    chosen_p5 = true_p5_fb
+                                df_runners.loc[df_runners['no'] == chosen_p5['no'], 'card_rank'] = 5
 
                             p1_mask = df_runners['card_rank'] == 1
                             if p1_mask.any():
@@ -1533,8 +1543,10 @@ with tab1:
         p2 = df_sorted_gs.iloc[1] if len(df_sorted_gs) > 1 else None
         p3 = df_sorted_gs.iloc[2] if len(df_sorted_gs) > 2 else None
         p4 = df_sorted_gs.iloc[3] if len(df_sorted_gs) > 3 else None
+        true_p5_fallback = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
         
-        # Pick 5 is highest EV survivor (or qualified Longshot Exotic Class Dropper) not wide+heavy vetoed
+        # Pick 5 is highest EV survivor (or qualified Longshot Exotic Class Dropper) not wide+heavy vetoed,
+        # filtered by Ronan's Outlier Rule: Scrap massive outliers with low AI confidence in favor of True 5th.
         top4_nos = [p1['no']]
         if p2 is not None: top4_nos.append(p2['no'])
         if p3 is not None: top4_nos.append(p3['no'])
@@ -1553,9 +1565,20 @@ with tab1:
             if not rem_droppers.empty:
                 p5 = rem_droppers.sort_values(by='gs_score', ascending=False).iloc[0]
             else:
-                p5 = rem_eligible.sort_values(by='value_diff', ascending=False).iloc[0]
+                best_sleeper = rem_eligible.sort_values(by='value_diff', ascending=False).iloc[0]
+                s_odds = float(safe_num(best_sleeper.get('win_odds'), 20.0))
+                s_conf = float(safe_num(best_sleeper.get('confidence'), 30))
+                s_gs = float(safe_num(best_sleeper.get('gs_score'), 5.0))
+                # Ronan's Outlier Filter:
+                # Keep sleeper if AI has real conviction (odds <= 20.0 or confidence >= 50% or strong GS >= 8.0)
+                # Scrap if massive low-confidence outlier (odds > 20.0 with conf < 50% or extreme odds >= 30.0 or GS < 5.0)
+                is_low_conf_outlier = (s_odds > 20.0 and s_conf < 50) or (s_odds >= 30.0) or (s_gs < 5.0)
+                if is_low_conf_outlier:
+                    p5 = true_p5_fallback
+                else:
+                    p5 = best_sleeper
         else:
-            p5 = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
+            p5 = true_p5_fallback
             
         # Price Test & Split Rule on Sprints (1000m / 1200m) for Pick 1:
         p1_odds = safe_num(p1.get('win_odds'), 20.0)
@@ -2258,7 +2281,7 @@ with tab1:
                 stake_badge = '<span style="background:#334155; color:#cbd5e1; padding:4px 10px; border-radius:6px; font-weight:600; font-size:0.82rem;">⚪ EXOTIC KEY ONLY</span>'
 
             trio_box_nos = []
-            for p_cand in [best, second, third, fourth]:
+            for p_cand in [best, second, third, fourth, fifth]:
                 if p_cand is not None and 'no' in p_cand:
                     try:
                         n_c = int(pd.to_numeric(p_cand['no'], errors='coerce'))
