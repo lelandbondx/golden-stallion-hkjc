@@ -18,7 +18,6 @@ from features.stewards import check_stewards_excuse, check_health_risk
 def run():
     print("Loading data...")
     data = get_live_meeting_data()
-    tips_data = get_live_tips_index()
     
     # Load private expert intel
     try:
@@ -33,6 +32,7 @@ def run():
         return
         
     meeting = data['meetings'][0]
+    tips_data = get_live_tips_index(expected_date=meeting.get('date'), num_races=len(meeting.get('races') or []))
     venue_name = meeting.get('venue', 'Happy Valley')
     print(f"Meeting: {venue_name} - {meeting.get('date')} - Going: {meeting.get('going')}")
 

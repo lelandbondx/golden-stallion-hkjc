@@ -534,8 +534,8 @@ def fetch_horse_stats():
         return pd.DataFrame()
 
 @st.cache_data(ttl=3600)
-def fetch_tips():
-    return get_live_tips_index()
+def fetch_tips(expected_date=None, num_races=None):
+    return get_live_tips_index(expected_date=expected_date, num_races=num_races)
 
 @st.cache_data(ttl=3600)
 def fetch_trial_features():
@@ -648,6 +648,7 @@ with col_ref:
 selected_index = meeting_options.index(selected_meeting_str)
 meeting = meetings[selected_index]
 races = meeting.get('races', [])
+tips_data = fetch_tips(expected_date=meeting.get('date'), num_races=len(races))
 
 # Proactively ensure all runners on the active card have complete HKJC profiles synced (once per session)
 try:
@@ -897,8 +898,11 @@ with tab1:
                                 if not rem_elig.empty:
                                     rem_df = rem_elig
                             if not rem_df.empty:
-                                true_p5_fb = rem_df.sort_values(by='gs_score', ascending=False).iloc[0]
-                                if 'value_diff' in rem_df.columns:
+                                true_p5_fb = df_runners[rem_mask].sort_values(by='gs_score', ascending=False).iloc[0]
+                                rem_droppers = rem_df[rem_df['is_exotic_class_dropper'].astype(bool)] if 'is_exotic_class_dropper' in rem_df.columns else pd.DataFrame()
+                                if not rem_droppers.empty:
+                                    chosen_p5 = rem_droppers.sort_values(by='gs_score', ascending=False).iloc[0]
+                                elif 'value_diff' in rem_df.columns:
                                     best_p5 = rem_df.sort_values(by='value_diff', ascending=False).iloc[0]
                                     s_odds = float(safe_num(best_p5.get('win_odds'), 20.0))
                                     s_conf = float(safe_num(best_p5.get('confidence'), 30))
@@ -2206,30 +2210,31 @@ with tab1:
                     })
 
                 # 7. Happy Valley Course "A" Card-Specific Awareness Flags (Wed 4 Nov 2026)
-                if r_name == 'LIVE WIRE':
-                    tactical_radar_items.append({
-                        'type': '🎯 COURSE A INSIDE-SPEED ANCHOR',
-                        'color': '#10b981',
-                        'bg': 'rgba(16, 185, 129, 0.10)',
-                        'border': 'rgba(16, 185, 129, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: High-confidence inside-speed candidate (Gate {safe_int(r_item.get('draw'), 1)}, Z Purton) under Happy Valley Course A (30.5m) rail parameters."
-                    })
-                elif r_name == 'COPARTNER FLEET':
-                    tactical_radar_items.append({
-                        'type': '⚠️ COURSE A MID-DRAW TEMPO WATCH',
-                        'color': '#f59e0b',
-                        'bg': 'rgba(245, 158, 11, 0.10)',
-                        'border': 'rgba(245, 158, 11, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: Mid-draw risk (Gate {safe_int(r_item.get('draw'), 7)}) if early tempo is hot on Course A; prefer place/exotic coverage."
-                    })
-                elif r_name == 'ACE CHAMPION':
-                    tactical_radar_items.append({
-                        'type': '📊 COURSE A CLOSER TEMPO WATCH',
-                        'color': '#38bdf8',
-                        'bg': 'rgba(56, 189, 248, 0.10)',
-                        'border': 'rgba(56, 189, 248, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: Acceptable mid draw (Gate {safe_int(r_item.get('draw'), 5)}) on Course A; monitor for moderate-hot tempo favoring closers with strong 400m sectionals."
-                    })
+                if str(meeting.get('date', '')) == '2026-11-04':
+                    if r_name == 'LIVE WIRE':
+                        tactical_radar_items.append({
+                            'type': '🎯 COURSE A INSIDE-SPEED ANCHOR',
+                            'color': '#10b981',
+                            'bg': 'rgba(16, 185, 129, 0.10)',
+                            'border': 'rgba(16, 185, 129, 0.4)',
+                            'text': f"<b>{r_item_link}</b>: High-confidence inside-speed candidate (Gate {safe_int(r_item.get('draw'), 1)}, Z Purton) under Happy Valley Course A (30.5m) rail parameters."
+                        })
+                    elif r_name == 'COPARTNER FLEET':
+                        tactical_radar_items.append({
+                            'type': '⚠️ COURSE A MID-DRAW TEMPO WATCH',
+                            'color': '#f59e0b',
+                            'bg': 'rgba(245, 158, 11, 0.10)',
+                            'border': 'rgba(245, 158, 11, 0.4)',
+                            'text': f"<b>{r_item_link}</b>: Mid-draw risk (Gate {safe_int(r_item.get('draw'), 7)}) if early tempo is hot on Course A; prefer place/exotic coverage."
+                        })
+                    elif r_name == 'ACE CHAMPION':
+                        tactical_radar_items.append({
+                            'type': '📊 COURSE A CLOSER TEMPO WATCH',
+                            'color': '#38bdf8',
+                            'bg': 'rgba(56, 189, 129, 0.10)',
+                            'border': 'rgba(56, 189, 248, 0.4)',
+                            'text': f"<b>{r_item_link}</b>: Acceptable mid draw (Gate {safe_int(r_item.get('draw'), 5)}) on Course A; monitor for moderate-hot tempo favoring closers with strong 400m sectionals."
+                        })
 
             if tactical_radar_items:
                 with st.expander("⚡ TACTICAL EDGE & OUTLIER RADAR (STEWARDS & VET MONITOR)", expanded=False):

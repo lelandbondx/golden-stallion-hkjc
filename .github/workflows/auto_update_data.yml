@@ -34,15 +34,9 @@ jobs:
           pip install -r requirements.txt
           pip install lxml html5lib
 
-      - name: Build Historical Database & Features
-        run: |
-          python build_db.py
-          python build_features.py
-          python build_features_results.py
-
       - name: Sync All Telemetry (Trials, Profiles, Vet Records, Trackwork, Incidents, Precomputed Features)
         run: |
-          python sync_offseason_data.py 150
+          python sync_offseason_data.py 200
           python initialize_baseline_odds.py
 
       - name: Train Model & Generate Live Predictions
@@ -55,7 +49,11 @@ jobs:
           git config --global user.name 'Golden Stallion Automator'
           git config --global user.email 'automator@golden-stallion.local'
           git add data/ model.joblib
-          git diff --quiet && git diff --staged --quiet || (git pull origin main -X ours && git commit -m "Auto-update live models, trials, vet records, incident memory, odds, and predictions" && git push origin main)
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update live models, trials, vet records, incident memory, odds, and predictions"
+            git pull --no-rebase origin main -X ours
+            git push origin main
+          fi
 
       - name: Verify Live Render App Health
         run: |

@@ -899,25 +899,32 @@ def get_hkjc_news():
         ]
     return news_items
 
-def fetch_single_race_tips(race_no, headers):
+def fetch_single_race_tips(race_no, headers, return_page_date=False):
     import re
     url = f"https://racing.hkjc.com/racing/english/tipsindex/tips_index.asp?RaceNo={race_no}"
     try:
-        res = requests.get(url, headers=headers, timeout=1.5)
+        res = requests.get(url, headers=headers, timeout=3.0)
         if res.status_code != 200:
-            return race_no, {}
+            return (race_no, {}, None) if return_page_date else (race_no, {})
         soup = BeautifulSoup(res.content, 'html.parser')
+        page_date = None
+        if return_page_date:
+            m_dt = re.search(r'\b(\d{2})/(\d{2})/(\d{4})\b', soup.get_text(" ", strip=True))
+            if m_dt:
+                page_date = f"{m_dt.group(3)}-{m_dt.group(2)}-{m_dt.group(1)}"
         tables = soup.find_all('table')
         race_tips = {}
         for t in tables:
             rows = t.find_all('tr')
-            if not rows: continue
+            if not rows:
+                continue
             first_row_cells = rows[0].find_all(['td', 'th'])
-            first_row_txt = "".join([c.get_text() for c in first_row_cells]).lower()
+            first_row_txt = " ".join(" ".join([c.get_text(" ", strip=True) for c in first_row_cells]).lower().split())
             if "initial" in first_row_txt and "day tips" in first_row_txt:
                 for row in rows[1:]:
                     cells = row.find_all('td')
-                    if len(cells) < 9: continue
+                    if len(cells) < 9:
+                        continue
                     try:
                         h_no = int(cells[0].get_text(strip=True))
                         r_tips_val = cells[8].get_text(strip=True)
@@ -935,33 +942,90 @@ def fetch_single_race_tips(race_no, headers):
                     except Exception:
                         pass
                 break
-        return race_no, race_tips
+        return (race_no, race_tips, page_date) if return_page_date else (race_no, race_tips)
     except Exception:
-        return race_no, {}
+        return (race_no, {}, None) if return_page_date else (race_no, {})
 
-def get_live_tips_index():
+
+def _parse_tips_payload(raw):
+    out = {}
+    for rk, rv in (raw or {}).items():
+        if str(rk).startswith('_'):
+            continue
+        if isinstance(rv, dict):
+            inner = {}
+            for hk, hv in rv.items():
+                try:
+                    inner[int(hk)] = float(hv)
+                except Exception:
+                    inner[hk] = hv
+            try:
+                out[int(rk)] = inner
+            except Exception:
+                out[rk] = inner
+    return out
+
+
+def get_live_tips_index(expected_date=None, num_races=None, force_refresh=False):
     import os
-    if os.path.exists('data/tips_cache.json'):
+    from concurrent.futures import ThreadPoolExecutor
+
+    target_date = str(expected_date).strip() if expected_date else None
+    n_races = int(num_races) if num_races else None
+    if (target_date is None or n_races is None) and os.path.exists('data/last_scraped_meeting.json'):
+        try:
+            with open('data/last_scraped_meeting.json', 'r', encoding='utf-8') as f:
+                lm = json.load(f)
+            meetings = lm.get('meetings') or []
+            if meetings:
+                if target_date is None:
+                    target_date = str(meetings[0].get('date', '')).strip() or None
+                if n_races is None:
+                    n_races = len(meetings[0].get('races') or []) or 11
+        except Exception:
+            pass
+    if not n_races:
+        n_races = 11
+
+    if not force_refresh and os.path.exists('data/tips_cache.json'):
         try:
             with open('data/tips_cache.json', 'r', encoding='utf-8') as f:
                 raw = json.load(f)
-            out = {}
-            for rk, rv in raw.items():
-                if isinstance(rv, dict):
-                    inner = {}
-                    for hk, hv in rv.items():
-                        try:
-                            inner[int(hk)] = float(hv)
-                        except Exception:
-                            inner[hk] = hv
-                    try:
-                        out[int(rk)] = inner
-                    except Exception:
-                        out[rk] = inner
-            return out
+            cached_date = str(raw.get('_meeting_date', '')).strip()
+            parsed = _parse_tips_payload(raw)
+            if parsed and cached_date and (target_date is None or cached_date == target_date):
+                return parsed
         except Exception:
             pass
-    return {}
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    }
+    try:
+        _, r1_tips, page_date = fetch_single_race_tips(1, headers, return_page_date=True)
+        if target_date and page_date and page_date != target_date:
+            return {}
+        if not r1_tips:
+            return {}
+
+        live_out = {1: r1_tips}
+        if n_races >= 2:
+            with ThreadPoolExecutor(max_workers=5) as pool:
+                futures = [pool.submit(fetch_single_race_tips, rno, headers) for rno in range(2, n_races + 1)]
+                for fut in futures:
+                    rno, rtips = fut.result()
+                    if rtips:
+                        live_out[int(rno)] = rtips
+
+        save_payload = {"_meeting_date": page_date or target_date or ""}
+        for rno in sorted(live_out.keys()):
+            save_payload[str(rno)] = {str(hk): hv for hk, hv in live_out[rno].items()}
+        os.makedirs('data', exist_ok=True)
+        with open('data/tips_cache.json', 'w', encoding='utf-8') as f:
+            json.dump(save_payload, f, indent=4)
+        return live_out
+    except Exception:
+        return {}
 
 if __name__ == "__main__":
     print(get_live_tips_index())

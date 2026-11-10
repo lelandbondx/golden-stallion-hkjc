@@ -324,10 +324,16 @@ def parse_hkjc_racereport_html(html_text: str, expect_date: str = None) -> dict:
                 inc_text = tds[1].get_text(strip=True)
 
             h_clean = _clean_horse_name(h_raw)
+            _header_noise = (
+                "PENETROMETER", "VIEW BY", "GOOD", "YIELDING", "FIRM", "SOFT", "WET",
+                "MR ", "MS ", "MRS ", "DR ", "HON ", "JP", "RACE ", "GOING", "COURSE"
+            )
             if (
                 h_clean
+                and len(h_clean) <= 32
                 and not h_clean.isdigit()
                 and h_clean not in ("HORSE", "PLA.", "PLACING", "HORSE NO.", "NO.")
+                and not h_clean.startswith(_header_noise)
                 and len(inc_text) > 3
             ):
                 meeting_incidents[h_clean] = inc_text
@@ -462,11 +468,15 @@ def build_horse_incident_memory(force_rebuild=False):
     today_hkt_tag = datetime.now(timezone(timedelta(hours=8))).strftime("%Y%m%d")
 
     recent_dates = set()
-    for fp in sorted(glob.glob('data/frozen_predictions_202610*.json'))[-5:]:
+    for fp in sorted(glob.glob('data/frozen_predictions_2026*.json'))[-10:]:
         m = re.search(r'(\d{8})', fp)
+        if m and m.group(1) < today_hkt_tag:
+            recent_dates.add(m.group(1))
+    for rf in sorted(glob.glob('data/results_2026*.json'))[-10:]:
+        m = re.search(r'(\d{8})', rf)
         if m and m.group(1) <= today_hkt_tag:
             recent_dates.add(m.group(1))
-    for ma in sorted(glob.glob('data/meeting_audit_2026*.json'))[-5:]:
+    for ma in sorted(glob.glob('data/meeting_audit_2026*.json'))[-8:]:
         m = re.search(r'(\d{8})', ma)
         if m and m.group(1) <= today_hkt_tag:
             recent_dates.add(m.group(1))
@@ -582,27 +592,61 @@ def build_horse_incident_memory(force_rebuild=False):
                             'steward_comment': combined_note
                         })
 
-    # 3. Ingest scraped results files (e.g. 20261001, etc.) and last_scraped_meeting.json
-    for res_file in sorted(glob.glob('data/scraped_results_*.json')):
+    # 3. Ingest scraped results files (scraped_results_*.json & results_2026*.json) and last_scraped_meeting.json
+    sec_lookup = {}
+    if os.path.exists('data/modern_sectionals_scraped.json'):
+        try:
+            with open('data/modern_sectionals_scraped.json', 'r', encoding='utf-8') as f:
+                sec_rows = json.load(f)
+            by_race = {}
+            for sr in (sec_rows if isinstance(sec_rows, list) else []):
+                d_raw = str(sr.get('date', '')).strip()  # DD/MM/YYYY
+                rc_no = str(sr.get('race_no', '')).strip()
+                cn = _clean_horse_name(sr.get('clean_name', ''))
+                l4 = sr.get('last400')
+                if d_raw and rc_no and cn and l4 is not None:
+                    try:
+                        l4_f = float(l4)
+                        if l4_f > 10.0:
+                            by_race.setdefault((d_raw, rc_no), []).append((cn, l4_f))
+                    except Exception:
+                        pass
+            for (d_raw, rc_no), items in by_race.items():
+                items_sorted = sorted(items, key=lambda x: x[1])
+                for idx_rk, (cn, l4_f) in enumerate(items_sorted, start=1):
+                    sec_lookup[(d_raw, rc_no, cn)] = (l4_f, idx_rk)
+        except Exception as e:
+            logging.warning(f"Error loading modern_sectionals_scraped.json in incident_engine: {e}")
+
+    all_result_files = sorted(set(glob.glob('data/scraped_results_*.json') + glob.glob('data/results_2026*.json')))
+    for res_file in all_result_files:
         date_match = re.search(r'(\d{8})', res_file)
         r_date = date_match.group(1) if date_match else "20261001"
         formatted_date = f"{r_date[:4]}-{r_date[4:6]}-{r_date[6:]}"
+        ddmmyyyy = f"{r_date[6:]}/{r_date[4:6]}/{r_date[:4]}"
         try:
             with open(res_file, 'r', encoding='utf-8') as f:
                 res_data = json.load(f)
-                for r_num, runners in res_data.items():
-                    if isinstance(runners, dict):
-                        runners = runners.get('runners') or runners.get('top4') or []
+                for r_num, runners_block in res_data.items():
+                    r_info_txt = ""
+                    if isinstance(runners_block, dict):
+                        r_info_txt = str(runners_block.get('race_info', ''))
+                        runners = runners_block.get('runners') or runners_block.get('top4') or []
+                    else:
+                        runners = runners_block
                     if not isinstance(runners, list):
                         continue
+                    venue_guess = 'Happy Valley' if 'HAPPY VALLEY' in r_info_txt.upper() else 'Sha Tin'
                     for r in runners:
                         if not isinstance(r, dict):
                             continue
-                        raw_name = r.get('horse_name', '')
-                        clean_name = re.sub(r'\s*\([A-Z0-9]+\)', '', raw_name).strip().upper()
-                        code_match = re.search(r'\(([A-Z0-9]+)\)', raw_name)
-                        hcode = code_match.group(1).upper() if code_match else ''
-                        
+                        raw_name = r.get('horse_name') or r.get('name') or ''
+                        clean_name = re.sub(r'\s*\([A-Z0-9]+\)', '', str(raw_name)).strip().upper()
+                        if not clean_name:
+                            continue
+                        code_match = re.search(r'\(([A-Z0-9]+)\)', str(raw_name))
+                        hcode = (str(r.get('code') or '').strip().upper()) or (code_match.group(1).upper() if code_match else '')
+
                         key = clean_name
                         if key not in memory:
                             memory[key] = {
@@ -613,11 +657,16 @@ def build_horse_incident_memory(force_rebuild=False):
                             }
                         if hcode and hcode not in memory:
                             memory[hcode] = memory[key]
-                        
-                        fin_pos = r.get('place', 99)
-                        lbw_str = str(r.get('lbw', '0')).strip()
-                        if lbw_str in ['---', '', 'SH', 'HD', 'NOSE']:
-                            lbw = 0.0 if lbw_str in ['---', ''] else (0.1 if lbw_str == 'NOSE' else (0.2 if lbw_str == 'HD' else 0.15))
+
+                        raw_plc = r.get('place') if r.get('place') is not None else r.get('plc', 99)
+                        plc_digits = re.sub(r'[^\d]', '', str(raw_plc))
+                        fin_pos = int(plc_digits) if plc_digits else 99
+                        if fin_pos >= 90:
+                            continue
+
+                        lbw_str = str(r.get('lbw', '0')).strip().upper()
+                        if lbw_str in ['---', '-', '', 'SH', 'HD', 'NOSE', 'N', 'NK']:
+                            lbw = 0.0 if lbw_str in ['---', '-', ''] else (0.1 if lbw_str in ('NOSE', 'N') else (0.2 if lbw_str == 'HD' else (0.3 if lbw_str == 'NK' else 0.15)))
                         else:
                             try:
                                 if '-' in lbw_str:
@@ -633,6 +682,33 @@ def build_horse_incident_memory(force_rebuild=False):
                             except ValueError:
                                 lbw = 2.0
 
+                        draw_val = 5
+                        try:
+                            draw_val = int(re.sub(r'[^\d]', '', str(r.get('draw', 5))) or 5)
+                        except Exception:
+                            draw_val = 5
+
+                        wt_val = 125.0
+                        try:
+                            wt_val = float(r.get('act_wt') or r.get('actual_weight') or 125.0)
+                        except Exception:
+                            wt_val = 125.0
+
+                        sp_val = 10.0
+                        try:
+                            sp_val = float(r.get('win_odds') or 10.0)
+                        except Exception:
+                            sp_val = 10.0
+
+                        ep_val = 6.0
+                        rp_str = str(r.get('run_pos') or '').strip()
+                        if rp_str:
+                            rp_parts = rp_str.split()
+                            if rp_parts and rp_parts[0].isdigit():
+                                ep_val = float(rp_parts[0])
+
+                        sec_t, sec_rk = sec_lookup.get((ddmmyyyy, str(r_num), clean_name), (22.8, 4))
+
                         comm = comments_dict.get(clean_name, '')
                         incident_flags = parse_incident(comm, target_horse_name=clean_name)
                         max_interf = max([f['severity'] for f in incident_flags if f['flag'] == 'traffic_trouble'], default=0)
@@ -641,35 +717,35 @@ def build_horse_incident_memory(force_rebuild=False):
                         run_rec = {
                             'race_date': formatted_date,
                             'race_id': f"{r_date}_R{r_num}",
-                            'venue': 'Sha Tin',
+                            'venue': venue_guess,
                             'course_rail': 'A',
                             'surface': 'TURF',
                             'going': 'GOOD TO FIRM' if '1001' in r_date else 'GOOD',
                             'distance': 1200,
                             'class': 'Class 4',
-                            'barrier': 5,
+                            'barrier': draw_val,
                             'finish_pos': fin_pos,
                             'beaten_lengths': lbw,
-                            'sp': float(r.get('win_odds', 10.0)),
-                            'weight_carried': 125.0,
-                            'early_pos': 6.0,
-                            'final_section_time': 22.8,
-                            'final_section_rank': 4,
+                            'sp': sp_val,
+                            'weight_carried': wt_val,
+                            'early_pos': ep_val,
+                            'final_section_time': sec_t,
+                            'final_section_rank': sec_rk,
                             'field_size': len(runners),
                             'incident_flags': incident_flags,
                             'ground_saved_score': 1.0 if saved_g_flag else 0.5,
                             'interference_severity': max_interf,
-                            'gate_speed_proven': any(f['flag'] == 'gate_speed' for f in incident_flags)
+                            'gate_speed_proven': any(f['flag'] == 'gate_speed' for f in incident_flags) or (ep_val <= 2.0),
+                            'steward_comment': comm
                         }
 
                         runs_list = memory[key]['runs']
-                        if not any(x.get('race_id') == run_rec['race_id'] for x in runs_list):
+                        existing_idx = next((idx_r for idx_r, x in enumerate(runs_list) if x.get('race_id') == run_rec['race_id']), None)
+                        if existing_idx is None:
                             runs_list.insert(0, run_rec)
                         else:
-                            for existing_r in runs_list:
-                                if existing_r.get('race_id') == run_rec['race_id'] and incident_flags:
-                                    existing_r['incident_flags'] = incident_flags
-                                    existing_r['interference_severity'] = max_interf
+                            runs_list[existing_idx] = run_rec
+                        runs_list.sort(key=lambda x: str(x.get('race_date', '')), reverse=True)
                         memory[key]['runs'] = runs_list[:6]
         except Exception as e:
             logging.warning(f"Error parsing {res_file}: {e}")

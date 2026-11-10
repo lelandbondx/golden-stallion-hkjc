@@ -214,6 +214,7 @@ def save_frozen_predictions(date_str, venue, race_no, runners_list):
         os.makedirs(os.path.dirname(filename), exist_ok=True)
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(cache, f, indent=4)
+        record_health("frozen_predictions", "ok", metrics={"file": os.path.basename(filename), "races_cached": len(cache)})
     except Exception as e:
         print(f"[ERROR] Failed to write frozen predictions {filename}: {e}")
         record_health("frozen_predictions", "fail", error=f"Write error {filename}: {e}")

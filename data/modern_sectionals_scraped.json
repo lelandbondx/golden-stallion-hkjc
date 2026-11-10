@@ -3148,5 +3148,5747 @@
       25.25,
       23.67
     ]
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 1,
+    "horse_no": 1,
+    "clean_name": "FALCON HUNTER",
+    "code": "K503",
+    "last400": 23.1,
+    "sec_list": [
+      24.08,
+      22.5,
+      23.1
+    ],
+    "finish_time": "1:09.68"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 2,
+    "horse_no": 6,
+    "clean_name": "NOBLE FANS",
+    "code": "K038",
+    "last400": 23.11,
+    "sec_list": [
+      24.32,
+      22.5,
+      23.11
+    ],
+    "finish_time": "1:09.93"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 3,
+    "horse_no": 8,
+    "clean_name": "ALWAYS FLUKE",
+    "code": "H252",
+    "last400": 23.43,
+    "sec_list": [
+      23.96,
+      22.62,
+      23.43
+    ],
+    "finish_time": "1:10.01"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 4,
+    "horse_no": 5,
+    "clean_name": "BEAUTY GEMINI",
+    "code": "L129",
+    "last400": 23.81,
+    "sec_list": [
+      23.84,
+      22.5,
+      23.81
+    ],
+    "finish_time": "1:10.15"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 5,
+    "horse_no": 11,
+    "clean_name": "DASH",
+    "code": "K250",
+    "last400": 22.95,
+    "sec_list": [
+      24.88,
+      22.38,
+      22.95
+    ],
+    "finish_time": "1:10.21"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 6,
+    "horse_no": 12,
+    "clean_name": "VON BAER",
+    "code": "K198",
+    "last400": 23.28,
+    "sec_list": [
+      24.56,
+      22.5,
+      23.28
+    ],
+    "finish_time": "1:10.34"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 7,
+    "horse_no": 7,
+    "clean_name": "YOUNG FIGHTER",
+    "code": "K464",
+    "last400": 23.39,
+    "sec_list": [
+      24.48,
+      22.58,
+      23.39
+    ],
+    "finish_time": "1:10.45"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 8,
+    "horse_no": 4,
+    "clean_name": "MARVEL AND GOLD",
+    "code": "K109",
+    "last400": 23.79,
+    "sec_list": [
+      24.2,
+      22.58,
+      23.79
+    ],
+    "finish_time": "1:10.57"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 9,
+    "horse_no": 3,
+    "clean_name": "BEST FARM",
+    "code": "K579",
+    "last400": 23.29,
+    "sec_list": [
+      24.76,
+      22.54,
+      23.29
+    ],
+    "finish_time": "1:10.59"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 10,
+    "horse_no": 9,
+    "clean_name": "LEGENDARY IMPACT",
+    "code": "K035",
+    "last400": 23.85,
+    "sec_list": [
+      24.2,
+      22.74,
+      23.85
+    ],
+    "finish_time": "1:10.79"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 1,
+    "fin": 11,
+    "horse_no": 2,
+    "clean_name": "RUSSET GLOW",
+    "code": "L059",
+    "last400": 23.66,
+    "sec_list": [
+      24.56,
+      22.58,
+      23.66
+    ],
+    "finish_time": "1:10.80"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 1,
+    "horse_no": 3,
+    "clean_name": "GRIT SPIRIT",
+    "code": "L116",
+    "last400": 23.35,
+    "sec_list": [
+      28.94,
+      23.41,
+      23.72,
+      23.35
+    ],
+    "finish_time": "1:39.42"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 2,
+    "horse_no": 9,
+    "clean_name": "LUCK IS BACK",
+    "code": "J398",
+    "last400": 23.73,
+    "sec_list": [
+      28.18,
+      23.69,
+      23.92,
+      23.73
+    ],
+    "finish_time": "1:39.52"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 3,
+    "horse_no": 1,
+    "clean_name": "EXCEED THE LIMIT",
+    "code": "L267",
+    "last400": 23.5,
+    "sec_list": [
+      28.54,
+      23.65,
+      23.84,
+      23.5
+    ],
+    "finish_time": "1:39.53"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 4,
+    "horse_no": 8,
+    "clean_name": "VERMILION TEMPEST",
+    "code": "L093",
+    "last400": 23.26,
+    "sec_list": [
+      29.34,
+      23.29,
+      23.72,
+      23.26
+    ],
+    "finish_time": "1:39.61"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 5,
+    "horse_no": 2,
+    "clean_name": "CLASS",
+    "code": "L134",
+    "last400": 23.96,
+    "sec_list": [
+      28.26,
+      23.69,
+      23.88,
+      23.96
+    ],
+    "finish_time": "1:39.79"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 6,
+    "horse_no": 5,
+    "clean_name": "FLYING BOOM",
+    "code": "K327",
+    "last400": 23.64,
+    "sec_list": [
+      29.18,
+      23.21,
+      23.84,
+      23.64
+    ],
+    "finish_time": "1:39.87"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 7,
+    "horse_no": 11,
+    "clean_name": "POET'S REIGN",
+    "code": "L021",
+    "last400": 23.35,
+    "sec_list": [
+      29.5,
+      23.29,
+      23.8,
+      23.35
+    ],
+    "finish_time": "1:39.94"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 8,
+    "horse_no": 7,
+    "clean_name": "QUANTUM WUKONG",
+    "code": "L393",
+    "last400": 23.67,
+    "sec_list": [
+      28.74,
+      23.69,
+      23.84,
+      23.67
+    ],
+    "finish_time": "1:39.94"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 9,
+    "horse_no": 6,
+    "clean_name": "TAKE ACTION",
+    "code": "J098",
+    "last400": 23.48,
+    "sec_list": [
+      28.98,
+      23.65,
+      23.88,
+      23.48
+    ],
+    "finish_time": "1:39.99"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 10,
+    "horse_no": 4,
+    "clean_name": "STURDY RUBY",
+    "code": "H207",
+    "last400": 23.74,
+    "sec_list": [
+      29.22,
+      23.37,
+      23.8,
+      23.74
+    ],
+    "finish_time": "1:40.13"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 11,
+    "horse_no": 12,
+    "clean_name": "SMILING CHAMPION",
+    "code": "K565",
+    "last400": 23.67,
+    "sec_list": [
+      29.66,
+      23.29,
+      23.84,
+      23.67
+    ],
+    "finish_time": "1:40.46"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 2,
+    "fin": 12,
+    "horse_no": 10,
+    "clean_name": "ACA FAST",
+    "code": "K467",
+    "last400": 24.13,
+    "sec_list": [
+      29.34,
+      23.49,
+      24.16,
+      24.13
+    ],
+    "finish_time": "1:41.12"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 1,
+    "horse_no": 4,
+    "clean_name": "INCREDIBLE MOMENT",
+    "code": "K275",
+    "last400": 23.57,
+    "sec_list": [
+      23.57,
+      23.03,
+      23.57
+    ],
+    "finish_time": "1:10.17"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 2,
+    "horse_no": 10,
+    "clean_name": "PARROT BLESSING",
+    "code": "L063",
+    "last400": 22.96,
+    "sec_list": [
+      24.49,
+      22.87,
+      22.96
+    ],
+    "finish_time": "1:10.32"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 3,
+    "horse_no": 6,
+    "clean_name": "VIGOR EYE",
+    "code": "L068",
+    "last400": 23.72,
+    "sec_list": [
+      23.77,
+      22.87,
+      23.72
+    ],
+    "finish_time": "1:10.36"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 4,
+    "horse_no": 3,
+    "clean_name": "NEW POWER",
+    "code": "H325",
+    "last400": 23.56,
+    "sec_list": [
+      23.81,
+      23.07,
+      23.56
+    ],
+    "finish_time": "1:10.44"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 5,
+    "horse_no": 8,
+    "clean_name": "COUNTRY PRIDE",
+    "code": "L325",
+    "last400": 24.09,
+    "sec_list": [
+      23.45,
+      22.95,
+      24.09
+    ],
+    "finish_time": "1:10.49"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 6,
+    "horse_no": 11,
+    "clean_name": "KING OBERON",
+    "code": "H407",
+    "last400": 23.77,
+    "sec_list": [
+      23.97,
+      22.83,
+      23.77
+    ],
+    "finish_time": "1:10.57"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 7,
+    "horse_no": 1,
+    "clean_name": "SHANGHAI WARRIOR",
+    "code": "L434",
+    "last400": 23.45,
+    "sec_list": [
+      24.01,
+      23.11,
+      23.45
+    ],
+    "finish_time": "1:10.57"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 8,
+    "horse_no": 2,
+    "clean_name": "SOMELOVEFROMABOVE",
+    "code": "J503",
+    "last400": 23.53,
+    "sec_list": [
+      24.09,
+      22.99,
+      23.53
+    ],
+    "finish_time": "1:10.61"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 9,
+    "horse_no": 5,
+    "clean_name": "RUN RUN SUNRISE",
+    "code": "K552",
+    "last400": 24.3,
+    "sec_list": [
+      23.69,
+      22.99,
+      24.3
+    ],
+    "finish_time": "1:10.98"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 10,
+    "horse_no": 7,
+    "clean_name": "SUPREME DATA",
+    "code": "L262",
+    "last400": 23.3,
+    "sec_list": [
+      24.37,
+      23.39,
+      23.3
+    ],
+    "finish_time": "1:11.06"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 11,
+    "horse_no": 9,
+    "clean_name": "LEAN ERA",
+    "code": "L297",
+    "last400": 23.61,
+    "sec_list": [
+      24.61,
+      23.15,
+      23.61
+    ],
+    "finish_time": "1:11.37"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 3,
+    "fin": 12,
+    "horse_no": 12,
+    "clean_name": "LUCKY TWENTY",
+    "code": "K392",
+    "last400": 25.86,
+    "sec_list": [
+      23.53,
+      22.91,
+      25.86
+    ],
+    "finish_time": "1:12.30"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 1,
+    "horse_no": 5,
+    "clean_name": "SUPERB KING",
+    "code": "K479",
+    "last400": 22.73,
+    "sec_list": [
+      12.56,
+      21.51,
+      22.73
+    ],
+    "finish_time": "0:56.80"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 2,
+    "horse_no": 3,
+    "clean_name": "RUBY THRIVE",
+    "code": "L098",
+    "last400": 22.3,
+    "sec_list": [
+      12.92,
+      21.75,
+      22.3
+    ],
+    "finish_time": "0:56.97"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 3,
+    "horse_no": 2,
+    "clean_name": "GEORGIAN SIGMA",
+    "code": "L007",
+    "last400": 22.84,
+    "sec_list": [
+      12.84,
+      21.43,
+      22.84
+    ],
+    "finish_time": "0:57.11"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 4,
+    "horse_no": 11,
+    "clean_name": "CLASSIC TRIPLE",
+    "code": "L212",
+    "last400": 22.24,
+    "sec_list": [
+      13.2,
+      21.75,
+      22.24
+    ],
+    "finish_time": "0:57.19"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 5,
+    "horse_no": 10,
+    "clean_name": "GHORGAN",
+    "code": "K199",
+    "last400": 22.14,
+    "sec_list": [
+      13.4,
+      21.71,
+      22.14
+    ],
+    "finish_time": "0:57.25"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 6,
+    "horse_no": 6,
+    "clean_name": "DRAGON SKY FORCE",
+    "code": "L198",
+    "last400": 22.58,
+    "sec_list": [
+      13.08,
+      21.67,
+      22.58
+    ],
+    "finish_time": "0:57.33"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 7,
+    "horse_no": 1,
+    "clean_name": "GRAND NOVA",
+    "code": "J323",
+    "last400": 23.04,
+    "sec_list": [
+      12.84,
+      21.63,
+      23.04
+    ],
+    "finish_time": "0:57.51"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 8,
+    "horse_no": 12,
+    "clean_name": "HAPPY UNITED",
+    "code": "H208",
+    "last400": 23.34,
+    "sec_list": [
+      12.68,
+      21.51,
+      23.34
+    ],
+    "finish_time": "0:57.53"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 9,
+    "horse_no": 9,
+    "clean_name": "LOOKING BRIGHT",
+    "code": "K315",
+    "last400": 23.17,
+    "sec_list": [
+      12.76,
+      21.67,
+      23.17
+    ],
+    "finish_time": "0:57.60"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 10,
+    "horse_no": 4,
+    "clean_name": "SUPER SIXTY",
+    "code": "J071",
+    "last400": 22.93,
+    "sec_list": [
+      12.96,
+      21.87,
+      22.93
+    ],
+    "finish_time": "0:57.76"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 11,
+    "horse_no": 8,
+    "clean_name": "KANSAS",
+    "code": "L305",
+    "last400": 23.78,
+    "sec_list": [
+      12.76,
+      21.71,
+      23.78
+    ],
+    "finish_time": "0:58.25"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 4,
+    "fin": 12,
+    "horse_no": 7,
+    "clean_name": "FAITHFUL WARRIOR",
+    "code": "L360",
+    "last400": 23.57,
+    "sec_list": [
+      13.24,
+      21.83,
+      23.57
+    ],
+    "finish_time": "0:58.64"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 1,
+    "horse_no": 12,
+    "clean_name": "SAME TO YOU",
+    "code": "H057",
+    "last400": 22.97,
+    "sec_list": [
+      24.32,
+      22.69,
+      22.97
+    ],
+    "finish_time": "1:09.98"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 2,
+    "horse_no": 4,
+    "clean_name": "WINNING MONEY",
+    "code": "J116",
+    "last400": 24.09,
+    "sec_list": [
+      23.56,
+      22.33,
+      24.09
+    ],
+    "finish_time": "1:09.98"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 3,
+    "horse_no": 5,
+    "clean_name": "BRILLIANT TURN",
+    "code": "L368",
+    "last400": 22.86,
+    "sec_list": [
+      24.48,
+      22.77,
+      22.86
+    ],
+    "finish_time": "1:10.11"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 4,
+    "horse_no": 2,
+    "clean_name": "WORLD HERO",
+    "code": "J413",
+    "last400": 23.47,
+    "sec_list": [
+      23.92,
+      22.73,
+      23.47
+    ],
+    "finish_time": "1:10.12"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 5,
+    "horse_no": 3,
+    "clean_name": "GAMEPLAYER ELITE",
+    "code": "H356",
+    "last400": 23.28,
+    "sec_list": [
+      24.0,
+      22.93,
+      23.28
+    ],
+    "finish_time": "1:10.21"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 6,
+    "horse_no": 6,
+    "clean_name": "TIN FOOK",
+    "code": "K167",
+    "last400": 22.82,
+    "sec_list": [
+      24.44,
+      22.97,
+      22.82
+    ],
+    "finish_time": "1:10.23"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 7,
+    "horse_no": 10,
+    "clean_name": "TOP TO SKY",
+    "code": "K339",
+    "last400": 24.15,
+    "sec_list": [
+      23.8,
+      22.65,
+      24.15
+    ],
+    "finish_time": "1:10.60"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 8,
+    "horse_no": 1,
+    "clean_name": "DRAGON FOUR SEAS",
+    "code": "J317",
+    "last400": 24.11,
+    "sec_list": [
+      23.8,
+      22.77,
+      24.11
+    ],
+    "finish_time": "1:10.68"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 9,
+    "horse_no": 9,
+    "clean_name": "ORIGIN OF FORM",
+    "code": "K517",
+    "last400": 23.3,
+    "sec_list": [
+      24.24,
+      23.33,
+      23.3
+    ],
+    "finish_time": "1:10.87"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 10,
+    "horse_no": 11,
+    "clean_name": "E HOPEFUL",
+    "code": "L181",
+    "last400": 24.03,
+    "sec_list": [
+      24.12,
+      23.09,
+      24.03
+    ],
+    "finish_time": "1:11.24"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 11,
+    "horse_no": 7,
+    "clean_name": "BULLISH NOVA",
+    "code": "L200",
+    "last400": 23.96,
+    "sec_list": [
+      24.16,
+      23.21,
+      23.96
+    ],
+    "finish_time": "1:11.33"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 5,
+    "fin": 12,
+    "horse_no": 8,
+    "clean_name": "HERE COMES PLUTUS",
+    "code": "K413",
+    "last400": 24.66,
+    "sec_list": [
+      24.52,
+      23.25,
+      24.66
+    ],
+    "finish_time": "1:12.43"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 1,
+    "horse_no": 10,
+    "clean_name": "FAST SPEED",
+    "code": "K351",
+    "last400": 23.66,
+    "sec_list": [
+      14.23,
+      23.19,
+      23.5,
+      24.58,
+      23.66
+    ],
+    "finish_time": "1:49.16"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 2,
+    "horse_no": 11,
+    "clean_name": "KING OF SELECTION",
+    "code": "K397",
+    "last400": 23.57,
+    "sec_list": [
+      14.15,
+      23.35,
+      23.5,
+      24.66,
+      23.57
+    ],
+    "finish_time": "1:49.23"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 3,
+    "horse_no": 4,
+    "clean_name": "CASA ROCHESTER",
+    "code": "J494",
+    "last400": 23.39,
+    "sec_list": [
+      14.59,
+      23.15,
+      23.54,
+      24.62,
+      23.39
+    ],
+    "finish_time": "1:49.29"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 4,
+    "horse_no": 8,
+    "clean_name": "DASHING MAURISON",
+    "code": "K374",
+    "last400": 24.1,
+    "sec_list": [
+      13.99,
+      23.07,
+      23.66,
+      24.5,
+      24.1
+    ],
+    "finish_time": "1:49.32"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 5,
+    "horse_no": 6,
+    "clean_name": "GOOD GOOD",
+    "code": "J224",
+    "last400": 24.25,
+    "sec_list": [
+      13.79,
+      23.19,
+      23.58,
+      24.54,
+      24.25
+    ],
+    "finish_time": "1:49.35"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 6,
+    "horse_no": 3,
+    "clean_name": "KYRUS TREASURE",
+    "code": "K300",
+    "last400": 23.86,
+    "sec_list": [
+      14.11,
+      23.19,
+      23.7,
+      24.54,
+      23.86
+    ],
+    "finish_time": "1:49.40"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 7,
+    "horse_no": 9,
+    "clean_name": "FAMILY FORTUNE",
+    "code": "H447",
+    "last400": 23.41,
+    "sec_list": [
+      14.71,
+      23.43,
+      23.5,
+      24.38,
+      23.41
+    ],
+    "finish_time": "1:49.43"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 8,
+    "horse_no": 7,
+    "clean_name": "ROMANTIC LAOS",
+    "code": "G476",
+    "last400": 23.61,
+    "sec_list": [
+      14.47,
+      23.11,
+      23.62,
+      24.62,
+      23.61
+    ],
+    "finish_time": "1:49.43"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 9,
+    "horse_no": 2,
+    "clean_name": "SUGAR GOODSON",
+    "code": "L303",
+    "last400": 23.43,
+    "sec_list": [
+      14.87,
+      23.15,
+      23.5,
+      24.54,
+      23.43
+    ],
+    "finish_time": "1:49.49"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 10,
+    "horse_no": 1,
+    "clean_name": "ABSOLUTE HONOUR",
+    "code": "K260",
+    "last400": 24.33,
+    "sec_list": [
+      13.99,
+      23.23,
+      23.58,
+      24.62,
+      24.33
+    ],
+    "finish_time": "1:49.75"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 11,
+    "horse_no": 5,
+    "clean_name": "ROMANTIC FANTASY",
+    "code": "H168",
+    "last400": 23.92,
+    "sec_list": [
+      14.35,
+      23.55,
+      23.54,
+      24.7,
+      23.92
+    ],
+    "finish_time": "1:50.06"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 6,
+    "fin": 12,
+    "horse_no": 12,
+    "clean_name": "I EXCELLE",
+    "code": "K502",
+    "last400": 26.22,
+    "sec_list": [
+      13.91,
+      23.27,
+      23.58,
+      24.78,
+      26.22
+    ],
+    "finish_time": "1:51.76"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 1,
+    "horse_no": 4,
+    "clean_name": "TURQUOISE VELOCITY",
+    "code": "K533",
+    "last400": 23.15,
+    "sec_list": [
+      23.23,
+      22.88,
+      23.15
+    ],
+    "finish_time": "1:09.26"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 2,
+    "horse_no": 6,
+    "clean_name": "ROMANTIC SON",
+    "code": "J537",
+    "last400": 22.99,
+    "sec_list": [
+      23.59,
+      22.88,
+      22.99
+    ],
+    "finish_time": "1:09.46"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 3,
+    "horse_no": 2,
+    "clean_name": "VICTOR THE WINNER",
+    "code": "G404",
+    "last400": 23.18,
+    "sec_list": [
+      23.43,
+      22.88,
+      23.18
+    ],
+    "finish_time": "1:09.49"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 4,
+    "horse_no": 10,
+    "clean_name": "SIGHT HERMOSO",
+    "code": "L003",
+    "last400": 22.79,
+    "sec_list": [
+      24.23,
+      22.48,
+      22.79
+    ],
+    "finish_time": "1:09.50"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 5,
+    "horse_no": 8,
+    "clean_name": "VICTORY SKY",
+    "code": "J540",
+    "last400": 22.56,
+    "sec_list": [
+      24.35,
+      22.6,
+      22.56
+    ],
+    "finish_time": "1:09.51"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 6,
+    "horse_no": 7,
+    "clean_name": "SON PAK FU",
+    "code": "G265",
+    "last400": 22.76,
+    "sec_list": [
+      24.07,
+      22.68,
+      22.76
+    ],
+    "finish_time": "1:09.51"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 7,
+    "horse_no": 1,
+    "clean_name": "LUCKY WITH YOU",
+    "code": "E356",
+    "last400": 23.36,
+    "sec_list": [
+      23.39,
+      22.92,
+      23.36
+    ],
+    "finish_time": "1:09.67"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 8,
+    "horse_no": 5,
+    "clean_name": "YOUNG CHAMPION",
+    "code": "J195",
+    "last400": 23.22,
+    "sec_list": [
+      23.67,
+      22.8,
+      23.22
+    ],
+    "finish_time": "1:09.69"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 9,
+    "horse_no": 3,
+    "clean_name": "RISING FORCE",
+    "code": "K236",
+    "last400": 23.8,
+    "sec_list": [
+      23.11,
+      22.96,
+      23.8
+    ],
+    "finish_time": "1:09.87"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 7,
+    "fin": 10,
+    "horse_no": 9,
+    "clean_name": "JUMBO TREASURE",
+    "code": "K249",
+    "last400": 24.14,
+    "sec_list": [
+      23.67,
+      22.76,
+      24.14
+    ],
+    "finish_time": "1:10.57"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 1,
+    "horse_no": 7,
+    "clean_name": "ETERNAL FORTUNE",
+    "code": "K010",
+    "last400": 22.8,
+    "sec_list": [
+      12.41,
+      21.48,
+      22.8
+    ],
+    "finish_time": "0:56.69"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 2,
+    "horse_no": 12,
+    "clean_name": "RED ELEGANCE",
+    "code": "H241",
+    "last400": 22.35,
+    "sec_list": [
+      12.81,
+      21.72,
+      22.35
+    ],
+    "finish_time": "0:56.88"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 3,
+    "horse_no": 8,
+    "clean_name": "JUMBO BLESSING",
+    "code": "K529",
+    "last400": 22.11,
+    "sec_list": [
+      13.13,
+      21.76,
+      22.11
+    ],
+    "finish_time": "0:57.00"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 4,
+    "horse_no": 5,
+    "clean_name": "LUCKY RIVER",
+    "code": "L516",
+    "last400": 23.14,
+    "sec_list": [
+      12.65,
+      21.36,
+      23.14
+    ],
+    "finish_time": "0:57.15"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 5,
+    "horse_no": 2,
+    "clean_name": "LUCY IN THE SKY",
+    "code": "J275",
+    "last400": 22.49,
+    "sec_list": [
+      12.73,
+      21.96,
+      22.49
+    ],
+    "finish_time": "0:57.18"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 6,
+    "horse_no": 11,
+    "clean_name": "DA AI",
+    "code": "L552",
+    "last400": 22.57,
+    "sec_list": [
+      12.93,
+      21.8,
+      22.57
+    ],
+    "finish_time": "0:57.30"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 7,
+    "horse_no": 1,
+    "clean_name": "GLOWING PRAISES",
+    "code": "L223",
+    "last400": 23.29,
+    "sec_list": [
+      12.77,
+      21.32,
+      23.29
+    ],
+    "finish_time": "0:57.38"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 8,
+    "horse_no": 6,
+    "clean_name": "PRESTIGE ALWAYS",
+    "code": "J300",
+    "last400": 22.48,
+    "sec_list": [
+      12.93,
+      22.12,
+      22.48
+    ],
+    "finish_time": "0:57.53"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 9,
+    "horse_no": 4,
+    "clean_name": "AMAZING KID",
+    "code": "K434",
+    "last400": 22.38,
+    "sec_list": [
+      13.09,
+      22.16,
+      22.38
+    ],
+    "finish_time": "0:57.63"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 10,
+    "horse_no": 9,
+    "clean_name": "SMART OINK",
+    "code": "L542",
+    "last400": 22.29,
+    "sec_list": [
+      13.29,
+      22.2,
+      22.29
+    ],
+    "finish_time": "0:57.78"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 11,
+    "horse_no": 3,
+    "clean_name": "CANDLELIGHT DINNER",
+    "code": "J468",
+    "last400": 24.28,
+    "sec_list": [
+      12.33,
+      21.36,
+      24.28
+    ],
+    "finish_time": "0:57.97"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 8,
+    "fin": 12,
+    "horse_no": 10,
+    "clean_name": "CALA DEI MORI",
+    "code": "L428",
+    "last400": 24.54,
+    "sec_list": [
+      12.37,
+      21.28,
+      24.54
+    ],
+    "finish_time": "0:58.19"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 1,
+    "horse_no": 6,
+    "clean_name": "THE BOOM BOX",
+    "code": "K076",
+    "last400": 23.73,
+    "sec_list": [
+      28.53,
+      23.23,
+      23.91,
+      23.73
+    ],
+    "finish_time": "1:39.40"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 2,
+    "horse_no": 1,
+    "clean_name": "DAZZLING FIT",
+    "code": "K298",
+    "last400": 23.36,
+    "sec_list": [
+      28.57,
+      23.43,
+      24.07,
+      23.36
+    ],
+    "finish_time": "1:39.43"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 3,
+    "horse_no": 12,
+    "clean_name": "WIN METHOD",
+    "code": "K406",
+    "last400": 23.8,
+    "sec_list": [
+      28.89,
+      23.07,
+      23.79,
+      23.8
+    ],
+    "finish_time": "1:39.55"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 4,
+    "horse_no": 2,
+    "clean_name": "PRESTIGE GOOD",
+    "code": "K131",
+    "last400": 24.02,
+    "sec_list": [
+      28.29,
+      23.23,
+      24.03,
+      24.02
+    ],
+    "finish_time": "1:39.57"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 5,
+    "horse_no": 9,
+    "clean_name": "TURIN CHAMPIONS",
+    "code": "L024",
+    "last400": 24.07,
+    "sec_list": [
+      27.97,
+      23.51,
+      24.07,
+      24.07
+    ],
+    "finish_time": "1:39.62"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 6,
+    "horse_no": 7,
+    "clean_name": "TITANCK",
+    "code": "L299",
+    "last400": 24.09,
+    "sec_list": [
+      28.33,
+      23.47,
+      24.07,
+      24.09
+    ],
+    "finish_time": "1:39.96"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 7,
+    "horse_no": 10,
+    "clean_name": "BLOSSOMY",
+    "code": "L037",
+    "last400": 23.95,
+    "sec_list": [
+      28.25,
+      23.71,
+      24.19,
+      23.95
+    ],
+    "finish_time": "1:40.10"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 8,
+    "horse_no": 3,
+    "clean_name": "FAMILY JEWEL",
+    "code": "J390",
+    "last400": 24.28,
+    "sec_list": [
+      28.41,
+      23.55,
+      23.95,
+      24.28
+    ],
+    "finish_time": "1:40.19"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 9,
+    "horse_no": 8,
+    "clean_name": "SAMARKAND",
+    "code": "H070",
+    "last400": 25.14,
+    "sec_list": [
+      27.81,
+      23.67,
+      24.03,
+      25.14
+    ],
+    "finish_time": "1:40.65"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 10,
+    "horse_no": 4,
+    "clean_name": "FLYING FORTRESS",
+    "code": "J445",
+    "last400": 27.45,
+    "sec_list": [
+      28.17,
+      23.51,
+      24.03,
+      27.45
+    ],
+    "finish_time": "1:43.16"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 9,
+    "fin": 11,
+    "horse_no": 11,
+    "clean_name": "MASTER LUCKY",
+    "code": "K582",
+    "last400": 33.33,
+    "sec_list": [
+      27.97,
+      23.79,
+      24.47,
+      33.33
+    ],
+    "finish_time": "1:49.56"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 1,
+    "horse_no": 5,
+    "clean_name": "ON THE WAY",
+    "code": "L154",
+    "last400": 22.85,
+    "sec_list": [
+      23.44,
+      22.86,
+      22.85
+    ],
+    "finish_time": "1:09.15"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 2,
+    "horse_no": 4,
+    "clean_name": "DANICA'S CHOICE",
+    "code": "L096",
+    "last400": 22.63,
+    "sec_list": [
+      24.04,
+      22.94,
+      22.63
+    ],
+    "finish_time": "1:09.61"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 3,
+    "horse_no": 8,
+    "clean_name": "MEOWTH",
+    "code": "J487",
+    "last400": 23.01,
+    "sec_list": [
+      23.8,
+      22.82,
+      23.01
+    ],
+    "finish_time": "1:09.63"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 4,
+    "horse_no": 12,
+    "clean_name": "TRIPLE FORTUNE",
+    "code": "L302",
+    "last400": 22.79,
+    "sec_list": [
+      23.96,
+      22.9,
+      22.79
+    ],
+    "finish_time": "1:09.65"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 5,
+    "horse_no": 6,
+    "clean_name": "SAVVY BRILLIANT",
+    "code": "J437",
+    "last400": 22.73,
+    "sec_list": [
+      24.28,
+      22.82,
+      22.73
+    ],
+    "finish_time": "1:09.83"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 6,
+    "horse_no": 9,
+    "clean_name": "TOGETHER WE VALUE",
+    "code": "L170",
+    "last400": 23.05,
+    "sec_list": [
+      23.84,
+      22.98,
+      23.05
+    ],
+    "finish_time": "1:09.87"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 7,
+    "horse_no": 1,
+    "clean_name": "THE HEIR",
+    "code": "H459",
+    "last400": 22.5,
+    "sec_list": [
+      24.4,
+      22.98,
+      22.5
+    ],
+    "finish_time": "1:09.88"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 8,
+    "horse_no": 2,
+    "clean_name": "FLYING WROTE",
+    "code": "J290",
+    "last400": 23.0,
+    "sec_list": [
+      24.0,
+      22.9,
+      23.0
+    ],
+    "finish_time": "1:09.90"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 9,
+    "horse_no": 10,
+    "clean_name": "KING LOTUS",
+    "code": "K186",
+    "last400": 22.77,
+    "sec_list": [
+      24.2,
+      23.02,
+      22.77
+    ],
+    "finish_time": "1:09.99"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 10,
+    "horse_no": 11,
+    "clean_name": "PACKING KING",
+    "code": "K570",
+    "last400": 23.42,
+    "sec_list": [
+      23.64,
+      23.02,
+      23.42
+    ],
+    "finish_time": "1:10.08"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 11,
+    "horse_no": 7,
+    "clean_name": "FLOWERS EMBER",
+    "code": "M086",
+    "last400": 23.19,
+    "sec_list": [
+      24.56,
+      22.78,
+      23.19
+    ],
+    "finish_time": "1:10.53"
+  },
+  {
+    "date": "01/11/2026",
+    "race_no": 10,
+    "fin": 12,
+    "horse_no": 3,
+    "clean_name": "LUCKY PLANET",
+    "code": "H235",
+    "last400": 24.19,
+    "sec_list": [
+      23.48,
+      22.94,
+      24.19
+    ],
+    "finish_time": "1:10.61"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 1,
+    "horse_no": 2,
+    "clean_name": "COMET RADIANCE",
+    "code": "L067",
+    "last400": 23.48,
+    "sec_list": [
+      12.83,
+      21.44,
+      23.48
+    ],
+    "finish_time": "0:57.75"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 2,
+    "horse_no": 7,
+    "clean_name": "ALWAYS MY FOLKS",
+    "code": "J345",
+    "last400": 23.36,
+    "sec_list": [
+      12.99,
+      21.4,
+      23.36
+    ],
+    "finish_time": "0:57.75"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 3,
+    "horse_no": 10,
+    "clean_name": "ICONICAL",
+    "code": "J504",
+    "last400": 23.41,
+    "sec_list": [
+      12.95,
+      21.4,
+      23.41
+    ],
+    "finish_time": "0:57.76"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 4,
+    "horse_no": 1,
+    "clean_name": "LOVING VIBES",
+    "code": "J359",
+    "last400": 23.68,
+    "sec_list": [
+      12.79,
+      21.32,
+      23.68
+    ],
+    "finish_time": "0:57.79"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 5,
+    "horse_no": 4,
+    "clean_name": "MAPOGO",
+    "code": "L175",
+    "last400": 24.05,
+    "sec_list": [
+      12.71,
+      21.08,
+      24.05
+    ],
+    "finish_time": "0:57.84"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 6,
+    "horse_no": 11,
+    "clean_name": "SOLAR RIVER",
+    "code": "J308",
+    "last400": 23.25,
+    "sec_list": [
+      13.23,
+      21.44,
+      23.25
+    ],
+    "finish_time": "0:57.92"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 7,
+    "horse_no": 3,
+    "clean_name": "JOY STAR",
+    "code": "L235",
+    "last400": 23.86,
+    "sec_list": [
+      12.83,
+      21.24,
+      23.86
+    ],
+    "finish_time": "0:57.93"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 8,
+    "horse_no": 8,
+    "clean_name": "CELESTIAL STRIDER",
+    "code": "L009",
+    "last400": 23.04,
+    "sec_list": [
+      13.55,
+      21.52,
+      23.04
+    ],
+    "finish_time": "0:58.11"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 9,
+    "horse_no": 5,
+    "clean_name": "SPICY SPANGLE",
+    "code": "J087",
+    "last400": 24.35,
+    "sec_list": [
+      12.75,
+      21.16,
+      24.35
+    ],
+    "finish_time": "0:58.26"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 10,
+    "horse_no": 9,
+    "clean_name": "LEAN MASTER",
+    "code": "H134",
+    "last400": 23.81,
+    "sec_list": [
+      12.87,
+      21.64,
+      23.81
+    ],
+    "finish_time": "0:58.32"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 11,
+    "horse_no": 6,
+    "clean_name": "ZETA HEDGE",
+    "code": "K295",
+    "last400": 24.36,
+    "sec_list": [
+      12.71,
+      21.28,
+      24.36
+    ],
+    "finish_time": "0:58.35"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 1,
+    "fin": 12,
+    "horse_no": 12,
+    "clean_name": "RUNJEET",
+    "code": "K276",
+    "last400": 24.03,
+    "sec_list": [
+      13.51,
+      21.48,
+      24.03
+    ],
+    "finish_time": "0:59.02"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 1,
+    "horse_no": 12,
+    "clean_name": "WINNING DIAMOND",
+    "code": "K216",
+    "last400": 24.5,
+    "sec_list": [
+      27.63,
+      23.67,
+      24.52,
+      24.5
+    ],
+    "finish_time": "1:40.32"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 2,
+    "horse_no": 4,
+    "clean_name": "WHOWROTETHATSONG",
+    "code": "L048",
+    "last400": 23.89,
+    "sec_list": [
+      28.99,
+      23.43,
+      24.2,
+      23.89
+    ],
+    "finish_time": "1:40.51"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 3,
+    "horse_no": 8,
+    "clean_name": "OUR LUCKY GLORY",
+    "code": "G292",
+    "last400": 24.22,
+    "sec_list": [
+      28.43,
+      23.87,
+      24.04,
+      24.22
+    ],
+    "finish_time": "1:40.56"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 4,
+    "horse_no": 11,
+    "clean_name": "PRINCE ALEX",
+    "code": "G307",
+    "last400": 24.68,
+    "sec_list": [
+      27.83,
+      23.67,
+      24.48,
+      24.68
+    ],
+    "finish_time": "1:40.66"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 5,
+    "horse_no": 5,
+    "clean_name": "CAN'T GO WONG",
+    "code": "H087",
+    "last400": 23.9,
+    "sec_list": [
+      28.91,
+      23.87,
+      24.12,
+      23.9
+    ],
+    "finish_time": "1:40.80"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 6,
+    "horse_no": 3,
+    "clean_name": "GOR GOR",
+    "code": "K104",
+    "last400": 24.55,
+    "sec_list": [
+      28.23,
+      23.59,
+      24.44,
+      24.55
+    ],
+    "finish_time": "1:40.81"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 7,
+    "horse_no": 6,
+    "clean_name": "SUPER SICARIO",
+    "code": "K306",
+    "last400": 25.22,
+    "sec_list": [
+      27.71,
+      23.87,
+      24.44,
+      25.22
+    ],
+    "finish_time": "1:41.24"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 8,
+    "horse_no": 1,
+    "clean_name": "LOVELY MILES",
+    "code": "L165",
+    "last400": 25.02,
+    "sec_list": [
+      27.91,
+      23.95,
+      24.52,
+      25.02
+    ],
+    "finish_time": "1:41.40"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 9,
+    "horse_no": 10,
+    "clean_name": "TELECOM POWER",
+    "code": "J332",
+    "last400": 25.42,
+    "sec_list": [
+      28.07,
+      23.99,
+      24.36,
+      25.42
+    ],
+    "finish_time": "1:41.84"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 10,
+    "horse_no": 7,
+    "clean_name": "TO INFINITY",
+    "code": "G277",
+    "last400": 25.27,
+    "sec_list": [
+      28.71,
+      23.83,
+      24.12,
+      25.27
+    ],
+    "finish_time": "1:41.93"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 11,
+    "horse_no": 9,
+    "clean_name": "LUCKY BLESSING",
+    "code": "K073",
+    "last400": 26.56,
+    "sec_list": [
+      27.51,
+      23.71,
+      24.56,
+      26.56
+    ],
+    "finish_time": "1:42.34"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 2,
+    "fin": 12,
+    "horse_no": 2,
+    "clean_name": "MONTA FRUTTA",
+    "code": "H455",
+    "last400": 31.94,
+    "sec_list": [
+      28.75,
+      23.39,
+      24.84,
+      31.94
+    ],
+    "finish_time": "1:48.92"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 1,
+    "horse_no": 1,
+    "clean_name": "BROWNNEEDSFURTHER",
+    "code": "K325",
+    "last400": 23.34,
+    "sec_list": [
+      24.29,
+      22.67,
+      23.34
+    ],
+    "finish_time": "1:10.30"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 2,
+    "horse_no": 2,
+    "clean_name": "THUNDER ACTION",
+    "code": "L314",
+    "last400": 23.06,
+    "sec_list": [
+      24.49,
+      22.83,
+      23.06
+    ],
+    "finish_time": "1:10.38"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 3,
+    "horse_no": 12,
+    "clean_name": "PODIUM",
+    "code": "H173",
+    "last400": 22.76,
+    "sec_list": [
+      24.89,
+      22.79,
+      22.76
+    ],
+    "finish_time": "1:10.44"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 4,
+    "horse_no": 4,
+    "clean_name": "ISLAND BUDDY",
+    "code": "J217",
+    "last400": 23.59,
+    "sec_list": [
+      23.97,
+      22.91,
+      23.59
+    ],
+    "finish_time": "1:10.47"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 5,
+    "horse_no": 5,
+    "clean_name": "DAN ATTACK",
+    "code": "H317",
+    "last400": 23.41,
+    "sec_list": [
+      24.25,
+      22.87,
+      23.41
+    ],
+    "finish_time": "1:10.53"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 6,
+    "horse_no": 8,
+    "clean_name": "RELENTLESS PURSUIT",
+    "code": "L208",
+    "last400": 23.13,
+    "sec_list": [
+      24.73,
+      22.75,
+      23.13
+    ],
+    "finish_time": "1:10.61"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 7,
+    "horse_no": 9,
+    "clean_name": "JOKER ORBIT",
+    "code": "L115",
+    "last400": 23.04,
+    "sec_list": [
+      24.73,
+      22.91,
+      23.04
+    ],
+    "finish_time": "1:10.68"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 8,
+    "horse_no": 6,
+    "clean_name": "TOURBILLON GOLFER",
+    "code": "K320",
+    "last400": 23.53,
+    "sec_list": [
+      24.21,
+      22.95,
+      23.53
+    ],
+    "finish_time": "1:10.69"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 9,
+    "horse_no": 7,
+    "clean_name": "UNRIVALED KING",
+    "code": "L456",
+    "last400": 23.23,
+    "sec_list": [
+      24.65,
+      22.91,
+      23.23
+    ],
+    "finish_time": "1:10.79"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 10,
+    "horse_no": 11,
+    "clean_name": "LIGHTNESS OF BEING",
+    "code": "K159",
+    "last400": 23.71,
+    "sec_list": [
+      24.49,
+      22.79,
+      23.71
+    ],
+    "finish_time": "1:10.99"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 11,
+    "horse_no": 3,
+    "clean_name": "MASTER CHAMPION",
+    "code": "K266",
+    "last400": 24.17,
+    "sec_list": [
+      24.09,
+      22.79,
+      24.17
+    ],
+    "finish_time": "1:11.05"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 3,
+    "fin": 12,
+    "horse_no": 10,
+    "clean_name": "MEGA AWESOME",
+    "code": "L323",
+    "last400": 23.67,
+    "sec_list": [
+      24.49,
+      22.91,
+      23.67
+    ],
+    "finish_time": "1:11.07"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 1,
+    "horse_no": 6,
+    "clean_name": "VIVA FIRECRACKER",
+    "code": "L065",
+    "last400": 23.98,
+    "sec_list": [
+      29.06,
+      24.48,
+      24.45,
+      23.98
+    ],
+    "finish_time": "1:41.97"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 2,
+    "horse_no": 7,
+    "clean_name": "AMAZING AWARD",
+    "code": "J236",
+    "last400": 23.63,
+    "sec_list": [
+      29.34,
+      24.72,
+      24.33,
+      23.63
+    ],
+    "finish_time": "1:42.02"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 3,
+    "horse_no": 11,
+    "clean_name": "PRESIDENT PEGASUS",
+    "code": "L241",
+    "last400": 23.85,
+    "sec_list": [
+      29.38,
+      24.56,
+      24.29,
+      23.85
+    ],
+    "finish_time": "1:42.08"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 4,
+    "horse_no": 1,
+    "clean_name": "WELL ENOUGH",
+    "code": "L029",
+    "last400": 23.51,
+    "sec_list": [
+      29.58,
+      24.8,
+      24.25,
+      23.51
+    ],
+    "finish_time": "1:42.14"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 5,
+    "horse_no": 3,
+    "clean_name": "BEST WORLD",
+    "code": "L329",
+    "last400": 23.46,
+    "sec_list": [
+      29.94,
+      24.56,
+      24.21,
+      23.46
+    ],
+    "finish_time": "1:42.17"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 6,
+    "horse_no": 8,
+    "clean_name": "GAZELEY",
+    "code": "K253",
+    "last400": 23.37,
+    "sec_list": [
+      30.06,
+      24.8,
+      24.01,
+      23.37
+    ],
+    "finish_time": "1:42.24"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 7,
+    "horse_no": 12,
+    "clean_name": "PRESTIGE RICKY",
+    "code": "K009",
+    "last400": 23.75,
+    "sec_list": [
+      29.62,
+      24.6,
+      24.29,
+      23.75
+    ],
+    "finish_time": "1:42.26"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 8,
+    "horse_no": 2,
+    "clean_name": "SEA CHARIOT",
+    "code": "K358",
+    "last400": 23.58,
+    "sec_list": [
+      30.3,
+      24.52,
+      24.09,
+      23.58
+    ],
+    "finish_time": "1:42.49"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 9,
+    "horse_no": 9,
+    "clean_name": "LUCKY TOGETHER",
+    "code": "L079",
+    "last400": 23.78,
+    "sec_list": [
+      29.82,
+      24.76,
+      24.17,
+      23.78
+    ],
+    "finish_time": "1:42.53"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 10,
+    "horse_no": 4,
+    "clean_name": "COOGEE BAY",
+    "code": "L307",
+    "last400": 24.59,
+    "sec_list": [
+      29.22,
+      24.56,
+      24.37,
+      24.59
+    ],
+    "finish_time": "1:42.74"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 11,
+    "horse_no": 10,
+    "clean_name": "QUICK CONTRIBUTION",
+    "code": "K112",
+    "last400": 23.84,
+    "sec_list": [
+      29.94,
+      24.8,
+      24.29,
+      23.84
+    ],
+    "finish_time": "1:42.87"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 4,
+    "fin": 12,
+    "horse_no": 5,
+    "clean_name": "SILVERY KNIGHT",
+    "code": "L236",
+    "last400": 24.46,
+    "sec_list": [
+      29.7,
+      24.8,
+      24.37,
+      24.46
+    ],
+    "finish_time": "1:43.33"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 1,
+    "horse_no": 11,
+    "clean_name": "FLYING TING LOK",
+    "code": "K228",
+    "last400": 23.8,
+    "sec_list": [
+      24.16,
+      22.63,
+      23.8
+    ],
+    "finish_time": "1:10.59"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 2,
+    "horse_no": 8,
+    "clean_name": "PACKING SMART",
+    "code": "L536",
+    "last400": 23.8,
+    "sec_list": [
+      23.96,
+      22.83,
+      23.8
+    ],
+    "finish_time": "1:10.59"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 3,
+    "horse_no": 4,
+    "clean_name": "SOLID CAR",
+    "code": "K058",
+    "last400": 23.53,
+    "sec_list": [
+      24.4,
+      22.67,
+      23.53
+    ],
+    "finish_time": "1:10.60"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 4,
+    "horse_no": 5,
+    "clean_name": "TACTICAL ACE",
+    "code": "L249",
+    "last400": 24.33,
+    "sec_list": [
+      23.6,
+      22.75,
+      24.33
+    ],
+    "finish_time": "1:10.68"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 5,
+    "horse_no": 2,
+    "clean_name": "GALLANT DESIGN",
+    "code": "L161",
+    "last400": 23.56,
+    "sec_list": [
+      24.72,
+      22.43,
+      23.56
+    ],
+    "finish_time": "1:10.71"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 6,
+    "horse_no": 7,
+    "clean_name": "COPARTNER FLEET",
+    "code": "K342",
+    "last400": 23.66,
+    "sec_list": [
+      24.2,
+      22.91,
+      23.66
+    ],
+    "finish_time": "1:10.77"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 7,
+    "horse_no": 3,
+    "clean_name": "LUNAR DASH",
+    "code": "K334",
+    "last400": 24.35,
+    "sec_list": [
+      23.84,
+      22.71,
+      24.35
+    ],
+    "finish_time": "1:10.90"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 8,
+    "horse_no": 6,
+    "clean_name": "UNSTOPPAPLE",
+    "code": "L205",
+    "last400": 24.36,
+    "sec_list": [
+      23.92,
+      22.67,
+      24.36
+    ],
+    "finish_time": "1:10.95"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 9,
+    "horse_no": 12,
+    "clean_name": "ALABAMA SONG",
+    "code": "K480",
+    "last400": 23.36,
+    "sec_list": [
+      24.6,
+      22.99,
+      23.36
+    ],
+    "finish_time": "1:10.95"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 10,
+    "horse_no": 9,
+    "clean_name": "SYNERGY IN ACTION",
+    "code": "L330",
+    "last400": 23.78,
+    "sec_list": [
+      24.64,
+      22.67,
+      23.78
+    ],
+    "finish_time": "1:11.09"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 11,
+    "horse_no": 10,
+    "clean_name": "CORNERSTONE",
+    "code": "K519",
+    "last400": 24.15,
+    "sec_list": [
+      24.2,
+      22.79,
+      24.15
+    ],
+    "finish_time": "1:11.14"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 5,
+    "fin": 12,
+    "horse_no": 1,
+    "clean_name": "MR DESIRA",
+    "code": "K411",
+    "last400": 24.71,
+    "sec_list": [
+      23.72,
+      22.79,
+      24.71
+    ],
+    "finish_time": "1:11.22"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 1,
+    "horse_no": 1,
+    "clean_name": "STORMING DRAGON",
+    "code": "J237",
+    "last400": 23.57,
+    "sec_list": [
+      23.79,
+      22.66,
+      23.57
+    ],
+    "finish_time": "1:10.02"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 2,
+    "horse_no": 12,
+    "clean_name": "VERBIER",
+    "code": "J187",
+    "last400": 23.19,
+    "sec_list": [
+      24.47,
+      22.82,
+      23.19
+    ],
+    "finish_time": "1:10.48"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 3,
+    "horse_no": 8,
+    "clean_name": "STANLEY EXPRESS",
+    "code": "K476",
+    "last400": 23.81,
+    "sec_list": [
+      24.03,
+      22.66,
+      23.81
+    ],
+    "finish_time": "1:10.50"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 4,
+    "horse_no": 11,
+    "clean_name": "KWAI CHUNG TALENTS",
+    "code": "L144",
+    "last400": 23.51,
+    "sec_list": [
+      24.15,
+      22.86,
+      23.51
+    ],
+    "finish_time": "1:10.52"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 5,
+    "horse_no": 2,
+    "clean_name": "DOUBLE MONEY",
+    "code": "K512",
+    "last400": 23.15,
+    "sec_list": [
+      24.71,
+      22.9,
+      23.15
+    ],
+    "finish_time": "1:10.76"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 6,
+    "horse_no": 3,
+    "clean_name": "CHARMING BABE",
+    "code": "J513",
+    "last400": 23.57,
+    "sec_list": [
+      24.39,
+      23.06,
+      23.57
+    ],
+    "finish_time": "1:11.02"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 7,
+    "horse_no": 5,
+    "clean_name": "CROSSBORDERDUDE",
+    "code": "L022",
+    "last400": 24.44,
+    "sec_list": [
+      23.87,
+      22.74,
+      24.44
+    ],
+    "finish_time": "1:11.05"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 8,
+    "horse_no": 4,
+    "clean_name": "FRIENDS OF SHAJING",
+    "code": "K202",
+    "last400": 24.39,
+    "sec_list": [
+      23.99,
+      22.86,
+      24.39
+    ],
+    "finish_time": "1:11.24"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 9,
+    "horse_no": 6,
+    "clean_name": "OUTGATE",
+    "code": "H113",
+    "last400": 24.41,
+    "sec_list": [
+      24.19,
+      23.02,
+      24.41
+    ],
+    "finish_time": "1:11.62"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 10,
+    "horse_no": 9,
+    "clean_name": "SASSPHIRE",
+    "code": "L400",
+    "last400": 24.13,
+    "sec_list": [
+      24.67,
+      22.9,
+      24.13
+    ],
+    "finish_time": "1:11.70"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 11,
+    "horse_no": 10,
+    "clean_name": "SIGHT GENIUS",
+    "code": "L490",
+    "last400": 24.88,
+    "sec_list": [
+      24.35,
+      22.74,
+      24.88
+    ],
+    "finish_time": "1:11.97"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 6,
+    "fin": 12,
+    "horse_no": 7,
+    "clean_name": "HEALTHY HEALTHY",
+    "code": "H203",
+    "last400": 25.12,
+    "sec_list": [
+      24.19,
+      22.74,
+      25.12
+    ],
+    "finish_time": "1:12.05"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 1,
+    "horse_no": 8,
+    "clean_name": "DO YOUR PART",
+    "code": "J444",
+    "last400": 23.72,
+    "sec_list": [
+      28.14,
+      24.36,
+      24.47,
+      23.72
+    ],
+    "finish_time": "1:40.69"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 2,
+    "horse_no": 10,
+    "clean_name": "MONEY GAMES",
+    "code": "L402",
+    "last400": 23.84,
+    "sec_list": [
+      28.26,
+      24.28,
+      24.39,
+      23.84
+    ],
+    "finish_time": "1:40.77"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 3,
+    "horse_no": 5,
+    "clean_name": "FLOW WATER FLOW",
+    "code": "K562",
+    "last400": 23.57,
+    "sec_list": [
+      28.5,
+      24.24,
+      24.47,
+      23.57
+    ],
+    "finish_time": "1:40.78"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 4,
+    "horse_no": 1,
+    "clean_name": "LOCH TAY",
+    "code": "K356",
+    "last400": 24.12,
+    "sec_list": [
+      27.9,
+      24.4,
+      24.39,
+      24.12
+    ],
+    "finish_time": "1:40.81"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 5,
+    "horse_no": 2,
+    "clean_name": "SOLID WIN",
+    "code": "J225",
+    "last400": 24.59,
+    "sec_list": [
+      27.66,
+      24.48,
+      24.35,
+      24.59
+    ],
+    "finish_time": "1:41.08"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 6,
+    "horse_no": 4,
+    "clean_name": "CORLEONE",
+    "code": "J426",
+    "last400": 24.19,
+    "sec_list": [
+      28.42,
+      24.2,
+      24.59,
+      24.19
+    ],
+    "finish_time": "1:41.40"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 7,
+    "horse_no": 6,
+    "clean_name": "STAY COSMIC",
+    "code": "L372",
+    "last400": 24.7,
+    "sec_list": [
+      27.9,
+      24.36,
+      24.51,
+      24.7
+    ],
+    "finish_time": "1:41.47"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 8,
+    "horse_no": 7,
+    "clean_name": "RISING PHOENIX",
+    "code": "J498",
+    "last400": 24.08,
+    "sec_list": [
+      28.58,
+      24.44,
+      24.51,
+      24.08
+    ],
+    "finish_time": "1:41.61"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 9,
+    "horse_no": 12,
+    "clean_name": "STORMI",
+    "code": "K084",
+    "last400": 25.17,
+    "sec_list": [
+      27.66,
+      24.4,
+      24.39,
+      25.17
+    ],
+    "finish_time": "1:41.62"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 10,
+    "horse_no": 11,
+    "clean_name": "NATURAL NUMBERS",
+    "code": "L166",
+    "last400": 24.32,
+    "sec_list": [
+      28.82,
+      24.44,
+      24.07,
+      24.32
+    ],
+    "finish_time": "1:41.65"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 11,
+    "horse_no": 9,
+    "clean_name": "CALL ME TOPSEED",
+    "code": "K357",
+    "last400": 25.37,
+    "sec_list": [
+      28.26,
+      24.2,
+      24.63,
+      25.37
+    ],
+    "finish_time": "1:42.46"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 7,
+    "fin": 12,
+    "horse_no": 3,
+    "clean_name": "JOYFIELD",
+    "code": "L514",
+    "last400": 25.88,
+    "sec_list": [
+      28.42,
+      24.32,
+      24.55,
+      25.88
+    ],
+    "finish_time": "1:43.17"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 1,
+    "horse_no": 2,
+    "clean_name": "TARGET AUDIENCE",
+    "code": "K107",
+    "last400": 23.17,
+    "sec_list": [
+      24.03,
+      22.68,
+      23.17
+    ],
+    "finish_time": "1:09.88"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 2,
+    "horse_no": 8,
+    "clean_name": "FOUR STARS ALIGN",
+    "code": "L481",
+    "last400": 24.15,
+    "sec_list": [
+      23.27,
+      22.56,
+      24.15
+    ],
+    "finish_time": "1:09.98"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 3,
+    "horse_no": 6,
+    "clean_name": "FLASHING FIGHTER",
+    "code": "L281",
+    "last400": 23.88,
+    "sec_list": [
+      23.71,
+      22.6,
+      23.88
+    ],
+    "finish_time": "1:10.19"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 4,
+    "horse_no": 11,
+    "clean_name": "KING OF FIGHTERS",
+    "code": "K174",
+    "last400": 23.4,
+    "sec_list": [
+      24.11,
+      22.84,
+      23.4
+    ],
+    "finish_time": "1:10.35"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 5,
+    "horse_no": 4,
+    "clean_name": "KYRUS DRAGON",
+    "code": "H396",
+    "last400": 23.98,
+    "sec_list": [
+      23.79,
+      22.68,
+      23.98
+    ],
+    "finish_time": "1:10.45"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 6,
+    "horse_no": 7,
+    "clean_name": "SPICY STANDARD",
+    "code": "J520",
+    "last400": 23.83,
+    "sec_list": [
+      23.83,
+      22.8,
+      23.83
+    ],
+    "finish_time": "1:10.46"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 7,
+    "horse_no": 9,
+    "clean_name": "LIVE WIRE",
+    "code": "L142",
+    "last400": 25.13,
+    "sec_list": [
+      23.07,
+      22.48,
+      25.13
+    ],
+    "finish_time": "1:10.68"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 8,
+    "horse_no": 5,
+    "clean_name": "YOUNG EMPEROR",
+    "code": "K011",
+    "last400": 23.71,
+    "sec_list": [
+      24.35,
+      22.84,
+      23.71
+    ],
+    "finish_time": "1:10.90"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 9,
+    "horse_no": 3,
+    "clean_name": "JUBILANT WINNER",
+    "code": "J346",
+    "last400": 23.86,
+    "sec_list": [
+      24.23,
+      22.92,
+      23.86
+    ],
+    "finish_time": "1:11.01"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 10,
+    "horse_no": 10,
+    "clean_name": "MATTERS MOST",
+    "code": "K154",
+    "last400": 25.44,
+    "sec_list": [
+      23.43,
+      22.68,
+      25.44
+    ],
+    "finish_time": "1:11.55"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 11,
+    "horse_no": 1,
+    "clean_name": "GOD OF PI",
+    "code": "M070",
+    "last400": 24.73,
+    "sec_list": [
+      24.03,
+      22.88,
+      24.73
+    ],
+    "finish_time": "1:11.64"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 8,
+    "fin": 12,
+    "horse_no": 12,
+    "clean_name": "NOTTHESILLYONE",
+    "code": "J383",
+    "last400": 25.76,
+    "sec_list": [
+      23.51,
+      22.56,
+      25.76
+    ],
+    "finish_time": "1:11.83"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 1,
+    "horse_no": 10,
+    "clean_name": "CALIFORNIA BLITZ",
+    "code": "J370",
+    "last400": 23.81,
+    "sec_list": [
+      23.39,
+      23.03,
+      23.81
+    ],
+    "finish_time": "1:10.23"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 2,
+    "horse_no": 1,
+    "clean_name": "ACE CHAMPION",
+    "code": "K379",
+    "last400": 23.4,
+    "sec_list": [
+      23.87,
+      23.07,
+      23.4
+    ],
+    "finish_time": "1:10.34"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 3,
+    "horse_no": 7,
+    "clean_name": "QUANTUM CLOUD",
+    "code": "L221",
+    "last400": 23.89,
+    "sec_list": [
+      23.63,
+      22.99,
+      23.89
+    ],
+    "finish_time": "1:10.51"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 4,
+    "horse_no": 9,
+    "clean_name": "WUKONG JEWELLERY",
+    "code": "K314",
+    "last400": 23.63,
+    "sec_list": [
+      23.91,
+      23.07,
+      23.63
+    ],
+    "finish_time": "1:10.61"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 5,
+    "horse_no": 12,
+    "clean_name": "KING MILES",
+    "code": "J158",
+    "last400": 23.94,
+    "sec_list": [
+      23.71,
+      23.11,
+      23.94
+    ],
+    "finish_time": "1:10.76"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 6,
+    "horse_no": 6,
+    "clean_name": "IT IS YOU",
+    "code": "L338",
+    "last400": 23.63,
+    "sec_list": [
+      24.07,
+      23.07,
+      23.63
+    ],
+    "finish_time": "1:10.77"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 7,
+    "horse_no": 4,
+    "clean_name": "ALL OUT FOR SIX",
+    "code": "L193",
+    "last400": 24.3,
+    "sec_list": [
+      23.51,
+      23.03,
+      24.3
+    ],
+    "finish_time": "1:10.84"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 8,
+    "horse_no": 2,
+    "clean_name": "SYMBOL OF STRENGTH",
+    "code": "K352",
+    "last400": 24.25,
+    "sec_list": [
+      23.67,
+      23.03,
+      24.25
+    ],
+    "finish_time": "1:10.95"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 9,
+    "horse_no": 3,
+    "clean_name": "FORTUNE LINK",
+    "code": "L311",
+    "last400": 23.78,
+    "sec_list": [
+      24.27,
+      23.03,
+      23.78
+    ],
+    "finish_time": "1:11.08"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 10,
+    "horse_no": 5,
+    "clean_name": "POWER KOEPP",
+    "code": "E301",
+    "last400": 24.66,
+    "sec_list": [
+      23.59,
+      22.99,
+      24.66
+    ],
+    "finish_time": "1:11.24"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 11,
+    "horse_no": 11,
+    "clean_name": "YOUNG ARROW",
+    "code": "J401",
+    "last400": 24.2,
+    "sec_list": [
+      24.27,
+      22.79,
+      24.2
+    ],
+    "finish_time": "1:11.26"
+  },
+  {
+    "date": "04/11/2026",
+    "race_no": 9,
+    "fin": 12,
+    "horse_no": 8,
+    "clean_name": "VIVA PROSPERAR",
+    "code": "L374",
+    "last400": 23.94,
+    "sec_list": [
+      24.39,
+      22.95,
+      23.94
+    ],
+    "finish_time": "1:11.28"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 1,
+    "horse_no": 5,
+    "clean_name": "KINGLY DEMEANOR",
+    "code": "H486",
+    "last400": 24.36,
+    "sec_list": [
+      14.02,
+      22.19,
+      24.44,
+      24.63,
+      24.36
+    ],
+    "finish_time": "1:49.64"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 2,
+    "horse_no": 2,
+    "clean_name": "STAR BROSE",
+    "code": "J463",
+    "last400": 23.77,
+    "sec_list": [
+      14.46,
+      22.79,
+      24.68,
+      24.11,
+      23.77
+    ],
+    "finish_time": "1:49.81"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 3,
+    "horse_no": 4,
+    "clean_name": "ON THE LASH",
+    "code": "J182",
+    "last400": 24.63,
+    "sec_list": [
+      14.22,
+      22.03,
+      24.52,
+      24.59,
+      24.63
+    ],
+    "finish_time": "1:49.99"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 4,
+    "horse_no": 14,
+    "clean_name": "PERFECT PAIRING",
+    "code": "J331",
+    "last400": 24.12,
+    "sec_list": [
+      14.5,
+      22.67,
+      24.36,
+      24.35,
+      24.12
+    ],
+    "finish_time": "1:50.00"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 5,
+    "horse_no": 9,
+    "clean_name": "OCEAN IMPACT",
+    "code": "J502",
+    "last400": 23.89,
+    "sec_list": [
+      14.74,
+      23.03,
+      24.28,
+      24.07,
+      23.89
+    ],
+    "finish_time": "1:50.01"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 6,
+    "horse_no": 8,
+    "clean_name": "BRIGHT INHERITANCE",
+    "code": "J215",
+    "last400": 24.24,
+    "sec_list": [
+      14.38,
+      22.51,
+      24.4,
+      24.55,
+      24.24
+    ],
+    "finish_time": "1:50.08"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 7,
+    "horse_no": 11,
+    "clean_name": "COOL BLUE",
+    "code": "H011",
+    "last400": 24.02,
+    "sec_list": [
+      14.86,
+      22.71,
+      24.24,
+      24.27,
+      24.02
+    ],
+    "finish_time": "1:50.10"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 8,
+    "horse_no": 13,
+    "clean_name": "SETANTA",
+    "code": "G095",
+    "last400": 24.57,
+    "sec_list": [
+      14.18,
+      22.47,
+      24.6,
+      24.43,
+      24.57
+    ],
+    "finish_time": "1:50.25"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 9,
+    "horse_no": 1,
+    "clean_name": "MASSIVE GLORY",
+    "code": "K205",
+    "last400": 24.62,
+    "sec_list": [
+      14.18,
+      22.19,
+      24.64,
+      24.67,
+      24.62
+    ],
+    "finish_time": "1:50.30"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 10,
+    "horse_no": 10,
+    "clean_name": "VIEW ALL THINGS",
+    "code": "K101",
+    "last400": 24.46,
+    "sec_list": [
+      14.26,
+      22.79,
+      24.68,
+      24.15,
+      24.46
+    ],
+    "finish_time": "1:50.34"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 11,
+    "horse_no": 7,
+    "clean_name": "SHARPEN BRIGHT",
+    "code": "H276",
+    "last400": 24.24,
+    "sec_list": [
+      14.46,
+      23.11,
+      24.64,
+      24.19,
+      24.24
+    ],
+    "finish_time": "1:50.64"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 12,
+    "horse_no": 3,
+    "clean_name": "GOLDEN FORTUNE",
+    "code": "K500",
+    "last400": 25.16,
+    "sec_list": [
+      14.22,
+      22.35,
+      24.36,
+      24.67,
+      25.16
+    ],
+    "finish_time": "1:50.76"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 13,
+    "horse_no": 12,
+    "clean_name": "SPLENDID FORCE",
+    "code": "K120",
+    "last400": 25.08,
+    "sec_list": [
+      14.66,
+      22.91,
+      24.28,
+      23.87,
+      25.08
+    ],
+    "finish_time": "1:50.80"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 1,
+    "fin": 14,
+    "horse_no": 6,
+    "clean_name": "LUCKY SECRET",
+    "code": "L073",
+    "last400": 24.93,
+    "sec_list": [
+      14.42,
+      22.47,
+      24.6,
+      24.51,
+      24.93
+    ],
+    "finish_time": "1:50.93"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 1,
+    "horse_no": 8,
+    "clean_name": "CELESTIAL STRIDER",
+    "code": "L009",
+    "last400": 22.52,
+    "sec_list": [
+      24.62,
+      21.89,
+      22.52
+    ],
+    "finish_time": "1:09.03"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 2,
+    "horse_no": 5,
+    "clean_name": "LIGHTNING ACE",
+    "code": "L136",
+    "last400": 23.07,
+    "sec_list": [
+      23.94,
+      22.09,
+      23.07
+    ],
+    "finish_time": "1:09.10"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 3,
+    "horse_no": 1,
+    "clean_name": "MACANESE MASTER",
+    "code": "J532",
+    "last400": 23.39,
+    "sec_list": [
+      23.58,
+      22.25,
+      23.39
+    ],
+    "finish_time": "1:09.22"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 4,
+    "horse_no": 7,
+    "clean_name": "WAVE GARDEN",
+    "code": "K209",
+    "last400": 22.96,
+    "sec_list": [
+      24.3,
+      22.01,
+      22.96
+    ],
+    "finish_time": "1:09.27"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 5,
+    "horse_no": 12,
+    "clean_name": "TURF PHOENIX",
+    "code": "J294",
+    "last400": 23.54,
+    "sec_list": [
+      23.66,
+      22.21,
+      23.54
+    ],
+    "finish_time": "1:09.41"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 6,
+    "horse_no": 9,
+    "clean_name": "CONRAD THE GREAT",
+    "code": "K217",
+    "last400": 23.49,
+    "sec_list": [
+      23.94,
+      22.13,
+      23.49
+    ],
+    "finish_time": "1:09.56"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 7,
+    "horse_no": 3,
+    "clean_name": "DIAMOND SPARKLE",
+    "code": "L182",
+    "last400": 23.48,
+    "sec_list": [
+      23.9,
+      22.33,
+      23.48
+    ],
+    "finish_time": "1:09.71"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 8,
+    "horse_no": 10,
+    "clean_name": "SWAGGER BRO",
+    "code": "K089",
+    "last400": 22.73,
+    "sec_list": [
+      24.86,
+      22.21,
+      22.73
+    ],
+    "finish_time": "1:09.80"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 9,
+    "horse_no": 11,
+    "clean_name": "THOUSAND CUPS",
+    "code": "J482",
+    "last400": 23.91,
+    "sec_list": [
+      23.66,
+      22.41,
+      23.91
+    ],
+    "finish_time": "1:09.98"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 10,
+    "horse_no": 2,
+    "clean_name": "SHINYU KOKOROE",
+    "code": "K263",
+    "last400": 23.83,
+    "sec_list": [
+      24.18,
+      22.17,
+      23.83
+    ],
+    "finish_time": "1:10.18"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 11,
+    "horse_no": 6,
+    "clean_name": "POWER PATCH",
+    "code": "L100",
+    "last400": 23.54,
+    "sec_list": [
+      24.54,
+      22.21,
+      23.54
+    ],
+    "finish_time": "1:10.29"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 2,
+    "fin": 12,
+    "horse_no": 4,
+    "clean_name": "VIEW OF COSMOS",
+    "code": "L060",
+    "last400": 23.71,
+    "sec_list": [
+      25.1,
+      22.13,
+      23.71
+    ],
+    "finish_time": "1:10.94"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 1,
+    "horse_no": 1,
+    "clean_name": "PEJIBAYE",
+    "code": "K297",
+    "last400": 22.92,
+    "sec_list": [
+      23.08,
+      21.66,
+      22.92
+    ],
+    "finish_time": "1:07.66"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 2,
+    "horse_no": 8,
+    "clean_name": "GOOD LUCK HAPPY",
+    "code": "K301",
+    "last400": 22.81,
+    "sec_list": [
+      23.84,
+      21.74,
+      22.81
+    ],
+    "finish_time": "1:08.39"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 3,
+    "horse_no": 5,
+    "clean_name": "SPARKLING FELLOW",
+    "code": "K175",
+    "last400": 22.78,
+    "sec_list": [
+      24.04,
+      21.58,
+      22.78
+    ],
+    "finish_time": "1:08.40"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 4,
+    "horse_no": 10,
+    "clean_name": "KA YING RADIANCE",
+    "code": "K134",
+    "last400": 22.59,
+    "sec_list": [
+      24.2,
+      21.74,
+      22.59
+    ],
+    "finish_time": "1:08.53"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 5,
+    "horse_no": 3,
+    "clean_name": "JUICY DRAGON",
+    "code": "K405",
+    "last400": 23.14,
+    "sec_list": [
+      23.76,
+      21.66,
+      23.14
+    ],
+    "finish_time": "1:08.56"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 6,
+    "horse_no": 7,
+    "clean_name": "HAYDAY",
+    "code": "H321",
+    "last400": 23.09,
+    "sec_list": [
+      23.68,
+      21.86,
+      23.09
+    ],
+    "finish_time": "1:08.63"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 7,
+    "horse_no": 11,
+    "clean_name": "KING'S ARROW",
+    "code": "L254",
+    "last400": 23.58,
+    "sec_list": [
+      23.24,
+      21.82,
+      23.58
+    ],
+    "finish_time": "1:08.64"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 8,
+    "horse_no": 2,
+    "clean_name": "VULCANUS",
+    "code": "J150",
+    "last400": 23.5,
+    "sec_list": [
+      23.56,
+      21.78,
+      23.5
+    ],
+    "finish_time": "1:08.84"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 9,
+    "horse_no": 4,
+    "clean_name": "YEE CHEONG GLORY",
+    "code": "K074",
+    "last400": 23.18,
+    "sec_list": [
+      24.04,
+      21.78,
+      23.18
+    ],
+    "finish_time": "1:09.00"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 10,
+    "horse_no": 6,
+    "clean_name": "FLYING HUNTER",
+    "code": "L247",
+    "last400": 23.89,
+    "sec_list": [
+      23.8,
+      21.82,
+      23.89
+    ],
+    "finish_time": "1:09.51"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 11,
+    "horse_no": 12,
+    "clean_name": "COLOURFUL GAN",
+    "code": "L054",
+    "last400": 23.6,
+    "sec_list": [
+      24.44,
+      22.02,
+      23.6
+    ],
+    "finish_time": "1:10.06"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 3,
+    "fin": 12,
+    "horse_no": 9,
+    "clean_name": "KANSAS",
+    "code": "L305",
+    "last400": 25.42,
+    "sec_list": [
+      23.32,
+      22.06,
+      25.42
+    ],
+    "finish_time": "1:10.80"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 1,
+    "horse_no": 6,
+    "clean_name": "PRIME ACE",
+    "code": "L443",
+    "last400": 23.06,
+    "sec_list": [
+      24.5,
+      22.18,
+      23.06
+    ],
+    "finish_time": "1:09.74"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 2,
+    "horse_no": 4,
+    "clean_name": "BRING ME HOME",
+    "code": "L569",
+    "last400": 22.68,
+    "sec_list": [
+      24.86,
+      22.3,
+      22.68
+    ],
+    "finish_time": "1:09.84"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 3,
+    "horse_no": 11,
+    "clean_name": "GENIUS BABY",
+    "code": "K132",
+    "last400": 23.16,
+    "sec_list": [
+      24.66,
+      22.3,
+      23.16
+    ],
+    "finish_time": "1:10.12"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 4,
+    "horse_no": 12,
+    "clean_name": "HIGH RISE VICTORY",
+    "code": "L128",
+    "last400": 22.7,
+    "sec_list": [
+      25.14,
+      22.3,
+      22.7
+    ],
+    "finish_time": "1:10.14"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 5,
+    "horse_no": 9,
+    "clean_name": "SHANDONG SPIRIT",
+    "code": "L156",
+    "last400": 23.1,
+    "sec_list": [
+      24.9,
+      22.26,
+      23.1
+    ],
+    "finish_time": "1:10.26"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 6,
+    "horse_no": 7,
+    "clean_name": "GOLDEN TRIUMPH",
+    "code": "K506",
+    "last400": 23.88,
+    "sec_list": [
+      24.26,
+      22.3,
+      23.88
+    ],
+    "finish_time": "1:10.44"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 7,
+    "horse_no": 8,
+    "clean_name": "LITTLE MONSTER",
+    "code": "K391",
+    "last400": 24.08,
+    "sec_list": [
+      23.98,
+      22.38,
+      24.08
+    ],
+    "finish_time": "1:10.44"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 8,
+    "horse_no": 1,
+    "clean_name": "TEN LOVES",
+    "code": "L371",
+    "last400": 23.45,
+    "sec_list": [
+      24.86,
+      22.34,
+      23.45
+    ],
+    "finish_time": "1:10.65"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 9,
+    "horse_no": 10,
+    "clean_name": "HAPPY BRETHREN",
+    "code": "L049",
+    "last400": 24.56,
+    "sec_list": [
+      23.94,
+      22.38,
+      24.56
+    ],
+    "finish_time": "1:10.88"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 10,
+    "horse_no": 3,
+    "clean_name": "APEX GLORY",
+    "code": "L265",
+    "last400": 23.75,
+    "sec_list": [
+      25.14,
+      22.18,
+      23.75
+    ],
+    "finish_time": "1:11.07"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 11,
+    "horse_no": 5,
+    "clean_name": "PUDDING GOGO",
+    "code": "L450",
+    "last400": 23.51,
+    "sec_list": [
+      25.38,
+      22.38,
+      23.51
+    ],
+    "finish_time": "1:11.27"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 4,
+    "fin": 12,
+    "horse_no": 2,
+    "clean_name": "VIGOR HAPPINESS",
+    "code": "L284",
+    "last400": 23.78,
+    "sec_list": [
+      25.42,
+      22.3,
+      23.78
+    ],
+    "finish_time": "1:11.50"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 1,
+    "horse_no": 10,
+    "clean_name": "GORGEOUS VICTORY",
+    "code": "L087",
+    "last400": 23.06,
+    "sec_list": [
+      25.36,
+      23.5,
+      23.68,
+      23.06
+    ],
+    "finish_time": "1:35.60"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 2,
+    "horse_no": 8,
+    "clean_name": "LUCKY YEAR",
+    "code": "K443",
+    "last400": 23.54,
+    "sec_list": [
+      25.36,
+      23.46,
+      23.52,
+      23.54
+    ],
+    "finish_time": "1:35.88"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 3,
+    "horse_no": 13,
+    "clean_name": "POLAR PATCH",
+    "code": "L211",
+    "last400": 23.82,
+    "sec_list": [
+      25.28,
+      23.26,
+      23.68,
+      23.82
+    ],
+    "finish_time": "1:36.04"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 4,
+    "horse_no": 14,
+    "clean_name": "ILLUMINOUS",
+    "code": "J170",
+    "last400": 23.11,
+    "sec_list": [
+      26.16,
+      23.3,
+      23.48,
+      23.11
+    ],
+    "finish_time": "1:36.05"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 5,
+    "horse_no": 11,
+    "clean_name": "AUTOMATED",
+    "code": "K177",
+    "last400": 23.55,
+    "sec_list": [
+      25.16,
+      23.54,
+      23.84,
+      23.55
+    ],
+    "finish_time": "1:36.09"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 6,
+    "horse_no": 12,
+    "clean_name": "FRANCIS MEYNELL",
+    "code": "J394",
+    "last400": 23.96,
+    "sec_list": [
+      24.96,
+      23.5,
+      23.76,
+      23.96
+    ],
+    "finish_time": "1:36.18"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 7,
+    "horse_no": 4,
+    "clean_name": "BLING BLING GENIUS",
+    "code": "J397",
+    "last400": 24.2,
+    "sec_list": [
+      24.92,
+      23.3,
+      23.8,
+      24.2
+    ],
+    "finish_time": "1:36.22"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 8,
+    "horse_no": 5,
+    "clean_name": "MEGA MASTERMIND",
+    "code": "L044",
+    "last400": 23.85,
+    "sec_list": [
+      25.12,
+      23.5,
+      23.76,
+      23.85
+    ],
+    "finish_time": "1:36.23"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 9,
+    "horse_no": 7,
+    "clean_name": "GHORGAN",
+    "code": "K199",
+    "last400": 23.84,
+    "sec_list": [
+      25.56,
+      23.42,
+      23.44,
+      23.84
+    ],
+    "finish_time": "1:36.26"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 10,
+    "horse_no": 6,
+    "clean_name": "ROSEWOOD FLEETFOOT",
+    "code": "J524",
+    "last400": 23.62,
+    "sec_list": [
+      26.04,
+      23.3,
+      23.4,
+      23.62
+    ],
+    "finish_time": "1:36.36"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 11,
+    "horse_no": 1,
+    "clean_name": "SHAMZ",
+    "code": "L097",
+    "last400": 23.87,
+    "sec_list": [
+      25.56,
+      23.62,
+      23.56,
+      23.87
+    ],
+    "finish_time": "1:36.61"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 12,
+    "horse_no": 9,
+    "clean_name": "BIG BIG WORLD",
+    "code": "L257",
+    "last400": 24.94,
+    "sec_list": [
+      25.08,
+      23.22,
+      23.88,
+      24.94
+    ],
+    "finish_time": "1:37.12"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 13,
+    "horse_no": 2,
+    "clean_name": "AGENDA",
+    "code": "K160",
+    "last400": 24.52,
+    "sec_list": [
+      25.84,
+      23.22,
+      23.64,
+      24.52
+    ],
+    "finish_time": "1:37.22"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 5,
+    "fin": 14,
+    "horse_no": 3,
+    "clean_name": "FULL OF FORTUNE",
+    "code": "L258",
+    "last400": 24.66,
+    "sec_list": [
+      25.8,
+      23.46,
+      23.76,
+      24.66
+    ],
+    "finish_time": "1:37.68"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 1,
+    "horse_no": 4,
+    "clean_name": "BEAUTY AWARD",
+    "code": "L326",
+    "last400": 23.29,
+    "sec_list": [
+      13.99,
+      22.61,
+      22.74,
+      23.29
+    ],
+    "finish_time": "1:22.63"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 2,
+    "horse_no": 12,
+    "clean_name": "MIGHTY FIGHTER",
+    "code": "L132",
+    "last400": 23.67,
+    "sec_list": [
+      13.87,
+      22.49,
+      22.82,
+      23.67
+    ],
+    "finish_time": "1:22.85"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 3,
+    "horse_no": 13,
+    "clean_name": "STAR SATYR",
+    "code": "K231",
+    "last400": 23.33,
+    "sec_list": [
+      14.27,
+      22.53,
+      22.74,
+      23.33
+    ],
+    "finish_time": "1:22.87"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 4,
+    "horse_no": 8,
+    "clean_name": "LUCKY MAN",
+    "code": "J315",
+    "last400": 23.88,
+    "sec_list": [
+      13.83,
+      22.49,
+      22.78,
+      23.88
+    ],
+    "finish_time": "1:22.98"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 5,
+    "horse_no": 6,
+    "clean_name": "SUNNY DA BEST",
+    "code": "J118",
+    "last400": 23.63,
+    "sec_list": [
+      14.11,
+      22.61,
+      22.7,
+      23.63
+    ],
+    "finish_time": "1:23.05"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 6,
+    "horse_no": 5,
+    "clean_name": "CALIFORNIA WAVES",
+    "code": "K477",
+    "last400": 23.42,
+    "sec_list": [
+      13.87,
+      22.93,
+      22.86,
+      23.42
+    ],
+    "finish_time": "1:23.08"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 7,
+    "horse_no": 10,
+    "clean_name": "SHOTGUN",
+    "code": "K111",
+    "last400": 24.47,
+    "sec_list": [
+      13.51,
+      22.05,
+      23.06,
+      24.47
+    ],
+    "finish_time": "1:23.09"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 8,
+    "horse_no": 11,
+    "clean_name": "SUPER LOVE",
+    "code": "K118",
+    "last400": 23.76,
+    "sec_list": [
+      13.79,
+      22.85,
+      22.86,
+      23.76
+    ],
+    "finish_time": "1:23.26"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 9,
+    "horse_no": 2,
+    "clean_name": "CALL ME SPARKLE",
+    "code": "K571",
+    "last400": 24.71,
+    "sec_list": [
+      13.67,
+      22.05,
+      23.06,
+      24.71
+    ],
+    "finish_time": "1:23.49"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 10,
+    "horse_no": 14,
+    "clean_name": "SUPERB KID",
+    "code": "H298",
+    "last400": 23.79,
+    "sec_list": [
+      14.55,
+      22.53,
+      22.7,
+      23.79
+    ],
+    "finish_time": "1:23.57"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 11,
+    "horse_no": 7,
+    "clean_name": "YOU ARE MINE",
+    "code": "L416",
+    "last400": 24.36,
+    "sec_list": [
+      13.71,
+      22.69,
+      22.94,
+      24.36
+    ],
+    "finish_time": "1:23.70"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 12,
+    "horse_no": 1,
+    "clean_name": "LADY'S LOVE",
+    "code": "L220",
+    "last400": 24.94,
+    "sec_list": [
+      13.67,
+      22.41,
+      22.94,
+      24.94
+    ],
+    "finish_time": "1:23.96"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 13,
+    "horse_no": 9,
+    "clean_name": "MY WYNDFALL",
+    "code": "K445",
+    "last400": 25.0,
+    "sec_list": [
+      13.59,
+      22.49,
+      22.9,
+      25.0
+    ],
+    "finish_time": "1:23.98"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 6,
+    "fin": 14,
+    "horse_no": 3,
+    "clean_name": "FIND MY LOVE",
+    "code": "H110",
+    "last400": 25.33,
+    "sec_list": [
+      13.71,
+      22.41,
+      23.06,
+      25.33
+    ],
+    "finish_time": "1:24.51"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 1,
+    "horse_no": 14,
+    "clean_name": "PANACEA",
+    "code": "K256",
+    "last400": 23.39,
+    "sec_list": [
+      14.76,
+      21.75,
+      22.36,
+      23.39
+    ],
+    "finish_time": "1:22.26"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 2,
+    "horse_no": 10,
+    "clean_name": "MONARCH COUNTY",
+    "code": "J421",
+    "last400": 23.93,
+    "sec_list": [
+      14.24,
+      21.59,
+      22.64,
+      23.93
+    ],
+    "finish_time": "1:22.40"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 3,
+    "horse_no": 9,
+    "clean_name": "THUNDER KIT",
+    "code": "L121",
+    "last400": 23.71,
+    "sec_list": [
+      13.72,
+      21.99,
+      23.0,
+      23.71
+    ],
+    "finish_time": "1:22.42"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 4,
+    "horse_no": 12,
+    "clean_name": "MICKLEY",
+    "code": "K082",
+    "last400": 23.73,
+    "sec_list": [
+      13.64,
+      21.95,
+      23.12,
+      23.73
+    ],
+    "finish_time": "1:22.44"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 5,
+    "horse_no": 5,
+    "clean_name": "CHIU CHOW SPIRIT",
+    "code": "H175",
+    "last400": 23.96,
+    "sec_list": [
+      13.96,
+      21.99,
+      22.72,
+      23.96
+    ],
+    "finish_time": "1:22.63"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 6,
+    "horse_no": 2,
+    "clean_name": "TAGLINE",
+    "code": "L432",
+    "last400": 23.54,
+    "sec_list": [
+      14.64,
+      21.87,
+      22.64,
+      23.54
+    ],
+    "finish_time": "1:22.69"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 7,
+    "horse_no": 7,
+    "clean_name": "STORM MIRROR",
+    "code": "L179",
+    "last400": 24.45,
+    "sec_list": [
+      13.52,
+      21.39,
+      23.36,
+      24.45
+    ],
+    "finish_time": "1:22.72"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 8,
+    "horse_no": 8,
+    "clean_name": "RUN RUN SMART",
+    "code": "K080",
+    "last400": 24.49,
+    "sec_list": [
+      13.4,
+      21.43,
+      23.4,
+      24.49
+    ],
+    "finish_time": "1:22.72"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 9,
+    "horse_no": 3,
+    "clean_name": "TITAN PEGASUS",
+    "code": "L213",
+    "last400": 24.1,
+    "sec_list": [
+      13.64,
+      21.79,
+      23.28,
+      24.1
+    ],
+    "finish_time": "1:22.81"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 10,
+    "horse_no": 11,
+    "clean_name": "KING PATCH",
+    "code": "L528",
+    "last400": 24.08,
+    "sec_list": [
+      14.08,
+      21.79,
+      23.04,
+      24.08
+    ],
+    "finish_time": "1:22.99"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 11,
+    "horse_no": 4,
+    "clean_name": "PROFESSIONAL LAD",
+    "code": "L506",
+    "last400": 24.07,
+    "sec_list": [
+      14.24,
+      21.91,
+      22.8,
+      24.07
+    ],
+    "finish_time": "1:23.02"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 12,
+    "horse_no": 13,
+    "clean_name": "ZHUANG YUAN GLORY",
+    "code": "L546",
+    "last400": 25.19,
+    "sec_list": [
+      13.64,
+      21.47,
+      23.44,
+      25.19
+    ],
+    "finish_time": "1:23.74"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 13,
+    "horse_no": 6,
+    "clean_name": "PRECISION TIME",
+    "code": "M021",
+    "last400": 26.04,
+    "sec_list": [
+      13.44,
+      21.63,
+      23.52,
+      26.04
+    ],
+    "finish_time": "1:24.63"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 7,
+    "fin": 14,
+    "horse_no": 1,
+    "clean_name": "PERFECTDAY",
+    "code": "K238",
+    "last400": 28.18,
+    "sec_list": [
+      13.6,
+      21.47,
+      23.48,
+      28.18
+    ],
+    "finish_time": "1:26.73"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 1,
+    "horse_no": 7,
+    "clean_name": "SPEED DRAGON",
+    "code": "H380",
+    "last400": 22.6,
+    "sec_list": [
+      14.92,
+      23.13,
+      24.11,
+      23.08,
+      22.6
+    ],
+    "finish_time": "1:47.84"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 2,
+    "horse_no": 8,
+    "clean_name": "GENTLEMEN LEGACY",
+    "code": "K385",
+    "last400": 23.27,
+    "sec_list": [
+      14.6,
+      23.13,
+      24.15,
+      22.76,
+      23.27
+    ],
+    "finish_time": "1:47.91"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 3,
+    "horse_no": 4,
+    "clean_name": "MASSIVE SOVEREIGN",
+    "code": "J208",
+    "last400": 22.74,
+    "sec_list": [
+      14.88,
+      23.41,
+      24.15,
+      22.88,
+      22.74
+    ],
+    "finish_time": "1:48.06"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 4,
+    "horse_no": 10,
+    "clean_name": "SILVERY BREEZE",
+    "code": "K057",
+    "last400": 22.9,
+    "sec_list": [
+      14.68,
+      23.45,
+      24.23,
+      22.96,
+      22.9
+    ],
+    "finish_time": "1:48.22"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 5,
+    "horse_no": 9,
+    "clean_name": "LE ZONDA",
+    "code": "L110",
+    "last400": 23.19,
+    "sec_list": [
+      14.6,
+      23.29,
+      24.27,
+      22.88,
+      23.19
+    ],
+    "finish_time": "1:48.23"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 6,
+    "horse_no": 2,
+    "clean_name": "NUMBERS",
+    "code": "L080",
+    "last400": 23.83,
+    "sec_list": [
+      14.32,
+      22.73,
+      24.35,
+      23.2,
+      23.83
+    ],
+    "finish_time": "1:48.43"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 7,
+    "horse_no": 5,
+    "clean_name": "SOLEIL FIGHTER",
+    "code": "J127",
+    "last400": 23.9,
+    "sec_list": [
+      14.12,
+      22.81,
+      24.39,
+      23.24,
+      23.9
+    ],
+    "finish_time": "1:48.46"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 8,
+    "horse_no": 12,
+    "clean_name": "CALIFORNIATOTALITY",
+    "code": "H418",
+    "last400": 23.74,
+    "sec_list": [
+      14.24,
+      22.93,
+      24.51,
+      23.2,
+      23.74
+    ],
+    "finish_time": "1:48.62"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 9,
+    "horse_no": 6,
+    "clean_name": "ENSUED",
+    "code": "H452",
+    "last400": 23.79,
+    "sec_list": [
+      14.24,
+      22.97,
+      24.43,
+      23.32,
+      23.79
+    ],
+    "finish_time": "1:48.75"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 10,
+    "horse_no": 13,
+    "clean_name": "STUNNING PEACH",
+    "code": "J301",
+    "last400": 23.7,
+    "sec_list": [
+      14.4,
+      23.13,
+      24.31,
+      23.24,
+      23.7
+    ],
+    "finish_time": "1:48.78"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 11,
+    "horse_no": 3,
+    "clean_name": "SKY JEWELLERY",
+    "code": "K032",
+    "last400": 23.47,
+    "sec_list": [
+      14.96,
+      23.45,
+      24.07,
+      22.96,
+      23.47
+    ],
+    "finish_time": "1:48.91"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 12,
+    "horse_no": 11,
+    "clean_name": "ROMANTIC THOR",
+    "code": "K012",
+    "last400": 24.03,
+    "sec_list": [
+      14.44,
+      23.01,
+      24.43,
+      23.16,
+      24.03
+    ],
+    "finish_time": "1:49.07"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 8,
+    "fin": 13,
+    "horse_no": 1,
+    "clean_name": "BEAUTY JOY",
+    "code": "E058",
+    "last400": 23.65,
+    "sec_list": [
+      14.68,
+      23.33,
+      24.19,
+      23.28,
+      23.65
+    ],
+    "finish_time": "1:49.13"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 1,
+    "horse_no": 8,
+    "clean_name": "THRIVING BROTHERS",
+    "code": "J396",
+    "last400": 23.16,
+    "sec_list": [
+      13.57,
+      22.08,
+      23.2,
+      23.16
+    ],
+    "finish_time": "1:22.01"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 2,
+    "horse_no": 6,
+    "clean_name": "SUPERB SPIRIT",
+    "code": "L040",
+    "last400": 22.87,
+    "sec_list": [
+      13.85,
+      22.36,
+      23.16,
+      22.87
+    ],
+    "finish_time": "1:22.24"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 3,
+    "horse_no": 3,
+    "clean_name": "AKASHVANI",
+    "code": "K234",
+    "last400": 23.3,
+    "sec_list": [
+      13.65,
+      22.2,
+      23.2,
+      23.3
+    ],
+    "finish_time": "1:22.35"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 4,
+    "horse_no": 12,
+    "clean_name": "EMBRACE ABERDEEN",
+    "code": "L020",
+    "last400": 23.12,
+    "sec_list": [
+      13.69,
+      22.32,
+      23.32,
+      23.12
+    ],
+    "finish_time": "1:22.45"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 5,
+    "horse_no": 5,
+    "clean_name": "FIT FOR BEAUTY",
+    "code": "K489",
+    "last400": 23.23,
+    "sec_list": [
+      13.69,
+      22.36,
+      23.24,
+      23.23
+    ],
+    "finish_time": "1:22.52"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 6,
+    "horse_no": 1,
+    "clean_name": "THAT'S GOLD",
+    "code": "L493",
+    "last400": 23.02,
+    "sec_list": [
+      14.17,
+      22.4,
+      23.0,
+      23.02
+    ],
+    "finish_time": "1:22.59"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 7,
+    "horse_no": 14,
+    "clean_name": "GOLDEN CHAMP",
+    "code": "L135",
+    "last400": 23.72,
+    "sec_list": [
+      13.61,
+      22.16,
+      23.28,
+      23.72
+    ],
+    "finish_time": "1:22.77"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 8,
+    "horse_no": 2,
+    "clean_name": "CELESTIAL HERO",
+    "code": "K363",
+    "last400": 23.68,
+    "sec_list": [
+      13.81,
+      22.2,
+      23.12,
+      23.68
+    ],
+    "finish_time": "1:22.81"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 9,
+    "horse_no": 11,
+    "clean_name": "PASS LINE",
+    "code": "L384",
+    "last400": 23.32,
+    "sec_list": [
+      13.93,
+      22.4,
+      23.16,
+      23.32
+    ],
+    "finish_time": "1:22.81"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 10,
+    "horse_no": 4,
+    "clean_name": "GOLD TAOGETHER",
+    "code": "L479",
+    "last400": 23.24,
+    "sec_list": [
+      14.13,
+      22.4,
+      23.08,
+      23.24
+    ],
+    "finish_time": "1:22.85"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 11,
+    "horse_no": 10,
+    "clean_name": "PAPAYA BROSE",
+    "code": "L264",
+    "last400": 23.14,
+    "sec_list": [
+      14.53,
+      22.24,
+      22.96,
+      23.14
+    ],
+    "finish_time": "1:22.87"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 12,
+    "horse_no": 9,
+    "clean_name": "FASTOSO",
+    "code": "L378",
+    "last400": 23.19,
+    "sec_list": [
+      14.45,
+      22.36,
+      22.88,
+      23.19
+    ],
+    "finish_time": "1:22.88"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 13,
+    "horse_no": 13,
+    "clean_name": "FLYING KNIGHT",
+    "code": "K370",
+    "last400": 24.53,
+    "sec_list": [
+      13.77,
+      21.92,
+      23.36,
+      24.53
+    ],
+    "finish_time": "1:23.58"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 9,
+    "fin": 14,
+    "horse_no": 7,
+    "clean_name": "HAR HAR POWER",
+    "code": "L553",
+    "last400": 24.43,
+    "sec_list": [
+      13.81,
+      22.48,
+      23.32,
+      24.43
+    ],
+    "finish_time": "1:24.04"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 1,
+    "horse_no": 8,
+    "clean_name": "YOUNG ARCHER",
+    "code": "L478",
+    "last400": 22.29,
+    "sec_list": [
+      24.9,
+      22.55,
+      22.29
+    ],
+    "finish_time": "1:09.74"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 2,
+    "horse_no": 2,
+    "clean_name": "ABSOLUTE HEART",
+    "code": "L226",
+    "last400": 22.85,
+    "sec_list": [
+      24.22,
+      22.67,
+      22.85
+    ],
+    "finish_time": "1:09.74"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 3,
+    "horse_no": 9,
+    "clean_name": "CONGHUA GALAXY",
+    "code": "L337",
+    "last400": 22.96,
+    "sec_list": [
+      24.34,
+      22.67,
+      22.96
+    ],
+    "finish_time": "1:09.97"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 4,
+    "horse_no": 4,
+    "clean_name": "MAJESTIC VALOUR",
+    "code": "L016",
+    "last400": 22.87,
+    "sec_list": [
+      24.5,
+      22.63,
+      22.87
+    ],
+    "finish_time": "1:10.00"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 5,
+    "horse_no": 6,
+    "clean_name": "CITY GOLD BANNER",
+    "code": "L155",
+    "last400": 22.52,
+    "sec_list": [
+      25.14,
+      22.55,
+      22.52
+    ],
+    "finish_time": "1:10.21"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 6,
+    "horse_no": 3,
+    "clean_name": "GLORYSPEED",
+    "code": "L519",
+    "last400": 23.08,
+    "sec_list": [
+      24.5,
+      22.67,
+      23.08
+    ],
+    "finish_time": "1:10.25"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 7,
+    "horse_no": 5,
+    "clean_name": "PEGAS",
+    "code": "L075",
+    "last400": 22.96,
+    "sec_list": [
+      24.7,
+      22.67,
+      22.96
+    ],
+    "finish_time": "1:10.33"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 8,
+    "horse_no": 7,
+    "clean_name": "DYNAMIC GOLF",
+    "code": "L522",
+    "last400": 22.92,
+    "sec_list": [
+      24.7,
+      22.75,
+      22.92
+    ],
+    "finish_time": "1:10.37"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 9,
+    "horse_no": 10,
+    "clean_name": "TURBO GRANNY",
+    "code": "M036",
+    "last400": 22.44,
+    "sec_list": [
+      25.46,
+      22.55,
+      22.44
+    ],
+    "finish_time": "1:10.45"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 10,
+    "horse_no": 1,
+    "clean_name": "GRAND EAGLE",
+    "code": "L336",
+    "last400": 22.81,
+    "sec_list": [
+      25.1,
+      22.63,
+      22.81
+    ],
+    "finish_time": "1:10.54"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 11,
+    "horse_no": 11,
+    "clean_name": "LIFELINE EXPRESS",
+    "code": "H439",
+    "last400": 22.91,
+    "sec_list": [
+      24.98,
+      22.71,
+      22.91
+    ],
+    "finish_time": "1:10.60"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 10,
+    "fin": 12,
+    "horse_no": 12,
+    "clean_name": "LOVE ESPRESSO",
+    "code": "L394",
+    "last400": 23.61,
+    "sec_list": [
+      24.74,
+      22.71,
+      23.61
+    ],
+    "finish_time": "1:11.06"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 1,
+    "horse_no": 7,
+    "clean_name": "BEAUTY BOLT",
+    "code": "K491",
+    "last400": 22.99,
+    "sec_list": [
+      13.73,
+      22.19,
+      22.7,
+      22.99
+    ],
+    "finish_time": "1:21.61"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 2,
+    "horse_no": 12,
+    "clean_name": "AEROINVINCIBLE",
+    "code": "J180",
+    "last400": 23.48,
+    "sec_list": [
+      13.81,
+      21.67,
+      22.86,
+      23.48
+    ],
+    "finish_time": "1:21.82"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 3,
+    "horse_no": 4,
+    "clean_name": "HOT DELIGHT",
+    "code": "K583",
+    "last400": 23.26,
+    "sec_list": [
+      13.65,
+      22.23,
+      22.74,
+      23.26
+    ],
+    "finish_time": "1:21.88"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 4,
+    "horse_no": 14,
+    "clean_name": "MR INCREDIBLE",
+    "code": "L232",
+    "last400": 23.06,
+    "sec_list": [
+      13.97,
+      22.15,
+      22.7,
+      23.06
+    ],
+    "finish_time": "1:21.88"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 5,
+    "horse_no": 9,
+    "clean_name": "ENDUED",
+    "code": "K033",
+    "last400": 22.76,
+    "sec_list": [
+      14.17,
+      22.35,
+      22.78,
+      22.76
+    ],
+    "finish_time": "1:22.06"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 6,
+    "horse_no": 8,
+    "clean_name": "INFINITE RESOLVE",
+    "code": "K369",
+    "last400": 23.06,
+    "sec_list": [
+      13.85,
+      22.51,
+      22.7,
+      23.06
+    ],
+    "finish_time": "1:22.12"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 7,
+    "horse_no": 2,
+    "clean_name": "STORM RIDER",
+    "code": "J027",
+    "last400": 23.85,
+    "sec_list": [
+      13.61,
+      21.75,
+      22.98,
+      23.85
+    ],
+    "finish_time": "1:22.19"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 8,
+    "horse_no": 11,
+    "clean_name": "KINGSFIELD",
+    "code": "M123",
+    "last400": 23.2,
+    "sec_list": [
+      13.93,
+      22.35,
+      22.82,
+      23.2
+    ],
+    "finish_time": "1:22.30"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 9,
+    "horse_no": 3,
+    "clean_name": "AERIS NOVA",
+    "code": "J534",
+    "last400": 22.49,
+    "sec_list": [
+      14.69,
+      22.39,
+      22.78,
+      22.49
+    ],
+    "finish_time": "1:22.35"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 10,
+    "horse_no": 13,
+    "clean_name": "COLOURFUL STAR",
+    "code": "L515",
+    "last400": 23.02,
+    "sec_list": [
+      14.05,
+      22.63,
+      22.9,
+      23.02
+    ],
+    "finish_time": "1:22.60"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 11,
+    "horse_no": 6,
+    "clean_name": "BEAUTY ALLIANCE",
+    "code": "J260",
+    "last400": 22.81,
+    "sec_list": [
+      14.49,
+      22.55,
+      22.86,
+      22.81
+    ],
+    "finish_time": "1:22.71"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 12,
+    "horse_no": 10,
+    "clean_name": "GARRIX",
+    "code": "L564",
+    "last400": 22.65,
+    "sec_list": [
+      14.65,
+      22.55,
+      22.86,
+      22.65
+    ],
+    "finish_time": "1:22.71"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 13,
+    "horse_no": 5,
+    "clean_name": "MUGEN",
+    "code": "H338",
+    "last400": 23.17,
+    "sec_list": [
+      14.29,
+      22.59,
+      22.78,
+      23.17
+    ],
+    "finish_time": "1:22.83"
+  },
+  {
+    "date": "08/11/2026",
+    "race_no": 11,
+    "fin": 14,
+    "horse_no": 1,
+    "clean_name": "HONG LOK GOLF",
+    "code": "J517",
+    "last400": 23.12,
+    "sec_list": [
+      14.49,
+      22.35,
+      22.94,
+      23.12
+    ],
+    "finish_time": "1:22.90"
   }
 ]

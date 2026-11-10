@@ -79,8 +79,17 @@ def sync_all_offseason_telemetry(limit=150):
         print(f"Warning: Trackwork harvest notice: {e}")
         record_health("trackwork_telemetry", "fail", error=str(e))
 
-    # 5. Update Official Stewards' Incident Reports & Replay Memory
-    print("\n[Step 5/6] Updating Official Stewards' Incident Reports & Replay Memory...")
+    # 5. Rebuild Precomputed Features (Running Styles, Winning Gears, Sectionals, Comments)
+    print("\n[Step 5/6] Rebuilding Precomputed Features (Running Styles, Gears, Sectionals, Comments)...")
+    try:
+        precompute()
+        print("Precomputed features synchronized.")
+    except Exception as e:
+        print(f"Warning: Precompute features notice: {e}")
+        record_health("precomputed_features", "fail", error=str(e))
+
+    # 6. Update Official Stewards' Incident Reports & Replay Memory
+    print("\n[Step 6/6] Updating Official Stewards' Incident Reports & Replay Memory...")
     memory = {}
     try:
         memory = build_horse_incident_memory()
@@ -88,15 +97,6 @@ def sync_all_offseason_telemetry(limit=150):
     except Exception as e:
         print(f"Warning: Incident memory notice: {e}")
         record_health("incident_memory", "fail", error=str(e))
-
-    # 6. Rebuild Precomputed Features (Running Styles, Winning Gears, Sectionals, Comments)
-    print("\n[Step 6/6] Rebuilding Precomputed Features (Running Styles, Gears, Sectionals, Comments)...")
-    try:
-        precompute()
-        print("Precomputed features synchronized.")
-    except Exception as e:
-        print(f"Warning: Precompute features notice: {e}")
-        record_health("precomputed_features", "fail", error=str(e))
 
     record_health(
         "telemetry_master_sync",

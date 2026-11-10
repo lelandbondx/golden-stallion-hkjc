@@ -17,7 +17,6 @@ from features.stewards import check_stewards_excuse, check_health_risk
 
 def run():
     data = get_live_meeting_data()
-    tips_data = get_live_tips_index()
     
     try:
         with open('data/gemini_intel.json', 'r') as f:
@@ -31,6 +30,7 @@ def run():
         return
         
     meeting = data['meetings'][0]
+    tips_data = get_live_tips_index(expected_date=meeting.get('date'), num_races=len(meeting.get('races') or []))
     load_model()
     
     # Load precomputed running styles, winning gears, comments, and sectional bursts

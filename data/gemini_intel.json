@@ -1,16 +1,16 @@
 {
   "raceday_metadata": {
-    "date": "2026-10-28",
-    "venue": "Sha Tin",
+    "date": "2026-11-11",
+    "venue": "Happy Valley",
     "total_races": 9
   },
   "key_runners": [],
   "first_time_starters": [],
   "trainers_championship_standings": {
-    "1": {"trainer": "C Fownes", "wins": 69},
-    "2": {"trainer": "C S Shum", "wins": 63},
-    "3": {"trainer": "M Newnham", "wins": 60},
-    "4": {"trainer": "K W Lui", "wins": 56},
-    "5": {"trainer": "D A Hayes", "wins": 54}
+    "1": {"trainer": "P C Ng", "wins": 16},
+    "2": {"trainer": "C Fownes", "wins": 15},
+    "3": {"trainer": "D Eustace", "wins": 12},
+    "4": {"trainer": "P F Yiu", "wins": 11},
+    "5": {"trainer": "D A Hayes", "wins": 11}
   }
 }

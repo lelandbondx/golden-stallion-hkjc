@@ -90,6 +90,23 @@ def precompute():
     else:
         print("[WARNING] runs.csv or horse_info.csv not found. Skipping sectional bursts calculation.")
 
+    # 4b. Merge modern 2026 scraped final-400m sectionals (modern_sectionals_scraped.json)
+    modern_sec_path = 'data/modern_sectionals_scraped.json'
+    if os.path.exists(modern_sec_path):
+        try:
+            with open(modern_sec_path, 'r', encoding='utf-8') as f:
+                mod_secs = json.load(f)
+            if isinstance(mod_secs, list):
+                for rec in mod_secs:
+                    c_name = str(rec.get('clean_name', '')).strip().upper()
+                    l400 = pd.to_numeric(rec.get('last400'), errors='coerce')
+                    if c_name and pd.notnull(l400) and float(l400) > 10.0:
+                        prev_best = sectional_bursts.get(c_name)
+                        if prev_best is None or float(l400) < float(prev_best):
+                            sectional_bursts[c_name] = float(l400)
+        except Exception as e:
+            print(f"Warning merging modern_sectionals_scraped.json into sectional_bursts: {e}")
+
     # 5. Merge live 2026 horse stats (running_styles, winning_gears) and scraped 2026 stewards' comments
     if os.path.exists('data/latest_horse_stats.csv'):
         try:
@@ -104,6 +121,10 @@ def precompute():
         except Exception as e:
             print(f"Warning merging latest_horse_stats into precomputed_features: {e}")
 
+    _ignore_inc_prefixes = (
+        'PENETROMETER', 'VIEW BY', 'GOOD', 'YIELDING', 'FIRM', 'SOFT', 'WET',
+        'MR ', 'MS ', 'MRS ', 'DR ', 'HON ', 'JP', 'RACE ', 'GOING', 'COURSE'
+    )
     for inc_file in sorted(glob.glob('data/scraped_incidents_*.json')):
         try:
             with open(inc_file, 'r', encoding='utf-8') as f:
@@ -114,8 +135,20 @@ def precompute():
                     inc_txt = str(rec.get('incident', '')).strip()
                     if raw_h and inc_txt:
                         c_name = re.sub(r'\s*\([A-Z0-9]+\).*$', '', raw_h).strip().upper()
-                        if c_name:
+                        if c_name and not c_name.startswith(_ignore_inc_prefixes):
                             last_comments[c_name] = inc_txt
+            elif isinstance(recs, dict):
+                for raw_h, inc_txt in recs.items():
+                    c_name = re.sub(r'\s*\([A-Z0-9]+\).*$', '', str(raw_h)).strip().upper()
+                    inc_str = str(inc_txt or '').strip()
+                    if (
+                        c_name
+                        and inc_str
+                        and len(c_name) <= 32
+                        and not c_name.isdigit()
+                        and not c_name.startswith(_ignore_inc_prefixes)
+                    ):
+                        last_comments[c_name] = inc_str
         except Exception:
             pass
 

@@ -1,125 +1,106 @@
 Loading data...
-Meeting: Sha Tin - 2026-11-08 - Going: GOOD
+Meeting: Happy Valley - 2026-11-11 - Going: GOOD
 
-[Automated Feeds Ingestion] Active for 2026-11-08 Sha Tin
-  [TRIAL_BOT] File: engineered_trial_features.json | Timestamp: 2026-11-04 12:55:32 HKT | Records: 113
+[Automated Feeds Ingestion] Active for 2026-11-11 Happy Valley
+  [TRIAL_BOT] File: engineered_trial_features.json | Timestamp: 2026-11-11 06:20:51 HKT | Records: 197
   [REPLAY_BOT] File: grok_trip_notes_resolved.json | Timestamp: 2026-10-30 01:15:27 HKT | Records: 62
-  [STEWARD_BOT] File: declared_vet_records.json | Timestamp: 2026-10-27 05:45:07 HKT | Records: 11
+  [STEWARD_BOT] File: declared_vet_records.json | Timestamp: 2026-11-11 06:22:24 HKT | Records: 11
 
---- RACE 1 : Class 5 - 1800m ---
-🏆 PICK 1 (WINNING HORSE PICK): #5 KINGLY DEMEANOR (Odds: 3.9) - GS Score: 26.4 - Conf: 74% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #2 STAR BROSE (Odds: 6.3) - GS Score: 24.3
-💠 PICK 3 (TRIO PODIUM): #9 OCEAN IMPACT (Odds: 14.0) - GS Score: 8.1
-📊 PICK 4 (TRIO 4TH LEG): #6 LUCKY SECRET (Odds: 54.0) - GS Score: 5.7
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 VIEW ALL THINGS (Odds: 17.0) - EV: 0.006 - GS Score: 5.4
-🎫 TICKETS: Quinella Box 1-3 (5, 2, 9) | Trio Box (5, 2, 9, 6, 10) | Tierce Class-Dropper Include: #10 | Dual-Stake: #5 + #10
+--- RACE 1 : Class 5 - 1650m ---
+🏆 PICK 1 (WINNING HORSE PICK): #1 CIRCUIT CENTURY (Odds: 8.8) - GS Score: 13.8 - Conf: 74% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #11 ONLY U (Odds: 8.5) - GS Score: 13.4
+💠 PICK 3 (TRIO PODIUM): #2 AMO ERGO SUM (Odds: 9.0) - GS Score: 12.7
+📊 PICK 4 (TRIO 4TH LEG): #6 FORTUNE KINGO (Odds: 4.3) - GS Score: 11.9
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #5 LOVELY MILES (Odds: 14.0) - EV: 0.031 - GS Score: 9.0
+🎫 TICKETS: Quinella Box 1-3 (1, 11, 2) | Trio Box (1, 11, 2, 6, 5) | Dual-Stake: #1 + #5
 
 --- RACE 2 : Class 5 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #9 CONRAD THE GREAT (Odds: 6.1) - GS Score: 18.3 - Conf: 74% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #1 MACANESE MASTER (Odds: 7.2) - GS Score: 15.9
-💠 PICK 3 (TRIO PODIUM): #5 LIGHTNING ACE (Odds: 8.0) - GS Score: 12.1
-📊 PICK 4 (TRIO 4TH LEG): #11 THOUSAND CUPS (Odds: 9.9) - GS Score: 11.6
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #2 SHINYU KOKOROE (Odds: 16.0) - EV: 0.035 - GS Score: 8.6
-🎫 TICKETS: Quinella Box 1-3 (9, 1, 5) | Trio Box (9, 1, 5, 11) | Dual-Stake: #9 + #2
+🏆 PICK 1 (WINNING HORSE PICK): #10 ALWAYS FLUKE (Odds: 10.0) - GS Score: 15.9 - Conf: 74% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #4 LAKESHORE HERO (Odds: 8.8) - GS Score: 14.9
+💠 PICK 3 (TRIO PODIUM): #7 NOBLE FANS (Odds: 8.5) - GS Score: 13.2
+📊 PICK 4 (TRIO 4TH LEG): #8 BEAUTY GEMINI (Odds: 7.4) - GS Score: 11.1
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #3 FREE PONY (Odds: 6.7) - EV: -0.016 - GS Score: 10.6
+🎫 TICKETS: Quinella Box 1-3 (10, 4, 7) | Trio Box (10, 4, 7, 8, 3) | Dual-Stake: #10 + #3
 
 --- RACE 3 : Class 4 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #3 JUICY DRAGON (Odds: 7.0) - GS Score: 14.2 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-🎯 PICK 2 (EXACTA/QUINELLA): #1 PEJIBAYE (Odds: 5.2) - GS Score: 13.7
-💠 PICK 3 (TRIO PODIUM): #5 SPARKLING FELLOW (Odds: 5.9) - GS Score: 13.1
-📊 PICK 4 (TRIO 4TH LEG): #11 KING'S ARROW (Odds: 7.4) - GS Score: 12.9
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 KA YING RADIANCE (Odds: 13.0) - EV: 0.038 - GS Score: 10.1
-🎫 TICKETS: Quinella Box 1-3 (3, 1, 5) | Trio Box (3, 1, 5, 11) | Dual-Stake: #3 + #10
+🏆 PICK 1 (WINNING HORSE PICK): #2 LUCKY MCQUEEN (Odds: 8.1) - GS Score: 13.9 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half-Unit Win + Place — Crosser Draw 9, 134lb)]
+🎯 PICK 2 (EXACTA/QUINELLA): #11 MASTER PHOENIX (Odds: 3.7) - GS Score: 13.5
+💠 PICK 3 (TRIO PODIUM): #4 BEAUTY SHOW (Odds: 12.0) - GS Score: 13.1
+📊 PICK 4 (TRIO 4TH LEG): #1 ARGENTO OCEAN (Odds: 7.7) - GS Score: 11.9
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #3 NEW POWER (Odds: 16.0) - EV: 0.032 - GS Score: 8.4
+🎫 TICKETS: Quinella Box 1-3 (2, 11, 4) | Trio Box (2, 11, 4, 1, 3) | Dual-Stake: #2 + #3
 
---- RACE 4 : Class 4 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #3 APEX GLORY (Odds: 2.4) - GS Score: 16.0 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-🎯 PICK 2 (EXACTA/QUINELLA): #6 PRIME ACE (Odds: 5.9) - GS Score: 13.4
-💠 PICK 3 (TRIO PODIUM): #4 BRING ME HOME (Odds: 22.0) - GS Score: 12.3
-📊 PICK 4 (TRIO 4TH LEG): #5 PUDDING GOGO (Odds: 39.0) - GS Score: 11.4
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #8 LITTLE MONSTER (Odds: 13.0) - EV: 0.043 - GS Score: 10.6
-🎫 TICKETS: Quinella Box 1-3 (3, 6, 4) | Trio Box (3, 6, 4, 5) | Dual-Stake: #3 + #8
+--- RACE 4 : Class 4 - 1650m ---
+🏆 PICK 1 (WINNING HORSE PICK): #11 CHEERFUL WONGCHOY (Odds: 4.0) - GS Score: 16.1 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #6 AMAZING GAZE (Odds: 6.4) - GS Score: 13.4
+💠 PICK 3 (TRIO PODIUM): #3 GOLDEN BRILLIANT (Odds: 5.1) - GS Score: 13.2
+📊 PICK 4 (TRIO 4TH LEG): #8 KINGMAN REEF (Odds: 8.7) - GS Score: 9.1
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #12 AESTHETICISM (Odds: 6.9) - EV: -0.032 - GS Score: 8.6
+🎫 TICKETS: Quinella Box 1-3 (11, 6, 3) | Trio Box (11, 6, 3, 8, 12) | Dual-Stake: #11 + #12
 
---- RACE 5 : Class 4 - 1600m ---
-🏆 PICK 1 (WINNING HORSE PICK): #6 ROSEWOOD FLEETFOOT (Odds: 8.7) - GS Score: 15.5 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #10 GORGEOUS VICTORY (Odds: 3.5) - GS Score: 14.2
-💠 PICK 3 (TRIO PODIUM): #8 LUCKY YEAR (Odds: 6.5) - GS Score: 12.7
-📊 PICK 4 (TRIO 4TH LEG): #4 BLING BLING GENIUS (Odds: 17.0) - GS Score: 12.4
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #2 AGENDA (Odds: 39.0) - EV: 0.046 - GS Score: 6.7
-🎫 TICKETS: Quinella Box 1-3 (6, 10, 8) | Trio Box (6, 10, 8, 4) | Dual-Stake: #6 + #2
+--- RACE 5 : Class 4 - 1650m ---
+🏆 PICK 1 (WINNING HORSE PICK): #10 FORTUNE STAR (Odds: 6.1) - GS Score: 15.3 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #11 SURE JOYFUL (Odds: 6.3) - GS Score: 14.5
+💠 PICK 3 (TRIO PODIUM): #4 GOLDEN ACE (Odds: 6.1) - GS Score: 12.9
+📊 PICK 4 (TRIO 4TH LEG): #1 AKERMANIS GOLD (Odds: 7.1) - GS Score: 12.3
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #5 ROAD TO GLORY (Odds: 14.0) - EV: 0.024 - GS Score: 8.3
+🎫 TICKETS: Quinella Box 1-3 (10, 11, 4) | Trio Box (10, 11, 4, 1, 5) | Dual-Stake: #10 + #5
 
---- RACE 6 : Class 4 - 1400m ---
-🏆 PICK 1 (WINNING HORSE PICK): #1 LADY'S LOVE (Odds: 7.8) - GS Score: 13.1 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #4 BEAUTY AWARD (Odds: 3.8) - GS Score: 12.5
-💠 PICK 3 (TRIO PODIUM): #11 SUPER LOVE (Odds: 7.8) - GS Score: 11.9
-📊 PICK 4 (TRIO 4TH LEG): #2 CALL ME SPARKLE (Odds: 13.0) - GS Score: 11.1
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #5 CALIFORNIA WAVES (Odds: 23.0) - EV: 0.040 - GS Score: 7.6
-🎫 TICKETS: Quinella Box 1-3 (1, 4, 11) | Trio Box (1, 4, 11, 2) | Dual-Stake: #1 + #5
+--- RACE 6 : Class 4 - 1200m ---
+🏆 PICK 1 (WINNING HORSE PICK): #4 CLOUD NINE (Odds: 3.8) - GS Score: 16.8 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+⚡ SHIFTED WIN STAKE: #1 FORERUNNER (Odds: 8.7) - EV: +0.068
+🎯 PICK 2 (EXACTA/QUINELLA): #1 FORERUNNER (Odds: 8.7) - GS Score: 16.2
+💠 PICK 3 (TRIO PODIUM): #5 FLOW RIDER (Odds: 6.5) - GS Score: 14.6
+📊 PICK 4 (TRIO 4TH LEG): #7 COUNTRY PRIDE (Odds: 5.5) - GS Score: 13.4
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #6 MR INVINCIBLE (Odds: 12.0) - EV: 0.053 - GS Score: 12.1
+🎫 TICKETS: Quinella Box 1-3 (4, 1, 5) | Trio Box (4, 1, 5, 7, 6) | Dual-Stake: #4 + #6
 
---- RACE 7 : Class 3 - 1400m ---
-🏆 PICK 1 (WINNING HORSE PICK): #7 STORM MIRROR (Odds: 3.6) - GS Score: 20.5 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-⚡ SHIFTED WIN STAKE: #1 PERFECTDAY (Odds: 10.0) - EV: +0.067
-🎯 PICK 2 (EXACTA/QUINELLA): #1 PERFECTDAY (Odds: 10.0) - GS Score: 14.8
-💠 PICK 3 (TRIO PODIUM): #5 CHIU CHOW SPIRIT (Odds: 8.9) - GS Score: 13.6
-📊 PICK 4 (TRIO 4TH LEG): #3 TITAN PEGASUS (Odds: 4.2) - GS Score: 11.8
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #6 PRECISION TIME (Odds: 45.0) - EV: 0.045 - GS Score: 6.3
-🎫 TICKETS: Quinella Box 1-3 (7, 1, 5) | Trio Box (7, 1, 5, 3) | Dual-Stake: #7 + #6
+--- RACE 7 : Class 3 - 1200m ---
+🏆 PICK 1 (WINNING HORSE PICK): #5 LEADING AGILITY (Odds: 5.5) - GS Score: 21.6 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #7 LUCRATIVE EIGHT (Odds: 6.7) - GS Score: 15.3
+💠 PICK 3 (TRIO PODIUM): #1 SWIFT ASCEND (Odds: 8.6) - GS Score: 13.1
+📊 PICK 4 (TRIO 4TH LEG): #2 AURORA PATCH (Odds: 9.7) - GS Score: 11.6
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #8 MASK WARRIOR (Odds: 13.0) - EV: 0.002 - GS Score: 6.4
+🎫 TICKETS: Quinella Box 1-3 (5, 7, 1) | Trio Box (5, 7, 1, 2, 8) | Dual-Stake: #5 + #8
 
---- RACE 8 : Group Three - 1800m ---
-🏆 PICK 1 (WINNING HORSE PICK): #3 SKY JEWELLERY (Odds: 8.5) - GS Score: 24.7 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #9 LE ZONDA (Odds: 1.8) - GS Score: 14.8
-💠 PICK 3 (TRIO PODIUM): #1 BEAUTY JOY (Odds: 28.0) - GS Score: 12.2
-📊 PICK 4 (TRIO 4TH LEG): #2 NUMBERS (Odds: 5.3) - GS Score: 11.4
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #11 ROMANTIC THOR (Odds: 44.0) - EV: 0.034 - GS Score: 5.2
-🎫 TICKETS: Quinella Box 1-3 (3, 9, 1) | Trio Box (3, 9, 1, 2) | Dual-Stake: #3 + #11
+--- RACE 8 : Class 3 - 1800m ---
+🏆 PICK 1 (WINNING HORSE PICK): #3 CHINA WIN (Odds: 6.9) - GS Score: 18.9 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #2 FIVEFORTWO (Odds: 4.2) - GS Score: 13.1
+💠 PICK 3 (TRIO PODIUM): #12 HYMNBOOK (Odds: 5.4) - GS Score: 13.0
+📊 PICK 4 (TRIO 4TH LEG): #1 POPE CODY (Odds: 9.9) - GS Score: 12.4
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 FLYING FORTUNE (Odds: 17.0) - EV: 0.043 - GS Score: 9.1
+🎫 TICKETS: Quinella Box 1-3 (3, 2, 12) | Trio Box (3, 2, 12, 1, 10) | Dual-Stake: #3 + #10
 
---- RACE 9 : Class 3 - 1400m ---
-🏆 PICK 1 (WINNING HORSE PICK): #6 SUPERB SPIRIT (Odds: 2.7) - GS Score: 18.4 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-🎯 PICK 2 (EXACTA/QUINELLA): #4 GOLD TAOGETHER (Odds: 39.0) - GS Score: 12.2
-💠 PICK 3 (TRIO PODIUM): #2 CELESTIAL HERO (Odds: 7.6) - GS Score: 11.8
-📊 PICK 4 (TRIO 4TH LEG): #3 AKASHVANI (Odds: 9.9) - GS Score: 8.5
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #1 THAT'S GOLD (Odds: 19.0) - EV: 0.042 - GS Score: 8.4
-🎫 TICKETS: Quinella Box 1-3 (6, 4, 2) | Trio Box (6, 4, 2, 3) | Dual-Stake: #6 + #1
-
---- RACE 10 : Class 3 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #2 ABSOLUTE HEART (Odds: 5.3) - GS Score: 20.6 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #4 MAJESTIC VALOUR (Odds: 3.4) - GS Score: 17.9
-💠 PICK 3 (TRIO PODIUM): #3 GLORYSPEED (Odds: 13.0) - GS Score: 12.6
-📊 PICK 4 (TRIO 4TH LEG): #1 GRAND EAGLE (Odds: 7.1) - GS Score: 10.8
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #5 PEGAS (Odds: 9.2) - EV: 0.018 - GS Score: 10.7
-🎫 TICKETS: Quinella Box 1-3 (2, 4, 3) | Trio Box (2, 4, 3, 1) | Dual-Stake: #2 + #5
-
---- RACE 11 : Class 2 - 1400m ---
-🏆 PICK 1 (WINNING HORSE PICK): #4 HOT DELIGHT (Odds: 1.8) - GS Score: 22.1 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-⚡ SHIFTED WIN STAKE: #14 MR INCREDIBLE (Odds: 6.6) - EV: +0.084
-🎯 PICK 2 (EXACTA/QUINELLA): #14 MR INCREDIBLE (Odds: 6.6) - GS Score: 20.7
-💠 PICK 3 (TRIO PODIUM): #8 INFINITE RESOLVE (Odds: 16.0) - GS Score: 9.1
-📊 PICK 4 (TRIO 4TH LEG): #7 BEAUTY BOLT (Odds: 11.0) - GS Score: 8.8
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #3 AERIS NOVA (Odds: 22.0) - EV: 0.009 - GS Score: 4.6
-🎫 TICKETS: Quinella Box 1-3 (4, 14, 8) | Trio Box (4, 14, 8, 7, 3) | Dual-Stake: #4 + #3
+--- RACE 9 : Class 2 - 1650m ---
+🏆 PICK 1 (WINNING HORSE PICK): #12 FORTUNATE SON (Odds: 11.0) - GS Score: 16.8 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #3 PACKING ANGEL (Odds: 7.8) - GS Score: 15.9
+💠 PICK 3 (TRIO PODIUM): #9 ARMOR GOLDEN EAGLE (Odds: 16.0) - GS Score: 11.7
+📊 PICK 4 (TRIO 4TH LEG): #5 BRAVEFIELD (Odds: 6.4) - GS Score: 9.6
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #4 DEFINITIVE (Odds: 16.0) - EV: 0.018 - GS Score: 6.8
+🎫 TICKETS: Quinella Box 1-3 (12, 3, 9) | Trio Box (12, 3, 9, 5, 4) | Dual-Stake: #12 + #4
 
 
 --- OVERALL GLOBAL BEST BETS ---
-Top Pick 1: Race 1 - #5 KINGLY DEMEANOR (Odds: 3.9, Conf: 74%, EV: 0.055)
-Top Pick 2: Race 8 - #3 SKY JEWELLERY (Odds: 8.5, Conf: 85%, EV: 0.151)
-Top Pick 3: Race 11 - #4 HOT DELIGHT (Odds: 1.8, Conf: 85%, EV: -0.232)
+Top Pick 1: Race 7 - #5 LEADING AGILITY (Odds: 5.5, Conf: 85%, EV: 0.068)
+Top Pick 2: Race 8 - #3 CHINA WIN (Odds: 6.9, Conf: 85%, EV: 0.071)
+Top Pick 3: Race 9 - #12 FORTUNATE SON (Odds: 11.0, Conf: 85%, EV: 0.095)
 
 
 --- RECOMMENDED DUAL-STAKING BETS (PICK 1 + PICK 5) ---
-Race 1 Bet Selection: Anchor #5 KINGLY DEMEANOR (3.9) | Sleeper #10 VIEW ALL THINGS (17.0)
-Race 2 Bet Selection: Anchor #9 CONRAD THE GREAT (6.1) | Sleeper #2 SHINYU KOKOROE (16.0)
-Race 3 Bet Selection: Anchor #3 JUICY DRAGON (7.0) | Sleeper #10 KA YING RADIANCE (13.0)
-Race 4 Bet Selection: Anchor #3 APEX GLORY (2.4) | Sleeper #8 LITTLE MONSTER (13.0)
-Race 5 Bet Selection: Anchor #6 ROSEWOOD FLEETFOOT (8.7) | Sleeper #2 AGENDA (39.0)
-Race 6 Bet Selection: Anchor #1 LADY'S LOVE (7.8) | Sleeper #5 CALIFORNIA WAVES (23.0)
-Race 7 Bet Selection: Anchor #7 STORM MIRROR (3.6) | Sleeper #6 PRECISION TIME (45.0)
-Race 8 Bet Selection: Anchor #3 SKY JEWELLERY (8.5) | Sleeper #11 ROMANTIC THOR (44.0)
-Race 9 Bet Selection: Anchor #6 SUPERB SPIRIT (2.7) | Sleeper #1 THAT'S GOLD (19.0)
-Race 10 Bet Selection: Anchor #2 ABSOLUTE HEART (5.3) | Sleeper #5 PEGAS (9.2)
-Race 11 Bet Selection: Anchor #4 HOT DELIGHT (1.8) | Sleeper #3 AERIS NOVA (22.0)
+Race 1 Bet Selection: Anchor #1 CIRCUIT CENTURY (8.8) | Sleeper #5 LOVELY MILES (14.0)
+Race 2 Bet Selection: Anchor #10 ALWAYS FLUKE (10.0) | Sleeper #3 FREE PONY (6.7)
+Race 3 Bet Selection: Anchor #2 LUCKY MCQUEEN (8.1) | Sleeper #3 NEW POWER (16.0)
+Race 4 Bet Selection: Anchor #11 CHEERFUL WONGCHOY (4.0) | Sleeper #12 AESTHETICISM (6.9)
+Race 5 Bet Selection: Anchor #10 FORTUNE STAR (6.1) | Sleeper #5 ROAD TO GLORY (14.0)
+Race 6 Bet Selection: Anchor #4 CLOUD NINE (3.8) | Sleeper #6 MR INVINCIBLE (12.0)
+Race 7 Bet Selection: Anchor #5 LEADING AGILITY (5.5) | Sleeper #8 MASK WARRIOR (13.0)
+Race 8 Bet Selection: Anchor #3 CHINA WIN (6.9) | Sleeper #10 FLYING FORTUNE (17.0)
+Race 9 Bet Selection: Anchor #12 FORTUNATE SON (11.0) | Sleeper #4 DEFINITIVE (16.0)
 
 
 --- RECOMMENDED 2x3 ALL UP (過關 2串3 BANKER) ---
 🎯 AI-CALCULATED OPTIMAL 2x3 ALL UP:
-   🏛️ Leg 1 (Race 8): [WIN (獨贏)] #3 SKY JEWELLERY (8.5) -> High EV (+0.151) & dominant win conversion
-   🥈 Leg 2 (Race 11): [QUINELLA (連贏 Q)] #4 + #14 MR INCREDIBLE -> Dominant 1-2 lock (Combined GS 42.7)
-🛡️ Alternative Options: Ultra-Safe PLACE 2x3 (R8 Place × R11 Place) | Aggressive WIN 2x3 (R8 Win × R11 Win)
+   🏛️ Leg 1 (Race 7): [WIN (獨贏)] #5 LEADING AGILITY (5.5) -> High EV (+0.068) & dominant win conversion
+   🥈 Leg 2 (Race 8): [WIN (獨贏)] #3 CHINA WIN (6.9) -> High EV (+0.071) & dominant win conversion
+🛡️ Alternative Options: Ultra-Safe PLACE 2x3 (R7 Place × R8 Place) | Aggressive WIN 2x3 (R7 Win × R8 Win)
 Note: High-stability races only (Class 5 strictly excluded to prevent multi-leg bust).
