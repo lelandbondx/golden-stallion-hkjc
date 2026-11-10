@@ -46,3 +46,23 @@
 {"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:28:17Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
 {"component": "run_predictions", "status": "ok", "timestamp": "2026-11-10T22:28:17Z", "metrics": {"meeting_date": "2026-11-11", "venue": "Happy Valley", "races_predicted": 9}, "error": null}
 {"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-10T22:28:18Z", "metrics": {"venue": "Happy Valley", "date": "2026-11-11", "races": 9}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-10T22:32:52Z", "metrics": {"date": "20260916", "rows": 95, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/09/16"}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-10T22:32:55Z", "metrics": {"date": "20260923", "rows": 108, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/09/23"}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-10T22:32:59Z", "metrics": {"date": "20260927", "rows": 143, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/09/27"}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-10T22:33:03Z", "metrics": {"date": "20261001", "rows": 143, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/01"}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-10T22:33:07Z", "metrics": {"date": "20261004", "rows": 146, "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/04"}, "error": null}
+{"component": "incident_engine", "status": "fail", "timestamp": "2026-11-10T22:33:09Z", "metrics": {"date": "20261018", "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?Date=2026/10/18"}, "error": "HKJC page header date '2026-11-08' does not match requested date '2026-10-18'."}
+{"component": "precomputed_features", "status": "ok", "timestamp": "2026-11-10T22:33:10Z", "metrics": {"winning_gears_horses": 675, "running_styles_horses": 2646, "last_comments_horses": 2723, "sectional_bursts_horses": 5063}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-10T22:33:11Z", "metrics": {"ingested_incidents": 1129, "flagged_horses": 892}, "error": null}
+{"component": "incident_memory", "status": "ok", "timestamp": "2026-11-10T22:33:11Z", "metrics": {"horses": 2198, "flagged_horses": 892}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-10T22:33:17Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-11", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:18Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 1}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:18Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 2}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:18Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 3}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:18Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 4}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:18Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 5}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:18Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 6}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:18Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 7}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:19Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 8}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:19Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-10T22:33:19Z", "metrics": {"meeting_date": "2026-11-11", "venue": "Happy Valley", "races_predicted": 9}, "error": null}

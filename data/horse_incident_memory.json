@@ -620,8 +620,8 @@
         "sp": 5.6,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.34,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -918,7 +918,7 @@
         "sp": 18.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.07,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [],
@@ -1374,8 +1374,8 @@
         "sp": 5.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.29,
+        "final_section_rank": 13,
         "field_size": 14,
         "incident_flags": [
           {
@@ -1444,8 +1444,8 @@
         "sp": 5.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.29,
+        "final_section_rank": 13,
         "field_size": 14,
         "incident_flags": [
           {
@@ -1474,7 +1474,41 @@
   "ALPHA STRIKE": {
     "horse_name": "ALPHA STRIKE",
     "horse_code": "L019",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-05-09",
+        "race_id": "2026-05-09_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 3.333333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "J Orman could offer no explanation for his mount’s performance today other than it wanted to hang in.  A veterinary insp",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "J Orman could offer no explanation for his mount’s performance today other than it wanted to hang in.  A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea.  The performance of ALPHA STRIKE, a last start winner, was considered disappointing.  Before being allowed to race again, ALPHA STRIKE will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "ALWAYS FLUKE": {
@@ -1764,8 +1798,8 @@
         "sp": 3.4,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.24,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [
           {
@@ -2494,7 +2528,49 @@
   "AQUAMAN": {
     "horse_name": "AQUAMAN",
     "horse_code": "K523",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "traffic_trouble",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Jumped only fairly.  Between the 400 Metres and the 300 Metres had difficulty obtaining clear running.  Sent for samplin",
+            "vet_blocked": false,
+            "is_victim": true
+          },
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Jumped only fairly.  Between the 400 Metres and the 300 Metres had difficulty obtaining clear running.  Sent for samplin",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 1,
+        "gate_speed_proven": false,
+        "steward_comment": "Jumped only fairly.  Between the 400 Metres and the 300 Metres had difficulty obtaining clear running.  Sent for sampling post-race."
+      }
+    ],
     "trial_note": null
   },
   "K523": {
@@ -3025,8 +3101,8 @@
         "sp": 14.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.99,
+        "final_section_rank": 10,
         "field_size": 12,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -3558,8 +3634,8 @@
         "sp": 25.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.29,
+        "final_section_rank": 8,
         "field_size": 8,
         "incident_flags": [
           {
@@ -3782,8 +3858,8 @@
         "sp": 9.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.97,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -3896,8 +3972,8 @@
         "sp": 9.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.97,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -4310,7 +4386,41 @@
   "BLUE BARON": {
     "horse_name": "BLUE BARON",
     "horse_code": "J448",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 5",
+        "barrier": 6,
+        "finish_pos": 9,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "wide_no_cover",
+            "severity": 3,
+            "marker": "final_400m",
+            "snippet": "Raced wide and without cover for the majority of the event.  A Badel reported that given his mount was required to do a ",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Raced wide and without cover for the majority of the event.  A Badel reported that given his mount was required to do a significant amount of work in the early stages to take up a forward position as instructed, it failed to run on in the Home Straight.  Trainer Y S Tsui confirmed the instructions and advised that it would be his intention to place BLUE BARON in a race of a shorter distance at its next start and to be ridden  more conservatively.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (04/10/26 ST / AWT 1650m): Fin 14 (LBW 19-1/4) | RunPos: 3 3 5 14"
+      }
+    ],
     "trial_note": null
   },
   "J448": {
@@ -4477,8 +4587,8 @@
         "sp": 66.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.79,
+        "final_section_rank": 9,
         "field_size": 12,
         "incident_flags": [
           {
@@ -4722,7 +4832,41 @@
   "BRIGHT MORTAR": {
     "horse_name": "BRIGHT MORTAR",
     "horse_code": "K333",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-04",
+        "race_id": "2026-07-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "AWT",
+        "going": "WET FAST",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.4,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Slow to begin.  Sent for sampling post-race.",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Slow to begin.  Sent for sampling post-race."
+      }
+    ],
     "trial_note": null
   },
   "K333": {
@@ -6320,8 +6464,8 @@
         "sp": 38.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.42,
+        "final_section_rank": 3,
         "field_size": 14,
         "incident_flags": [
           {
@@ -6591,8 +6735,8 @@
         "sp": 59.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.39,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -6798,8 +6942,8 @@
         "sp": 70.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.4,
+        "final_section_rank": 13,
         "field_size": 14,
         "incident_flags": [
           {
@@ -7063,7 +7207,7 @@
         "sp": 24.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.22,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [],
@@ -7223,8 +7367,8 @@
         "sp": 15.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.65,
+        "final_section_rank": 10,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -7317,8 +7461,8 @@
         "sp": 8.3,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.75,
+        "final_section_rank": 7,
         "field_size": 12,
         "incident_flags": [
           {
@@ -7390,8 +7534,8 @@
         "sp": 8.3,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.75,
+        "final_section_rank": 7,
         "field_size": 12,
         "incident_flags": [
           {
@@ -7606,8 +7750,8 @@
         "sp": 31.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.63,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -7764,15 +7908,15 @@
         "sp": 22.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 24.56,
+        "final_section_rank": 13,
         "field_size": 14,
         "incident_flags": [
           {
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Last Run (01/10/26 ST / Turf / \"A\" 1800m): Fin 13 (LBW 14-1/2) | RunPos: 2 4 4 4 13 05/02/2026: Lame right hind. Withdra",
+            "snippet": "H T Mo stated that he was of the opinion his mount failed to run out the 1800 Metres of today’s event.  A veterinary ins",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -7780,7 +7924,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Last Run (01/10/26 ST / Turf / \"A\" 1800m): Fin 13 (LBW 14-1/2) | RunPos: 2 4 4 4 13 05/02/2026: Lame right hind. Withdrawn from racing. (Passed: 07/05/2026)"
+        "steward_comment": "H T Mo stated that he was of the opinion his mount failed to run out the 1800 Metres of today’s event.  A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea.  Before being allowed to race again, CIRCUIT CENTURY will be subjected to an official veterinary examination. Last Run (01/10/26 ST / Turf / \"A\" 1800m): Fin 13 (LBW 14-1/2) | RunPos: 2 4 4 4 13 05/02/2026: Lame right hind. Withdrawn from racing. (Passed: 07/05/2026)"
       }
     ],
     "trial_note": null
@@ -8018,14 +8162,23 @@
         "sp": 27.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.63,
+        "final_section_rank": 3,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Slow to begin.  Near the 600 Metres got unbalanced when being restrained off the heels of ALL ARE MINE.",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "Slow to begin.  Near the 600 Metres got unbalanced when being restrained off the heels of ALL ARE MINE."
       }
     ],
     "trial_note": null
@@ -8079,8 +8232,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.2,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [
           {
@@ -8326,8 +8479,8 @@
         "sp": 24.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.99,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [
           {
@@ -8520,8 +8673,8 @@
         "sp": 2.2,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.75,
+        "final_section_rank": 2,
         "field_size": 8,
         "incident_flags": [
           {
@@ -9667,8 +9820,8 @@
         "sp": 5.6,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.14,
+        "final_section_rank": 5,
         "field_size": 8,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -10041,7 +10194,41 @@
   "DASHING PEACH": {
     "horse_name": "DASHING PEACH",
     "horse_code": "L066",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Bumped at the start.  The performance of DASHING PEACH, which finished tailed out, was considered unacceptable.  Before ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Bumped at the start.  The performance of DASHING PEACH, which finished tailed out, was considered unacceptable.  Before being allowed to race again, DASHING PEACH will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "L066": {
@@ -10053,7 +10240,41 @@
   "DAY DAY VICTORY": {
     "horse_name": "DAY DAY VICTORY",
     "horse_code": "J423",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-04",
+        "race_id": "2026-07-04_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "WET FAST",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 7.083333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Withdrawn on 26.9.26 by order of the Stewards acting on veterinary advice (lame left hind) and replaced by Standby Decla",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Withdrawn on 26.9.26 by order of the Stewards acting on veterinary advice (lame left hind) and replaced by Standby Declared Starter RAGING WARRIOR.  Before being allowed to race again, DAY DAY VICTORY will be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "J423": {
@@ -10246,8 +10467,8 @@
         "sp": 66.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.9,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -10523,8 +10744,8 @@
         "sp": 9.4,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.59,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [
           {
@@ -11048,8 +11269,8 @@
         "sp": 116.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.99,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [
           {
@@ -11238,8 +11459,8 @@
         "sp": 5.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.78,
+        "final_section_rank": 8,
         "field_size": 12,
         "incident_flags": [
           {
@@ -11319,8 +11540,8 @@
         "sp": 5.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.78,
+        "final_section_rank": 8,
         "field_size": 12,
         "incident_flags": [
           {
@@ -11393,8 +11614,8 @@
         "sp": 50.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.02,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -11487,8 +11708,8 @@
         "sp": 19.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 24.82,
+        "final_section_rank": 14,
         "field_size": 14,
         "incident_flags": [
           {
@@ -11623,8 +11844,8 @@
         "sp": 73.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.02,
+        "final_section_rank": 11,
         "field_size": 12,
         "incident_flags": [
           {
@@ -12223,7 +12444,49 @@
   "ETALON OR": {
     "horse_name": "ETALON OR",
     "horse_code": "J273",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-01-01",
+        "race_id": "2026-01-01_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 3,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.083333333333334,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Raced wide and without cover until near the 600 Metres. <28/9/2026 Additional Veterinary Report>The Veterinary Surgeon r",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
+            "flag": "wide_no_cover",
+            "severity": 3,
+            "marker": "mid",
+            "snippet": "Raced wide and without cover until near the 600 Metres. <28/9/2026 Additional Veterinary Report>The Veterinary Surgeon r",
+            "vet_blocked": true,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Raced wide and without cover until near the 600 Metres. <28/9/2026 Additional Veterinary Report>The Veterinary Surgeon reported that ETALON OR had a right front tendon injury on the day after racing. Before being allowed to race again, ETALON OR will be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "J273": {
@@ -12376,8 +12639,8 @@
         "sp": 32.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.14,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -12554,14 +12817,14 @@
         "sp": 81.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.56,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages."
       }
     ],
     "trial_note": null
@@ -12615,8 +12878,8 @@
         "sp": 69.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.11,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -13328,8 +13591,8 @@
         "sp": 30.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.36,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -13417,8 +13680,8 @@
         "sp": 30.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.36,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -13633,8 +13896,8 @@
         "sp": 94.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.71,
+        "final_section_rank": 10,
         "field_size": 14,
         "incident_flags": [
           {
@@ -13889,7 +14152,41 @@
   "FLYING LUCK": {
     "horse_name": "FLYING LUCK",
     "horse_code": "J339",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Jumped awkwardly and lost ground.  A veterinary inspection immediately following the race did not show any significant f",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Jumped awkwardly and lost ground.  A veterinary inspection immediately following the race did not show any significant findings."
+      }
+    ],
     "trial_note": null
   },
   "J339": {
@@ -14263,8 +14560,8 @@
         "sp": 44.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.16,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -14324,8 +14621,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.76,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -14713,8 +15010,8 @@
         "sp": 22.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.97,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -15065,7 +15362,41 @@
   "GALAXY PATCH": {
     "horse_name": "GALAXY PATCH",
     "horse_code": "H399",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Jumped awkwardly.  Sent for sampling post-race.",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Jumped awkwardly.  Sent for sampling post-race."
+      }
+    ],
     "trial_note": null
   },
   "H399": {
@@ -15313,7 +15644,41 @@
   "GENERAL REDWOOD": {
     "horse_name": "GENERAL REDWOOD",
     "horse_code": "L102",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-04",
+        "race_id": "2026-10-04_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 5.111111111111111,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "wide_no_cover",
+            "severity": 3,
+            "marker": "mid",
+            "snippet": "Raced wide and without cover for the majority of the event.  A veterinary inspection immediately following the race did ",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Raced wide and without cover for the majority of the event.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (04/10/26 ST / AWT 1650m): Fin 13 (LBW 16-1/2) | RunPos: 2 3 6 13"
+      }
+    ],
     "trial_note": null
   },
   "L102": {
@@ -16061,7 +16426,49 @@
   "GLACIATED": {
     "horse_name": "GLACIATED",
     "horse_code": "K272",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Raced wide and without cover for the majority of the event.  C Y Ho was fined the sum of $5,000 for returning to scale i",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
+            "flag": "wide_no_cover",
+            "severity": 3,
+            "marker": "mid",
+            "snippet": "Raced wide and without cover for the majority of the event.  C Y Ho was fined the sum of $5,000 for returning to scale i",
+            "vet_blocked": true,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Raced wide and without cover for the majority of the event.  C Y Ho was fined the sum of $5,000 for returning to scale in excess of 2 lbs overweight.  A veterinary inspection immediately following the race found that horse to have bled from both nostrils.  Before being allowed to race again, GLACIATED will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "K272": {
@@ -16343,8 +16750,8 @@
         "sp": 15.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.45,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -16836,8 +17243,8 @@
         "sp": 48.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 24.6,
+        "final_section_rank": 14,
         "field_size": 14,
         "incident_flags": [
           {
@@ -17609,7 +18016,41 @@
   "GRATIFIDE": {
     "horse_name": "GRATIFIDE",
     "horse_code": "K550",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-15",
+        "race_id": "2026-07-15_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.428571428571429,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "final_400m",
+            "snippet": "R Kingscote reported that he was instructed to go forward.  He said after obtaining a position outside the lead GRATIFID",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "R Kingscote reported that he was instructed to go forward.  He said after obtaining a position outside the lead GRATIFIDE came under pressure on the Home Turn before giving ground in the Home Straight.  A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm.  Before being allowed to race again, GRATIFIDE will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "K550": {
@@ -17679,7 +18120,41 @@
   "GREEN AUTUMN": {
     "horse_name": "GREEN AUTUMN",
     "horse_code": "L352",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Jumped awkwardly.",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Jumped awkwardly."
+      }
+    ],
     "trial_note": null
   },
   "L352": {
@@ -17893,8 +18368,8 @@
         "sp": 56.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.84,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -18202,7 +18677,41 @@
   "HANDSOME BLOND": {
     "horse_name": "HANDSOME BLOND",
     "horse_code": "K241",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Jumped awkwardly.  In the early stages got its head up when being steadied to obtain cover.  A veterinary inspection imm",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Jumped awkwardly.  In the early stages got its head up when being steadied to obtain cover.  A veterinary inspection immediately following the race did not show any significant findings."
+      }
+    ],
     "trial_note": null
   },
   "K241": {
@@ -18230,8 +18739,8 @@
         "sp": 9.5,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.86,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -18863,7 +19372,41 @@
   "HARMONY FIRE": {
     "horse_name": "HARMONY FIRE",
     "horse_code": "E175",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-08",
+        "race_id": "2026-07-08_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 3,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 5.416666666666667,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Shifted in shortly after the start and was bumped.  The Veterinary Surgeon reported that HARMONY FIRE was lame in its ri",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Shifted in shortly after the start and was bumped.  The Veterinary Surgeon reported that HARMONY FIRE was lame in its right front leg after the race.  Before being allowed to race again, HARMONY FIRE will be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "E175": {
@@ -19098,8 +19641,8 @@
         "sp": 59.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.57,
+        "final_section_rank": 14,
         "field_size": 14,
         "incident_flags": [
           {
@@ -19244,7 +19787,41 @@
   "HERBAL STAR": {
     "horse_name": "HERBAL STAR",
     "horse_code": "L053",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Withdrawn on 26.9.26 by order of the Stewards acting on veterinary advice (lame left hind) and replaced by Standby Decla",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Withdrawn on 26.9.26 by order of the Stewards acting on veterinary advice (lame left hind) and replaced by Standby Declared Starter ENDURANCE EXPRESS.  Before being allowed to race again, HERBAL STAR will be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "L053": {
@@ -19346,8 +19923,8 @@
         "sp": 52.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.32,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -19827,7 +20404,41 @@
   "HUGE WAVE": {
     "horse_name": "HUGE WAVE",
     "horse_code": "J197",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-12",
+        "race_id": "2026-07-12_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 4,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 7.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Was withdrawn at the Start by order of the Stewards acting on veterinary advice after it was found to be lame in its rig",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Was withdrawn at the Start by order of the Stewards acting on veterinary advice after it was found to be lame in its right front leg.  Before being allowed to race again, HUGE WAVE will be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "J197": {
@@ -20029,8 +20640,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.53,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [
           {
@@ -20400,8 +21011,8 @@
         "sp": 20.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.17,
+        "final_section_rank": 2,
         "field_size": 12,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -20479,8 +21090,8 @@
         "sp": 20.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.17,
+        "final_section_rank": 2,
         "field_size": 12,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -21160,8 +21771,8 @@
         "sp": 2.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.42,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -21233,8 +21844,8 @@
         "sp": 2.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.42,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -21326,8 +21937,8 @@
         "sp": 21.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.96,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -21514,8 +22125,8 @@
         "sp": 82.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.73,
+        "final_section_rank": 10,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -22170,8 +22781,8 @@
         "sp": 4.7,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.99,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [
           {
@@ -22234,8 +22845,8 @@
         "sp": 4.7,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.99,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [
           {
@@ -22307,7 +22918,7 @@
         "sp": 3.4,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 21.53,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [
@@ -22716,7 +23327,41 @@
   "KEEFY": {
     "horse_name": "KEEFY",
     "horse_code": "G306",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-06-24",
+        "race_id": "2026-06-24_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 5.916666666666667,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "final_400m",
+            "snippet": "When questioned regarding the tactics adopted today, particularly the middle stages of the race, Apprentice H Y Yuen exp",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "When questioned regarding the tactics adopted today, particularly the middle stages of the race, Apprentice H Y Yuen explained that her instructions were to be positive in the early stages and had achieved a position in the lead and on the fence when negotiating the first turn near the 1500 Metres.  She added from that point she was endeavouring to steady her mount to hold the lead, however, at this point STORMI had improved to her outside and as a result KEEFY continued to over-race after being placed under pressure early and for this reason in the Back Straight she was unable to restrain KEEFY any slower.  A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea.  Before being allowed to race again, KEEFY will be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "G306": {
@@ -22913,8 +23558,8 @@
         "sp": 66.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.14,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [
           {
@@ -23968,8 +24613,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.41,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [
           {
@@ -24497,8 +25142,8 @@
         "sp": 90.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.72,
+        "final_section_rank": 10,
         "field_size": 14,
         "incident_flags": [
           {
@@ -24780,8 +25425,8 @@
         "sp": 3.7,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.18,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [
           {
@@ -25127,7 +25772,49 @@
   "LITTLE PARADISE": {
     "horse_name": "LITTLE PARADISE",
     "horse_code": "K246",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "final_400m",
+            "snippet": "Near the 1200 Metres was steadied when crowded by SOLEIL FIGHTER (H Bentley) which shifted in before being corrected.  H",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
+            "flag": "traffic_trouble",
+            "severity": 2,
+            "marker": "final_400m",
+            "snippet": "Near the 1200 Metres was steadied when crowded by SOLEIL FIGHTER (H Bentley) which shifted in before being corrected.  H",
+            "vet_blocked": true,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 2,
+        "gate_speed_proven": false,
+        "steward_comment": "Near the 1200 Metres was steadied when crowded by SOLEIL FIGHTER (H Bentley) which shifted in before being corrected.  H Bentley was advised to exercise more care.  Approaching the 400 Metres was hampered when bumped by LUCKY WITH YOU which shifted out to improve.  Near the 100 Metres was hampered when momentarily crowded by INVINCIBLE IBIS which shifted in before being corrected by its rider.  Z Purton stated that his mount responded only fairly to his riding in the Home Straight but could offer no excuse for the performance.  A veterinary inspection immediately following the race did not show any significant findings.  Sent for sampling post-race."
+      }
+    ],
     "trial_note": null
   },
   "K246": {
@@ -25779,8 +26466,8 @@
         "sp": 118.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.42,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -25836,7 +26523,41 @@
   "LUCKY CANDY": {
     "horse_name": "LUCKY CANDY",
     "horse_code": "L041",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-01",
+        "race_id": "2026-07-01_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 2,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.333333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "traffic_trouble",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Shifted in at the start and made contact with CELESTIAL HERO and as a result got unbalanced and shifted back out, making",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 1,
+        "gate_speed_proven": false,
+        "steward_comment": "Shifted in at the start and made contact with CELESTIAL HERO and as a result got unbalanced and shifted back out, making contact with INVINCIBLE STEED.  Near the 850 Metres was checked to avoid the heels of LAHORE which shifted out when being taken out slightly by ALPHA STRIKE (J Orman).  J Orman was reprimanded for permitting his mount to shift out when not fully clear.  However, in arriving at this decision the Stewards took into account the racing manners of LAHORE in this incident.  A veterinary inspection immediately following the race did not show any significant findings."
+      }
+    ],
     "trial_note": null
   },
   "L041": {
@@ -26574,8 +27295,8 @@
         "sp": 4.6,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.18,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [
           {
@@ -26733,8 +27454,8 @@
         "sp": 11.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.72,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -27293,8 +28014,8 @@
         "sp": 95.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.49,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -27560,8 +28281,8 @@
         "sp": 97.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 24.37,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [
           {
@@ -27666,8 +28387,8 @@
         "sp": 97.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 24.37,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [
           {
@@ -27932,8 +28653,8 @@
         "sp": 31.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.62,
+        "final_section_rank": 14,
         "field_size": 14,
         "incident_flags": [
           {
@@ -28035,8 +28756,8 @@
         "sp": 2.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.36,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -29078,8 +29799,8 @@
         "sp": 13.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.57,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [
           {
@@ -29481,8 +30202,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.2,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -29787,7 +30508,7 @@
         "sp": 38.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.26,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [
@@ -30520,8 +31241,8 @@
         "sp": 18.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.82,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [
           {
@@ -30689,8 +31410,8 @@
         "sp": 27.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.07,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -30750,8 +31471,8 @@
         "sp": 27.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.07,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -31265,8 +31986,8 @@
         "sp": 51.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.98,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -31359,8 +32080,8 @@
         "sp": 21.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.47,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [
           {
@@ -32265,14 +32986,14 @@
         "sp": 76.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.53,
+        "final_section_rank": 13,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "After the 300 Metres failed to obtain clear running until near the 100 Metres.  A veterinary inspection immediately following the race did not show any significant findings."
       }
     ],
     "trial_note": null
@@ -32573,7 +33294,41 @@
   "PERIDOT": {
     "horse_name": "PERIDOT",
     "horse_code": "K148",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-04",
+        "race_id": "2026-07-04_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.333333333333334,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "traffic_trouble",
+            "severity": 3,
+            "marker": "final_400m",
+            "snippet": "Near the 150 Metres was checked when racing between LIGHTNING ACE which shifted out slightly and COLOURFUL WINNER (M L Y",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 3,
+        "gate_speed_proven": false,
+        "steward_comment": "Near the 150 Metres was checked when racing between LIGHTNING ACE which shifted out slightly and COLOURFUL WINNER (M L Yeung) which shifted in.  M L Yeung was severely reprimanded for failing to make an effort to keep his mount on a straight course.  In arriving at this decision the Stewards took into consideration there was some contributing factors with LIGHTNING ACE shifting out.  J Orman reported that his instructions were to settle in a midfield position, however, with a change of gear and a more favourable barrier draw he was able to take up a more forward position than expected.  A veterinary inspection immediately following the race did not show any significant findings."
+      }
+    ],
     "trial_note": null
   },
   "K148": {
@@ -32601,8 +33356,8 @@
         "sp": 7.1,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.42,
+        "final_section_rank": 3,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -33335,8 +34090,8 @@
         "sp": 26.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.49,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [
           {
@@ -33615,8 +34370,8 @@
         "sp": 18.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.41,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -33771,8 +34526,8 @@
         "sp": 8.5,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.05,
+        "final_section_rank": 3,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -34134,8 +34889,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.52,
+        "final_section_rank": 10,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -34400,8 +35155,8 @@
         "sp": 16.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.58,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [
           {
@@ -34678,8 +35433,8 @@
         "sp": 49.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.86,
+        "final_section_rank": 13,
         "field_size": 14,
         "incident_flags": [
           {
@@ -34914,8 +35669,8 @@
         "sp": 11.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.88,
+        "final_section_rank": 3,
         "field_size": 8,
         "incident_flags": [
           {
@@ -34984,8 +35739,8 @@
         "sp": 11.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.88,
+        "final_section_rank": 3,
         "field_size": 8,
         "incident_flags": [
           {
@@ -35218,7 +35973,41 @@
   "RAPID PHANTOM": {
     "horse_name": "RAPID PHANTOM",
     "horse_code": "L204",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "traffic_trouble",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Shifted out on jumping and made contact with COMET RADIANCE.  Hung out under pressure between the 300 Metres and the 100",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 2,
+        "gate_speed_proven": false,
+        "steward_comment": "Shifted out on jumping and made contact with COMET RADIANCE.  Hung out under pressure between the 300 Metres and the 100 Metres.  Apprentice P N Wong (ZOUPER FELLOW) pleaded guilty to a charge of careless riding [Rule 100(1)] in that near the 50 Metres whilst riding her mount out, she allowed ZOUPER FELLOW to shift in when not sufficiently clear of RAPID PHANTOM, contributing to RAPID PHANTOM having to be checked.  Apprentice Wong was suspended from riding in races for one Hong Kong raceday to be conducted on Wednesday, 14 October 2026 at Happy Valley.  In assessing penalty, the Stewards determined the carelessness grade 2 and the consequences grade 2 and also considered her very good race riding record.  C L Chau (FLOWING RICHES) was found guilty of a charge of careless riding [Rule 100(1)] in that near the 50 Metres he allowed his mount to shift out when not sufficiently clear of RAPID PHANTOM, contributing to RAPID PHANTOM having to be checked.  C L Chau was suspended from riding in races for one Hong Kong raceday to be conducted on Wednesday, 7 October 2026 at Happy Valley.  In assessing penalty, the Stewards determined the carelessness grade 2 and the consequences grade 2 and also considered his good race riding record.  In considering both penalties, the Stewards took into account the contribution due to the shift from both horses."
+      }
+    ],
     "trial_note": null
   },
   "L204": {
@@ -35230,7 +36019,41 @@
   "RATTAN GALAXY": {
     "horse_name": "RATTAN GALAXY",
     "horse_code": "K143",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-12",
+        "race_id": "2026-07-12_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 7.333333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "L Ferraris reported that his mount was under pressure from the 600 Metres.  A veterinary inspection immediately followin",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "L Ferraris reported that his mount was under pressure from the 600 Metres.  A veterinary inspection immediately following the race did not show any significant findings.  The performance of RATTAN GALAXY, a last start winner, was considered disappointing.  Before being allowed to race again, RATTAN GALAXY will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "K143": {
@@ -35530,8 +36353,8 @@
         "sp": 39.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.07,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [
           {
@@ -35642,8 +36465,8 @@
         "sp": 39.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.07,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [
           {
@@ -35817,7 +36640,7 @@
         "sp": 44.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.37,
         "final_section_rank": 4,
         "field_size": 12,
         "incident_flags": [],
@@ -35878,8 +36701,8 @@
         "sp": 16.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.16,
+        "final_section_rank": 10,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -36000,8 +36823,8 @@
         "sp": 81.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.26,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [
           {
@@ -36285,8 +37108,8 @@
         "sp": 9.3,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.69,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -36330,7 +37153,41 @@
   "ROMANTIC GLADIATOR": {
     "horse_name": "ROMANTIC GLADIATOR",
     "horse_code": "L240",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-06-24",
+        "race_id": "2026-06-24_LAST",
+        "venue": "Happy Valley",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 2,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 4.333333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "final_400m",
+            "snippet": "E C W Wong stated that his mount failed to travel throughout the event and did not respond to his riding in the Home Str",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "E C W Wong stated that his mount failed to travel throughout the event and did not respond to his riding in the Home Straight but he could offer no excuse for the performance.  A veterinary inspection immediately following the race did not show any significant findings."
+      }
+    ],
     "trial_note": null
   },
   "L240": {
@@ -36391,7 +37248,7 @@
         "sp": 31.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.24,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [
@@ -37049,7 +37906,49 @@
   "RYUI KOKOROE": {
     "horse_name": "RYUI KOKOROE",
     "horse_code": "L120",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-12",
+        "race_id": "2026-07-12_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 10.454545454545457,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Near the 1100 Metres was eased when momentarily crowded by SOO KOO which shifted in and away from NAVAS G.  Approaching ",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
+            "flag": "traffic_trouble",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Near the 1100 Metres was eased when momentarily crowded by SOO KOO which shifted in and away from NAVAS G.  Approaching ",
+            "vet_blocked": true,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 2,
+        "gate_speed_proven": false,
+        "steward_comment": "Near the 1100 Metres was eased when momentarily crowded by SOO KOO which shifted in and away from NAVAS G.  Approaching the 300 Metres had difficulty obtaining clear running when improving between JUST FOLLOW ME and GLACIATED.  Near the 100 Metres RYUI KOKOROE, which was laying in, was eased to avoid JUST FOLLOW ME which shifted out slightly.  The Veterinary Surgeon reported that RYUI KOKOROE had bled from both nostrils after the race.  Before being allowed to race again, RYUI KOKOROE will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "L120": {
@@ -37320,8 +38219,8 @@
         "sp": 117.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.68,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [
           {
@@ -37522,7 +38421,49 @@
   "SEA DIAMOND": {
     "horse_name": "SEA DIAMOND",
     "horse_code": "L072",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-06-21",
+        "race_id": "2026-06-21_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 7.833333333333333,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Raced very wide and without cover for the majority of the event.  A veterinary inspection immediately following the race",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
+            "flag": "wide_no_cover",
+            "severity": 3,
+            "marker": "mid",
+            "snippet": "Raced very wide and without cover for the majority of the event.  A veterinary inspection immediately following the race",
+            "vet_blocked": true,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Raced very wide and without cover for the majority of the event.  A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea.  The performance of SEA DIAMOND, which finished tailed out, was considered unacceptable.  Before being allowed to race again, SEA DIAMOND will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "L072": {
@@ -37546,7 +38487,49 @@
   "SERANGOON": {
     "horse_name": "SERANGOON",
     "horse_code": "H296",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-15",
+        "race_id": "2026-07-15_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 7,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 11.416666666666666,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Slow to begin.  A veterinary inspection immediately following the race found that horse to be lame in its left front leg",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Slow to begin.  A veterinary inspection immediately following the race found that horse to be lame in its left front leg",
+            "vet_blocked": true,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Slow to begin.  A veterinary inspection immediately following the race found that horse to be lame in its left front leg.  The performance of SERANGOON was considered unacceptable.  Before being allowed to race again, SERANGOON will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "H296": {
@@ -37694,8 +38677,8 @@
         "sp": 37.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.82,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -38586,8 +39569,8 @@
         "sp": 8.1,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.97,
+        "final_section_rank": 1,
         "field_size": 12,
         "incident_flags": [
           {
@@ -38745,7 +39728,41 @@
   "SKY TRUST": {
     "horse_name": "SKY TRUST",
     "horse_code": "J161",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Bumped shortly after the start.  A veterinary inspection immediately following the race which included an endoscopic exa",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Bumped shortly after the start.  A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea and also found it to be a \"roarer” which had previously been reported.  Before being allowed to race again, SKY TRUST will be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "J161": {
@@ -39399,8 +40416,8 @@
         "sp": 1.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.12,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -39453,7 +40470,41 @@
   "SOLID STATE": {
     "horse_name": "SOLID STATE",
     "horse_code": "L411",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-04",
+        "race_id": "2026-07-04_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD TO YIELDING",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 1,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 1.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "traffic_trouble",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Near the 800 Metres was steadied when crowded momentarily by GOLD PATCH which shifted in before being straightened by  i",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 2,
+        "gate_speed_proven": false,
+        "steward_comment": "Near the 800 Metres was steadied when crowded momentarily by GOLD PATCH which shifted in before being straightened by  its rider.  Near the 400 Metres got unbalanced when racing in restricted room between PACKING GLORY and GOLD PATCH which shifted out slightly.  Sent for sampling post-race."
+      }
+    ],
     "trial_note": null
   },
   "L411": {
@@ -39631,8 +40682,8 @@
         "sp": 158.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.79,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -39865,7 +40916,7 @@
         "sp": 109.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.69,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [
@@ -40108,8 +41159,8 @@
         "sp": 4.1,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.38,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [
           {
@@ -40189,8 +41240,8 @@
         "sp": 4.1,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.38,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [
           {
@@ -40475,8 +41526,8 @@
         "sp": 3.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.87,
+        "final_section_rank": 10,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -40578,14 +41629,14 @@
         "sp": 3.5,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.06,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "Whilst obliged to race wide throughout the event, Z Purton could offer no other explanation for the horse’s performance.  Trainer K W Lui stated that the horse was not suited today by being caught wide and the pace of the race being run outside of standard time in the early stages.  A veterinary inspection immediately following the race did not show any significant findings."
       }
     ],
     "trial_note": null
@@ -40742,8 +41793,8 @@
         "sp": 8.3,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.18,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -40958,7 +42009,41 @@
   "STAR OF HEARTS": {
     "horse_name": "STAR OF HEARTS",
     "horse_code": "L271",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-06-13",
+        "race_id": "2026-06-13_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 5,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Jumped only fairly.  Near the 500 Metres was steadied when positioned tight to the inside of YOUNG ARROW.",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Jumped only fairly.  Near the 500 Metres was steadied when positioned tight to the inside of YOUNG ARROW."
+      }
+    ],
     "trial_note": null
   },
   "L271": {
@@ -41027,8 +42112,8 @@
         "sp": 11.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.64,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [
           {
@@ -41601,7 +42686,49 @@
   "STORMY KNIGHT": {
     "horse_name": "STORMY KNIGHT",
     "horse_code": "L062",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-09-09",
+        "race_id": "2026-09-09_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 10.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "wide_no_cover",
+            "severity": 3,
+            "marker": "start",
+            "snippet": "Jumped only fairly.  L Ferraris stated that his mount was disadvantaged by racing wide and without cover for the majorit",
+            "vet_blocked": false,
+            "is_victim": true
+          },
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Jumped only fairly.  L Ferraris stated that his mount was disadvantaged by racing wide and without cover for the majorit",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Jumped only fairly.  L Ferraris stated that his mount was disadvantaged by racing wide and without cover for the majority of the event.  A veterinary inspection immediately following the race did not show any significant findings."
+      }
+    ],
     "trial_note": null
   },
   "L062": {
@@ -41926,8 +43053,8 @@
         "sp": 6.6,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.81,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -42082,8 +43209,8 @@
         "sp": 5.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.36,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -42327,7 +43454,7 @@
         "sp": 9.4,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.44,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [
@@ -43007,8 +44134,8 @@
         "sp": 10.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.21,
+        "final_section_rank": 3,
         "field_size": 14,
         "incident_flags": [
           {
@@ -44346,8 +45473,8 @@
         "sp": 71.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.51,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -44440,8 +45567,8 @@
         "sp": 15.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.52,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -44783,8 +45910,8 @@
         "sp": 81.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.19,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -45145,8 +46272,8 @@
         "sp": 15.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.84,
+        "final_section_rank": 7,
         "field_size": 8,
         "incident_flags": [
           {
@@ -45314,8 +46441,8 @@
         "sp": 6.5,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.45,
+        "final_section_rank": 5,
         "field_size": 12,
         "incident_flags": [
           {
@@ -45393,8 +46520,8 @@
         "sp": 6.5,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.45,
+        "final_section_rank": 5,
         "field_size": 12,
         "incident_flags": [
           {
@@ -45672,8 +46799,8 @@
         "sp": 109.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.66,
+        "final_section_rank": 14,
         "field_size": 14,
         "incident_flags": [
           {
@@ -46410,8 +47537,8 @@
         "sp": 30.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.6,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -46465,8 +47592,8 @@
         "sp": 30.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.6,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -46723,8 +47850,8 @@
         "sp": 3.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.32,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -47583,8 +48710,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.59,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [
           {
@@ -47656,8 +48783,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.59,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [
           {
@@ -48209,7 +49336,49 @@
   "VOYAGE HORIZON": {
     "horse_name": "VOYAGE HORIZON",
     "horse_code": "L398",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "nan_LAST",
+        "venue": "nan",
+        "course_rail": "A",
+        "surface": "NAN",
+        "going": "nan",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 6.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Raced wide and without cover for the majority of the event.  The performance of VOYAGE HORIZON, which finished tailed ou",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
+            "flag": "wide_no_cover",
+            "severity": 3,
+            "marker": "mid",
+            "snippet": "Raced wide and without cover for the majority of the event.  The performance of VOYAGE HORIZON, which finished tailed ou",
+            "vet_blocked": true,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Raced wide and without cover for the majority of the event.  The performance of VOYAGE HORIZON, which finished tailed out, was considered unacceptable.  Before being allowed to race again, VOYAGE HORIZON will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "L398": {
@@ -48789,8 +49958,8 @@
         "sp": 40.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.9,
+        "final_section_rank": 3,
         "field_size": 14,
         "incident_flags": [
           {
@@ -48885,7 +50054,41 @@
   "WINNING GOLD": {
     "horse_name": "WINNING GOLD",
     "horse_code": "H461",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-12",
+        "race_id": "2026-07-12_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.5,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Withdrawn on 26.9.26 by order of the Stewards acting on veterinary advice (lame left fore) and replaced by Standby Decla",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Withdrawn on 26.9.26 by order of the Stewards acting on veterinary advice (lame left fore) and replaced by Standby Declared Starter VOYAGE HORIZON.  Before being allowed to race again, WINNING GOLD will be subjected to an official veterinary examination."
+      }
+    ],
     "trial_note": null
   },
   "H461": {
@@ -49637,8 +50840,8 @@
         "sp": 14.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.2,
+        "final_section_rank": 3,
         "field_size": 14,
         "incident_flags": [
           {
@@ -49757,8 +50960,8 @@
         "sp": 13.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.73,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [
           {
@@ -50699,7 +51902,7 @@
         "sp": 10.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.02,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [
@@ -50802,8 +52005,8 @@
         "sp": 10.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.2,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -50878,8 +52081,8 @@
         "sp": 2.1,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 24.62,
+        "final_section_rank": 14,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -50939,14 +52142,14 @@
         "sp": 4.6,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.27,
+        "final_section_rank": 1,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "After passing the 400 Metres was shifted out several horses to obtain clear running inside the 250 Metres and in doing so was not sufficiently clear of SETANTA which was steadied.  A Badel was reprimanded and advised to exercise more care when shifting ground.  Sent for sampling post-race."
       }
     ],
     "trial_note": null
@@ -51000,8 +52203,8 @@
         "sp": 13.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.21,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [
           {
@@ -51112,8 +52315,8 @@
         "sp": 60.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.69,
+        "final_section_rank": 14,
         "field_size": 14,
         "incident_flags": [
           {
@@ -51188,14 +52391,14 @@
         "sp": 3.7,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.46,
+        "final_section_rank": 10,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "For the major part of the Home Straight failed to obtain clear running and over the concluding stages was not able to be tested to the finish of the race.  A veterinary inspection immediately following the race did not show any significant findings."
       }
     ],
     "trial_note": null
@@ -51249,14 +52452,23 @@
         "sp": 4.8,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 22.13,
         "final_section_rank": 4,
         "field_size": 8,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "Jumped awkwardly.  Sent for sampling post-race.",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "Jumped awkwardly.  Sent for sampling post-race."
       }
     ],
     "trial_note": null
@@ -51310,8 +52522,8 @@
         "sp": 6.6,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.46,
+        "final_section_rank": 1,
         "field_size": 8,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -51371,8 +52583,8 @@
         "sp": 29.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.3,
+        "final_section_rank": 6,
         "field_size": 8,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -51473,8 +52685,8 @@
         "sp": 108.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.86,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [
           {
@@ -51551,14 +52763,23 @@
         "sp": 5.1,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.44,
+        "final_section_rank": 13,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "final_400m",
+            "snippet": "Apprentice H Y Yuen reported that she was instructed to position her mount with cover just off the speed but could give ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "Apprentice H Y Yuen reported that she was instructed to position her mount with cover just off the speed but could give no explanation for its failure to run on in the Home Straight.  A veterinary inspection immediately following the race did not show any significant findings.  The performance of VOYAGE BOSS was considered disappointing as compared to its previous race starts.  Before being allowed to race again, VOYAGE BOSS will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination. <2/10/2026 Additional Veterinary Reports> VOYAGE BOSS, which performed disappointingly, was examined by the Veterinary Officer who said at that time there were no significant findings. VOYAGE BOSS was again examined by the Veterinary Officer at the stables of Trainer F C Lor this morning.  He said at this time he noted the horse to be lame in its right front leg. As previously advised, VOYAGE BOSS will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination before being allowed to race again. Apprentice H Y Yuen was reprimanded in relation to using her whip on a horse which was clearly out of contention."
       }
     ],
     "trial_note": null
@@ -51661,8 +52882,8 @@
         "sp": 24.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.33,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -51780,8 +53001,8 @@
         "sp": 162.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.84,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [
           {
@@ -51883,8 +53104,8 @@
         "sp": 132.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.95,
+        "final_section_rank": 6,
         "field_size": 14,
         "incident_flags": [
           {
@@ -51959,14 +53180,14 @@
         "sp": 159.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.16,
+        "final_section_rank": 11,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "No report."
       }
     ],
     "trial_note": null
@@ -52020,14 +53241,23 @@
         "sp": 16.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.41,
+        "final_section_rank": 13,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "A veterinary inspection immediately following the race found that horse to have bled from both nostrils and to be a \"roa",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "A veterinary inspection immediately following the race found that horse to have bled from both nostrils and to be a \"roarer” which had previously been reported.  As this was the second occasion that VICTORY CHAMPION had bled, the horse is ineligible to run in any race conducted by the Club in the future."
       }
     ],
     "trial_note": null
@@ -52081,8 +53311,8 @@
         "sp": 3.4,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.97,
+        "final_section_rank": 5,
         "field_size": 14,
         "incident_flags": [
           {
@@ -52193,7 +53423,7 @@
         "sp": 17.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
+        "final_section_time": 21.96,
         "final_section_rank": 4,
         "field_size": 14,
         "incident_flags": [
@@ -52310,8 +53540,8 @@
         "sp": 33.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 21.82,
+        "final_section_rank": 3,
         "field_size": 14,
         "incident_flags": [
           {
@@ -52397,8 +53627,8 @@
         "sp": 12.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.74,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [
           {
@@ -52500,8 +53730,8 @@
         "sp": 3.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.35,
+        "final_section_rank": 3,
         "field_size": 12,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -52567,14 +53797,14 @@
         "sp": 5.9,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.69,
+        "final_section_rank": 6,
         "field_size": 12,
         "incident_flags": [],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "A Badel could not offer any excuse for the horse’s performance today."
       }
     ],
     "trial_note": null
@@ -52652,8 +53882,8 @@
         "sp": 51.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.55,
+        "final_section_rank": 12,
         "field_size": 12,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -52737,8 +53967,8 @@
         "sp": 3.8,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.19,
+        "final_section_rank": 3,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -52828,8 +54058,8 @@
         "sp": 16.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.52,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -52928,8 +54158,8 @@
         "sp": 8.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.39,
+        "final_section_rank": 7,
         "field_size": 14,
         "incident_flags": [
           {
@@ -52998,14 +54228,39 @@
         "sp": 94.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.09,
+        "final_section_rank": 14,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "traffic_trouble",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "After being crowded at the start made contact with the hindquarters of FORTUNE BOY soon after.  Raced wide and without c",
+            "vet_blocked": false,
+            "is_victim": true
+          },
+          {
+            "flag": "wide_no_cover",
+            "severity": 3,
+            "marker": "start",
+            "snippet": "After being crowded at the start made contact with the hindquarters of FORTUNE BOY soon after.  Raced wide and without c",
+            "vet_blocked": false,
+            "is_victim": true
+          },
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "After being crowded at the start made contact with the hindquarters of FORTUNE BOY soon after.  Raced wide and without c",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
         "ground_saved_score": 0.5,
-        "interference_severity": 0,
+        "interference_severity": 1,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "After being crowded at the start made contact with the hindquarters of FORTUNE BOY soon after.  Raced wide and without cover for the majority of the event."
       }
     ],
     "trial_note": null
@@ -53084,7 +54339,7 @@
         "weight_carried": 125.0,
         "early_pos": 6.0,
         "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_rank": 13,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -53183,8 +54438,8 @@
         "sp": 5.5,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.85,
+        "final_section_rank": 9,
         "field_size": 14,
         "incident_flags": [
           {
@@ -53292,8 +54547,8 @@
         "sp": 7.3,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.42,
+        "final_section_rank": 2,
         "field_size": 14,
         "incident_flags": [
           {
@@ -53386,8 +54641,8 @@
         "sp": 20.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.16,
+        "final_section_rank": 12,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -53453,8 +54708,8 @@
         "sp": 63.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 23.35,
+        "final_section_rank": 13,
         "field_size": 14,
         "incident_flags": [
           {
@@ -53548,14 +54803,23 @@
         "sp": 54.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.65,
+        "final_section_rank": 7,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Refused to proceed to the Start and subsequently delayed the start of the race.  Before being allowed to race again, MOU",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "Refused to proceed to the Start and subsequently delayed the start of the race.  Before being allowed to race again, MOUNT EVEREST will be required to undertake a parade test successfully and then be required to perform satisfactorily in a barrier trial.  Slow to begin and then shortly afterwards dipped.  A veterinary inspection immediately following the race did not show any significant findings."
       }
     ],
     "trial_note": null
@@ -53633,8 +54897,8 @@
         "sp": 28.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.45,
+        "final_section_rank": 8,
         "field_size": 14,
         "incident_flags": [],
         "ground_saved_score": 0.5,
@@ -53694,14 +54958,23 @@
         "sp": 66.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 22.51,
+        "final_section_rank": 10,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "slow_start",
+            "severity": 1,
+            "marker": "start",
+            "snippet": "Slow to begin. C Y Ho was warned in relation to using his whip on a horse which was clearly out of contention.",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "Slow to begin. C Y Ho was warned in relation to using his whip on a horse which was clearly out of contention."
       }
     ],
     "trial_note": null
@@ -53755,14 +55028,23 @@
         "sp": 79.0,
         "weight_carried": 125.0,
         "early_pos": 6.0,
-        "final_section_time": 22.8,
-        "final_section_rank": 4,
+        "final_section_time": 24.59,
+        "final_section_rank": 14,
         "field_size": 14,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "M L Yeung could offer no explanation for the horse’s performance today.  The performance of TALENTS CHAMPION was conside",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": ""
+        "steward_comment": "M L Yeung could offer no explanation for the horse’s performance today.  The performance of TALENTS CHAMPION was considered unacceptable.  Before being allowed to race again, TALENTS CHAMPION will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.  A veterinary inspection immediately following the race did not show any significant findings."
       }
     ],
     "trial_note": null

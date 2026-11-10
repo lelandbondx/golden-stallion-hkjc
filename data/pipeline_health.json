@@ -1,11 +1,11 @@
 {
   "overall_status": "ok",
-  "updated_at": "2026-11-10T22:28:18Z",
+  "updated_at": "2026-11-10T22:33:19Z",
   "components": {
     "scraper": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:28:15Z",
-      "last_success_at": "2026-11-10T22:28:15Z",
+      "last_attempt_at": "2026-11-10T22:33:17Z",
+      "last_success_at": "2026-11-10T22:33:17Z",
       "metrics": {
         "source": "live_html_racecard",
         "meeting_date": "2026-11-11",
@@ -16,18 +16,18 @@
     },
     "incident_memory": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:25:41Z",
-      "last_success_at": "2026-11-10T22:25:41Z",
+      "last_attempt_at": "2026-11-10T22:33:11Z",
+      "last_success_at": "2026-11-10T22:33:11Z",
       "metrics": {
         "horses": 2198,
-        "flagged_horses": 851
+        "flagged_horses": 892
       },
       "error": null
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:28:17Z",
-      "last_success_at": "2026-11-10T22:28:17Z",
+      "last_attempt_at": "2026-11-10T22:33:19Z",
+      "last_success_at": "2026-11-10T22:33:19Z",
       "metrics": {
         "meeting_date": "2026-11-11",
         "venue": "Happy Valley",
@@ -37,11 +37,11 @@
     },
     "incident_engine": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:25:41Z",
-      "last_success_at": "2026-11-10T22:25:41Z",
+      "last_attempt_at": "2026-11-10T22:33:11Z",
+      "last_success_at": "2026-11-10T22:33:11Z",
       "metrics": {
-        "ingested_incidents": 1236,
-        "flagged_horses": 851
+        "ingested_incidents": 1129,
+        "flagged_horses": 892
       },
       "error": null
     },
@@ -109,13 +109,13 @@
     },
     "precomputed_features": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:25:26Z",
-      "last_success_at": "2026-11-10T22:25:26Z",
+      "last_attempt_at": "2026-11-10T22:33:10Z",
+      "last_success_at": "2026-11-10T22:33:10Z",
       "metrics": {
         "winning_gears_horses": 675,
         "running_styles_horses": 2646,
-        "last_comments_horses": 2273,
-        "sectional_bursts_horses": 4295
+        "last_comments_horses": 2723,
+        "sectional_bursts_horses": 5063
       },
       "error": null
     },
@@ -170,8 +170,8 @@
     },
     "frozen_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:28:17Z",
-      "last_success_at": "2026-11-10T22:28:17Z",
+      "last_attempt_at": "2026-11-10T22:33:19Z",
+      "last_success_at": "2026-11-10T22:33:19Z",
       "metrics": {
         "file": "frozen_predictions_20261111.json",
         "races_cached": 9
