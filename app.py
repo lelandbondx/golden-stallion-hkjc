@@ -2475,7 +2475,14 @@ with tab1:
                     except Exception:
                         return str(val)
 
-                def _fmt_days(val):
+                def _fmt_days(r_row):
+                    lrd = r_row.get('last_run_date')
+                    lrs = str(r_row.get('last_run_summary', '') or '').strip().lower()
+                    if 'debut' in lrs or 'unraced' in lrs:
+                        return "Debutant"
+                    val = r_row.get('days_since_last_run')
+                    if (val is None or pd.isna(val)) and (lrd is None or pd.isna(lrd) or str(lrd).strip() in ['', 'nan', 'None', 'NaT']):
+                        return "Debutant"
                     if pd.isna(val) or val is None:
                         return "--"
                     try:
@@ -2519,7 +2526,7 @@ with tab1:
                 df_runners['class_move'] = [_fmt_class_move(r_row) for _, r_row in df_runners.iterrows()]
                 df_runners['dist_record'] = [_fmt_dist_win(r_row) for _, r_row in df_runners.iterrows()]
                 df_runners['last_win_rating_fmt'] = df_runners['last_win_rating'].apply(_fmt_lwr)
-                df_runners['days_off'] = df_runners['days_since_last_run'].apply(_fmt_days)
+                df_runners['days_off'] = [_fmt_days(r_row) for _, r_row in df_runners.iterrows()]
                 df_runners['tipster_pts'] = df_runners['consensus_score'].apply(_fmt_tips)
                 df_runners['ST_vs_HV_pref_fmt'] = df_runners['ST_vs_HV_pref'].fillna('Neutral').astype(str).replace({'nan': 'Neutral', 'None': 'Neutral', '': 'Neutral'})
                 df_runners['last_form_going_fmt'] = df_runners['last_form_going'].fillna('Good').astype(str).replace({'nan': 'Good', 'None': 'Good', '': 'Good', 'Unknown': 'Good'})
