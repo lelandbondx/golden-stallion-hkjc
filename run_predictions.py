@@ -882,7 +882,7 @@ def run():
         
         # Populate vet_findings, steward_notes, and photo_finish for full parity with app.py
         from data.incident_engine import load_horse_memory
-        from vet_records import load_vet_records, build_code_index, format_vet_column_display
+        from vet_records import load_vet_records, build_code_index, format_vet_column_display, VET_DATA_UNAVAILABLE_TEXT
         horse_memory = load_horse_memory()
         vet_code_idx = build_code_index(load_vet_records())
         vet_notes = []
@@ -901,12 +901,13 @@ def run():
             horse_win_gears = winning_gears.get(c_name, set())
             is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
 
-            if r_code and r_code in vet_code_idx:
-                vet = format_vet_column_display(vet_code_idx[r_code])
-            elif raw_vet_note and raw_vet_note.lower() not in ['', 'nan', 'none', 'no findings', 'no active findings']:
-                vet = raw_vet_note
+            v_rec = vet_code_idx.get(r_code) if r_code else None
+            if v_rec is not None:
+                vet = format_vet_column_display(v_rec)
+                if not comment:
+                    comment = str(v_rec.get('last_stewards_comment') or '').strip()
             else:
-                vet = "✅ Clear Record"
+                vet = VET_DATA_UNAVAILABLE_TEXT
 
             if raw_photo in ["✅ Yes", "❌ No", "Debutant"]:
                 photo = raw_photo
@@ -930,7 +931,7 @@ def run():
             elif raw_summary and raw_summary.lower() not in ['', 'nan', 'none']:
                 steward = raw_summary
             else:
-                steward = "Clear Record"
+                steward = "No HKJC stewards' incident report"
 
             if row.get('has_overseas_form') == 1 and is_gear_matched:
                 steward = f"Overseas Form + Proven HK Winning Gear | {steward}"

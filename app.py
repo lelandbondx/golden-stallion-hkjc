@@ -1024,7 +1024,7 @@ with tab1:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
             # Overlay structured official HKJC veterinary records keyed by horse_code so frozen_predictions never show stale/oldest vet rows
             try:
-                from vet_records import format_vet_column_display
+                from vet_records import format_vet_column_display, VET_DATA_UNAVAILABLE_TEXT
                 live_code_map = {
                     r.get('no'): str(r.get('code') or '').strip().upper()
                     for r in (race.get('runners') or [])
@@ -1036,16 +1036,25 @@ with tab1:
                     df_runners['code'] = df_runners['code'].fillna(df_runners['no'].map(live_code_map))
                 updated_vet_display = []
                 updated_vet_flag = []
+                updated_stewards = []
                 for _, f_row in df_runners.iterrows():
                     v_rec = lookup_runner_vet_record(f_row, vet_store)
+                    cur_stew = str(f_row.get('steward_notes') or '').strip()
                     if v_rec is not None:
                         updated_vet_display.append(format_vet_column_display(v_rec))
                         updated_vet_flag.append(int(v_rec.get('prev_run_vet_finding', 0)))
+                        off_stew = str(v_rec.get('last_stewards_comment') or '').strip()
+                        if off_stew and (not cur_stew or cur_stew.startswith('Last Run (') or cur_stew.lower() in ('clear record', '✅ clear run', '-')):
+                            updated_stewards.append(f"{off_stew} | {cur_stew}" if cur_stew.startswith('Last Run (') else off_stew)
+                        else:
+                            updated_stewards.append(cur_stew)
                     else:
-                        updated_vet_display.append(str(f_row.get('vet_findings') or '✅ Clear Record'))
+                        updated_vet_display.append(VET_DATA_UNAVAILABLE_TEXT)
                         updated_vet_flag.append(int(pd.to_numeric(f_row.get('prev_run_vet_finding', 0), errors='coerce') or 0))
+                        updated_stewards.append(cur_stew)
                 df_runners['vet_findings'] = updated_vet_display
                 df_runners['prev_run_vet_finding'] = updated_vet_flag
+                df_runners['steward_notes'] = updated_stewards
             except Exception as _vet_ov_err:
                 pass
             race['processed_runners'] = df_runners
@@ -1802,38 +1811,9 @@ with tab1:
                     from vet_records import format_vet_column_display
                     vet = format_vet_column_display(v_rec)
                 except Exception:
-                    vet = str(v_rec.get('latest_vet_note') or '✅ Clear Record')
-            elif raw_vet_note and raw_vet_note.lower() not in ['', 'nan', 'none', 'no findings', 'no active findings']:
-                try:
-                    from vet_records import extract_vet_attributes
-                    m_dt = re.match(r'^(\d{1,2}/\d{1,2}/\d{2,4}):\s*(.*)$', raw_vet_note)
-                    dt_s = m_dt.group(1) if m_dt else ''
-                    rem_s = m_dt.group(2) if m_dt else raw_vet_note
-                    m_ps = re.search(r'\(Passed:\s*([^)]+)\)\s*$', rem_s, re.I)
-                    ps_s = m_ps.group(1).strip() if m_ps else '-'
-                    det_s = re.sub(r'\s*\(Passed:\s*[^)]+\)\s*$', '', rem_s, flags=re.I).strip()
-                    attrs = extract_vet_attributes(det_s, ps_s)
-                    if not attrs.get('is_material'):
-                        vet = "✅ Clear Record"
-                    else:
-                        from vet_records import format_vet_column_display
-                        vet = format_vet_column_display({
-                            'entries': [{
-                                'date': dt_s,
-                                'details': det_s,
-                                'passed_on': attrs.get('passed_on'),
-                                'category': attrs.get('category'),
-                                'body_part': attrs.get('body_part'),
-                                'side': attrs.get('side'),
-                                'procedure': attrs.get('procedure'),
-                                'status': attrs.get('status'),
-                                'is_material': attrs.get('is_material'),
-                            }]
-                        })
-                except Exception:
-                    vet = raw_vet_note
+                    vet = str(v_rec.get('latest_vet_note') or 'No HKJC veterinary records')
             else:
-                vet = "✅ Clear Record"
+                vet = "Vet data unavailable"
                 
             # 2. Photo Finish History
             if raw_photo in ["✅ Yes", "❌ No", "Debutant"]:
@@ -1844,6 +1824,8 @@ with tab1:
                 photo = "❌ No"
                 
             # 3. Steward / Form Notes
+            if not comment and v_rec is not None:
+                comment = str(v_rec.get('last_stewards_comment') or '').strip()
             mem_entry = horse_memory.get(c_name, {}) if isinstance(horse_memory, dict) else {}
             mem_runs = mem_entry.get('runs', []) if isinstance(mem_entry, dict) else []
             mem_snippet = ""
@@ -1859,7 +1841,7 @@ with tab1:
             elif raw_summary and raw_summary.lower() not in ['', 'nan', 'none']:
                 steward = raw_summary
             else:
-                steward = "Clear Record"
+                steward = "No HKJC stewards' incident report"
                 
             if row.get('has_overseas_form') == 1 and is_gear_matched:
                 steward = f"Overseas Form + Proven HK Winning Gear | {steward}"
@@ -2435,6 +2417,16 @@ with tab1:
             </div>
             '''), unsafe_allow_html=True)
             
+            def _pick_card_vet_summary(pick_row):
+                try:
+                    from vet_records import format_vet_column_display, VET_DATA_UNAVAILABLE_TEXT
+                    v_rec = lookup_runner_vet_record(pick_row, vet_store)
+                    if v_rec is not None:
+                        return format_vet_column_display(v_rec)
+                    return VET_DATA_UNAVAILABLE_TEXT
+                except Exception:
+                    return "Vet data unavailable"
+
             pc1, pc2, pc3, pc4, pc5 = st.columns(5)
             with pc1:
                 st.markdown(clean_html(f'''
@@ -2447,6 +2439,7 @@ with tab1:
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(best.get('win_odds'))}</span>{get_shift_badge(best)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {safe_fmt(best.get('gs_score'))} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{best.get('confidence', 50)}%</span></div>
+                    <div style="font-size:0.78rem; margin-top:8px; padding-top:6px; border-top:1px solid rgba(56,189,248,0.25); color:#cbd5e1; line-height:1.35;">🏥 <b>Vet:</b> {_pick_card_vet_summary(best)}</div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc2:
@@ -2460,6 +2453,7 @@ with tab1:
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(second.get('win_odds'))}</span>{get_shift_badge(second)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {safe_fmt(second.get('gs_score'))} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{second.get('confidence', 50)}%</span></div>
+                    <div style="font-size:0.78rem; margin-top:8px; padding-top:6px; border-top:1px solid rgba(56,189,248,0.25); color:#cbd5e1; line-height:1.35;">🏥 <b>Vet:</b> {_pick_card_vet_summary(second)}</div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc3:
@@ -2473,6 +2467,7 @@ with tab1:
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(third.get('win_odds'))}</span>{get_shift_badge(third)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {safe_fmt(third.get('gs_score'))} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{third.get('confidence', 50)}%</span></div>
+                    <div style="font-size:0.78rem; margin-top:8px; padding-top:6px; border-top:1px solid rgba(56,189,248,0.25); color:#cbd5e1; line-height:1.35;">🏥 <b>Vet:</b> {_pick_card_vet_summary(third)}</div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc4:
@@ -2486,6 +2481,7 @@ with tab1:
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(fourth.get('win_odds'))}</span>{get_shift_badge(fourth)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">GS Score: {safe_fmt(fourth.get('gs_score'))} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{fourth.get('confidence', 50)}%</span></div>
+                    <div style="font-size:0.78rem; margin-top:8px; padding-top:6px; border-top:1px solid rgba(56,189,248,0.25); color:#cbd5e1; line-height:1.35;">🏥 <b>Vet:</b> {_pick_card_vet_summary(fourth)}</div>
                 </div>
                 '''), unsafe_allow_html=True)
             with pc5:
@@ -2499,8 +2495,24 @@ with tab1:
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(fifth.get('win_odds'))}</span>{get_shift_badge(fifth)}
                     </div>
                     <div class="data-value" style="font-size:0.95rem; margin-top:10px; color:#38bdf8; font-weight:800;">EV: {safe_fmt(fifth.get('value_diff'), default=0.0, decimals=3)} &nbsp;|&nbsp; Conf: <span style="color:#38bdf8;">{fifth.get('confidence', 50)}%</span></div>
+                    <div style="font-size:0.78rem; margin-top:8px; padding-top:6px; border-top:1px solid rgba(56,189,248,0.25); color:#cbd5e1; line-height:1.35;">🏥 <b>Vet:</b> {_pick_card_vet_summary(fifth)}</div>
                 </div>
                 '''), unsafe_allow_html=True)
+
+            # Expandable Official HKJC Veterinary Records block immediately under the 5 predicted pick cards
+            try:
+                from vet_records import render_runner_vet_block_html
+                with st.expander(f"🏥 VETERINARY RECORDS — PICKS 1–5 (RACE {race.get('race_no')})", expanded=False):
+                    picks_vet_html = []
+                    for p_idx, p_row in enumerate([best, second, third, fourth, fifth], start=1):
+                        if p_row is not None:
+                            p_vrec = lookup_runner_vet_record(p_row, vet_store)
+                            picks_vet_html.append(
+                                render_runner_vet_block_html(p_row, p_vrec, role_prefix=f"PICK {p_idx} — ")
+                            )
+                    st.markdown(clean_html("".join(picks_vet_html)), unsafe_allow_html=True)
+            except Exception as _pv_err:
+                print(f"Error rendering picks 1-5 vet expander: {_pv_err}")
                 
             # Prevent the outlier from being the exact same horse as the primary leader, and require positive edge
             longshots = df_runners[(df_runners['win_odds'] >= 12.0) & (df_runners['no'] != best['no']) & (df_runners['value_diff'] > 0.0)].sort_values(by='value_diff', ascending=False)
@@ -2604,20 +2616,16 @@ with tab1:
 
                 def _fmt_vet(val):
                     s = str(val or '').strip()
-                    if not s or s.lower() in ['none', 'nan', 'no active findings', 'no findings', 'clear record', '-', '✅ clear record']:
-                        return "✅ Clear Record"
-                    # Never prefix administrative notes or already-formatted structured icons with ⚠️
-                    if any(s.startswith(prefix) for prefix in ("✅", "⚠️", "🚨", "🏥", "🩸", "🫁", "🦵", "🩹", "❤️", "📉", "ℹ️")):
-                        return s
-                    low_s = s.lower()
-                    if any(adm in low_s for adm in ("castration", "eight years of age", "unraced for 12 months")):
-                        return "✅ Clear Record"
+                    if not s or s.lower() in ['none', 'nan', '-']:
+                        return "Vet data unavailable"
+                    if s.lower() in ['no active findings', 'no findings', 'clear record', '✅ clear record']:
+                        return "No HKJC veterinary records"
                     return s
 
                 def _fmt_stewards(val):
                     s = str(val or '').strip()
-                    if not s or s.lower() in ['none', 'nan', 'clear record', 'clear run', '-']:
-                        return "✅ Clear Run"
+                    if not s or s.lower() in ['none', 'nan', 'clear record', 'clear run', '✅ clear run', '-']:
+                        return "No HKJC stewards' incident report"
                     return s
 
                 def _fmt_photo(val):
@@ -2702,46 +2710,22 @@ with tab1:
                     print(f"Error rendering race dataframe: {err}")
                     st.dataframe(df_display, hide_index=True, use_container_width=True)
 
-                # Expandable Full Official HKJC Veterinary History per horse in this race
+                # Complete Official HKJC Veterinary Records block (a)-(e) for EVERY runner in the race
                 try:
-                    from vet_records import CATEGORY_LABELS, CATEGORY_ICONS
-                    race_vet_histories = []
+                    from vet_records import render_runner_vet_block_html
+                    st.markdown(
+                        '<div style="margin-top:12px; margin-bottom:6px; color:#38bdf8; font-family:\'Montserrat\'; font-weight:800; font-size:0.9rem;">🏥 OFFICIAL HKJC VETERINARY RECORDS — ALL RUNNERS IN RACE (NEWEST FIRST, LINKED TO OVEHORSE):</div>',
+                        unsafe_allow_html=True,
+                    )
+                    all_runner_blocks_html = []
                     for _, r_row in df_runners.sort_values(by='no', ascending=True).iterrows():
                         v_rec = lookup_runner_vet_record(r_row, vet_store)
-                        if v_rec and v_rec.get('entries'):
-                            race_vet_histories.append((r_row, v_rec))
-                    if race_vet_histories:
-                        st.markdown('<div style="margin-top:12px; color:#38bdf8; font-family:\'Montserrat\'; font-weight:800; font-size:0.9rem;">🏥 FULL OFFICIAL HKJC VETERINARY RECORDS (NEWEST FIRST — LINKED TO OVEHORSE):</div>', unsafe_allow_html=True)
-                        for r_row, v_rec in race_vet_histories:
-                            r_no_v = safe_int(r_row.get('no'), 0)
-                            r_nm_v = str(r_row.get('name') or v_rec.get('horse_name') or '').strip().upper()
-                            r_cd_v = str(r_row.get('code') or v_rec.get('horse_code') or '').strip().upper()
-                            ove_url = v_rec.get('source_url') or f"https://racing.hkjc.com/en-us/local/information/ovehorse?horseid={v_rec.get('horse_id', '')}"
-                            entries_v = v_rec.get('entries', [])
-                            with st.expander(f"#{r_no_v} {r_nm_v} ({r_cd_v}) — {len(entries_v)} Official Record(s)", expanded=False):
-                                st.markdown(
-                                    clean_html(f'<div style="margin-bottom:6px; font-size:0.85rem;"><a href="{ove_url}" target="_blank" style="color:#38bdf8; font-weight:700; text-decoration:underline;">🔗 View Official HKJC Veterinary Record Page ({v_rec.get("horse_id", r_cd_v)}) ↗</a></div>'),
-                                    unsafe_allow_html=True,
-                                )
-                                hist_rows = []
-                                for e_item in entries_v:
-                                    cat_k = e_item.get('category', 'other')
-                                    st_k = e_item.get('status', 'cleared')
-                                    st_label = (
-                                        "🔴 Active Requirement"
-                                        if st_k == "active_requirement"
-                                        else ("🟢 Cleared" if st_k == "cleared" else "⚪ Administrative / No Req.")
-                                    )
-                                    bp_parts = [p for p in [e_item.get('side'), e_item.get('body_part'), e_item.get('procedure')] if p]
-                                    hist_rows.append({
-                                        "Date (DD/MM/YYYY)": e_item.get("date", ""),
-                                        "Category": f"{CATEGORY_ICONS.get(cat_k, '📋')} {CATEGORY_LABELS.get(cat_k, cat_k)}",
-                                        "Site / Procedure": " / ".join(bp_parts) if bp_parts else "-",
-                                        "Official HKJC Details": e_item.get("details", ""),
-                                        "Status": st_label,
-                                        "Passed On": e_item.get("passed_on") or "-",
-                                    })
-                                st.dataframe(pd.DataFrame(hist_rows), hide_index=True, use_container_width=True)
+                        c_rk = safe_int(r_row.get('card_rank'), 99)
+                        rk_prefix = f"[PICK {c_rk}] " if c_rk in (1, 2, 3, 4, 5) else ""
+                        all_runner_blocks_html.append(
+                            render_runner_vet_block_html(r_row, v_rec, role_prefix=rk_prefix)
+                        )
+                    st.markdown(clean_html("".join(all_runner_blocks_html)), unsafe_allow_html=True)
                 except Exception as _vh_err:
                     print(f"Error rendering expandable vet history: {_vh_err}")
 

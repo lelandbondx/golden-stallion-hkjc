@@ -6,11 +6,15 @@ import pandas as pd
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from vet_records import (
+    BARRIER_TRIAL_UNPUBLISHED_TEXT,
+    NO_VET_RECORDS_TEXT,
+    VET_DATA_UNAVAILABLE_TEXT,
     build_horse_vet_record,
     extract_vet_attributes,
     format_radar_vet_item,
     format_vet_column_display,
     parse_hkjc_date,
+    render_runner_vet_block_html,
     update_latest_horse_stats_csv,
 )
 from features.stewards import check_health_risk, get_health_risk_severity
@@ -145,7 +149,7 @@ def test_kansas_castration_is_no_requirement_and_tracheal_blood_is_active():
     assert "TRACHEAL BLOOD" in radar["type"]
     assert "RESPIRATORY CLEAR" not in radar["type"]
 
-    # A horse with ONLY Castration must have prev_run_vet_finding == 0 and show Clear Record
+    # A horse with ONLY Castration must have prev_run_vet_finding == 0 and never say "Clear Record"
     castration_only = build_horse_vet_record(
         horse_id="HK_2025_L999",
         horse_code="L999",
@@ -155,7 +159,11 @@ def test_kansas_castration_is_no_requirement_and_tracheal_blood_is_active():
         as_of=AS_OF,
     )
     assert castration_only["prev_run_vet_finding"] == 0
-    assert format_vet_column_display(castration_only) == "✅ Clear Record"
+    disp_castration = format_vet_column_display(castration_only)
+    assert disp_castration != "✅ Clear Record"
+    assert "Clear Record" not in disp_castration
+    assert "No material entry" in disp_castration
+    assert "15/01/2026" in disp_castration
     assert format_radar_vet_item(castration_only, "#2 GELDING TEST") is None
 
 
@@ -253,7 +261,130 @@ def test_name_collision_isolation_by_horse_code_and_horse_id(tmp_path):
 
     assert len(updated) == 2
     assert "Bled from both nostrils" in str(updated.loc["E111", "latest_vet_note"])
-    assert str(updated.loc["K999", "latest_vet_note"]) == "No Findings"
+    assert str(updated.loc["K999", "latest_vet_note"]) == NO_VET_RECORDS_TEXT
+
+
+def test_winning_machine_and_race6_picks_fixture(tmp_path):
+    """
+    Worked acceptance fixture (Section 3 & Section 4):
+    - WINNING MACHINE (K239, HK_2024_K239): 4 rows on HKJC ovehorse, newest-first:
+      14/07/2026 (surgery, Passed 12/10/2026), 01/07/2026 (bleeding_nostrils, Passed 12/10/2026),
+      31/03/2025 (injury, Passed 05/06/2025), 20/01/2025 (administrative, Passed 27/01/2025).
+    - Summary must be: '14/07/2026 — Arthroscopic surgery to both knees (bone fragment removal). Cleared 12/10/2026'
+    - Stewards' requirement must quote the Sha Tin 01/07/2026 Race 3 report, show Passed 12/10/2026 for the official
+      veterinary examination, and show 'Barrier trial completion date not published' when no trial date is published.
+    - Race 6 picks FLOW RIDER (M012) & MR INVINCIBLE (L448) with 0 entries must say 'No HKJC veterinary records'
+      (never '✅ Clear Record'), and failed fetches must say 'Vet data unavailable'.
+    - ALGARVE (historical recycled K239) must not inherit WINNING MACHINE's horse_id or vet fields in latest_horse_stats.csv.
+    """
+    raw_rows = [
+        {
+            "date": "20/01/2025",
+            "details": "Fractious in the barriers. Withdrawn from barrier trial.",
+            "passed_on": "27/01/2025",
+        },
+        {
+            "date": "31/03/2025",
+            "details": "Lame right hind leg on the day after racing. Update: Right pelvis injury.",
+            "passed_on": "05/06/2025",
+        },
+        {
+            "date": "01/07/2026",
+            "details": "Bled from both nostrils after racing.",
+            "passed_on": "12/10/2026",
+        },
+        {
+            "date": "14/07/2026",
+            "details": "Arthroscopic surgery to both knees (bone fragment removal).",
+            "passed_on": "12/10/2026",
+        },
+    ]
+    st_quote = (
+        "A veterinary inspection immediately following the race found that horse to have bled from both nostrils. "
+        "Before being allowed to race again, WINNING MACHINE will be required to perform satisfactorily in a barrier trial "
+        "and be subjected to an official veterinary examination."
+    )
+    wm_rec = build_horse_vet_record(
+        horse_id="HK_2024_K239",
+        horse_code="K239",
+        horse_name="WINNING MACHINE",
+        raw_rows=raw_rows,
+        source_url="https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239",
+        as_of=AS_OF,
+        scraped_at="2026-11-11T01:19:59Z",
+        stewards_reports={"01/07/2026": {"date": "01/07/2026", "report": st_quote, "quote": st_quote}},
+        official_trials=None,
+        last_stewards_comment=st_quote,
+    )
+
+    assert len(wm_rec["entries"]) == 4
+    assert [e["date"] for e in wm_rec["entries"]] == [
+        "14/07/2026",
+        "01/07/2026",
+        "31/03/2025",
+        "20/01/2025",
+    ]
+    assert [e["category"] for e in wm_rec["entries"]] == [
+        "surgery",
+        "bleeding_nostrils",
+        "injury",
+        "administrative",
+    ]
+    assert wm_rec["entries"][0]["passed_on"] == "12/10/2026"
+    assert wm_rec["entries"][1]["passed_on"] == "12/10/2026"
+    assert wm_rec["prev_run_vet_finding"] == 0
+
+    summary = format_vet_column_display(wm_rec)
+    assert summary == "14/07/2026 — Arthroscopic surgery to both knees (bone fragment removal). Cleared 12/10/2026"
+    assert summary != "✅ Clear Record"
+
+    block_html = render_runner_vet_block_html({"no": 11, "name": "WINNING MACHINE", "code": "K239"}, wm_rec)
+    assert "14/07/2026 — Arthroscopic surgery to both knees (bone fragment removal). Cleared 12/10/2026" in block_html
+    assert st_quote in block_html
+    assert "Passed 12/10/2026" in block_html
+    assert BARRIER_TRIAL_UNPUBLISHED_TEXT in block_html
+    assert "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239" in block_html
+    assert "2026-11-11T01:19:59Z" in block_html
+
+    # Race 6 picks with 0 entries (Flow Rider M012, Mr Invincible L448) and failed fetches
+    flow_rider = build_horse_vet_record(
+        horse_id="HK_2025_M012",
+        horse_code="M012",
+        horse_name="FLOW RIDER",
+        raw_rows=[],
+        source_url="https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_M012",
+        as_of=AS_OF,
+    )
+    assert format_vet_column_display(flow_rider) == NO_VET_RECORDS_TEXT
+    assert "Clear Record" not in format_vet_column_display(flow_rider)
+    assert format_vet_column_display(None) == VET_DATA_UNAVAILABLE_TEXT
+
+    # ALGARVE vs WINNING MACHINE brand-code collision check in latest_horse_stats.csv
+    stats_csv = tmp_path / "latest_horse_stats.csv"
+    pd.DataFrame(
+        [
+            {
+                "clean_name": "ALGARVE",
+                "horse_code": "K239",
+                "horse_id": "HK_2024_K239",
+                "latest_vet_note": "14/07/2026: Arthroscopic surgery",
+                "prev_run_vet_finding": 0,
+            },
+            {
+                "clean_name": "WINNING MACHINE",
+                "horse_code": "K239",
+                "horse_id": "HK_2024_K239",
+                "latest_vet_note": "No Findings",
+                "prev_run_vet_finding": 0,
+            },
+        ]
+    ).to_csv(stats_csv, index=False)
+    update_latest_horse_stats_csv({"HK_2024_K239": wm_rec}, stats_path=str(stats_csv))
+    df_out = pd.read_csv(stats_csv).set_index("clean_name")
+    assert pd.isna(df_out.loc["ALGARVE", "horse_id"]) or str(df_out.loc["ALGARVE", "horse_id"]) == ""
+    assert "Arthroscopic surgery" not in str(df_out.loc["ALGARVE", "latest_vet_note"])
+    assert str(df_out.loc["WINNING MACHINE", "horse_id"]) == "HK_2024_K239"
+    assert "Arthroscopic surgery" in str(df_out.loc["WINNING MACHINE", "latest_vet_note"])
 
 
 def test_dd_mm_yyyy_parsing_and_cleared_penalty_immunity():
@@ -319,8 +450,10 @@ if __name__ == "__main__":
     print("[PASS] test_sea_chariot_update_clause_promotes_category_to_surgery")
     with tempfile.TemporaryDirectory() as td:
         test_name_collision_isolation_by_horse_code_and_horse_id(Path(td))
+        test_winning_machine_and_race6_picks_fixture(Path(td))
     print("[PASS] test_name_collision_isolation_by_horse_code_and_horse_id")
+    print("[PASS] test_winning_machine_and_race6_picks_fixture")
     test_dd_mm_yyyy_parsing_and_cleared_penalty_immunity()
     print("[PASS] test_dd_mm_yyyy_parsing_and_cleared_penalty_immunity")
-    print("ALL 7 VET RECORD TESTS PASSED.")
+    print("ALL 8 VET RECORD TESTS PASSED.")
 

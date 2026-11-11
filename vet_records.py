@@ -561,12 +561,12 @@ def compute_horse_vet_Rollup(
     bleed_count_12m = tracheal_bleed_count_12m + nostril_bleed_count_12m
 
     # Build official latest_vet_note for latest_horse_stats.csv compatibility
-    # Prefer latest material entry (or active requirement entry); if only administrative, format plainly
+    # Prefer latest material entry (or active requirement entry); if only non-material, use latest entry
     display_target = latest_material_entry or (
         latest_entry if (latest_entry and latest_entry.get("status") == "active_requirement") else latest_entry
     )
     if display_target is None:
-        latest_vet_note = "No Findings"
+        latest_vet_note = "No HKJC veterinary records"
     else:
         d_str = display_target.get("date", "")
         det_str = display_target.get("details", "")
@@ -591,60 +591,200 @@ def compute_horse_vet_Rollup(
     }
 
 
-def format_vet_cell(entries: List[Dict]) -> str:
-    """
-    Formats the Vet column display string for a runner:
-    - Shows the latest material entry (or active requirement entry):
-      category icon, date, body part/procedure, and Cleared/Active badge with passed date.
-    - Never shows castration, age, or unraced entries as ⚠️.
-    - Uses only official text/dates.
-    """
-    if not entries:
-        return "✅ Clear Record"
+NO_VET_RECORDS_TEXT = "No HKJC veterinary records"
+VET_DATA_UNAVAILABLE_TEXT = "Vet data unavailable"
+NO_CLEARANCE_PUBLISHED_TEXT = "no clearance published"
+BARRIER_TRIAL_UNPUBLISHED_TEXT = "Barrier trial completion date not published"
 
-    # Find latest material entry or active_requirement entry
-    target = next(
-        (e for e in entries if e.get("is_material") or e.get("status") == "active_requirement"),
+
+def format_vet_cell(entries: Optional[List[Dict]], fetch_failed: bool = False) -> str:
+    """
+    Formats the top veterinary summary line / column string for a runner:
+    - Never uses 'Clear Record', 'VET CLEARED', 'RESPIRATORY CLEAR', or invented recovery phrases.
+    - If fetch_failed is True or entries is None: returns 'Vet data unavailable'.
+    - If entries is empty ([]): returns 'No HKJC veterinary records'.
+    - If a material entry exists: shows the most recent material entry with its verbatim HKJC Details
+      and 'Cleared <Passed Date>' or 'Active (no clearance published)'. If a newer non-material entry
+      exists on ovehorse, also appends the newest entry's date so the maximum date is always shown.
+    - If no material entry exists (only non-material rows such as performance or administrative):
+      explicitly states there is no material entry and shows the latest official row with its date
+      and clearance status.
+    """
+    if fetch_failed or entries is None:
+        return VET_DATA_UNAVAILABLE_TEXT
+    if len(entries) == 0:
+        return NO_VET_RECORDS_TEXT
+
+    latest_entry = entries[0]
+    target_material = next(
+        (e for e in entries if e.get("is_material")),
         None,
     )
-    if target is None:
-        # Only administrative / cleared non-material entries exist -> do not flag with ⚠️
-        return "✅ Clear Record"
 
-    cat = target.get("category", "other")
-    icon_label = CATEGORY_ICONS.get(cat, "📋 Vet Record")
-    date_str = target.get("date", "")
-    side = target.get("side")
-    body_part = target.get("body_part")
-    procedure = target.get("procedure")
+    if target_material is not None:
+        d_str = target_material.get("date", "")
+        det_raw = str(target_material.get("details") or "").strip()
+        det_punct = det_raw if det_raw.endswith(".") else f"{det_raw}."
+        passed_on = target_material.get("passed_on")
+        status = target_material.get("status")
+        if status == "cleared" and passed_on:
+            status_str = f"Cleared {passed_on}"
+        else:
+            status_str = f"Active ({NO_CLEARANCE_PUBLISHED_TEXT})"
+        summary = f"{d_str} — {det_punct} {status_str}"
+        if latest_entry.get("date") and latest_entry.get("date") != d_str:
+            e0_d = latest_entry.get("date", "")
+            e0_det = str(latest_entry.get("details") or "").strip()
+            e0_p = latest_entry.get("passed_on")
+            e0_st = f"Cleared {e0_p}" if e0_p else NO_CLEARANCE_PUBLISHED_TEXT
+            summary += f" (Latest entry {e0_d}: {e0_det} — {e0_st})"
+        return summary
 
-    qualifiers = []
-    if side and body_part:
-        qualifiers.append(f"{side} {body_part}")
-    elif body_part:
-        qualifiers.append(body_part)
-    if procedure and procedure not in qualifiers:
-        qualifiers.append(procedure)
-
-    qual_str = f" — {', '.join(qualifiers)}" if qualifiers else f" — {target.get('details', '')}"
-
-    status = target.get("status")
-    passed_on = target.get("passed_on")
-    if status == "cleared" and passed_on:
-        badge = f"✅ Cleared {passed_on}"
-    elif status == "active_requirement":
-        badge = "⚠️ Active (Passed: -)"
-    else:
-        badge = "ℹ️ No Requirement"
-
-    return f"{icon_label} ({date_str}{qual_str}) [{badge}]"
+    # No material entry, but official non-material row(s) exist on ovehorse
+    e0_d = latest_entry.get("date", "")
+    e0_det_raw = str(latest_entry.get("details") or "").strip()
+    e0_det = e0_det_raw if e0_det_raw.endswith(".") else f"{e0_det_raw}."
+    e0_p = latest_entry.get("passed_on")
+    e0_st = f"Cleared {e0_p}" if e0_p else NO_CLEARANCE_PUBLISHED_TEXT
+    return f"No material entry; latest official record: {e0_d} — {e0_det} {e0_st}"
 
 
-def format_vet_column_display(horse_record: Dict) -> str:
+def format_vet_column_display(horse_record: Optional[Dict]) -> str:
     """Formats the Vet column display string from a horse_record dict."""
-    if not horse_record or not isinstance(horse_record, dict):
-        return "✅ Clear Record"
-    return format_vet_cell(horse_record.get("entries") or [])
+    if not horse_record or not isinstance(horse_record, dict) or horse_record.get("fetch_failed"):
+        return VET_DATA_UNAVAILABLE_TEXT
+    entries = horse_record.get("entries")
+    if entries is None:
+        return VET_DATA_UNAVAILABLE_TEXT
+    return format_vet_cell(entries, fetch_failed=False)
+
+
+def extract_stewards_requirement_quote(full_report: str) -> str:
+    """
+    Extracts the official veterinary inspection / performance / barrier trial / vet exam requirement
+    sentences verbatim from a full HKJC Stewards' Report.
+    """
+    if not full_report:
+        return ""
+    txt = " ".join(str(full_report).split()).strip()
+    sentences = re.split(r"(?<=[.!?])\s+", txt)
+    req_keywords = (
+        "veterinary inspection",
+        "veterinary examination",
+        "official vet exam",
+        "barrier trial",
+        "bled from both nostrils",
+        "blood in",
+        "trachea",
+        "irregular heart",
+        "heart irregularity",
+        "before being allowed to race again",
+        "disappointing",
+        "unacceptable",
+        "withdrawn",
+        "vet advice",
+        "lame",
+        "roarer",
+    )
+    selected = []
+    for s in sentences:
+        s_low = s.lower()
+        if any(k in s_low for k in req_keywords):
+            selected.append(s.strip())
+    return " ".join(selected) if selected else txt
+
+
+def build_stewards_requirements(
+    entries: List[Dict],
+    stewards_reports: Optional[Dict[str, Dict]] = None,
+    official_trials: Optional[List[Dict]] = None,
+) -> List[Dict]:
+    """
+    Builds structured Stewards' Requirement items (Section 2c) linking official stewards' reports
+    (barrier trial and/or official veterinary examination requirements) to official ovehorse
+    Passed Dates and official barrier trial dates.
+    Never infers a barrier trial completion date from the vet Passed Date alone.
+    """
+    stewards_reports = stewards_reports or {}
+    official_trials = official_trials or []
+    out = []
+    seen_dates = set()
+
+    # Find latest clearance date across entries (e.g. when surgery + bleed share a clearance date)
+    for e in entries:
+        d_str = e.get("date", "")
+        cat = e.get("category", "")
+        det = str(e.get("details") or "")
+        passed_on = e.get("passed_on")
+        rep_obj = stewards_reports.get(d_str)
+        has_req_cat = cat in (
+            "bleeding_nostrils",
+            "tracheal_blood",
+            "cardiac",
+            "failed_vet_exam",
+            "performance",
+            "airway",
+        ) or ("barrier trial" in det.lower())
+
+        if not rep_obj and not has_req_cat:
+            continue
+        if d_str in seen_dates and not rep_obj:
+            continue
+        seen_dates.add(d_str)
+
+        raw_rep = ""
+        rep_url = ""
+        if isinstance(rep_obj, dict):
+            raw_rep = str(rep_obj.get("quote") or rep_obj.get("report") or "").strip()
+            rep_url = str(rep_obj.get("url") or "").strip()
+        elif isinstance(rep_obj, str):
+            raw_rep = rep_obj.strip()
+
+        quote = extract_stewards_requirement_quote(raw_rep) if raw_rep else f"{d_str}: {det}"
+
+        # Official veterinary examination status (strictly from HKJC ovehorse Passed Date)
+        if passed_on:
+            vet_exam_status = f"Passed {passed_on}"
+        else:
+            vet_exam_status = NO_CLEARANCE_PUBLISHED_TEXT
+
+        # Barrier trial completion date: ONLY if found on an official HKJC trial record after entry date;
+        # otherwise exact phrase 'Barrier trial completion date not published'.
+        # Never infer a trial date from passed_on!
+        entry_dt = parse_hkjc_date(d_str)
+        matching_trials = []
+        for tr in official_trials:
+            tr_d = str(tr.get("date") or "").strip()
+            tr_dt = parse_hkjc_date(tr_d)
+            if tr_dt is not None and entry_dt is not None and tr_dt >= entry_dt:
+                tr_desc = f"{tr_dt.strftime('%d/%m/%Y')}"
+                if tr.get("track"):
+                    tr_desc += f" ({tr.get('track')})"
+                matching_trials.append(tr_desc)
+
+        if matching_trials:
+            barrier_trial_status = (
+                f"{', '.join(matching_trials)} "
+                f"(ovehorse table: {BARRIER_TRIAL_UNPUBLISHED_TEXT})"
+            )
+        else:
+            barrier_trial_status = BARRIER_TRIAL_UNPUBLISHED_TEXT
+
+        out.append(
+            {
+                "date": d_str,
+                "category": cat,
+                "details": det,
+                "quote": quote,
+                "full_report": raw_rep or quote,
+                "report_url": rep_url,
+                "vet_exam_passed_on": passed_on,
+                "vet_exam_status": vet_exam_status,
+                "barrier_trial_status": barrier_trial_status,
+            }
+        )
+
+    return out
 
 
 def build_horse_vet_record(
@@ -655,6 +795,9 @@ def build_horse_vet_record(
     source_url: str = "",
     as_of=None,
     scraped_at: Optional[str] = None,
+    stewards_reports: Optional[Dict[str, Dict]] = None,
+    official_trials: Optional[List[Dict]] = None,
+    last_stewards_comment: Optional[str] = None,
 ) -> Dict:
     """Builds a full per-horse veterinary record dict from raw table rows."""
     scraped_at = scraped_at or utc_now_iso()
@@ -664,6 +807,9 @@ def build_horse_vet_record(
     # Match last_material_date to DD/MM/YYYY format on latest_material_entry
     if rollup.get("latest_material_entry"):
         rollup["last_material_date"] = rollup["latest_material_entry"].get("date")
+    stewards_reqs = build_stewards_requirements(
+        entries, stewards_reports=stewards_reports, official_trials=official_trials
+    )
     return {
         "horse_id": horse_id,
         "horse_code": horse_code,
@@ -671,8 +817,105 @@ def build_horse_vet_record(
         "source_url": source_url,
         "scraped_at": scraped_at,
         "entries": entries,
+        "stewards_requirements": stewards_reqs,
+        "last_stewards_comment": last_stewards_comment or "",
         **rollup,
     }
+
+
+def render_runner_vet_block_html(
+    runner_row: Dict,
+    horse_record: Optional[Dict],
+    role_prefix: str = "",
+) -> str:
+    """
+    Renders the complete official HKJC veterinary block (a)-(e) as HTML for a pick or race runner:
+      (a) Top summary line
+      (b) Full HKJC history, newest first (date dd/mm/YYYY, verbatim Details, category tag, Passed Date or 'no clearance published')
+      (c) Related stewards' requirement (verbatim quote, official vet exam status, barrier trial date or 'Barrier trial completion date not published')
+      (d) Source link to ovehorse + scraped_at
+      (e) Never blank ('No HKJC veterinary records' if empty, 'Vet data unavailable' if fetch failed)
+    """
+    no_val = runner_row.get("no", "")
+    name_val = str(runner_row.get("name") or (horse_record or {}).get("horse_name") or "").strip().upper()
+    code_val = str(runner_row.get("code") or runner_row.get("horse_code") or (horse_record or {}).get("horse_code") or "").strip().upper()
+    header_title = f"{role_prefix}#{no_val} {name_val} ({code_val})".strip()
+
+    if not horse_record or not isinstance(horse_record, dict) or horse_record.get("fetch_failed"):
+        return f"""
+        <div style="background:rgba(30,41,59,0.85); border:1px solid rgba(148,163,184,0.35); border-left:4px solid #f59e0b; border-radius:8px; padding:12px 16px; margin-bottom:10px; color:#f8fafc; font-size:0.9rem;">
+            <div style="font-weight:800; color:#38bdf8; margin-bottom:4px;">{header_title}</div>
+            <div><b>(a) Summary:</b> {VET_DATA_UNAVAILABLE_TEXT}</div>
+            <div><b>(b) Official HKJC History:</b> {VET_DATA_UNAVAILABLE_TEXT}</div>
+            <div><b>(c) Stewards' Requirement:</b> {VET_DATA_UNAVAILABLE_TEXT}</div>
+            <div><b>(d) Source:</b> {VET_DATA_UNAVAILABLE_TEXT}</div>
+        </div>
+        """
+
+    entries = horse_record.get("entries")
+    summary_line = format_vet_column_display(horse_record)
+    source_url = horse_record.get("source_url") or OVEHORSE_URL_TEMPLATE.format(horse_id=horse_record.get("horse_id", ""))
+    scraped_at = horse_record.get("scraped_at") or "unknown"
+    hid = horse_record.get("horse_id") or code_val
+
+    # (b) Full HKJC history, newest first
+    if not entries:
+        history_html = f'<div style="color:#cbd5e1; margin:4px 0 8px 0;">{NO_VET_RECORDS_TEXT}</div>'
+    else:
+        rows_html = ""
+        for e in entries:
+            d_str = e.get("date", "")
+            det_str = e.get("details", "")
+            cat_str = e.get("category", "other")
+            p_str = e.get("passed_on") or NO_CLEARANCE_PUBLISHED_TEXT
+            rows_html += (
+                f'<tr style="border-bottom:1px solid rgba(148,163,184,0.2);">'
+                f'<td style="padding:4px 8px; white-space:nowrap; font-weight:700; color:#f8fafc;">{d_str}</td>'
+                f'<td style="padding:4px 8px; color:#f8fafc;">{det_str}</td>'
+                f'<td style="padding:4px 8px; white-space:nowrap; color:#38bdf8; font-family:monospace;">{cat_str}</td>'
+                f'<td style="padding:4px 8px; white-space:nowrap; color:#cbd5e1;">{p_str}</td>'
+                f"</tr>"
+            )
+        history_html = (
+            '<table style="width:100%; border-collapse:collapse; margin:6px 0 10px 0; font-size:0.86rem;">'
+            '<thead><tr style="border-bottom:1px solid rgba(56,189,248,0.4); color:#94a3b8; text-align:left;">'
+            '<th style="padding:4px 8px;">Date</th>'
+            '<th style="padding:4px 8px;">Official HKJC Details</th>'
+            '<th style="padding:4px 8px;">Category</th>'
+            '<th style="padding:4px 8px;">Passed Date</th>'
+            f"</tr></thead><tbody>{rows_html}</tbody></table>"
+        )
+
+    # (c) Related stewards' requirement
+    st_reqs = horse_record.get("stewards_requirements") or []
+    if st_reqs:
+        req_blocks = []
+        for req in st_reqs:
+            q_txt = req.get("quote") or req.get("details") or ""
+            v_stat = req.get("vet_exam_status") or NO_CLEARANCE_PUBLISHED_TEXT
+            bt_stat = req.get("barrier_trial_status") or BARRIER_TRIAL_UNPUBLISHED_TEXT
+            r_dt = req.get("date", "")
+            req_blocks.append(
+                f'<div style="margin-top:4px; padding:6px 10px; background:rgba(15,23,42,0.65); border-radius:6px; border-left:3px solid #38bdf8;">'
+                f'<div><b>Official Stewards\' Report ({r_dt}):</b> &ldquo;{q_txt}&rdquo;</div>'
+                f'<div style="margin-top:3px;">• <b>Official veterinary examination:</b> {v_stat} &nbsp;|&nbsp; '
+                f'• <b>Barrier trial:</b> {bt_stat}</div>'
+                f"</div>"
+            )
+        stewards_html = "".join(req_blocks)
+    else:
+        stewards_html = '<span style="color:#94a3b8;">No barrier trial or official veterinary examination requirement on file.</span>'
+
+    border_col = "#f97316" if horse_record.get("prev_run_vet_finding") == 1 else "#38bdf8"
+    return f"""
+    <div style="background:linear-gradient(145deg, rgba(30, 10, 18, 0.92), rgba(15, 23, 42, 0.95)); border:1px solid rgba(56,189,248,0.35); border-left:4px solid {border_col}; border-radius:8px; padding:12px 16px; margin-bottom:10px; color:#f8fafc; font-size:0.88rem; line-height:1.5;">
+        <div style="font-weight:800; font-size:0.96rem; color:#38bdf8; margin-bottom:6px;">{header_title}</div>
+        <div style="margin-bottom:6px;"><b>(a) Summary:</b> <span style="color:#ffffff; font-weight:700;">{summary_line}</span></div>
+        <div style="margin-bottom:4px;"><b>(b) Full HKJC Veterinary History (newest first):</b>{history_html}</div>
+        <div style="margin-bottom:6px;"><b>(c) Related Stewards' Requirement:</b> {stewards_html}</div>
+        <div style="font-size:0.82rem; color:#94a3b8;"><b>(d) Source:</b> <a href="{source_url}" target="_blank" style="color:#38bdf8; text-decoration:underline;">{source_url}</a> ({hid}) &nbsp;|&nbsp; <code>scraped_at={scraped_at}</code></div>
+    </div>
+    """
 
 
 def format_radar_vet_item(horse_record: Dict, r_item_link: Optional[str] = None) -> Optional[Dict]:
@@ -1043,17 +1286,9 @@ def update_latest_horse_stats_csv(store_or_db: Dict, stats_path: str = LATEST_ST
 
 def sync_vet_to_latest_stats(vet_db: Dict[str, Dict], stats_path: str = LATEST_STATS_PATH) -> int:
     """
-    Updates `data/latest_horse_stats.csv` using `horse_code` / `horse_id` (NEVER joining on name).
-    Populates:
-      - horse_id
-      - latest_vet_note
-      - prev_run_vet_finding
-      - has_surgery_history
-      - last_material_date
-      - days_since_material_clearance
-      - bleed_count_12m
-      - tracheal_bleed_count_12m
-      - nostril_bleed_count_12m
+    Updates `data/latest_horse_stats.csv` matching on `horse_id` (and `horse_name` as a sanity check
+    to prevent brand-code recycling collisions across eras such as ALGARVE vs WINNING MACHINE on K239).
+    Never copies one horse's vet fields onto another row that happens to share a recycled brand code.
     """
     if not os.path.exists(stats_path):
         return 0
@@ -1064,7 +1299,7 @@ def sync_vet_to_latest_stats(vet_db: Dict[str, Dict], stats_path: str = LATEST_S
     code_idx = build_code_index(vet_db)
     for col, default in [
         ("horse_id", ""),
-        ("latest_vet_note", "No Findings"),
+        ("latest_vet_note", NO_VET_RECORDS_TEXT),
         ("prev_run_vet_finding", 0),
         ("has_surgery_history", 0),
         ("last_material_date", None),
@@ -1078,12 +1313,57 @@ def sync_vet_to_latest_stats(vet_db: Dict[str, Dict], stats_path: str = LATEST_S
 
     updated = 0
     for i, row in df.iterrows():
-        code = str(row.get("horse_code") or "").strip().upper()
-        if not code or code not in code_idx:
+        raw_hid = row.get("horse_id")
+        hid = "" if pd.isna(raw_hid) else str(raw_hid).strip().upper()
+        raw_code = row.get("horse_code")
+        code = "" if pd.isna(raw_code) else str(raw_code).strip().upper()
+        row_name = str(row.get("clean_name") or "").strip().upper()
+
+        rec = None
+        if hid and hid in vet_db:
+            cand = vet_db[hid]
+            cand_name = str(cand.get("horse_name") or "").strip().upper()
+            if not cand_name or not row_name or cand_name == row_name:
+                rec = cand
+            else:
+                # Brand-code collision from an earlier era (e.g. ALGARVE vs WINNING MACHINE on K239):
+                # clear the wrongly inherited horse_id and vet fields on this historical row.
+                df.at[i, "horse_id"] = None
+                df.at[i, "horse_code"] = None
+                df.at[i, "latest_vet_note"] = NO_VET_RECORDS_TEXT
+                df.at[i, "prev_run_vet_finding"] = 0
+                df.at[i, "has_surgery_history"] = 0
+                df.at[i, "last_material_date"] = None
+                df.at[i, "days_since_material_clearance"] = None
+                df.at[i, "bleed_count_12m"] = 0
+                df.at[i, "tracheal_bleed_count_12m"] = 0
+                df.at[i, "nostril_bleed_count_12m"] = 0
+                continue
+
+        if rec is None and code and code in code_idx:
+            cand = code_idx[code]
+            cand_name = str(cand.get("horse_name") or "").strip().upper()
+            if not cand_name or not row_name or cand_name == row_name:
+                rec = cand
+            else:
+                # Recycled brand code belonging to a different modern horse
+                df.at[i, "horse_id"] = None
+                df.at[i, "horse_code"] = None
+                df.at[i, "latest_vet_note"] = NO_VET_RECORDS_TEXT
+                df.at[i, "prev_run_vet_finding"] = 0
+                df.at[i, "has_surgery_history"] = 0
+                df.at[i, "last_material_date"] = None
+                df.at[i, "days_since_material_clearance"] = None
+                df.at[i, "bleed_count_12m"] = 0
+                df.at[i, "tracheal_bleed_count_12m"] = 0
+                df.at[i, "nostril_bleed_count_12m"] = 0
+                continue
+
+        if rec is None:
             continue
-        rec = code_idx[code]
+
         df.at[i, "horse_id"] = rec.get("horse_id", "")
-        df.at[i, "latest_vet_note"] = rec.get("latest_vet_note", "No Findings")
+        df.at[i, "latest_vet_note"] = rec.get("latest_vet_note", NO_VET_RECORDS_TEXT)
         df.at[i, "prev_run_vet_finding"] = int(rec.get("prev_run_vet_finding", 0))
         df.at[i, "has_surgery_history"] = int(rec.get("has_surgery_history", 0))
         df.at[i, "last_material_date"] = rec.get("last_material_date")
@@ -1095,6 +1375,166 @@ def sync_vet_to_latest_stats(vet_db: Dict[str, Dict], stats_path: str = LATEST_S
 
     df.to_csv(stats_path, index=False)
     return updated
+
+
+def fetch_horse_stewards_reports_for_vet(
+    horse_code: str,
+    horse_id: str,
+    entries: List[Dict],
+) -> Tuple[Dict[str, Dict], str]:
+    """
+    Fetches official HKJC localresults Racing Incident Report rows for:
+      1. The horse's most recent race (to ensure last_comment is never blank when an official report exists).
+      2. Any race date matching an ovehorse entry that carries a vet/trial requirement.
+    Returns (stewards_reports_by_ddmmyyyy, last_race_stewards_comment).
+    """
+    code = str(horse_code or "").strip().upper()
+    if not code:
+        return {}, ""
+
+    profile_url = f"https://racing.hkjc.com/racing/information/English/Horse/Horse.aspx?HorseNo={code}"
+    try:
+        r = requests.get(profile_url, headers=HEADERS, timeout=10, verify=False)
+        if r.status_code != 200:
+            return {}, ""
+        soup = BeautifulSoup(r.content, "html.parser")
+        date_to_res_url: Dict[str, str] = {}
+        latest_ymd = None
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            m = re.search(
+                r"localresults\?racedate=(\d{4}/\d{2}/\d{2})&Racecourse=([A-Z]+)&RaceNo=(\d+)",
+                href,
+                re.I,
+            )
+            if m:
+                ymd = m.group(1)
+                full_u = (
+                    f"https://racing.hkjc.com/en-us/local/information/localresults"
+                    f"?racedate={ymd}&Racecourse={m.group(2)}&RaceNo={m.group(3)}"
+                )
+                if ymd not in date_to_res_url:
+                    date_to_res_url[ymd] = full_u
+                if latest_ymd is None:
+                    latest_ymd = ymd
+
+        target_ymds = {}
+        if latest_ymd and latest_ymd in date_to_res_url:
+            target_ymds[latest_ymd] = date_to_res_url[latest_ymd]
+
+        for e in entries or []:
+            dmy = str(e.get("date") or "").strip()
+            parts = dmy.split("/")
+            if len(parts) == 3:
+                ymd = f"{parts[2]}/{parts[1]}/{parts[0]}"
+                if ymd in date_to_res_url:
+                    target_ymds[ymd] = date_to_res_url[ymd]
+
+        reports_by_dmy: Dict[str, Dict] = {}
+        last_comment = ""
+        for ymd, res_url in target_ymds.items():
+            try:
+                rr = requests.get(res_url, headers=HEADERS, timeout=10, verify=False)
+                if rr.status_code != 200:
+                    continue
+                s2 = BeautifulSoup(rr.content, "html.parser")
+                for tr in s2.find_all("tr"):
+                    tds = [
+                        " ".join(td.get_text(" ", strip=True).split())
+                        for td in tr.find_all(["td", "th"])
+                    ]
+                    # Only match the Racing Incident Report 4-column table (Placing | Horse No | Horse | Incident Report)
+                    if len(tds) == 4 and f"({code})" in tds[2].upper():
+                        inc = tds[3].strip()
+                        if inc and inc not in ("Incident Report", "--"):
+                            p = ymd.split("/")
+                            dmy_key = f"{p[2]}/{p[1]}/{p[0]}"
+                            reports_by_dmy[dmy_key] = {
+                                "date": dmy_key,
+                                "url": res_url,
+                                "report": inc,
+                                "quote": extract_stewards_requirement_quote(inc),
+                            }
+                            if ymd == latest_ymd:
+                                last_comment = inc
+                            break
+            except Exception:
+                continue
+
+        return reports_by_dmy, last_comment
+    except Exception:
+        return {}, ""
+
+
+def enrich_vet_db_with_stewards_reports(
+    vet_db: Dict[str, Dict],
+    target_codes: set,
+) -> None:
+    """
+    For all declared/target horses in vet_db, fetches official HKJC localresults Stewards' Reports
+    for their latest run and any vet entry dates, populates `stewards_requirements` and
+    `last_stewards_comment` in `vet_db`, and updates `data/precomputed_features.json` (`last_comments`)
+    so `last_comment` is never blank when an official stewards' report exists.
+    """
+    target_records = [
+        rec
+        for rec in vet_db.values()
+        if isinstance(rec, dict)
+        and str(rec.get("horse_code") or "").strip().upper() in target_codes
+    ]
+    if not target_records:
+        return
+
+    print(f"[Vet Pipeline] Enriching official HKJC Stewards' Reports for {len(target_records)} declared/target horses...")
+
+    def _enrich_one(rec: Dict) -> Tuple[str, Dict[str, Dict], str]:
+        hid = rec.get("horse_id", "")
+        code = rec.get("horse_code", "")
+        entries = rec.get("entries") or []
+        reps, last_c = fetch_horse_stewards_reports_for_vet(code, hid, entries)
+        return hid, reps, last_c
+
+    precomputed_path = os.path.join(DATA_DIR, "precomputed_features.json")
+    precomputed = {}
+    if os.path.exists(precomputed_path):
+        try:
+            with open(precomputed_path, "r", encoding="utf-8") as f:
+                precomputed = json.load(f)
+        except Exception:
+            precomputed = {}
+    last_comments_map = precomputed.setdefault("last_comments", {})
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        futs = [executor.submit(_enrich_one, r) for r in target_records]
+        for fut in concurrent.futures.as_completed(futs):
+            try:
+                hid, reps, last_c = fut.result()
+                if hid in vet_db:
+                    rec = vet_db[hid]
+                    rec["stewards_reports"] = reps
+                    rec["stewards_requirements"] = build_stewards_requirements(
+                        rec.get("entries") or [],
+                        stewards_reports=reps,
+                        official_trials=None,
+                    )
+                    if last_c:
+                        rec["last_stewards_comment"] = last_c
+                        h_name = str(rec.get("horse_name") or "").strip().upper()
+                        if h_name:
+                            last_comments_map[h_name] = last_c
+                    else:
+                        rec.pop("last_stewards_comment", None)
+                        h_name = str(rec.get("horse_name") or "").strip().upper()
+                        if h_name and len(str(last_comments_map.get(h_name, ""))) < 15 and "." not in str(last_comments_map.get(h_name, "")):
+                            last_comments_map[h_name] = "No report."
+            except Exception as e:
+                print(f"[Vet Pipeline] Stewards enrichment error: {e}")
+
+    try:
+        with open(precomputed_path, "w", encoding="utf-8") as f:
+            json.dump(precomputed, f, indent=4, ensure_ascii=False)
+    except Exception as e:
+        print(f"[Vet Pipeline] Warning saving precomputed_features.json: {e}")
 
 
 def refresh_all_vet_records(extra_codes: Optional[List[str]] = None) -> Dict:
@@ -1152,6 +1592,10 @@ def refresh_all_vet_records(extra_codes: Optional[List[str]] = None) -> Dict:
                         scraped_declared_codes.add(code)
             except Exception as e:
                 print(f"[Vet Pipeline] Worker error for {code}: {e}")
+
+    # Enrich declared runners and audit horses with official HKJC localresults Stewards' Reports
+    enrich_targets = set(declared_codes) | set(audit_codes)
+    enrich_vet_db_with_stewards_reports(scraped_records, enrich_targets)
 
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(VET_RECORDS_PATH, "w", encoding="utf-8") as f:

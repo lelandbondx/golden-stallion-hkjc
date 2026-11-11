@@ -16,3 +16,40 @@
 {"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:21:15Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
 {"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:21:15Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
 {"component": "run_predictions", "status": "ok", "timestamp": "2026-11-11T01:21:15Z", "metrics": {"meeting_date": "2026-11-11", "venue": "Happy Valley", "races_predicted": 9}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-11T01:50:10Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-11T01:51:26Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-11", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-11T01:52:42Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-11", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:43Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:43Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:43Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:43Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:43Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:43Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:43Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:44Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:44Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-11T01:52:44Z", "metrics": {"meeting_date": "2026-11-11", "venue": "Happy Valley", "races_predicted": 9}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-11T01:54:42Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-11", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-11T01:55:48Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-11", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:49Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:49Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:49Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:49Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:49Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:49Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:49Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:49Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:50Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-11T01:55:50Z", "metrics": {"meeting_date": "2026-11-11", "venue": "Happy Valley", "races_predicted": 9}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-11T01:57:19Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-11", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:19Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:20Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:20Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:20Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:20Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:20Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:20Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:20Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:21Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:21Z", "metrics": {"meeting_date": "2026-11-11", "venue": "Happy Valley", "races_predicted": 9}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-11T01:57:36Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
