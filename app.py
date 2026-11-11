@@ -569,8 +569,51 @@ def fetch_jt_partnerships():
     except Exception:
         return pd.DataFrame()
 
+@st.cache_data(ttl=60)
+def fetch_vet_records_store():
+    try:
+        if os.path.exists('data/vet_records.json'):
+            with open('data/vet_records.json', 'r', encoding='utf-8') as f:
+                store = json.load(f)
+            by_code = {}
+            by_id = {}
+            horses_dict = store.get('horses') if isinstance(store, dict) and 'horses' in store else (store if isinstance(store, dict) else {})
+            latest_scraped_at = store.get('scraped_at') if isinstance(store, dict) else None
+            for hid, rec in (horses_dict or {}).items():
+                if isinstance(rec, dict) and ('horse_code' in rec or 'entries' in rec):
+                    by_id[str(hid).strip().upper()] = rec
+                    hcode = str(rec.get('horse_code') or '').strip().upper()
+                    if hcode:
+                        by_code[hcode] = rec
+                    rec_ts = rec.get('scraped_at')
+                    if rec_ts and (not latest_scraped_at or str(rec_ts) > str(latest_scraped_at)):
+                        latest_scraped_at = rec_ts
+            return {
+                'scraped_at': latest_scraped_at,
+                'meeting_date': store.get('meeting_date') if isinstance(store, dict) else None,
+                'by_code': by_code,
+                'by_id': by_id,
+            }
+    except Exception as e:
+        print(f"Error loading vet_records.json: {e}")
+    return {'scraped_at': None, 'meeting_date': None, 'by_code': {}, 'by_id': {}}
+
+def lookup_runner_vet_record(runner_row_or_dict, vet_store=None):
+    if vet_store is None:
+        vet_store = fetch_vet_records_store()
+    by_code = vet_store.get('by_code', {})
+    by_id = vet_store.get('by_id', {})
+    code = str(runner_row_or_dict.get('code') or runner_row_or_dict.get('horse_code') or '').strip().upper()
+    if code and code in by_code:
+        return by_code[code]
+    hid = str(runner_row_or_dict.get('horse_id') or '').strip().upper()
+    if hid and hid in by_id:
+        return by_id[hid]
+    return None
+
 # Initialize variables
 data = fetch_data()
+vet_store = fetch_vet_records_store()
 precomputed = load_precomputed_data()
 last_comments = precomputed.get('last_comments', {})
 winning_gears = {k: set(v) for k, v in precomputed.get('winning_gears', {}).items()}
@@ -760,6 +803,40 @@ with tab1:
     with col_st4:
         st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#38bdf8; font-weight:800;">Weather</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(meeting.get('weather')), unsafe_allow_html=True)
 
+    # Veterinary Data Staleness Banner (warns if vet_records.json scraped_at is older than 24h on race day or older than latest declarations)
+    try:
+        from datetime import datetime, timezone, timedelta
+        vet_scraped_str = vet_store.get('scraped_at')
+        meeting_date_str = str(meeting.get('date') or '').strip()
+        is_vet_stale = False
+        stale_reason = ""
+        now_utc = datetime.now(timezone.utc)
+        now_hkt_date = datetime.now(timezone(timedelta(hours=8))).strftime('%Y-%m-%d')
+        if not vet_scraped_str:
+            is_vet_stale = True
+            stale_reason = "Official veterinary records cache (`data/vet_records.json`) has not been populated yet."
+        else:
+            scraped_dt = datetime.fromisoformat(str(vet_scraped_str).replace('Z', '+00:00'))
+            if scraped_dt.tzinfo is None:
+                scraped_dt = scraped_dt.replace(tzinfo=timezone.utc)
+            age_hours = (now_utc - scraped_dt).total_seconds() / 3600.0
+            if meeting_date_str == now_hkt_date and age_hours > 24.0:
+                is_vet_stale = True
+                stale_reason = f"Veterinary records were last scraped {age_hours:.1f}h ago ({vet_scraped_str}) — older than 24h on race day."
+            elif os.path.exists('data/racecard_cache.json'):
+                rc_mtime = datetime.fromtimestamp(os.path.getmtime('data/racecard_cache.json'), tz=timezone.utc)
+                if (rc_mtime - scraped_dt).total_seconds() > 3600:
+                    is_vet_stale = True
+                    stale_reason = f"Veterinary records (`{vet_scraped_str}`) are older than the latest racecard declarations."
+        if is_vet_stale:
+            st.markdown(clean_html(f'''
+            <div style="background: rgba(245, 158, 11, 0.14); border-left: 4px solid #f59e0b; padding: 10px 16px; border-radius: 6px; margin: 10px 0; color: #fef3c7; font-size: 0.9rem;">
+                ⚠️ <b>VETERINARY DATA STALENESS NOTICE:</b> {stale_reason} Run <code>python vet_records.py</code> to refresh official HKJC <code>ovehorse</code> records.
+            </div>
+            '''), unsafe_allow_html=True)
+    except Exception as _stale_err:
+        pass
+
     if not os.path.exists('model.joblib'):
         with st.spinner("Compiling structural probability models..."):
             try:
@@ -945,6 +1022,32 @@ with tab1:
             
             if 'clean_name' not in df_runners.columns:
                 df_runners['clean_name'] = df_runners['name'].str.upper().str.strip()
+            # Overlay structured official HKJC veterinary records keyed by horse_code so frozen_predictions never show stale/oldest vet rows
+            try:
+                from vet_records import format_vet_column_display
+                live_code_map = {
+                    r.get('no'): str(r.get('code') or '').strip().upper()
+                    for r in (race.get('runners') or [])
+                    if r.get('no') is not None
+                }
+                if 'code' not in df_runners.columns:
+                    df_runners['code'] = df_runners['no'].map(live_code_map)
+                else:
+                    df_runners['code'] = df_runners['code'].fillna(df_runners['no'].map(live_code_map))
+                updated_vet_display = []
+                updated_vet_flag = []
+                for _, f_row in df_runners.iterrows():
+                    v_rec = lookup_runner_vet_record(f_row, vet_store)
+                    if v_rec is not None:
+                        updated_vet_display.append(format_vet_column_display(v_rec))
+                        updated_vet_flag.append(int(v_rec.get('prev_run_vet_finding', 0)))
+                    else:
+                        updated_vet_display.append(str(f_row.get('vet_findings') or '✅ Clear Record'))
+                        updated_vet_flag.append(int(pd.to_numeric(f_row.get('prev_run_vet_finding', 0), errors='coerce') or 0))
+                df_runners['vet_findings'] = updated_vet_display
+                df_runners['prev_run_vet_finding'] = updated_vet_flag
+            except Exception as _vet_ov_err:
+                pass
             race['processed_runners'] = df_runners
             
             # Add all runners to global pool for summaries
@@ -1692,17 +1795,45 @@ with tab1:
             horse_win_gears = winning_gears.get(c_name, set())
             is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
             
-            # 1. Vet Findings
-            if raw_vet_note and raw_vet_note.lower() not in ['', 'nan', 'none', 'no findings']:
-                vet = raw_vet_note
-            elif comment and "(" in comment and ")" in comment:
-                matches = re.findall(r'\((.*?)\)', comment)
-                last_match = matches[-1] if matches else ""
-                vet = last_match if ("vet" in last_match.lower() or "finding" in last_match.lower()) else "No Active Findings"
-            elif pd.to_numeric(row.get('prev_run_vet_finding', 0), errors='coerce') == 1:
-                vet = "Passed Official HKJC Vet Exam"
+            # 1. Vet Findings (strictly from official HKJC ovehorse records keyed by horse_code; never inferred from stewards' comments)
+            v_rec = lookup_runner_vet_record(row, vet_store)
+            if v_rec is not None:
+                try:
+                    from vet_records import format_vet_column_display
+                    vet = format_vet_column_display(v_rec)
+                except Exception:
+                    vet = str(v_rec.get('latest_vet_note') or '✅ Clear Record')
+            elif raw_vet_note and raw_vet_note.lower() not in ['', 'nan', 'none', 'no findings', 'no active findings']:
+                try:
+                    from vet_records import extract_vet_attributes
+                    m_dt = re.match(r'^(\d{1,2}/\d{1,2}/\d{2,4}):\s*(.*)$', raw_vet_note)
+                    dt_s = m_dt.group(1) if m_dt else ''
+                    rem_s = m_dt.group(2) if m_dt else raw_vet_note
+                    m_ps = re.search(r'\(Passed:\s*([^)]+)\)\s*$', rem_s, re.I)
+                    ps_s = m_ps.group(1).strip() if m_ps else '-'
+                    det_s = re.sub(r'\s*\(Passed:\s*[^)]+\)\s*$', '', rem_s, flags=re.I).strip()
+                    attrs = extract_vet_attributes(det_s, ps_s)
+                    if not attrs.get('is_material'):
+                        vet = "✅ Clear Record"
+                    else:
+                        from vet_records import format_vet_column_display
+                        vet = format_vet_column_display({
+                            'entries': [{
+                                'date': dt_s,
+                                'details': det_s,
+                                'passed_on': attrs.get('passed_on'),
+                                'category': attrs.get('category'),
+                                'body_part': attrs.get('body_part'),
+                                'side': attrs.get('side'),
+                                'procedure': attrs.get('procedure'),
+                                'status': attrs.get('status'),
+                                'is_material': attrs.get('is_material'),
+                            }]
+                        })
+                except Exception:
+                    vet = raw_vet_note
             else:
-                vet = "No Active Findings"
+                vet = "✅ Clear Record"
                 
             # 2. Photo Finish History
             if raw_photo in ["✅ Yes", "❌ No", "Debutant"]:
@@ -2112,40 +2243,16 @@ with tab1:
                         'text': f"<b>{r_item_link}</b>: {clean_snippet}"
                     })
                     
-                # 2. Specific Medical / Veterinary Recovery Tag
-                med_text = (str(r_comment) + ' ' + str(r_vet_notes)).lower()
-                specific_vet_tag = None
-                detail_note = "Officially recorded on file"
-                if 'tieback' in med_text or 'tie-back' in med_text or 'throat' in med_text or 'epiglottic' in med_text:
-                    specific_vet_tag = 'THROAT SURGERY'
-                    detail_note = "Post-procedure surgical clearance on file"
-                elif 'bled' in med_text or 'bleeder' in med_text:
-                    specific_vet_tag = 'BLEEDER RECOVERY'
-                    detail_note = "Mandatory rest & trial clearance certified"
-                elif 'lame' in med_text or 'lameness' in med_text:
-                    specific_vet_tag = 'LAME RECOVERY'
-                    detail_note = "Full sound condition verified by HKJC vet"
-                elif 'trachea' in med_text or 'mucus' in med_text or 'respiratory' in med_text:
-                    specific_vet_tag = 'RESPIRATORY CLEAR'
-                    detail_note = "Trachea / respiratory inspection passed"
-                elif 'irregular heart' in med_text or 'heart irregularity' in med_text:
-                    specific_vet_tag = 'HEART RECOVERY'
-                    detail_note = "Cardiovascular exam passed"
-                elif 'arthroscop' in med_text or 'bone chip' in med_text or 'joint' in med_text:
-                    specific_vet_tag = 'JOINT SURGERY'
-                    detail_note = "Post-arthroscopy recovery certified"
-                elif r_vet_status == 1:
-                    specific_vet_tag = 'VET CLEARED'
-                    detail_note = "Passed official HKJC post-race veterinary examination"
-                    
-                if specific_vet_tag:
-                    tactical_radar_items.append({
-                        'type': f'🏥 {specific_vet_tag}',
-                        'color': '#f97316',
-                        'bg': 'rgba(249, 115, 22, 0.10)',
-                        'border': 'rgba(249, 115, 22, 0.4)',
-                        'text': f"<b>{r_item_link}</b>: [{specific_vet_tag}] {detail_note}"
-                    })
+                # 2. Official HKJC Veterinary Record Tag (strictly from ovehorse; never inferred from stewards' comments or fabricated text)
+                try:
+                    from vet_records import format_radar_vet_item
+                    r_vet_rec = lookup_runner_vet_record(r_item, vet_store)
+                    if r_vet_rec is not None:
+                        radar_vet_item = format_radar_vet_item(r_vet_rec, r_item_link)
+                        if radar_vet_item:
+                            tactical_radar_items.append(radar_vet_item)
+                except Exception:
+                    pass
                     
                 # 3. First-Up / Fresh Layoff
                 if pd.notnull(r_days_off) and r_days_off >= 90:
@@ -2497,10 +2604,14 @@ with tab1:
 
                 def _fmt_vet(val):
                     s = str(val or '').strip()
-                    if not s or s.lower() in ['none', 'nan', 'no active findings', 'clear record', '-']:
+                    if not s or s.lower() in ['none', 'nan', 'no active findings', 'no findings', 'clear record', '-', '✅ clear record']:
                         return "✅ Clear Record"
-                    if not s.startswith("⚠️"):
-                        return f"⚠️ {s}"
+                    # Never prefix administrative notes or already-formatted structured icons with ⚠️
+                    if any(s.startswith(prefix) for prefix in ("✅", "⚠️", "🚨", "🏥", "🩸", "🫁", "🦵", "🩹", "❤️", "📉", "ℹ️")):
+                        return s
+                    low_s = s.lower()
+                    if any(adm in low_s for adm in ("castration", "eight years of age", "unraced for 12 months")):
+                        return "✅ Clear Record"
                     return s
 
                 def _fmt_stewards(val):
@@ -2590,6 +2701,49 @@ with tab1:
                 except Exception as err:
                     print(f"Error rendering race dataframe: {err}")
                     st.dataframe(df_display, hide_index=True, use_container_width=True)
+
+                # Expandable Full Official HKJC Veterinary History per horse in this race
+                try:
+                    from vet_records import CATEGORY_LABELS, CATEGORY_ICONS
+                    race_vet_histories = []
+                    for _, r_row in df_runners.sort_values(by='no', ascending=True).iterrows():
+                        v_rec = lookup_runner_vet_record(r_row, vet_store)
+                        if v_rec and v_rec.get('entries'):
+                            race_vet_histories.append((r_row, v_rec))
+                    if race_vet_histories:
+                        st.markdown('<div style="margin-top:12px; color:#38bdf8; font-family:\'Montserrat\'; font-weight:800; font-size:0.9rem;">🏥 FULL OFFICIAL HKJC VETERINARY RECORDS (NEWEST FIRST — LINKED TO OVEHORSE):</div>', unsafe_allow_html=True)
+                        for r_row, v_rec in race_vet_histories:
+                            r_no_v = safe_int(r_row.get('no'), 0)
+                            r_nm_v = str(r_row.get('name') or v_rec.get('horse_name') or '').strip().upper()
+                            r_cd_v = str(r_row.get('code') or v_rec.get('horse_code') or '').strip().upper()
+                            ove_url = v_rec.get('source_url') or f"https://racing.hkjc.com/en-us/local/information/ovehorse?horseid={v_rec.get('horse_id', '')}"
+                            entries_v = v_rec.get('entries', [])
+                            with st.expander(f"#{r_no_v} {r_nm_v} ({r_cd_v}) — {len(entries_v)} Official Record(s)", expanded=False):
+                                st.markdown(
+                                    clean_html(f'<div style="margin-bottom:6px; font-size:0.85rem;"><a href="{ove_url}" target="_blank" style="color:#38bdf8; font-weight:700; text-decoration:underline;">🔗 View Official HKJC Veterinary Record Page ({v_rec.get("horse_id", r_cd_v)}) ↗</a></div>'),
+                                    unsafe_allow_html=True,
+                                )
+                                hist_rows = []
+                                for e_item in entries_v:
+                                    cat_k = e_item.get('category', 'other')
+                                    st_k = e_item.get('status', 'cleared')
+                                    st_label = (
+                                        "🔴 Active Requirement"
+                                        if st_k == "active_requirement"
+                                        else ("🟢 Cleared" if st_k == "cleared" else "⚪ Administrative / No Req.")
+                                    )
+                                    bp_parts = [p for p in [e_item.get('side'), e_item.get('body_part'), e_item.get('procedure')] if p]
+                                    hist_rows.append({
+                                        "Date (DD/MM/YYYY)": e_item.get("date", ""),
+                                        "Category": f"{CATEGORY_ICONS.get(cat_k, '📋')} {CATEGORY_LABELS.get(cat_k, cat_k)}",
+                                        "Site / Procedure": " / ".join(bp_parts) if bp_parts else "-",
+                                        "Official HKJC Details": e_item.get("details", ""),
+                                        "Status": st_label,
+                                        "Passed On": e_item.get("passed_on") or "-",
+                                    })
+                                st.dataframe(pd.DataFrame(hist_rows), hide_index=True, use_container_width=True)
+                except Exception as _vh_err:
+                    print(f"Error rendering expandable vet history: {_vh_err}")
 
 with tab2:
     st.markdown("<h3 style='font-family:\"Montserrat\";'>Historical Archive & Gallery</h3>", unsafe_allow_html=True)

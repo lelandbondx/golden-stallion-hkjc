@@ -1,9 +1,13 @@
-# Fast production dependencies for Streamlit Cloud
+# Fast production dependencies for Streamlit Cloud & Render
 streamlit
 pandas
 numpy
 requests
 beautifulsoup4
+lxml
+html5lib
 joblib
+xgboost==3.2.0
+scikit-learn==1.8.0; python_version >= "3.11"
+scikit-learn==1.7.2; python_version < "3.11"
 streamlit-autorefresh
-

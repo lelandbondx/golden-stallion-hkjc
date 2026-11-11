@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-10T22:33:17Z",
+  "updated_at_utc": "2026-11-11T01:21:14Z",
   "target_meeting": "2026-11-11 Happy Valley",
   "first_automated_meeting": "2026-11-08 Sha Tin",
   "standing_bots": {
@@ -25,8 +25,8 @@
       "duty": "2h post-meeting (Cross-checks medical/vet flags & final integrity gate)",
       "file_used": "declared_vet_records.json",
       "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\declared_vet_records.json",
-      "timestamp_hkt": "2026-11-11 06:22:24 HKT",
-      "timestamp_utc": "2026-11-10T22:22:24Z",
+      "timestamp_hkt": "2026-11-11 09:20:23 HKT",
+      "timestamp_utc": "2026-11-11T01:20:23Z",
       "record_count": 11,
       "status": "loaded"
     }

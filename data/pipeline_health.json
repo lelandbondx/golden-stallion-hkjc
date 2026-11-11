@@ -1,11 +1,11 @@
 {
   "overall_status": "ok",
-  "updated_at": "2026-11-10T22:33:19Z",
+  "updated_at": "2026-11-11T01:21:15Z",
   "components": {
     "scraper": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:33:17Z",
-      "last_success_at": "2026-11-10T22:33:17Z",
+      "last_attempt_at": "2026-11-11T01:21:14Z",
+      "last_success_at": "2026-11-11T01:21:14Z",
       "metrics": {
         "source": "live_html_racecard",
         "meeting_date": "2026-11-11",
@@ -26,8 +26,8 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:33:19Z",
-      "last_success_at": "2026-11-10T22:33:19Z",
+      "last_attempt_at": "2026-11-11T01:21:15Z",
+      "last_success_at": "2026-11-11T01:21:15Z",
       "metrics": {
         "meeting_date": "2026-11-11",
         "venue": "Happy Valley",
@@ -72,13 +72,19 @@
     },
     "veterinary_records": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:22:24Z",
-      "last_success_at": "2026-11-10T22:22:24Z",
+      "last_attempt_at": "2026-11-11T01:20:23Z",
+      "last_success_at": "2026-11-11T01:20:23Z",
       "metrics": {
-        "declared_vet_records": 11,
-        "unique_horses": 11,
-        "recent_180d_flags": 7,
-        "source_url": "https://racing.hkjc.com/en-us/local/information/overecord"
+        "horses_scraped": 272,
+        "target_horses_this_run": 272,
+        "horses_declared": 108,
+        "declared_horses_scraped": 108,
+        "declared_coverage_pct": 100.0,
+        "overecord_disagreements_count": 0,
+        "overecord_disagreements": [],
+        "latest_stats_rows_updated": 271,
+        "last_successful_commit_at": "2026-11-11T01:20:23Z",
+        "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse"
       },
       "error": null
     },
@@ -170,8 +176,8 @@
     },
     "frozen_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:33:19Z",
-      "last_success_at": "2026-11-10T22:33:19Z",
+      "last_attempt_at": "2026-11-11T01:21:15Z",
+      "last_success_at": "2026-11-11T01:21:15Z",
       "metrics": {
         "file": "frozen_predictions_20261111.json",
         "races_cached": 9

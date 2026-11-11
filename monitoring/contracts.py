@@ -15,6 +15,7 @@ Implements the post-meeting audit calibrations (Happy Valley 21 Oct 2026 review)
      compared with early gate-speed / positional metrics (`avg_first_pos`) to capture
      sustained acceleration on Sha Tin's 430m home straight.
 """
+import re
 import numpy as np
 import pandas as pd
 
@@ -225,16 +226,49 @@ def compute_telemetry_harmony_multipliers(
         .fillna(0)
         .values
     )
-    # All declared HKJC runners have passed an official barrier trial or vet exam before racing.
-    # Only retain active vet demotion if explicitly marked UNCLEARED (e.g., synthetic unit test).
+    # Cleared entries (status == 'cleared' or Passed: DD/MM/YYYY) and administrative entries
+    # must NEVER trigger the -2.0% active_vet_risk_penalty.
     names_upper = (
         df_runners.get("name", pd.Series("", index=df_runners.index))
         .astype(str)
         .str.upper()
         .values
     )
-    is_explicit_uncleared = np.array(["UNCLEARED" in nm for nm in names_upper], dtype=bool)
-    vet_issue = np.where(is_explicit_uncleared, raw_vet_issue, 0)
+    vet_notes_arr = (
+        df_runners.get(
+            "latest_vet_note",
+            df_runners.get("vet_findings", pd.Series("", index=df_runners.index)),
+        )
+        .fillna("")
+        .astype(str)
+        .values
+    )
+    vet_status_arr = (
+        df_runners.get("vet_status", pd.Series("", index=df_runners.index))
+        .fillna("")
+        .astype(str)
+        .str.lower()
+        .values
+    )
+    is_cleared_entry = np.array(
+        [
+            (st in ("cleared", "no_requirement"))
+            or bool(re.search(r"Passed:\s*\d{1,2}/\d{1,2}/\d{2,4}", str(nt), re.I))
+            or ("CLEARED" in str(nt).upper() and "UNCLEARED" not in str(nt).upper())
+            for st, nt in zip(vet_status_arr, vet_notes_arr)
+        ],
+        dtype=bool,
+    )
+    is_explicit_uncleared = np.array(
+        [
+            ("UNCLEARED" in nm)
+            or (st == "active_requirement")
+            or bool(re.search(r"Passed:\s*-", str(nt)))
+            for nm, st, nt in zip(names_upper, vet_status_arr, vet_notes_arr)
+        ],
+        dtype=bool,
+    )
+    vet_issue = np.where((raw_vet_issue != 0) & (~is_cleared_entry) & is_explicit_uncleared, raw_vet_issue, 0)
     draws = (
         pd.to_numeric(df_runners.get("draw", pd.Series(6, index=df_runners.index)), errors="coerce")
         .fillna(6)

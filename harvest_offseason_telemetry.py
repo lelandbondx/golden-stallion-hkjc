@@ -150,38 +150,17 @@ def harvest_single_horse(code, name):
             pass
 
         try:
-            vet_url = f"https://racing.hkjc.com/racing/information/English/Horse/ovehorse.aspx?horseid={horse_id}"
-            r_vet = requests.get(vet_url, headers=HEADERS, timeout=8)
-            if r_vet.status_code == 200:
-                dfs_vet = pd.read_html(r_vet.content)
-                for df in dfs_vet:
-                    if df.shape[1] == 3 and ('Details' in df.columns or (len(df) > 0 and 'Details' in df.iloc[0].values)):
-                        if 'Details' not in df.columns:
-                            df.columns = [str(c).strip() for c in df.iloc[0]]
-                            df = df.drop(0)
-                        if not df.empty:
-                            date_str = str(df.iloc[0].get('Date', '')).strip()
-                            raw_details = str(df.iloc[0].get('Details', '')).strip()
-                            passed_date = str(df.iloc[0].get('Passed Date', '')).strip()
-                            details = raw_details.lower()
-                            if raw_details and details not in ['nan', 'none', ''] and 'no record' not in details:
-                                data["latest_vet_note"] = f"{date_str}: {raw_details}" + (
-                                    f" (Passed: {passed_date})" if passed_date and passed_date.lower() not in ['nan', 'none', ''] else ""
-                                )
-                            vet_keywords = [
-                                'lame', 'blood', 'trachea', 'heart', 'irregularity', 'mucus',
-                                'surgery', 'abnormal', 'infection', 'fever', 'unacceptable',
-                                'disappointing', 'withdrawn', 'barrier trial', 'roarer',
-                                'epiglottic', 'tendon', 'suspensory', 'colic', 'fracture', 'bone'
-                            ]
-                            if any(k in details for k in vet_keywords):
-                                dt = pd.to_datetime(date_str, dayfirst=True, errors='coerce')
-                                if pd.notnull(dt):
-                                    if (pd.to_datetime(datetime.now().date()) - dt).days <= 180:
-                                        data["prev_run_vet_finding"] = 1
-                                elif '2026' in date_str:
-                                    data["prev_run_vet_finding"] = 1
-                        break
+            from vet_records import scrape_horse_vet_record
+            v_rec = scrape_horse_vet_record(horse_id=horse_id, horse_code=code, horse_name=name)
+            if v_rec:
+                data["prev_run_vet_finding"] = int(v_rec.get("prev_run_vet_finding", 0))
+                data["latest_vet_note"] = str(v_rec.get("latest_vet_note") or "No Findings")
+                data["has_surgery_history"] = int(v_rec.get("has_surgery_history", 0))
+                data["last_material_date"] = v_rec.get("last_material_date")
+                data["days_since_material_clearance"] = v_rec.get("days_since_material_clearance")
+                data["bleed_count_12m"] = int(v_rec.get("bleed_count_12m", 0))
+                data["tracheal_bleed_count_12m"] = int(v_rec.get("tracheal_bleed_count_12m", 0))
+                data["nostril_bleed_count_12m"] = int(v_rec.get("nostril_bleed_count_12m", 0))
         except Exception:
             pass
 
@@ -219,20 +198,25 @@ def run_offseason_harvest(limit=150):
         stats_path = 'data/latest_horse_stats.csv'
         if os.path.exists(stats_path):
             existing_df = pd.read_csv(stats_path)
-            combined = pd.merge(existing_df, df_new, on='clean_name', how='outer', suffixes=('', '_new'))
+            if 'horse_code' not in existing_df.columns:
+                existing_df['horse_code'] = None
+            existing_df['_join_key'] = existing_df['horse_code'].fillna('').astype(str).str.strip().str.upper()
+            no_code_mask = existing_df['_join_key'].isin(['', 'NAN', 'NONE'])
+            existing_df.loc[no_code_mask, '_join_key'] = existing_df.loc[no_code_mask, 'clean_name'].astype(str).str.strip().str.upper()
+
+            df_new['_join_key'] = df_new['horse_code'].fillna('').astype(str).str.strip().str.upper()
+            new_no_code = df_new['_join_key'].isin(['', 'NAN', 'NONE'])
+            df_new.loc[new_no_code, '_join_key'] = df_new.loc[new_no_code, 'clean_name'].astype(str).str.strip().str.upper()
+
+            combined = pd.merge(existing_df, df_new, on='_join_key', how='outer', suffixes=('', '_new'))
             for col in df_new.columns:
-                if col != 'clean_name':
+                if col != '_join_key':
                     if f'{col}_new' in combined.columns:
-                        if col == 'prev_run_vet_finding':
-                            old_v = pd.to_numeric(combined.get(col, 0), errors='coerce').fillna(0)
-                            new_v = pd.to_numeric(combined[f'{col}_new'], errors='coerce').fillna(0)
-                            combined[col] = np.maximum(old_v, new_v).astype(int)
-                        else:
-                            combined[col] = combined[f'{col}_new'].combine_first(combined.get(col))
+                        combined[col] = combined[f'{col}_new'].combine_first(combined.get(col))
                         combined = combined.drop(columns=[f'{col}_new'])
                     elif col not in combined.columns:
                         combined[col] = df_new[col]
-            combined = combined.drop_duplicates(subset=['clean_name'], keep='last')
+            combined = combined.drop_duplicates(subset=['_join_key'], keep='last').drop(columns=['_join_key'], errors='ignore')
             combined.to_csv(stats_path, index=False)
         else:
             df_new.to_csv(stats_path, index=False)

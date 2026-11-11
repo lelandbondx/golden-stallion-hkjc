@@ -26,15 +26,31 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install lxml html5lib
+          pip install lxml html5lib pytest
 
-      - name: Sync All Telemetry (Trials, Profiles, Vet Records, Trackwork, Incidents, Precomputed Features)
+      - name: Refresh Official HKJC Veterinary Records
+        run: |
+          python vet_records.py
+          pytest tests/test_vet_records.py -q
+
+      - name: Commit Veterinary Records Immediately
+        run: |
+          git config --global user.name 'Golden Stallion Automator'
+          git config --global user.email 'automator@golden-stallion.local'
+          git add data/vet_records.json data/declared_vet_records.json data/latest_horse_stats.csv data/pipeline_health.json data/health/
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update official HKJC per-horse veterinary records"
+            git pull --no-rebase origin main -X ours
+            git push origin main
+          fi
+
+      - name: Sync All Telemetry (Trials, Profiles, Trackwork, Incidents, Precomputed Features)
         run: |
           python sync_offseason_data.py 200
           python initialize_baseline_odds.py
@@ -44,7 +60,12 @@ jobs:
           python train_model.py
           python run_predictions.py
 
+      - name: Run Unit Tests Before Final Commit
+        run: |
+          pytest tests/test_vet_records.py tests/test_tactical_engine.py -q
+
       - name: Commit and Push Changes to Render
+        if: always()
         run: |
           git config --global user.name 'Golden Stallion Automator'
           git config --global user.email 'automator@golden-stallion.local'
@@ -56,5 +77,6 @@ jobs:
           fi
 
       - name: Verify Live Render App Health
+        if: always()
         run: |
           curl -s -f -o /dev/null -w "HTTP %{http_code}\n" https://silks-ai.onrender.com/?health=1

@@ -51,6 +51,26 @@ def check_stewards_excuse(comment):
     return any(kw in c for kw in TACTICAL_EXCUSE_KEYWORDS)
 
 
+def _is_note_cleared_or_admin(latest_vet_note: str) -> bool:
+    """Return True if a vet note has an explicit Passed date (DD/MM/YYYY) or is an administrative note."""
+    if not latest_vet_note or pd.isna(latest_vet_note):
+        return False
+    txt = str(latest_vet_note).strip()
+    if not txt or txt.lower() in ('no findings', 'none', 'nan', '✅ clear record'):
+        return True
+    try:
+        from vet_records import extract_vet_attributes
+        m_pass = re.search(r'\(Passed:\s*([^)]+)\)', txt, re.I)
+        passed_val = m_pass.group(1).strip() if m_pass else '-'
+        attrs = extract_vet_attributes(txt, passed_val)
+        if attrs.get('status') in ('cleared', 'no_requirement'):
+            return True
+    except Exception:
+        if re.search(r'Passed:\s*\d{1,2}/\d{1,2}/\d{2,4}', txt, re.I):
+            return True
+    return False
+
+
 def check_health_risk(comment='', vet_status=0, latest_vet_note='', horse_name=None, steward_clearances=None):
     """
     Returns True if an active or recent medical unsoundness flag is detected.
@@ -73,23 +93,71 @@ def check_health_risk(comment='', vet_status=0, latest_vet_note='', horse_name=N
     if vet_status and vet_status != 0 and str(vet_status).lower() not in ('0', 'false', 'none', 'nan'):
         return True
 
-    combined = f"{comment or ''} {latest_vet_note or ''}".lower()
+    # If the vet note is explicitly cleared (Passed: DD/MM/YYYY) or administrative, only inspect stewards comment
+    effective_vet_note = '' if _is_note_cleared_or_admin(latest_vet_note) else (latest_vet_note or '')
+    combined = f"{comment or ''} {effective_vet_note}".lower()
     return any(hr in combined for hr in HEALTH_RISK_KEYWORDS)
 
 
-def get_health_risk_severity(comment='', vet_status=0, latest_vet_note=''):
+def get_health_risk_severity(comment='', vet_status=0, latest_vet_note='', category=None, status=None):
     """
-    Returns severity score (0 to 3) for medical risks:
-    3: Bleeder (both nostrils), heart irregularity, severe lameness, roarer
-    2: Blood/mucus in trachea, moderate lameness, unacceptable performance
-    1: Minor soreness / vet exam required
-    0: Clean / No active health risk
+    Returns severity score (0 to 3) for medical risks using structured categories:
+    3: bleeding_nostrils (bled from both nostrils / bled both nostrils), cardiac (irregular heart), airway (roarer / DDSP)
+    2: tracheal_blood (blood/mucus in trachea), lameness, surgery, injury, failed_vet_exam, performance (unacceptable)
+    1: Minor soreness / other active vet flag
+    0: Clean / Cleared / Administrative (castration, age, unraced)
     """
-    combined = f"{comment or ''} {latest_vet_note or ''}".lower()
-    if 'bled both nostrils' in combined or 'irregular heart' in combined or 'roarer' in combined:
+    if status in ('cleared', 'no_requirement') and not comment:
+        return 0
+
+    note_str = str(latest_vet_note or '').strip()
+    inferred_cat = category
+    inferred_status = status
+    if not inferred_cat and note_str and note_str.lower() not in ('no findings', 'none', 'nan', ''):
+        try:
+            from vet_records import extract_vet_attributes
+            m_pass = re.search(r'\(Passed:\s*([^)]+)\)', note_str, re.I)
+            passed_val = m_pass.group(1).strip() if m_pass else '-'
+            attrs = extract_vet_attributes(note_str, passed_val)
+            inferred_cat = attrs.get('category')
+            if not inferred_status:
+                inferred_status = attrs.get('status')
+        except Exception:
+            pass
+
+    if inferred_status in ('cleared', 'no_requirement') and not (vet_status and str(vet_status) not in ('0', 'false', 'False', 'None', 'nan')):
+        note_for_matching = ''
+    else:
+        note_for_matching = note_str
+
+    combined = f"{comment or ''} {note_for_matching}".lower()
+
+    if inferred_status not in ('cleared', 'no_requirement'):
+        if inferred_cat in ('bleeding_nostrils', 'cardiac', 'airway'):
+            return 3
+        if inferred_cat in ('tracheal_blood', 'lameness', 'surgery', 'injury', 'failed_vet_exam', 'performance'):
+            return 2
+        if inferred_cat == 'administrative' and not comment:
+            return 0
+
+    if (
+        'bled from both nostrils' in combined
+        or 'bled both nostrils' in combined
+        or 'irregular heart' in combined
+        or 'heart irregularity' in combined
+        or 'roarer' in combined
+        or 'dorsal displacement' in combined
+    ):
         return 3
-    if 'blood in trachea' in combined or 'lame' in combined or 'unacceptable' in combined:
+    if (
+        'blood in trachea' in combined
+        or 'substantial blood' in combined
+        or 'lame' in combined
+        or 'arthroscop' in combined
+        or 'surgery' in combined
+        or 'unacceptable' in combined
+    ):
         return 2
-    if any(hr in combined for hr in HEALTH_RISK_KEYWORDS) or (vet_status and str(vet_status) != '0'):
+    if any(hr in combined for hr in HEALTH_RISK_KEYWORDS) or (vet_status and str(vet_status) not in ('0', 'false', 'False', 'None', 'nan')):
         return 1
     return 0

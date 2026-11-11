@@ -1,10 +1,7 @@
 import os
 import pandas as pd
 import numpy as np
-try:
-    import xgboost as xgb
-except ImportError:
-    xgb = None
+import xgboost as xgb
 import joblib
 from datetime import datetime
 
@@ -291,10 +288,24 @@ def predict_probabilities(df, venue=None, going=None, race_date=None, race_class
     live_df = df.copy()
     if os.path.exists('data/latest_horse_stats.csv'):
         stats_df = pd.read_csv('data/latest_horse_stats.csv')
-        live_df['clean_name'] = live_df['name'].str.upper().str.strip()
-        stats_df['clean_name'] = stats_df['clean_name'].str.upper().str.strip()
-        cols_to_use = stats_df.columns.difference(live_df.columns).tolist() + ['clean_name']
-        live_df = pd.merge(live_df, stats_df[cols_to_use], on='clean_name', how='left')
+        live_df['clean_name'] = live_df['name'].astype(str).str.upper().str.strip()
+        stats_df['clean_name'] = stats_df['clean_name'].astype(str).str.upper().str.strip()
+        if 'code' in live_df.columns and 'horse_code' in stats_df.columns:
+            live_df['_merge_code'] = live_df['code'].fillna('').astype(str).str.upper().str.strip()
+            stats_df['_merge_code'] = stats_df['horse_code'].fillna('').astype(str).str.upper().str.strip()
+            has_valid_codes = (live_df['_merge_code'] != '') & (~live_df['_merge_code'].isin(['NAN', 'NONE']))
+            if has_valid_codes.all():
+                stats_dedup = stats_df[stats_df['_merge_code'] != ''].drop_duplicates(subset=['_merge_code'], keep='last')
+                cols_to_use = [c for c in stats_dedup.columns if c not in live_df.columns or c == '_merge_code']
+                live_df = pd.merge(live_df, stats_dedup[cols_to_use], on='_merge_code', how='left')
+                live_df = live_df.drop(columns=['_merge_code'], errors='ignore')
+            else:
+                cols_to_use = stats_df.columns.difference(live_df.columns).tolist() + ['clean_name']
+                live_df = pd.merge(live_df, stats_df.drop_duplicates(subset=['clean_name'], keep='last')[cols_to_use], on='clean_name', how='left')
+                live_df = live_df.drop(columns=['_merge_code'], errors='ignore')
+        else:
+            cols_to_use = stats_df.columns.difference(live_df.columns).tolist() + ['clean_name']
+            live_df = pd.merge(live_df, stats_df.drop_duplicates(subset=['clean_name'], keep='last')[cols_to_use], on='clean_name', how='left')
         
         # Fill NAs
         rating_col = live_df['horse_rating'] if 'horse_rating' in live_df.columns else live_df.get('rtg', 40)

@@ -882,12 +882,15 @@ def run():
         
         # Populate vet_findings, steward_notes, and photo_finish for full parity with app.py
         from data.incident_engine import load_horse_memory
+        from vet_records import load_vet_records, build_code_index, format_vet_column_display
         horse_memory = load_horse_memory()
+        vet_code_idx = build_code_index(load_vet_records())
         vet_notes = []
         steward_notes = []
         photo_hist = []
         for _, row in df_runners.iterrows():
             c_name = str(row.get('clean_name', '')).strip().upper()
+            r_code = str(row.get('code') or row.get('horse_code') or '').strip().upper()
             comment = last_comments.get(c_name, '').strip()
             raw_vet_note = str(row.get('latest_vet_note', '')).strip()
             raw_photo = str(row.get('photo_finish_hist', '')).strip()
@@ -898,16 +901,12 @@ def run():
             horse_win_gears = winning_gears.get(c_name, set())
             is_gear_matched = (tonight_gear in horse_win_gears) or (tonight_gear == '' and '' in horse_win_gears)
 
-            if raw_vet_note and raw_vet_note.lower() not in ['', 'nan', 'none', 'no findings']:
+            if r_code and r_code in vet_code_idx:
+                vet = format_vet_column_display(vet_code_idx[r_code])
+            elif raw_vet_note and raw_vet_note.lower() not in ['', 'nan', 'none', 'no findings', 'no active findings']:
                 vet = raw_vet_note
-            elif comment and "(" in comment and ")" in comment:
-                matches = re.findall(r'\((.*?)\)', comment)
-                last_match = matches[-1] if matches else ""
-                vet = last_match if ("vet" in last_match.lower() or "finding" in last_match.lower()) else "No Active Findings"
-            elif pd.to_numeric(row.get('prev_run_vet_finding', 0), errors='coerce') == 1:
-                vet = "Passed Official HKJC Vet Exam"
             else:
-                vet = "No Active Findings"
+                vet = "✅ Clear Record"
 
             if raw_photo in ["✅ Yes", "❌ No", "Debutant"]:
                 photo = raw_photo
