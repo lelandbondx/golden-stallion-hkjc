@@ -777,6 +777,35 @@ def format_horse_link(runner, prefix="", show_arrow=True):
     arrow_html = '<span class="hkjc-link-arrow">↗</span>' if show_arrow else ''
     return f'<a href="{url}" target="_blank" rel="noopener noreferrer" class="horse-profile-link" title="View Official HKJC Horse Profile">{prefix_str}{name}{arrow_html}</a>'
 
+def format_post_time_hkt_est(iso_str):
+    """
+    Parses an ISO post-time string and returns a formatted tuple:
+    (hkt_str, est_str, combined_display)
+    e.g. ('18:40 HKT', '5:40 AM EST', '18:40 HKT (5:40 AM EST)')
+    """
+    if not iso_str:
+        return "TBD", "TBD", "TBD"
+    try:
+        from datetime import datetime
+        dt = datetime.fromisoformat(str(iso_str))
+        try:
+            from zoneinfo import ZoneInfo
+            hkt_tz = ZoneInfo("Asia/Hong_Kong")
+            est_tz = ZoneInfo("America/New_York")
+        except Exception:
+            from datetime import timezone, timedelta
+            hkt_tz = timezone(timedelta(hours=8))
+            est_tz = timezone(timedelta(hours=-5))
+        
+        dt_hkt = dt.astimezone(hkt_tz)
+        dt_est = dt.astimezone(est_tz)
+        hkt_str = dt_hkt.strftime("%H:%M HKT")
+        hour_est = dt_est.strftime("%I").lstrip("0")
+        est_str = f"{hour_est}:{dt_est.strftime('%M %p')} {dt_est.strftime('%Z')}"
+        return hkt_str, est_str, f"{hkt_str} ({est_str})"
+    except Exception:
+        return "TBD", "TBD", "TBD"
+
 search_term = st.text_input("🔍 Highlight Jockey or Trainer (e.g., PURTON, FOWNES)", "").strip().upper()
 
 # TABS
@@ -786,8 +815,11 @@ with tab1:
     if data.get('status') != 'success':
         st.warning("Live connection failed. Secure fallback models initialized.")
 
-    # Meeting Status Grid
-    col_st1, col_st2, col_st3, col_st4 = st.columns(4)
+    # Meeting Status Grid (Venue, Date, Track Conditions, Weather, Post Times)
+    first_post_time = races[0].get('time') if races and len(races) > 0 else None
+    hkt_fp, est_fp, comb_fp = format_post_time_hkt_est(first_post_time)
+
+    col_st1, col_st2, col_st3, col_st4, col_st5 = st.columns(5)
     with col_st1:
         st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#38bdf8; font-weight:800;">Venue</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(meeting.get('venue')), unsafe_allow_html=True)
     with col_st2:
@@ -802,6 +834,9 @@ with tab1:
         st.markdown('<div class="tech-panel border-accent-gold"><div class="data-label" style="color:#38bdf8; font-weight:800;">Track Conditions</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(cond_label), unsafe_allow_html=True)
     with col_st4:
         st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#38bdf8; font-weight:800;">Weather</div><div class="data-value" style="color:#ffffff; font-weight:800;">{}</div></div>'.format(meeting.get('weather')), unsafe_allow_html=True)
+    with col_st5:
+        post_label = f"{hkt_fp}<br><span style='font-size:0.80rem; color:#94a3b8;'>({est_fp})</span>" if hkt_fp != "TBD" else "TBD"
+        st.markdown('<div class="tech-panel border-accent-blue"><div class="data-label" style="color:#38bdf8; font-weight:800;">🕒 Race 1 Post</div><div class="data-value" style="color:#ffffff; font-weight:800; font-size:1.0rem; line-height:1.2;">{}</div></div>'.format(post_label), unsafe_allow_html=True)
 
     # Veterinary Data Staleness Banner (warns if vet_records.json scraped_at is older than 24h on race day or older than latest declarations)
     try:
@@ -2081,13 +2116,20 @@ with tab1:
     with col_hdr:
         st.markdown("<h3 style='font-family:\"Montserrat\"; letter-spacing:1px; color:#38bdf8; font-weight:800; margin-top:5px; text-shadow: 0 2px 10px rgba(56,189,248,0.3);'>AI RACE PREDICTIONS</h3>", unsafe_allow_html=True)
     with col_flt:
-        race_options = ["All Races"] + [f"Race {r.get('race_no')}" for r in races]
+        race_options = ["All Races"]
+        for r in races:
+            r_no = r.get('race_no')
+            _, _, c_time = format_post_time_hkt_est(r.get('time'))
+            if c_time != "TBD":
+                race_options.append(f"Race {r_no} – {c_time}")
+            else:
+                race_options.append(f"Race {r_no}")
         selected_race_view = st.selectbox("🏇 Jump to Specific Race", race_options, index=0)
 
     for race in races:
         if not race.get('runners'): continue
         race_num_label = f"Race {race.get('race_no')}"
-        if selected_race_view != "All Races" and selected_race_view != race_num_label:
+        if selected_race_view != "All Races" and not selected_race_view.startswith(race_num_label):
             continue
         df_runners = race['processed_runners']
         
@@ -2136,11 +2178,23 @@ with tab1:
                     if pd.isna(match.iloc[0]['Record_Time']): rec_time = "N/A"
                     if pd.isna(match.iloc[0]['Record_Horse']): rec_horse = "-"
 
+            hkt_time_str, est_time_str, _ = format_post_time_hkt_est(race.get('time'))
+            time_badge_html = ""
+            if hkt_time_str != "TBD":
+                time_badge_html = f'''
+                <div style="background: linear-gradient(145deg, rgba(14, 165, 233, 0.22), rgba(15, 23, 42, 0.95)); padding: 8px 16px; border-radius: 8px; border: 1.5px solid #38bdf8; box-shadow: 0 4px 14px rgba(0,0,0,0.4); display:flex; align-items:center;">
+                    <span style="font-size:0.85rem; color:#38bdf8; text-transform:uppercase; font-weight:800; letter-spacing:0.5px;">🕒 Post Time:</span>
+                    <span style="font-size:0.95rem; color:#ffffff; font-weight:800; margin-left:6px;">{hkt_time_str}</span>
+                    <span style="font-size:0.85rem; color:#cbd5e1; font-weight:700; margin-left:6px;">({est_time_str})</span>
+                </div>
+                '''
+
             st.markdown(clean_html(f'''
             <div style="font-family:'Montserrat'; font-size:1.6rem; font-weight:800; color:#38bdf8; margin-top:30px; margin-bottom:8px; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">
                 RACE {race.get("race_no", "")} – <span style="font-family:'Inter'; font-weight:700; font-size:1.2rem; color:#ffffff;">{class_dist}</span>
             </div>
             <div style="display:flex; gap: 15px; margin-bottom:15px; flex-wrap:wrap;">
+                {time_badge_html}
                 <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.95), rgba(20, 3, 6, 0.98)); padding: 8px 16px; border-radius: 8px; border: 1.5px solid rgba(56, 189, 248, 0.45); box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
                     <span style="font-size:0.85rem; color:#38bdf8; text-transform:uppercase; font-weight:700;">⏱️ Standard Time:</span>
                     <span style="font-size:0.95rem; color:#ffffff; font-weight:800; margin-left:5px;">{std_time}</span>

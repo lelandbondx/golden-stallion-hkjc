@@ -53,3 +53,4 @@
 {"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:21Z", "metrics": {"file": "frozen_predictions_20261111.json", "races_cached": 9}, "error": null}
 {"component": "run_predictions", "status": "ok", "timestamp": "2026-11-11T01:57:21Z", "metrics": {"meeting_date": "2026-11-11", "venue": "Happy Valley", "races_predicted": 9}, "error": null}
 {"component": "scraper", "status": "fail", "timestamp": "2026-11-11T01:57:36Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-11T03:35:10Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
