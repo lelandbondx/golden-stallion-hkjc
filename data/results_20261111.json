@@ -1,0 +1,2536 @@
+{
+  "1": {
+    "race_no": 1,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "5",
+        "name": "LOVELY MILES",
+        "code": "L165",
+        "jockey": "A Badel",
+        "trainer": "P F Yiu",
+        "act_wt": "133",
+        "body_wt": "1142",
+        "draw": "6",
+        "lbw": "---",
+        "run_pos": "6 5 5 1",
+        "finish_time": "1:40.73",
+        "win_odds": "10"
+      },
+      {
+        "plc": "2",
+        "no": "6",
+        "name": "FORTUNE KINGO",
+        "code": "K457",
+        "jockey": "Z Purton",
+        "trainer": "D J Whyte",
+        "act_wt": "127",
+        "body_wt": "1197",
+        "draw": "12",
+        "lbw": "N",
+        "run_pos": "12 11 11 2",
+        "finish_time": "1:40.77",
+        "win_odds": "3.6"
+      },
+      {
+        "plc": "3",
+        "no": "11",
+        "name": "ONLY U",
+        "code": "J037",
+        "jockey": "K C Leung",
+        "trainer": "J Cummings",
+        "act_wt": "123",
+        "body_wt": "1112",
+        "draw": "8",
+        "lbw": "1",
+        "run_pos": "8 7 7 3",
+        "finish_time": "1:40.89",
+        "win_odds": "8.7"
+      },
+      {
+        "plc": "4",
+        "no": "12",
+        "name": "WINDICATOR FAMILY",
+        "code": "H419",
+        "jockey": "K Teetan",
+        "trainer": "W K Mo",
+        "act_wt": "120",
+        "body_wt": "1031",
+        "draw": "10",
+        "lbw": "1-1/4",
+        "run_pos": "10 10 8 4",
+        "finish_time": "1:40.92",
+        "win_odds": "4.8"
+      },
+      {
+        "plc": "5",
+        "no": "8",
+        "name": "MULTISUPERSTAR",
+        "code": "L163",
+        "jockey": "A Atzeni",
+        "trainer": "A S Cruz",
+        "act_wt": "126",
+        "body_wt": "1120",
+        "draw": "3",
+        "lbw": "1-3/4",
+        "run_pos": "4 3 1 5",
+        "finish_time": "1:41.01",
+        "win_odds": "5.4"
+      },
+      {
+        "plc": "6",
+        "no": "7",
+        "name": "YOUNG FIGHTER",
+        "code": "K464",
+        "jockey": "L Ferraris",
+        "trainer": "C Fownes",
+        "act_wt": "127",
+        "body_wt": "1081",
+        "draw": "5",
+        "lbw": "3-1/2",
+        "run_pos": "3 4 4 6",
+        "finish_time": "1:41.27",
+        "win_odds": "11"
+      },
+      {
+        "plc": "7",
+        "no": "4",
+        "name": "HEALTHY PONY",
+        "code": "L046",
+        "jockey": "B Avdulla",
+        "trainer": "C W Chang",
+        "act_wt": "133",
+        "body_wt": "1033",
+        "draw": "7",
+        "lbw": "5-1/2",
+        "run_pos": "9 9 10 7",
+        "finish_time": "1:41.63",
+        "win_odds": "59"
+      },
+      {
+        "plc": "8",
+        "no": "3",
+        "name": "APOLAR FIGHTER",
+        "code": "J169",
+        "jockey": "C L Chau",
+        "trainer": "D Eustace",
+        "act_wt": "131",
+        "body_wt": "1071",
+        "draw": "11",
+        "lbw": "6-3/4",
+        "run_pos": "11 12 12 8",
+        "finish_time": "1:41.82",
+        "win_odds": "23"
+      },
+      {
+        "plc": "9",
+        "no": "2",
+        "name": "AMO ERGO SUM",
+        "code": "K394",
+        "jockey": "S Osborne",
+        "trainer": "B Crawford",
+        "act_wt": "133",
+        "body_wt": "1098",
+        "draw": "1",
+        "lbw": "7",
+        "run_pos": "5 6 6 9",
+        "finish_time": "1:41.84",
+        "win_odds": "17"
+      },
+      {
+        "plc": "10",
+        "no": "9",
+        "name": "TO INFINITY",
+        "code": "G277",
+        "jockey": "J Orman",
+        "trainer": "J Richards",
+        "act_wt": "126",
+        "body_wt": "1045",
+        "draw": "4",
+        "lbw": "7",
+        "run_pos": "7 8 9 10",
+        "finish_time": "1:41.87",
+        "win_odds": "25"
+      },
+      {
+        "plc": "11",
+        "no": "1",
+        "name": "CIRCUIT CENTURY",
+        "code": "K308",
+        "jockey": "H T Mo",
+        "trainer": "C S Shum",
+        "act_wt": "133",
+        "body_wt": "1101",
+        "draw": "2",
+        "lbw": "8-3/4",
+        "run_pos": "1 1 2 11",
+        "finish_time": "1:42.13",
+        "win_odds": "13"
+      },
+      {
+        "plc": "12",
+        "no": "10",
+        "name": "LEGENDARY IMPACT",
+        "code": "K035",
+        "jockey": "R Kingscote",
+        "trainer": "Y S Tsui",
+        "act_wt": "123",
+        "body_wt": "1217",
+        "draw": "9",
+        "lbw": "11-3/4",
+        "run_pos": "2 2 3 12",
+        "finish_time": "1:42.63",
+        "win_odds": "41"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "5",
+          "div": "109.00"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "5",
+          "div": "33.00"
+        },
+        {
+          "comb": "6",
+          "div": "17.00"
+        },
+        {
+          "comb": "11",
+          "div": "27.00"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "5,6",
+          "div": "211.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "5,6",
+          "div": "76.50"
+        },
+        {
+          "comb": "5,11",
+          "div": "138.00"
+        },
+        {
+          "comb": "6,11",
+          "div": "65.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "5,6",
+          "div": "554.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "5,6,11",
+          "div": "3873.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "5,6,11",
+          "div": "625.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "5,6,11,12",
+          "div": "481.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "5,6,11,12",
+          "div": "14851.00"
+        }
+      ]
+    }
+  },
+  "2": {
+    "race_no": 2,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "7",
+        "name": "NOBLE FANS",
+        "code": "K038",
+        "jockey": "A Atzeni",
+        "trainer": "J Size",
+        "act_wt": "129",
+        "body_wt": "1170",
+        "draw": "10",
+        "lbw": "---",
+        "run_pos": "9 9 1",
+        "finish_time": "1:10.22",
+        "win_odds": "15"
+      },
+      {
+        "plc": "2",
+        "no": "4",
+        "name": "LAKESHORE HERO",
+        "code": "J288",
+        "jockey": "Z Purton",
+        "trainer": "D J Hall",
+        "act_wt": "133",
+        "body_wt": "1074",
+        "draw": "12",
+        "lbw": "1-1/4",
+        "run_pos": "10 10 2",
+        "finish_time": "1:10.42",
+        "win_odds": "5.9"
+      },
+      {
+        "plc": "3",
+        "no": "10",
+        "name": "ALWAYS FLUKE",
+        "code": "H252",
+        "jockey": "H Bentley",
+        "trainer": "W Y So",
+        "act_wt": "126",
+        "body_wt": "1106",
+        "draw": "3",
+        "lbw": "1-1/2",
+        "run_pos": "5 5 3",
+        "finish_time": "1:10.45",
+        "win_odds": "5.8"
+      },
+      {
+        "plc": "4",
+        "no": "12",
+        "name": "CHILL MASTER",
+        "code": "J319",
+        "jockey": "S Osborne",
+        "trainer": "K L Man",
+        "act_wt": "117",
+        "body_wt": "1021",
+        "draw": "8",
+        "lbw": "2-1/4",
+        "run_pos": "11 11 4",
+        "finish_time": "1:10.58",
+        "win_odds": "6.5"
+      },
+      {
+        "plc": "5",
+        "no": "2",
+        "name": "MAJESTIC DELIGHT",
+        "code": "K189",
+        "jockey": "C L Chau",
+        "trainer": "D Eustace",
+        "act_wt": "132",
+        "body_wt": "1165",
+        "draw": "4",
+        "lbw": "3",
+        "run_pos": "6 6 5",
+        "finish_time": "1:10.68",
+        "win_odds": "11"
+      },
+      {
+        "plc": "6",
+        "no": "5",
+        "name": "RUSSET GLOW",
+        "code": "L059",
+        "jockey": "M Chadwick",
+        "trainer": "M Newnham",
+        "act_wt": "132",
+        "body_wt": "1132",
+        "draw": "9",
+        "lbw": "4",
+        "run_pos": "12 12 6",
+        "finish_time": "1:10.87",
+        "win_odds": "41"
+      },
+      {
+        "plc": "7",
+        "no": "6",
+        "name": "MAJESTIC LIFE",
+        "code": "L085",
+        "jockey": "C Y Ho",
+        "trainer": "C H Yip",
+        "act_wt": "131",
+        "body_wt": "1010",
+        "draw": "5",
+        "lbw": "4-1/4",
+        "run_pos": "7 8 7",
+        "finish_time": "1:10.88",
+        "win_odds": "30"
+      },
+      {
+        "plc": "8",
+        "no": "1",
+        "name": "KING ALLOY",
+        "code": "K099",
+        "jockey": "R Kingscote",
+        "trainer": "K H Ting",
+        "act_wt": "135",
+        "body_wt": "1204",
+        "draw": "6",
+        "lbw": "4-1/4",
+        "run_pos": "1 2 8",
+        "finish_time": "1:10.90",
+        "win_odds": "16"
+      },
+      {
+        "plc": "9",
+        "no": "9",
+        "name": "WINNING NOW",
+        "code": "K532",
+        "jockey": "L Ferraris",
+        "trainer": "F C Lor",
+        "act_wt": "128",
+        "body_wt": "1106",
+        "draw": "11",
+        "lbw": "5-1/4",
+        "run_pos": "3 3 9",
+        "finish_time": "1:11.05",
+        "win_odds": "17"
+      },
+      {
+        "plc": "10",
+        "no": "11",
+        "name": "BLUE BARON",
+        "code": "J448",
+        "jockey": "H T Mo",
+        "trainer": "Y S Tsui",
+        "act_wt": "118",
+        "body_wt": "1262",
+        "draw": "2",
+        "lbw": "6-3/4",
+        "run_pos": "4 4 10",
+        "finish_time": "1:11.30",
+        "win_odds": "8.3"
+      },
+      {
+        "plc": "11",
+        "no": "3",
+        "name": "FREE PONY",
+        "code": "K229",
+        "jockey": "J Orman",
+        "trainer": "C W Chang",
+        "act_wt": "133",
+        "body_wt": "1138",
+        "draw": "7",
+        "lbw": "8",
+        "run_pos": "8 7 11",
+        "finish_time": "1:11.49",
+        "win_odds": "9.1"
+      },
+      {
+        "plc": "12",
+        "no": "8",
+        "name": "BEAUTY GEMINI",
+        "code": "L129",
+        "jockey": "A Badel",
+        "trainer": "A S Cruz",
+        "act_wt": "128",
+        "body_wt": "1159",
+        "draw": "1",
+        "lbw": "8-1/4",
+        "run_pos": "2 1 12",
+        "finish_time": "1:11.52",
+        "win_odds": "6.3"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "7",
+          "div": "150.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "7",
+          "div": "44.00"
+        },
+        {
+          "comb": "4",
+          "div": "19.50"
+        },
+        {
+          "comb": "10",
+          "div": "22.00"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "4,7",
+          "div": "321.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "4,7",
+          "div": "110.50"
+        },
+        {
+          "comb": "7,10",
+          "div": "134.50"
+        },
+        {
+          "comb": "4,10",
+          "div": "64.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "7,4",
+          "div": "658.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "7,4,10",
+          "div": "3493.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "4,7,10",
+          "div": "540.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "4,7,10,12",
+          "div": "831.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "7,4,10,12",
+          "div": "22454.00"
+        }
+      ],
+      "1ST DOUBLE": [
+        {
+          "comb": "5/7",
+          "div": "1344.00"
+        },
+        {
+          "comb": "5/4",
+          "div": "149.00"
+        }
+      ]
+    }
+  },
+  "3": {
+    "race_no": 3,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "3",
+        "name": "NEW POWER",
+        "code": "H325",
+        "jockey": "M L Yeung",
+        "trainer": "C W Chang",
+        "act_wt": "131",
+        "body_wt": "1157",
+        "draw": "9",
+        "lbw": "---",
+        "run_pos": "6 5 1",
+        "finish_time": "1:10.49",
+        "win_odds": "10"
+      },
+      {
+        "plc": "2",
+        "no": "2",
+        "name": "LUCKY MCQUEEN",
+        "code": "K064",
+        "jockey": "M F Poon",
+        "trainer": "W K Mo",
+        "act_wt": "134",
+        "body_wt": "1161",
+        "draw": "8",
+        "lbw": "N",
+        "run_pos": "10 10 2",
+        "finish_time": "1:10.57",
+        "win_odds": "5.8"
+      },
+      {
+        "plc": "3",
+        "no": "8",
+        "name": "IRON SECURITY",
+        "code": "L174",
+        "jockey": "C L Chau",
+        "trainer": "Y S Tsui",
+        "act_wt": "123",
+        "body_wt": "1224",
+        "draw": "10",
+        "lbw": "1/2",
+        "run_pos": "2 2 3",
+        "finish_time": "1:10.58",
+        "win_odds": "18"
+      },
+      {
+        "plc": "4",
+        "no": "1",
+        "name": "ARGENTO OCEAN",
+        "code": "K322",
+        "jockey": "B Avdulla",
+        "trainer": "D J Whyte",
+        "act_wt": "135",
+        "body_wt": "1101",
+        "draw": "6",
+        "lbw": "1-1/4",
+        "run_pos": "3 4 4",
+        "finish_time": "1:10.68",
+        "win_odds": "5.4"
+      },
+      {
+        "plc": "5",
+        "no": "4",
+        "name": "BEAUTY SHOW",
+        "code": "L260",
+        "jockey": "A Atzeni",
+        "trainer": "F C Lor",
+        "act_wt": "128",
+        "body_wt": "1213",
+        "draw": "2",
+        "lbw": "1-1/4",
+        "run_pos": "1 1 5",
+        "finish_time": "1:10.69",
+        "win_odds": "8.5"
+      },
+      {
+        "plc": "6",
+        "no": "7",
+        "name": "CALIFORNIA BAY",
+        "code": "K364",
+        "jockey": "K Teetan",
+        "trainer": "A S Cruz",
+        "act_wt": "125",
+        "body_wt": "1067",
+        "draw": "5",
+        "lbw": "1-3/4",
+        "run_pos": "8 9 6",
+        "finish_time": "1:10.79",
+        "win_odds": "5.4"
+      },
+      {
+        "plc": "7",
+        "no": "11",
+        "name": "MASTER PHOENIX",
+        "code": "J516",
+        "jockey": "L Ferraris",
+        "trainer": "D Eustace",
+        "act_wt": "123",
+        "body_wt": "1132",
+        "draw": "3",
+        "lbw": "2",
+        "run_pos": "7 7 7",
+        "finish_time": "1:10.81",
+        "win_odds": "5"
+      },
+      {
+        "plc": "8",
+        "no": "12",
+        "name": "LEGEND STAR",
+        "code": "K271",
+        "jockey": "L Hewitson",
+        "trainer": "C S Shum",
+        "act_wt": "118",
+        "body_wt": "1145",
+        "draw": "7",
+        "lbw": "3",
+        "run_pos": "9 8 8",
+        "finish_time": "1:10.97",
+        "win_odds": "13"
+      },
+      {
+        "plc": "9",
+        "no": "10",
+        "name": "PRIVATE WEALTH",
+        "code": "L177",
+        "jockey": "J Orman",
+        "trainer": "D J Hall",
+        "act_wt": "124",
+        "body_wt": "1066",
+        "draw": "4",
+        "lbw": "3-1/2",
+        "run_pos": "5 6 9",
+        "finish_time": "1:11.07",
+        "win_odds": "12"
+      },
+      {
+        "plc": "10",
+        "no": "5",
+        "name": "COLOURFUL GOLD",
+        "code": "L324",
+        "jockey": "A Badel",
+        "trainer": "W Y So",
+        "act_wt": "128",
+        "body_wt": "1097",
+        "draw": "11",
+        "lbw": "4-1/4",
+        "run_pos": "11 11 10",
+        "finish_time": "1:11.18",
+        "win_odds": "55"
+      },
+      {
+        "plc": "11",
+        "no": "6",
+        "name": "SILVER BLAZE",
+        "code": "L164",
+        "jockey": "H Y Yuen",
+        "trainer": "P F Yiu",
+        "act_wt": "121",
+        "body_wt": "1052",
+        "draw": "1",
+        "lbw": "9-1/4",
+        "run_pos": "4 3 11",
+        "finish_time": "1:11.98",
+        "win_odds": "33"
+      },
+      {
+        "plc": "WV",
+        "no": "9",
+        "name": "SPEEDY PATCH",
+        "code": "L104",
+        "jockey": "E C W Wong",
+        "trainer": "K L Man",
+        "act_wt": "122",
+        "body_wt": "---",
+        "draw": "---",
+        "lbw": "---",
+        "run_pos": "---",
+        "finish_time": "---",
+        "win_odds": "---"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "3",
+          "div": "104.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "3",
+          "div": "30.00"
+        },
+        {
+          "comb": "2",
+          "div": "20.50"
+        },
+        {
+          "comb": "8",
+          "div": "61.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "2,3",
+          "div": "272.00"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "2,3",
+          "div": "85.00"
+        },
+        {
+          "comb": "3,8",
+          "div": "329.50"
+        },
+        {
+          "comb": "2,8",
+          "div": "242.50"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "3,2",
+          "div": "650.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "3,2,8",
+          "div": "11720.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "2,3,8",
+          "div": "2204.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1,2,3,8",
+          "div": "1886.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "3,2,8,1",
+          "div": "51801.00"
+        }
+      ],
+      "2ND DOUBLE": [
+        {
+          "comb": "7/3",
+          "div": "1956.00"
+        },
+        {
+          "comb": "7/2",
+          "div": "149.00"
+        }
+      ],
+      "1ST DOUBLE TRIO": [
+        {
+          "comb": "4,7,10/2,3,8",
+          "div": "179760.00"
+        }
+      ]
+    }
+  },
+  "4": {
+    "race_no": 4,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "11",
+        "name": "CHEERFUL WONGCHOY",
+        "code": "L045",
+        "jockey": "A Badel",
+        "trainer": "D J Whyte",
+        "act_wt": "121",
+        "body_wt": "1078",
+        "draw": "1",
+        "lbw": "---",
+        "run_pos": "1 1 1 1",
+        "finish_time": "1:40.29",
+        "win_odds": "4.4"
+      },
+      {
+        "plc": "2",
+        "no": "7",
+        "name": "FLYING BOOM",
+        "code": "K327",
+        "jockey": "K Teetan",
+        "trainer": "C W Chang",
+        "act_wt": "126",
+        "body_wt": "1082",
+        "draw": "12",
+        "lbw": "3/4",
+        "run_pos": "12 12 12 2",
+        "finish_time": "1:40.41",
+        "win_odds": "4.4"
+      },
+      {
+        "plc": "3",
+        "no": "1",
+        "name": "ACE",
+        "code": "K307",
+        "jockey": "C L Chau",
+        "trainer": "M Newnham",
+        "act_wt": "133",
+        "body_wt": "1248",
+        "draw": "2",
+        "lbw": "3/4",
+        "run_pos": "6 7 6 3",
+        "finish_time": "1:40.43",
+        "win_odds": "12"
+      },
+      {
+        "plc": "4",
+        "no": "6",
+        "name": "AMAZING GAZE",
+        "code": "K444",
+        "jockey": "Z Purton",
+        "trainer": "D A Hayes",
+        "act_wt": "127",
+        "body_wt": "1127",
+        "draw": "7",
+        "lbw": "3/4",
+        "run_pos": "7 6 7 4",
+        "finish_time": "1:40.44",
+        "win_odds": "3.9"
+      },
+      {
+        "plc": "5",
+        "no": "8",
+        "name": "KINGMAN REEF",
+        "code": "L446",
+        "jockey": "B Avdulla",
+        "trainer": "J Size",
+        "act_wt": "125",
+        "body_wt": "1044",
+        "draw": "11",
+        "lbw": "2-1/2",
+        "run_pos": "11 10 11 5",
+        "finish_time": "1:40.68",
+        "win_odds": "7.9"
+      },
+      {
+        "plc": "6",
+        "no": "9",
+        "name": "JUMBO STEPS",
+        "code": "L269",
+        "jockey": "K C Leung",
+        "trainer": "P C Ng",
+        "act_wt": "124",
+        "body_wt": "1114",
+        "draw": "8",
+        "lbw": "2-1/2",
+        "run_pos": "9 9 9 6",
+        "finish_time": "1:40.70",
+        "win_odds": "40"
+      },
+      {
+        "plc": "7",
+        "no": "12",
+        "name": "AESTHETICISM",
+        "code": "H289",
+        "jockey": "M F Poon",
+        "trainer": "D J Hall",
+        "act_wt": "118",
+        "body_wt": "1067",
+        "draw": "5",
+        "lbw": "2-3/4",
+        "run_pos": "10 11 10 7",
+        "finish_time": "1:40.74",
+        "win_odds": "9.5"
+      },
+      {
+        "plc": "8",
+        "no": "3",
+        "name": "GOLDEN BRILLIANT",
+        "code": "K347",
+        "jockey": "J Orman",
+        "trainer": "C Fownes",
+        "act_wt": "131",
+        "body_wt": "1119",
+        "draw": "3",
+        "lbw": "4-1/4",
+        "run_pos": "5 5 5 8",
+        "finish_time": "1:40.99",
+        "win_odds": "11"
+      },
+      {
+        "plc": "9",
+        "no": "2",
+        "name": "GLORIOUS DYNASTY",
+        "code": "L315",
+        "jockey": "L Hewitson",
+        "trainer": "B Crawford",
+        "act_wt": "132",
+        "body_wt": "1112",
+        "draw": "4",
+        "lbw": "4-3/4",
+        "run_pos": "4 4 4 9",
+        "finish_time": "1:41.07",
+        "win_odds": "47"
+      },
+      {
+        "plc": "10",
+        "no": "10",
+        "name": "SEA CHARIOT",
+        "code": "K358",
+        "jockey": "H Bentley",
+        "trainer": "W K Mo",
+        "act_wt": "122",
+        "body_wt": "1172",
+        "draw": "9",
+        "lbw": "7-1/4",
+        "run_pos": "8 8 8 10",
+        "finish_time": "1:41.46",
+        "win_odds": "38"
+      },
+      {
+        "plc": "11",
+        "no": "4",
+        "name": "VECU",
+        "code": "L027",
+        "jockey": "A Atzeni",
+        "trainer": "A S Cruz",
+        "act_wt": "131",
+        "body_wt": "1063",
+        "draw": "6",
+        "lbw": "7-1/2",
+        "run_pos": "2 2 2 11",
+        "finish_time": "1:41.48",
+        "win_odds": "74"
+      },
+      {
+        "plc": "12",
+        "no": "5",
+        "name": "CIRCUIT FIERY",
+        "code": "H475",
+        "jockey": "S Osborne",
+        "trainer": "W Y So",
+        "act_wt": "128",
+        "body_wt": "1097",
+        "draw": "10",
+        "lbw": "8",
+        "run_pos": "3 3 3 12",
+        "finish_time": "1:41.56",
+        "win_odds": "51"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "11",
+          "div": "44.00"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "11",
+          "div": "17.50"
+        },
+        {
+          "comb": "7",
+          "div": "18.00"
+        },
+        {
+          "comb": "1",
+          "div": "33.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "7,11",
+          "div": "110.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "7,11",
+          "div": "42.50"
+        },
+        {
+          "comb": "1,11",
+          "div": "77.50"
+        },
+        {
+          "comb": "1,7",
+          "div": "88.50"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "11,7",
+          "div": "222.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "11,7,1",
+          "div": "1568.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "1,7,11",
+          "div": "367.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1,6,7,11",
+          "div": "270.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "11,7,1,6",
+          "div": "6878.00"
+        }
+      ],
+      "3RD DOUBLE": [
+        {
+          "comb": "3/11",
+          "div": "635.00"
+        },
+        {
+          "comb": "3/7",
+          "div": "174.00"
+        }
+      ]
+    }
+  },
+  "5": {
+    "race_no": 5,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "8",
+        "name": "BUCEPHALAS",
+        "code": "K096",
+        "jockey": "L Ferraris",
+        "trainer": "W K Mo",
+        "act_wt": "123",
+        "body_wt": "1198",
+        "draw": "2",
+        "lbw": "---",
+        "run_pos": "1 1 1 1",
+        "finish_time": "1:40.47",
+        "win_odds": "16"
+      },
+      {
+        "plc": "2",
+        "no": "10",
+        "name": "FORTUNE STAR",
+        "code": "K003",
+        "jockey": "A Atzeni",
+        "trainer": "M Newnham",
+        "act_wt": "118",
+        "body_wt": "1144",
+        "draw": "3",
+        "lbw": "N",
+        "run_pos": "7 7 5 2",
+        "finish_time": "1:40.52",
+        "win_odds": "3.7"
+      },
+      {
+        "plc": "3",
+        "no": "3",
+        "name": "URANUS STAR",
+        "code": "K511",
+        "jockey": "C Y Ho",
+        "trainer": "K W Lui",
+        "act_wt": "133",
+        "body_wt": "1127",
+        "draw": "10",
+        "lbw": "1-1/4",
+        "run_pos": "5 2 2 3",
+        "finish_time": "1:40.66",
+        "win_odds": "8.9"
+      },
+      {
+        "plc": "4",
+        "no": "12",
+        "name": "HAPPY PROMISE",
+        "code": "L266",
+        "jockey": "K Teetan",
+        "trainer": "D A Hayes",
+        "act_wt": "117",
+        "body_wt": "1092",
+        "draw": "1",
+        "lbw": "2-1/2",
+        "run_pos": "4 3 3 4",
+        "finish_time": "1:40.88",
+        "win_odds": "5.6"
+      },
+      {
+        "plc": "5",
+        "no": "4",
+        "name": "GOLDEN ACE",
+        "code": "L461",
+        "jockey": "B Avdulla",
+        "trainer": "C Fownes",
+        "act_wt": "125",
+        "body_wt": "1077",
+        "draw": "4",
+        "lbw": "3",
+        "run_pos": "6 8 7 5",
+        "finish_time": "1:40.94",
+        "win_odds": "8"
+      },
+      {
+        "plc": "6",
+        "no": "1",
+        "name": "AKERMANIS GOLD",
+        "code": "L031",
+        "jockey": "C L Chau",
+        "trainer": "D Eustace",
+        "act_wt": "133",
+        "body_wt": "1099",
+        "draw": "7",
+        "lbw": "3-1/2",
+        "run_pos": "3 6 8 6",
+        "finish_time": "1:41.03",
+        "win_odds": "5.5"
+      },
+      {
+        "plc": "7",
+        "no": "5",
+        "name": "ROAD TO GLORY",
+        "code": "L415",
+        "jockey": "Z Purton",
+        "trainer": "J Richards",
+        "act_wt": "125",
+        "body_wt": "1123",
+        "draw": "9",
+        "lbw": "3-3/4",
+        "run_pos": "11 12 11 7",
+        "finish_time": "1:41.08",
+        "win_odds": "17"
+      },
+      {
+        "plc": "8",
+        "no": "11",
+        "name": "SURE JOYFUL",
+        "code": "G125",
+        "jockey": "H Y Yuen",
+        "trainer": "P F Yiu",
+        "act_wt": "111",
+        "body_wt": "1099",
+        "draw": "8",
+        "lbw": "4-3/4",
+        "run_pos": "2 4 4 8",
+        "finish_time": "1:41.22",
+        "win_odds": "9.6"
+      },
+      {
+        "plc": "9",
+        "no": "2",
+        "name": "GENERAL REDWOOD",
+        "code": "L102",
+        "jockey": "E C W Wong",
+        "trainer": "C S Shum",
+        "act_wt": "131",
+        "body_wt": "1062",
+        "draw": "11",
+        "lbw": "5-1/4",
+        "run_pos": "8 5 6 9",
+        "finish_time": "1:41.29",
+        "win_odds": "26"
+      },
+      {
+        "plc": "10",
+        "no": "7",
+        "name": "TAKE ACTION",
+        "code": "J098",
+        "jockey": "S Osborne",
+        "trainer": "J Size",
+        "act_wt": "124",
+        "body_wt": "1171",
+        "draw": "5",
+        "lbw": "5-3/4",
+        "run_pos": "10 9 9 10",
+        "finish_time": "1:41.39",
+        "win_odds": "15"
+      },
+      {
+        "plc": "11",
+        "no": "6",
+        "name": "STEADFAST FORT",
+        "code": "L286",
+        "jockey": "J Orman",
+        "trainer": "W Y So",
+        "act_wt": "124",
+        "body_wt": "1122",
+        "draw": "12",
+        "lbw": "7-1/4",
+        "run_pos": "12 11 12 11",
+        "finish_time": "1:41.62",
+        "win_odds": "69"
+      },
+      {
+        "plc": "12",
+        "no": "9",
+        "name": "JOLLY BONUS",
+        "code": "L327",
+        "jockey": "K C Leung",
+        "trainer": "F C Lor",
+        "act_wt": "122",
+        "body_wt": "1131",
+        "draw": "6",
+        "lbw": "10",
+        "run_pos": "9 10 10 12",
+        "finish_time": "1:42.06",
+        "win_odds": "96"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "8",
+          "div": "164.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "8",
+          "div": "44.00"
+        },
+        {
+          "comb": "10",
+          "div": "14.50"
+        },
+        {
+          "comb": "3",
+          "div": "30.00"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "8,10",
+          "div": "297.00"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "8,10",
+          "div": "102.00"
+        },
+        {
+          "comb": "3,8",
+          "div": "206.00"
+        },
+        {
+          "comb": "3,10",
+          "div": "70.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "8,10",
+          "div": "699.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "8,10,3",
+          "div": "5686.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "3,8,10",
+          "div": "782.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "3,8,10,12",
+          "div": "797.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "8,10,3,12",
+          "div": "25661.00"
+        }
+      ],
+      "4TH DOUBLE": [
+        {
+          "comb": "11/8",
+          "div": "946.50"
+        },
+        {
+          "comb": "11/10",
+          "div": "38.00"
+        }
+      ],
+      "1ST TREBLE": [
+        {
+          "comb": "3/11/8",
+          "div": "9532.00"
+        },
+        {
+          "comb": "3/11/10",
+          "div": "391.00"
+        }
+      ],
+      "2ND DOUBLE TRIO": [
+        {
+          "comb": "1,7,11/3,8,10",
+          "div": "53139.00"
+        }
+      ]
+    }
+  },
+  "6": {
+    "race_no": 6,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "11",
+        "name": "WINNING MACHINE",
+        "code": "K239",
+        "jockey": "E C W Wong",
+        "trainer": "C Fownes",
+        "act_wt": "117",
+        "body_wt": "1206",
+        "draw": "1",
+        "lbw": "---",
+        "run_pos": "3 3 1",
+        "finish_time": "1:09.95",
+        "win_odds": "5.8"
+      },
+      {
+        "plc": "2",
+        "no": "7",
+        "name": "COUNTRY PRIDE",
+        "code": "L325",
+        "jockey": "A Atzeni",
+        "trainer": "J Size",
+        "act_wt": "126",
+        "body_wt": "1114",
+        "draw": "2",
+        "lbw": "2",
+        "run_pos": "2 2 2",
+        "finish_time": "1:10.27",
+        "win_odds": "5.9"
+      },
+      {
+        "plc": "3",
+        "no": "1",
+        "name": "FORERUNNER",
+        "code": "G465",
+        "jockey": "H Y Yuen",
+        "trainer": "W K Mo",
+        "act_wt": "128",
+        "body_wt": "1034",
+        "draw": "3",
+        "lbw": "3",
+        "run_pos": "6 5 3",
+        "finish_time": "1:10.43",
+        "win_odds": "16"
+      },
+      {
+        "plc": "4",
+        "no": "8",
+        "name": "INVICTUS",
+        "code": "L277",
+        "jockey": "J Orman",
+        "trainer": "D J Whyte",
+        "act_wt": "123",
+        "body_wt": "1088",
+        "draw": "5",
+        "lbw": "3-1/2",
+        "run_pos": "4 4 4",
+        "finish_time": "1:10.52",
+        "win_odds": "12"
+      },
+      {
+        "plc": "5",
+        "no": "12",
+        "name": "TOP TO SKY",
+        "code": "K339",
+        "jockey": "M L Yeung",
+        "trainer": "C H Yip",
+        "act_wt": "118",
+        "body_wt": "1055",
+        "draw": "10",
+        "lbw": "4-1/4",
+        "run_pos": "1 1 5",
+        "finish_time": "1:10.63",
+        "win_odds": "55"
+      },
+      {
+        "plc": "6",
+        "no": "5",
+        "name": "FLOW RIDER",
+        "code": "M012",
+        "jockey": "M F Poon",
+        "trainer": "D J Hall",
+        "act_wt": "128",
+        "body_wt": "1068",
+        "draw": "7",
+        "lbw": "4-1/4",
+        "run_pos": "10 10 6",
+        "finish_time": "1:10.64",
+        "win_odds": "11"
+      },
+      {
+        "plc": "7 DH",
+        "no": "4",
+        "name": "CLOUD NINE",
+        "code": "L050",
+        "jockey": "Z Purton",
+        "trainer": "M Newnham",
+        "act_wt": "129",
+        "body_wt": "1091",
+        "draw": "6",
+        "lbw": "4-1/2",
+        "run_pos": "7 8 7",
+        "finish_time": "1:10.65",
+        "win_odds": "3.2"
+      },
+      {
+        "plc": "7 DH",
+        "no": "6",
+        "name": "MR INVINCIBLE",
+        "code": "L448",
+        "jockey": "C L Chau",
+        "trainer": "P F Yiu",
+        "act_wt": "126",
+        "body_wt": "1050",
+        "draw": "12",
+        "lbw": "4-1/2",
+        "run_pos": "11 12 7",
+        "finish_time": "1:10.65",
+        "win_odds": "5.1"
+      },
+      {
+        "plc": "9",
+        "no": "9",
+        "name": "THUNDER PRINCE",
+        "code": "K017",
+        "jockey": "B Avdulla",
+        "trainer": "J Richards",
+        "act_wt": "122",
+        "body_wt": "1094",
+        "draw": "9",
+        "lbw": "5-1/2",
+        "run_pos": "12 11 9",
+        "finish_time": "1:10.84",
+        "win_odds": "29"
+      },
+      {
+        "plc": "10",
+        "no": "10",
+        "name": "LUCKY DOCTOR",
+        "code": "L225",
+        "jockey": "C Y Ho",
+        "trainer": "P C Ng",
+        "act_wt": "120",
+        "body_wt": "1234",
+        "draw": "11",
+        "lbw": "6",
+        "run_pos": "8 7 10",
+        "finish_time": "1:10.90",
+        "win_odds": "15"
+      },
+      {
+        "plc": "11",
+        "no": "2",
+        "name": "WITHOUT RHYME",
+        "code": "L077",
+        "jockey": "K Teetan",
+        "trainer": "A S Cruz",
+        "act_wt": "132",
+        "body_wt": "1103",
+        "draw": "8",
+        "lbw": "6-1/4",
+        "run_pos": "9 9 11",
+        "finish_time": "1:10.93",
+        "win_odds": "101"
+      },
+      {
+        "plc": "12",
+        "no": "3",
+        "name": "WATCH LEGEND",
+        "code": "L313",
+        "jockey": "H T Mo",
+        "trainer": "Y S Tsui",
+        "act_wt": "128",
+        "body_wt": "1219",
+        "draw": "4",
+        "lbw": "8-1/2",
+        "run_pos": "5 6 12",
+        "finish_time": "1:11.30",
+        "win_odds": "81"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "11",
+          "div": "58.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "11",
+          "div": "21.50"
+        },
+        {
+          "comb": "7",
+          "div": "17.50"
+        },
+        {
+          "comb": "1",
+          "div": "41.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "7,11",
+          "div": "188.00"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "7,11",
+          "div": "65.00"
+        },
+        {
+          "comb": "1,11",
+          "div": "125.50"
+        },
+        {
+          "comb": "1,7",
+          "div": "119.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "11,7",
+          "div": "349.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "11,7,1",
+          "div": "2808.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "1,7,11",
+          "div": "649.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1,7,8,11",
+          "div": "1108.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "11,7,1,8",
+          "div": "19506.00"
+        }
+      ],
+      "5TH DOUBLE": [
+        {
+          "comb": "8/11",
+          "div": "1507.00"
+        },
+        {
+          "comb": "8/7",
+          "div": "169.00"
+        }
+      ]
+    }
+  },
+  "7": {
+    "race_no": 7,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "5",
+        "name": "LEADING AGILITY",
+        "code": "K553",
+        "jockey": "C L Chau",
+        "trainer": "C S Shum",
+        "act_wt": "123",
+        "body_wt": "1050",
+        "draw": "6",
+        "lbw": "---",
+        "run_pos": "4 3 1",
+        "finish_time": "1:09.77",
+        "win_odds": "3.9"
+      },
+      {
+        "plc": "2",
+        "no": "7",
+        "name": "LUCRATIVE EIGHT",
+        "code": "K542",
+        "jockey": "H Y Yuen",
+        "trainer": "P F Yiu",
+        "act_wt": "114",
+        "body_wt": "1105",
+        "draw": "3",
+        "lbw": "1",
+        "run_pos": "2 1 2",
+        "finish_time": "1:09.92",
+        "win_odds": "5.2"
+      },
+      {
+        "plc": "3",
+        "no": "8",
+        "name": "MASK WARRIOR",
+        "code": "L518",
+        "jockey": "A Badel",
+        "trainer": "J Cummings",
+        "act_wt": "121",
+        "body_wt": "1039",
+        "draw": "11",
+        "lbw": "2-1/4",
+        "run_pos": "9 8 3",
+        "finish_time": "1:10.10",
+        "win_odds": "18"
+      },
+      {
+        "plc": "4",
+        "no": "1",
+        "name": "SWIFT ASCEND",
+        "code": "H395",
+        "jockey": "Z Purton",
+        "trainer": "D Eustace",
+        "act_wt": "135",
+        "body_wt": "1044",
+        "draw": "10",
+        "lbw": "2-1/4",
+        "run_pos": "6 5 4",
+        "finish_time": "1:10.11",
+        "win_odds": "5.2"
+      },
+      {
+        "plc": "5",
+        "no": "11",
+        "name": "DARYL FLASH",
+        "code": "L168",
+        "jockey": "S Osborne",
+        "trainer": "Y S Tsui",
+        "act_wt": "118",
+        "body_wt": "1262",
+        "draw": "7",
+        "lbw": "2-3/4",
+        "run_pos": "8 9 5",
+        "finish_time": "1:10.21",
+        "win_odds": "7.3"
+      },
+      {
+        "plc": "6",
+        "no": "12",
+        "name": "SPEEDY SMARTIE",
+        "code": "H108",
+        "jockey": "K Teetan",
+        "trainer": "B Crawford",
+        "act_wt": "116",
+        "body_wt": "1138",
+        "draw": "5",
+        "lbw": "3",
+        "run_pos": "1 2 6",
+        "finish_time": "1:10.24",
+        "win_odds": "21"
+      },
+      {
+        "plc": "7",
+        "no": "10",
+        "name": "STAR COMMANDER",
+        "code": "L414",
+        "jockey": "M F Poon",
+        "trainer": "K W Lui",
+        "act_wt": "120",
+        "body_wt": "1221",
+        "draw": "8",
+        "lbw": "3",
+        "run_pos": "12 12 7",
+        "finish_time": "1:10.26",
+        "win_odds": "52"
+      },
+      {
+        "plc": "8",
+        "no": "4",
+        "name": "JUBILANT WINNER",
+        "code": "J346",
+        "jockey": "B Avdulla",
+        "trainer": "J Richards",
+        "act_wt": "125",
+        "body_wt": "1200",
+        "draw": "12",
+        "lbw": "4-1/2",
+        "run_pos": "10 11 8",
+        "finish_time": "1:10.47",
+        "win_odds": "77"
+      },
+      {
+        "plc": "9",
+        "no": "2",
+        "name": "AURORA PATCH",
+        "code": "K097",
+        "jockey": "E C W Wong",
+        "trainer": "K L Man",
+        "act_wt": "127",
+        "body_wt": "1254",
+        "draw": "2",
+        "lbw": "5",
+        "run_pos": "3 4 9",
+        "finish_time": "1:10.58",
+        "win_odds": "6.4"
+      },
+      {
+        "plc": "10",
+        "no": "9",
+        "name": "A AMERIC TE SPECSO",
+        "code": "H037",
+        "jockey": "A Atzeni",
+        "trainer": "J Size",
+        "act_wt": "120",
+        "body_wt": "1131",
+        "draw": "9",
+        "lbw": "5-3/4",
+        "run_pos": "11 10 10",
+        "finish_time": "1:10.71",
+        "win_odds": "28"
+      },
+      {
+        "plc": "11",
+        "no": "3",
+        "name": "MIGHTY COMMANDER",
+        "code": "J360",
+        "jockey": "C Y Ho",
+        "trainer": "C Fownes",
+        "act_wt": "128",
+        "body_wt": "1094",
+        "draw": "1",
+        "lbw": "7",
+        "run_pos": "7 6 11",
+        "finish_time": "1:10.90",
+        "win_odds": "10"
+      },
+      {
+        "plc": "12",
+        "no": "6",
+        "name": "ELITE GOLF",
+        "code": "L023",
+        "jockey": "H Bentley",
+        "trainer": "W Y So",
+        "act_wt": "123",
+        "body_wt": "1126",
+        "draw": "4",
+        "lbw": "8",
+        "run_pos": "5 7 12",
+        "finish_time": "1:11.06",
+        "win_odds": "37"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "5",
+          "div": "39.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "5",
+          "div": "16.50"
+        },
+        {
+          "comb": "7",
+          "div": "17.50"
+        },
+        {
+          "comb": "8",
+          "div": "55.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "5,7",
+          "div": "118.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "5,7",
+          "div": "46.00"
+        },
+        {
+          "comb": "5,8",
+          "div": "136.00"
+        },
+        {
+          "comb": "7,8",
+          "div": "205.50"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "5,7",
+          "div": "196.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "5,7,8",
+          "div": "2591.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "5,7,8",
+          "div": "700.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1,5,7,8",
+          "div": "599.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "5,7,8,1",
+          "div": "10848.00"
+        }
+      ],
+      "6TH DOUBLE": [
+        {
+          "comb": "11/5",
+          "div": "258.00"
+        },
+        {
+          "comb": "11/7",
+          "div": "74.00"
+        }
+      ],
+      "3RD DOUBLE TRIO": [
+        {
+          "comb": "1,7,11/5,7,8",
+          "div": "46306.00"
+        }
+      ],
+      "TRIPLE TRIO": [
+        {
+          "comb": "3,8,10/1,7,11/5,7,8",
+          "div": "4513546.00"
+        }
+      ],
+      "TRIPLE TRIO(CONSOLATION)": [
+        {
+          "comb": "3,8,10/1,7,11/Any Combination",
+          "div": "13431.00"
+        }
+      ]
+    }
+  },
+  "8": {
+    "race_no": 8,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "1",
+        "name": "POPE CODY",
+        "code": "K313",
+        "jockey": "A Badel",
+        "trainer": "Y S Tsui",
+        "act_wt": "135",
+        "body_wt": "1159",
+        "draw": "9",
+        "lbw": "---",
+        "run_pos": "8 8 5 3 1",
+        "finish_time": "1:49.62",
+        "win_odds": "10"
+      },
+      {
+        "plc": "2",
+        "no": "11",
+        "name": "SHOOTING TO TOP",
+        "code": "L039",
+        "jockey": "K Teetan",
+        "trainer": "W K Mo",
+        "act_wt": "118",
+        "body_wt": "1180",
+        "draw": "8",
+        "lbw": "N",
+        "run_pos": "3 2 2 2 2",
+        "finish_time": "1:49.68",
+        "win_odds": "21"
+      },
+      {
+        "plc": "3",
+        "no": "4",
+        "name": "MISTER DAPPER",
+        "code": "H376",
+        "jockey": "B Avdulla",
+        "trainer": "D Eustace",
+        "act_wt": "130",
+        "body_wt": "1195",
+        "draw": "11",
+        "lbw": "1/2",
+        "run_pos": "1 1 1 1 3",
+        "finish_time": "1:49.70",
+        "win_odds": "22"
+      },
+      {
+        "plc": "4",
+        "no": "10",
+        "name": "FLYING FORTUNE",
+        "code": "L057",
+        "jockey": "C Y Ho",
+        "trainer": "W K Mo",
+        "act_wt": "119",
+        "body_wt": "1097",
+        "draw": "2",
+        "lbw": "1/2",
+        "run_pos": "4 3 3 4 4",
+        "finish_time": "1:49.73",
+        "win_odds": "14"
+      },
+      {
+        "plc": "5",
+        "no": "7",
+        "name": "VIOLET STAR",
+        "code": "L149",
+        "jockey": "A Atzeni",
+        "trainer": "D J Whyte",
+        "act_wt": "124",
+        "body_wt": "1130",
+        "draw": "10",
+        "lbw": "1-1/2",
+        "run_pos": "10 11 9 8 5",
+        "finish_time": "1:49.87",
+        "win_odds": "5.5"
+      },
+      {
+        "plc": "6",
+        "no": "2",
+        "name": "FIVEFORTWO",
+        "code": "K381",
+        "jockey": "C L Chau",
+        "trainer": "K W Lui",
+        "act_wt": "131",
+        "body_wt": "1087",
+        "draw": "4",
+        "lbw": "2-1/4",
+        "run_pos": "5 6 6 6 6",
+        "finish_time": "1:49.97",
+        "win_odds": "5.3"
+      },
+      {
+        "plc": "7",
+        "no": "3",
+        "name": "CHINA WIN",
+        "code": "K395",
+        "jockey": "Z Purton",
+        "trainer": "D A Hayes",
+        "act_wt": "131",
+        "body_wt": "1115",
+        "draw": "3",
+        "lbw": "2-1/4",
+        "run_pos": "2 4 4 5 7",
+        "finish_time": "1:49.97",
+        "win_odds": "5.4"
+      },
+      {
+        "plc": "8",
+        "no": "8",
+        "name": "RISING PHOENIX",
+        "code": "J498",
+        "jockey": "J Orman",
+        "trainer": "D J Hall",
+        "act_wt": "123",
+        "body_wt": "1066",
+        "draw": "5",
+        "lbw": "3-1/2",
+        "run_pos": "6 7 8 9 8",
+        "finish_time": "1:50.17",
+        "win_odds": "25"
+      },
+      {
+        "plc": "9",
+        "no": "12",
+        "name": "HYMNBOOK",
+        "code": "L238",
+        "jockey": "H Bentley",
+        "trainer": "C Fownes",
+        "act_wt": "117",
+        "body_wt": "1155",
+        "draw": "1",
+        "lbw": "4",
+        "run_pos": "7 5 7 7 9",
+        "finish_time": "1:50.27",
+        "win_odds": "3.5"
+      },
+      {
+        "plc": "10",
+        "no": "6",
+        "name": "FALLON",
+        "code": "H219",
+        "jockey": "M L Yeung",
+        "trainer": "A S Cruz",
+        "act_wt": "128",
+        "body_wt": "1118",
+        "draw": "7",
+        "lbw": "4-3/4",
+        "run_pos": "11 10 10 10 10",
+        "finish_time": "1:50.37",
+        "win_odds": "26"
+      },
+      {
+        "plc": "11",
+        "no": "9",
+        "name": "SONIC LINER",
+        "code": "L410",
+        "jockey": "L Hewitson",
+        "trainer": "J Richards",
+        "act_wt": "121",
+        "body_wt": "1113",
+        "draw": "12",
+        "lbw": "9-3/4",
+        "run_pos": "12 12 12 12 11",
+        "finish_time": "1:51.18",
+        "win_odds": "101"
+      },
+      {
+        "plc": "12",
+        "no": "5",
+        "name": "CALL ME MAGNIFIQUE",
+        "code": "L339",
+        "jockey": "E C W Wong",
+        "trainer": "C S Shum",
+        "act_wt": "126",
+        "body_wt": "1165",
+        "draw": "6",
+        "lbw": "10-1/4",
+        "run_pos": "9 9 11 11 12",
+        "finish_time": "1:51.26",
+        "win_odds": "26"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "1",
+          "div": "105.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "1",
+          "div": "30.00"
+        },
+        {
+          "comb": "11",
+          "div": "51.50"
+        },
+        {
+          "comb": "4",
+          "div": "57.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "1,11",
+          "div": "820.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "1,11",
+          "div": "212.00"
+        },
+        {
+          "comb": "1,4",
+          "div": "316.50"
+        },
+        {
+          "comb": "4,11",
+          "div": "536.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "1,11",
+          "div": "1542.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "1,11,4",
+          "div": "37628.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "1,4,11",
+          "div": "6200.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "1,4,10,11",
+          "div": "10514.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "1,11,4,10",
+          "div": "314255.00"
+        }
+      ],
+      "7TH DOUBLE": [
+        {
+          "comb": "5/1",
+          "div": "317.50"
+        },
+        {
+          "comb": "5/11",
+          "div": "106.50"
+        }
+      ]
+    }
+  },
+  "9": {
+    "race_no": 9,
+    "race_info": "Happy Valley:",
+    "runners": [
+      {
+        "plc": "1",
+        "no": "3",
+        "name": "PACKING ANGEL",
+        "code": "J454",
+        "jockey": "H Bentley",
+        "trainer": "K W Lui",
+        "act_wt": "129",
+        "body_wt": "1095",
+        "draw": "3",
+        "lbw": "---",
+        "run_pos": "5 5 4 1",
+        "finish_time": "1:39.60",
+        "win_odds": "10"
+      },
+      {
+        "plc": "2",
+        "no": "7",
+        "name": "LUCKY SAM GOR",
+        "code": "K114",
+        "jockey": "C L Chau",
+        "trainer": "M Newnham",
+        "act_wt": "121",
+        "body_wt": "1219",
+        "draw": "10",
+        "lbw": "1/2",
+        "run_pos": "10 10 10 2",
+        "finish_time": "1:39.70",
+        "win_odds": "11"
+      },
+      {
+        "plc": "3",
+        "no": "2",
+        "name": "SIX PACK",
+        "code": "K061",
+        "jockey": "L Ferraris",
+        "trainer": "D J Whyte",
+        "act_wt": "134",
+        "body_wt": "1309",
+        "draw": "11",
+        "lbw": "3/4",
+        "run_pos": "1 1 1 3",
+        "finish_time": "1:39.72",
+        "win_odds": "39"
+      },
+      {
+        "plc": "4",
+        "no": "5",
+        "name": "BRAVEFIELD",
+        "code": "L513",
+        "jockey": "Z Purton",
+        "trainer": "C S Shum",
+        "act_wt": "123",
+        "body_wt": "1000",
+        "draw": "5",
+        "lbw": "3/4",
+        "run_pos": "8 8 8 4",
+        "finish_time": "1:39.74",
+        "win_odds": "5.9"
+      },
+      {
+        "plc": "5",
+        "no": "8",
+        "name": "MIGHTY MASTS",
+        "code": "L153",
+        "jockey": "A Atzeni",
+        "trainer": "W Y So",
+        "act_wt": "122",
+        "body_wt": "1135",
+        "draw": "7",
+        "lbw": "1-1/4",
+        "run_pos": "7 7 6 5",
+        "finish_time": "1:39.79",
+        "win_odds": "14"
+      },
+      {
+        "plc": "6",
+        "no": "11",
+        "name": "REGAL GEM",
+        "code": "K258",
+        "jockey": "K C Leung",
+        "trainer": "F C Lor",
+        "act_wt": "121",
+        "body_wt": "1126",
+        "draw": "1",
+        "lbw": "2-1/4",
+        "run_pos": "3 4 3 6",
+        "finish_time": "1:39.98",
+        "win_odds": "9.4"
+      },
+      {
+        "plc": "7",
+        "no": "1",
+        "name": "HELENE FEELING",
+        "code": "H215",
+        "jockey": "E C W Wong",
+        "trainer": "C S Shum",
+        "act_wt": "132",
+        "body_wt": "1276",
+        "draw": "9",
+        "lbw": "3",
+        "run_pos": "9 9 9 7",
+        "finish_time": "1:40.06",
+        "win_odds": "10"
+      },
+      {
+        "plc": "8",
+        "no": "12",
+        "name": "FORTUNATE SON",
+        "code": "J446",
+        "jockey": "C Y Ho",
+        "trainer": "W K Mo",
+        "act_wt": "119",
+        "body_wt": "1152",
+        "draw": "2",
+        "lbw": "4-1/4",
+        "run_pos": "6 6 7 8",
+        "finish_time": "1:40.28",
+        "win_odds": "5.6"
+      },
+      {
+        "plc": "9",
+        "no": "4",
+        "name": "DEFINITIVE",
+        "code": "K037",
+        "jockey": "K Teetan",
+        "trainer": "D Eustace",
+        "act_wt": "125",
+        "body_wt": "1102",
+        "draw": "4",
+        "lbw": "6-1/4",
+        "run_pos": "2 2 2 9",
+        "finish_time": "1:40.61",
+        "win_odds": "13"
+      },
+      {
+        "plc": "10",
+        "no": "10",
+        "name": "AWESOME FLUKE",
+        "code": "J050",
+        "jockey": "S Osborne",
+        "trainer": "P F Yiu",
+        "act_wt": "121",
+        "body_wt": "1198",
+        "draw": "8",
+        "lbw": "6-1/2",
+        "run_pos": "12 12 12 10",
+        "finish_time": "1:40.65",
+        "win_odds": "7.5"
+      },
+      {
+        "plc": "11",
+        "no": "9",
+        "name": "ARMOR GOLDEN EAGLE",
+        "code": "K566",
+        "jockey": "A Badel",
+        "trainer": "M Newnham",
+        "act_wt": "121",
+        "body_wt": "1089",
+        "draw": "6",
+        "lbw": "7-1/2",
+        "run_pos": "4 3 5 11",
+        "finish_time": "1:40.82",
+        "win_odds": "7.3"
+      },
+      {
+        "plc": "12",
+        "no": "6",
+        "name": "NAUTICAL FORCE",
+        "code": "L187",
+        "jockey": "M L Yeung",
+        "trainer": "J Size",
+        "act_wt": "123",
+        "body_wt": "994",
+        "draw": "12",
+        "lbw": "8-3/4",
+        "run_pos": "11 11 11 12",
+        "finish_time": "1:41.00",
+        "win_odds": "26"
+      }
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "comb": "Winning Combination",
+          "div": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "comb": "3",
+          "div": "101.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "comb": "3",
+          "div": "30.50"
+        },
+        {
+          "comb": "7",
+          "div": "33.00"
+        },
+        {
+          "comb": "2",
+          "div": "108.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "comb": "3,7",
+          "div": "542.00"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "comb": "3,7",
+          "div": "174.50"
+        },
+        {
+          "comb": "2,3",
+          "div": "638.00"
+        },
+        {
+          "comb": "2,7",
+          "div": "672.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "comb": "3,7",
+          "div": "1246.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "comb": "3,7,2",
+          "div": "43270.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "comb": "2,3,7",
+          "div": "7489.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "comb": "2,3,5,7",
+          "div": "13128.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "comb": "3,7,2,5",
+          "div": "552087.00"
+        }
+      ],
+      "8TH DOUBLE": [
+        {
+          "comb": "1/3",
+          "div": "1045.50"
+        },
+        {
+          "comb": "1/7",
+          "div": "220.00"
+        }
+      ],
+      "2ND TREBLE": [
+        {
+          "comb": "5/1/3",
+          "div": "2815.00"
+        },
+        {
+          "comb": "5/1/7",
+          "div": "615.00"
+        }
+      ],
+      "4TH DOUBLE TRIO": [
+        {
+          "comb": "1,4,11/2,3,7",
+          "div": "2540870.00"
+        }
+      ],
+      "SIX UP": [
+        {
+          "comb": "7,11/8,10/7,11/5,7/1,11/3,7",
+          "div": "17853.00"
+        },
+        {
+          "comb": "11/8/11/5/1/3",
+          "div": "2310151.00"
+        }
+      ],
+      "JOCKEY CHALLENGE 1": [
+        {
+          "comb": "6 [A Badel]",
+          "div": "Details"
+        }
+      ],
+      "TRAINER CHALLENGE 1": [
+        {
+          "comb": "1 [W K Mo]",
+          "div": "Details"
+        }
+      ]
+    }
+  }
+}

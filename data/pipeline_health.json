@@ -1,6 +1,6 @@
 {
   "overall_status": "fail",
-  "updated_at": "2026-11-11T04:38:28Z",
+  "updated_at": "2026-11-12T03:51:02Z",
   "components": {
     "scraper": {
       "status": "fail",
@@ -13,11 +13,11 @@
     },
     "incident_memory": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:33:11Z",
-      "last_success_at": "2026-11-10T22:33:11Z",
+      "last_attempt_at": "2026-11-12T03:51:02Z",
+      "last_success_at": "2026-11-12T03:51:02Z",
       "metrics": {
         "horses": 2198,
-        "flagged_horses": 892
+        "flagged_horses": 1094
       },
       "error": null
     },
@@ -34,11 +34,11 @@
     },
     "incident_engine": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:33:11Z",
-      "last_success_at": "2026-11-10T22:33:11Z",
+      "last_attempt_at": "2026-11-12T03:51:02Z",
+      "last_success_at": "2026-11-12T03:51:02Z",
       "metrics": {
-        "ingested_incidents": 1129,
-        "flagged_horses": 892
+        "ingested_incidents": 1237,
+        "flagged_horses": 1094
       },
       "error": null
     },
@@ -112,13 +112,13 @@
     },
     "precomputed_features": {
       "status": "ok",
-      "last_attempt_at": "2026-11-10T22:33:10Z",
-      "last_success_at": "2026-11-10T22:33:10Z",
+      "last_attempt_at": "2026-11-12T03:51:01Z",
+      "last_success_at": "2026-11-12T03:51:01Z",
       "metrics": {
         "winning_gears_horses": 675,
         "running_styles_horses": 2646,
-        "last_comments_horses": 2723,
-        "sectional_bursts_horses": 5063
+        "last_comments_horses": 2729,
+        "sectional_bursts_horses": 5065
       },
       "error": null
     },
