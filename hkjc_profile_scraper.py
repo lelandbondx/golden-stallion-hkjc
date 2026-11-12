@@ -12,30 +12,37 @@ import pandas as pd
 import json
 from datetime import datetime
 import time
+from io import BytesIO
 from bs4 import BeautifulSoup
 
 def get_horse_profile_stats(horse_code):
     if not horse_code:
         return None
         
-    url = f"https://racing.hkjc.com/racing/information/English/Horse/Horse.aspx?HorseNo={horse_code}"
-    headers = {"User-Agent": "Mozilla/5.0"}
+    url = f"https://racing.hkjc.com/en-us/local/information/horse?horseno={horse_code}"
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
     
     try:
-        res = requests.get(url, headers=headers, timeout=5)
+        res = requests.get(url, headers=headers, timeout=12)
+        if res.status_code != 200:
+            return None
         try:
-            dfs = pd.read_html(res.content)
+            dfs = pd.read_html(BytesIO(res.content))
         except Exception:
             dfs = []
         
         # Find the table with race history
         race_df = None
         for df in dfs:
-            if df.shape[1] == 19 and "Race Index" in str(df.columns) or "Race Index" in str(df.iloc[0].values):
+            if df.shape[1] == 19 and ("Race Index" in str(df.columns) or (len(df) > 0 and "Race Index" in str(df.iloc[0].values))):
                 race_df = df
                 break
                 
         if race_df is None:
+            # Only treat as genuine debutant if the official HKJC profile explicitly states "No Running Records"
+            text_low = res.text.lower()
+            if "no running" not in text_low and "country of origin" not in text_low:
+                return None
             race_df = pd.DataFrame(columns=['Race Index', 'Pla.', 'Date', 'RC/Track/ Course', 'Dist.', 'G', 'Race Class', 'Dr.', 'Rtg.', 'Trainer', 'Jockey', 'LBW', 'Win Odds', 'Act. Wt.', 'Running Position', 'Finish Time', 'Declar. Horse Wt.', 'Gear', 'Video Replay'])
         else:
             # The first row is usually headers, let's clean it up
@@ -43,8 +50,13 @@ def get_horse_profile_stats(horse_code):
             race_df = race_df.drop(0)
             
             # Filter out season headers and rows with "No Running Records"
+            no_run_has_rows = race_df['Race Index'].astype(str).str.contains('No Running', na=False, case=False).any()
             race_df = race_df[~race_df['Race Index'].astype(str).str.contains('Season|No Running', na=False, case=False)]
-            race_df = race_df[race_df['Date'].astype(str).str.match(r'^\d{2}/\d{2}/\d{2}$')]
+            race_df = race_df[race_df['Date'].astype(str).str.match(r'^\d{2}/\d{2}/\d{2,4}$')]
+            
+            # If the table had rows initially, wasn't "No Running Records", yet matched 0 valid dates, reject partial scrape
+            if race_df.empty and not no_run_has_rows:
+                return None
             
             # Enforce "Current Form" constraint: Only look at the horse's last 12 runs
             race_df = race_df.head(12)
@@ -239,18 +251,23 @@ def get_horse_profile_stats(horse_code):
         tracheal_bleed_count_12m = 0
         nostril_bleed_count_12m = 0
         try:
-            from vet_records import scrape_horse_vet_record
-            vet_rec = scrape_horse_vet_record(horse_id=horse_id, horse_code=horse_code)
+            from vet_records import load_vet_records, build_code_index
+            vet_db = load_vet_records()
+            vet_rec = vet_db.get(horse_id) if horse_id else None
+            if not vet_rec and horse_code:
+                vet_rec = build_code_index(vet_db).get(str(horse_code).strip().upper())
             if vet_rec:
                 horse_id = vet_rec.get("horse_id") or horse_id
                 prev_run_vet_finding = int(vet_rec.get("prev_run_vet_finding", 0))
-                latest_vet_note = str(vet_rec.get("latest_vet_note") or "No Findings")
+                latest_vet_note = str(vet_rec.get("latest_vet_note") or "No HKJC veterinary records")
                 has_surgery_history = int(vet_rec.get("has_surgery_history", 0))
                 last_material_date = vet_rec.get("last_material_date")
                 days_since_material_clearance = vet_rec.get("days_since_material_clearance")
                 bleed_count_12m = int(vet_rec.get("bleed_count_12m", 0))
                 tracheal_bleed_count_12m = int(vet_rec.get("tracheal_bleed_count_12m", 0))
                 nostril_bleed_count_12m = int(vet_rec.get("nostril_bleed_count_12m", 0))
+            else:
+                latest_vet_note = "No HKJC veterinary records"
         except Exception as e:
             print(f"Error parsing vet history for {horse_code}: {e}")
                 
@@ -307,7 +324,11 @@ def get_horse_profile_stats(horse_code):
         return None
 
 def _dedup_stats_df_by_code(df: pd.DataFrame) -> pd.DataFrame:
-    """Deduplicate latest_horse_stats.csv by horse_code when present, never collapsing distinct horse_codes with the same name."""
+    """
+    Deduplicate latest_horse_stats.csv by horse_code when present, never collapsing distinct
+    horse_codes with the same name, and never allowing an empty/'Unraced HK Debutant' stub
+    to overwrite an existing raced horse's form or trackwork columns.
+    """
     if df.empty:
         return df
     df = df.copy()
@@ -317,7 +338,22 @@ def _dedup_stats_df_by_code(df: pd.DataFrame) -> pd.DataFrame:
         return df.drop_duplicates(subset=['clean_name'], keep='last')
     df['_code_key'] = df['horse_code'].fillna('').astype(str).str.strip().str.upper()
     has_code = ~df['_code_key'].isin(['', 'NAN', 'NONE'])
-    with_code = df[has_code].drop_duplicates(subset=['_code_key'], keep='last')
+
+    with_code_raw = df[has_code].copy()
+    if not with_code_raw.empty and 'last_run_date' in with_code_raw.columns:
+        # Sort within each _code_key so rows with a valid last_run_date come AFTER NaN rows,
+        # and within valid last_run_date rows, the original order (newest scrape last) is preserved.
+        with_code_raw['_has_run'] = with_code_raw['last_run_date'].notna() & ~with_code_raw['last_run_date'].astype(str).isin(['', 'nan', 'None', 'NaT'])
+        with_code_raw['_orig_idx'] = range(len(with_code_raw))
+        with_code_raw = with_code_raw.sort_values(by=['_code_key', '_has_run', '_orig_idx'], ascending=[True, True, True])
+        # Forward-fill non-null trackwork/vet/form fields within each _code_key before keeping the last row
+        saved_code_key = with_code_raw['_code_key'].copy()
+        with_code_raw = with_code_raw.groupby('_code_key', sort=False).ffill()
+        with_code_raw['_code_key'] = saved_code_key
+        with_code = with_code_raw.drop_duplicates(subset=['_code_key'], keep='last').drop(columns=['_has_run', '_orig_idx'], errors='ignore')
+    else:
+        with_code = with_code_raw.drop_duplicates(subset=['_code_key'], keep='last')
+
     without_code = df[~has_code]
     if not without_code.empty and 'clean_name' in without_code.columns:
         known_names = set(with_code['clean_name'].tolist()) if 'clean_name' in with_code.columns else set()
@@ -359,7 +395,7 @@ def ensure_meeting_profiles_synced(meeting):
         for _, row in stats_df.iterrows():
             h_code = str(row.get('horse_code', '') or '').strip().upper()
             l_sum = str(row.get('last_run_summary', '') or '').strip()
-            if h_code not in ['', 'NAN', 'NONE'] and l_sum not in ['', 'nan', 'None']:
+            if h_code not in ['', 'NAN', 'NONE'] and l_sum not in ['', 'nan', 'None', 'Unraced HK Debutant']:
                 existing_complete_codes.add(h_code)
 
     missing_horses = {

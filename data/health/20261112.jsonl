@@ -1,3 +1,14 @@
 {"component": "precomputed_features", "status": "ok", "timestamp": "2026-11-12T03:51:01Z", "metrics": {"winning_gears_horses": 675, "running_styles_horses": 2646, "last_comments_horses": 2729, "sectional_bursts_horses": 5065}, "error": null}
 {"component": "incident_engine", "status": "ok", "timestamp": "2026-11-12T03:51:02Z", "metrics": {"ingested_incidents": 1237, "flagged_horses": 1094}, "error": null}
 {"component": "incident_memory", "status": "ok", "timestamp": "2026-11-12T03:51:02Z", "metrics": {"horses": 2198, "flagged_horses": 1094}, "error": null}
+{"component": "precomputed_features", "status": "ok", "timestamp": "2026-11-12T04:24:36Z", "metrics": {"winning_gears_horses": 947, "running_styles_horses": 2646, "last_comments_horses": 2729, "sectional_bursts_horses": 5065}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-12T04:24:37Z", "metrics": {"ingested_incidents": 1237, "flagged_horses": 1097}, "error": null}
+{"component": "incident_memory", "status": "ok", "timestamp": "2026-11-12T04:24:37Z", "metrics": {"horses": 2194, "flagged_horses": 1097}, "error": null}
+{"component": "precomputed_features", "status": "ok", "timestamp": "2026-11-12T04:25:00Z", "metrics": {"winning_gears_horses": 947, "running_styles_horses": 2646, "last_comments_horses": 2729, "sectional_bursts_horses": 5065}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-12T04:25:01Z", "metrics": {"ingested_incidents": 1237, "flagged_horses": 1097}, "error": null}
+{"component": "incident_memory", "status": "ok", "timestamp": "2026-11-12T04:25:01Z", "metrics": {"horses": 2194, "flagged_horses": 1097}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-12T04:25:03Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "precomputed_features", "status": "ok", "timestamp": "2026-11-12T04:28:16Z", "metrics": {"winning_gears_horses": 1063, "running_styles_horses": 2675, "last_comments_horses": 2729, "sectional_bursts_horses": 5065}, "error": null}
+{"component": "incident_engine", "status": "ok", "timestamp": "2026-11-12T04:28:17Z", "metrics": {"ingested_incidents": 1237, "flagged_horses": 1107}, "error": null}
+{"component": "incident_memory", "status": "ok", "timestamp": "2026-11-12T04:28:17Z", "metrics": {"horses": 2194, "flagged_horses": 1107}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-12T04:28:19Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}

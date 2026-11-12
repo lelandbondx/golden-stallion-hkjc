@@ -952,8 +952,29 @@ def build_horse_incident_memory(force_rebuild=False):
                 'steward_comment': inc_txt
             }
             runs_list = memory[cname]['runs']
-            runs_list = [x for x in runs_list if x.get('race_id') not in (race_id, f"{r_date_tag}_REPLAY") and x.get('race_date') != m_date]
-            runs_list.insert(0, run_rec)
+            existing_official = next((x for x in runs_list if x.get('race_date') == m_date and not str(x.get('race_id', '')).endswith('_REPLAY')), None)
+            if existing_official is not None:
+                # Preserve exact finish_pos, beaten_lengths, early_pos, and final_section_time from results_*.json,
+                # while enriching course/class/distance metadata and incident flags
+                if rc_info.get('course_rail'):
+                    existing_official['course_rail'] = rc_info['course_rail']
+                if rc_info.get('surface'):
+                    existing_official['surface'] = rc_info['surface']
+                if rc_info.get('going'):
+                    existing_official['going'] = rc_info['going']
+                if rc_info.get('distance'):
+                    existing_official['distance'] = int(rc_info['distance'])
+                if rc_info.get('class'):
+                    existing_official['class'] = rc_info['class']
+                if not existing_official.get('incident_flags') and flags:
+                    existing_official['incident_flags'] = flags
+                    existing_official['interference_severity'] = max_interf
+                if not existing_official.get('steward_comment') and inc_txt:
+                    existing_official['steward_comment'] = inc_txt
+            else:
+                runs_list = [x for x in runs_list if x.get('race_id') not in (race_id, f"{r_date_tag}_REPLAY") and x.get('race_date') != m_date]
+                runs_list.insert(0, run_rec)
+            runs_list.sort(key=lambda x: str(x.get('race_date', '')), reverse=True)
             memory[cname]['runs'] = runs_list[:6]
 
     # 3b. Ingest resolved trip notes & official full scraped meeting results to ensure 100% accurate metadata
@@ -1057,12 +1078,27 @@ def build_horse_incident_memory(force_rebuild=False):
                 runs_list = memory[h_name].get('runs', [])
                 runs_list = [r for r in runs_list if r.get('race_id') not in (race_id, f"{r_tag}_REPLAY") and r.get('race_date') != date]
                 runs_list.insert(0, run_rec)
+                runs_list.sort(key=lambda x: str(x.get('race_date', '')), reverse=True)
                 memory[h_name]['runs'] = runs_list[:6]
                 if h_code:
                     memory[h_name]['horse_code'] = h_code
                     memory[h_code] = memory[h_name]
         except Exception as e:
             logging.warning(f"Error ingesting resolved grok trip notes: {e}")
+
+    # Enforce strict descending race_date sort and race_date deduplication across all memory entries
+    for m_val in memory.values():
+        if isinstance(m_val, dict) and m_val.get('runs'):
+            seen_d = set()
+            dedup_r = []
+            for r_obj in sorted(m_val['runs'], key=lambda x: str(x.get('race_date', '')), reverse=True):
+                d_key = str(r_obj.get('race_date', ''))
+                if d_key and d_key in seen_d:
+                    continue
+                if d_key:
+                    seen_d.add(d_key)
+                dedup_r.append(r_obj)
+            m_val['runs'] = dedup_r[:6]
 
     # 4. Attach secondary trial note (Trials cannot outrank races)
     if os.path.exists('data/engineered_trial_features.json'):

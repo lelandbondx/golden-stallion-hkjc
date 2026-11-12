@@ -53,36 +53,37 @@ def harvest_single_horse(code, name):
     data = {
         "clean_name": name,
         "horse_code": code,
-        "gallops_30d": 0,
-        "trots_30d": 0,
-        "swims_30d": 0,
+        "gallops_30d": None,
+        "trots_30d": None,
+        "swims_30d": None,
         "last_workout_date": None,
         "last_workout_type": None,
         "last_workout_detail": None,
-        "is_in_conghua": 0,
+        "is_in_conghua": None,
         "latest_body_weight": None,
-        "prev_run_vet_finding": 0,
+        "prev_run_vet_finding": None,
         "latest_vet_note": None,
-        "has_overseas_form": 0
+        "has_overseas_form": None
     }
 
     try:
-        url = f"https://racing.hkjc.com/racing/information/English/Horse/Horse.aspx?HorseNo={code}"
-        res = requests.get(url, headers=HEADERS, timeout=8)
+        url = f"https://racing.hkjc.com/en-us/local/information/horse?horseno={code}"
+        res = requests.get(url, headers=HEADERS, timeout=10)
         if res.status_code != 200:
             return data
 
         horse_id = None
-        m = re.search(r'horseid=([A-Z0-9_]+)', res.text, re.I)
+        m = re.search(r'horseid=(HK_\d{4}_[A-Z0-9]+)', res.text, re.I)
         if m:
-            horse_id = m.group(1)
+            horse_id = m.group(1).upper()
 
-        data["has_overseas_form"] = 1 if 'pre-import formrecords' in res.text.lower() or 'fse_' in res.text.lower() else 0
+        if "country of origin" in res.text.lower() or "current rating" in res.text.lower():
+            data["has_overseas_form"] = 1 if 'pre-import formrecords' in res.text.lower() or 'fse_' in res.text.lower() else 0
 
         # Check Current Location directly from profile header if present
         loc_m = re.search(r'Current Location[^:]*:\s*([A-Za-z\s]+)', res.text, re.I)
-        if loc_m and ('CONGHUA' in loc_m.group(1).upper() or 'CTC' in loc_m.group(1).upper()):
-            data["is_in_conghua"] = 1
+        if loc_m:
+            data["is_in_conghua"] = 1 if ('CONGHUA' in loc_m.group(1).upper() or 'CTC' in loc_m.group(1).upper()) else 0
 
         if not horse_id:
             return data
@@ -221,8 +222,8 @@ def run_offseason_harvest(limit=150):
         else:
             df_new.to_csv(stats_path, index=False)
 
-        conghua_count = int(df_new['is_in_conghua'].sum()) if 'is_in_conghua' in df_new.columns else 0
-        gallops_active = int((df_new['gallops_30d'] > 0).sum()) if 'gallops_30d' in df_new.columns else 0
+        conghua_count = int(pd.to_numeric(df_new['is_in_conghua'], errors='coerce').fillna(0).sum()) if 'is_in_conghua' in df_new.columns else 0
+        gallops_active = int((pd.to_numeric(df_new['gallops_30d'], errors='coerce').fillna(0) > 0).sum()) if 'gallops_30d' in df_new.columns else 0
         weights_found = int(df_new['latest_body_weight'].notna().sum()) if 'latest_body_weight' in df_new.columns else 0
         record_health(
             "trackwork_telemetry",

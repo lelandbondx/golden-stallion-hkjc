@@ -183,7 +183,85 @@
         "finish_time": "---",
         "win_odds": "---"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "1",
+          "dividend": "13.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "1",
+          "dividend": "11.50"
+        },
+        {
+          "combination": "6",
+          "dividend": "31.00"
+        },
+        {
+          "combination": "8",
+          "dividend": "22.00"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "1,6",
+          "dividend": "90.00"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "1,6",
+          "dividend": "40.50"
+        },
+        {
+          "combination": "1,8",
+          "dividend": "29.00"
+        },
+        {
+          "combination": "6,8",
+          "dividend": "144.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "1,6",
+          "dividend": "104.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "1,6,8",
+          "dividend": "540.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "1,6,8",
+          "dividend": "227.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "1,5,6,8",
+          "dividend": "495.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "1,6,8,5",
+          "dividend": "4,088.00"
+        }
+      ]
+    }
   },
   "2": {
     "race_no": 2,
@@ -369,7 +447,101 @@
         "finish_time": "1:41.12",
         "win_odds": "82"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "3",
+          "dividend": "179.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "3",
+          "dividend": "46.50"
+        },
+        {
+          "combination": "9",
+          "dividend": "13.50"
+        },
+        {
+          "combination": "1",
+          "dividend": "24.00"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "3,9",
+          "dividend": "373.00"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "3,9",
+          "dividend": "130.00"
+        },
+        {
+          "combination": "1,3",
+          "dividend": "228.00"
+        },
+        {
+          "combination": "1,9",
+          "dividend": "44.50"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "3,9",
+          "dividend": "679.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "3,9,1",
+          "dividend": "4,231.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "1,3,9",
+          "dividend": "618.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "1,3,8,9",
+          "dividend": "1,309.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "3,9,1,8",
+          "dividend": "35,489.00"
+        }
+      ],
+      "1ST DOUBLE": [
+        {
+          "combination": "1,10/3",
+          "dividend": "167.50"
+        },
+        {
+          "combination": "1,10/9",
+          "dividend": "11.50"
+        }
+      ],
+      "1ST DOUBLE TRIO": [
+        {
+          "combination": "6,8>1,10/1,3,9",
+          "dividend": "14,300.00"
+        }
+      ]
+    }
   },
   "3": {
     "race_no": 3,
@@ -555,7 +727,95 @@
         "finish_time": "1:12.30",
         "win_odds": "74"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "4",
+          "dividend": "20.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "4",
+          "dividend": "12.00"
+        },
+        {
+          "combination": "10",
+          "dividend": "86.50"
+        },
+        {
+          "combination": "6",
+          "dividend": "25.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "4,10",
+          "dividend": "413.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "4,10",
+          "dividend": "148.00"
+        },
+        {
+          "combination": "4,6",
+          "dividend": "38.00"
+        },
+        {
+          "combination": "6,10",
+          "dividend": "389.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "4,10",
+          "dividend": "622.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "4,10,6",
+          "dividend": "3,737.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "4,6,10",
+          "dividend": "896.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "3,4,6,10",
+          "dividend": "1,528.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "4,10,6,3",
+          "dividend": "24,577.00"
+        }
+      ],
+      "2ND DOUBLE": [
+        {
+          "combination": "3/4",
+          "dividend": "402.50"
+        },
+        {
+          "combination": "3/10",
+          "dividend": "502.00"
+        }
+      ]
+    }
   },
   "4": {
     "race_no": 4,
@@ -741,7 +1001,101 @@
         "finish_time": "0:58.64",
         "win_odds": "119"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "5",
+          "dividend": "78.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "5",
+          "dividend": "22.00"
+        },
+        {
+          "combination": "3",
+          "dividend": "44.00"
+        },
+        {
+          "combination": "2",
+          "dividend": "15.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "3,5",
+          "dividend": "575.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "3,5",
+          "dividend": "157.50"
+        },
+        {
+          "combination": "2,5",
+          "dividend": "50.50"
+        },
+        {
+          "combination": "2,3",
+          "dividend": "82.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "5,3",
+          "dividend": "1,135.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "5,3,2",
+          "dividend": "2,522.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "2,3,5",
+          "dividend": "282.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "2,3,5,11",
+          "dividend": "5,803.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "5,3,2,11",
+          "dividend": "178,001.00"
+        }
+      ],
+      "3RD DOUBLE": [
+        {
+          "combination": "4/5",
+          "dividend": "156.00"
+        },
+        {
+          "combination": "4/3",
+          "dividend": "72.00"
+        }
+      ],
+      "2ND DOUBLE TRIO": [
+        {
+          "combination": "4,6,10/2,3,5",
+          "dividend": "24,171.00"
+        }
+      ]
+    }
   },
   "5": {
     "race_no": 5,
@@ -927,7 +1281,105 @@
         "finish_time": "1:12.43",
         "win_odds": "111"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "12",
+          "dividend": "117.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "12",
+          "dividend": "35.50"
+        },
+        {
+          "combination": "4",
+          "dividend": "22.50"
+        },
+        {
+          "combination": "5",
+          "dividend": "68.00"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "4,12",
+          "dividend": "317.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "4,12",
+          "dividend": "101.00"
+        },
+        {
+          "combination": "5,12",
+          "dividend": "345.00"
+        },
+        {
+          "combination": "4,5",
+          "dividend": "247.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "12,4",
+          "dividend": "813.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "12,4,5",
+          "dividend": "14,501.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "4,5,12",
+          "dividend": "2,500.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "2,4,5,12",
+          "dividend": "2,300.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "12,4,5,2",
+          "dividend": "64,818.00"
+        }
+      ],
+      "4TH DOUBLE": [
+        {
+          "combination": "5/12",
+          "dividend": "971.00"
+        },
+        {
+          "combination": "5/4",
+          "dividend": "111.50"
+        }
+      ],
+      "1ST TREBLE": [
+        {
+          "combination": "4/5/12",
+          "dividend": "1,670.00"
+        },
+        {
+          "combination": "4/5/4",
+          "dividend": "223.00"
+        }
+      ]
+    }
   },
   "6": {
     "race_no": 6,
@@ -1113,7 +1565,117 @@
         "finish_time": "1:51.76",
         "win_odds": "9"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "10",
+          "dividend": "52.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "10",
+          "dividend": "20.00"
+        },
+        {
+          "combination": "11",
+          "dividend": "24.00"
+        },
+        {
+          "combination": "4",
+          "dividend": "47.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "10,11",
+          "dividend": "204.00"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "10,11",
+          "dividend": "74.00"
+        },
+        {
+          "combination": "4,10",
+          "dividend": "153.00"
+        },
+        {
+          "combination": "4,11",
+          "dividend": "187.50"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "10,11",
+          "dividend": "331.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "10,11,4",
+          "dividend": "3,177.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "4,10,11",
+          "dividend": "1,024.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "4,8,10,11",
+          "dividend": "2,428.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "10,11,4,8",
+          "dividend": "35,689.00"
+        }
+      ],
+      "5TH DOUBLE": [
+        {
+          "combination": "12/10",
+          "dividend": "796.00"
+        },
+        {
+          "combination": "12/11",
+          "dividend": "127.50"
+        }
+      ],
+      "3RD DOUBLE TRIO": [
+        {
+          "combination": "4,5,12/4,10,11",
+          "dividend": "786,410.00"
+        }
+      ],
+      "TRIPLE TRIO (CONSOLATION)": [
+        {
+          "combination": "2,3,5/4,5,12/Any Combination",
+          "dividend": "7,641.00"
+        }
+      ],
+      "1ST SIX UP": [
+        {
+          "combination": "1,6,10/3,9/4,10/3,5/4,12/10,11",
+          "dividend": "5,319.00"
+        },
+        {
+          "combination": "1,10/3/4/5/12/10",
+          "dividend": "420,233.00"
+        }
+      ]
+    }
   },
   "7": {
     "race_no": 7,
@@ -1269,7 +1831,95 @@
         "finish_time": "1:10.57",
         "win_odds": "12"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "4",
+          "dividend": "31.00"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "4",
+          "dividend": "12.00"
+        },
+        {
+          "combination": "6",
+          "dividend": "50.00"
+        },
+        {
+          "combination": "2",
+          "dividend": "36.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "4,6",
+          "dividend": "285.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "4,6",
+          "dividend": "101.00"
+        },
+        {
+          "combination": "2,4",
+          "dividend": "68.50"
+        },
+        {
+          "combination": "2,6",
+          "dividend": "274.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "4,6",
+          "dividend": "415.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "4,6,2",
+          "dividend": "3,765.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "2,4,6",
+          "dividend": "961.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "2,4,6,10",
+          "dividend": "3,579.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "4,6,2,10",
+          "dividend": "56,174.00"
+        }
+      ],
+      "6TH DOUBLE": [
+        {
+          "combination": "10/4",
+          "dividend": "169.50"
+        },
+        {
+          "combination": "10/6",
+          "dividend": "258.00"
+        }
+      ]
+    }
   },
   "8": {
     "race_no": 8,
@@ -1455,7 +2105,101 @@
         "finish_time": "0:58.19",
         "win_odds": "32"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "7",
+          "dividend": "103.00"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "7",
+          "dividend": "23.50"
+        },
+        {
+          "combination": "12",
+          "dividend": "57.00"
+        },
+        {
+          "combination": "8",
+          "dividend": "13.50"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "7,12",
+          "dividend": "1,079.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "7,12",
+          "dividend": "249.50"
+        },
+        {
+          "combination": "7,8",
+          "dividend": "41.50"
+        },
+        {
+          "combination": "8,12",
+          "dividend": "89.00"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "7,12",
+          "dividend": "2,208.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "7,12,8",
+          "dividend": "6,382.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "7,8,12",
+          "dividend": "519.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "5,7,8,12",
+          "dividend": "1,531.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "7,12,8,5",
+          "dividend": "81,941.00"
+        }
+      ],
+      "7TH DOUBLE": [
+        {
+          "combination": "4/7",
+          "dividend": "328.00"
+        },
+        {
+          "combination": "4/12",
+          "dividend": "135.50"
+        }
+      ],
+      "4TH DOUBLE TRIO": [
+        {
+          "combination": "2,4,6/7,8,12",
+          "dividend": "82,565.00"
+        }
+      ]
+    }
   },
   "9": {
     "race_no": 9,
@@ -1641,7 +2385,95 @@
         "finish_time": "---",
         "win_odds": "---"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "6",
+          "dividend": "49.50"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "6",
+          "dividend": "18.50"
+        },
+        {
+          "combination": "1",
+          "dividend": "16.50"
+        },
+        {
+          "combination": "12",
+          "dividend": "93.00"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "1,6",
+          "dividend": "103.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "1,6",
+          "dividend": "40.50"
+        },
+        {
+          "combination": "6,12",
+          "dividend": "335.00"
+        },
+        {
+          "combination": "1,12",
+          "dividend": "313.50"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "6,1",
+          "dividend": "185.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "6,1,12",
+          "dividend": "3,767.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "1,6,12",
+          "dividend": "1,088.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "1,2,6,12",
+          "dividend": "1,299.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "6,1,12,2",
+          "dividend": "22,942.00"
+        }
+      ],
+      "8TH DOUBLE": [
+        {
+          "combination": "7/6",
+          "dividend": "426.00"
+        },
+        {
+          "combination": "7/1,5",
+          "dividend": "70.50"
+        }
+      ]
+    }
   },
   "10": {
     "race_no": 10,
@@ -1827,6 +2659,128 @@
         "finish_time": "1:10.61",
         "win_odds": "48"
       }
-    ]
+    ],
+    "dividends": {
+      "POOL": [
+        {
+          "combination": "Winning Combination",
+          "dividend": "Dividend (HK$)"
+        }
+      ],
+      "WIN": [
+        {
+          "combination": "5",
+          "dividend": "328.00"
+        }
+      ],
+      "PLACE": [
+        {
+          "combination": "5",
+          "dividend": "79.00"
+        },
+        {
+          "combination": "4",
+          "dividend": "16.50"
+        },
+        {
+          "combination": "8",
+          "dividend": "18.00"
+        }
+      ],
+      "QUINELLA": [
+        {
+          "combination": "4,5",
+          "dividend": "649.50"
+        }
+      ],
+      "QUINELLA PLACE": [
+        {
+          "combination": "4,5",
+          "dividend": "212.50"
+        },
+        {
+          "combination": "5,8",
+          "dividend": "238.50"
+        },
+        {
+          "combination": "4,8",
+          "dividend": "42.50"
+        }
+      ],
+      "FORECAST": [
+        {
+          "combination": "5,4",
+          "dividend": "1,943.00"
+        }
+      ],
+      "TIERCE": [
+        {
+          "combination": "5,4,8",
+          "dividend": "14,885.00"
+        }
+      ],
+      "TRIO": [
+        {
+          "combination": "4,5,8",
+          "dividend": "1,081.00"
+        }
+      ],
+      "FIRST 4": [
+        {
+          "combination": "4,5,8,12",
+          "dividend": "7,630.00"
+        }
+      ],
+      "QUARTET": [
+        {
+          "combination": "5,4,8,12",
+          "dividend": "267,657.00"
+        }
+      ],
+      "9TH DOUBLE": [
+        {
+          "combination": "6/5",
+          "dividend": "1,742.50"
+        },
+        {
+          "combination": "6/4",
+          "dividend": "25.00"
+        }
+      ],
+      "2ND TREBLE": [
+        {
+          "combination": "7/6/5",
+          "dividend": "38,862.00"
+        },
+        {
+          "combination": "7/6/4",
+          "dividend": "410.00"
+        }
+      ],
+      "5TH DOUBLE TRIO": [
+        {
+          "combination": "12>1,5,6/4,5,8",
+          "dividend": "133,304.00"
+        }
+      ],
+      "2ND SIX UP": [
+        {
+          "combination": "4,12/10,11/4,6/7,12/1,5,6/4,5",
+          "dividend": "43,199.00"
+        }
+      ],
+      "JOCKEY CHALLENGE 1": [
+        {
+          "combination": "1 [C Y Ho]",
+          "dividend": "Details"
+        }
+      ],
+      "TRAINER CHALLENGE 1": [
+        {
+          "combination": "9 [K W Lui]",
+          "dividend": "Details"
+        }
+      ]
+    }
   }
 }

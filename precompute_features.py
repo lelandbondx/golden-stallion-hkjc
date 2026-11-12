@@ -110,6 +110,7 @@ def precompute():
     # 5. Merge live 2026 horse stats (running_styles, winning_gears) and scraped 2026 stewards' comments
     if os.path.exists('data/latest_horse_stats.csv'):
         try:
+            import ast
             stats_df = pd.read_csv('data/latest_horse_stats.csv')
             for _, r in stats_df.iterrows():
                 c_name = str(r.get('clean_name', '')).strip().upper()
@@ -118,6 +119,20 @@ def precompute():
                 afp = pd.to_numeric(r.get('avg_first_pos'), errors='coerce')
                 if pd.notnull(afp):
                     running_styles[c_name] = float(afp)
+                raw_wg = r.get('winning_gears')
+                if pd.notnull(raw_wg):
+                    wg_list = []
+                    if isinstance(raw_wg, list):
+                        wg_list = raw_wg
+                    elif isinstance(raw_wg, str) and raw_wg.strip().startswith('['):
+                        try:
+                            wg_list = ast.literal_eval(raw_wg.strip())
+                        except Exception:
+                            wg_list = []
+                    clean_wg = [str(g).strip().upper() for g in wg_list if str(g).strip() and str(g).strip().upper() not in ('-', '--', 'NAN', 'NONE')]
+                    if clean_wg:
+                        existing_wg = set(winning_gears.get(c_name, []))
+                        winning_gears[c_name] = sorted(list(existing_wg.union(clean_wg)))
         except Exception as e:
             print(f"Warning merging latest_horse_stats into precomputed_features: {e}")
 
