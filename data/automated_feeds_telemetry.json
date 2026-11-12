@@ -1,33 +1,33 @@
 {
-  "updated_at_utc": "2026-11-11T01:57:19Z",
+  "updated_at_utc": "2026-11-11T11:48:20Z",
   "target_meeting": "2026-11-11 Happy Valley",
   "first_automated_meeting": "2026-11-08 Sha Tin",
   "standing_bots": {
     "trial_bot": {
       "duty": "Daily 06:00 HKT (HKJC 48h declared barrier trials)",
       "file_used": "engineered_trial_features.json",
-      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\engineered_trial_features.json",
-      "timestamp_hkt": "2026-11-11 06:20:51 HKT",
-      "timestamp_utc": "2026-11-10T22:20:51Z",
+      "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/engineered_trial_features.json",
+      "timestamp_hkt": "2026-11-11 19:43:12 HKT",
+      "timestamp_utc": "2026-11-11T11:43:12Z",
       "record_count": 197,
       "status": "loaded"
     },
     "replay_bot": {
       "duty": "2h post-meeting (Official replays + stewards trip notes & excuses)",
       "file_used": "grok_trip_notes_resolved.json",
-      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\grok_trip_notes_resolved.json",
-      "timestamp_hkt": "2026-10-30 01:15:27 HKT",
-      "timestamp_utc": "2026-10-29T17:15:27Z",
+      "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/grok_trip_notes_resolved.json",
+      "timestamp_hkt": "2026-11-11 19:41:02 HKT",
+      "timestamp_utc": "2026-11-11T11:41:02Z",
       "record_count": 62,
       "status": "loaded"
     },
     "steward_bot": {
       "duty": "2h post-meeting (Cross-checks medical/vet flags & final integrity gate)",
       "file_used": "declared_vet_records.json",
-      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\declared_vet_records.json",
-      "timestamp_hkt": "2026-11-11 09:20:23 HKT",
-      "timestamp_utc": "2026-11-11T01:20:23Z",
-      "record_count": 11,
+      "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/declared_vet_records.json",
+      "timestamp_hkt": "2026-11-11 19:45:23 HKT",
+      "timestamp_utc": "2026-11-11T11:45:23Z",
+      "record_count": 10,
       "status": "loaded"
     }
   }

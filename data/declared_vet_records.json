@@ -15,7 +15,7 @@
     "status": "cleared",
     "is_material": true,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 1",
@@ -33,7 +33,7 @@
     "status": "cleared",
     "is_material": false,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 3",
@@ -51,25 +51,7 @@
     "status": "cleared",
     "is_material": false,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
-  },
-  {
-    "race": "Race 3",
-    "horse_name": "SPEEDY PATCH",
-    "horse_code": "L104",
-    "date": "13/09/2026",
-    "date_iso": "2026-09-13",
-    "details": "Rider concerned horse's action during racing and was eased down over the concluding stages.",
-    "passed_on": "30/09/2026",
-    "passed_on_iso": "2026-09-30",
-    "category": "performance",
-    "body_part": null,
-    "side": null,
-    "procedure": null,
-    "status": "cleared",
-    "is_material": false,
-    "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 3",
@@ -87,7 +69,7 @@
     "status": "cleared",
     "is_material": false,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 3",
@@ -105,7 +87,7 @@
     "status": "cleared",
     "is_material": true,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 3",
@@ -123,7 +105,7 @@
     "status": "cleared",
     "is_material": true,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 6",
@@ -141,7 +123,7 @@
     "status": "cleared",
     "is_material": true,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 6",
@@ -159,7 +141,7 @@
     "status": "cleared",
     "is_material": true,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 6",
@@ -177,7 +159,7 @@
     "status": "cleared",
     "is_material": true,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 7",
@@ -195,7 +177,7 @@
     "status": "cleared",
     "is_material": false,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 7",
@@ -213,7 +195,7 @@
     "status": "no_requirement",
     "is_material": false,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   },
   {
     "race": "Race 9",
@@ -231,6 +213,6 @@
     "status": "cleared",
     "is_material": true,
     "source_url": "https://racing.hkjc.com/en-us/local/information/overecord",
-    "scraped_at": "2026-11-11T01:20:22Z"
+    "scraped_at": "2026-11-11T11:45:23Z"
   }
 ]
