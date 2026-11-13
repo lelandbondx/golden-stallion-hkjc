@@ -1,10 +1,10 @@
 {
   "overall_status": "fail",
-  "updated_at": "2026-11-13T11:53:38Z",
+  "updated_at": "2026-11-13T11:57:02Z",
   "components": {
     "scraper": {
       "status": "fail",
-      "last_attempt_at": "2026-11-12T12:19:47Z",
+      "last_attempt_at": "2026-11-13T11:57:02Z",
       "last_success_at": "2026-11-11T03:37:58Z",
       "metrics": {
         "source": "error"
@@ -13,18 +13,18 @@
     },
     "incident_memory": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:19:37Z",
-      "last_success_at": "2026-11-12T12:19:37Z",
+      "last_attempt_at": "2026-11-13T11:56:53Z",
+      "last_success_at": "2026-11-13T11:56:53Z",
       "metrics": {
         "horses": 2194,
-        "flagged_horses": 1107
+        "flagged_horses": 1109
       },
       "error": null
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:19:46Z",
-      "last_success_at": "2026-11-12T12:19:46Z",
+      "last_attempt_at": "2026-11-13T11:57:00Z",
+      "last_success_at": "2026-11-13T11:57:00Z",
       "metrics": {
         "meeting_date": "2026-11-11",
         "venue": "Happy Valley",
@@ -34,17 +34,17 @@
     },
     "incident_engine": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:19:37Z",
-      "last_success_at": "2026-11-12T12:19:37Z",
+      "last_attempt_at": "2026-11-13T11:56:53Z",
+      "last_success_at": "2026-11-13T11:56:53Z",
       "metrics": {
         "ingested_incidents": 1237,
-        "flagged_horses": 1107
+        "flagged_horses": 1109
       },
       "error": null
     },
     "barrier_trials_scraper": {
       "status": "warn",
-      "last_attempt_at": "2026-11-12T12:15:04Z",
+      "last_attempt_at": "2026-11-13T11:53:48Z",
       "last_success_at": "2026-11-10T22:20:51Z",
       "metrics": {
         "meeting_date": "2026/11/14",
@@ -55,8 +55,8 @@
     },
     "trial_features": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:15:04Z",
-      "last_success_at": "2026-11-12T12:15:04Z",
+      "last_attempt_at": "2026-11-13T11:53:48Z",
+      "last_success_at": "2026-11-13T11:53:48Z",
       "metrics": {
         "total_horses": 197,
         "updated_horses": 197,
@@ -66,7 +66,7 @@
     },
     "veterinary_records": {
       "status": "warn",
-      "last_attempt_at": "2026-11-13T11:53:38Z",
+      "last_attempt_at": "2026-11-13T11:55:13Z",
       "last_success_at": "2026-11-11T11:45:23Z",
       "metrics": {
         "horses_scraped": 272,
@@ -123,19 +123,19 @@
           }
         ],
         "latest_stats_rows_updated": 270,
-        "last_successful_commit_at": "2026-11-13T11:53:38Z",
+        "last_successful_commit_at": "2026-11-13T11:55:13Z",
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse"
       },
       "error": "9 disagreement(s) between ovehorse and overecord"
     },
     "horse_profiles_and_vet": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:16:48Z",
-      "last_success_at": "2026-11-12T12:16:48Z",
+      "last_attempt_at": "2026-11-13T11:55:13Z",
+      "last_success_at": "2026-11-13T11:55:13Z",
       "metrics": {
         "total_profiles": 896,
         "updated_this_run": 252,
-        "active_vet_flags": 98,
+        "active_vet_flags": 104,
         "horses_with_vet_notes": 571,
         "declared_starters_vet_records": 11
       },
@@ -143,8 +143,8 @@
     },
     "trackwork_telemetry": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:19:35Z",
-      "last_success_at": "2026-11-12T12:19:35Z",
+      "last_attempt_at": "2026-11-13T11:56:51Z",
+      "last_success_at": "2026-11-13T11:56:51Z",
       "metrics": {
         "horses_harvested": 200,
         "horses_with_30d_gallops": 0,
@@ -155,8 +155,8 @@
     },
     "precomputed_features": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:19:36Z",
-      "last_success_at": "2026-11-12T12:19:36Z",
+      "last_attempt_at": "2026-11-13T11:56:52Z",
+      "last_success_at": "2026-11-13T11:56:52Z",
       "metrics": {
         "winning_gears_horses": 1063,
         "running_styles_horses": 2675,
@@ -167,8 +167,8 @@
     },
     "telemetry_master_sync": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:19:37Z",
-      "last_success_at": "2026-11-12T12:19:37Z",
+      "last_attempt_at": "2026-11-13T11:56:53Z",
+      "last_success_at": "2026-11-13T11:56:53Z",
       "metrics": {
         "target_meeting": "2026-11-11",
         "venue": "HV",
@@ -180,8 +180,8 @@
     },
     "baseline_odds": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:19:39Z",
-      "last_success_at": "2026-11-12T12:19:39Z",
+      "last_attempt_at": "2026-11-13T11:56:54Z",
+      "last_success_at": "2026-11-13T11:56:54Z",
       "metrics": {
         "meeting_date": "2026-11-11",
         "venue": "Happy Valley",
@@ -226,10 +226,10 @@
     },
     "model_training": {
       "status": "ok",
-      "last_attempt_at": "2026-11-12T12:19:43Z",
-      "last_success_at": "2026-11-12T12:19:43Z",
+      "last_attempt_at": "2026-11-13T11:56:58Z",
+      "last_success_at": "2026-11-13T11:56:58Z",
       "metrics": {
-        "trained_at": "2026-11-12T12:19:41Z",
+        "trained_at": "2026-11-13T11:56:56Z",
         "feature_list_hash": "ff60299a1e20fd8e",
         "train_rows": 93659
       },

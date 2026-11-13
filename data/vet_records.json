@@ -4,7 +4,7 @@
     "horse_code": "K394",
     "horse_name": "AMO ERGO SUM",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K394",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [
       {
         "date": "30/12/2025",
@@ -19,7 +19,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K394",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       }
     ],
     "latest_entry": {
@@ -35,7 +35,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K394",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "30/12/2025: Castration. (Passed: -)",
@@ -63,7 +63,7 @@
     "horse_code": "K308",
     "horse_name": "CIRCUIT CENTURY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K308",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [
       {
         "date": "11/11/2026",
@@ -78,7 +78,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K308",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       },
       {
         "date": "01/10/2026",
@@ -93,7 +93,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K308",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       },
       {
         "date": "01/07/2026",
@@ -108,7 +108,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K308",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       },
       {
         "date": "05/02/2026",
@@ -123,7 +123,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K308",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       }
     ],
     "latest_entry": {
@@ -139,7 +139,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K308",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_material_entry": {
       "date": "11/11/2026",
@@ -154,7 +154,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K308",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_vet_note": "11/11/2026: Substantial blood in trachea noted on post-race scoping. (Passed: -)",
     "vet_display": "11/11/2026 — Substantial blood in trachea noted on post-race scoping. Active (no clearance published)",
@@ -227,7 +227,7 @@
     "horse_code": "K464",
     "horse_name": "YOUNG FIGHTER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K464",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [
       {
         "date": "28/04/2026",
@@ -242,7 +242,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K464",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       },
       {
         "date": "12/01/2026",
@@ -257,7 +257,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K464",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       }
     ],
     "latest_entry": {
@@ -273,7 +273,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K464",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_material_entry": {
       "date": "28/04/2026",
@@ -288,7 +288,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K464",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_vet_note": "28/04/2026: Right fore fetlock injury. (Passed: 20/06/2026)",
     "vet_display": "28/04/2026 — Right fore fetlock injury. Cleared 20/06/2026",
@@ -315,7 +315,7 @@
     "horse_code": "G277",
     "horse_name": "TO INFINITY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G277",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [
       {
         "date": "11/08/2026",
@@ -330,7 +330,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G277",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       },
       {
         "date": "02/11/2025",
@@ -345,7 +345,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G277",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       },
       {
         "date": "12/02/2025",
@@ -360,7 +360,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G277",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       }
     ],
     "latest_entry": {
@@ -376,7 +376,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G277",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_material_entry": {
       "date": "02/11/2025",
@@ -391,7 +391,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G277",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_vet_note": "02/11/2025: Laceration to the left front leg. (Passed: 31/12/2025)",
     "vet_display": "02/11/2025 — Laceration to the left front leg. Cleared 31/12/2025 (Latest entry 11/08/2026: Eight years of age or above at season end. — Cleared 24/08/2026)",
@@ -436,7 +436,7 @@
     "horse_code": "H419",
     "horse_name": "WINDICATOR FAMILY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H419",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -465,7 +465,7 @@
     "horse_code": "K457",
     "horse_name": "FORTUNE KINGO",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K457",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -494,7 +494,7 @@
     "horse_code": "J169",
     "horse_name": "APOLAR FIGHTER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J169",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [
       {
         "date": "13/01/2026",
@@ -509,7 +509,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J169",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       }
     ],
     "latest_entry": {
@@ -525,7 +525,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J169",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_material_entry": {
       "date": "13/01/2026",
@@ -540,7 +540,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J169",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_vet_note": "13/01/2026: Lame left fore. Withdrawn from racing. (Passed: 04/02/2026)",
     "vet_display": "13/01/2026 — Lame left fore. Withdrawn from racing. Cleared 04/02/2026",
@@ -567,7 +567,7 @@
     "horse_code": "J037",
     "horse_name": "ONLY U",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J037",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [
       {
         "date": "01/04/2026",
@@ -582,7 +582,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J037",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       },
       {
         "date": "01/05/2024",
@@ -597,7 +597,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J037",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       }
     ],
     "latest_entry": {
@@ -613,7 +613,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J037",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "01/04/2026: Disappointing performance. (Passed: 20/04/2026)",
@@ -670,7 +670,7 @@
     "horse_code": "L165",
     "horse_name": "LOVELY MILES",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L165",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -699,7 +699,7 @@
     "horse_code": "K035",
     "horse_name": "LEGENDARY IMPACT",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K035",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [
       {
         "date": "06/04/2025",
@@ -714,7 +714,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K035",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       },
       {
         "date": "21/12/2024",
@@ -729,7 +729,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K035",
-        "scraped_at": "2026-11-13T11:52:49Z"
+        "scraped_at": "2026-11-13T11:54:41Z"
       }
     ],
     "latest_entry": {
@@ -745,7 +745,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K035",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_material_entry": {
       "date": "21/12/2024",
@@ -760,7 +760,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K035",
-      "scraped_at": "2026-11-13T11:52:49Z"
+      "scraped_at": "2026-11-13T11:54:41Z"
     },
     "latest_vet_note": "21/12/2024: Heart irregularity noted during pre-race vet inspection. Withdrawn from racing. (Passed: 21/01/2025)",
     "vet_display": "21/12/2024 — Heart irregularity noted during pre-race vet inspection. Withdrawn from racing. Cleared 21/01/2025 (Latest entry 06/04/2025: Inadvertent treatment. Withdrawn from racing. — Cleared 07/04/2025)",
@@ -816,7 +816,7 @@
     "horse_code": "L163",
     "horse_name": "MULTISUPERSTAR",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L163",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -845,7 +845,7 @@
     "horse_code": "J288",
     "horse_name": "LAKESHORE HERO",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J288",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "01/07/2025",
@@ -860,7 +860,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J288",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -876,7 +876,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J288",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "01/07/2025",
@@ -891,7 +891,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J288",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "01/07/2025: Heart irregularity noted and abnormal respiratory noise reported after racing. (Passed: 28/10/2025)",
     "vet_display": "01/07/2025 — Heart irregularity noted and abnormal respiratory noise reported after racing. Cleared 28/10/2025",
@@ -936,7 +936,7 @@
     "horse_code": "L046",
     "horse_name": "HEALTHY PONY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L046",
-    "scraped_at": "2026-11-13T11:52:49Z",
+    "scraped_at": "2026-11-13T11:54:41Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -965,7 +965,7 @@
     "horse_code": "K229",
     "horse_name": "FREE PONY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K229",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "12/06/2025",
@@ -980,7 +980,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K229",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "16/02/2025",
@@ -995,7 +995,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K229",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1011,7 +1011,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K229",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "12/06/2025",
@@ -1026,7 +1026,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K229",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "12/06/2025: Left eye injury. (Passed: 03/10/2025)",
     "vet_display": "12/06/2025 — Left eye injury. Cleared 03/10/2025",
@@ -1071,7 +1071,7 @@
     "horse_code": "L059",
     "horse_name": "RUSSET GLOW",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L059",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -1100,7 +1100,7 @@
     "horse_code": "L085",
     "horse_name": "MAJESTIC LIFE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L085",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -1129,7 +1129,7 @@
     "horse_code": "K064",
     "horse_name": "LUCKY MCQUEEN",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K064",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -1158,7 +1158,7 @@
     "horse_code": "L129",
     "horse_name": "BEAUTY GEMINI",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L129",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "28/03/2026",
@@ -1173,7 +1173,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L129",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "25/02/2026",
@@ -1188,7 +1188,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L129",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1204,7 +1204,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L129",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "28/03/2026",
@@ -1219,7 +1219,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L129",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "28/03/2026: Lame left fore. Withdrawn from racing. (Passed: 17/04/2026)",
     "vet_display": "28/03/2026 — Lame left fore. Withdrawn from racing. Cleared 17/04/2026",
@@ -1246,7 +1246,7 @@
     "horse_code": "K038",
     "horse_name": "NOBLE FANS",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K038",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "21/09/2025",
@@ -1261,7 +1261,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K038",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1277,7 +1277,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K038",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "21/09/2025",
@@ -1292,7 +1292,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K038",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "21/09/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 09/12/2025)",
     "vet_display": "21/09/2025 — Substantial blood in trachea noted on post-race scoping. Cleared 09/12/2025",
@@ -1337,7 +1337,7 @@
     "horse_code": "H252",
     "horse_name": "ALWAYS FLUKE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H252",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "10/03/2025",
@@ -1352,7 +1352,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H252",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "05/04/2024",
@@ -1367,7 +1367,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H252",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "05/11/2023",
@@ -1382,7 +1382,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H252",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1398,7 +1398,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H252",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "10/03/2025",
@@ -1413,7 +1413,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H252",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "10/03/2025: Lame left hind leg on the day after racing. (Passed: 31/03/2025)",
     "vet_display": "10/03/2025 — Lame left hind leg on the day after racing. Cleared 31/03/2025",
@@ -1452,7 +1452,7 @@
     "horse_code": "J319",
     "horse_name": "CHILL MASTER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J319",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "13/02/2026",
@@ -1467,7 +1467,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J319",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "19/04/2024",
@@ -1482,7 +1482,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J319",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1498,7 +1498,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J319",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "13/02/2026",
@@ -1513,7 +1513,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J319",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "13/02/2026: Diagnosed to be a \"roarer\". (Passed: -)",
     "vet_display": "13/02/2026 — Diagnosed to be a \"roarer\". Active (no clearance published)",
@@ -1552,7 +1552,7 @@
     "horse_code": "J448",
     "horse_name": "BLUE BARON",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J448",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -1581,7 +1581,7 @@
     "horse_code": "K322",
     "horse_name": "ARGENTO OCEAN",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K322",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "25/06/2026",
@@ -1596,7 +1596,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K322",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1612,7 +1612,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K322",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "25/06/2026",
@@ -1627,7 +1627,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K322",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "25/06/2026: Right hind ligament injury. (Passed: 03/10/2026)",
     "vet_display": "25/06/2026 — Right hind ligament injury. Cleared 03/10/2026",
@@ -1654,7 +1654,7 @@
     "horse_code": "L174",
     "horse_name": "IRON SECURITY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L174",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -1683,7 +1683,7 @@
     "horse_code": "K532",
     "horse_name": "WINNING NOW",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K532",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -1712,7 +1712,7 @@
     "horse_code": "L260",
     "horse_name": "BEAUTY SHOW",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L260",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "07/10/2026",
@@ -1727,7 +1727,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L260",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "09/09/2026",
@@ -1742,7 +1742,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L260",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1758,7 +1758,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L260",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "07/10/2026: Disappointing performance. (Passed: 27/10/2026)",
@@ -1821,7 +1821,7 @@
     "horse_code": "L164",
     "horse_name": "SILVER BLAZE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L164",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "08/09/2026",
@@ -1836,7 +1836,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L164",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "09/03/2026",
@@ -1851,7 +1851,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L164",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1867,7 +1867,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L164",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "09/03/2026",
@@ -1882,7 +1882,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L164",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "09/03/2026: Right fore tendon injury. (Passed: 31/08/2026)",
     "vet_display": "09/03/2026 — Right fore tendon injury. Cleared 31/08/2026 (Latest entry 08/09/2026: Unraced for 12 months. — Cleared 25/09/2026)",
@@ -1909,7 +1909,7 @@
     "horse_code": "H325",
     "horse_name": "NEW POWER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H325",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "03/01/2026",
@@ -1924,7 +1924,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H325",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "13/06/2024",
@@ -1939,7 +1939,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H325",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "05/01/2024",
@@ -1954,7 +1954,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H325",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "18/03/2023",
@@ -1969,7 +1969,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H325",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -1985,7 +1985,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H325",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "03/01/2026",
@@ -2000,7 +2000,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H325",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "03/01/2026: Left front ligament injury. Withdrawn from racing. (Passed: 24/04/2026)",
     "vet_display": "03/01/2026 — Left front ligament injury. Withdrawn from racing. Cleared 24/04/2026",
@@ -2027,7 +2027,7 @@
     "horse_code": "K364",
     "horse_name": "CALIFORNIA BAY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K364",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "22/10/2025",
@@ -2042,7 +2042,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K364",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2058,7 +2058,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K364",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "22/10/2025: Disappointing performance. (Passed: 04/11/2025)",
@@ -2104,7 +2104,7 @@
     "horse_code": "L324",
     "horse_name": "COLOURFUL GOLD",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L324",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "18/06/2026",
@@ -2119,7 +2119,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L324",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2135,7 +2135,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L324",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "18/06/2026: Poor performance in barrier trial. (Passed: 18/09/2026)",
@@ -2175,7 +2175,7 @@
     "horse_code": "L177",
     "horse_name": "PRIVATE WEALTH",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L177",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -2204,7 +2204,7 @@
     "horse_code": "J516",
     "horse_name": "MASTER PHOENIX",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J516",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "07/07/2026",
@@ -2219,7 +2219,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J516",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "03/03/2025",
@@ -2234,7 +2234,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J516",
-        "scraped_at": "2026-11-13T11:52:51Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2250,7 +2250,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J516",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "07/07/2026",
@@ -2265,7 +2265,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J516",
-      "scraped_at": "2026-11-13T11:52:51Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "07/07/2026: Head injury. (Passed: 24/09/2026)",
     "vet_display": "07/07/2026 — Head injury. Cleared 24/09/2026",
@@ -2292,7 +2292,7 @@
     "horse_code": "L104",
     "horse_name": "SPEEDY PATCH",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L104",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "11/11/2026",
@@ -2307,7 +2307,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L104",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "13/09/2026",
@@ -2322,7 +2322,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L104",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "02/01/2026",
@@ -2337,7 +2337,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L104",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -2353,7 +2353,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L104",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "11/11/2026",
@@ -2368,7 +2368,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L104",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "11/11/2026: Fractious and sustained wounds to both hind legs when being loaded to be transported to Happy Valley. Withdrawn from racing. (Passed: -)",
     "vet_display": "11/11/2026 — Fractious and sustained wounds to both hind legs when being loaded to be transported to Happy Valley. Withdrawn from racing. Active (no clearance published)",
@@ -2385,7 +2385,7 @@
     "horse_code": "K307",
     "horse_name": "ACE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K307",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -2414,7 +2414,7 @@
     "horse_code": "K271",
     "horse_name": "LEGEND STAR",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K271",
-    "scraped_at": "2026-11-13T11:52:51Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -2443,7 +2443,7 @@
     "horse_code": "K347",
     "horse_name": "GOLDEN BRILLIANT",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K347",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "14/04/2026",
@@ -2458,7 +2458,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K347",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "30/06/2025",
@@ -2473,7 +2473,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K347",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2489,7 +2489,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K347",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "14/04/2026",
@@ -2504,7 +2504,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K347",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "14/04/2026: Left fore fetlock injury. (Passed: 21/09/2026)",
     "vet_display": "14/04/2026 — Left fore fetlock injury. Cleared 21/09/2026",
@@ -2531,7 +2531,7 @@
     "horse_code": "L315",
     "horse_name": "GLORIOUS DYNASTY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L315",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -2560,7 +2560,7 @@
     "horse_code": "L027",
     "horse_name": "VECU",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L027",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "06/01/2026",
@@ -2575,7 +2575,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L027",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2591,7 +2591,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L027",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "06/01/2026",
@@ -2606,7 +2606,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L027",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "06/01/2026: Right fore fetlock bone injury. (Passed: 04/06/2026)",
     "vet_display": "06/01/2026 — Right fore fetlock bone injury. Cleared 04/06/2026",
@@ -2633,7 +2633,7 @@
     "horse_code": "K444",
     "horse_name": "AMAZING GAZE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K444",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -2662,7 +2662,7 @@
     "horse_code": "L446",
     "horse_name": "KINGMAN REEF",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L446",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -2691,7 +2691,7 @@
     "horse_code": "K327",
     "horse_name": "FLYING BOOM",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K327",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "13/02/2025",
@@ -2706,7 +2706,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K327",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2722,7 +2722,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K327",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "13/02/2025",
@@ -2737,7 +2737,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K327",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "13/02/2025: Right fore tendon injury. (Passed: 15/09/2025)",
     "vet_display": "13/02/2025 — Right fore tendon injury. Cleared 15/09/2025",
@@ -2764,7 +2764,7 @@
     "horse_code": "L269",
     "horse_name": "JUMBO STEPS",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L269",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -2793,7 +2793,7 @@
     "horse_code": "K099",
     "horse_name": "KING ALLOY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K099",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "25/06/2026",
@@ -2808,7 +2808,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K099",
-        "scraped_at": "2026-11-13T11:52:50Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2824,7 +2824,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K099",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "25/06/2026",
@@ -2839,7 +2839,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K099",
-      "scraped_at": "2026-11-13T11:52:50Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "25/06/2026: Lame right front leg on the day after racing. (Passed: 08/09/2026)",
     "vet_display": "25/06/2026 — Lame right front leg on the day after racing. Cleared 08/09/2026",
@@ -2866,7 +2866,7 @@
     "horse_code": "H475",
     "horse_name": "CIRCUIT FIERY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H475",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "26/05/2024",
@@ -2881,7 +2881,7 @@
         "status": "active_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H475",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "11/09/2023",
@@ -2896,7 +2896,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H475",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2912,7 +2912,7 @@
       "status": "active_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H475",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "11/09/2023",
@@ -2927,7 +2927,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H475",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "11/09/2023: Lame left fore. (Passed: 11/01/2024)",
     "vet_display": "11/09/2023 — Lame left fore. Cleared 11/01/2024 (Latest entry 26/05/2024: Substantial mucus in trachea noted on post-race scoping. — no clearance published)",
@@ -2954,7 +2954,7 @@
     "horse_code": "L461",
     "horse_name": "GOLDEN ACE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L461",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "08/09/2026",
@@ -2969,7 +2969,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L461",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -2985,7 +2985,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L461",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "08/09/2026",
@@ -3000,7 +3000,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L461",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "08/09/2026: Abrasions to both hind legs. (Passed: 19/09/2026)",
     "vet_display": "08/09/2026 — Abrasions to both hind legs. Cleared 19/09/2026",
@@ -3027,7 +3027,7 @@
     "horse_code": "K511",
     "horse_name": "URANUS STAR",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K511",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3056,7 +3056,7 @@
     "horse_code": "L415",
     "horse_name": "ROAD TO GLORY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L415",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3085,7 +3085,7 @@
     "horse_code": "L286",
     "horse_name": "STEADFAST FORT",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L286",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3114,7 +3114,7 @@
     "horse_code": "K096",
     "horse_name": "BUCEPHALAS",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K096",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "17/05/2026",
@@ -3129,7 +3129,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K096",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "19/02/2026",
@@ -3144,7 +3144,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K096",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "04/09/2025",
@@ -3159,7 +3159,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K096",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "07/05/2025",
@@ -3174,7 +3174,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K096",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -3190,7 +3190,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K096",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "19/02/2026",
@@ -3205,7 +3205,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K096",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "19/02/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 16/03/2026)",
     "vet_display": "19/02/2026 — Substantial blood in trachea noted on post-race scoping. Cleared 16/03/2026 (Latest entry 17/05/2026: Rider concerned horse's action during racing and was eased down in the Home Straight. — Cleared 12/06/2026)",
@@ -3295,7 +3295,7 @@
     "horse_code": "J098",
     "horse_name": "TAKE ACTION",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J098",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "19/09/2023",
@@ -3310,7 +3310,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J098",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -3326,7 +3326,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J098",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "19/09/2023: Castration. (Passed: -)",
@@ -3354,7 +3354,7 @@
     "horse_code": "L327",
     "horse_name": "JOLLY BONUS",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L327",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3383,7 +3383,7 @@
     "horse_code": "G125",
     "horse_name": "SURE JOYFUL",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G125",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "11/08/2026",
@@ -3398,7 +3398,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G125",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -3414,7 +3414,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G125",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "11/08/2026: Eight years of age or above at season end. (Passed: 28/08/2026)",
@@ -3442,7 +3442,7 @@
     "horse_code": "K189",
     "horse_name": "MAJESTIC DELIGHT",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K189",
-    "scraped_at": "2026-11-13T11:52:50Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3471,7 +3471,7 @@
     "horse_code": "K003",
     "horse_name": "FORTUNE STAR",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K003",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3500,7 +3500,7 @@
     "horse_code": "K358",
     "horse_name": "SEA CHARIOT",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K358",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "16/03/2026",
@@ -3515,7 +3515,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K358",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -3531,7 +3531,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K358",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "16/03/2026",
@@ -3546,7 +3546,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K358",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "16/03/2026: Lame left front leg on the day after racing. Update: Arthroscopic surgery to left fore fetlock (bone fragment removal). (Passed: 11/09/2026)",
     "vet_display": "16/03/2026 — Lame left front leg on the day after racing. Update: Arthroscopic surgery to left fore fetlock (bone fragment removal). Cleared 11/09/2026",
@@ -3573,7 +3573,7 @@
     "horse_code": "L266",
     "horse_name": "HAPPY PROMISE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L266",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3602,7 +3602,7 @@
     "horse_code": "L045",
     "horse_name": "CHEERFUL WONGCHOY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L045",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3631,7 +3631,7 @@
     "horse_code": "G465",
     "horse_name": "FORERUNNER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G465",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "12/11/2025",
@@ -3646,7 +3646,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G465",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "20/10/2024",
@@ -3661,7 +3661,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G465",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "15/10/2023",
@@ -3676,7 +3676,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G465",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "08/05/2023",
@@ -3691,7 +3691,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G465",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -3707,7 +3707,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G465",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "12/11/2025",
@@ -3722,7 +3722,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G465",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "12/11/2025: Heart irregularity noted after racing. (Passed: 23/12/2025)",
     "vet_display": "12/11/2025 — Heart irregularity noted after racing. Cleared 23/12/2025",
@@ -3784,7 +3784,7 @@
     "horse_code": "L077",
     "horse_name": "WITHOUT RHYME",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L077",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "02/10/2026",
@@ -3799,7 +3799,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L077",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "17/05/2026",
@@ -3814,7 +3814,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L077",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -3830,7 +3830,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L077",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "02/10/2026",
@@ -3845,7 +3845,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L077",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "02/10/2026: Lame left fore. Withdrawn from racing. (Passed: 26/10/2026)",
     "vet_display": "02/10/2026 — Lame left fore. Withdrawn from racing. Cleared 26/10/2026",
@@ -3890,7 +3890,7 @@
     "horse_code": "L031",
     "horse_name": "AKERMANIS GOLD",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L031",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "12/11/2026",
@@ -3905,7 +3905,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L031",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -3921,7 +3921,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L031",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "12/11/2026",
@@ -3936,7 +3936,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L031",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "12/11/2026: Lame right front leg on the day after racing. (Passed: -)",
     "vet_display": "12/11/2026 — Lame right front leg on the day after racing. Active (no clearance published)",
@@ -3963,7 +3963,7 @@
     "horse_code": "L102",
     "horse_name": "GENERAL REDWOOD",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L102",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -3992,7 +3992,7 @@
     "horse_code": "H289",
     "horse_name": "AESTHETICISM",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H289",
-    "scraped_at": "2026-11-13T11:52:52Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "27/05/2023",
@@ -4007,7 +4007,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H289",
-        "scraped_at": "2026-11-13T11:52:52Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -4023,7 +4023,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H289",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "27/05/2023",
@@ -4038,7 +4038,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H289",
-      "scraped_at": "2026-11-13T11:52:52Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "27/05/2023: Lame left fore. Withdrawn from racing. (Passed: 13/06/2023)",
     "vet_display": "27/05/2023 — Lame left fore. Withdrawn from racing. Cleared 13/06/2023",
@@ -4065,7 +4065,7 @@
     "horse_code": "M012",
     "horse_name": "FLOW RIDER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2026_M012",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -4094,7 +4094,7 @@
     "horse_code": "L050",
     "horse_name": "CLOUD NINE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L050",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "17/05/2026",
@@ -4109,7 +4109,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L050",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "18/08/2025",
@@ -4124,7 +4124,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L050",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -4140,7 +4140,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L050",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "17/05/2026: Disappointing performance. (Passed: 08/06/2026)",
@@ -4186,7 +4186,7 @@
     "horse_code": "L277",
     "horse_name": "INVICTUS",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L277",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -4215,7 +4215,7 @@
     "horse_code": "L313",
     "horse_name": "WATCH LEGEND",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L313",
-    "scraped_at": "2026-11-13T11:52:53Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "09/05/2026",
@@ -4230,7 +4230,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L313",
-        "scraped_at": "2026-11-13T11:52:53Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -4246,7 +4246,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L313",
-      "scraped_at": "2026-11-13T11:52:53Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "09/05/2026: Rider concerned horse's action during racing and was eased down over the concluding stages. (Passed: 28/05/2026)",
@@ -4292,7 +4292,7 @@
     "horse_code": "L448",
     "horse_name": "MR INVINCIBLE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L448",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -4321,7 +4321,7 @@
     "horse_code": "L325",
     "horse_name": "COUNTRY PRIDE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L325",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "27/05/2026",
@@ -4336,7 +4336,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L325",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -4352,7 +4352,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L325",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "27/05/2026",
@@ -4367,7 +4367,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L325",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "27/05/2026: Heart irregularity noted after racing. (Passed: 16/09/2026)",
     "vet_display": "27/05/2026 — Heart irregularity noted after racing. Cleared 16/09/2026",
@@ -4412,7 +4412,7 @@
     "horse_code": "L225",
     "horse_name": "LUCKY DOCTOR",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L225",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "29/04/2026",
@@ -4427,7 +4427,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L225",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -4443,7 +4443,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L225",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "29/04/2026: Unacceptable performance. (Passed: 26/05/2026)",
@@ -4489,7 +4489,7 @@
     "horse_code": "K017",
     "horse_name": "THUNDER PRINCE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K017",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "20/05/2026",
@@ -4504,7 +4504,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K017",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -4520,7 +4520,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K017",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "20/05/2026: Unacceptable racing manners. (Passed: 02/06/2026)",
@@ -4566,7 +4566,7 @@
     "horse_code": "J346",
     "horse_name": "JUBILANT WINNER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J346",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "09/11/2025",
@@ -4581,7 +4581,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J346",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -4597,7 +4597,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J346",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "09/11/2025: Disappointing performance. (Passed: 25/11/2025)",
@@ -4643,7 +4643,7 @@
     "horse_code": "K239",
     "horse_name": "WINNING MACHINE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "14/07/2026",
@@ -4658,7 +4658,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "01/07/2026",
@@ -4673,7 +4673,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "31/03/2025",
@@ -4688,7 +4688,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       },
       {
         "date": "20/01/2025",
@@ -4703,7 +4703,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -4719,7 +4719,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": {
       "date": "14/07/2026",
@@ -4734,7 +4734,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K239",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_vet_note": "14/07/2026: Arthroscopic surgery to both knees (bone fragment removal). (Passed: 12/10/2026)",
     "vet_display": "14/07/2026 — Arthroscopic surgery to both knees (bone fragment removal). Cleared 12/10/2026",
@@ -4790,7 +4790,7 @@
     "horse_code": "K339",
     "horse_name": "TOP TO SKY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K339",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:42Z",
     "entries": [
       {
         "date": "13/09/2026",
@@ -4805,7 +4805,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K339",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:42Z"
       }
     ],
     "latest_entry": {
@@ -4821,7 +4821,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K339",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:42Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "13/09/2026: Disappointing performance. (Passed: 25/09/2026)",
@@ -4867,7 +4867,7 @@
     "horse_code": "K097",
     "horse_name": "AURORA PATCH",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K097",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -4896,7 +4896,7 @@
     "horse_code": "H395",
     "horse_name": "SWIFT ASCEND",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H395",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "08/03/2026",
@@ -4911,7 +4911,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H395",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "14/01/2024",
@@ -4926,7 +4926,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H395",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "06/07/2023",
@@ -4941,7 +4941,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H395",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -4957,7 +4957,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H395",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "08/03/2026",
@@ -4972,7 +4972,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H395",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "08/03/2026: Lame left front leg after racing. Lame left front and right hind legs on the day after racing. Update: Left fore fetlock injury. (Passed: 28/08/2026)",
     "vet_display": "08/03/2026 — Lame left front leg after racing. Lame left front and right hind legs on the day after racing. Update: Left fore fetlock injury. Cleared 28/08/2026",
@@ -5017,7 +5017,7 @@
     "horse_code": "K313",
     "horse_name": "POPE CODY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K313",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5046,7 +5046,7 @@
     "horse_code": "K553",
     "horse_name": "LEADING AGILITY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K553",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5075,7 +5075,7 @@
     "horse_code": "L023",
     "horse_name": "ELITE GOLF",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L023",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5104,7 +5104,7 @@
     "horse_code": "L518",
     "horse_name": "MASK WARRIOR",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L518",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5133,7 +5133,7 @@
     "horse_code": "J360",
     "horse_name": "MIGHTY COMMANDER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J360",
-    "scraped_at": "2026-11-13T11:52:54Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "09/10/2026",
@@ -5148,7 +5148,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J360",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "21/05/2025",
@@ -5163,7 +5163,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J360",
-        "scraped_at": "2026-11-13T11:52:54Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -5179,7 +5179,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J360",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "21/05/2025",
@@ -5194,7 +5194,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J360",
-      "scraped_at": "2026-11-13T11:52:54Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "21/05/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 29/08/2025)",
     "vet_display": "21/05/2025 — Substantial blood in trachea noted on post-race scoping. Cleared 29/08/2025 (Latest entry 09/10/2026: Fractious whilst being transported to Hong Kong. Withdrawn from racing. — Cleared 22/10/2026)",
@@ -5239,7 +5239,7 @@
     "horse_code": "K542",
     "horse_name": "LUCRATIVE EIGHT",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K542",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5268,7 +5268,7 @@
     "horse_code": "L414",
     "horse_name": "STAR COMMANDER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L414",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5297,7 +5297,7 @@
     "horse_code": "H037",
     "horse_name": "A AMERIC TE SPECSO",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H037",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "11/08/2026",
@@ -5312,7 +5312,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H037",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -5328,7 +5328,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H037",
-      "scraped_at": "2026-11-13T11:52:55Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "11/08/2026: Eight years of age or above at season end. (Passed: 09/09/2026)",
@@ -5356,7 +5356,7 @@
     "horse_code": "L168",
     "horse_name": "DARYL FLASH",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L168",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5385,7 +5385,7 @@
     "horse_code": "H108",
     "horse_name": "SPEEDY SMARTIE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H108",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "05/05/2024",
@@ -5400,7 +5400,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H108",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "21/05/2023",
@@ -5415,7 +5415,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H108",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "05/12/2022",
@@ -5430,7 +5430,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H108",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -5446,7 +5446,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H108",
-      "scraped_at": "2026-11-13T11:52:55Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "05/05/2024: Unacceptable performance. (Passed: 21/05/2024)",
@@ -5497,7 +5497,7 @@
     "horse_code": "K395",
     "horse_name": "CHINA WIN",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K395",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "11/05/2026",
@@ -5512,7 +5512,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K395",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "13/02/2026",
@@ -5527,7 +5527,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K395",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -5543,7 +5543,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K395",
-      "scraped_at": "2026-11-13T11:52:55Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "11/05/2026",
@@ -5558,7 +5558,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K395",
-      "scraped_at": "2026-11-13T11:52:55Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "11/05/2026: Heart irregularity noted during pre-race vet inspection. Withdrawn from racing. (Passed: 02/09/2026)",
     "vet_display": "11/05/2026 — Heart irregularity noted during pre-race vet inspection. Withdrawn from racing. Cleared 02/09/2026",
@@ -5608,7 +5608,7 @@
     "horse_code": "K381",
     "horse_name": "FIVEFORTWO",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K381",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "24/03/2026",
@@ -5623,7 +5623,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K381",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "21/09/2025",
@@ -5638,7 +5638,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K381",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "01/07/2025",
@@ -5653,7 +5653,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K381",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -5669,7 +5669,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K381",
-      "scraped_at": "2026-11-13T11:52:55Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "24/03/2026: Fever. Withdrawn from racing. (Passed: 08/04/2026)",
@@ -5732,7 +5732,7 @@
     "horse_code": "L339",
     "horse_name": "CALL ME MAGNIFIQUE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L339",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "11/11/2026",
@@ -5747,7 +5747,7 @@
         "status": "active_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L339",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -5763,7 +5763,7 @@
       "status": "active_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L339",
-      "scraped_at": "2026-11-13T11:52:55Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "11/11/2026: Approved post-race medication administered. (Passed: -)",
@@ -5803,7 +5803,7 @@
     "horse_code": "H219",
     "horse_name": "FALLON",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H219",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "02/08/2023",
@@ -5818,7 +5818,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H219",
-        "scraped_at": "2026-11-13T11:52:55Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -5834,7 +5834,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H219",
-      "scraped_at": "2026-11-13T11:52:55Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "02/08/2023: Castration. (Passed: -)",
@@ -5862,7 +5862,7 @@
     "horse_code": "L149",
     "horse_name": "VIOLET STAR",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L149",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5891,7 +5891,7 @@
     "horse_code": "L410",
     "horse_name": "SONIC LINER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L410",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5920,7 +5920,7 @@
     "horse_code": "J498",
     "horse_name": "RISING PHOENIX",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J498",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -5949,7 +5949,7 @@
     "horse_code": "L039",
     "horse_name": "SHOOTING TO TOP",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L039",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "15/12/2025",
@@ -5964,7 +5964,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L039",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -5980,7 +5980,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L039",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "15/12/2025: Poor performance in barrier trial. (Passed: 16/01/2026)",
@@ -6020,7 +6020,7 @@
     "horse_code": "L057",
     "horse_name": "FLYING FORTUNE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L057",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "12/11/2026",
@@ -6035,7 +6035,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L057",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6051,7 +6051,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L057",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "12/11/2026",
@@ -6066,7 +6066,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L057",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "12/11/2026: Lame right front leg on the day after racing. (Passed: -)",
     "vet_display": "12/11/2026 — Lame right front leg on the day after racing. Active (no clearance published)",
@@ -6093,7 +6093,7 @@
     "horse_code": "L238",
     "horse_name": "HYMNBOOK",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L238",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "11/11/2026",
@@ -6108,7 +6108,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L238",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6124,7 +6124,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L238",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "11/11/2026",
@@ -6139,7 +6139,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L238",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "11/11/2026: Substantial blood in trachea noted on post-race scoping. (Passed: -)",
     "vet_display": "11/11/2026 — Substantial blood in trachea noted on post-race scoping. Active (no clearance published)",
@@ -6178,7 +6178,7 @@
     "horse_code": "H215",
     "horse_name": "HELENE FEELING",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H215",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -6207,7 +6207,7 @@
     "horse_code": "J454",
     "horse_name": "PACKING ANGEL",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J454",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "26/03/2025",
@@ -6222,7 +6222,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J454",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6238,7 +6238,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J454",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "26/03/2025",
@@ -6253,7 +6253,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J454",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "26/03/2025: Both fore knee injury after racing. Update: Arthroscopic surgery to both knees (bone fragment removal). (Passed: 12/09/2025)",
     "vet_display": "26/03/2025 — Both fore knee injury after racing. Update: Arthroscopic surgery to both knees (bone fragment removal). Cleared 12/09/2025",
@@ -6280,7 +6280,7 @@
     "horse_code": "H376",
     "horse_name": "MISTER DAPPER",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H376",
-    "scraped_at": "2026-11-13T11:52:55Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -6309,7 +6309,7 @@
     "horse_code": "K061",
     "horse_name": "SIX PACK",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K061",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "25/11/2024",
@@ -6324,7 +6324,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K061",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6340,7 +6340,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K061",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "25/11/2024",
@@ -6355,7 +6355,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K061",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "25/11/2024: Right fore ligament injury. (Passed: 05/06/2025)",
     "vet_display": "25/11/2024 — Right fore ligament injury. Cleared 05/06/2025",
@@ -6382,7 +6382,7 @@
     "horse_code": "K037",
     "horse_name": "DEFINITIVE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K037",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "19/03/2026",
@@ -6397,7 +6397,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K037",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6413,7 +6413,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K037",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "19/03/2026",
@@ -6428,7 +6428,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K037",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "19/03/2026: Left knee injury. (Passed: 15/05/2026)",
     "vet_display": "19/03/2026 — Left knee injury. Cleared 15/05/2026",
@@ -6455,7 +6455,7 @@
     "horse_code": "L187",
     "horse_name": "NAUTICAL FORCE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L187",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "12/07/2026",
@@ -6470,7 +6470,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L187",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "21/06/2026",
@@ -6485,7 +6485,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L187",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "03/05/2026",
@@ -6500,7 +6500,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L187",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6516,7 +6516,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L187",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "12/07/2026",
@@ -6531,7 +6531,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L187",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "12/07/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 09/10/2026)",
     "vet_display": "12/07/2026 — Substantial blood in trachea noted on post-race scoping. Cleared 09/10/2026",
@@ -6610,7 +6610,7 @@
     "horse_code": "L513",
     "horse_name": "BRAVEFIELD",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L513",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "25/06/2026",
@@ -6625,7 +6625,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L513",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6641,7 +6641,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L513",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "25/06/2026: Castration. (Passed: -)",
@@ -6669,7 +6669,7 @@
     "horse_code": "K114",
     "horse_name": "LUCKY SAM GOR",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K114",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "29/08/2024",
@@ -6684,7 +6684,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K114",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6700,7 +6700,7 @@
       "status": "no_requirement",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K114",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "29/08/2024: Castration. (Passed: -)",
@@ -6728,7 +6728,7 @@
     "horse_code": "L153",
     "horse_name": "MIGHTY MASTS",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L153",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "13/06/2026",
@@ -6743,7 +6743,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L153",
-        "scraped_at": "2026-11-13T11:52:56Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6759,7 +6759,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L153",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "13/06/2026",
@@ -6774,7 +6774,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L153",
-      "scraped_at": "2026-11-13T11:52:56Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "13/06/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 21/09/2026)",
     "vet_display": "13/06/2026 — Substantial blood in trachea noted on post-race scoping. Cleared 21/09/2026",
@@ -6819,7 +6819,7 @@
     "horse_code": "K566",
     "horse_name": "ARMOR GOLDEN EAGLE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K566",
-    "scraped_at": "2026-11-13T11:52:56Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -6848,7 +6848,7 @@
     "horse_code": "K258",
     "horse_name": "REGAL GEM",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K258",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [],
     "latest_entry": null,
     "latest_material_entry": null,
@@ -6877,7 +6877,7 @@
     "horse_code": "J050",
     "horse_name": "AWESOME FLUKE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J050",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "18/06/2026",
@@ -6892,7 +6892,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J050",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "23/12/2023",
@@ -6907,7 +6907,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J050",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -6923,7 +6923,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J050",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "18/06/2026",
@@ -6938,7 +6938,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J050",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "18/06/2026: Lame right hind. Withdrawn from racing. (Passed: 02/07/2026)",
     "vet_display": "18/06/2026 — Lame right hind. Withdrawn from racing. Cleared 02/07/2026",
@@ -7040,7 +7040,7 @@
     "horse_code": "J446",
     "horse_name": "FORTUNATE SON",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J446",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "06/05/2026",
@@ -7055,7 +7055,7 @@
         "status": "cleared",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J446",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -7071,7 +7071,7 @@
       "status": "cleared",
       "is_material": false,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J446",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": null,
     "latest_vet_note": "06/05/2026: Fractious in the Parade Ring, reared and fell over. Withdrawn from racing. (Passed: 07/05/2026)",
@@ -9849,7 +9849,7 @@
     "horse_code": "L305",
     "horse_name": "KANSAS",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L305",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "08/11/2026",
@@ -9864,7 +9864,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L305",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "15/01/2026",
@@ -9879,7 +9879,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L305",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -9895,7 +9895,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L305",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "08/11/2026",
@@ -9910,7 +9910,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L305",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "08/11/2026: Substantial blood in trachea noted on post-race scoping. (Passed: -)",
     "vet_display": "08/11/2026 — Substantial blood in trachea noted on post-race scoping. Active (no clearance published)",
@@ -9949,7 +9949,7 @@
     "horse_code": "H321",
     "horse_name": "HAYDAY",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H321",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "12/07/2026",
@@ -9964,7 +9964,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H321",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "23/02/2023",
@@ -9979,7 +9979,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H321",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -9995,7 +9995,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H321",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "12/07/2026",
@@ -10010,7 +10010,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H321",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "12/07/2026: Airway abnormality (dorsal displacement of the soft palate) noted after racing. (Passed: -)",
     "vet_display": "12/07/2026 — Airway abnormality (dorsal displacement of the soft palate) noted after racing. Active (no clearance published)",
@@ -14721,7 +14721,7 @@
     "horse_code": "J534",
     "horse_name": "AERIS NOVA",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J534",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "15/05/2026",
@@ -14736,7 +14736,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J534",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "27/04/2026",
@@ -14751,7 +14751,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J534",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "10/04/2026",
@@ -14766,7 +14766,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J534",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "20/01/2026",
@@ -14781,7 +14781,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J534",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "30/07/2025",
@@ -14796,7 +14796,7 @@
         "status": "no_requirement",
         "is_material": false,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J534",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -14812,7 +14812,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J534",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "15/05/2026",
@@ -14827,7 +14827,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J534",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "15/05/2026: Failed vet exam: Substantial blood on scope after barrier trial. (Passed: 24/08/2026)",
     "vet_display": "15/05/2026 — Failed vet exam: Substantial blood on scope after barrier trial. Cleared 24/08/2026",
@@ -15213,7 +15213,7 @@
     "horse_code": "K415",
     "horse_name": "VIVA TASTE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K415",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "03/07/2026",
@@ -15228,7 +15228,7 @@
         "status": "cleared",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K415",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       },
       {
         "date": "15/11/2025",
@@ -15243,7 +15243,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K415",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -15259,7 +15259,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K415",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "03/07/2026",
@@ -15274,7 +15274,7 @@
       "status": "cleared",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K415",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "03/07/2026: Throat surgery to correct an airway abnormality (tieback and hobday). (Passed: 21/09/2026)",
     "vet_display": "03/07/2026 — Throat surgery to correct an airway abnormality (tieback and hobday). Cleared 21/09/2026",
@@ -15319,7 +15319,7 @@
     "horse_code": "L142",
     "horse_name": "LIVE WIRE",
     "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L142",
-    "scraped_at": "2026-11-13T11:52:57Z",
+    "scraped_at": "2026-11-13T11:54:43Z",
     "entries": [
       {
         "date": "04/11/2026",
@@ -15334,7 +15334,7 @@
         "status": "active_requirement",
         "is_material": true,
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L142",
-        "scraped_at": "2026-11-13T11:52:57Z"
+        "scraped_at": "2026-11-13T11:54:43Z"
       }
     ],
     "latest_entry": {
@@ -15350,7 +15350,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L142",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_material_entry": {
       "date": "04/11/2026",
@@ -15365,7 +15365,7 @@
       "status": "active_requirement",
       "is_material": true,
       "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L142",
-      "scraped_at": "2026-11-13T11:52:57Z"
+      "scraped_at": "2026-11-13T11:54:43Z"
     },
     "latest_vet_note": "04/11/2026: Irregular heart rhythm noted after racing. (Passed: -)",
     "vet_display": "04/11/2026 — Irregular heart rhythm noted after racing. Active (no clearance published)",

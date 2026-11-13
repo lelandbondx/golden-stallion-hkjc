@@ -37492,7 +37492,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shortly after the start made contact with AMO ERGO SUM which shifted out slightly. A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea. Before being allowed to race again, CIRCUIT CENTURY will be subjected to an official veterinary examination. Last Run (11/11/26 HV / Turf / \"B\" 1650m): Fin 11 (LBW 8-3/4) | RunPos: 1 1 2 11 01/10/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 03/11/2026)"
+        "steward_comment": "Shortly after the start made contact with AMO ERGO SUM which shifted out slightly. A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea. Before being allowed to race again, CIRCUIT CENTURY will be subjected to an official veterinary examination. Last Run (11/11/26 HV / Turf / \"B\" 1650m): Fin 11 (LBW 8-3/4) | RunPos: 1 1 2 11 11/11/2026: Substantial blood in trachea noted on post-race scoping. (Passed: -)"
       }
     ],
     "trial_note": null
@@ -37565,7 +37565,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shortly after the start made contact with AMO ERGO SUM which shifted out slightly. A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea. Before being allowed to race again, CIRCUIT CENTURY will be subjected to an official veterinary examination. Last Run (11/11/26 HV / Turf / \"B\" 1650m): Fin 11 (LBW 8-3/4) | RunPos: 1 1 2 11 01/10/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 03/11/2026)"
+        "steward_comment": "Shortly after the start made contact with AMO ERGO SUM which shifted out slightly. A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea. Before being allowed to race again, CIRCUIT CENTURY will be subjected to an official veterinary examination. Last Run (11/11/26 HV / Turf / \"B\" 1650m): Fin 11 (LBW 8-3/4) | RunPos: 1 1 2 11 11/11/2026: Substantial blood in trachea noted on post-race scoping. (Passed: -)"
       }
     ],
     "trial_note": null
@@ -52052,11 +52052,20 @@
         "final_section_time": 23.88,
         "final_section_rank": 4,
         "field_size": 12,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "No report. Last Run (11/11/26 HV / Turf / \"B\" 1650m): Fin 06 (LBW 3-1/2) | RunPos: 3 6 8 6 12/11/2026: Lame right front ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (11/11/26 HV / Turf / \"B\" 1650m): Fin 06 (LBW 3-1/2) | RunPos: 3 6 8 6 No HKJC veterinary records"
+        "steward_comment": "No report. Last Run (11/11/26 HV / Turf / \"B\" 1650m): Fin 06 (LBW 3-1/2) | RunPos: 3 6 8 6 12/11/2026: Lame right front leg on the day after racing. (Passed: -)"
       }
     ],
     "trial_note": {
@@ -53802,11 +53811,20 @@
         "final_section_time": 23.4,
         "final_section_rank": 2,
         "field_size": 12,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "The tongue tie was replaced at the Start. Last Run (11/11/26 HV / Turf / \"B\" 1800m): Fin 04 (LBW 1/2) | RunPos: 4 3 3 4 ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "The tongue tie was replaced at the Start. Last Run (11/11/26 HV / Turf / \"B\" 1800m): Fin 04 (LBW 1/2) | RunPos: 4 3 3 4 4 No HKJC veterinary records"
+        "steward_comment": "The tongue tie was replaced at the Start. Last Run (11/11/26 HV / Turf / \"B\" 1800m): Fin 04 (LBW 1/2) | RunPos: 4 3 3 4 4 12/11/2026: Lame right front leg on the day after racing. (Passed: -)"
       }
     ],
     "trial_note": {
