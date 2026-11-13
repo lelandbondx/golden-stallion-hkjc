@@ -1,11 +1,11 @@
 {
   "overall_status": "ok",
-  "updated_at": "2026-11-13T20:23:19Z",
+  "updated_at": "2026-11-13T23:56:31Z",
   "components": {
     "scraper": {
       "status": "ok",
-      "last_attempt_at": "2026-11-13T20:23:19Z",
-      "last_success_at": "2026-11-13T20:23:19Z",
+      "last_attempt_at": "2026-11-13T23:56:24Z",
+      "last_success_at": "2026-11-13T23:56:24Z",
       "metrics": {
         "source": "live_html_racecard",
         "meeting_date": "2026-11-14",
@@ -26,8 +26,8 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-13T20:22:44Z",
-      "last_success_at": "2026-11-13T20:22:44Z",
+      "last_attempt_at": "2026-11-13T23:56:31Z",
+      "last_success_at": "2026-11-13T23:56:31Z",
       "metrics": {
         "meeting_date": "2026-11-14",
         "venue": "Sha Tin",
@@ -176,8 +176,8 @@
     },
     "frozen_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-13T20:22:44Z",
-      "last_success_at": "2026-11-13T20:22:44Z",
+      "last_attempt_at": "2026-11-13T23:56:31Z",
+      "last_success_at": "2026-11-13T23:56:31Z",
       "metrics": {
         "file": "frozen_predictions_20261114.json",
         "races_cached": 11

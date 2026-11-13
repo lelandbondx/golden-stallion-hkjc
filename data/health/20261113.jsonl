@@ -46,3 +46,16 @@
 {"component": "run_predictions", "status": "ok", "timestamp": "2026-11-13T20:22:44Z", "metrics": {"meeting_date": "2026-11-14", "venue": "Sha Tin", "races_predicted": 11}, "error": null}
 {"component": "scraper", "status": "fail", "timestamp": "2026-11-13T20:22:46Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
 {"component": "scraper", "status": "ok", "timestamp": "2026-11-13T20:23:19Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-14", "meetings_count": 2, "races_count": 11}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-13T23:56:24Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-14", "meetings_count": 2, "races_count": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:30Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:30Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:30Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:30Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:30Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:30Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"meeting_date": "2026-11-14", "venue": "Sha Tin", "races_predicted": 11}, "error": null}
