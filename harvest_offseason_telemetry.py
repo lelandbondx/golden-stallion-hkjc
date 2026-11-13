@@ -17,18 +17,20 @@ requests.post = lambda *args, **kwargs: _orig_post(*args, **{**kwargs, 'verify':
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 
-def get_active_horses(limit=150):
+def get_active_horses(limit=200):
     horses = {}
     try:
-        from scraper import get_live_meeting_data
+        from scraper import get_live_meeting_data, select_active_meeting
         live_data = get_live_meeting_data()
         if live_data and 'meetings' in live_data:
-            for meeting in live_data['meetings']:
+            active_m = select_active_meeting(live_data)
+            ordered_meetings = ([active_m] if active_m else []) + [m for m in live_data['meetings'] if m is not active_m]
+            for meeting in ordered_meetings:
                 for race in meeting.get('races', []):
                     for runner in race.get('runners', []):
                         code = runner.get('code')
                         name = runner.get('name', '').strip().upper()
-                        if code and name:
+                        if code and name and code not in horses:
                             horses[code] = name
     except Exception as e:
         print(f"Notice getting live meeting runners: {e}")
@@ -41,7 +43,7 @@ def get_active_horses(limit=150):
             if m:
                 name = m.group(1).strip().upper()
                 code = m.group(2).strip().upper()
-                if code and code[0] in ['G', 'H', 'J', 'K', 'L']:
+                if code and code[0] in ['G', 'H', 'J', 'K', 'L', 'M']:
                     if code not in horses:
                         horses[code] = name
 
@@ -89,10 +91,11 @@ def harvest_single_horse(code, name):
             return data
 
         try:
-            tw_url = f"https://racing.hkjc.com/racing/information/English/Horse/TrackworkResult.aspx?HorseId={horse_id}"
-            r_tw = requests.get(tw_url, headers=HEADERS, timeout=8)
+            from io import BytesIO
+            tw_url = f"https://racing.hkjc.com/en-us/local/information/trackworkresult?HorseId={horse_id}"
+            r_tw = requests.get(tw_url, headers=HEADERS, timeout=12)
             if r_tw.status_code == 200:
-                dfs = pd.read_html(r_tw.content)
+                dfs = pd.read_html(BytesIO(r_tw.content))
                 for df in dfs:
                     if df.shape[1] == 5 and ('Date' in df.columns or (len(df) > 0 and 'Date' in df.iloc[0].values)):
                         if 'Date' not in df.columns:
@@ -113,10 +116,11 @@ def harvest_single_horse(code, name):
             pass
 
         try:
-            mov_url = f"https://racing.hkjc.com/racing/information/English/Horse/MovementRecords.aspx?HorseId={horse_id}"
-            r_mov = requests.get(mov_url, headers=HEADERS, timeout=8)
+            from io import BytesIO
+            mov_url = f"https://racing.hkjc.com/en-us/local/information/movementrecords?HorseId={horse_id}"
+            r_mov = requests.get(mov_url, headers=HEADERS, timeout=12)
             if r_mov.status_code == 200:
-                dfs_mov = pd.read_html(r_mov.content)
+                dfs_mov = pd.read_html(BytesIO(r_mov.content))
                 for df in dfs_mov:
                     cols_str = [str(c).strip() for c in df.columns]
                     if ('To' in cols_str or 'Destination' in cols_str) and not df.empty:
@@ -128,10 +132,11 @@ def harvest_single_horse(code, name):
             pass
 
         try:
-            rw_url = f"https://racing.hkjc.com/racing/information/English/Horse/RatingResultWeight.aspx?HorseId={horse_id}"
-            r_rw = requests.get(rw_url, headers=HEADERS, timeout=8)
+            from io import BytesIO
+            rw_url = f"https://racing.hkjc.com/en-us/local/information/ratingresultweight?HorseId={horse_id}"
+            r_rw = requests.get(rw_url, headers=HEADERS, timeout=12)
             if r_rw.status_code == 200:
-                dfs_rw = pd.read_html(r_rw.content)
+                dfs_rw = pd.read_html(BytesIO(r_rw.content))
                 for df in dfs_rw:
                     if 'Body Weight' in df.columns and not df.empty:
                         bw = pd.to_numeric(df.iloc[0]['Body Weight'], errors='coerce')
@@ -172,7 +177,7 @@ def harvest_single_horse(code, name):
         return data
 
 
-def run_offseason_harvest(limit=150):
+def run_offseason_harvest(limit=200):
     from monitoring.health import record as record_health
     print("=== STARTING COMPREHENSIVE TRACKWORK, CONGHUA, WEIGHT & VET TELEMETRY HARVEST ===")
     active_horses = get_active_horses(limit=limit)
@@ -243,5 +248,5 @@ def run_offseason_harvest(limit=150):
 
 
 if __name__ == '__main__':
-    limit_arg = int(sys.argv[1]) if len(sys.argv) > 1 else 150
+    limit_arg = int(sys.argv[1]) if len(sys.argv) > 1 else 200
     run_offseason_harvest(limit=limit_arg)

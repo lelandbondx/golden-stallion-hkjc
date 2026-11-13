@@ -8,7 +8,7 @@ from datetime import datetime
 # Add current directory to path just in case
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from scraper import get_live_meeting_data
+from scraper import get_live_meeting_data, select_active_meeting
 from monitoring.health import record as record_health
 
 LOG_FILE = "data/track_monitor_log.txt"
@@ -109,7 +109,7 @@ def main():
                 time.sleep(120)
                 continue
                 
-            meeting = data['meetings'][0]
+            meeting = select_active_meeting(data) or data['meetings'][0]
             venue = meeting.get('venue', 'HK')
             date_str = meeting.get('date', 'today')
             races = meeting.get('races', [])

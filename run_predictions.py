@@ -9,7 +9,7 @@ from datetime import datetime, timezone, timedelta
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
-from scraper import get_live_meeting_data, get_live_tips_index
+from scraper import get_live_meeting_data, get_live_tips_index, select_active_meeting
 from model import predict_probabilities, load_model
 import odds_tracker
 
@@ -31,7 +31,7 @@ def run():
         print("Failed to get live meeting data.")
         return
         
-    meeting = data['meetings'][0]
+    meeting = select_active_meeting(data) or data['meetings'][0]
     tips_data = get_live_tips_index(expected_date=meeting.get('date'), num_races=len(meeting.get('races') or []))
     venue_name = meeting.get('venue', 'Happy Valley')
     print(f"Meeting: {venue_name} - {meeting.get('date')} - Going: {meeting.get('going')}")

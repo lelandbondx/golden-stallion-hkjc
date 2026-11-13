@@ -1,33 +1,57 @@
 {
-  "updated_at_utc": "2026-11-13T11:57:00Z",
-  "target_meeting": "2026-11-11 Happy Valley",
-  "first_automated_meeting": "2026-11-08 Sha Tin",
+  "updated_at_utc": "2026-11-13T20:22:43Z",
+  "target_meeting": "2026-11-14 Sha Tin",
+  "first_filtered_meeting": "2026-11-14 Sha Tin",
   "standing_bots": {
     "trial_bot": {
-      "duty": "Daily 06:00 HKT (HKJC 48h declared barrier trials)",
+      "duty": "Daily 06:00 HKT (speed_diff, quality opposition, poor-finish flag - recent trials only)",
       "file_used": "engineered_trial_features.json",
-      "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/engineered_trial_features.json",
-      "timestamp_hkt": "2026-11-13 19:53:48 HKT",
-      "timestamp_utc": "2026-11-13T11:53:48Z",
-      "record_count": 197,
+      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\engineered_trial_features.json",
+      "timestamp_hkt": "2026-11-14 04:18:29 HKT",
+      "timestamp_utc": "2026-11-13T20:18:29Z",
+      "fields_read": [
+        "best_trial_speed_diff",
+        "best_trial_pos_ratio",
+        "high_quality_trial",
+        "poor_finish_flag",
+        "recent_top2_trials",
+        "trial_count_30d"
+      ],
+      "record_count": 201,
+      "rejected_incomplete": 40,
       "status": "loaded"
     },
     "replay_bot": {
-      "duty": "2h post-meeting (Official replays + stewards trip notes & excuses)",
+      "duty": "2h post-meeting (documented excuses: traffic/wide/checked/blocked + 400m sectional rank)",
       "file_used": "grok_trip_notes_resolved.json",
-      "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/grok_trip_notes_resolved.json",
-      "timestamp_hkt": "2026-11-13 19:52:09 HKT",
-      "timestamp_utc": "2026-11-13T11:52:09Z",
-      "record_count": 254,
+      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\grok_trip_notes_resolved.json",
+      "timestamp_hkt": "2026-11-12 12:28:15 HKT",
+      "timestamp_utc": "2026-11-12T04:28:15Z",
+      "fields_read": [
+        "date",
+        "excuses",
+        "flags",
+        "final_section_rank",
+        "steward_comment"
+      ],
+      "record_count": 135,
+      "rejected_incomplete": 123,
       "status": "loaded"
     },
     "steward_bot": {
-      "duty": "2h post-meeting (Cross-checks medical/vet flags & final integrity gate)",
-      "file_used": "declared_vet_records.json",
-      "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/declared_vet_records.json",
-      "timestamp_hkt": "2026-11-13 19:55:13 HKT",
-      "timestamp_utc": "2026-11-13T11:55:13Z",
-      "record_count": 10,
+      "duty": "2h post-meeting (official vet clearance or active requirement flag)",
+      "file_used": "vet_records.json",
+      "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\vet_records.json",
+      "timestamp_hkt": "2026-11-14 04:19:50 HKT",
+      "timestamp_utc": "2026-11-13T20:19:50Z",
+      "fields_read": [
+        "horse_code",
+        "status",
+        "prev_run_vet_finding",
+        "latest_vet_note"
+      ],
+      "record_count": 430,
+      "rejected_incomplete": 0,
       "status": "loaded"
     }
   }

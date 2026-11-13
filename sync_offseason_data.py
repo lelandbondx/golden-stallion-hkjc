@@ -3,7 +3,7 @@ import sys
 import pandas as pd
 from datetime import datetime
 
-from scraper import get_live_meeting_data
+from scraper import get_live_meeting_data, select_active_meeting
 from hkjc_trial_scraper import scrape_trials_for_meeting
 from process_trials import process_trials
 from hkjc_profile_scraper import update_latest_stats, scrape_declared_starters_vet_records
@@ -13,7 +13,7 @@ from precompute_features import precompute
 from monitoring.health import record as record_health
 
 
-def sync_all_offseason_telemetry(limit=150):
+def sync_all_offseason_telemetry(limit=200):
     """
     Executes a complete, fail-loud master telemetry synchronization across EVERY
     data source in Silks.AI:
@@ -30,7 +30,7 @@ def sync_all_offseason_telemetry(limit=150):
 
     live_data = get_live_meeting_data(force_network=True)
     if live_data and live_data.get("meetings"):
-        m0 = live_data["meetings"][0]
+        m0 = select_active_meeting(live_data) or live_data["meetings"][0]
         meeting_date_iso = m0.get("date", datetime.now().strftime("%Y-%m-%d"))
         racedate_slash = meeting_date_iso.replace("-", "/")
         venue_code = "HV" if "VALLEY" in str(m0.get("venue", "")).upper() else "ST"
@@ -113,5 +113,5 @@ def sync_all_offseason_telemetry(limit=150):
 
 
 if __name__ == '__main__':
-    limit_arg = int(sys.argv[1]) if len(sys.argv) > 1 else 150
+    limit_arg = int(sys.argv[1]) if len(sys.argv) > 1 else 200
     sync_all_offseason_telemetry(limit=limit_arg)

@@ -1078,18 +1078,18 @@ def discover_meeting_and_stewards_horses() -> Tuple[Dict[str, Dict], set]:
     Returns (horses_by_code, declared_codes_set).
     Each value in horses_by_code is {'horse_code': code, 'horse_id': hid_or_None, 'horse_name': name, 'is_declared': bool}.
     """
-    from scraper import get_live_meeting_data
+    from scraper import get_live_meeting_data, select_active_meeting
 
     horses_by_code: Dict[str, Dict] = {}
     declared_codes = set()
 
     live_data = get_live_meeting_data()
     meeting_date = None
-    venue_code = "HV"
-    num_races = 9
+    venue_code = "ST"
+    num_races = 11
 
     if live_data and live_data.get("meetings"):
-        m0 = live_data["meetings"][0]
+        m0 = select_active_meeting(live_data) or live_data["meetings"][0]
         meeting_date = m0.get("date")
         venue_code = "HV" if "VALLEY" in str(m0.get("venue", "")).upper() else "ST"
         races = m0.get("races") or []
@@ -1107,15 +1107,15 @@ def discover_meeting_and_stewards_horses() -> Tuple[Dict[str, Dict], set]:
                         "is_declared": True,
                     }
 
-    # Scrape RaceCard.aspx for all races to get exact horse_id for all declared + standby starters
+    # Scrape live RaceCard endpoint for all races to get exact horse_id for all declared + standby starters
     racedate_param = meeting_date.replace("-", "/") if meeting_date else None
     for r_no in range(1, num_races + 2):
         try:
             if racedate_param:
-                rc_url = f"https://racing.hkjc.com/racing/information/English/Racing/RaceCard.aspx?RaceDate={racedate_param}&Racecourse={venue_code}&RaceNo={r_no}"
+                rc_url = f"https://racing.hkjc.com/en-us/local/information/racecard?racedate={racedate_param}&Racecourse={venue_code}&RaceNo={r_no}"
             else:
-                rc_url = f"https://racing.hkjc.com/racing/information/English/Racing/RaceCard.aspx?RaceNo={r_no}"
-            resp = requests.get(rc_url, headers=HEADERS, timeout=8, verify=False)
+                rc_url = f"https://racing.hkjc.com/en-us/local/information/racecard?RaceNo={r_no}"
+            resp = requests.get(rc_url, headers=HEADERS, timeout=10, verify=False)
             if resp.status_code != 200:
                 continue
             soup = BeautifulSoup(resp.content, "html.parser")
@@ -1136,12 +1136,20 @@ def discover_meeting_and_stewards_horses() -> Tuple[Dict[str, Dict], set]:
         except Exception:
             continue
 
-    # Scrape the most recent Stewards' Reports (default RaceReportFull.aspx + recent scraped_incidents dates)
-    steward_urls = ["https://racing.hkjc.com/racing/information/English/Reports/RaceReportFull.aspx"]
-    for recent_date in ("2026/11/08", "2026/11/04"):
-        steward_urls.append(
-            f"https://racing.hkjc.com/racing/information/English/Reports/RaceReportFull.aspx?RaceDate={recent_date}"
-        )
+    # Scrape the most recent Stewards' Reports dynamically from recent results_*.json dates
+    steward_urls = ["https://racing.hkjc.com/en-us/local/information/racereportfull"]
+    try:
+        import glob
+        recent_res = sorted(glob.glob(os.path.join(DATA_DIR, "results_*.json")), reverse=True)[:3]
+        for rf in recent_res:
+            dm = re.search(r"results_(\d{4})(\d{2})(\d{2})\.json$", rf)
+            if dm:
+                ymd = f"{dm.group(1)}/{dm.group(2)}/{dm.group(3)}"
+                steward_urls.append(
+                    f"https://racing.hkjc.com/en-us/local/information/racereportfull?RaceDate={ymd}"
+                )
+    except Exception:
+        pass
 
     for st_url in steward_urls:
         try:
@@ -1392,7 +1400,7 @@ def fetch_horse_stewards_reports_for_vet(
     if not code:
         return {}, ""
 
-    profile_url = f"https://racing.hkjc.com/racing/information/English/Horse/Horse.aspx?HorseNo={code}"
+    profile_url = f"https://racing.hkjc.com/en-us/local/information/horse?horseno={code}"
     try:
         r = requests.get(profile_url, headers=HEADERS, timeout=10, verify=False)
         if r.status_code != 200:

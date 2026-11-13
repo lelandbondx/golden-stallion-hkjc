@@ -796,6 +796,31 @@ def get_live_meeting_data(force_network=False, cache_path='data/last_scraped_mee
     }
 
 
+def select_active_meeting(data):
+    """
+    Selects the active UPCOMING meeting (preferring today's HKT date among UPCOMING meetings,
+    then earliest upcoming non-CLOSED meeting with races), falling back to meetings[0] only
+    if all meetings are CLOSED.
+    """
+    meetings = (data or {}).get("meetings") or []
+    if not meetings:
+        return None
+    from datetime import datetime, timezone, timedelta
+    hkt_today = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d")
+
+    upcoming = [m for m in meetings if str(m.get("status", "UPCOMING")).upper() != "CLOSED" and m.get("races")]
+    if upcoming:
+        for m in upcoming:
+            if m.get("date") == hkt_today:
+                return m
+        upcoming_sorted = sorted(upcoming, key=lambda x: str(x.get("date") or "9999-99-99"))
+        return upcoming_sorted[0]
+    for m in meetings:
+        if m.get("date") == hkt_today:
+            return m
+    return meetings[0]
+
+
 def build_fallback_live_data(_test_only=True):
     """
     Test-only fixture generator. Removed from all production paths to prevent

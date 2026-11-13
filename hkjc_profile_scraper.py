@@ -451,13 +451,15 @@ def ensure_meeting_profiles_synced(meeting):
 
 
 def update_latest_stats():
-    from scraper import get_live_meeting_data
+    from scraper import get_live_meeting_data, select_active_meeting
     data = get_live_meeting_data()
     
     horses_to_update = {}
     
     if data and 'meetings' in data:
-        for meeting in data['meetings']:
+        active_m = select_active_meeting(data)
+        target_meetings = [active_m] if active_m else data['meetings']
+        for meeting in target_meetings:
             for race in meeting.get('races', []):
                 for runner in race.get('runners', []):
                     code = runner.get('code')

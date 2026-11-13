@@ -1,5 +1,5 @@
 import os
-from scraper import get_live_meeting_data
+from scraper import get_live_meeting_data, select_active_meeting
 from odds_tracker import get_baseline_odds
 from monitoring.health import record as record_health
 
@@ -13,7 +13,7 @@ def initialize_baseline():
         record_health("baseline_odds", "fail", error="Failed to fetch live meeting data")
         return
 
-    meeting = data['meetings'][0]
+    meeting = select_active_meeting(data) or data['meetings'][0]
     date_str = meeting.get('date')
     venue = meeting.get('venue')
 

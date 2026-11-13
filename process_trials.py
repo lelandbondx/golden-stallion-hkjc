@@ -169,7 +169,8 @@ def process_trials(meeting_date_str=None):
 
 
 if __name__ == "__main__":
-    from scraper import get_live_meeting_data
+    from scraper import get_live_meeting_data, select_active_meeting
     data = get_live_meeting_data()
-    m_date = data["meetings"][0].get("date", "2026-10-28") if (data and data.get("meetings")) else "2026-10-28"
+    active_m = select_active_meeting(data) if data else None
+    m_date = active_m.get("date", "2026-10-28") if active_m else "2026-10-28"
     process_trials(m_date)
