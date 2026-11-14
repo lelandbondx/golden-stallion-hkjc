@@ -59,3 +59,6 @@
 {"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
 {"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"file": "frozen_predictions_20261114.json", "races_cached": 11}, "error": null}
 {"component": "run_predictions", "status": "ok", "timestamp": "2026-11-13T23:56:31Z", "metrics": {"meeting_date": "2026-11-14", "venue": "Sha Tin", "races_predicted": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-13T23:56:35Z", "metrics": {"git_push": "success"}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-13T23:58:41Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-14", "meetings_count": 2, "races_count": 11}, "error": null}
+{"component": "monitor_track_condition", "status": "ok", "timestamp": "2026-11-13T23:58:41Z", "metrics": {"venue": "Sha Tin", "date": "2026-11-14", "races": 11}, "error": null}
