@@ -1,6 +1,6 @@
 {
   "overall_status": "ok",
-  "updated_at": "2026-11-14T00:25:02Z",
+  "updated_at": "2026-11-14T11:15:18Z",
   "components": {
     "scraper": {
       "status": "ok",
@@ -72,8 +72,8 @@
     },
     "veterinary_records": {
       "status": "ok",
-      "last_attempt_at": "2026-11-13T20:19:51Z",
-      "last_success_at": "2026-11-13T20:19:51Z",
+      "last_attempt_at": "2026-11-14T11:15:18Z",
+      "last_success_at": "2026-11-14T11:15:18Z",
       "metrics": {
         "horses_scraped": 430,
         "target_horses_this_run": 282,
@@ -83,7 +83,7 @@
         "overecord_disagreements_count": 0,
         "overecord_disagreements": [],
         "latest_stats_rows_updated": 426,
-        "last_successful_commit_at": "2026-11-13T20:19:51Z",
+        "last_successful_commit_at": "2026-11-14T11:15:18Z",
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse"
       },
       "error": null
