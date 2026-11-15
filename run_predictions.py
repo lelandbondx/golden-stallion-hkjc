@@ -254,8 +254,18 @@ def run():
         consensus = pd.to_numeric(df_runners.get('consensus_score', 0), errors='coerce').fillna(0)
         debutant_penalty = np.where((consensus > 5.0) | has_strong_trial, 0.0, debutant_penalty_val)
 
-        # Damp true first-starters (zero starts) at odds >= 20.0 without a strong trial, and 30-1+ longshots with severe poor race form (avg >= 10th & last run >= 10th)
-        unbacked_longshot_debutant = is_debutant & (df_runners['win_odds'] >= 20.0) & (~has_strong_trial)
+        # Relax debutant trial waiver ONLY for the 50% unbacked_longshot_debutant cut (-5.0% debutant penalty retained)
+        from monitoring.contracts import evaluate_debutant_relaxed_trial_waiver
+        debutant_waive_50pct = evaluate_debutant_relaxed_trial_waiver(
+            df_runners,
+            is_debutant=is_debutant,
+            has_strong_trial=has_strong_trial,
+            trial_features=trial_features,
+            race_no=race.get('race_no', 0),
+        )
+
+        # Damp true first-starters (zero starts) at odds >= 20.0 without a qualifying trial, and 30-1+ longshots with severe poor race form (avg >= 10th & last run >= 10th)
+        unbacked_longshot_debutant = is_debutant & (df_runners['win_odds'] >= 20.0) & (~debutant_waive_50pct)
         out_of_form_longshot = (~is_debutant) & (df_runners['win_odds'] >= 30.0) & (recent_pos >= 10.0) & (parsed_last_fin.fillna(7.0) >= 10.0)
         df_runners['model_prob'] = np.where(
             unbacked_longshot_debutant | out_of_form_longshot,
@@ -618,7 +628,16 @@ def run():
         df_runners["trackwork_conditioning_multiplier"] = th_cal["trackwork_conditioning_multiplier"]
         df_runners["active_vet_risk_penalty"] = th_cal["active_vet_risk_penalty"]
 
-        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + health_risk_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + apprentice_turf_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + telemetry_harmony_multiplier
+        from monitoring.contracts import evaluate_wet_pace_test_mode
+        wet_pace_test_adj = evaluate_wet_pace_test_mode(
+            df_runners=df_runners,
+            distance=distance,
+            race_going=race_going,
+            is_awt_race=is_awt_race,
+            race_no=race.get('race_no', 0),
+        )
+
+        multiplier = 1.0 + standout_boost + rating_dom_boost + consensus_boost + false_fav_penalty + health_risk_penalty + debutant_penalty + first_time_gear_boost + on_speed_wet_boost + yielding_form_boost + polytrack_awt_boost + total_closer_boost + frontrunner_pace_penalty + closer_pace_penalty + lone_speed_boost + purton_total_boost + hv_c_course_boost + apprentice_turf_boost + stacked_geom_pen + st_1000_draw_boost + st_inside_draw_boost + st_c3_1600_topweight_penalty + st_route_sec400_boost + fownes_hv_boost + trial_boost + trial_penalty + trainer_transfer_2nd_up_boost + second_up_fitness_boost + fresh_distance_fitness_boost + throat_surgery_boost + lightweight_agility_boost + optimal_weight_boost + weight_resilience_boost + surface_switch_trial_boost + telemetry_harmony_multiplier + wet_pace_test_adj
 
         # Ensure multiplier stays within [0.1, 1.25] (cap total upward nudge at 1.25x)
         multiplier = np.clip(multiplier, 0.1, 1.25)
@@ -696,7 +715,7 @@ def run():
             df_runners['kelly_stake'] = df_runners['kelly_stake'] * 0.5
             
         # MANDATES & 5-HORSE SELECTION CARD ARCHITECTURE:
-        from monitoring.contracts import evaluate_exotic_class_droppers
+        from monitoring.contracts import evaluate_exotic_class_droppers, evaluate_pick5_sleeper_candidates
         exotic_cd = evaluate_exotic_class_droppers(df_runners)
         df_runners['is_exotic_class_dropper'] = exotic_cd['mask']
         df_runners['is_tierce_class_dropper'] = df_runners['no'].isin(exotic_cd['tierce_dropper_nos'])
@@ -710,12 +729,21 @@ def run():
         p4 = df_sorted_gs.iloc[3] if len(df_sorted_gs) > 3 else None
         true_p5_fallback = df_sorted_gs.iloc[4] if len(df_sorted_gs) > 4 else df_sorted_gs.iloc[-1]
         
-        # Pick 5 is highest EV survivor (or qualified Longshot Exotic Class Dropper) not wide+heavy vetoed,
+        # Pick 5 is highest EV survivor (or qualified Longshot Exotic Class Dropper / Pick 5 Sleeper Qualifier) not wide+heavy vetoed,
         # filtered by Ronan's Outlier Rule: Scrap massive outliers with low AI confidence in favor of True 5th.
         top4_nos = [p1['no']]
         if p2 is not None: top4_nos.append(p2['no'])
         if p3 is not None: top4_nos.append(p3['no'])
         if p4 is not None: top4_nos.append(p4['no'])
+
+        p5_qual = evaluate_pick5_sleeper_candidates(
+            df_runners,
+            top4_nos=top4_nos,
+            trial_features=trial_features,
+            is_hv=is_hv,
+            race_no=race.get('race_no', 0),
+        )
+        df_runners['pick5_qualifier_reason'] = p5_qual['reasons']
         
         rem = df_runners[~df_runners['no'].isin(top4_nos)].copy()
         if is_hv:
@@ -729,6 +757,8 @@ def run():
             rem_droppers = rem_eligible[rem_eligible['is_exotic_class_dropper']]
             if not rem_droppers.empty:
                 p5 = rem_droppers.sort_values(by='gs_score', ascending=False).iloc[0]
+            elif p5_qual['selected_no'] is not None:
+                p5 = df_runners[df_runners['no'] == p5_qual['selected_no']].iloc[0]
             else:
                 best_sleeper = rem_eligible.sort_values(by='value_diff', ascending=False).iloc[0]
                 s_odds = float(best_sleeper.get('win_odds', 20.0))

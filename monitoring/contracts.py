@@ -15,6 +15,7 @@ Implements the post-meeting audit calibrations (Happy Valley 21 Oct 2026 review)
      compared with early gate-speed / positional metrics (`avg_first_pos`) to capture
      sustained acceleration on Sha Tin's 430m home straight.
 """
+import os
 import re
 import numpy as np
 import pandas as pd
@@ -799,6 +800,200 @@ def evaluate_exotic_class_droppers(df_runners: pd.DataFrame) -> dict:
         "tierce_dropper_nos": tierce_nos,
         "mask": qualifies,
     }
+
+
+def evaluate_debutant_relaxed_trial_waiver(
+    df_runners: pd.DataFrame,
+    is_debutant,
+    has_strong_trial,
+    trial_features: dict,
+    race_no: int = 0,
+) -> np.ndarray:
+    """
+    Waives ONLY the 50% `unbacked_longshot_debutant` cut for true debutants (zero race starts)
+    when trial telemetry passes the relaxed HK trainer threshold:
+      best_trial_pos_ratio <= 0.45 AND (best_trial_speed_diff >= 0.25s OR recent_top2_trials >= 1).
+    Does NOT modify `debutant_penalty` (-5.0% retained) and NEVER modifies non-debutants.
+    """
+    waive_50pct_cut = np.asarray(has_strong_trial, dtype=bool).copy()
+    if df_runners.empty:
+        return waive_50pct_cut
+
+    is_deb_arr = np.asarray(is_debutant, dtype=bool)
+    tf = trial_features or {}
+
+    for idx, (_, row) in enumerate(df_runners.iterrows()):
+        if (not bool(is_deb_arr[idx])) or bool(waive_50pct_cut[idx]):
+            continue
+        clean_name = str(row.get("clean_name") or row.get("name") or "").strip().upper()
+        if clean_name not in tf:
+            continue
+        td = tf[clean_name] or {}
+        t_pos = float(pd.to_numeric(td.get("best_trial_pos_ratio", 1.0), errors="coerce") or 1.0)
+        t_speed = float(pd.to_numeric(td.get("best_trial_speed_diff", 0.0), errors="coerce") or 0.0)
+        t_top2 = int(pd.to_numeric(td.get("recent_top2_trials", 0), errors="coerce") or 0)
+        if t_pos <= 0.45 and (t_speed >= 0.25 or t_top2 >= 1):
+            waive_50pct_cut[idx] = True
+            print(
+                f"[Debutant Trial Waiver] Race {race_no} #{row.get('no')} {clean_name}: "
+                f"waived 50% unbacked_longshot_debutant cut "
+                f"(pos_ratio={t_pos:.2f}<=0.45, speed_diff={t_speed:+.2f}s, top2={t_top2}; -5.0% debutant penalty retained)"
+            )
+
+    return waive_50pct_cut
+
+
+def evaluate_pick5_sleeper_candidates(
+    df_runners: pd.DataFrame,
+    top4_nos: list,
+    trial_features: dict,
+    is_hv: bool = False,
+    race_no: int = 0,
+) -> dict:
+    """
+    Identifies qualified Dual-Stake Pick 5 sleeper candidates strictly outside Picks 1-4
+    without altering Picks 1-4, the hybrid formula, or multiplier normalization:
+      - `TRIAL_SPEED_LIGHTWEIGHT_OUTLIER`: best_trial_speed_diff >= 0.80s + rank_sec400 <= 4 + weight <= 120 lb
+      - `B1_TOP4_SECTIONAL`: First-time blinkers (B1, never XB1/SB1) + rank_sec400 <= 4
+    Requires valid `best_last_sec < 90.0`, no active health/vet risk, and honors HV wide+heavy veto.
+    """
+    if df_runners.empty:
+        return {"reasons": pd.Series("", index=df_runners.index, dtype=object), "selected_no": None}
+
+    reasons = pd.Series("", index=df_runners.index, dtype=object)
+    top4_set = {int(x) for x in (top4_nos or []) if pd.notna(x)}
+    tf = trial_features or {}
+
+    if "rank_sec400" in df_runners.columns:
+        rank_sec_series = pd.to_numeric(df_runners["rank_sec400"], errors="coerce").fillna(99).astype(int)
+    else:
+        best_sec_tmp = pd.to_numeric(
+            df_runners.get("best_last_sec", pd.Series(99.0, index=df_runners.index)), errors="coerce"
+        ).fillna(99.0)
+        rank_sec_series = best_sec_tmp.rank(ascending=True, method="min").fillna(99).astype(int)
+
+    qualifying_rows = []
+    for row_idx, row in df_runners.iterrows():
+        r_no_val = pd.to_numeric(row.get("no"), errors="coerce")
+        if pd.isna(r_no_val):
+            continue
+        r_no = int(r_no_val)
+        if r_no in top4_set:
+            continue
+
+        has_health = bool(row.get("has_health_risk", False))
+        vet_pen = float(pd.to_numeric(row.get("active_vet_risk_penalty", 0.0), errors="coerce") or 0.0)
+        if has_health or vet_pen < 0.0:
+            continue
+
+        draw = int(pd.to_numeric(row.get("draw", 6), errors="coerce") or 6)
+        wt = float(pd.to_numeric(row.get("actual_weight", 125.0), errors="coerce") or 125.0)
+        if is_hv and draw >= 9 and wt >= 132.0:
+            continue
+
+        b_sec = float(pd.to_numeric(row.get("best_last_sec", 99.0), errors="coerce") or 99.0)
+        if b_sec >= 90.0:
+            continue
+
+        r_sec = int(rank_sec_series.loc[row_idx])
+        if r_sec > 4:
+            continue
+
+        clean_name = str(row.get("clean_name") or row.get("name") or "").strip().upper()
+        td = tf.get(clean_name) or {}
+        t_speed = float(pd.to_numeric(td.get("best_trial_speed_diff", 0.0), errors="coerce") or 0.0)
+
+        matched = []
+        if t_speed >= 0.80 and wt <= 120.0:
+            matched.append("TRIAL_SPEED_LIGHTWEIGHT_OUTLIER")
+
+        gear_str = str(row.get("horse_gear", "") or "").upper()
+        if re.search(r"(?<![A-Z])B1\b", gear_str):
+            matched.append("B1_TOP4_SECTIONAL")
+
+        if matched:
+            reason_code = "+".join(matched)
+            reasons.loc[row_idx] = reason_code
+            gs_val = float(pd.to_numeric(row.get("gs_score", 0.0), errors="coerce") or 0.0)
+            win_odds = row.get("win_odds", 0.0)
+            qualifying_rows.append((gs_val, r_no))
+            print(
+                f"[Pick 5 Sleeper Qualifier] Race {race_no} #{r_no} {clean_name}: "
+                f"qualified [{reason_code}] (GS={gs_val:.2f}, Odds={win_odds}, "
+                f"wt={wt:g}, rank_sec400={r_sec}, trial_spd={t_speed:+.2f}s)"
+            )
+
+    selected_no = None
+    if qualifying_rows:
+        qualifying_rows.sort(key=lambda x: x[0], reverse=True)
+        selected_no = qualifying_rows[0][1]
+
+    return {"reasons": reasons, "selected_no": selected_no}
+
+
+def evaluate_wet_pace_test_mode(
+    df_runners: pd.DataFrame,
+    distance: int,
+    race_going: str,
+    is_awt_race: bool,
+    race_no: int = 0,
+    apply_live: bool = None,
+) -> np.ndarray:
+    """
+    Controlled shadow / test-mode check for wet-turf stayer topweights and WET SLOW AWT pace burn:
+      - Turf distance >= 1800m on GOOD TO YIELDING or softer with weight >= 133 lb: -1.5%
+      - AWT on WET SLOW / SLOW with projected on-pace (avg_first_pos <= 3.5): -1.5%
+    Defaults to shadow logging only (0.0% formula impact) unless SILKS_WET_PACE_TEST_MODE=1.
+    """
+    n = len(df_runners)
+    zeros = np.zeros(n, dtype=float)
+    if n == 0:
+        return zeros
+
+    if apply_live is None:
+        apply_live = os.environ.get("SILKS_WET_PACE_TEST_MODE", "0") == "1"
+
+    going_upper = str(race_going or "").strip().upper()
+    wet_turf_goings = {"GOOD TO YIELDING", "YIELDING", "YIELDING TO SOFT", "SOFT", "HEAVY"}
+    is_wet_turf_stayer = (not bool(is_awt_race)) and (int(distance) >= 1800) and (going_upper in wet_turf_goings)
+    is_wet_slow_awt = bool(is_awt_race) and (going_upper in {"WET SLOW", "SLOW"})
+
+    if (not is_wet_turf_stayer) and (not is_wet_slow_awt):
+        return zeros
+
+    actual_weights = (
+        pd.to_numeric(
+            df_runners.get("actual_weight", pd.Series(125.0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(125.0)
+        .values
+    )
+    avg_first_pos = (
+        pd.to_numeric(
+            df_runners.get("avg_first_pos", pd.Series(6.0, index=df_runners.index)), errors="coerce"
+        )
+        .fillna(6.0)
+        .values
+    )
+
+    test_pen = np.zeros(n, dtype=float)
+    mode_label = "ACTIVE -1.5%" if apply_live else "SHADOW 0.0%"
+
+    for idx, (_, row) in enumerate(df_runners.iterrows()):
+        clean_name = str(row.get("clean_name") or row.get("name") or "").strip().upper()
+        tag = None
+        if is_wet_turf_stayer and actual_weights[idx] >= 133.0:
+            tag = f"WET_TURF_STAYER_TOPWEIGHT ({int(distance)}m, {going_upper}, {int(actual_weights[idx])}lb)"
+        elif is_wet_slow_awt and avg_first_pos[idx] <= 3.5:
+            tag = f"WET_SLOW_AWT_ON_PACE ({going_upper}, avg_first_pos={avg_first_pos[idx]:.1f})"
+
+        if tag:
+            test_pen[idx] = -0.015
+            print(
+                f"[Wet Pace Test Mode] [{mode_label}] Race {race_no} #{row.get('no')} {clean_name}: {tag}"
+            )
+
+    return test_pen if apply_live else zeros
 
 
 # -------------------------------------------------------------------------

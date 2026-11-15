@@ -313,6 +313,60 @@ def _refresh_cached_meetings_with_live_odds(cached_data, url, headers):
     return cached_data
 
 
+import re
+
+HKJC_GOING_TOKENS = (
+    "GOOD TO FIRM",
+    "GOOD TO YIELDING",
+    "YIELDING TO SOFT",
+    "SOFT TO HEAVY",
+    "WET FAST",
+    "WET SLOW",
+    "SEALED",
+    "HEAVY",
+    "SOFT",
+    "YIELDING",
+    "FIRM",
+    "FAST",
+    "SLOW",
+    "GOOD",
+)
+
+
+def parse_hkjc_going(flat_text: str, track_raw: str = "", race_no: int = 0, track_desc: str = "TURF") -> str:
+    """
+    Parse official HKJC going condition from flattened racecard header text and/or track_raw.
+    Supports both post-Class `Going : GOOD TO YIELDING` format and pre-PrizeMoney comma-delimited
+    format (`Turf, "A" Course, 1200M, Good to Yielding` / `All Weather Track, 1650M, Wet Slow`).
+    """
+    tokens_pat = "|".join(re.escape(tok) for tok in HKJC_GOING_TOKENS)
+    going_desc = None
+
+    # 1. Explicit `Going : <token>` anywhere in the header slice (handles post-Class placement)
+    m_explicit = re.search(rf"Going\s*:\s*({tokens_pat})\b", flat_text or "", re.I)
+    if m_explicit:
+        going_desc = " ".join(m_explicit.group(1).split()).upper()
+
+    # 2. Comma-delimited going right after distance (e.g. `1200M, Good to Yielding` / `1650M, Wet Slow`)
+    if not going_desc and track_raw:
+        m_dist_comma = re.search(rf"\b\d{{3,4}}M\s*,\s*({tokens_pat})\b", track_raw, re.I)
+        if m_dist_comma:
+            going_desc = " ".join(m_dist_comma.group(1).split()).upper()
+
+    # 3. Trailing comma-delimited going token at the end of track_raw
+    if not going_desc and track_raw:
+        m_trailing = re.search(rf",\s*({tokens_pat})\s*$", track_raw.strip(), re.I)
+        if m_trailing:
+            going_desc = " ".join(m_trailing.group(1).split()).upper()
+
+    if going_desc:
+        print(f"[Going Parser] Race {race_no} ({track_desc}): parsed going = '{going_desc}'")
+        return going_desc
+
+    print(f"[Going Parser] Race {race_no} ({track_desc}): no going token published yet; fallback = 'GOOD'")
+    return "GOOD"
+
+
 def _scrape_html_racecard(graphql_url, graphql_headers):
     """
     Scrapes the official HKJC HTML racecard (/en-us/local/information/racecard)
@@ -361,8 +415,13 @@ def _scrape_html_racecard(graphql_url, graphql_headers):
             c_m = re.search(r'"([A-Z0-9\+]+)"\s*Course', track_raw, re.I)
             course_desc = c_m.group(1).upper() if c_m else "A"
 
-        going_m = re.search(r"Going\s*:\s*([A-Za-z\s]+?)(?:Prize|Course|$)", track_raw, re.I)
-        going_desc = going_m.group(1).strip().upper() if going_m else "GOOD"
+        header_slice = flat_text[m.start():min(len(flat_text), m.end() + 260)]
+        going_desc = parse_hkjc_going(
+            header_slice,
+            track_raw=track_raw,
+            race_no=rn_int,
+            track_desc=track_desc,
+        )
 
         # Extract horse brand codes from horseid links
         code_map = {}

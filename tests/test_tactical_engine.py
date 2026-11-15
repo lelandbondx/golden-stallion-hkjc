@@ -23,7 +23,10 @@ from monitoring.contracts import (
     compute_hv_course_calibrations,
     compute_sha_tin_calibrations,
     compute_telemetry_harmony_multipliers,
+    evaluate_debutant_relaxed_trial_waiver,
     evaluate_exotic_class_droppers,
+    evaluate_pick5_sleeper_candidates,
+    evaluate_wet_pace_test_mode,
     validate_racecard_contract,
     validate_odds_contract,
     validate_incident_contract,
@@ -803,6 +806,83 @@ class TestFailLoudMonitoringRegressions(unittest.TestCase):
             self.assertIn("p24_cands = [(p2, 2)]", src, f"{fname} must restrict shifted win stakes to Pick 2 only")
             self.assertIn("<= 13.0", src, f"{fname} must cap pure win stakes at <= 13.0 odds")
             self.assertIn("has_health_risk", src, f"{fname} must enforce medical health risk guard on win stakes")
+
+    def test_going_parser_good_to_yielding_and_wet_slow(self):
+        """HTML Going parser handles post-Class Going:, pre-Prize comma goings, and safe GOOD fallback."""
+        hdr_post = 'Race 1 - TEST CUP Saturday, November 14, 2026, Sha Tin, 12:30 Turf, "A" Course, 1200M Prize Money: $1,170,000, Rating: 60-40, Class 4 Going : GOOD TO YIELDING'
+        self.assertEqual(
+            scraper.parse_hkjc_going(hdr_post, track_raw='Turf, "A" Course, 1200M', race_no=1, track_desc="TURF"),
+            "GOOD TO YIELDING",
+        )
+        hdr_awt = 'Race 3 - PANASHOP HANDICAP Saturday, November 14, 2026, Sha Tin, 13:55 All Weather Track, 1650M, Wet Slow Prize Money: $875,000'
+        self.assertEqual(
+            scraper.parse_hkjc_going(hdr_awt, track_raw='All Weather Track, 1650M, Wet Slow', race_no=3, track_desc="ALL WEATHER TRACK"),
+            "WET SLOW",
+        )
+        self.assertEqual(
+            scraper.parse_hkjc_going('Turf, "B" Course, 1600M, Good to Firm', track_raw='Turf, "B" Course, 1600M, Good to Firm', race_no=2),
+            "GOOD TO FIRM",
+        )
+        self.assertEqual(
+            scraper.parse_hkjc_going('Turf, "A" Course, 1200M Prize Money: $1,170,000', track_raw='Turf, "A" Course, 1200M', race_no=4),
+            "GOOD",
+        )
+
+    def test_debutant_relaxed_trial_waiver(self):
+        """Debutants with pos_ratio<=0.45 and speed_diff>=0.25 or top2>=1 waive 50% cut; non-debutants untouched."""
+        df = pd.DataFrame([
+            {"no": 12, "clean_name": "SECRET HEDGE"},
+            {"no": 4, "clean_name": "LITTLE GUT"},
+            {"no": 9, "clean_name": "SLOW DEB"},
+            {"no": 10, "clean_name": "RACED RUNNER"},
+        ])
+        tf = {
+            "SECRET HEDGE": {"best_trial_pos_ratio": 0.44, "best_trial_speed_diff": 0.41, "recent_top2_trials": 0},
+            "LITTLE GUT": {"best_trial_pos_ratio": 0.40, "best_trial_speed_diff": 0.06, "recent_top2_trials": 1},
+            "SLOW DEB": {"best_trial_pos_ratio": 0.55, "best_trial_speed_diff": 0.50, "recent_top2_trials": 1},
+            "RACED RUNNER": {"best_trial_pos_ratio": 0.30, "best_trial_speed_diff": 0.80, "recent_top2_trials": 2},
+        }
+        is_deb = np.array([True, True, True, False])
+        has_strong = np.array([False, False, False, False])
+        waived = evaluate_debutant_relaxed_trial_waiver(df, is_deb, has_strong, tf, race_no=1)
+        self.assertTrue(bool(waived[0]))   # Secret Hedge waived
+        self.assertTrue(bool(waived[1]))   # Little Gut waived
+        self.assertFalse(bool(waived[2]))  # pos 0.55 > 0.45 rejected
+        self.assertFalse(bool(waived[3]))  # Non-debutant untouched
+
+    def test_pick5_sleeper_candidates_rules_and_xb1_exclusion(self):
+        """Pick 5 sleeper qualifies trial-speed lightweight & B1+sec400, excludes XB1 and missing 99.0 sectionals."""
+        df = pd.DataFrame([
+            {"no": 8, "clean_name": "MEGASTAR", "gs_score": 21.2, "actual_weight": 119, "rank_sec400": 8, "best_last_sec": 22.89, "horse_gear": "TT", "has_health_risk": False, "active_vet_risk_penalty": 0.0, "draw": 7},
+            {"no": 9, "clean_name": "JOHANNES BRAHMS", "gs_score": 2.4, "actual_weight": 118, "rank_sec400": 4, "best_last_sec": 22.30, "horse_gear": "TT", "has_health_risk": False, "active_vet_risk_penalty": 0.0, "draw": 9},
+            {"no": 12, "clean_name": "LUCKY CANDY", "gs_score": 4.2, "actual_weight": 122, "rank_sec400": 4, "best_last_sec": 22.34, "horse_gear": "B1/CP-/TT", "has_health_risk": False, "active_vet_risk_penalty": 0.0, "draw": 3},
+            {"no": 5, "clean_name": "NOSEBAND HORSE", "gs_score": 6.0, "actual_weight": 125, "rank_sec400": 2, "best_last_sec": 22.10, "horse_gear": "XB1", "has_health_risk": False, "active_vet_risk_penalty": 0.0, "draw": 4},
+            {"no": 6, "clean_name": "NO SEC HORSE", "gs_score": 7.0, "actual_weight": 117, "rank_sec400": 1, "best_last_sec": 99.0, "horse_gear": "B1", "has_health_risk": False, "active_vet_risk_penalty": 0.0, "draw": 2},
+        ])
+        tf = {"JOHANNES BRAHMS": {"best_trial_speed_diff": 1.08}}
+        res = evaluate_pick5_sleeper_candidates(df, top4_nos=[8], trial_features=tf, is_hv=False, race_no=7)
+        reasons = dict(zip(df["no"], res["reasons"]))
+        self.assertEqual(reasons[9], "TRIAL_SPEED_LIGHTWEIGHT_OUTLIER")
+        self.assertEqual(reasons[12], "B1_TOP4_SECTIONAL")
+        self.assertEqual(reasons[5], "")  # XB1 must NOT match B1
+        self.assertEqual(reasons[6], "")  # Missing 99.0 sectional must NOT qualify
+        self.assertEqual(res["selected_no"], 12)  # Higher GS between 9 and 12
+
+    def test_wet_pace_test_mode_shadow_vs_active(self):
+        """Shadow mode returns zeros; active test mode applies -1.5% strictly on wet >=1800m topweight and WET SLOW AWT speed."""
+        df_turf = pd.DataFrame([
+            {"no": 1, "clean_name": "HEAVY TOP", "actual_weight": 135, "avg_first_pos": 10.0},
+            {"no": 7, "clean_name": "LIGHT STAYER", "actual_weight": 124, "avg_first_pos": 6.4},
+        ])
+        self.assertTrue(np.allclose(evaluate_wet_pace_test_mode(df_turf, 2000, "GOOD TO YIELDING", False, 4, apply_live=False), [0.0, 0.0]))
+        self.assertTrue(np.allclose(evaluate_wet_pace_test_mode(df_turf, 2000, "GOOD TO YIELDING", False, 4, apply_live=True), [-0.015, 0.0]))
+        self.assertTrue(np.allclose(evaluate_wet_pace_test_mode(df_turf, 2000, "GOOD", False, 4, apply_live=True), [0.0, 0.0]))
+
+        df_awt = pd.DataFrame([
+            {"no": 10, "clean_name": "PACE HORSE", "actual_weight": 122, "avg_first_pos": 2.6},
+            {"no": 12, "clean_name": "CLOSER", "actual_weight": 118, "avg_first_pos": 10.4},
+        ])
+        self.assertTrue(np.allclose(evaluate_wet_pace_test_mode(df_awt, 1650, "WET SLOW", True, 10, apply_live=True), [-0.015, 0.0]))
 
 
 if __name__ == '__main__':
