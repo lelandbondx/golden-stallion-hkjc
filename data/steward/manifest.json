@@ -1,0 +1,450 @@
+{
+  "schema_version": "1",
+  "feed": "steward_medical_integrity",
+  "status": "ok",
+  "run_time_hkt": "2026-11-16T14:18:27+08:00",
+  "run_time_utc": "2026-11-16T06:18:27+00:00",
+  "source_last_run": "2026-11-15T07:52:00-05:00",
+  "row_counts": {
+    "records.jsonl": 174,
+    "records.csv": 174,
+    "horses_latest.json": 73,
+    "schema.md": 1,
+    "meetings/HV-20261104.json": 1,
+    "meetings/HV-20261111.json": 1,
+    "meetings/ST-20261108.json": 1,
+    "meetings/ST-20261114-precheck.json": 1,
+    "meetings/ST-20261114.json": 1
+  },
+  "meetings_covered": [
+    {
+      "meeting_id": "HV-20261104",
+      "records_in_jsonl": 27,
+      "has_meeting_file": true
+    },
+    {
+      "meeting_id": "HV-20261111",
+      "records_in_jsonl": 13,
+      "has_meeting_file": true
+    },
+    {
+      "meeting_id": "ST-20261108",
+      "records_in_jsonl": 18,
+      "has_meeting_file": true
+    },
+    {
+      "meeting_id": "ST-20261114",
+      "records_in_jsonl": 21,
+      "has_meeting_file": true
+    },
+    {
+      "meeting_id": "ST-20261028",
+      "records_in_jsonl": 1,
+      "has_meeting_file": false
+    },
+    {
+      "meeting_id": null,
+      "records_in_jsonl": 94,
+      "has_meeting_file": false,
+      "note": "history-only vet records not tied to a reviewed meeting"
+    }
+  ],
+  "reviewed_meeting_ids": [
+    "HV-20261104",
+    "ST-20261108",
+    "HV-20261111",
+    "ST-20261114"
+  ],
+  "meeting_status": {
+    "HV-20261104": "FLAGGED",
+    "ST-20261108": "FLAGGED",
+    "HV-20261111": "FLAGGED",
+    "ST-20261114": "FLAGGED"
+  },
+  "completeness": {
+    "records_jsonl_csv_match": true,
+    "records_validated": true,
+    "horses_snapshot_count": 73,
+    "meeting_files": 5,
+    "reviewed_meetings_in_state": 4,
+    "open_items": 34,
+    "records_without_meeting": 94,
+    "meeting_ids_in_records_missing_file": [
+      "ST-20261028"
+    ]
+  },
+  "pending_gaps": {
+    "source_gaps_by_meeting": [
+      {
+        "meeting_id": "HV-20261104",
+        "source_gaps": [
+          "Per-race vet records and late-change/scratching pages for this past meeting are not archived on HKJC (veterinaryrecord/overecord pages show only the upcoming Sha Tin 2026-11-14 card); stewards' report summary used for withdrawals.",
+          "Separate results pages were not fetched; placings taken from the stewards' report and cross-checked against Replay Bot finishes (11/08, 11/11).",
+          "HKJC horse vet pages show no table for: MONTA FRUTTA, TELECOM POWER, HYMNBOOK, CALL ME MAGNIFIQUE, TURF PHOENIX, CELESTIAL STRIDER, SYNERGY IN ACTION, so Passed On status is unconfirmed (treated as open).",
+          "Barrier-trial results checked only for trial days 2026-11-05, 06, 10, 12 (dates listed by HKJC); only Quick Contribution (2026-11-10, Passed) matched a flagged horse. No 2026-11-09/11 trial pages exist in the HKJC date list."
+        ]
+      },
+      {
+        "meeting_id": "HV-20261111",
+        "source_gaps": [
+          "Per-race vet records and late-change/scratching pages for this past meeting are not archived on HKJC (veterinaryrecord/overecord pages show only the upcoming Sha Tin 2026-11-14 card); stewards' report summary used for withdrawals.",
+          "Separate results pages were not fetched; placings taken from the stewards' report and cross-checked against Replay Bot finishes (11/08, 11/11).",
+          "HKJC horse vet pages show no table for: MONTA FRUTTA, TELECOM POWER, HYMNBOOK, CALL ME MAGNIFIQUE, TURF PHOENIX, CELESTIAL STRIDER, SYNERGY IN ACTION, so Passed On status is unconfirmed (treated as open).",
+          "Barrier-trial results checked only for trial days 2026-11-05, 06, 10, 12 (dates listed by HKJC); only Quick Contribution (2026-11-10, Passed) matched a flagged horse. No 2026-11-09/11 trial pages exist in the HKJC date list."
+        ]
+      },
+      {
+        "meeting_id": "ST-20261108",
+        "source_gaps": [
+          "Per-race vet records and late-change/scratching pages for this past meeting are not archived on HKJC (veterinaryrecord/overecord pages show only the upcoming Sha Tin 2026-11-14 card); stewards' report summary used for withdrawals.",
+          "Separate results pages were not fetched; placings taken from the stewards' report and cross-checked against Replay Bot finishes (11/08, 11/11).",
+          "HKJC horse vet pages show no table for: MONTA FRUTTA, TELECOM POWER, HYMNBOOK, CALL ME MAGNIFIQUE, TURF PHOENIX, CELESTIAL STRIDER, SYNERGY IN ACTION, so Passed On status is unconfirmed (treated as open).",
+          "Barrier-trial results checked only for trial days 2026-11-05, 06, 10, 12 (dates listed by HKJC); only Quick Contribution (2026-11-10, Passed) matched a flagged horse. No 2026-11-09/11 trial pages exist in the HKJC date list."
+        ]
+      },
+      {
+        "meeting_id": "ST-20261114",
+        "source_gaps": [
+          "HKJC horse vet pages still not updated for 14 Nov withdrawals/finding (HAPPY ACTION, VIEW OF COSMOS, LUCKY WITH YOU, ON THE WAY) as at 2026-11-14T20:06:00-05:00 recheck: no 14/11/2026 or 13/11/2026 entry visible on ovehorse pages; still pending.",
+          "Per-race vet records page covers upcoming card only; stewards' report summary used for withdrawals.",
+          "Next meeting race card not yet published (No information), so no declared-runner cross-match possible."
+        ]
+      }
+    ],
+    "last_open_item_recheck": {
+      "at": "2026-11-15T07:52:00-05:00",
+      "horses_rechecked": 35,
+      "result": "no new Passed On dates on ovehorse pages; no completed barrier trials (btresult 05/06/10/12/13 Nov checked; only Duke of Orange appears, withdrawn 13/11); no new meeting to review"
+    },
+    "next_meeting": {
+      "id": "HV-20261118",
+      "date": "2026-11-18",
+      "venue": "HV",
+      "verification": "Re-verified 2026-11-15 via official HKJC fixture calendar (fixture?calyear=2026&calmonth=11): no meeting on 15 Nov; 18 Nov = HV night meeting; racecard for 18/11 not yet published ('No information'). Subsequent: ST 22 Nov (day)."
+    },
+    "upcoming_known": [
+      "Awesome Fluke (J050) stalls test scheduled ST 16/11/2026 07:30 HKT",
+      "HV 2026-11-18: B Avdulla suspension day per official reminder; A Atzeni deferred suspension 18/11 (resuming 19/11)",
+      "M Chadwick suspended Wed 25 Nov 2026 at Happy Valley"
+    ],
+    "publication_retries": 0,
+    "notes": [
+      "Missing or blank sources are pending, not an all-clear.",
+      "History-only vet-page rows have empty meeting_date/venue/race_no."
+    ]
+  },
+  "open_items": [
+    {
+      "horse_id": "HK_2022_H455",
+      "horse_name": "MONTA FRUTTA",
+      "remaining": [
+        "compulsory retirement"
+      ],
+      "since": "2026-11-04"
+    },
+    {
+      "horse_id": "HK_2024_K073",
+      "horse_name": "LUCKY BLESSING",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-04"
+    },
+    {
+      "horse_id": "HK_2023_J332",
+      "horse_name": "TELECOM POWER",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-04"
+    },
+    {
+      "horse_id": "HK_2025_L205",
+      "horse_name": "UNSTOPPAPLE",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-04"
+    },
+    {
+      "horse_id": "HK_2025_L142",
+      "horse_name": "LIVE WIRE",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-04"
+    },
+    {
+      "horse_id": "HK_2025_L193",
+      "horse_name": "ALL OUT FOR SIX",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-04"
+    },
+    {
+      "horse_id": "HK_2023_J294",
+      "horse_name": "TURF PHOENIX",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-08"
+    },
+    {
+      "horse_id": "HK_2025_L305",
+      "horse_name": "KANSAS",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-08"
+    },
+    {
+      "horse_id": "HK_2025_L265",
+      "horse_name": "APEX GLORY",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-08"
+    },
+    {
+      "horse_id": "HK_2025_L220",
+      "horse_name": "LADY'S LOVE",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-08"
+    },
+    {
+      "horse_id": "HK_2024_K238",
+      "horse_name": "PERFECTDAY",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-08"
+    },
+    {
+      "horse_id": "HK_2024_K032",
+      "horse_name": "SKY JEWELLERY",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-08"
+    },
+    {
+      "horse_id": "HK_2025_L016",
+      "horse_name": "MAJESTIC VALOUR",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-08"
+    },
+    {
+      "horse_id": "HK_2025_L339",
+      "horse_name": "CALL ME MAGNIFIQUE",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-11"
+    },
+    {
+      "horse_id": "HK_2025_L238",
+      "horse_name": "HYMNBOOK",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-11"
+    },
+    {
+      "horse_id": "HK_2023_J050",
+      "horse_name": "AWESOME FLUKE",
+      "remaining": [
+        "stalls test"
+      ],
+      "since": "2026-11-11"
+    },
+    {
+      "horse_id": "HK_2025_L104",
+      "horse_name": "SPEEDY PATCH",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-11"
+    },
+    {
+      "horse_id": "HK_2025_L028",
+      "horse_name": "HELENE SUPAFEELING",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-05"
+    },
+    {
+      "horse_id": "HK_2024_K230",
+      "horse_name": "SPEEDY TRIDENT",
+      "remaining": [
+        "barrier trial"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2021_G095",
+      "horse_name": "SETANTA",
+      "remaining": [
+        "barrier trial"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2024_K323",
+      "horse_name": "SUPERB GUY",
+      "remaining": [
+        "barrier trial"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2024_K540",
+      "horse_name": "DUKE OF ORANGE",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-13"
+    },
+    {
+      "horse_id": "HK_2023_J291",
+      "horse_name": "YOUNG ACHIEVER",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-12"
+    },
+    {
+      "horse_id": "HK_2025_L031",
+      "horse_name": "AKERMANIS GOLD",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-12"
+    },
+    {
+      "horse_id": "HK_2025_L057",
+      "horse_name": "FLYING FORTUNE",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-12"
+    },
+    {
+      "horse_id": "HK_2023_J375",
+      "horse_name": "VIGOR ELLEEGANT",
+      "remaining": [
+        "barrier trial"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2024_K377",
+      "horse_name": "QUICK MONEY",
+      "remaining": [
+        "barrier trial"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2023_J501",
+      "horse_name": "CIRCUIT DUFFY",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2025_L060",
+      "horse_name": "VIEW OF COSMOS",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2024_K399",
+      "horse_name": "HAPPY ACTION",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-13"
+    },
+    {
+      "horse_id": "HK_2023_J224",
+      "horse_name": "GOOD GOOD",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2020_E356",
+      "horse_name": "LUCKY WITH YOU",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2024_K527",
+      "horse_name": "FOREST KING",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2025_L398",
+      "horse_name": "VOYAGE HORIZON",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-14"
+    }
+  ],
+  "sha256": {
+    "records.jsonl": "1cb6df9a9453c9e7f21087a12d1cbd78de464f47101682247110bcef654382d4",
+    "records.csv": "2b4c7f32ea923b07ae7f71b3bb730e4e13604b9d02447faf07baedf9a7dd70e7",
+    "horses_latest.json": "f63d68deac9ff9b59e48e78ec6335d9fe59c2a2b8d32d26e0c1ebc5e6989f616",
+    "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
+    "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
+    "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
+    "meetings/ST-20261108.json": "b722dfa48633d18beec7474af859a7e30792ce493588fe9404a1b87e5c634886",
+    "meetings/ST-20261114-precheck.json": "bcafee74a8242a858ba50f0cfdca4c75e08f6dfd9f463962072d89810d18b006",
+    "meetings/ST-20261114.json": "03e8e097d89e42742754e36416b8ddcb2cb75c20c362ffd470bff535723b221b"
+  },
+  "repo": "lelandbondx/golden-stallion-hkjc",
+  "branch": "trial-data",
+  "remote_folder": "data/steward",
+  "git": {
+    "branch": "trial-data",
+    "branch_existed_before_push": true,
+    "branch_head_before_push": "b730037c56f273b1b9020f7ad74a3621d0765cb3",
+    "data_commits": [
+      "d5009a25122a9b4941a904c45b0167384a3c93a9",
+      "e0e76a1472aacef604f29e0620efc581a76ac169",
+      "70e6e3e3895b781b0b93bedef723d9757a07afa2"
+    ],
+    "main_sha": "6e458a2ed21372a302753052f5ea27633c101718",
+    "main_untouched": true,
+    "pushed_via": "GitHub MCP connector push_files"
+  }
+}
