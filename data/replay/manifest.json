@@ -1,0 +1,118 @@
+{
+ "bot": "replay bot",
+ "feed": "data/replay",
+ "branch": "trial-data",
+ "schema_version": 2,
+ "run_time_hkt": "2026-11-16T14:17:27+08:00",
+ "run_time_utc": "2026-11-16T06:17:27Z",
+ "meetings": [
+  {
+   "date": "2026-11-08",
+   "venue": "ST",
+   "venue_name": "Sha Tin",
+   "races_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "row_count": 84,
+   "csv": "2026-11-08_ST.csv",
+   "json": "2026-11-08_ST.json",
+   "generated_at": "2026-11-12T13:11:37+08:00",
+   "source_fetched_at": "2026-11-12T13:04:59+08:00",
+   "validation": "OVERALL PASS",
+   "limitations": [
+    "Replays: official HKJC replay-full broadcast angle only (side-on pan then head-on); no patrol/overhead footage, so some pack incidents could not be confirmed from video.",
+    "R11 was reviewed from a 720p re-encode (race11_720p.mp4) of the official replay after full-size attempts failed (resource_exhausted).",
+    "Legacy row R7 MONARCH COUNTY carries flag 'wide' which is outside the legacy vocabulary; kept verbatim, wide_no_cover left blank (unknown).",
+    "R9 HELENE SUPAFEELING was withdrawn 5.11.26 (stewards-only row): no draw, odds, running positions or sectional exist."
+   ]
+  },
+  {
+   "date": "2026-11-11",
+   "venue": "HV",
+   "venue_name": "Happy Valley",
+   "races_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "row_count": 59,
+   "csv": "2026-11-11_HV.csv",
+   "json": "2026-11-11_HV.json",
+   "generated_at": "2026-11-12T13:11:37+08:00",
+   "source_fetched_at": "2026-11-12T13:05:17+08:00",
+   "validation": "OVERALL PASS",
+   "limitations": [
+    "Replays: official HKJC replay-full single side-on angle only; no head-on or patrol footage. 720p copies used for R1, R4, R5, R8, R9.",
+    "Mid-race bumps not confirmable on video and kept as stewards-only: R6 #6 near 1000m; R8 start crowding and bumps near 1000m/550m; R9 #5/#12 contacts.",
+    "Wide-without-cover for R2 ALWAYS FLUKE and R7 MASK WARRIOR is a replay observation only (not in stewards report).",
+    "HKJC published no official finish clock time; review started 00:53 HKT 2026-11-12, >=2h after R9's advertised 22:50 HKT start.",
+    "R3 SPEEDY PATCH was a late withdrawal (stewards-only row): no draw, odds, running positions or sectional exist."
+   ]
+  },
+  {
+   "date": "2026-11-14",
+   "venue": "ST",
+   "venue_name": "Sha Tin",
+   "races_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "row_count": 112,
+   "csv": "2026-11-14_ST.csv",
+   "json": "2026-11-14_ST.json",
+   "generated_at": "2026-11-14T20:28:22+08:00",
+   "source_fetched_at": "2026-11-14T20:28:22+08:00",
+   "validation": "OVERALL PASS",
+   "limitations": [
+    "Race 6 (192) was abandoned on safety grounds after riders raised concerns about the AWT footing and kickback visibility following Race 3 (stewards General 1). It has no result and no replay (replay-full 06 returned HTTP 404). 10 races were reviewed: R1-R5 and R7-R11.",
+    "Replays: official HKJC replay-full broadcast angle only; no head-on or patrol footage. 720p re-encodes of the official files were used for R3, R4, R10 and R11; the original files for the rest. R10 had to be re-reviewed because the first video review did not receive the file.",
+    "AWT races R3 and R10 (WET SLOW): heavy kickback hid mid-pack and rear runners. In R3 none of the 500m/350m incidents (Superb Guy, Happydearhappydeer, Quick Money, Viva Taste) could be confirmed on video; they are recorded from the stewards report only. R10 Another Zonda's saddle slip and Loch Tay hanging in are likewise not confirmable on video.",
+    "Incidents not confirmable on video, recorded from the stewards report only: R1 severity of the Rock Your Dream check near 900m; R2 crowding near 1300m (My Flying Angel, The All Rounder) and Special Hedge near 1100m and 300m; R4 Happy Tercentenary/Storm Runner contact near 1100m; R7 Son Pak Fu/Blazing Wind near 1100m and Self Improvement eased near 1000m; R8 Vigor Fly crowded at the start; R9 Gulu Gogo held up 400m-250m; R11 King Equine's dropped rein.",
+    "Conflict: in R8 the stewards say MABUBU raced wide without cover for the majority of the event, but on the replay it was wide early before crossing to lead (official running positions 1-1-2). The row keeps the official wide_no_cover flag and notes the conflict.",
+    "Leader identity in R11: the video review placed SKY HEART in front early, while official running positions have GALLANT DREAM 1-1-2 and SKY HEART 2-2-1. The notes use only the official positions for both.",
+    "Replay-only flags (not in the stewards report): R1 Secret Hedge strong_closer; R3 Hailtothevictors strong_closer; R5 Legend Red Hare slow_away; R5 Yee Cheong Bright faded_after_leading; R8 Break Heaven strong_closer; R9 Not Usual Double wide_no_cover and strong_closer; R10 King Dance, Supreme Agility strong_closer; R11 Jolly Brilliant strong_closer/more_in_hand; R11 Gallant Dream and Sky Heart faded_after_leading.",
+    "Going changed during the meeting: turf GOOD TO YIELDING for R1-R2, R4-R5 and R7, and GOOD for R8, R9 and R11 (the stewards made the change retrospective from R8). The AWT was WET SLOW for R3 and R10. Races 5 and 8-10 were each put back 5 minutes.",
+    "Timing: HKJC published no official finish clock time. R11 was advertised for 18:15 HKT and its results were already posted at 18:48 HKT. The review started at 20:20 HKT, at least 2h after the advertised R11 time, with all 10 run races' official results and the full stewards report published (no interim or adjourned language visible).",
+    "Withdrawn horses (stewards-only rows, so no draw, odds, running positions or sectional exist): R3 VIEW OF COSMOS (at the barriers) and HAPPY ACTION (on 13.11.26), and R7 LUCKY WITH YOU (at the start).",
+    "Vet findings are copied verbatim from the official stewards report: roarer (previously reported) for R2 JUST FOLLOW ME and R3 VIGOR ELLEEGANT; epiglottic entrapment for R7 ON THE WAY; an abnormal respiratory noise reported by the rider of R8 FOREST KING, whose vet inspection showed no significant findings. No diagnosis is inferred from the video."
+   ]
+  }
+ ],
+ "total_rows": 255,
+ "completeness_notes": [
+  "2026-11-14 ST R6 abandoned (no result, no replay); R1-R5 and R7-R11 reviewed.",
+  "Only horses with a trip note have a row."
+ ],
+ "appended_csv_columns": [
+  "meeting_date",
+  "race_no",
+  "horse_name",
+  "retrieved_at_hkt",
+  "retrieved_at_utc"
+ ],
+ "validation_status": "PASS (tools/validate.py OVERALL PASS for all 3 meetings)"
+}
