@@ -1,0 +1,97 @@
+{
+ "schema_version": "1.0",
+ "run_id": "2026-11-14_0600HKT_ST_20261114",
+ "status": "ok",
+ "run_time_hkt": "2026-11-14T06:00:00+08:00",
+ "retrieved_at_hkt": "2026-11-14T06:15:26+08:00",
+ "retrieved_at_utc": "2026-11-13T22:15:26+00:00",
+ "manifest_written_at_hkt": "2026-11-14T06:16:32+08:00",
+ "window_hkt": [
+  "2026-11-14T06:00:00+08:00",
+  "2026-11-16T06:00:00+08:00"
+ ],
+ "meetings": [
+  {
+   "meeting_date": "2026-11-14",
+   "venue": "ST",
+   "races": 11,
+   "runners": 171,
+   "declared": 153,
+   "standby": 17,
+   "withdrawn_listed": 1
+  }
+ ],
+ "meetings_checked_without_card": [
+  "HV 2026-11-14",
+  "HV 2026-11-15",
+  "ST 2026-11-15",
+  "HV 2026-11-16",
+  "ST 2026-11-16"
+ ],
+ "row_counts": {
+  "declared_trials_latest_csv": 171,
+  "declared_trials_latest_json": 171,
+  "meeting_csv": 171,
+  "meeting_json": 171,
+  "trials_history": 438,
+  "trials_history_seeded_this_run": 0,
+  "trials_history_new_this_run": 0
+ },
+ "coverage": {
+  "runners": 171,
+  "with_trial": 171,
+  "missing_trial": 0,
+  "trial_coverage_pct": 100.0
+ },
+ "completeness": {
+  "complete": 171
+ },
+ "flag_counts": {
+  "speed_outlier_fast": {
+   "false": 158,
+   "true": 11,
+   "unknown": 2
+  },
+  "speed_outlier_slow": {
+   "false": 166,
+   "true": 3,
+   "unknown": 2
+  },
+  "quality_opposition": {
+   "false": 80,
+   "true": 59,
+   "unknown": 32
+  },
+  "poor_finish": {
+   "true": 61,
+   "false": 109,
+   "unknown": 1
+  },
+  "stale_trial": {
+   "false": 168,
+   "true": 3
+  }
+ },
+ "source_failures": {
+  "http_failures": [],
+  "horse_pages_unavailable": [
+   "K376",
+   "M117"
+  ],
+  "note": "horse_pages_unavailable: HTTP 200 but stub page without rating; opponents treated as rating unavailable"
+ },
+ "validation": {
+  "checks_failed": [],
+  "independent_text_verify_mismatches": 0,
+  "all_declared_runners_have_row": true,
+  "csv_json_counts_match": true
+ },
+ "sha256": {
+  "declared_trials_latest.csv": "6886f2b982ebaca879dd55197848d29c07fbdeb3d3ad99b5d93820d78ed818d3",
+  "declared_trials_latest.json": "09ad76eed8542fa53ce87b4c25382fda5a47d7ee8cebdc8d5ac665da01b3f932",
+  "meeting_2026-11-14_ST.csv": "6886f2b982ebaca879dd55197848d29c07fbdeb3d3ad99b5d93820d78ed818d3",
+  "meeting_2026-11-14_ST.json": "ada9c974c3fdba3b3e3e5ec2a9f7fccec372c6d9a70127afe478cc8bc96268f0",
+  "schema.md": "6ac00f3856e3407d7a880aae595d79958a25127261c366a44790506f2e1aa01f",
+  "trials_history.csv": "28547c818102a2c364b375e0b0542b381b393c2bccc62844bba53728d6fcda54"
+ }
+}
