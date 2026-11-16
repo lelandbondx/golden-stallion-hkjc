@@ -1,0 +1,93 @@
+{
+ "meeting_id": "HV-20261111",
+ "meeting_date": "2026-11-11",
+ "venue": "HV",
+ "description": "Happy Valley Turf B, Good, 9 races",
+ "status": "FLAGGED",
+ "reviewed_at": "2026-11-12T07:45:14-05:00",
+ "records_count": 11,
+ "horses_with_records": 7,
+ "summary": {
+  "bleeding": [
+   "CIRCUIT CENTURY (substantial blood in trachea, R1, finished 11th)",
+   "HYMNBOOK (substantial blood in trachea, R8)"
+  ],
+  "irregular_heart_rhythm": [],
+  "injury_withdrawal": [
+   "SPEEDY PATCH (late vet withdrawal, wounds to both hind legs)"
+  ],
+  "vet_exam_only": [
+   "CIRCUIT CENTURY",
+   "SPEEDY PATCH",
+   "CALL ME MAGNIFIQUE (no significant findings on inspection)",
+   "HYMNBOOK"
+  ],
+  "stalls_test": [
+   "AWESOME FLUKE"
+  ],
+  "racing_manners": [
+   "PRIVATE WEALTH (warning)"
+  ],
+  "suspensions": [],
+  "fines_reprimands": [
+   "H Y Yuen reprimand (SURE JOYFUL)"
+  ],
+  "other": [
+   "Riding substitutions listed in the 11/11 report relate to 2026-11-10 (Y L Chung indisposed); not a meeting finding"
+  ]
+ },
+ "open_items": [
+  {
+   "horse_id": "HK_2023_J050",
+   "horse_name": "AWESOME FLUKE",
+   "remaining": [
+    "stalls test"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K308",
+   "horse_name": "CIRCUIT CENTURY",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L104",
+   "horse_name": "SPEEDY PATCH",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L238",
+   "horse_name": "HYMNBOOK",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L339",
+   "horse_name": "CALL ME MAGNIFIQUE",
+   "remaining": [
+    "official vet exam"
+   ]
+  }
+ ],
+ "sources_checked": [
+  "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111",
+  "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=<horse_id> (per flagged horse)",
+  "https://racing.hkjc.com/racing/information/English/Horse/BTResult.aspx?Date=2026/11/05,06,10,12",
+  "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11",
+  "https://racing.hkjc.com/en-us/local/information/veterinaryrecord",
+  "https://racing.hkjc.com/en-us/local/information/overecord"
+ ],
+ "source_gaps": [
+  "Per-race vet records and late-change/scratching pages for this past meeting are not archived on HKJC (veterinaryrecord/overecord pages show only the upcoming Sha Tin 2026-11-14 card); stewards' report summary used for withdrawals.",
+  "Separate results pages were not fetched; placings taken from the stewards' report and cross-checked against Replay Bot finishes (11/08, 11/11).",
+  "HKJC horse vet pages show no table for: MONTA FRUTTA, TELECOM POWER, HYMNBOOK, CALL ME MAGNIFIQUE, TURF PHOENIX, CELESTIAL STRIDER, SYNERGY IN ACTION, so Passed On status is unconfirmed (treated as open).",
+  "Barrier-trial results checked only for trial days 2026-11-05, 06, 10, 12 (dates listed by HKJC); only Quick Contribution (2026-11-10, Passed) matched a flagged horse. No 2026-11-09/11 trial pages exist in the HKJC date list."
+ ],
+ "replay_bot_coverage": "Replay notes found: 59 rows for 105 runners (partial coverage). All 5 vet/stalls-test horses plus the Speedy Patch withdrawal are present with official wording; finish positions agree. Nothing material missed or wrong found.",
+ "replay_bot_agent_id": "dd4ab063-c9a5-4d02-b1f8-1c38a0de8980",
+ "notes": "Official facts only; no medical cause is stated beyond HKJC wording. Meeting FLAGGED (not an all-clear): open requirements remain."
+}

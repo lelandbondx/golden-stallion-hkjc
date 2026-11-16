@@ -1,0 +1,148 @@
+{
+ "meeting_id": "ST-20261114",
+ "meeting_date": "2026-11-14",
+ "venue": "ST",
+ "description": "Sha Tin Turf A / AWT, 11 races scheduled, Race 6 abandoned (10 run)",
+ "status": "FLAGGED",
+ "reviewed_at": "2026-11-14T07:45:45-05:00",
+ "records_count": 21,
+ "horses_with_records": 16,
+ "summary": {
+  "airway": [
+   "JUST FOLLOW ME (R2, 11th; horse no. 1) and VIGOR ELLEEGANT (R3, 11th): vet inspection found each a roarer, previously reported",
+   "ON THE WAY (R7, 8th): epiglottic entrapment found on post-race vet inspection, no requirement stated",
+   "FOREST KING (R8, 14th): rider reported abnormal respiratory noise; vet inspection no significant findings"
+  ],
+  "bleeding": [
+   "none reported"
+  ],
+  "irregular_heart_rhythm": [
+   "none reported"
+  ],
+  "vet_withdrawals": [
+   "HAPPY ACTION (R3, withdrawn 13/11, lame right fore): official vet exam",
+   "VIEW OF COSMOS (R3, reared in gates, struck head, withdrawn at barriers): barrier trial + official vet exam",
+   "LUCKY WITH YOU (R7, withdrawn at start, lame left front): official vet exam"
+  ],
+  "barrier_trial_and_vet_exam_requirements": [
+   "CIRCUIT DUFFY (R2), GOOD GOOD (R4), FOREST KING (R8), VOYAGE HORIZON (R10): barrier trial + official vet exam (unacceptable performance, tailed out; post-race vet inspection no significant findings where reported)",
+   "VIGOR ELLEEGANT, SETANTA, SPEEDY TRIDENT, SUPERB GUY, QUICK MONEY (all R3, tailed out): barrier trial only (stewards accepted wet AWT surface may have contributed)"
+  ],
+  "suspensions": [
+   "M Chadwick (SECRET HEDGE, R1): careless riding, 1 raceday, Wed 25 Nov 2026 at Happy Valley"
+  ],
+  "other_official": [
+   "Race 6 abandoned on safety grounds (AWT footing/kickback after R3); no result",
+   "A Atzeni fined $2,000 (QUICK MONEY, R3) for failing to present in Parade Ring on time",
+   "Reprimands: C Y Ho, P N Wong x2, K Teetan, J Orman (whip); warnings: M F Poon x2, K Teetan x2, M Chadwick x2, A Badel, L Ferraris",
+   "No integrity inquiry or disqualification; no heat-stress or lameness-after-race findings in the report. C L Chau rode today; the 14-19 Nov suspension is not applied (official deferred suspension 29/11-02/12)"
+  ]
+ },
+ "open_items": [
+  {
+   "horse_id": "HK_2023_J375",
+   "horse_name": "VIGOR ELLEEGANT",
+   "remaining": [
+    "barrier trial"
+   ]
+  },
+  {
+   "horse_id": "HK_2021_G095",
+   "horse_name": "SETANTA",
+   "remaining": [
+    "barrier trial"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K230",
+   "horse_name": "SPEEDY TRIDENT",
+   "remaining": [
+    "barrier trial"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K323",
+   "horse_name": "SUPERB GUY",
+   "remaining": [
+    "barrier trial"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K377",
+   "horse_name": "QUICK MONEY",
+   "remaining": [
+    "barrier trial"
+   ]
+  },
+  {
+   "horse_id": "HK_2023_J501",
+   "horse_name": "CIRCUIT DUFFY",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L060",
+   "horse_name": "VIEW OF COSMOS",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K399",
+   "horse_name": "HAPPY ACTION",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2023_J224",
+   "horse_name": "GOOD GOOD",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2020_E356",
+   "horse_name": "LUCKY WITH YOU",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K527",
+   "horse_name": "FOREST KING",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L398",
+   "horse_name": "VOYAGE HORIZON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  }
+ ],
+ "sources_checked": [
+  "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114",
+  "https://racing.hkjc.com/en-us/local/information/localresults?RaceDate=2026/11/14&Racecourse=ST&RaceNo=11",
+  "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=<horse_id> (34 horses: all open items + all horses named in report)",
+  "https://racing.hkjc.com/en-us/local/information/btresult?TrialDate=2026/11/14 (latest trial date listed 13/11/2026)",
+  "https://racing.hkjc.com/racing/english/racing-widget/meetingreminder.aspx",
+  "https://racing.hkjc.com/racing/information/English/Racing/Fixture.aspx?CalYear=2026&CalMonth=11"
+ ],
+ "source_gaps": [
+  "HKJC horse vet pages still not updated for 14 Nov withdrawals/finding (HAPPY ACTION, VIEW OF COSMOS, LUCKY WITH YOU, ON THE WAY) as at 2026-11-14T20:06:00-05:00 recheck: no 14/11/2026 or 13/11/2026 entry visible on ovehorse pages; still pending.",
+  "Per-race vet records page covers upcoming card only; stewards' report summary used for withdrawals.",
+  "Next meeting race card not yet published (No information), so no declared-runner cross-match possible."
+ ],
+ "replay_bot_coverage": "Replay notes found (trip_notes.csv, 112 rows; Race 6 abandoned, no replay). Every vet/trial/withdrawal horse (Just Follow Me, Vigor Elleegant, Setanta, Speedy Trident, Superb Guy, Quick Money, View of Cosmos, Happy Action, Circuit Duffy, Good Good, On The Way, Lucky With You, Forest King, Voyage Horizon) and the Chadwick suspension are present with official wording. Nothing material missed or wrong found. Not in the notes (minor): Atzeni fine, general reprimands, Race 6 abandonment is in limitations.json.",
+ "replay_bot_agent_id": "dd4ab063-c9a5-4d02-b1f8-1c38a0de8980",
+ "notes": "Official facts only; no medical cause stated beyond HKJC wording. FLAGGED, not an all-clear. Just Follow Me official finish corrected to 11th on 2026-11-14T20:06:00-05:00 (was misread as 1st from saddle-cloth no.). Rechecked official results, dividends, and pending ovehorse pages."
+}

@@ -1,0 +1,116 @@
+{
+ "meeting_id": "HV-20261104",
+ "meeting_date": "2026-11-04",
+ "venue": "HV",
+ "description": "Happy Valley Turf A, Good, 9 races",
+ "status": "FLAGGED",
+ "reviewed_at": "2026-11-12T07:45:14-05:00",
+ "records_count": 26,
+ "horses_with_records": 19,
+ "summary": {
+  "bleeding": [
+   "ALL OUT FOR SIX (bled from both nostrils, R9)",
+   "TELECOM POWER (substantial blood in trachea, R2)",
+   "UNSTOPPAPLE (substantial blood in trachea, R5)"
+  ],
+  "irregular_heart_rhythm": [
+   "MONTA FRUTTA (3rd in 24 months: compulsorily retired from racing in Hong Kong)",
+   "LIVE WIRE (R8)"
+  ],
+  "blood_in_mouth_only": [
+   "CELESTIAL STRIDER",
+   "SOLAR RIVER",
+   "SYNERGY IN ACTION"
+  ],
+  "barrier_trial_and_vet_exam": [
+   "LUCKY BLESSING",
+   "TELECOM POWER",
+   "QUICK CONTRIBUTION (CLEARED 2026-11-10: trial passed and vet exam passed)",
+   "LIVE WIRE",
+   "ALL OUT FOR SIX"
+  ],
+  "vet_exam_only": [
+   "UNSTOPPAPLE",
+   "FRIENDS OF SHAJING"
+  ],
+  "suspensions": [],
+  "fines_reprimands": [
+   "H Y Yuen $8,000 whip (offence 2026-11-01)",
+   "L Hewitson $2,000 wrong saddle cloth",
+   "C L Chau $5,000 unable to make weight",
+   "severe reprimands Atzeni, Teetan; reprimands Kingscote, Badel"
+  ]
+ },
+ "open_items": [
+  {
+   "horse_id": "HK_2022_H455",
+   "horse_name": "MONTA FRUTTA",
+   "remaining": [
+    "compulsory retirement"
+   ]
+  },
+  {
+   "horse_id": "HK_2023_J332",
+   "horse_name": "TELECOM POWER",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K073",
+   "horse_name": "LUCKY BLESSING",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K202",
+   "horse_name": "FRIENDS OF SHAJING",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L142",
+   "horse_name": "LIVE WIRE",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L193",
+   "horse_name": "ALL OUT FOR SIX",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L205",
+   "horse_name": "UNSTOPPAPLE",
+   "remaining": [
+    "official vet exam"
+   ]
+  }
+ ],
+ "sources_checked": [
+  "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104",
+  "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=<horse_id> (per flagged horse)",
+  "https://racing.hkjc.com/racing/information/English/Horse/BTResult.aspx?Date=2026/11/05,06,10,12",
+  "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11",
+  "https://racing.hkjc.com/en-us/local/information/veterinaryrecord",
+  "https://racing.hkjc.com/en-us/local/information/overecord"
+ ],
+ "source_gaps": [
+  "Per-race vet records and late-change/scratching pages for this past meeting are not archived on HKJC (veterinaryrecord/overecord pages show only the upcoming Sha Tin 2026-11-14 card); stewards' report summary used for withdrawals.",
+  "Separate results pages were not fetched; placings taken from the stewards' report and cross-checked against Replay Bot finishes (11/08, 11/11).",
+  "HKJC horse vet pages show no table for: MONTA FRUTTA, TELECOM POWER, HYMNBOOK, CALL ME MAGNIFIQUE, TURF PHOENIX, CELESTIAL STRIDER, SYNERGY IN ACTION, so Passed On status is unconfirmed (treated as open).",
+  "Barrier-trial results checked only for trial days 2026-11-05, 06, 10, 12 (dates listed by HKJC); only Quick Contribution (2026-11-10, Passed) matched a flagged horse. No 2026-11-09/11 trial pages exist in the HKJC date list."
+ ],
+ "replay_bot_coverage": "No Replay Bot trip notes found on the box for this meeting (silks_ingest/hkjc_trip_notes and Replay Bot attachments only cover 2026-10-25, 10-28, 11-08, 11-11). Cross-check NOT possible.",
+ "replay_bot_agent_id": "dd4ab063-c9a5-4d02-b1f8-1c38a0de8980",
+ "notes": "Official facts only; no medical cause is stated beyond HKJC wording. Meeting FLAGGED (not an all-clear): open requirements remain."
+}

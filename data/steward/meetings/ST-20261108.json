@@ -1,0 +1,121 @@
+{
+ "meeting_id": "ST-20261108",
+ "meeting_date": "2026-11-08",
+ "venue": "ST",
+ "description": "Sha Tin Turf C+3 / All Weather, Good, 11 races",
+ "status": "FLAGGED",
+ "reviewed_at": "2026-11-12T07:45:14-05:00",
+ "records_count": 18,
+ "horses_with_records": 12,
+ "summary": {
+  "bleeding": [
+   "KANSAS (substantial blood in trachea, R3)",
+   "MAJESTIC VALOUR (substantial blood in trachea, R10)"
+  ],
+  "irregular_heart_rhythm": [
+   "PERFECTDAY (R7)"
+  ],
+  "lameness": [
+   "TURF PHOENIX (lame right front leg after race, R2)",
+   "HELENE SUPAFEELING (withdrawn 2026-11-05, lame left fore)"
+  ],
+  "barrier_trial_and_vet_exam": [
+   "APEX GLORY (also barrier-manners warning)",
+   "LADY'S LOVE",
+   "PERFECTDAY",
+   "SKY JEWELLERY"
+  ],
+  "vet_exam_only": [
+   "TURF PHOENIX",
+   "KANSAS",
+   "MAJESTIC VALOUR",
+   "HELENE SUPAFEELING"
+  ],
+  "suspensions": [
+   "C L Chau 2026-11-29 to 2026-12-03 (may resume 12-03; 2 racedays; also $60,000 fine) careless riding R8",
+   "B Avdulla 2026-11-18 (1 raceday, Happy Valley) careless riding R9"
+  ],
+  "fines_reprimands": [
+   "H Bentley severe reprimand + reprimand (THRIVING BROTHERS)"
+  ]
+ },
+ "open_items": [
+  {
+   "horse_id": "HK_2023_J294",
+   "horse_name": "TURF PHOENIX",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K032",
+   "horse_name": "SKY JEWELLERY",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K238",
+   "horse_name": "PERFECTDAY",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L016",
+   "horse_name": "MAJESTIC VALOUR",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L028",
+   "horse_name": "HELENE SUPAFEELING",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L220",
+   "horse_name": "LADY'S LOVE",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L265",
+   "horse_name": "APEX GLORY",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L305",
+   "horse_name": "KANSAS",
+   "remaining": [
+    "official vet exam"
+   ]
+  }
+ ],
+ "sources_checked": [
+  "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108",
+  "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=<horse_id> (per flagged horse)",
+  "https://racing.hkjc.com/racing/information/English/Horse/BTResult.aspx?Date=2026/11/05,06,10,12",
+  "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11",
+  "https://racing.hkjc.com/en-us/local/information/veterinaryrecord",
+  "https://racing.hkjc.com/en-us/local/information/overecord"
+ ],
+ "source_gaps": [
+  "Per-race vet records and late-change/scratching pages for this past meeting are not archived on HKJC (veterinaryrecord/overecord pages show only the upcoming Sha Tin 2026-11-14 card); stewards' report summary used for withdrawals.",
+  "Separate results pages were not fetched; placings taken from the stewards' report and cross-checked against Replay Bot finishes (11/08, 11/11).",
+  "HKJC horse vet pages show no table for: MONTA FRUTTA, TELECOM POWER, HYMNBOOK, CALL ME MAGNIFIQUE, TURF PHOENIX, CELESTIAL STRIDER, SYNERGY IN ACTION, so Passed On status is unconfirmed (treated as open).",
+  "Barrier-trial results checked only for trial days 2026-11-05, 06, 10, 12 (dates listed by HKJC); only Quick Contribution (2026-11-10, Passed) matched a flagged horse. No 2026-11-09/11 trial pages exist in the HKJC date list."
+ ],
+ "replay_bot_coverage": "Replay notes found: 84 rows for 145 runners (partial coverage). All 8 stewards vet/trial/lameness/bleeding horses plus the Helene Supafeeling withdrawal and both suspensions (Chau, Avdulla) are present; finish positions agree with the stewards report. Nothing material missed or wrong found. Replay does not carry Golden Champ (no stewards finding) and omits warnings/whip warning for Chau as expected.",
+ "replay_bot_agent_id": "dd4ab063-c9a5-4d02-b1f8-1c38a0de8980",
+ "notes": "Official facts only; no medical cause is stated beyond HKJC wording. Meeting FLAGGED (not an all-clear): open requirements remain."
+}
