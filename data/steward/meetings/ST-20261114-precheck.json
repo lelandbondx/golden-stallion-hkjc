@@ -1,0 +1,35 @@
+{
+  "meeting_id": "ST-20261114",
+  "meeting_date": "2026-11-14",
+  "venue": "ST",
+  "type": "pre_meet_status",
+  "checked_at": "2026-11-13T15:24:10-05:00",
+  "official_sources_checked": [
+    "https://racing.hkjc.com/en-us/local/information/racecard?racedate=2026/11/14&Racecourse=ST&RaceNo=1",
+    "https://racing.hkjc.com/racing/content/PDF/RaceCard/20261114_starter_all.pdf",
+    "https://racing.hkjc.com/en-us/local/information/changes?racedate=2026/11/14&Racecourse=ST",
+    "https://racing.hkjc.com/en-us/local/information/ovedatabase",
+    "https://racing.hkjc.com/en-us/local/information/overecord",
+    "https://racing.hkjc.com/en-us/local/information/veterinaryrecord?racedate=2026/11/14&Racecourse=ST",
+    "https://racing.hkjc.com/en-us/local/information/racereportext?racedate=2026/11/14&Racecourse=ST",
+    "https://racing.hkjc.com/en-us/local/information/btresult",
+    "https://racing.hkjc.com/en-us/local/information/racereportfull?date=20261101",
+    "https://racing.hkjc.com/Racing/Info/MCS/English/horses/schr/20261113_000000_S_SCHR.xml.zip"
+  ],
+  "runner_counts": {
+    "declared": 153,
+    "standbys": 17,
+    "unique": 170,
+    "ovehorse_pages_fetched": 170
+  },
+  "scratchings": [
+    {
+      "race": 3,
+      "name": "HAPPY ACTION",
+      "note": "Scratched 13/11 09:30; standby QUICK MONEY (K377) promoted as #10. Brand code for HAPPY ACTION not on the current official card or 12-month OVE database."
+    }
+  ],
+  "open_ledger_horses_declared": [],
+  "circuit_century_retired": "2026-11-13",
+  "chau_discrepancy": true
+}
