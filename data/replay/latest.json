@@ -1,0 +1,16 @@
+{
+ "schema_version": 2,
+ "latest_meeting": "2026-11-14_ST",
+ "date": "2026-11-14",
+ "venue": "ST",
+ "csv": "2026-11-14_ST.csv",
+ "json": "2026-11-14_ST.json",
+ "all_csv": "all_trip_notes.csv",
+ "meetings": [
+  "2026-11-08_ST",
+  "2026-11-11_HV",
+  "2026-11-14_ST"
+ ],
+ "generated_at": "2026-11-14T20:28:22+08:00",
+ "source_fetched_at": "2026-11-14T20:28:22+08:00"
+}
