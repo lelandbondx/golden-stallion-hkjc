@@ -1,0 +1,41 @@
+{
+  "bot": "grok_bot",
+  "built_at": "2026-11-16T07:21:46.751357-05:00",
+  "schema_version": "1",
+  "meetings": [
+    {
+      "meeting_date": "2026-11-11",
+      "venue": "HV",
+      "generated_at": "2026-11-12T07:58:16-05:00",
+      "records": 37,
+      "files": [
+        "2026-11-11_HV.json",
+        "2026-11-11_HV.md"
+      ],
+      "records_missing_keys": 1,
+      "records_missing_horse_code": 0
+    },
+    {
+      "meeting_date": "2026-11-14",
+      "venue": "ST",
+      "generated_at": "2026-11-14T12:56:53-05:00",
+      "records": 55,
+      "files": [
+        "2026-11-14_ST.json",
+        "2026-11-14_ST.md"
+      ],
+      "records_missing_keys": 0,
+      "records_missing_horse_code": 0
+    }
+  ],
+  "total_rows": 92,
+  "files": [
+    "2026-11-11_HV.json",
+    "2026-11-11_HV.md",
+    "2026-11-14_ST.json",
+    "2026-11-14_ST.md",
+    "all_ev_records.csv",
+    "schema.md"
+  ],
+  "notes": "1 record (2026-11-11 HV, QUICK CONTRIBUTION) has blank race_no by design (eligibility note)."
+}
