@@ -1,0 +1,338 @@
+{
+ "schema_version": 2,
+ "changelog": {
+  "1": "initial 33 columns",
+  "2": "added generated_at (last column); meeting JSON and latest.json gain generated_at and source_fetched_at"
+ },
+ "name": "hkjc_trip_notes",
+ "description": "One row per reviewer trip note for an HKJC meeting, enriched with official HKJC results, stewards' report and sectional data. Blank (CSV) / null (JSON) always means unknown or not applicable, never zero or false.",
+ "files": {
+  "YYYY-MM-DD_VENUE.csv": "one meeting, columns in the order below",
+  "YYYY-MM-DD_VENUE.json": "{schema_version, meeting:{date,venue,venue_name,course,going,races_reviewed,limitations,sources}, rows:[...]} with typed values (booleans, numbers, flags as array, null = unknown)",
+  "all_trip_notes.csv": "all meetings concatenated, deduplicated on date+venue+race+horse",
+  "latest.json": "pointer to the most recent meeting files",
+  "raw/": "raw HKJC DisplaySectionalTime HTML + fetch_log.tsv"
+ },
+ "meeting_block": {
+  "date": "YYYY-MM-DD",
+  "venue": "ST/HV",
+  "venue_name": "Sha Tin/Happy Valley",
+  "generated_at": "build time, ISO 8601 +08:00",
+  "source_fetched_at": "latest successful (HTTP 200) fetch time of this meeting's DisplaySectionalTime pages, ISO 8601 +08:00, from raw/fetch_log.tsv; null if none",
+  "source_fetched_at_by_race": "{R01: ISO 8601 +08:00, ...} per sectional page",
+  "course": "list of courses used",
+  "going": "list of goings",
+  "races_reviewed": "race numbers",
+  "limitations": "list of strings (from workdir limitations.json/.txt plus automatic notes for withdrawn horses, out-of-vocabulary flags and sectional gaps)",
+  "sources": "official URLs and legacy file path"
+ },
+ "latest_json": {
+  "schema_version": "2",
+  "latest_meeting": "stem of newest meeting",
+  "date": "",
+  "venue": "",
+  "csv": "",
+  "json": "",
+  "all_csv": "all_trip_notes.csv",
+  "meetings": "all meeting stems present",
+  "generated_at": "build time of the latest meeting",
+  "source_fetched_at": "source_fetched_at of the latest meeting"
+ },
+ "primary_key": [
+  "date",
+  "venue",
+  "race",
+  "horse"
+ ],
+ "columns": [
+  {
+   "name": "schema_version",
+   "type": "integer",
+   "nullable": false,
+   "allowed": [
+    2
+   ],
+   "meaning": "Schema version of this row (2 = v1 columns + generated_at)."
+  },
+  {
+   "name": "date",
+   "type": "string",
+   "format": "YYYY-MM-DD",
+   "nullable": false,
+   "meaning": "Meeting date (Hong Kong local)."
+  },
+  {
+   "name": "venue",
+   "type": "string",
+   "nullable": false,
+   "allowed": [
+    "ST",
+    "HV"
+   ],
+   "meaning": "ST = Sha Tin, HV = Happy Valley."
+  },
+  {
+   "name": "race",
+   "type": "integer",
+   "nullable": false,
+   "meaning": "Race number on the card."
+  },
+  {
+   "name": "race_index",
+   "type": "integer",
+   "nullable": true,
+   "meaning": "HKJC season race index (e.g. 178) from LocalResults."
+  },
+  {
+   "name": "class",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Official race class string, e.g. 'Class 3', 'Group Three'."
+  },
+  {
+   "name": "distance_m",
+   "type": "integer",
+   "nullable": false,
+   "meaning": "Race distance in metres."
+  },
+  {
+   "name": "course",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Track/course from official results, normalised: 'Turf B', 'Turf C+3', 'All Weather Track'."
+  },
+  {
+   "name": "going",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Official going for that track on the day, uppercase (e.g. GOOD)."
+  },
+  {
+   "name": "horse",
+   "type": "string",
+   "nullable": false,
+   "meaning": "Official horse name exactly as in HKJC results (uppercase). Join key with horse_code."
+  },
+  {
+   "name": "horse_code",
+   "type": "string",
+   "nullable": true,
+   "meaning": "HKJC brand code, e.g. L165. Most reliable join key."
+  },
+  {
+   "name": "draw",
+   "type": "integer",
+   "nullable": true,
+   "meaning": "Barrier draw. Blank for withdrawn horses."
+  },
+  {
+   "name": "jockey",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Jockey as printed on official results (may include apprentice claim, e.g. '(-2)')."
+  },
+  {
+   "name": "finish",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Official placing as a string; keeps dead heats ('7 DH'). Blank = withdrawn/no placing."
+  },
+  {
+   "name": "win_odds",
+   "type": "number",
+   "nullable": true,
+   "meaning": "Official final win odds (decimal dividend per $1, HKJC style). Blank if withdrawn."
+  },
+  {
+   "name": "flags",
+   "type": "string (CSV) / array of strings (JSON)",
+   "nullable": true,
+   "meaning": "Trip-note flags from the reviewer, semicolon-separated legacy vocabulary. Blank = no flags.",
+   "allowed": [
+    "blocked",
+    "checked",
+    "hampered",
+    "bumped",
+    "wide_no_cover",
+    "slow_away",
+    "strong_closer",
+    "more_in_hand",
+    "faded_after_leading",
+    "soft_lead",
+    "led_throughout",
+    "keen",
+    "green",
+    "favourite_beaten",
+    "vet_blocked",
+    "stewards_flag",
+    "roarer",
+    "possible_issue",
+    "crowded"
+   ],
+   "legacy_exceptions": {
+    "wide": "Appears once in legacy 2026-11-08 data (R7 MONARCH COUNTY); kept verbatim. Means raced wide; cover status not encoded in the flag."
+   },
+   "flag_meanings": {
+    "blocked": "held up / no run",
+    "checked": "steadied or checked",
+    "hampered": "hampered by another runner",
+    "bumped": "physical contact",
+    "wide_no_cover": "raced wide without cover",
+    "slow_away": "slow/awkward start or lost ground at the start",
+    "strong_closer": "made strong late ground",
+    "more_in_hand": "won/ran with more in hand than margin",
+    "faded_after_leading": "led or raced prominently then weakened",
+    "soft_lead": "led at a soft/moderate pace",
+    "led_throughout": "led all the way",
+    "keen": "raced keenly / over-raced",
+    "green": "raced green/inexperienced",
+    "favourite_beaten": "beaten favourite",
+    "vet_blocked": "official vet issue / clearance required before racing again",
+    "stewards_flag": "notable stewards action or explanation",
+    "roarer": "noted making a respiratory noise",
+    "possible_issue": "something looked wrong, not officially confirmed",
+    "crowded": "crowded for room"
+   }
+  },
+  {
+   "name": "traffic",
+   "type": "boolean",
+   "nullable": true,
+   "allowed": [
+    true,
+    false
+   ],
+   "csv_encoding": "true/false; blank = unknown",
+   "meaning": "True if flags contain any of blocked, checked, hampered, bumped, crowded. False = none of those flagged by the review (not proof of a clean trip)."
+  },
+  {
+   "name": "wide_no_cover",
+   "type": "boolean",
+   "nullable": true,
+   "allowed": [
+    true,
+    false
+   ],
+   "csv_encoding": "true/false; blank = unknown",
+   "meaning": "True if flags contain wide_no_cover. False = not flagged. Blank = unknown (legacy 'wide' flag without cover info)."
+  },
+  {
+   "name": "slow_away",
+   "type": "boolean",
+   "nullable": true,
+   "allowed": [
+    true,
+    false
+   ],
+   "csv_encoding": "true/false; blank = unknown",
+   "meaning": "True if flags contain slow_away. False = not flagged."
+  },
+  {
+   "name": "stewards_excuse",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Verbatim official stewards' racing-incident text for this horse (RaceReportFull). Blank if the report said 'No report.' or only 'Sent for sampling post-race.' When present it is the full verbatim text, which may include the sampling sentence."
+  },
+  {
+   "name": "sampled",
+   "type": "boolean",
+   "nullable": true,
+   "allowed": [
+    true,
+    false
+   ],
+   "csv_encoding": "true/false; blank = unknown",
+   "meaning": "True if the stewards' text includes 'Sent for sampling post-race' (routine drug test). Blank if no stewards entry exists. NOTE: this column is inserted directly after stewards_excuse."
+  },
+  {
+   "name": "pace_role",
+   "type": "string",
+   "nullable": true,
+   "allowed": [
+    "led",
+    "on_pace",
+    "midfield",
+    "back"
+   ],
+   "meaning": "Derived ONLY from the first official running position (LocalResults 'Running Position', first call) and field size N (runners with positions): 1 = led; 2-3 = on_pace; 4..ceil(2N/3) = midfield; > ceil(2N/3) = back. Blank if no official positions (e.g. withdrawn)."
+  },
+  {
+   "name": "pace_note",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Official running positions string plus any pace-related review flags (led_throughout, soft_lead, faded_after_leading, keen, strong_closer). No free-text inference."
+  },
+  {
+   "name": "vet_finding",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Verbatim official sentences from the stewards' text about veterinary findings (inspection results, blood in trachea, lameness, heart rhythm, vet checks pre-race, vet withdrawals). Official text only; blank if none."
+  },
+  {
+   "name": "clearance_required",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Verbatim official sentence(s) beginning 'Before being allowed to race again...' (official veterinary examination, stalls test, barrier trial). Blank if none."
+  },
+  {
+   "name": "horse_last_400m_sec",
+   "type": "number",
+   "nullable": true,
+   "meaning": "This horse's official final sectional (last 400m) in seconds, from HKJC DisplaySectionalTime (https://racing.hkjc.com/racing/information/English/Racing/DisplaySectionalTime.aspx?RaceDate=DD/MM/YYYY&RaceNo=N, which redirects to racing.hkjc.com/en-us/local/information/displaysectionaltime). Raw HTML kept under raw/. Blank if unavailable (e.g. withdrawn)."
+  },
+  {
+   "name": "race_last_400m_sec",
+   "type": "number",
+   "nullable": true,
+   "meaning": "Race's official final sectional (leader's last 400m split) in seconds, from LocalResults 'Sectional Time' row. Cross-checked against the DisplaySectionalTime header."
+  },
+  {
+   "name": "note",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Reviewer's trip note, copied verbatim from the legacy trip_notes.csv."
+  },
+  {
+   "name": "source",
+   "type": "string",
+   "nullable": false,
+   "allowed": [
+    "replay",
+    "stewards",
+    "replay+stewards"
+   ],
+   "meaning": "Evidence behind the flags/note: replay only, stewards only, or both."
+  },
+  {
+   "name": "results_url",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Official LocalResults URL for the race."
+  },
+  {
+   "name": "stewards_url",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Official RaceReportFull URL for the meeting."
+  },
+  {
+   "name": "replay_url",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Official HKJC replay-full video URL for the race (only for rows whose source includes replay)."
+  },
+  {
+   "name": "verification",
+   "type": "string",
+   "nullable": true,
+   "meaning": "Per-row provenance and limitations (where the sectional came from, replay angle limits, replay-only rows, out-of-vocabulary flags, gaps)."
+  },
+  {
+   "name": "generated_at",
+   "type": "string",
+   "format": "ISO 8601 with +08:00 (HKT) offset",
+   "nullable": false,
+   "meaning": "Build time of the file this row was written in (same for every row of one build). Added in schema_version 2."
+  }
+ ]
+}
