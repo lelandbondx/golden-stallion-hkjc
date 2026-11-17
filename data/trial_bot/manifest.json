@@ -1,83 +1,79 @@
 {
  "schema_version": "1.0",
- "run_id": "2026-11-14_0600HKT_ST_20261114",
+ "run_id": "2026-11-18_0600HKT_HV_20261118",
  "status": "ok",
- "run_time_hkt": "2026-11-14T06:00:00+08:00",
- "retrieved_at_hkt": "2026-11-14T06:15:26+08:00",
- "retrieved_at_utc": "2026-11-13T22:15:26+00:00",
- "manifest_written_at_hkt": "2026-11-14T06:16:32+08:00",
+ "run_time_hkt": "2026-11-18T06:00:00+08:00",
+ "retrieved_at_hkt": "2026-11-18T06:20:30+08:00",
+ "retrieved_at_utc": "2026-11-17T22:20:30+00:00",
+ "manifest_written_at_hkt": "2026-11-18T06:24:01+08:00",
  "window_hkt": [
-  "2026-11-14T06:00:00+08:00",
-  "2026-11-16T06:00:00+08:00"
+  "2026-11-18T06:00:00+08:00",
+  "2026-11-20T06:00:00+08:00"
  ],
  "meetings": [
   {
-   "meeting_date": "2026-11-14",
-   "venue": "ST",
-   "races": 11,
-   "runners": 171,
-   "declared": 153,
+   "meeting_date": "2026-11-18",
+   "venue": "HV",
+   "races": 9,
+   "runners": 125,
+   "declared": 108,
    "standby": 17,
-   "withdrawn_listed": 1
+   "withdrawn_listed": 0
   }
  ],
  "meetings_checked_without_card": [
-  "HV 2026-11-14",
-  "HV 2026-11-15",
-  "ST 2026-11-15",
-  "HV 2026-11-16",
-  "ST 2026-11-16"
+  "ST 2026-11-18",
+  "HV 2026-11-19",
+  "ST 2026-11-19",
+  "HV 2026-11-20",
+  "ST 2026-11-20"
  ],
  "row_counts": {
-  "declared_trials_latest_csv": 171,
-  "declared_trials_latest_json": 171,
-  "meeting_csv": 171,
-  "meeting_json": 171,
-  "trials_history": 438,
+  "declared_trials_latest_csv": 125,
+  "declared_trials_latest_json": 125,
+  "meeting_csv": 125,
+  "meeting_json": 125,
+  "trials_history": 535,
   "trials_history_seeded_this_run": 0,
-  "trials_history_new_this_run": 0
+  "trials_history_new_this_run": 97
  },
  "coverage": {
-  "runners": 171,
-  "with_trial": 171,
+  "runners": 125,
+  "with_trial": 125,
   "missing_trial": 0,
   "trial_coverage_pct": 100.0
  },
  "completeness": {
-  "complete": 171
+  "complete": 125
  },
  "flag_counts": {
   "speed_outlier_fast": {
-   "false": 158,
-   "true": 11,
-   "unknown": 2
+   "false": 107,
+   "unknown": 4,
+   "true": 14
   },
   "speed_outlier_slow": {
-   "false": 166,
-   "true": 3,
-   "unknown": 2
+   "false": 117,
+   "true": 4,
+   "unknown": 4
   },
   "quality_opposition": {
-   "false": 80,
-   "true": 59,
-   "unknown": 32
+   "true": 38,
+   "false": 61,
+   "unknown": 26
   },
   "poor_finish": {
-   "true": 61,
-   "false": 109,
-   "unknown": 1
+   "true": 42,
+   "false": 83
   },
   "stale_trial": {
-   "false": 168,
+   "false": 122,
    "true": 3
   }
  },
  "source_failures": {
   "http_failures": [],
-  "horse_pages_unavailable": [
-   "K376",
-   "M117"
-  ],
+  "horse_pages_unavailable": [],
   "note": "horse_pages_unavailable: HTTP 200 but stub page without rating; opponents treated as rating unavailable"
  },
  "validation": {
@@ -87,11 +83,11 @@
   "csv_json_counts_match": true
  },
  "sha256": {
-  "declared_trials_latest.csv": "6886f2b982ebaca879dd55197848d29c07fbdeb3d3ad99b5d93820d78ed818d3",
-  "declared_trials_latest.json": "09ad76eed8542fa53ce87b4c25382fda5a47d7ee8cebdc8d5ac665da01b3f932",
-  "meeting_2026-11-14_ST.csv": "6886f2b982ebaca879dd55197848d29c07fbdeb3d3ad99b5d93820d78ed818d3",
-  "meeting_2026-11-14_ST.json": "ada9c974c3fdba3b3e3e5ec2a9f7fccec372c6d9a70127afe478cc8bc96268f0",
+  "declared_trials_latest.csv": "469968a3e67838df3fa010b7df127da7bf4f223d20452e47e85b5998e1a53245",
+  "declared_trials_latest.json": "c1b4fe1ce143e3188a7fe6a96bbd106853246f52bed724afd4c2ff3d66cb5412",
+  "meeting_2026-11-18_HV.csv": "469968a3e67838df3fa010b7df127da7bf4f223d20452e47e85b5998e1a53245",
+  "meeting_2026-11-18_HV.json": "ae51ea87e875113e42be04ef204064bc5b79926745e5bb1483442ec270fdd1ff",
   "schema.md": "6ac00f3856e3407d7a880aae595d79958a25127261c366a44790506f2e1aa01f",
-  "trials_history.csv": "28547c818102a2c364b375e0b0542b381b393c2bccc62844bba53728d6fcda54"
+  "trials_history.csv": "83b30e0d5e135fb00a20342e1081ae31a4d66c38643b0a279bb8cbafda790ef1"
  }
 }
