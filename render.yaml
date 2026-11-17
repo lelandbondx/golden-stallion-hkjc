@@ -13,3 +13,5 @@ services:
         value: "false"
       - key: STREAMLIT_CLIENT_SHOW_ERROR_DETAILS
         value: "false"
+      - key: SILKS_BOT_FEEDS
+        value: "off"

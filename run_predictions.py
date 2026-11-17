@@ -60,6 +60,19 @@ def run():
     for bot_name, bot_info in feeds_telem.get("standing_bots", {}).items():
         print(f"  [{bot_name.upper()}] File: {bot_info.get('file_used')} | Timestamp: {bot_info.get('timestamp_hkt')} | Records: {bot_info.get('record_count')}")
 
+    all_meeting_runners = [
+        {**rn, "race_no": rc.get("race_no")}
+        for rc in (meeting.get("races") or [])
+        for rn in (rc.get("runners") or [])
+    ]
+    try:
+        from bot_feeds_import import merge_bot_features, get_bot_feeds_mode
+        trial_features = merge_bot_features(trial_features, meeting, all_meeting_runners)
+        if get_bot_feeds_mode() != "off":
+            print(f"[Bot Feeds] Mode={get_bot_feeds_mode()} merged for {target_meeting_label}")
+    except Exception as e:
+        print("Warning in merge_bot_features:", e)
+
     # Load precomputed running styles, winning gears, comments, and sectional bursts
     running_styles = {}
     winning_gears = {}
@@ -229,6 +242,11 @@ def run():
         if not trial_features:
             from data.automated_feeds import load_trial_bot_feed
             trial_features, _ = load_trial_bot_feed()
+            try:
+                from bot_feeds_import import merge_bot_features
+                trial_features = merge_bot_features(trial_features, meeting, all_meeting_runners)
+            except Exception:
+                pass
                 
         # Determine if runner has strong trials or multiple top-2 recent trials
         has_strong_trial = []
@@ -293,6 +311,12 @@ def run():
         df_runners['had_excuse'] = df_runners.apply(
             lambda r: check_stewards_excuse(r.get('last_comment', '')) and not check_health_risk(r.get('last_comment', ''), r.get('prev_run_vet_finding', 0), r.get('latest_vet_note', '')), axis=1
         )
+        race_horse_memory = None
+        try:
+            from bot_feeds_import import apply_live_bot_runner_overlays
+            df_runners, race_horse_memory = apply_live_bot_runner_overlays(df_runners, trial_features, None)
+        except Exception as e:
+            print("Warning in apply_live_bot_runner_overlays:", e)
         # False Favorite Penalty: -3.0% only if odds < 5.0 / implied > 20%, recent_pos > 6.0, no class drop, and run is not excused
         false_fav_penalty = np.where(
             ((df_runners['implied_prob'] > 0.20) | ((df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 5.0))) & 
@@ -620,6 +644,7 @@ def run():
             distance=distance,
             class_int=class_int,
             has_strong_trial=has_strong_trial,
+            horse_memory=race_horse_memory,
         )
         polytrack_awt_boost = th_cal["awt_specialist_boost"]
         telemetry_harmony_multiplier = th_cal["telemetry_harmony_multiplier"]

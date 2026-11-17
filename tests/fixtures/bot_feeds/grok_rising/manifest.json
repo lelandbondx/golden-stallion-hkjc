@@ -1,0 +1,133 @@
+{
+ "schema_version": "1.0",
+ "producer": "grok_rising",
+ "status": "ok",
+ "branch": "trial-data",
+ "run_time_hkt": "2026-11-16T14:16:10+08:00",
+ "run_time_utc": "2026-11-16T06:16:10+00:00",
+ "manifest_written_at_hkt": "2026-11-16T14:17:41+08:00",
+ "manifest_written_at_utc": "2026-11-16T06:17:41+00:00",
+ "data_commits": [
+  "dbb1aba50c854f699cfed0c230b4b4bdbf8d4499",
+  "cfbcd243cca503ff079a173268da3fd47f28697e"
+ ],
+ "meetings": [
+  {
+   "meeting_date": "2026-11-11",
+   "venue": "HV",
+   "rows": 37,
+   "source_record_count": 37,
+   "flag_type_counts": {
+    "medical": 5,
+    "regulatory": 2,
+    "gear": 1,
+    "trip_excuse": 28,
+    "trial": 1
+   },
+   "direction_counts": {
+    "caution": 12,
+    "neutral": 6,
+    "upgrade_candidate": 19
+   },
+   "priority_counts": {
+    "high": 8,
+    "normal": 29
+   },
+   "clearance_required_true": 5,
+   "verified_true": 32,
+   "verified_false": 5
+  },
+  {
+   "meeting_date": "2026-11-14",
+   "venue": "ST",
+   "rows": 55,
+   "source_record_count": 55,
+   "flag_type_counts": {
+    "medical": 9,
+    "regulatory": 6,
+    "gear": 2,
+    "trip_excuse": 38
+   },
+   "direction_counts": {
+    "caution": 20,
+    "neutral": 13,
+    "upgrade_candidate": 22
+   },
+   "priority_counts": {
+    "high": 19,
+    "normal": 36
+   },
+   "clearance_required_true": 12,
+   "verified_true": 52,
+   "verified_false": 3
+  }
+ ],
+ "row_counts": {
+  "2026-11-11_HV.csv": 37,
+  "2026-11-11_HV.json": 37,
+  "2026-11-14_ST.csv": 55,
+  "2026-11-14_ST.json": 55
+ },
+ "completeness": {
+  "2026-11-11_HV": {
+   "rows": 37,
+   "rows_with_horse_code": 37,
+   "rows_with_race_no": 36,
+   "rows_with_source_url": 7,
+   "missing_horse_code": [],
+   "missing_race_no": [
+    {
+     "horse_name": "QUICK CONTRIBUTION",
+     "horse_code": "K112",
+     "flag_type": "trial"
+    }
+   ],
+   "row_count_matches_source": true
+  },
+  "2026-11-14_ST": {
+   "rows": 55,
+   "rows_with_horse_code": 55,
+   "rows_with_race_no": 55,
+   "rows_with_source_url": 52,
+   "missing_horse_code": [],
+   "missing_race_no": [],
+   "row_count_matches_source": true
+  }
+ },
+ "validation": {
+  "checks_failed": [],
+  "csv_json_counts_match": true,
+  "md_exact_copies": true,
+  "no_probability_ranking_or_stake_fields": true
+ },
+ "source_paths": {
+  "2026-11-11_HV": {
+   "json": "/workspace/silks_ev_summaries/2026-11-11_HV.json",
+   "md": "/workspace/silks_ev_summaries/2026-11-11_HV.md",
+   "source_record_count": 37
+  },
+  "2026-11-14_ST": {
+   "json": "/workspace/silks_ev_summaries/2026-11-14_ST.json",
+   "md": "/workspace/silks_ev_summaries/2026-11-14_ST.md",
+   "source_record_count": 55
+  }
+ },
+ "files": [
+  "data/grok_rising/2026-11-11_HV.csv",
+  "data/grok_rising/2026-11-11_HV.json",
+  "data/grok_rising/2026-11-11_HV.md",
+  "data/grok_rising/2026-11-14_ST.csv",
+  "data/grok_rising/2026-11-14_ST.json",
+  "data/grok_rising/2026-11-14_ST.md",
+  "data/grok_rising/schema.md"
+ ],
+ "sha256": {
+  "2026-11-11_HV.csv": "c433fbb37a2e0395ec28712968dbd28533026e32f857f3c3aaeca92ed0074e6b",
+  "2026-11-11_HV.json": "3e9e7e000af8e71edc62ea8957cdc887d27f1db955601848dcdca9a8b40f4e02",
+  "2026-11-11_HV.md": "603bb7a8f5c5a4e35ddf514910524654fe7fd3e7b01bdab14c017b0bcbe86de7",
+  "2026-11-14_ST.csv": "6a7d5d7b01dbb76ef393a2e405c90537f6b4f0936fd8c3fcf466f35a19d610a7",
+  "2026-11-14_ST.json": "8b6f045d871c23a65c6b2aecd7973a9d97db0ea1a84141f52701d471665aad7a",
+  "2026-11-14_ST.md": "692aa5ec0cad0958348d1bb7a643fa22796d2386278a0b25d37ac016242038c4",
+  "schema.md": "67a7658aba62d4d621d437892cbecdab42932fb25515f39c1a43f09bcd3ec0ec"
+ }
+}

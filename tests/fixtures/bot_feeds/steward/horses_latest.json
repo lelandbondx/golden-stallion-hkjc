@@ -1,0 +1,1849 @@
+{
+ "HK_2025_L009": {
+  "horse_id": "HK_2025_L009",
+  "horse_code": "L009",
+  "horse_name": "CELESTIAL STRIDER",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "79efde6a790123abde06c790db8b470f13380d83",
+   "record_type": "flag",
+   "category": "other",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Noted to have blood in the mouth after the race.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L009 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L009"
+ },
+ "HK_2023_J308": {
+  "horse_id": "HK_2023_J308",
+  "horse_code": "J308",
+  "horse_name": "SOLAR RIVER",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "e79adca97880c84383bfe8bb081fea39320fcda7",
+   "record_type": "flag",
+   "category": "injury",
+   "event_date": "2025-10-09",
+   "meeting_id": null,
+   "finding_verbatim": "Left hind splint bone injury.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J308"
+  },
+  "passed_on": "2026-02-24",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J308 (3 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J308"
+ },
+ "HK_2022_H455": {
+  "horse_id": "HK_2022_H455",
+  "horse_code": "H455",
+  "horse_name": "MONTA FRUTTA",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "81a333dc66db601b8d3d09f589f13e71c93bce07",
+   "record_type": "flag",
+   "category": "cardiac",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "0d13c60bd73047078b4386c4f9beec49af81f5e2",
+    "meeting_id": "HV-20261104",
+    "event_date": "2026-11-04",
+    "requirement": "compulsory retirement",
+    "remaining": [
+     "compulsory retirement"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2022_H455 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H455"
+ },
+ "HK_2024_K073": {
+  "horse_id": "HK_2024_K073",
+  "horse_code": "K073",
+  "horse_name": "LUCKY BLESSING",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "096770041179a2583705a65a4d70dcff8290f523",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Before being allowed to race again, LUCKY BLESSING will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": "2025-12-29",
+  "open_requirements": [
+   {
+    "record_id": "096770041179a2583705a65a4d70dcff8290f523",
+    "meeting_id": "HV-20261104",
+    "event_date": "2026-11-04",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K073 (4 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K073"
+ },
+ "HK_2023_J332": {
+  "horse_id": "HK_2023_J332",
+  "horse_code": "J332",
+  "horse_name": "TELECOM POWER",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "18396e51ca3cd78cc9d764217e10e668783aa75f",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "7e8540edfc62121986deade1cf7ed2607675f918",
+    "meeting_id": "HV-20261104",
+    "event_date": "2026-11-04",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J332 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J332"
+ },
+ "HK_2024_K112": {
+  "horse_id": "HK_2024_K112",
+  "horse_code": "K112",
+  "horse_name": "QUICK CONTRIBUTION",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "7fbb82a668934a35c3f6dade07508a67a05274b1",
+   "record_type": "requirement_met",
+   "category": "administrative",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Barrier trial 2026-11-10 (Batch 6, Sha Tin All Weather Track, 1050m): Result Passed. Comment: Urged to lead along the rail; not fully tested.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Horse/BTResult.aspx?Date=2026/11/10"
+  },
+  "passed_on": "2026-11-10",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K112 (5 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K112"
+ },
+ "HK_2025_L205": {
+  "horse_id": "HK_2025_L205",
+  "horse_code": "L205",
+  "horse_name": "UNSTOPPAPLE",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "cf73adda27728136dfe7e06b0cbac689ae62c493",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "After the race an endoscopic examination was conducted on UNSTOPPAPLE at the request of Trainer C S Shum. The Veterinary Surgeon said this examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": "2026-10-28",
+  "open_requirements": [
+   {
+    "record_id": "3da9d4bd1d4b5c9371c046a391ef302a36c3647d",
+    "meeting_id": "HV-20261104",
+    "event_date": "2026-11-04",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L205 (4 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L205"
+ },
+ "HK_2025_L330": {
+  "horse_id": "HK_2025_L330",
+  "horse_code": "L330",
+  "horse_name": "SYNERGY IN ACTION",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "c5357444d32384d0ad99ef8bf98106e89b1c0fe0",
+   "record_type": "flag",
+   "category": "other",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "A veterinary inspection immediately following the race found that horse to have blood in the mouth.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L330 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L330"
+ },
+ "HK_2024_K202": {
+  "horse_id": "HK_2024_K202",
+  "horse_code": "K202",
+  "horse_name": "FRIENDS OF SHAJING",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "6d219e8098cdedb69b0c766050bb5c9f399743c9",
+   "record_type": "requirement_met",
+   "category": "administrative",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Before being allowed to race again, FRIENDS OF SHAJING will be subjected to an official veterinary examination.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K202"
+  },
+  "passed_on": "2026-11-13",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K202 (5 rows)",
+  "last_checked": "2026-11-13T23:06:40-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K202"
+ },
+ "HK_2025_L142": {
+  "horse_id": "HK_2025_L142",
+  "horse_code": "L142",
+  "horse_name": "LIVE WIRE",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "2159e85dcb5c467ac281d2bcbb9efdb60fb18e6f",
+   "record_type": "flag",
+   "category": "cardiac",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "be5e77d24a61a83395a7dbffa4f18fe90d41a458",
+    "meeting_id": "HV-20261104",
+    "event_date": "2026-11-04",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L142 (3 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L142"
+ },
+ "HK_2025_L193": {
+  "horse_id": "HK_2025_L193",
+  "horse_code": "L193",
+  "horse_name": "ALL OUT FOR SIX",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "f1dcf401e792a2fed06e8d14d7af6d25cbad9a22",
+   "record_type": "flag",
+   "category": "bleeding_nostrils",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "A veterinary inspection immediately following the race found that horse to have bled from both nostrils.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": "2026-02-09",
+  "open_requirements": [
+   {
+    "record_id": "6e61ed2d1b4b10d16c6b5a18f81be92a0c208a3d",
+    "meeting_id": "HV-20261104",
+    "event_date": "2026-11-04",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L193 (4 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L193"
+ },
+ "HK_2023_J294": {
+  "horse_id": "HK_2023_J294",
+  "horse_code": "J294",
+  "horse_name": "TURF PHOENIX",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "d5e184d70efcd09a873acf22512b3701bc17dd06",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "The Veterinary Surgeon reported that TURF PHOENIX was lame in its right front leg after the race.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "60589af648419a629f417772ed89ef967532ad3a",
+    "meeting_id": "ST-20261108",
+    "event_date": "2026-11-08",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J294 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J294"
+ },
+ "HK_2025_L305": {
+  "horse_id": "HK_2025_L305",
+  "horse_code": "L305",
+  "horse_name": "KANSAS",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "251314bb6e933308886409fd3acd00867f37b42c",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "8829603a7588ff4b5b7b5866e37eb40d4246210c",
+    "meeting_id": "ST-20261108",
+    "event_date": "2026-11-08",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L305 (4 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L305"
+ },
+ "HK_2025_L265": {
+  "horse_id": "HK_2025_L265",
+  "horse_code": "L265",
+  "horse_name": "APEX GLORY",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "d4402decea8bbb8e9887fae2457d12f21b743e97",
+   "record_type": "flag",
+   "category": "racing_manners",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "A warning was placed on the barrier manners of APEX GLORY.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "62ff14607e495096760477d5dc401b38a80726df",
+    "meeting_id": "ST-20261108",
+    "event_date": "2026-11-08",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L265 (3 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L265"
+ },
+ "HK_2025_L220": {
+  "horse_id": "HK_2025_L220",
+  "horse_code": "L220",
+  "horse_name": "LADY'S LOVE",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "c87d0df348e1c3e2d36095f5a80b17f99530aa2a",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "Before being allowed to race again, LADY\u2019S LOVE will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "c87d0df348e1c3e2d36095f5a80b17f99530aa2a",
+    "meeting_id": "ST-20261108",
+    "event_date": "2026-11-08",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L220 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L220"
+ },
+ "HK_2024_K238": {
+  "horse_id": "HK_2024_K238",
+  "horse_code": "K238",
+  "horse_name": "PERFECTDAY",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "7d336be3b5ec28cc2ac4b96d54abf62d1781c7d0",
+   "record_type": "flag",
+   "category": "cardiac",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "5f8d4b102bb5c0be1b9f299d1c8a7822dd8d9db0",
+    "meeting_id": "ST-20261108",
+    "event_date": "2026-11-08",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K238 (3 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K238"
+ },
+ "HK_2024_K032": {
+  "horse_id": "HK_2024_K032",
+  "horse_code": "K032",
+  "horse_name": "SKY JEWELLERY",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "c66496d06732d6bde6032f32d46b5c0eeaa1c540",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "Before being allowed to race again, SKY JEWELLERY will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": "2026-04-10",
+  "open_requirements": [
+   {
+    "record_id": "c66496d06732d6bde6032f32d46b5c0eeaa1c540",
+    "meeting_id": "ST-20261108",
+    "event_date": "2026-11-08",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K032 (4 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K032"
+ },
+ "HK_2025_L016": {
+  "horse_id": "HK_2025_L016",
+  "horse_code": "L016",
+  "horse_name": "MAJESTIC VALOUR",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "71ae3ba9b2f173bc2c83be82d8ad4de790942299",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "After the race an endoscopic examination was conducted on MAJESTIC VALOUR at the request of Trainer C S Shum. The Veterinary Surgeon said this examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "730a3cf695a94900b911bd0c0da5e5792d2420b6",
+    "meeting_id": "ST-20261108",
+    "event_date": "2026-11-08",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L016 (3 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L016"
+ },
+ "HK_2024_K308": {
+  "horse_id": "HK_2024_K308",
+  "horse_code": "K308",
+  "horse_name": "CIRCUIT CENTURY",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "eb7b9b51df06deba0acb10d0e627253956561b37",
+   "record_type": "flag",
+   "category": "administrative",
+   "event_date": "2026-11-13",
+   "meeting_id": null,
+   "finding_verbatim": "The following retirements are notified:- CIRCUIT CENTURY K308 C S Shum Retirement Date 13/11/2026",
+   "source_url": "https://racing.hkjc.com/Racing/Info/MCS/English/horses/schr/20261113_000000_S_SCHR.xml.zip"
+  },
+  "passed_on": "2026-11-03",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K308 (6 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K308"
+ },
+ "HK_2025_L339": {
+  "horse_id": "HK_2025_L339",
+  "horse_code": "L339",
+  "horse_name": "CALL ME MAGNIFIQUE",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "81dc560c7d6759dfe6ea39f3292ca68c7930593b",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-11",
+   "meeting_id": "HV-20261111",
+   "finding_verbatim": "Before being allowed to race again, CALL ME MAGNIFIQUE will be subjected to an official veterinary examination.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "81dc560c7d6759dfe6ea39f3292ca68c7930593b",
+    "meeting_id": "HV-20261111",
+    "event_date": "2026-11-11",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L339 (1 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L339"
+ },
+ "HK_2025_L238": {
+  "horse_id": "HK_2025_L238",
+  "horse_code": "L238",
+  "horse_name": "HYMNBOOK",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "bea96f32677f32b83beb3f9e3d60a1c55cac94a3",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-11-11",
+   "meeting_id": "HV-20261111",
+   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "97bac30502236129a2a744d2af834394c9455fbb",
+    "meeting_id": "HV-20261111",
+    "event_date": "2026-11-11",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L238 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L238"
+ },
+ "HK_2023_J050": {
+  "horse_id": "HK_2023_J050",
+  "horse_code": "J050",
+  "horse_name": "AWESOME FLUKE",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "914e3b0344b7719e6c006d4875caa8d9ea393fdd",
+   "record_type": "flag",
+   "category": "stalls_test",
+   "event_date": "2026-11-11",
+   "meeting_id": "HV-20261111",
+   "finding_verbatim": "Lowered its head as the start was being effected and as a result was slow to begin.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+  },
+  "passed_on": "2026-07-02",
+  "open_requirements": [
+   {
+    "record_id": "74d676dc67c46b7c139ebe07e4bab8d4b4723a42",
+    "meeting_id": "HV-20261111",
+    "event_date": "2026-11-11",
+    "requirement": "stalls test",
+    "remaining": [
+     "stalls test"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J050 (5 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J050"
+ },
+ "HK_2025_L104": {
+  "horse_id": "HK_2025_L104",
+  "horse_code": "L104",
+  "horse_name": "SPEEDY PATCH",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "64359bfa215f2780b2d50269c87a203b4eb3d738",
+   "record_type": "flag",
+   "category": "injury",
+   "event_date": "2026-11-11",
+   "meeting_id": "HV-20261111",
+   "finding_verbatim": "Was a late withdrawal acting on veterinary advice after sustaining wounds to both hind legs whilst being fractious when being loaded to be transported to Happy Valley.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+  },
+  "passed_on": "2026-09-30",
+  "open_requirements": [
+   {
+    "record_id": "e9729b55fb86dae59298f2b73e257ee741542a4b",
+    "meeting_id": "HV-20261111",
+    "event_date": "2026-11-11",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L104 (4 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L104"
+ },
+ "HK_2025_L028": {
+  "horse_id": "HK_2025_L028",
+  "horse_code": "L028",
+  "horse_name": "HELENE SUPAFEELING",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "ad4c3b5048cc96e70d4edea64186b081f021e44d",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-11-05",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "Withdrawn on 5.11.26 by order of the Stewards acting on veterinary advice (lame left fore) and replaced by Standby Declared Starter THAT'S GOLD.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "bab26b1b51340176caa009741dd990b4c85491ca",
+    "meeting_id": "ST-20261108",
+    "event_date": "2026-11-05",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L028 (3 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L028"
+ },
+ "HK_2025_L177": {
+  "horse_id": "HK_2025_L177",
+  "horse_code": "L177",
+  "horse_name": "PRIVATE WEALTH",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "7032e188804b0a181d45fa57e515b599d48e6b68",
+   "record_type": "flag",
+   "category": "racing_manners",
+   "event_date": "2026-11-11",
+   "meeting_id": "HV-20261111",
+   "finding_verbatim": "PRIVATE WEALTH re racing manners",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L177 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L177"
+ },
+ "HK_2022_H380": {
+  "horse_id": "HK_2022_H380",
+  "horse_code": "H380",
+  "horse_name": "SPEED DRAGON",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "d2853eeb46e655a488770b90a7c55df6250cdf77",
+   "record_type": "suspension",
+   "category": "riding_offence",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "C L Chau was suspended from riding in races for a period to commence on Sunday, 29 November 2026 and to expire on Thursday, 3 December 2026 on which day he may resume race riding (2 Hong Kong racedays). In addition, Jockey Chau was fined $60,000.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2022_H380 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H380"
+ },
+ "HK_2024_K234": {
+  "horse_id": "HK_2024_K234",
+  "horse_code": "K234",
+  "horse_name": "AKASHVANI",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "b86c84f5211aad124c61dce3f1181cc80e085da3",
+   "record_type": "suspension",
+   "category": "riding_offence",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "B Avdulla was suspended from riding in races for one Hong Kong raceday to be conducted on Wednesday, 18 November 2026 at Happy Valley.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K234 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K234"
+ },
+ "HK_2023_J071": {
+  "horse_id": "HK_2023_J071",
+  "horse_code": "J071",
+  "horse_name": "SUPER SIXTY",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "6af189fe8cde831e933a2f033246aea9882ca8c4",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Whip Rule Offences \u2013 1 November 2026 Happy Valley Racemeeting: Apprentice H Y Yuen (SUPER SIXTY) \u2013 2 consecutive strides near the 200 Metres (5th offence last 200 rides) \u2013 A fine of $8,000",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J071 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J071"
+ },
+ "HK_2023_J444": {
+  "horse_id": "HK_2023_J444",
+  "horse_code": "J444",
+  "horse_name": "DO YOUR PART",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "8c12010c7f15a7cbebe4d45abbb2a205ac525457",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "C L Chau (DO YOUR PART) was warned in relation to using his whip in a manner where the hand holding the whip was above shoulder height on three occasions inside the 100 Metres.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J444 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J444"
+ },
+ "HK_2025_L165": {
+  "horse_id": "HK_2025_L165",
+  "horse_code": "L165",
+  "horse_name": "LOVELY MILES",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "07748ca67b08d45498344f21ed040e7884e1aba2",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Apprentice H Y Yuen (LOVELY MILES) re her riding in the early stages",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L165 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L165"
+ },
+ "HK_2021_G307": {
+  "horse_id": "HK_2021_G307",
+  "horse_code": "G307",
+  "horse_name": "PRINCE ALEX",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "d4316adaf63c7c0171a272cf65d6eff33e9a8faa",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "L Hewitson (PRINCE ALEX): $2,000 for initially presenting himself to be weighed out with the incorrect saddle cloth number",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2021_G307 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G307"
+ },
+ "HK_2025_L338": {
+  "horse_id": "HK_2025_L338",
+  "horse_code": "L338",
+  "horse_name": "IT IS YOU",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "0a358df5900b70a45a91f8ebb8840abbe6e1c051",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "C L Chau (IT IS YOU): $5,000 for being unable to make the weight",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L338 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L338"
+ },
+ "HK_2024_K228": {
+  "horse_id": "HK_2024_K228",
+  "horse_code": "K228",
+  "horse_name": "FLYING TING LOK",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "71dabe80bfe5b092408270fe216329b3f396d990",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Severe reprimand: A Atzeni (FLYING TING LOK) for shifting in approaching the winning post",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K228 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K228"
+ },
+ "HK_2024_K334": {
+  "horse_id": "HK_2024_K334",
+  "horse_code": "K334",
+  "horse_name": "LUNAR DASH",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "9b56373056b517ccec327e8bf1cc5a62628c454d",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Severe reprimand: K Teetan (LUNAR DASH) for shifting in near the 550 Metres",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K334 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K334"
+ },
+ "HK_2024_K356": {
+  "horse_id": "HK_2024_K356",
+  "horse_code": "K356",
+  "horse_name": "LOCH TAY",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "8bca95d4489ddb7fa0f2f98de2af220576ad0d72",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Reprimand: R Kingscote (LOCH TAY) for shifting in near the 50 Metres",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K356 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K356"
+ },
+ "HK_2024_K107": {
+  "horse_id": "HK_2024_K107",
+  "horse_code": "K107",
+  "horse_name": "TARGET AUDIENCE",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "4ca31366c06e8a06ca204eabd5edbbf68834952a",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-04",
+   "meeting_id": "HV-20261104",
+   "finding_verbatim": "Reprimand: A Badel (TARGET AUDIENCE) for shifting in over the concluding stages",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K107 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K107"
+ },
+ "HK_2023_J396": {
+  "horse_id": "HK_2023_J396",
+  "horse_code": "J396",
+  "horse_name": "THRIVING BROTHERS",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "e5c93ae9dcadb5af63d6ad040274ea88e812b840",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-08",
+   "meeting_id": "ST-20261108",
+   "finding_verbatim": "Severe reprimand: H Bentley (THRIVING BROTHERS) for shifting in near the 1200 Metres; Reprimand: for shifting in near the 1100 Metres",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J396 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J396"
+ },
+ "HK_2021_G125": {
+  "horse_id": "HK_2021_G125",
+  "horse_code": "G125",
+  "horse_name": "SURE JOYFUL",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "42eac87f4fdc9c9d88c631fbb1168214a9dd5066",
+   "record_type": "integrity",
+   "category": "riding_offence",
+   "event_date": "2026-11-11",
+   "meeting_id": "HV-20261111",
+   "finding_verbatim": "Reprimand: Apprentice H Y Yuen (SURE JOYFUL) for shifting in approaching the 1400 Metres",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2021_G125 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G125"
+ },
+ "HK_2024_K216": {
+  "horse_id": "HK_2024_K216",
+  "horse_code": "K216",
+  "horse_name": "WINNING DIAMOND",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "63d2ea6add19cccb0ee6f65c41c191769d8df7d7",
+   "record_type": "flag",
+   "category": "airway",
+   "event_date": "2025-07-16",
+   "meeting_id": null,
+   "finding_verbatim": "Substantial mucus in trachea noted on post-race scoping.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K216"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K216 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K216"
+ },
+ "HK_2024_K114": {
+  "horse_id": "HK_2024_K114",
+  "horse_code": "K114",
+  "horse_name": "LUCKY SAM GOR",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "0a3e98f2d5d3628c3b1c422592006fd798b11cf3",
+   "record_type": "suspension",
+   "category": "riding_offence",
+   "event_date": "2026-10-28",
+   "meeting_id": "ST-20261028",
+   "finding_verbatim": "C L Chau was suspended from riding in races for a period to commence on Saturday, 14 November 2026 and to expire on Thursday, 19 November 2026 on which day he may resume race riding (2 Hong Kong racedays). In addition, Jockey Chau was fined $60,000.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/racereportfull?date=20261101"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K114 (2 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K114"
+ },
+ "HK_2024_K332": {
+  "horse_id": "HK_2024_K332",
+  "horse_code": "K332",
+  "horse_name": "JUST FOLLOW ME",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "14e698714dc3aa565e403b746ce66b5f60850b64",
+   "record_type": "flag",
+   "category": "airway",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "A veterinary inspection immediately following the race found that horse to be a \"roarer\" which had previously been reported.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": "2026-08-25",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K332 (5 rows)",
+  "last_checked": "2026-11-14T07:45:17-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K332"
+ },
+ "HK_2025_L235": {
+  "horse_id": "HK_2025_L235",
+  "horse_code": "L235",
+  "horse_name": "JOY STAR",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "d86b5c4203bd43b2e5d0c6fb891228afcdf6e263",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-06-24",
+   "meeting_id": null,
+   "finding_verbatim": "Substantial blood in trachea noted on post-race scoping.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L235"
+  },
+  "passed_on": "2026-09-22",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L235 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L235"
+ },
+ "HK_2025_L005": {
+  "horse_id": "HK_2025_L005",
+  "horse_code": "L005",
+  "horse_name": "MADE FOR LIFE",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "d858fe2871337f43546c8b9a1265660009f36051",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-10-14",
+   "meeting_id": null,
+   "finding_verbatim": "Substantial blood in trachea noted on post-race scoping.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L005"
+  },
+  "passed_on": "2026-10-30",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L005 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L005"
+ },
+ "HK_2023_J535": {
+  "horse_id": "HK_2023_J535",
+  "horse_code": "J535",
+  "horse_name": "HE WAS ME",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "a3c2e7e3fe3cdf577645a8057a6f1339ff4fd0db",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-10-03",
+   "meeting_id": null,
+   "finding_verbatim": "Lame right fore. Withdrawn from racing.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J535"
+  },
+  "passed_on": "2026-10-14",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J535 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J535"
+ },
+ "HK_2024_K524": {
+  "horse_id": "HK_2024_K524",
+  "horse_code": "K524",
+  "horse_name": "GLORIOUS ST PAUL'S",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "c00d64f6c1d125ab8431f64d0f33bec687fe2917",
+   "record_type": "flag",
+   "category": "bleeding_nostrils",
+   "event_date": "2026-06-07",
+   "meeting_id": null,
+   "finding_verbatim": "Bled from both nostrils after racing.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K524"
+  },
+  "passed_on": "2026-09-07",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K524 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K524"
+ },
+ "HK_2024_K230": {
+  "horse_id": "HK_2024_K230",
+  "horse_code": "K230",
+  "horse_name": "SPEEDY TRIDENT",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "ed1770b1d7e2fe1c40a7c9102b73ad4914a41ad1",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "Finished tailed out. Whilst the Stewards accepted the unfavourable condition of the racing surface may have contributed to the performance, they determined that SPEEDY TRIDENT will be required to perform satisfactorily in a barrier trial before being allowed to race again.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "ed1770b1d7e2fe1c40a7c9102b73ad4914a41ad1",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial",
+    "remaining": [
+     "barrier trial"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K230 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K230"
+ },
+ "HK_2021_G095": {
+  "horse_id": "HK_2021_G095",
+  "horse_code": "G095",
+  "horse_name": "SETANTA",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "9d5e112119ddb5009fecab83e1e2d77a943e50a9",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "Finished tailed out. Whilst the Stewards accepted the unfavourable condition of the racing surface may have contributed to the performance, they determined that SETANTA will be required to perform satisfactorily in a barrier trial before being allowed to race again.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "9d5e112119ddb5009fecab83e1e2d77a943e50a9",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial",
+    "remaining": [
+     "barrier trial"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2021_G095 (5 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G095"
+ },
+ "HK_2024_K323": {
+  "horse_id": "HK_2024_K323",
+  "horse_code": "K323",
+  "horse_name": "SUPERB GUY",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "057aa93b5c3a42634a48c232764a36a7451471b3",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "Finished tailed out. Whilst the Stewards accepted the unfavourable condition of the racing surface may have contributed to the performance, they determined that SUPERB GUY will be required to perform satisfactorily in a barrier trial before being allowed to race again.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "057aa93b5c3a42634a48c232764a36a7451471b3",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial",
+    "remaining": [
+     "barrier trial"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K323 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K323"
+ },
+ "HK_2024_K415": {
+  "horse_id": "HK_2024_K415",
+  "horse_code": "K415",
+  "horse_name": "VIVA TASTE",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "889cf52f9aef11d0fe6409a35c41d94f18bf8629",
+   "record_type": "flag",
+   "category": "airway",
+   "event_date": "2026-07-03",
+   "meeting_id": null,
+   "finding_verbatim": "Throat surgery to correct an airway abnormality (tieback and hobday).",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K415"
+  },
+  "passed_on": "2026-09-21",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K415 (2 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K415"
+ },
+ "HK_2025_L268": {
+  "horse_id": "HK_2025_L268",
+  "horse_code": "L268",
+  "horse_name": "QUANTUM LEGEND",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "50fa1d6f03ffdec7b7a199771d01a467088e168e",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-10-04",
+   "meeting_id": null,
+   "finding_verbatim": "Substantial blood in trachea noted on post-race scoping.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L268"
+  },
+  "passed_on": "2026-10-20",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L268 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L268"
+ },
+ "HK_2023_J146": {
+  "horse_id": "HK_2023_J146",
+  "horse_code": "J146",
+  "horse_name": "YODA'S CHOICE",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "29fbee650751b653179e4bd08bc36aca5f9da939",
+   "record_type": "flag",
+   "category": "surgery",
+   "event_date": "2026-06-08",
+   "meeting_id": null,
+   "finding_verbatim": "Lame right front leg on the day after racing. Update: Arthroscopic surgery to right knee (bone fragment removal).",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J146"
+  },
+  "passed_on": "2026-09-28",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J146 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J146"
+ },
+ "HK_2024_K490": {
+  "horse_id": "HK_2024_K490",
+  "horse_code": "K490",
+  "horse_name": "FAMILY KNIGHT",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "c650256d407cb98c712224dafceb0839f386817e",
+   "record_type": "flag",
+   "category": "injury",
+   "event_date": "2026-09-21",
+   "meeting_id": null,
+   "finding_verbatim": "Colic. Withdrawn from racing.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K490"
+  },
+  "passed_on": "2026-09-30",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K490 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K490"
+ },
+ "HK_2024_K176": {
+  "horse_id": "HK_2024_K176",
+  "horse_code": "K176",
+  "horse_name": "ANOTHER ZONDA",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "564ab44ca0da147c25eb92c42ceea1434aaaaf2c",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-09-09",
+   "meeting_id": null,
+   "finding_verbatim": "Unacceptable performance and substantial blood in trachea noted on post-race scoping.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K176"
+  },
+  "passed_on": "2026-09-25",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K176 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K176"
+ },
+ "HK_2024_K494": {
+  "horse_id": "HK_2024_K494",
+  "horse_code": "K494",
+  "horse_name": "NEZHA",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "2facb01d819eb2fa35b30012fb69462777c01067",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-05-27",
+   "meeting_id": null,
+   "finding_verbatim": "Lame left fore.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K494"
+  },
+  "passed_on": "2026-06-16",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K494 (1 rows)",
+  "last_checked": "2026-11-13T15:24:10-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K494"
+ },
+ "HK_2025_L154": {
+  "horse_id": "HK_2025_L154",
+  "horse_code": "L154",
+  "horse_name": "ON THE WAY",
+  "status": "pending",
+  "latest_entry": {
+   "record_id": "1357d1dbc96e0baadd703a2bd93a051c2ac82abc",
+   "record_type": "flag",
+   "category": "airway",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "A veterinary inspection immediately following the race found that horse to have an epiglottic entrapment.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": "2026-09-21",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L154 (5 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L154"
+ },
+ "HK_2023_J545": {
+  "horse_id": "HK_2023_J545",
+  "horse_code": "J545",
+  "horse_name": "HAPPY BOYS",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "ba22e54371ca1915196802b2a4b356ebc19edde8",
+   "record_type": "clearance",
+   "category": "surgery",
+   "event_date": "2026-10-27",
+   "meeting_id": null,
+   "finding_verbatim": "Throat surgery to release epiglottic entrapment.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+  },
+  "passed_on": "2026-11-13",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J545 (1 rows)",
+  "last_checked": "2026-11-13T23:06:40-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J545"
+ },
+ "HK_2024_K286": {
+  "horse_id": "HK_2024_K286",
+  "horse_code": "K286",
+  "horse_name": "LEGENDARY YEARS",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "037d23697455532d5e9bdf19daf485d3ae5ebf11",
+   "record_type": "clearance",
+   "category": "surgery",
+   "event_date": "2026-06-16",
+   "meeting_id": null,
+   "finding_verbatim": "Both hind fetlock injuries. Update: Surgery to both hind fetlocks.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+  },
+  "passed_on": "2026-11-12",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K286 (1 rows)",
+  "last_checked": "2026-11-13T23:06:40-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K286"
+ },
+ "HK_2023_J510": {
+  "horse_id": "HK_2023_J510",
+  "horse_code": "J510",
+  "horse_name": "NIGHT PUROSANGUE",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "7b23f65bff95e1a1cded51607bc8031a80904ba9",
+   "record_type": "clearance",
+   "category": "tracheal_blood",
+   "event_date": "2026-10-28",
+   "meeting_id": null,
+   "finding_verbatim": "Substantial blood in trachea noted on post-race scoping.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+  },
+  "passed_on": "2026-11-12",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J510 (1 rows)",
+  "last_checked": "2026-11-13T23:06:40-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J510"
+ },
+ "HK_2024_K574": {
+  "horse_id": "HK_2024_K574",
+  "horse_code": "K574",
+  "horse_name": "LOYAL BRIGHT",
+  "status": "cleared",
+  "latest_entry": {
+   "record_id": "c4af58370db957fc702e1dfb75ec9bd7789a3899",
+   "record_type": "clearance",
+   "category": "injury",
+   "event_date": "2026-02-12",
+   "meeting_id": null,
+   "finding_verbatim": "Right fore tendon injury.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+  },
+  "passed_on": "2026-11-13",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K574 (1 rows)",
+  "last_checked": "2026-11-13T23:06:40-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K574"
+ },
+ "HK_2024_K540": {
+  "horse_id": "HK_2024_K540",
+  "horse_code": "K540",
+  "horse_name": "DUKE OF ORANGE",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "8407b77f6f10859bd92671178fce82a0827e7add",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-11-13",
+   "meeting_id": null,
+   "finding_verbatim": "Lame left fore. Withdrawn from barrier trial.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K540"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "8407b77f6f10859bd92671178fce82a0827e7add",
+    "meeting_id": null,
+    "event_date": "2026-11-13",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K540"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K540 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K540"
+ },
+ "HK_2023_J291": {
+  "horse_id": "HK_2023_J291",
+  "horse_code": "J291",
+  "horse_name": "YOUNG ACHIEVER",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "a2426700bf54ddd4ef11d8685244fcc2a8621655",
+   "record_type": "flag",
+   "category": "other",
+   "event_date": "2026-11-12",
+   "meeting_id": null,
+   "finding_verbatim": "Fever.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "a2426700bf54ddd4ef11d8685244fcc2a8621655",
+    "meeting_id": null,
+    "event_date": "2026-11-12",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J291 (5 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J291"
+ },
+ "HK_2025_L031": {
+  "horse_id": "HK_2025_L031",
+  "horse_code": "L031",
+  "horse_name": "AKERMANIS GOLD",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "cf432e15afe4e0439fc0369ffdff7471922c7888",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-11-12",
+   "meeting_id": null,
+   "finding_verbatim": "Lame right front leg on the day after racing.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "cf432e15afe4e0439fc0369ffdff7471922c7888",
+    "meeting_id": null,
+    "event_date": "2026-11-12",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L031 (1 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L031"
+ },
+ "HK_2025_L057": {
+  "horse_id": "HK_2025_L057",
+  "horse_code": "L057",
+  "horse_name": "FLYING FORTUNE",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "1d5a26f63b71a15db110c44d274629be493936b9",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-11-12",
+   "meeting_id": null,
+   "finding_verbatim": "Lame right front leg on the day after racing.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "1d5a26f63b71a15db110c44d274629be493936b9",
+    "meeting_id": null,
+    "event_date": "2026-11-12",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/en-us/local/information/ovedatabase"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L057 (1 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L057"
+ },
+ "HK_2023_J375": {
+  "horse_id": "HK_2023_J375",
+  "horse_code": "J375",
+  "horse_name": "VIGOR ELLEEGANT",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "9646bfce35aa87829f90eb1daefbf4285e5ad644",
+   "record_type": "flag",
+   "category": "airway",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "A veterinary inspection immediately following the race found that horse to be a \"roarer\" which had previously been reported.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "991217145666f3d5b151501fcdce6a784b0d2a6e",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial",
+    "remaining": [
+     "barrier trial"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J375 (11 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J375"
+ },
+ "HK_2024_K377": {
+  "horse_id": "HK_2024_K377",
+  "horse_code": "K377",
+  "horse_name": "QUICK MONEY",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "ea9275f6e6447d116237f261f3892591b1f48b3e",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "Finished tailed out. Whilst the Stewards accepted the unfavourable condition of the racing surface may have contributed to the performance, they determined that QUICK MONEY will be required to perform satisfactorily in a barrier trial before being allowed to race again.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "ea9275f6e6447d116237f261f3892591b1f48b3e",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial",
+    "remaining": [
+     "barrier trial"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K377 (1 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K377"
+ },
+ "HK_2023_J501": {
+  "horse_id": "HK_2023_J501",
+  "horse_code": "J501",
+  "horse_name": "CIRCUIT DUFFY",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "ac5325f386b332ba65cce22b6ea58b04d5f4e140",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "The performance of CIRCUIT DUFFY, which finished tailed out, was considered unacceptable. Before being allowed to race again, CIRCUIT DUFFY will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "ac5325f386b332ba65cce22b6ea58b04d5f4e140",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J501 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J501"
+ },
+ "HK_2025_L060": {
+  "horse_id": "HK_2025_L060",
+  "horse_code": "L060",
+  "horse_name": "VIEW OF COSMOS",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "537a65c8c6dd913ece0e7ceccb87aa645cf94250",
+   "record_type": "flag",
+   "category": "injury",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "After being placed in the starting gates reared, struck its head and was withdrawn by order of the Stewards acting on veterinary advice.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "39efa0f9c4ce16a22d558d19841c7be213b493cf",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L060 (3 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L060"
+ },
+ "HK_2024_K399": {
+  "horse_id": "HK_2024_K399",
+  "horse_code": "K399",
+  "horse_name": "HAPPY ACTION",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "776ee40dbe1cc2f70481e4dec9e98d880ab95a3d",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-11-13",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "Withdrawn on 13.11.26 by order of the Stewards acting on veterinary advice (lame right fore) and replaced by Standby Declared Starter QUICK MONEY.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "b6a8b118a035ac10ebc5d5c2ad0ecaf5df102a65",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-13",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K399 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K399"
+ },
+ "HK_2023_J224": {
+  "horse_id": "HK_2023_J224",
+  "horse_code": "J224",
+  "horse_name": "GOOD GOOD",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "c30b0396b78d1deda2fe662c746a6fb1e3eba86c",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "The performance of GOOD GOOD, which finished tailed out, was considered unacceptable. Before being allowed to race again, GOOD GOOD will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "c30b0396b78d1deda2fe662c746a6fb1e3eba86c",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2023_J224 (4 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J224"
+ },
+ "HK_2020_E356": {
+  "horse_id": "HK_2020_E356",
+  "horse_code": "E356",
+  "horse_name": "LUCKY WITH YOU",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "121b8fbf3707801ee1983b32963c7e2bdcaa47fd",
+   "record_type": "flag",
+   "category": "lameness",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "Was withdrawn at the Start by order of the Stewards acting on veterinary advice after it was found to be lame in its left front leg.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "f91f4a526b96151162d0ea42d3b05a72cf698af9",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "official vet exam",
+    "remaining": [
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2020_E356 (8 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2020_E356"
+ },
+ "HK_2024_K527": {
+  "horse_id": "HK_2024_K527",
+  "horse_code": "K527",
+  "horse_name": "FOREST KING",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "a47f47045e2bf39937daa82eb49d0c93ee4d62fc",
+   "record_type": "flag",
+   "category": "airway",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "S Osborne reported that her mount made an abnormal respiratory noise during the running of the event. A veterinary inspection immediately following the race did not show any significant findings.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "b4f04406a0a9074a6cb8ec20ef207f7bece33bca",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K527 (4 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K527"
+ },
+ "HK_2025_L398": {
+  "horse_id": "HK_2025_L398",
+  "horse_code": "L398",
+  "horse_name": "VOYAGE HORIZON",
+  "status": "active_requirement",
+  "latest_entry": {
+   "record_id": "ba665fee845fcae33356f1f112018cd67cb833df",
+   "record_type": "requirement",
+   "category": "administrative",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "The performance of VOYAGE HORIZON, which finished tailed out, was considered unacceptable. Before being allowed to race again, VOYAGE HORIZON will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [
+   {
+    "record_id": "ba665fee845fcae33356f1f112018cd67cb833df",
+    "meeting_id": "ST-20261114",
+    "event_date": "2026-11-14",
+    "requirement": "barrier trial + official vet exam",
+    "remaining": [
+     "barrier trial",
+     "official vet exam"
+    ],
+    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+   }
+  ],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L398 (2 rows)",
+  "last_checked": "2026-11-15T07:52:00-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L398"
+ },
+ "HK_2025_L438": {
+  "horse_id": "HK_2025_L438",
+  "horse_code": "L438",
+  "horse_name": "SECRET HEDGE",
+  "status": "no_requirement",
+  "latest_entry": {
+   "record_id": "6a360f70f71a1bb34a152e15428353c7e486afd5",
+   "record_type": "suspension",
+   "category": "riding_offence",
+   "event_date": "2026-11-14",
+   "meeting_id": "ST-20261114",
+   "finding_verbatim": "M Chadwick (SECRET HEDGE) pleaded guilty to a charge of careless riding [Rule 100(1)] in that near the 900 Metres he allowed his mount to shift in when not clear of ROCK YOUR DREAM, resulting in ROCK YOUR DREAM losing its rightful running and being checked. M Chadwick was suspended from riding in races for one Hong Kong raceday to be conducted on Wednesday, 25 November 2026 at Happy Valley.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261114"
+  },
+  "passed_on": null,
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2025_L438 (1 rows)",
+  "last_checked": "2026-11-14T07:45:17-05:00",
+  "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L438"
+ }
+}

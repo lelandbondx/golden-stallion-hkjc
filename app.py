@@ -552,6 +552,11 @@ def fetch_trial_features():
     except Exception:
         return {}
 
+@st.cache_data(ttl=900)
+def fetch_bot_feeds_cached(meeting_date, venue, runners_json, mode, ref):
+    from bot_feeds_import import load_bot_feeds
+    return load_bot_feeds(meeting_date, venue, json.loads(runners_json), ref=ref)
+
 @st.cache_data(ttl=86400)
 def fetch_horse_memory():
     try:
@@ -692,6 +697,43 @@ selected_index = meeting_options.index(selected_meeting_str)
 meeting = meetings[selected_index]
 races = meeting.get('races', [])
 tips_data = fetch_tips(expected_date=meeting.get('date'), num_races=len(races))
+
+bot_report = None
+bot_feats_prefetched = None
+all_meeting_runners = [
+    {**rn, "race_no": rc.get("race_no")}
+    for rc in (races or [])
+    for rn in (rc.get("runners") or [])
+]
+try:
+    from bot_feeds_import import get_bot_feeds_mode, get_bot_feeds_ref, merge_bot_features
+    _bot_mode = get_bot_feeds_mode()
+    if _bot_mode != "off":
+        _runners_payload = json.dumps(
+            [
+                {
+                    "race_no": rn.get("race_no"),
+                    "no": rn.get("no"),
+                    "code": rn.get("code") or rn.get("horse_code"),
+                    "name": rn.get("name"),
+                    "clean_name": rn.get("clean_name"),
+                    "status": rn.get("status"),
+                    "runner_status": rn.get("runner_status"),
+                    "horse_no": rn.get("horse_no"),
+                    "standby_order": rn.get("standby_order"),
+                }
+                for rn in all_meeting_runners
+            ],
+            sort_keys=True,
+        )
+        bot_feats_prefetched, bot_report = fetch_bot_feeds_cached(
+            meeting.get("date"), meeting.get("venue"), _runners_payload, _bot_mode, get_bot_feeds_ref()
+        )
+        trial_features = merge_bot_features(
+            trial_features, meeting, all_meeting_runners, prefetched_bot_features=bot_feats_prefetched
+        )
+except Exception as _bot_err:
+    print("Warning in bot_feeds fetch/merge:", _bot_err)
 
 # Proactively ensure all runners on the active card have complete HKJC profiles synced (once per session)
 try:
@@ -872,6 +914,27 @@ with tab1:
     except Exception as _stale_err:
         pass
 
+    # Compact Standing Bot Feeds Status (trial-data branch over HTTP)
+    try:
+        from bot_feeds_import import get_bot_feeds_mode
+        _ui_bot_mode = get_bot_feeds_mode()
+        if bot_report is not None:
+            _folders_ui = bot_report.get("folders", {})
+            _tb_ui = _folders_ui.get("trial_bot", {})
+            _tb_pct = round(float(_tb_ui.get("coverage_ratio", 0.0)) * 100.0, 1)
+            _times_ui = " | ".join(
+                f"{fn}: {str(_folders_ui.get(fn, {}).get('manifest_run_time') or 'n/a')[:16]} ({_folders_ui.get(fn, {}).get('matched_total', 0)})"
+                for fn in ("trial_bot", "steward", "replay", "grok_rising")
+            )
+            st.caption(
+                f"🤖 Bot Feeds: `{_ui_bot_mode}` | Gate: `{bot_report.get('gate_status', 'unknown')}` "
+                f"({_tb_ui.get('matched_total', 0)}/{bot_report.get('declared_runners', 0)} = {_tb_pct}%) | {_times_ui}"
+            )
+        else:
+            st.caption(f"🤖 Bot Feeds: `{_ui_bot_mode}`")
+    except Exception:
+        pass
+
     if not os.path.exists('model.joblib'):
         with st.spinner("Compiling structural probability models..."):
             try:
@@ -920,6 +983,7 @@ with tab1:
             print(f"Error parsing post time for race {race.get('race_no')}: {e}")
             
         # Check if we have a frozen prediction for this race
+        race_horse_memory = horse_memory
         frozen_runners = odds_tracker.get_frozen_predictions(meeting.get('date'), meeting.get('venue'), race.get('race_no'))
         
         # Determine if we should defrost (recalculate) due to scratches or track change
@@ -1214,6 +1278,13 @@ with tab1:
         # Authoritative Trial Bot Feed (with fallback to engineered trials)
         if not trial_features:
             trial_features = fetch_trial_features()
+            try:
+                from bot_feeds_import import merge_bot_features
+                trial_features = merge_bot_features(
+                    trial_features, meeting, all_meeting_runners, prefetched_bot_features=bot_feats_prefetched
+                )
+            except Exception:
+                pass
                 
         # Determine if runner has strong trials or multiple top-2 recent trials
         has_strong_trial = []
@@ -1278,6 +1349,12 @@ with tab1:
         df_runners['had_excuse'] = df_runners.apply(
             lambda r: check_stewards_excuse(r.get('last_comment', '')) and not check_health_risk(r.get('last_comment', ''), r.get('prev_run_vet_finding', 0), r.get('latest_vet_note', '')), axis=1
         )
+        race_horse_memory = horse_memory
+        try:
+            from bot_feeds_import import apply_live_bot_runner_overlays
+            df_runners, race_horse_memory = apply_live_bot_runner_overlays(df_runners, trial_features, horse_memory)
+        except Exception as _ov_err:
+            print("Warning in apply_live_bot_runner_overlays:", _ov_err)
         # False Favorite Penalty: -3.0% only if odds < 5.0 / implied > 20%, recent_pos > 6.0, no class drop, and run is not excused
         false_fav_penalty = np.where(
             ((df_runners['implied_prob'] > 0.20) | ((df_runners['win_odds'] > 0) & (df_runners['win_odds'] < 5.0))) & 
@@ -1608,6 +1685,7 @@ with tab1:
             distance=distance,
             class_int=class_int,
             has_strong_trial=has_strong_trial,
+            horse_memory=race_horse_memory,
         )
         polytrack_awt_boost = th_cal["awt_specialist_boost"]
         telemetry_harmony_multiplier = th_cal["telemetry_harmony_multiplier"]
@@ -2364,7 +2442,7 @@ with tab1:
                         'winner_weight': 125.0,
                         'weight_carried': safe_num(r_item.get('actual_weight'), 125.0)
                     }
-                    t_eval = evaluate_tactical_scores(r_name, t_ctx, horse_memory)
+                    t_eval = evaluate_tactical_scores(r_name, t_ctx, race_horse_memory)
                     for b in t_eval.get('badges', []):
                         is_credit = (b.get('type') == 'credit')
                         b_col = '#10b981' if is_credit else '#f59e0b' # Green for credit, amber for trip regression

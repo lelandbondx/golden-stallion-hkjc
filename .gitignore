@@ -32,3 +32,4 @@ tunnel*.txt
 *.html
 cloudflared.exe
 scratch/
+.cache/

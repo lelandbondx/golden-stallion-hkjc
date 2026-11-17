@@ -124,12 +124,21 @@ def monitored(component: str):
 
 def get_pipeline_health() -> dict:
     """
-    Returns the current pipeline health dictionary from data/pipeline_health.json.
+    Returns the current pipeline health dictionary from data/pipeline_health.json,
+    augmented read-only with cached bot-feed health from `.cache/bot_feeds`.
     """
     if os.path.exists(PIPELINE_HEALTH_FILE):
         try:
             with open(PIPELINE_HEALTH_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+                payload = json.load(f)
         except Exception as e:
-            return {"overall_status": "fail", "error": f"Corrupted health file: {e}", "components": {}}
-    return {"overall_status": "warn", "components": {}}
+            payload = {"overall_status": "fail", "error": f"Corrupted health file: {e}", "components": {}}
+    else:
+        payload = {"overall_status": "warn", "components": {}}
+
+    try:
+        from bot_feeds_import import get_bot_feeds_health_summary
+        payload["bot_feeds"] = get_bot_feeds_health_summary()
+    except Exception:
+        pass
+    return payload

@@ -62,7 +62,7 @@ jobs:
 
       - name: Run Unit Tests Before Final Commit
         run: |
-          pytest tests/test_vet_records.py tests/test_tactical_engine.py -q
+          pytest tests/test_vet_records.py tests/test_tactical_engine.py tests/test_bot_feeds_import.py -q
 
       - name: Commit and Push Changes to Render
         if: always()
