@@ -364,7 +364,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Was withdrawn at the Start by order of the Stewards acting on veterinary advice after it was found to be lame in its left front leg.  Before being allowed to race again, LUCKY WITH YOU will be subjected to an official veterinary examination. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 07 (LBW 2-1/2) | RunPos: 3 3 7 14/02/2026: Heart irregularity noted after racing. (Passed: 26/03/2026)"
+        "steward_comment": "Was withdrawn at the Start by order of the Stewards acting on veterinary advice after it was found to be lame in its left front leg.  Before being allowed to race again, LUCKY WITH YOU will be subjected to an official veterinary examination. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 07 (LBW 2-1/2) | RunPos: 3 3 7 14/11/2026: On arrival at the start was examined and found to be lame in its left front leg. Withdrawn from racing. (Passed: -)"
       },
       {
         "race_date": "2026-09-27",
@@ -595,7 +595,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.9,
-      "best_trial_speed_diff": 1.0900000000000034,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE"
       ]
@@ -1271,7 +1271,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -1350,7 +1350,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -1571,7 +1571,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.9,
-      "best_trial_speed_diff": 0.23999999999999488,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L HEWITSON"
       ]
@@ -1650,7 +1650,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.9,
-      "best_trial_speed_diff": 0.23999999999999488,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L HEWITSON"
       ]
@@ -2471,7 +2471,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -1.6700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R THOMAS"
       ]
@@ -2525,7 +2525,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -1.6700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R THOMAS"
       ]
@@ -2571,7 +2571,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2857142857142857,
-      "best_trial_speed_diff": -0.20000000000000284,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN"
       ]
@@ -2617,7 +2617,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2857142857142857,
-      "best_trial_speed_diff": -0.20000000000000284,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN"
       ]
@@ -3736,7 +3736,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2857142857142857,
-      "best_trial_speed_diff": -0.09000000000000341,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -3843,7 +3843,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": 0.7600000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M KELLADY",
         "M L YEUNG"
@@ -5042,7 +5042,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 1.2600000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -5088,7 +5088,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 1.2600000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -6486,7 +6486,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": -0.8400000000000034,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S MUTAZA"
       ]
@@ -6532,7 +6532,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": -0.8400000000000034,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S MUTAZA"
       ]
@@ -7143,7 +7143,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8571428571428571,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA"
       ]
@@ -7213,7 +7213,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8571428571428571,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA"
       ]
@@ -8363,7 +8363,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8333333333333334,
-      "best_trial_speed_diff": 0.4000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN",
         "A ATZENI"
@@ -8522,7 +8522,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.875,
-      "best_trial_speed_diff": 1.1299999999999955,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN",
         "A ATZENI",
@@ -10387,7 +10387,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H Y YUEN"
       ]
@@ -11075,7 +11075,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2727272727272727,
-      "best_trial_speed_diff": -0.060000000000002274,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -11186,7 +11186,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R THOMAS"
       ]
@@ -11278,7 +11278,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y L CHUNG",
         "Y L CHUNG",
@@ -11524,7 +11524,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 0.5300000000000011,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN",
         "A ATZENI"
@@ -11870,7 +11870,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": -0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y SALIM"
       ]
@@ -12694,7 +12694,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN"
       ]
@@ -12907,7 +12907,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 1.1500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -14450,7 +14450,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8,
-      "best_trial_speed_diff": 0.9099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN"
       ]
@@ -14887,7 +14887,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": -0.730000000000004,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN",
         "S SHAFRIZAL"
@@ -14934,7 +14934,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": -0.730000000000004,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN",
         "S SHAFRIZAL"
@@ -16077,7 +16077,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A BADEL",
         "Z ZURIMAN"
@@ -16165,7 +16165,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A BADEL",
         "Z ZURIMAN"
@@ -17614,7 +17614,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": -0.23000000000000398,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY",
         "Z ZURIMAN"
@@ -17710,7 +17710,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": -0.23000000000000398,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY",
         "Z ZURIMAN"
@@ -18120,7 +18120,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L HEWITSON"
       ]
@@ -18539,7 +18539,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.625,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -19438,7 +19438,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": -3.1500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "D J YANG"
       ]
@@ -20013,7 +20013,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -20318,7 +20318,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7142857142857143,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -20364,7 +20364,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7142857142857143,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -21163,7 +21163,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6666666666666666,
-      "best_trial_speed_diff": -0.730000000000004,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -21246,7 +21246,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.625,
-      "best_trial_speed_diff": -0.12000000000000455,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -21738,7 +21738,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5714285714285714,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -21817,7 +21817,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5714285714285714,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -21863,7 +21863,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": -0.8100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y L CHUNG"
       ]
@@ -21909,7 +21909,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": -0.8100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y L CHUNG"
       ]
@@ -22429,7 +22429,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.0799999999999983,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG",
         "K C LEUNG"
@@ -22517,7 +22517,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted out at the start and made contact with INCANTO STAR.  The performance of CIRCUIT DUFFY, which finished tailed out, was considered unacceptable.  Before being allowed to race again, CIRCUIT DUFFY will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (14/11/26 ST / Turf / \"A\" 1400m): Fin 14 (LBW 21) | RunPos: 3 3 6 14 28/06/2025: Unacceptable performance. (Passed: 08/09/2025)"
+        "steward_comment": "Shifted out at the start and made contact with INCANTO STAR.  The performance of CIRCUIT DUFFY, which finished tailed out, was considered unacceptable.  Before being allowed to race again, CIRCUIT DUFFY will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (14/11/26 ST / Turf / \"A\" 1400m): Fin 14 (LBW 21) | RunPos: 3 3 6 14 14/11/2026: Unacceptable performance. (Passed: -)"
       },
       {
         "race_date": "2026-10-19",
@@ -23261,7 +23261,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8,
-      "best_trial_speed_diff": 0.8199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A BADEL"
       ]
@@ -23477,7 +23477,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -23523,7 +23523,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -24329,7 +24329,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.6400000000000006,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -24416,7 +24416,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.6400000000000006,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -25143,7 +25143,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": -1.009999999999998,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -25268,7 +25268,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.42857142857142855,
-      "best_trial_speed_diff": -0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON",
         "C L CHAU",
@@ -25316,7 +25316,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.42857142857142855,
-      "best_trial_speed_diff": -0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON",
         "C L CHAU",
@@ -25877,7 +25877,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": 1.2600000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -25956,7 +25956,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": 1.2600000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -26002,7 +26002,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": 2.0999999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -26048,7 +26048,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": 2.0999999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -26664,7 +26664,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": 0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN",
         "E C W WONG"
@@ -27794,7 +27794,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.35999999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG",
         "K C LEUNG"
@@ -27874,7 +27874,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.35999999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG",
         "K C LEUNG"
@@ -28229,7 +28229,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.42857142857142855,
-      "best_trial_speed_diff": -0.20000000000000284,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -28333,7 +28333,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4444444444444444,
-      "best_trial_speed_diff": 2.0999999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M L YEUNG"
       ]
@@ -29316,7 +29316,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN"
       ]
@@ -29403,7 +29403,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN"
       ]
@@ -29780,7 +29780,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.625,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -30178,7 +30178,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": -0.7999999999999972,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -30350,7 +30350,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": 0.490000000000002,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M L YEUNG"
       ]
@@ -30396,7 +30396,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": 0.490000000000002,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M L YEUNG"
       ]
@@ -31057,7 +31057,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": -1.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERNANDO"
       ]
@@ -31517,7 +31517,7 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON",
         "M F POON"
@@ -31787,7 +31787,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": -1.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -31998,7 +31998,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.8100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE"
       ]
@@ -32884,7 +32884,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.25,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN"
       ]
@@ -33022,7 +33022,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7142857142857143,
-      "best_trial_speed_diff": -0.6499999999999986,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S SHAFRIZAL"
       ]
@@ -33288,7 +33288,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8333333333333334,
-      "best_trial_speed_diff": 0.9600000000000009,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -33334,7 +33334,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8333333333333334,
-      "best_trial_speed_diff": 0.9600000000000009,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -33978,7 +33978,7 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.5555555555555556,
-      "best_trial_speed_diff": 0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE",
         "L HEWITSON"
@@ -35347,7 +35347,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": -0.23000000000000398,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S SHAFRIZAL"
       ]
@@ -35450,7 +35450,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": -0.23000000000000398,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S SHAFRIZAL"
       ]
@@ -35951,7 +35951,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": 0.4000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -36752,7 +36752,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": 1.4399999999999977,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H T MO"
       ]
@@ -39266,7 +39266,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.875,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -40233,7 +40233,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -41549,7 +41549,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6666666666666666,
-      "best_trial_speed_diff": 0.21999999999999886,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN",
         "J ORMAN"
@@ -41600,7 +41600,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8888888888888888,
-      "best_trial_speed_diff": -1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -42236,7 +42236,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.875,
-      "best_trial_speed_diff": -0.23000000000000398,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M KELLADY"
       ]
@@ -42503,7 +42503,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5555555555555556,
-      "best_trial_speed_diff": -0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -42582,7 +42582,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5555555555555556,
-      "best_trial_speed_diff": -0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -42661,7 +42661,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": -0.8100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -42740,7 +42740,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": -0.8100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -43104,7 +43104,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -0.12000000000000455,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S C LUI"
       ]
@@ -43345,7 +43345,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.9,
-      "best_trial_speed_diff": -0.8100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN"
       ]
@@ -44159,7 +44159,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -0.23000000000000398,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S MUTAZA"
       ]
@@ -45258,7 +45258,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.9,
-      "best_trial_speed_diff": 0.7000000000000028,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -45301,7 +45301,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2857142857142857,
-      "best_trial_speed_diff": 1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI"
       ]
@@ -45690,7 +45690,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -45797,7 +45797,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": -1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A BADEL"
       ]
@@ -46757,7 +46757,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": 0.9600000000000009,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE"
       ]
@@ -46844,7 +46844,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": 0.9600000000000009,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE"
       ]
@@ -46985,7 +46985,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": -0.7999999999999972,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A BADEL"
       ]
@@ -47088,7 +47088,7 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.2857142857142857,
-      "best_trial_speed_diff": 0.28000000000000114,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS",
         "L FERRARIS"
@@ -47560,7 +47560,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 1.2900000000000063,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN",
         "K TEETAN"
@@ -47607,7 +47607,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 1.2900000000000063,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN",
         "K TEETAN"
@@ -48091,7 +48091,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": -0.12000000000000455,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y L CHUNG",
         "Y L CHUNG"
@@ -48195,7 +48195,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": -0.12000000000000455,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y L CHUNG",
         "Y L CHUNG"
@@ -48925,7 +48925,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.12999999999999545,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M L YEUNG"
       ]
@@ -48971,7 +48971,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.12999999999999545,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M L YEUNG"
       ]
@@ -49845,7 +49845,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": -0.29000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -51479,7 +51479,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": -0.12000000000000455,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -51709,7 +51709,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.625,
-      "best_trial_speed_diff": -1.019999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S MUTAZA"
       ]
@@ -52145,7 +52145,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4444444444444444,
-      "best_trial_speed_diff": -0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -52290,7 +52290,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4444444444444444,
-      "best_trial_speed_diff": 0.04000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -52336,7 +52336,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4444444444444444,
-      "best_trial_speed_diff": 0.04000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -53948,7 +53948,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.23000000000000398,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M AI",
         "R THOMAS"
@@ -54036,7 +54036,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.23000000000000398,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M AI",
         "R THOMAS"
@@ -54507,7 +54507,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": 0.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -54553,7 +54553,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": 0.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -54652,7 +54652,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": -0.6899999999999977,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M KELLADY",
         "M KELLADY"
@@ -54963,7 +54963,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6666666666666666,
-      "best_trial_speed_diff": 2.0999999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -55425,7 +55425,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": -0.29000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -56812,7 +56812,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.4000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -57036,7 +57036,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "After being placed in the starting gates reared, struck its head and was withdrawn by order of the Stewards acting on veterinary advice.  Before being allowed to race again, VIEW OF COSMOS will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (08/11/26 ST / AWT 1200m): Fin 12 (LBW 12) | RunPos: 12 12 12 29/03/2026: Unacceptable performance and respiratory noise reported during racing. (Passed: 13/04/2026)"
+        "steward_comment": "After being placed in the starting gates reared, struck its head and was withdrawn by order of the Stewards acting on veterinary advice.  Before being allowed to race again, VIEW OF COSMOS will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (08/11/26 ST / AWT 1200m): Fin 12 (LBW 12) | RunPos: 12 12 12 14/11/2026: After being placed in the starting gates reared and struck its head. Withdrawn from racing. (Passed: -)"
       }
     ],
     "trial_note": null
@@ -57524,7 +57524,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8,
-      "best_trial_speed_diff": 0.0799999999999983,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN"
       ]
@@ -58129,7 +58129,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8333333333333334,
-      "best_trial_speed_diff": -0.12000000000000455,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -58393,7 +58393,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": -1.6700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M KELLADY"
       ]
@@ -59471,7 +59471,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": -1.6700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -59550,7 +59550,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": -1.6700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -59704,7 +59704,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -59973,7 +59973,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -60019,7 +60019,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -61564,7 +61564,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.625,
-      "best_trial_speed_diff": 0.4000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE"
       ]
@@ -61610,7 +61610,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.625,
-      "best_trial_speed_diff": 0.4000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE"
       ]
@@ -61771,7 +61771,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -62332,7 +62332,7 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.1,
-      "best_trial_speed_diff": 0.8900000000000006,
+      "best_trial_speed_diff": -0.04000000000000625,
       "jockeys": [
         "M L YEUNG",
         "M L YEUNG"
@@ -62620,7 +62620,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 1.2600000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R THOMAS"
       ]
@@ -62715,7 +62715,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8,
-      "best_trial_speed_diff": 0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -62873,7 +62873,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "H T Mo stated that his mount was travelling well in the lead but after being headed by TURQUOISE VELOCITY near the 200 Metres gave ground from that point.  A veterinary inspection immediately following the race found that horse to have an epiglottic entrapment. Last Run (14/11/26 ST / Turf / \"A\" 1200m): Fin 08 (LBW 5-1/4) | RunPos: 1 1 8 25/02/2026: Heart irregularity noted after trackwork. (Passed: 21/09/2026)"
+        "steward_comment": "H T Mo stated that his mount was travelling well in the lead but after being headed by TURQUOISE VELOCITY near the 200 Metres gave ground from that point.  A veterinary inspection immediately following the race found that horse to have an epiglottic entrapment. Last Run (14/11/26 ST / Turf / \"A\" 1200m): Fin 08 (LBW 5-1/4) | RunPos: 1 1 8 14/11/2026: Epiglottic entrapment noted after racing. (Passed: -)"
       },
       {
         "race_date": "2026-11-01",
@@ -62897,7 +62897,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": true,
-        "steward_comment": "H T Mo stated that his mount was travelling well in the lead but after being headed by TURQUOISE VELOCITY near the 200 Metres gave ground from that point.  A veterinary inspection immediately following the race found that horse to have an epiglottic entrapment. Last Run (14/11/26 ST / Turf / \"A\" 1200m): Fin 08 (LBW 5-1/4) | RunPos: 1 1 8 25/02/2026: Heart irregularity noted after trackwork. (Passed: 21/09/2026)"
+        "steward_comment": "H T Mo stated that his mount was travelling well in the lead but after being headed by TURQUOISE VELOCITY near the 200 Metres gave ground from that point.  A veterinary inspection immediately following the race found that horse to have an epiglottic entrapment. Last Run (14/11/26 ST / Turf / \"A\" 1200m): Fin 08 (LBW 5-1/4) | RunPos: 1 1 8 14/11/2026: Epiglottic entrapment noted after racing. (Passed: -)"
       },
       {
         "race_date": "2026-10-11",
@@ -63048,7 +63048,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.12999999999999545,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -63094,7 +63094,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.12999999999999545,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -63393,7 +63393,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -64211,7 +64211,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": 0.9299999999999997,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN",
         "J ORMAN"
@@ -64461,7 +64461,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2727272727272727,
-      "best_trial_speed_diff": 0.13000000000000256,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -64540,7 +64540,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2727272727272727,
-      "best_trial_speed_diff": 0.13000000000000256,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -64915,7 +64915,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": 0.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L HEWITSON"
       ]
@@ -65251,7 +65251,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.730000000000004,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M L YEUNG",
         "R THOMAS",
@@ -65371,7 +65371,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": -0.730000000000004,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN"
       ]
@@ -65441,7 +65441,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": -0.730000000000004,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN"
       ]
@@ -65838,7 +65838,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN"
       ]
@@ -65917,7 +65917,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z ZURIMAN"
       ]
@@ -66632,7 +66632,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.23999999999999488,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -66719,7 +66719,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.23999999999999488,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -67416,7 +67416,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": -0.3100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA",
         "Z PURTON",
@@ -68043,7 +68043,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.16666666666666666,
-      "best_trial_speed_diff": 0.7700000000000031,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -68159,7 +68159,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.0799999999999983,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -68440,7 +68440,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 1.1500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S C LUI"
       ]
@@ -68571,7 +68571,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": 0.030000000000001137,
+      "best_trial_speed_diff": 1.2900000000000063,
       "jockeys": [
         "M AI"
       ]
@@ -69202,7 +69202,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": 0.0799999999999983,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -69305,7 +69305,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": 0.0799999999999983,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -69511,7 +69511,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7777777777777778,
-      "best_trial_speed_diff": 0.3100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M KELLADY",
         "M F POON",
@@ -69751,7 +69751,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": -1.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M CHADWICK"
       ]
@@ -69843,7 +69843,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": -0.7999999999999972,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI"
       ]
@@ -69889,7 +69889,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": -0.7999999999999972,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI"
       ]
@@ -70261,7 +70261,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -70315,7 +70315,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -70868,7 +70868,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8571428571428571,
-      "best_trial_speed_diff": -0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M CHADWICK"
       ]
@@ -71173,7 +71173,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5555555555555556,
-      "best_trial_speed_diff": -0.3499999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU",
         "C L CHAU",
@@ -71510,7 +71510,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5714285714285714,
-      "best_trial_speed_diff": -0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -71571,7 +71571,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5714285714285714,
-      "best_trial_speed_diff": -0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -71617,7 +71617,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.875,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -71929,7 +71929,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.25,
-      "best_trial_speed_diff": -0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S C LUI"
       ]
@@ -73197,7 +73197,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2857142857142857,
-      "best_trial_speed_diff": -0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -73959,7 +73959,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5714285714285714,
-      "best_trial_speed_diff": 0.5699999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -74305,7 +74305,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R THOMAS",
         "R THOMAS"
@@ -74352,7 +74352,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": -0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R THOMAS",
         "R THOMAS"
@@ -74399,7 +74399,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": -0.8400000000000034,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -74445,7 +74445,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": -0.8400000000000034,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -75207,7 +75207,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": -0.29000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA"
       ]
@@ -75253,7 +75253,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": -0.29000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA"
       ]
@@ -75307,7 +75307,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.42857142857142855,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -75361,7 +75361,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.42857142857142855,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -75410,7 +75410,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 1.0900000000000034,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -75678,7 +75678,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 0.75,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE",
         "K C LEUNG",
@@ -76289,7 +76289,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.23999999999999488,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE"
       ]
@@ -76529,7 +76529,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.060000000000002274,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y L CHUNG"
       ]
@@ -76667,7 +76667,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": 0.8199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN",
         "K TEETAN",
@@ -76715,7 +76715,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": 0.8199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN",
         "K TEETAN",
@@ -77078,7 +77078,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8888888888888888,
-      "best_trial_speed_diff": 0.04000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -77297,7 +77297,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped only fairly.  The performance of VOYAGE HORIZON, which finished tailed out, was considered unacceptable.  Before being allowed to race again, VOYAGE HORIZON will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (14/11/26 ST / AWT 1650m): Fin 14 (LBW 23) | RunPos: 11 12 13 14 27/09/2026: Unacceptable performance. (Passed: 29/10/2026)"
+        "steward_comment": "Jumped only fairly.  The performance of VOYAGE HORIZON, which finished tailed out, was considered unacceptable.  Before being allowed to race again, VOYAGE HORIZON will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (14/11/26 ST / AWT 1650m): Fin 14 (LBW 23) | RunPos: 11 12 13 14 14/11/2026: Unacceptable performance. (Passed: -)"
       },
       {
         "race_date": "2026-09-27",
@@ -77343,7 +77343,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8333333333333334,
-      "best_trial_speed_diff": -1.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "D J YANG"
       ]
@@ -77577,7 +77577,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7142857142857143,
-      "best_trial_speed_diff": -0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -77664,7 +77664,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7142857142857143,
-      "best_trial_speed_diff": -0.1700000000000017,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -77743,7 +77743,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": 0.6400000000000006,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -77822,7 +77822,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": 0.6400000000000006,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -77868,7 +77868,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": 1.2800000000000011,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU",
         "M CHADWICK"
@@ -78058,7 +78058,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6,
-      "best_trial_speed_diff": -0.04999999999999716,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -78260,7 +78260,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2857142857142857,
-      "best_trial_speed_diff": 0.5699999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A BADEL"
       ]
@@ -78441,7 +78441,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7777777777777778,
-      "best_trial_speed_diff": 2.0999999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -78516,7 +78516,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.1,
-      "best_trial_speed_diff": 0.5100000000000051,
+      "best_trial_speed_diff": -0.25,
       "jockeys": [
         "Z PURTON",
         "M L YEUNG"
@@ -78592,7 +78592,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -78820,7 +78820,7 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.1,
-      "best_trial_speed_diff": 0.3400000000000034,
+      "best_trial_speed_diff": -0.3400000000000034,
       "jockeys": [
         "Y L CHUNG",
         "Y L CHUNG",
@@ -78873,7 +78873,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": 0.75,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS",
         "L FERRARIS",
@@ -79357,7 +79357,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": 1.2900000000000063,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON",
         "S MUTAZA",
@@ -79564,7 +79564,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.7000000000000028,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -79638,7 +79638,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6666666666666666,
-      "best_trial_speed_diff": 0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -79721,7 +79721,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -79853,7 +79853,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.23999999999999488,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI"
       ]
@@ -79899,7 +79899,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.23999999999999488,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI"
       ]
@@ -79995,7 +79995,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5555555555555556,
-      "best_trial_speed_diff": 0.7000000000000028,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L HEWITSON",
         "L HEWITSON",
@@ -80174,7 +80174,7 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.9399999999999977,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M L YEUNG",
         "M L YEUNG",
@@ -80236,7 +80236,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6666666666666666,
-      "best_trial_speed_diff": -1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -80282,7 +80282,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6666666666666666,
-      "best_trial_speed_diff": -1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Z PURTON"
       ]
@@ -80328,7 +80328,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8888888888888888,
-      "best_trial_speed_diff": -0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -80374,7 +80374,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8888888888888888,
-      "best_trial_speed_diff": -0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -80494,7 +80494,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.75,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA",
         "B AVDULLA",
@@ -80542,7 +80542,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.75,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA",
         "B AVDULLA",
@@ -80581,7 +80581,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": 0.04000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -80630,7 +80630,7 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.6666666666666666,
-      "best_trial_speed_diff": 0.10999999999999943,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M KELLADY",
         "Y L CHUNG",
@@ -80692,7 +80692,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8,
-      "best_trial_speed_diff": 0.12999999999999545,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA"
       ]
@@ -80738,7 +80738,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8,
-      "best_trial_speed_diff": 0.12999999999999545,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA"
       ]
@@ -80824,7 +80824,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": -0.04999999999999716,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M CHADWICK"
       ]
@@ -80909,7 +80909,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5714285714285714,
-      "best_trial_speed_diff": -1.0100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -80988,7 +80988,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5714285714285714,
-      "best_trial_speed_diff": -1.0100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -81049,7 +81049,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": -1.8700000000000045,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L HEWITSON"
       ]
@@ -81147,7 +81147,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6666666666666666,
-      "best_trial_speed_diff": -0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -81283,7 +81283,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.1111111111111111,
-      "best_trial_speed_diff": 0.07000000000000028,
+      "best_trial_speed_diff": -0.09000000000000341,
       "jockeys": [
         "A BADEL",
         "A BADEL"
@@ -81477,7 +81477,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7777777777777778,
-      "best_trial_speed_diff": 0.6899999999999977,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA",
         "B AVDULLA",
@@ -81639,7 +81639,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": -0.04000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU",
         "C L CHAU"
@@ -81735,7 +81735,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": -0.01999999999999602,
+      "best_trial_speed_diff": 1.3299999999999983,
       "jockeys": [
         "Z PURTON"
       ]
@@ -81781,7 +81781,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": -0.01999999999999602,
+      "best_trial_speed_diff": 1.3299999999999983,
       "jockeys": [
         "Z PURTON"
       ]
@@ -82006,7 +82006,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2,
-      "best_trial_speed_diff": 0.490000000000002,
+      "best_trial_speed_diff": -0.1599999999999966,
       "jockeys": [
         "C L CHAU",
         "Z PURTON"
@@ -82267,7 +82267,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE",
         "K TEETAN"
@@ -82322,7 +82322,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "R KINGSCOTE",
         "K TEETAN"
@@ -82439,7 +82439,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": -0.29000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -82493,7 +82493,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": -0.29000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU"
       ]
@@ -82601,7 +82601,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.759999999999998,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A BADEL",
         "E C W WONG",
@@ -82741,7 +82741,7 @@
     "runs": [],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 0.5100000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA",
         "B AVDULLA"
@@ -82833,7 +82833,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.75,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG",
         "E C W WONG"
@@ -82913,7 +82913,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.75,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG",
         "E C W WONG"
@@ -82960,7 +82960,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.45454545454545453,
-      "best_trial_speed_diff": 0.14000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU",
         "C L CHAU"
@@ -83239,7 +83239,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": 0.04000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -83285,7 +83285,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.2222222222222222,
-      "best_trial_speed_diff": 0.04000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -83772,7 +83772,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5,
-      "best_trial_speed_diff": 1.0799999999999983,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO"
       ]
@@ -86977,7 +86977,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8571428571428571,
-      "best_trial_speed_diff": 0.5699999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "B AVDULLA"
       ]
@@ -87026,7 +87026,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 0.269999999999996,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI"
       ]
@@ -87213,7 +87213,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M L YEUNG"
       ]
@@ -87296,7 +87296,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7777777777777778,
-      "best_trial_speed_diff": 0.7600000000000051,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "S MUTAZA"
       ]
@@ -87362,7 +87362,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7,
-      "best_trial_speed_diff": 1.6499999999999986,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A BADEL"
       ]
@@ -87420,7 +87420,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3333333333333333,
-      "best_trial_speed_diff": 0.9600000000000009,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -87469,7 +87469,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "E C W WONG"
       ]
@@ -87535,7 +87535,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8,
-      "best_trial_speed_diff": -0.7999999999999972,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN"
       ]
@@ -87601,7 +87601,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.625,
-      "best_trial_speed_diff": 0.060000000000002274,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN",
         "S SHAFRIZAL"
@@ -87652,7 +87652,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.42857142857142855,
-      "best_trial_speed_diff": 1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C L CHAU",
         "E C W WONG"
@@ -87712,7 +87712,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.875,
-      "best_trial_speed_diff": 0.4000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -87890,7 +87890,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.75,
-      "best_trial_speed_diff": 0.6500000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI"
       ]
@@ -87939,7 +87939,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4444444444444444,
-      "best_trial_speed_diff": 0.4099999999999966,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI",
         "A ATZENI"
@@ -87999,7 +87999,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.4,
-      "best_trial_speed_diff": 0.060000000000002274,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG"
       ]
@@ -88057,7 +88057,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.6363636363636364,
-      "best_trial_speed_diff": 1.3100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K TEETAN"
       ]
@@ -88106,7 +88106,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.3,
-      "best_trial_speed_diff": 0.6800000000000068,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "C Y HO",
         "J ORMAN"
@@ -88215,7 +88215,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 1.0,
-      "best_trial_speed_diff": 1.0799999999999983,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "K C LEUNG",
         "L FERRARIS"
@@ -88283,7 +88283,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7777777777777778,
-      "best_trial_speed_diff": -1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON"
       ]
@@ -88332,7 +88332,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
-      "best_trial_speed_diff": 0.4000000000000057,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "A ATZENI"
       ]
@@ -88381,7 +88381,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.42857142857142855,
-      "best_trial_speed_diff": 0.030000000000001137,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M KELLADY",
         "M KELLADY"
@@ -88432,7 +88432,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.5555555555555556,
-      "best_trial_speed_diff": -1.3199999999999932,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "L FERRARIS"
       ]
@@ -88490,7 +88490,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7777777777777778,
-      "best_trial_speed_diff": 0.04000000000000625,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y L CHUNG"
       ]
@@ -88539,7 +88539,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7142857142857143,
-      "best_trial_speed_diff": 1.3199999999999932,
+      "best_trial_speed_diff": -0.12000000000000455,
       "jockeys": [
         "J ORMAN"
       ]
@@ -88597,7 +88597,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7272727272727273,
-      "best_trial_speed_diff": 1.3100000000000023,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "H BENTLEY"
       ]
@@ -88697,7 +88697,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.16666666666666666,
-      "best_trial_speed_diff": 0.9600000000000009,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "Y L CHUNG",
         "Y L CHUNG"
@@ -88757,7 +88757,7 @@
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.7777777777777778,
-      "best_trial_speed_diff": 0.6800000000000068,
+      "best_trial_speed_diff": 0.0,
       "jockeys": [
         "J ORMAN",
         "J ORMAN"
