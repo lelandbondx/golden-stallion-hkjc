@@ -1,0 +1,101 @@
+{
+ "meeting_id": "HV-20261118",
+ "meeting_date": "2026-11-18",
+ "venue": "HV",
+ "description": "Happy Valley Turf C Course, 9 races (198-206), going GOOD, R9 scheduled 22:50 HKT; official results and full stewards' report published for all 9 races",
+ "status": "FLAGGED",
+ "reviewed_at": "2026-11-18T12:40:41-05:00",
+ "records_count": 11,
+ "horses_with_records": 7,
+ "summary": {
+  "airway": [
+   "none reported"
+  ],
+  "bleeding": [
+   "MORGAN SUCCESS (R4, 12th): endoscopic examination showed a substantial amount of blood in its trachea (tracheal, not nostril); also irregular heart rhythm. No bleeding from the nostrils reported for any horse"
+  ],
+  "irregular_heart_rhythm": [
+   "LUNAR DASH (R3, 11th): irregular heart rhythm, 2nd occasion (previously reported 14.2.26): barrier trial + official vet exam",
+   "MORGAN SUCCESS (R4, 12th): irregular heart rhythm (with tracheal blood): barrier trial + official vet exam",
+   "PRESTIGE WIN (R6, withdrawn 17.11.26 on veterinary advice): irregular heart rhythm, 2nd occasion (previously reported 12.2.25): barrier trial + official vet exam"
+  ],
+  "vet_withdrawals": [
+   "PRESTIGE WIN (R6, withdrawn 17.11.26, irregular heart rhythm; replaced by standby HAPPY UNITED, official changes page 17/11 09:14)"
+  ],
+  "lameness": [
+   "SUPER HONG KONG (R1, 12th): lame in right front leg on post-race vet inspection: official vet exam"
+  ],
+  "injury": [
+   "AMAZING KID (R8, won): laceration to right hind leg noted after the race; no requirement stated"
+  ],
+  "barrier_trial_and_vet_exam_requirements": [
+   "LUNAR DASH, MORGAN SUCCESS, PRESTIGE WIN: barrier trial + official vet exam (all irregular heart rhythm)",
+   "SUPER HONG KONG: official vet exam only"
+  ],
+  "suspensions": [
+   "K Teetan (RED BRICK WARRIOR, R4, 2nd): careless riding, Rule 100(1), suspended from Wed 25 Nov 2026, resumes Mon 30 Nov 2026 (2 Hong Kong racedays)"
+  ],
+  "other_official": [
+   "Severe reprimand: Apprentice H Y Yuen (ALWAYS MY FOLKS, R2) for shifting in over concluding stages",
+   "Warnings: H T Mo and R Kingscote (R2); E C W Wong (SUPER SIXTY, R3, riding out); Apprentice H Y Yuen (SUPERB KING R6, PRESTIGE GOOD R7 early riding)",
+   "Non-vet notes: BULLISH NOVA (R3) contacted a rail leaving the Parade Ring, passed suitable by Veterinary Officer; EVER WEALTH (R5) lost left front plate; PRIVATE WEALTH (R5, 2nd) saddle shifted forward; SHOW ME YOUR LOVE (R3) fractious in the gates",
+   "Sampling: post-race sampling listed for several runners; Racing Laboratory tests of 8.11.26 and 11.11.26 runners proved negative",
+   "Track rolled after Race 4; going GOOD, penetrometer 2.72. No integrity inquiry, disqualification, heat-stress or nostril-bleeding finding in the report",
+   "Deferred suspensions on official reminder: P N Wong 22/11-25/11 (resume 26/11), origin not identified in this run; M Chadwick 25/11; C L Chau 29/11-02/12; A Atzeni and B Avdulla listed as suspended on 18/11"
+  ]
+ },
+ "open_items": [
+  {
+   "horse_id": "HK_2019_D241",
+   "horse_name": "SUPER HONG KONG",
+   "remaining": [
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K334",
+   "horse_name": "LUNAR DASH",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2024_K203",
+   "horse_name": "MORGAN SUCCESS",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  },
+  {
+   "horse_id": "HK_2025_L248",
+   "horse_name": "PRESTIGE WIN",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ]
+  }
+ ],
+ "sources_checked": [
+  "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261118",
+  "https://racing.hkjc.com/racing/information/English/Racing/LocalResults.aspx?RaceDate=2026/11/18&Racecourse=HV&RaceNo=1..9",
+  "https://racing.hkjc.com/en-us/local/information/veterinaryrecord?racedate=2026/11/18&Racecourse=HV&RaceNo=1..9",
+  "https://racing.hkjc.com/en-us/local/information/changes?racedate=2026/11/18&Racecourse=HV",
+  "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=<horse_id> (8 horses: SUPER HONG KONG, LUNAR DASH, MORGAN SUCCESS, PRESTIGE WIN, AMAZING KID, EVER WEALTH, PRIVATE WEALTH, SUPER SIXTY)",
+  "https://racing.hkjc.com/racing/information/English/Horse/BTResult.aspx?Date=2026/11/18 (No information)",
+  "https://racing.hkjc.com/racing/english/racing-widget/meetingreminder.aspx",
+  "https://racing.hkjc.com/racing/information/English/Racing/Fixture.aspx?CalYear=2026&CalMonth=11",
+  "https://racing.hkjc.com/racing/information/English/racing/RaceCard.aspx?RaceDate=2026/11/22&Racecourse=ST&RaceNo=1 (No information)"
+ ],
+ "source_gaps": [
+  "HKJC horse vet pages show no 18/11/2026 (or 17/11/2026) entry yet for SUPER HONG KONG, LUNAR DASH, MORGAN SUCCESS, PRESTIGE WIN, AMAZING KID as at retrieval; stewards' report is the only source for these findings; treated as pending.",
+  "Per-race vet records pages (R1-R9) show pre-race history of the runners only, no post-race entries.",
+  "HKJC published no official finish clock time; R9 official result published and advertised 22:50 HKT (09:50 ET), more than 2h before this review.",
+  "Next meeting (ST 2026-11-22) race card not yet published ('No information'): no declared-runner or standby cross-match, and open items from earlier meetings not re-checked this run (per routine, only when card is published).",
+  "P N Wong deferred suspension 22/11-25/11 appears on the official reminder; originating stewards' report not found in 11/11, 11/14 or 11/18 reports; not written as a record."
+ ],
+ "replay_bot_coverage": "Replay notes found (/workspace/replays/2026-11-18/trip_notes.csv, 87 rows, all 9 races). Every vet/withdrawal/suspension item (Super Hong Kong, Lunar Dash, Morgan Success, Prestige Win, Amazing Kid, Teetan suspension, Yuen reprimand/warnings) is present with official wording, and Morgan Success is correctly described as tracheal blood, not nostrils. Nothing material missed or wrong found. Minor: no separate note for P N Wong deferred suspension; Racing Laboratory sampling not covered.",
+ "replay_bot_agent_id": "dd4ab063-c9a5-4d02-b1f8-1c38a0de8980",
+ "notes": "Official facts only; FLAGGED, not an all-clear. Memory said 'Morgan Success bled': official report says tracheal blood on endoscopy plus irregular heart rhythm, no nostril bleed. Prestige Win withdrawal reason confirmed as irregular heart rhythm (official). Super Hong Kong confirmed lame right front (official)."
+}
