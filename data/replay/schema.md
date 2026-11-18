@@ -152,3 +152,38 @@ Order below is the CSV header order.
 37. **horse_name** — alias of `horse`, uppercased and trimmed.
 38. **retrieved_at_hkt** — source-fetch time in HKT, as described above.
 39. **retrieved_at_utc** — the same instant in UTC (`Z`).
+
+## Pre-race cross-reference files (`prerace/`)
+
+This section documents a separate, append-only add-on. It does **not** rename, drop, or alter any of the 39 columns described above, and it is **not** part of `all_trip_notes.csv` or `manifest.json`.
+
+Location: `data/replay/prerace/`. One upcoming meeting at a time, named `YYYY-MM-DD_VENUE.csv` and `YYYY-MM-DD_VENUE.json` (VENUE = `ST` or `HV`).
+
+These files join the official HKJC racecard for an upcoming meeting to the most recent stored trip-note row (if any) for each horse. They are a pre-race helper for Silks AI / Antigravity. They are not post-meeting trip notes and must not be concatenated into `all_trip_notes.csv`.
+
+### Row keys
+
+- `meeting_date` — upcoming meeting date, ISO `YYYY-MM-DD` (Hong Kong local)
+- `venue` — `ST` or `HV`
+- `race_no` — race number on the upcoming card
+- `horse_no` — saddlecloth / standby number as printed on the racecard
+- `horse_name` — official name, uppercase, trimmed
+- `horse_code` — HKJC brand number (preferred join key)
+
+Rows include declared runners and any stand-by starters printed on the card (`runner_status` = `declared` or `standby`). Scratchings are recorded when the card shows them.
+
+### Join rules
+
+Match stored trip notes in `all_trip_notes.csv` first by `horse_code`, else by uppercase trimmed `horse_name`. `match_method` is `horse_code`, `horse_name`, or `unmatched`. For a match, the copied trip-note fields come from the **most recent** stored row (`source_meeting`, `source_venue`, `source_race_no`). `prior_note_count` is how many stored rows exist for that horse. Blank cells mean unknown, never `0` or `false`.
+
+Copied trip-note fields (same meaning as above; blank if unmatched): `traffic`, `wide_no_cover`, `slow_away`, `stewards_excuse`, `vet_finding`, `clearance_required`, `pace_role`, `horse_last_400m_sec`, `race_last_400m_sec`, `flags`, `note`, `source`.
+
+`stewards_excuse`, `vet_finding` and `clearance_required` remain official stewards text. `note`, `flags`, `traffic`, `wide_no_cover` and `slow_away` remain replay-review observations unless `source` includes `stewards`.
+
+### Clearance flags
+
+If any stored row for that horse has a non-blank `clearance_required`, `clearance_in_prior_notes` is `true` and the latest such text is copied to `clearance_text` with `clearance_source_meeting` / `clearance_source_race_no`. Being declared or a standby on the upcoming official card is **not** treated as proof that the official veterinary examination, barrier trial, or stalls test has been passed. Those cases are flagged `clearance_status=unverified`. Horses with a stored clearance that are not on the card appear only in the JSON `clearance_flags` list (`clearance_status=not_declared`).
+
+### JSON wrapper
+
+The JSON file has a meeting header (`races_published`, `last_race_no`, `last_race_post_time_hkt`, advertised course/going, row counts, `sources`, `limitations`, `clearance_flags`) plus a `rows` array that matches the CSV. Timestamps: `generated_at_hkt` (ISO 8601 with `+08:00`) and `generated_at_utc` (`Z`).
