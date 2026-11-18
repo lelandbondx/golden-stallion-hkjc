@@ -2,12 +2,12 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-16T14:18:27+08:00",
-  "run_time_utc": "2026-11-16T06:18:27+00:00",
-  "source_last_run": "2026-11-15T07:52:00-05:00",
+  "run_time_hkt": "2026-11-18T20:47:20+08:00",
+  "run_time_utc": "2026-11-18T12:47:20+00:00",
+  "source_last_run": "2026-11-18T07:47:16-05:00",
   "row_counts": {
-    "records.jsonl": 174,
-    "records.csv": 174,
+    "records.jsonl": 177,
+    "records.csv": 177,
     "horses_latest.json": 73,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
@@ -19,7 +19,7 @@
   "meetings_covered": [
     {
       "meeting_id": "HV-20261104",
-      "records_in_jsonl": 27,
+      "records_in_jsonl": 30,
       "has_meeting_file": true
     },
     {
@@ -67,7 +67,7 @@
     "horses_snapshot_count": 73,
     "meeting_files": 5,
     "reviewed_meetings_in_state": 4,
-    "open_items": 34,
+    "open_items": 33,
     "records_without_meeting": 94,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -112,15 +112,15 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-15T07:52:00-05:00",
+      "at": "2026-11-18T07:47:16-05:00",
       "horses_rechecked": 35,
-      "result": "no new Passed On dates on ovehorse pages; no completed barrier trials (btresult 05/06/10/12/13 Nov checked; only Duke of Orange appears, withdrawn 13/11); no new meeting to review"
+      "result": "Lucky Blessing (K073): vet record 04/11/2026 Passed Date 17/11/2026 and barrier trial 17/11/2026 (ST Batch 4) Passed -> both requirements met, cleared. No other new Passed On dates for open horses; no other open horse in 15-17 Nov trial results (15/16/18 Nov: no trials). Awesome Fluke stalls test (ST 16/11) result not published on any page checked (gap). Ledger changed; push attempted (see push_result)."
     },
     "next_meeting": {
       "id": "HV-20261118",
       "date": "2026-11-18",
       "venue": "HV",
-      "verification": "Re-verified 2026-11-15 via official HKJC fixture calendar (fixture?calyear=2026&calmonth=11): no meeting on 15 Nov; 18 Nov = HV night meeting; racecard for 18/11 not yet published ('No information'). Subsequent: ST 22 Nov (day)."
+      "verification": "Re-verified 2026-11-18T07:47:16-05:00 via HKJC racecard (racedate=2026/11/18 HV, races 1-9): published, HV night meeting, R1 18:40 HKT, R9 22:50 HKT (~9:50 AM ET), 12 runners/race listed. Not yet reviewable. Cross-match by brand code: only Super Sixty (J071, surgery cleared 06/10/2026), Lunar Dash (K334, old entries passed 17/04/2026) and Private Wealth (L177, 11/11 flag no vet record) are in ledger; none has an open requirement."
     },
     "upcoming_known": [
       "Awesome Fluke (J050) stalls test scheduled ST 16/11/2026 07:30 HKT",
@@ -139,15 +139,6 @@
       "horse_name": "MONTA FRUTTA",
       "remaining": [
         "compulsory retirement"
-      ],
-      "since": "2026-11-04"
-    },
-    {
-      "horse_id": "HK_2024_K073",
-      "horse_name": "LUCKY BLESSING",
-      "remaining": [
-        "barrier trial",
-        "official vet exam"
       ],
       "since": "2026-11-04"
     },
@@ -421,9 +412,9 @@
     }
   ],
   "sha256": {
-    "records.jsonl": "1cb6df9a9453c9e7f21087a12d1cbd78de464f47101682247110bcef654382d4",
-    "records.csv": "2b4c7f32ea923b07ae7f71b3bb730e4e13604b9d02447faf07baedf9a7dd70e7",
-    "horses_latest.json": "f63d68deac9ff9b59e48e78ec6335d9fe59c2a2b8d32d26e0c1ebc5e6989f616",
+    "records.jsonl": "cefa9a137c6224156862be0c5b96f323d9595c307d9a6f68c3e6bdb4b08929e0",
+    "records.csv": "e17831ed79467054c71b93ea0d60fd0453686e1a1d3658cfe3b8eb1578124b17",
+    "horses_latest.json": "a4bf027adfb5b607edfb963a17e7c7905cc6fc73bf3daa8755d0740546e6df9e",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
@@ -433,18 +424,5 @@
   },
   "repo": "lelandbondx/golden-stallion-hkjc",
   "branch": "trial-data",
-  "remote_folder": "data/steward",
-  "git": {
-    "branch": "trial-data",
-    "branch_existed_before_push": true,
-    "branch_head_before_push": "b730037c56f273b1b9020f7ad74a3621d0765cb3",
-    "data_commits": [
-      "d5009a25122a9b4941a904c45b0167384a3c93a9",
-      "e0e76a1472aacef604f29e0620efc581a76ac169",
-      "70e6e3e3895b781b0b93bedef723d9757a07afa2"
-    ],
-    "main_sha": "6e458a2ed21372a302753052f5ea27633c101718",
-    "main_untouched": true,
-    "pushed_via": "GitHub MCP connector push_files"
-  }
+  "remote_folder": "data/steward"
 }
