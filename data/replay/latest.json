@@ -1,16 +1,17 @@
 {
  "schema_version": 2,
- "latest_meeting": "2026-11-14_ST",
- "date": "2026-11-14",
- "venue": "ST",
- "csv": "2026-11-14_ST.csv",
- "json": "2026-11-14_ST.json",
+ "latest_meeting": "2026-11-18_HV",
+ "date": "2026-11-18",
+ "venue": "HV",
+ "csv": "2026-11-18_HV.csv",
+ "json": "2026-11-18_HV.json",
  "all_csv": "all_trip_notes.csv",
  "meetings": [
   "2026-11-08_ST",
   "2026-11-11_HV",
-  "2026-11-14_ST"
+  "2026-11-14_ST",
+  "2026-11-18_HV"
  ],
- "generated_at": "2026-11-14T20:28:22+08:00",
- "source_fetched_at": "2026-11-14T20:28:22+08:00"
+ "generated_at": "2026-11-19T01:05:55+08:00",
+ "source_fetched_at": "2026-11-19T01:05:54+08:00"
 }
