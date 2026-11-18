@@ -1,18 +1,15 @@
 {
-  "overall_status": "ok",
-  "updated_at": "2026-11-18T03:49:09Z",
+  "overall_status": "fail",
+  "updated_at": "2026-11-18T04:02:21Z",
   "components": {
     "scraper": {
-      "status": "ok",
-      "last_attempt_at": "2026-11-18T03:48:32Z",
-      "last_success_at": "2026-11-18T03:48:32Z",
+      "status": "fail",
+      "last_attempt_at": "2026-11-18T04:02:21Z",
+      "last_success_at": "2026-11-18T04:01:19Z",
       "metrics": {
-        "source": "live_html_racecard",
-        "meeting_date": "2026-11-18",
-        "meetings_count": 2,
-        "races_count": 9
+        "source": "error"
       },
-      "error": null
+      "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."
     },
     "incident_memory": {
       "status": "ok",
@@ -26,8 +23,8 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-18T03:49:09Z",
-      "last_success_at": "2026-11-18T03:49:09Z",
+      "last_attempt_at": "2026-11-18T04:02:14Z",
+      "last_success_at": "2026-11-18T04:02:14Z",
       "metrics": {
         "meeting_date": "2026-11-18",
         "venue": "Happy Valley",
@@ -176,8 +173,8 @@
     },
     "frozen_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-18T03:49:09Z",
-      "last_success_at": "2026-11-18T03:49:09Z",
+      "last_attempt_at": "2026-11-18T04:02:14Z",
+      "last_success_at": "2026-11-18T04:02:14Z",
       "metrics": {
         "file": "frozen_predictions_20261118.json",
         "races_cached": 9
