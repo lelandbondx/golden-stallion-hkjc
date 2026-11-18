@@ -9,100 +9,101 @@ Meeting: Happy Valley - 2026-11-18 - Going: GOOD
 [Bot Feeds] Mode=live merged for 2026-11-18 Happy Valley
 
 --- RACE 1 : Class 5 - 2200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #1 STAR BROSE (Odds: 3.6) - GS Score: 22.0 - Conf: 74% - Status: [Winning-horse pick / exotic key only — no win stake]
-🎯 PICK 2 (EXACTA/QUINELLA): #5 OCEAN IMPACT (Odds: 7.1) - GS Score: 14.0
-💠 PICK 3 (TRIO PODIUM): #9 YOUNG FIGHTER (Odds: 12.0) - GS Score: 12.5
-📊 PICK 4 (TRIO 4TH LEG): #4 GRAND TURBO (Odds: 12.0) - GS Score: 11.5
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #12 PERFECT PAIRING (Odds: 3.6) - EV: -0.124 - GS Score: 10.2
-🎫 TICKETS: Quinella Box 1-3 (1, 5, 9) | Trio Box (1, 5, 9, 4, 12) | Dual-Stake: #1 + #12
+🏆 PICK 1 (WINNING HORSE PICK): #1 STAR BROSE (Odds: 3.4) - GS Score: 21.5 - Conf: 74% - Status: [Winning-horse pick / exotic key only — no win stake]
+⚡ SHIFTED WIN STAKE: #9 YOUNG FIGHTER (Odds: 11.0) - EV: +0.070
+🎯 PICK 2 (EXACTA/QUINELLA): #9 YOUNG FIGHTER (Odds: 11.0) - GS Score: 14.4
+💠 PICK 3 (TRIO PODIUM): #5 OCEAN IMPACT (Odds: 7.8) - GS Score: 13.7
+📊 PICK 4 (TRIO 4TH LEG): #4 GRAND TURBO (Odds: 12.0) - GS Score: 11.2
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #12 PERFECT PAIRING (Odds: 3.6) - EV: -0.125 - GS Score: 10.0
+🎫 TICKETS: Quinella Box 1-3 (1, 9, 5) | Trio Box (1, 9, 5, 4, 12) | Dual-Stake: #1 + #12
 
 --- RACE 2 : Class 5 - 1000m ---
-🏆 PICK 1 (WINNING HORSE PICK): #5 ALWAYS MY FOLKS (Odds: 4.4) - GS Score: 17.7 - Conf: 74% - Status: [Winning-horse pick / exotic key only — no win stake]
+🏆 PICK 1 (WINNING HORSE PICK): #5 ALWAYS MY FOLKS (Odds: 4.3) - GS Score: 17.7 - Conf: 74% - Status: [Winning-horse pick / exotic key only — no win stake]
 🎯 PICK 2 (EXACTA/QUINELLA): #2 MAPOGO (Odds: 3.5) - GS Score: 16.8
 💠 PICK 3 (TRIO PODIUM): #9 ALWAYS FLUKE (Odds: 10.0) - GS Score: 15.0
 📊 PICK 4 (TRIO 4TH LEG): #1 GOLDEN FRIENDSHIP (Odds: 5.6) - GS Score: 11.7
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #4 TACTICAL COMMAND (Odds: 23.0) - EV: 0.050 - GS Score: 8.5
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #4 TACTICAL COMMAND (Odds: 24.0) - EV: 0.052 - GS Score: 8.5
 🎫 TICKETS: Quinella Box 1-3 (5, 2, 9) | Trio Box (5, 2, 9, 1, 4) | Dual-Stake: #5 + #4
 
 --- RACE 3 : Class 4 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #6 GALLANT TRIUMPH (Odds: 3.1) - GS Score: 19.0 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-🎯 PICK 2 (EXACTA/QUINELLA): #2 MATZDEN (Odds: 22.0) - GS Score: 11.1
-💠 PICK 3 (TRIO PODIUM): #5 AGENT (Odds: 14.0) - GS Score: 10.7
-📊 PICK 4 (TRIO 4TH LEG): #8 NEVER SETTLE (Odds: 3.8) - GS Score: 10.7
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #7 SPEED BABY (Odds: 13.0) - EV: 0.036 - GS Score: 9.8
+🏆 PICK 1 (WINNING HORSE PICK): #6 GALLANT TRIUMPH (Odds: 3.0) - GS Score: 19.3 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #2 MATZDEN (Odds: 23.0) - GS Score: 11.3
+💠 PICK 3 (TRIO PODIUM): #5 AGENT (Odds: 14.0) - GS Score: 10.9
+📊 PICK 4 (TRIO 4TH LEG): #8 NEVER SETTLE (Odds: 3.8) - GS Score: 10.9
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #7 SPEED BABY (Odds: 13.0) - EV: 0.037 - GS Score: 10.0
 🎫 TICKETS: Quinella Box 1-3 (6, 2, 5) | Trio Box (6, 2, 5, 8, 7) | Dual-Stake: #6 + #7
 
 --- RACE 4 : Class 4 - 1650m ---
-🏆 PICK 1 (WINNING HORSE PICK): #9 GAZELEY (Odds: 2.9) - GS Score: 17.0 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-⚡ SHIFTED WIN STAKE: #12 RED BRICK WARRIOR (Odds: 8.1) - EV: +0.044
-🎯 PICK 2 (EXACTA/QUINELLA): #12 RED BRICK WARRIOR (Odds: 8.1) - GS Score: 14.5
-💠 PICK 3 (TRIO PODIUM): #4 WELL ENOUGH (Odds: 9.3) - GS Score: 13.6
-📊 PICK 4 (TRIO 4TH LEG): #5 CLASS (Odds: 9.5) - GS Score: 13.0
+🏆 PICK 1 (WINNING HORSE PICK): #9 GAZELEY (Odds: 2.8) - GS Score: 17.0 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+⚡ SHIFTED WIN STAKE: #12 RED BRICK WARRIOR (Odds: 8.5) - EV: +0.044
+🎯 PICK 2 (EXACTA/QUINELLA): #12 RED BRICK WARRIOR (Odds: 8.5) - GS Score: 14.1
+💠 PICK 3 (TRIO PODIUM): #4 WELL ENOUGH (Odds: 10.0) - GS Score: 13.7
+📊 PICK 4 (TRIO 4TH LEG): #5 CLASS (Odds: 9.6) - GS Score: 13.0
 💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #2 REFUSETOBEENGLISH (Odds: 7.4) - EV: 0.012 - GS Score: 12.2
 🎫 TICKETS: Quinella Box 1-3 (9, 12, 4) | Trio Box (9, 12, 4, 5, 2) | Dual-Stake: #9 + #2
 
 --- RACE 5 : Class 4 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #5 FALCON HUNTER (Odds: 5.7) - GS Score: 19.1 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #3 MY DAY MY SAY (Odds: 7.6) - GS Score: 17.2
-💠 PICK 3 (TRIO PODIUM): #1 KING LOTUS (Odds: 4.0) - GS Score: 13.7
-📊 PICK 4 (TRIO 4TH LEG): #6 NAVAS G (Odds: 8.3) - GS Score: 11.8
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #11 PHOENIX LIGHT (Odds: 9.6) - EV: 0.028 - GS Score: 11.3
+🏆 PICK 1 (WINNING HORSE PICK): #5 FALCON HUNTER (Odds: 5.3) - GS Score: 19.4 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #3 MY DAY MY SAY (Odds: 8.0) - GS Score: 17.5
+💠 PICK 3 (TRIO PODIUM): #1 KING LOTUS (Odds: 3.9) - GS Score: 14.0
+📊 PICK 4 (TRIO 4TH LEG): #6 NAVAS G (Odds: 8.6) - GS Score: 12.0
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #11 PHOENIX LIGHT (Odds: 9.9) - EV: 0.020 - GS Score: 10.2
 🎫 TICKETS: Quinella Box 1-3 (5, 3, 1) | Trio Box (5, 3, 1, 6, 11) | Dual-Stake: #5 + #11
 
 --- RACE 6 : Class 4 - 1000m ---
 🏆 PICK 1 (WINNING HORSE PICK): #2 GEORGIAN SIGMA (Odds: 2.9) - GS Score: 18.5 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-🎯 PICK 2 (EXACTA/QUINELLA): #7 COUNTRY PRIDE (Odds: 5.4) - GS Score: 15.9
-💠 PICK 3 (TRIO PODIUM): #4 MASTER RESOLUTE (Odds: 7.4) - GS Score: 15.4
-📊 PICK 4 (TRIO 4TH LEG): #1 SUPERB KING (Odds: 8.0) - GS Score: 14.3
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 HARMONY FIRE (Odds: 15.0) - EV: 0.034 - GS Score: 8.8
+🎯 PICK 2 (EXACTA/QUINELLA): #7 COUNTRY PRIDE (Odds: 5.5) - GS Score: 15.9
+💠 PICK 3 (TRIO PODIUM): #4 MASTER RESOLUTE (Odds: 7.1) - GS Score: 15.4
+📊 PICK 4 (TRIO 4TH LEG): #1 SUPERB KING (Odds: 7.9) - GS Score: 14.3
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 HARMONY FIRE (Odds: 15.0) - EV: 0.033 - GS Score: 8.8
 🎫 TICKETS: Quinella Box 1-3 (2, 7, 4) | Trio Box (2, 7, 4, 1, 10) | Dual-Stake: #2 + #10
 
 --- RACE 7 : Class 3 - 1650m ---
-🏆 PICK 1 (WINNING HORSE PICK): #1 MY DAY MY WAY (Odds: 9.1) - GS Score: 20.0 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #2 PRESTIGE GOOD (Odds: 4.1) - GS Score: 17.6
-💠 PICK 3 (TRIO PODIUM): #3 RIDING TOGETHER (Odds: 7.2) - GS Score: 12.6
-📊 PICK 4 (TRIO 4TH LEG): #5 HIGHLAND RAHY (Odds: 11.0) - GS Score: 11.8
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 CALL ME TOPSEED (Odds: 18.0) - EV: 0.027 - GS Score: 7.2
-🎫 TICKETS: Quinella Box 1-3 (1, 2, 3) | Trio Box (1, 2, 3, 5, 10) | Dual-Stake: #1 + #10
+🏆 PICK 1 (WINNING HORSE PICK): #1 MY DAY MY WAY (Odds: 8.9) - GS Score: 22.1 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #2 PRESTIGE GOOD (Odds: 4.0) - GS Score: 17.4
+💠 PICK 3 (TRIO PODIUM): #3 RIDING TOGETHER (Odds: 7.2) - GS Score: 12.4
+📊 PICK 4 (TRIO 4TH LEG): #8 WINDLORD (Odds: 5.4) - GS Score: 11.7
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #5 HIGHLAND RAHY (Odds: 10.0) - EV: 0.033 - GS Score: 11.4
+🎫 TICKETS: Quinella Box 1-3 (1, 2, 3) | Trio Box (1, 2, 3, 8, 5) | Dual-Stake: #1 + #5
 
 --- RACE 8 : Class 3 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #1 AURORA LADY (Odds: 6.7) - GS Score: 17.0 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
-🎯 PICK 2 (EXACTA/QUINELLA): #5 GUSTOSISIMO (Odds: 11.0) - GS Score: 14.7
-💠 PICK 3 (TRIO PODIUM): #11 VIRTUS GLORY (Odds: 5.9) - GS Score: 14.1
-📊 PICK 4 (TRIO 4TH LEG): #2 AURIO (Odds: 5.3) - GS Score: 13.2
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 INVINCIBLE STEED (Odds: 11.0) - EV: 0.033 - GS Score: 10.7
-🎫 TICKETS: Quinella Box 1-3 (1, 5, 11) | Trio Box (1, 5, 11, 2, 10) | Dual-Stake: #1 + #10
+🏆 PICK 1 (WINNING HORSE PICK): #1 AURORA LADY (Odds: 6.6) - GS Score: 17.0 - Conf: 85% - Status: [WIN STAKE ACTIVE (Half Unit Win + Place)]
+🎯 PICK 2 (EXACTA/QUINELLA): #11 VIRTUS GLORY (Odds: 5.5) - GS Score: 14.0
+💠 PICK 3 (TRIO PODIUM): #2 AURIO (Odds: 5.2) - GS Score: 13.2
+📊 PICK 4 (TRIO 4TH LEG): #5 GUSTOSISIMO (Odds: 12.0) - GS Score: 13.2
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #10 INVINCIBLE STEED (Odds: 10.0) - EV: 0.040 - GS Score: 12.1
+🎫 TICKETS: Quinella Box 1-3 (1, 11, 2) | Trio Box (1, 11, 2, 5, 10) | Dual-Stake: #1 + #10
 
 --- RACE 9 : Class 3 - 1200m ---
-🏆 PICK 1 (WINNING HORSE PICK): #11 MEOWTH (Odds: 5.9) - GS Score: 16.6 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
-🎯 PICK 2 (EXACTA/QUINELLA): #2 DANICA'S CHOICE (Odds: 5.5) - GS Score: 16.0
-💠 PICK 3 (TRIO PODIUM): #10 MALPENSA (Odds: 8.8) - GS Score: 13.0
-📊 PICK 4 (TRIO 4TH LEG): #1 THE HEIR (Odds: 14.0) - GS Score: 10.2
-💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #9 DA AI (Odds: 15.0) - EV: 0.017 - GS Score: 7.2
+🏆 PICK 1 (WINNING HORSE PICK): #11 MEOWTH (Odds: 5.7) - GS Score: 16.1 - Conf: 85% - Status: [Winning-horse pick / exotic key only — no win stake]
+🎯 PICK 2 (EXACTA/QUINELLA): #2 DANICA'S CHOICE (Odds: 5.5) - GS Score: 15.6
+💠 PICK 3 (TRIO PODIUM): #10 MALPENSA (Odds: 8.6) - GS Score: 12.6
+📊 PICK 4 (TRIO 4TH LEG): #1 THE HEIR (Odds: 14.0) - GS Score: 9.9
+💣 PICK 5 (DUAL-STAKE SLEEPER / HIGHEST EV): #9 DA AI (Odds: 15.0) - EV: 0.016 - GS Score: 7.0
 🎫 TICKETS: Quinella Box 1-3 (11, 2, 10) | Trio Box (11, 2, 10, 1, 9) | Dual-Stake: #11 + #9
 
 
 --- OVERALL GLOBAL BEST BETS ---
-Top Pick 1: Race 1 - #1 STAR BROSE (Odds: 3.6, Conf: 74%, EV: -0.006)
-Top Pick 2: Race 7 - #1 MY DAY MY WAY (Odds: 9.1, Conf: 85%, EV: 0.110)
-Top Pick 3: Race 5 - #5 FALCON HUNTER (Odds: 5.7, Conf: 85%, EV: 0.049)
+Top Pick 1: Race 7 - #1 MY DAY MY WAY (Odds: 8.9, Conf: 85%, EV: 0.130)
+Top Pick 2: Race 1 - #1 STAR BROSE (Odds: 3.4, Conf: 74%, EV: -0.023)
+Top Pick 3: Race 5 - #5 FALCON HUNTER (Odds: 5.3, Conf: 85%, EV: 0.040)
 
 
 --- RECOMMENDED DUAL-STAKING BETS (PICK 1 + PICK 5) ---
-Race 1 Bet Selection: Anchor #1 STAR BROSE (3.6) | Sleeper #12 PERFECT PAIRING (3.6)
-Race 2 Bet Selection: Anchor #5 ALWAYS MY FOLKS (4.4) | Sleeper #4 TACTICAL COMMAND (23.0)
-Race 3 Bet Selection: Anchor #6 GALLANT TRIUMPH (3.1) | Sleeper #7 SPEED BABY (13.0)
-Race 4 Bet Selection: Anchor #9 GAZELEY (2.9) | Sleeper #2 REFUSETOBEENGLISH (7.4)
-Race 5 Bet Selection: Anchor #5 FALCON HUNTER (5.7) | Sleeper #11 PHOENIX LIGHT (9.6)
+Race 1 Bet Selection: Anchor #1 STAR BROSE (3.4) | Sleeper #12 PERFECT PAIRING (3.6)
+Race 2 Bet Selection: Anchor #5 ALWAYS MY FOLKS (4.3) | Sleeper #4 TACTICAL COMMAND (24.0)
+Race 3 Bet Selection: Anchor #6 GALLANT TRIUMPH (3.0) | Sleeper #7 SPEED BABY (13.0)
+Race 4 Bet Selection: Anchor #9 GAZELEY (2.8) | Sleeper #2 REFUSETOBEENGLISH (7.4)
+Race 5 Bet Selection: Anchor #5 FALCON HUNTER (5.3) | Sleeper #11 PHOENIX LIGHT (9.9)
 Race 6 Bet Selection: Anchor #2 GEORGIAN SIGMA (2.9) | Sleeper #10 HARMONY FIRE (15.0)
-Race 7 Bet Selection: Anchor #1 MY DAY MY WAY (9.1) | Sleeper #10 CALL ME TOPSEED (18.0)
-Race 8 Bet Selection: Anchor #1 AURORA LADY (6.7) | Sleeper #10 INVINCIBLE STEED (11.0)
-Race 9 Bet Selection: Anchor #11 MEOWTH (5.9) | Sleeper #9 DA AI (15.0)
+Race 7 Bet Selection: Anchor #1 MY DAY MY WAY (8.9) | Sleeper #5 HIGHLAND RAHY (10.0)
+Race 8 Bet Selection: Anchor #1 AURORA LADY (6.6) | Sleeper #10 INVINCIBLE STEED (10.0)
+Race 9 Bet Selection: Anchor #11 MEOWTH (5.7) | Sleeper #9 DA AI (15.0)
 
 
 --- RECOMMENDED 2x3 ALL UP (過關 2串3 BANKER) ---
 🎯 AI-CALCULATED OPTIMAL 2x3 ALL UP:
-   🏛️ Leg 1 (Race 7): [WIN (獨贏)] #1 MY DAY MY WAY (9.1) -> High EV (+0.110) & dominant win conversion
-   🥈 Leg 2 (Race 5): [WIN (獨贏)] #5 FALCON HUNTER (5.7) -> High EV (+0.049) & dominant win conversion
+   🏛️ Leg 1 (Race 7): [WIN (獨贏)] #1 MY DAY MY WAY (8.9) -> High EV (+0.130) & dominant win conversion
+   🥈 Leg 2 (Race 5): [WIN (獨贏)] #5 FALCON HUNTER (5.3) -> High EV (+0.040) & dominant win conversion
 🛡️ Alternative Options: Ultra-Safe PLACE 2x3 (R7 Place × R5 Place) | Aggressive WIN 2x3 (R7 Win × R5 Win)
 Note: High-stability races only (Class 5 strictly excluded to prevent multi-leg bust).
