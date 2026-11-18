@@ -2,16 +2,17 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-18T20:47:20+08:00",
-  "run_time_utc": "2026-11-18T12:47:20+00:00",
-  "source_last_run": "2026-11-18T07:47:16-05:00",
+  "run_time_hkt": "2026-11-19T01:40:46+08:00",
+  "run_time_utc": "2026-11-18T17:40:46+00:00",
+  "source_last_run": "2026-11-18T12:40:41-05:00",
   "row_counts": {
-    "records.jsonl": 177,
-    "records.csv": 177,
-    "horses_latest.json": 73,
+    "records.jsonl": 188,
+    "records.csv": 188,
+    "horses_latest.json": 78,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
     "meetings/HV-20261111.json": 1,
+    "meetings/HV-20261118.json": 1,
     "meetings/ST-20261108.json": 1,
     "meetings/ST-20261114-precheck.json": 1,
     "meetings/ST-20261114.json": 1
@@ -25,6 +26,11 @@
     {
       "meeting_id": "HV-20261111",
       "records_in_jsonl": 13,
+      "has_meeting_file": true
+    },
+    {
+      "meeting_id": "HV-20261118",
+      "records_in_jsonl": 11,
       "has_meeting_file": true
     },
     {
@@ -53,21 +59,23 @@
     "HV-20261104",
     "ST-20261108",
     "HV-20261111",
-    "ST-20261114"
+    "ST-20261114",
+    "HV-20261118"
   ],
   "meeting_status": {
     "HV-20261104": "FLAGGED",
     "ST-20261108": "FLAGGED",
     "HV-20261111": "FLAGGED",
-    "ST-20261114": "FLAGGED"
+    "ST-20261114": "FLAGGED",
+    "HV-20261118": "FLAGGED"
   },
   "completeness": {
     "records_jsonl_csv_match": true,
     "records_validated": true,
-    "horses_snapshot_count": 73,
-    "meeting_files": 5,
-    "reviewed_meetings_in_state": 4,
-    "open_items": 33,
+    "horses_snapshot_count": 78,
+    "meeting_files": 6,
+    "reviewed_meetings_in_state": 5,
+    "open_items": 37,
     "records_without_meeting": 94,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -94,6 +102,16 @@
         ]
       },
       {
+        "meeting_id": "HV-20261118",
+        "source_gaps": [
+          "HKJC horse vet pages show no 18/11/2026 (or 17/11/2026) entry yet for SUPER HONG KONG, LUNAR DASH, MORGAN SUCCESS, PRESTIGE WIN, AMAZING KID as at retrieval; stewards' report is the only source for these findings; treated as pending.",
+          "Per-race vet records pages (R1-R9) show pre-race history of the runners only, no post-race entries.",
+          "HKJC published no official finish clock time; R9 official result published and advertised 22:50 HKT (09:50 ET), more than 2h before this review.",
+          "Next meeting (ST 2026-11-22) race card not yet published ('No information'): no declared-runner or standby cross-match, and open items from earlier meetings not re-checked this run (per routine, only when card is published).",
+          "P N Wong deferred suspension 22/11-25/11 appears on the official reminder; originating stewards' report not found in 11/11, 11/14 or 11/18 reports; not written as a record."
+        ]
+      },
+      {
         "meeting_id": "ST-20261108",
         "source_gaps": [
           "Per-race vet records and late-change/scratching pages for this past meeting are not archived on HKJC (veterinaryrecord/overecord pages show only the upcoming Sha Tin 2026-11-14 card); stewards' report summary used for withdrawals.",
@@ -112,20 +130,19 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-18T07:47:16-05:00",
-      "horses_rechecked": 35,
-      "result": "Lucky Blessing (K073): vet record 04/11/2026 Passed Date 17/11/2026 and barrier trial 17/11/2026 (ST Batch 4) Passed -> both requirements met, cleared. No other new Passed On dates for open horses; no other open horse in 15-17 Nov trial results (15/16/18 Nov: no trials). Awesome Fluke stalls test (ST 16/11) result not published on any page checked (gap). Ledger changed; push attempted (see push_result)."
+      "at": "2026-11-18T12:40:41-05:00",
+      "horses_rechecked": 8,
+      "result": "Open items not re-checked this run: ST 22/11 card not published. Re-read ovehorse for the 5 horses named at HV 18/11 plus Ever Wealth, Private Wealth, Super Sixty: no 17/18 Nov entries or Passed On dates yet. No clearances."
     },
     "next_meeting": {
-      "id": "HV-20261118",
-      "date": "2026-11-18",
-      "venue": "HV",
-      "verification": "Re-verified 2026-11-18T07:47:16-05:00 via HKJC racecard (racedate=2026/11/18 HV, races 1-9): published, HV night meeting, R1 18:40 HKT, R9 22:50 HKT (~9:50 AM ET), 12 runners/race listed. Not yet reviewable. Cross-match by brand code: only Super Sixty (J071, surgery cleared 06/10/2026), Lunar Dash (K334, old entries passed 17/04/2026) and Private Wealth (L177, 11/11 flag no vet record) are in ledger; none has an open requirement."
+      "id": "ST-20261122",
+      "date": "2026-11-22",
+      "venue": "ST",
+      "verification": "Verified 2026-11-18T12:40:41-05:00: official Fixture calendar (Nov 2026) shows ST on 22; official meeting reminder 'Next Meeting will be held on 22/11/2026(Sun)'. Race card RaceCard.aspx RaceDate=2026/11/22 ST returned 'No information' (not published), so no declared-runner or standby cross-match yet."
     },
     "upcoming_known": [
-      "Awesome Fluke (J050) stalls test scheduled ST 16/11/2026 07:30 HKT",
-      "HV 2026-11-18: B Avdulla suspension day per official reminder; A Atzeni deferred suspension 18/11 (resuming 19/11)",
-      "M Chadwick suspended Wed 25 Nov 2026 at Happy Valley"
+      "Awesome Fluke (J050) stalls test ST 16/11/2026: result not published on any page checked (gap)",
+      "K Teetan suspended 25/11-29/11, resumes 30/11 (HV 25 Nov); M Chadwick suspended 25/11; P N Wong deferred 22/11-25/11 resume 26/11 (origin not identified); C L Chau deferred 29/11-02/12 resume 03/12"
     ],
     "publication_retries": 0,
     "notes": [
@@ -409,15 +426,51 @@
         "official vet exam"
       ],
       "since": "2026-11-14"
+    },
+    {
+      "horse_id": "HK_2019_D241",
+      "horse_name": "SUPER HONG KONG",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-18"
+    },
+    {
+      "horse_id": "HK_2024_K334",
+      "horse_name": "LUNAR DASH",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-18"
+    },
+    {
+      "horse_id": "HK_2024_K203",
+      "horse_name": "MORGAN SUCCESS",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-18"
+    },
+    {
+      "horse_id": "HK_2025_L248",
+      "horse_name": "PRESTIGE WIN",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-17"
     }
   ],
   "sha256": {
-    "records.jsonl": "cefa9a137c6224156862be0c5b96f323d9595c307d9a6f68c3e6bdb4b08929e0",
-    "records.csv": "e17831ed79467054c71b93ea0d60fd0453686e1a1d3658cfe3b8eb1578124b17",
-    "horses_latest.json": "a4bf027adfb5b607edfb963a17e7c7905cc6fc73bf3daa8755d0740546e6df9e",
+    "records.jsonl": "aebd81ddae6a162c0b4c00ffc6ab00664baf9c1b89d2568f69100763b614dd1c",
+    "records.csv": "71e28254a485d97c6165b8960bf8b1ee8e2711b291067d9e54f352cccd314510",
+    "horses_latest.json": "be4216cda11df4b7041b8dc0ff20c602867454bfbadf4fea52e259aa190e4bba",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
+    "meetings/HV-20261118.json": "6354e1141518f1dffb5da316d26cff9cb8a6830380dd792108418fbd7734db50",
     "meetings/ST-20261108.json": "b722dfa48633d18beec7474af859a7e30792ce493588fe9404a1b87e5c634886",
     "meetings/ST-20261114-precheck.json": "bcafee74a8242a858ba50f0cfdca4c75e08f6dfd9f463962072d89810d18b006",
     "meetings/ST-20261114.json": "03e8e097d89e42742754e36416b8ddcb2cb75c20c362ffd470bff535723b221b"
