@@ -67,39 +67,27 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2022_H455 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2022_H455"
  },
  "HK_2024_K073": {
   "horse_id": "HK_2024_K073",
   "horse_code": "K073",
   "horse_name": "LUCKY BLESSING",
-  "status": "active_requirement",
+  "status": "cleared",
   "latest_entry": {
-   "record_id": "096770041179a2583705a65a4d70dcff8290f523",
-   "record_type": "requirement",
+   "record_id": "9b7e7fffe0d89b6b9040444ed0a36ad49a358369",
+   "record_type": "requirement_met",
    "category": "administrative",
    "event_date": "2026-11-04",
    "meeting_id": "HV-20261104",
-   "finding_verbatim": "Before being allowed to race again, LUCKY BLESSING will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
-   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
+   "finding_verbatim": "Barrier trial 2026-11-17 (Batch 4, Sha Tin All Weather Track, 1200m): Result Passed. Comment: Shared lead early; limited response in the Straight.",
+   "source_url": "https://racing.hkjc.com/racing/information/English/Horse/BTResult.aspx?Date=2026/11/17"
   },
-  "passed_on": "2025-12-29",
-  "open_requirements": [
-   {
-    "record_id": "096770041179a2583705a65a4d70dcff8290f523",
-    "meeting_id": "HV-20261104",
-    "event_date": "2026-11-04",
-    "requirement": "barrier trial + official vet exam",
-    "remaining": [
-     "barrier trial",
-     "official vet exam"
-    ],
-    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
-   }
-  ],
-  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K073 (4 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "passed_on": "2026-11-17",
+  "open_requirements": [],
+  "history_pointer": "records.jsonl rows with horse_id=HK_2024_K073 (7 rows)",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K073"
  },
  "HK_2023_J332": {
@@ -113,7 +101,7 @@
    "category": "tracheal_blood",
    "event_date": "2026-11-04",
    "meeting_id": "HV-20261104",
-   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea.",
    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
   },
   "passed_on": null,
@@ -131,7 +119,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2023_J332 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J332"
  },
  "HK_2024_K112": {
@@ -165,7 +153,7 @@
    "category": "tracheal_blood",
    "event_date": "2026-11-04",
    "meeting_id": "HV-20261104",
-   "finding_verbatim": "After the race an endoscopic examination was conducted on UNSTOPPAPLE at the request of Trainer C S Shum. The Veterinary Surgeon said this examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "finding_verbatim": "After the race an endoscopic examination was conducted on UNSTOPPAPLE at the request of Trainer C S Shum. The Veterinary Surgeon said this examination showed a substantial amount of blood in the horse’s trachea.",
    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
   },
   "passed_on": "2026-10-28",
@@ -182,7 +170,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L205 (4 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L205"
  },
  "HK_2025_L330": {
@@ -254,7 +242,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L142 (3 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L142"
  },
  "HK_2025_L193": {
@@ -286,7 +274,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L193 (4 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L193"
  },
  "HK_2023_J294": {
@@ -317,7 +305,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2023_J294 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J294"
  },
  "HK_2025_L305": {
@@ -331,7 +319,7 @@
    "category": "tracheal_blood",
    "event_date": "2026-11-08",
    "meeting_id": "ST-20261108",
-   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea.",
    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
   },
   "passed_on": null,
@@ -348,7 +336,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L305 (4 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L305"
  },
  "HK_2025_L265": {
@@ -380,7 +368,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L265 (3 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L265"
  },
  "HK_2025_L220": {
@@ -394,7 +382,7 @@
    "category": "administrative",
    "event_date": "2026-11-08",
    "meeting_id": "ST-20261108",
-   "finding_verbatim": "Before being allowed to race again, LADY\u2019S LOVE will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
+   "finding_verbatim": "Before being allowed to race again, LADY’S LOVE will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
   },
   "passed_on": null,
@@ -412,7 +400,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L220 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L220"
  },
  "HK_2024_K238": {
@@ -444,7 +432,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K238 (3 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K238"
  },
  "HK_2024_K032": {
@@ -476,7 +464,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K032 (4 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K032"
  },
  "HK_2025_L016": {
@@ -490,7 +478,7 @@
    "category": "tracheal_blood",
    "event_date": "2026-11-08",
    "meeting_id": "ST-20261108",
-   "finding_verbatim": "After the race an endoscopic examination was conducted on MAJESTIC VALOUR at the request of Trainer C S Shum. The Veterinary Surgeon said this examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "finding_verbatim": "After the race an endoscopic examination was conducted on MAJESTIC VALOUR at the request of Trainer C S Shum. The Veterinary Surgeon said this examination showed a substantial amount of blood in the horse’s trachea.",
    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
   },
   "passed_on": null,
@@ -507,7 +495,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L016 (3 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L016"
  },
  "HK_2024_K308": {
@@ -558,7 +546,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L339 (1 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L339"
  },
  "HK_2025_L238": {
@@ -572,7 +560,7 @@
    "category": "tracheal_blood",
    "event_date": "2026-11-11",
    "meeting_id": "HV-20261111",
-   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse\u2019s trachea.",
+   "finding_verbatim": "A veterinary inspection immediately following the race which included an endoscopic examination showed a substantial amount of blood in the horse’s trachea.",
    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261111"
   },
   "passed_on": null,
@@ -589,7 +577,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L238 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L238"
  },
  "HK_2023_J050": {
@@ -620,7 +608,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2023_J050 (5 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J050"
  },
  "HK_2025_L104": {
@@ -651,7 +639,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L104 (4 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L104"
  },
  "HK_2025_L028": {
@@ -682,7 +670,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L028 (3 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L028"
  },
  "HK_2025_L177": {
@@ -756,7 +744,7 @@
    "category": "riding_offence",
    "event_date": "2026-11-04",
    "meeting_id": "HV-20261104",
-   "finding_verbatim": "Whip Rule Offences \u2013 1 November 2026 Happy Valley Racemeeting: Apprentice H Y Yuen (SUPER SIXTY) \u2013 2 consecutive strides near the 200 Metres (5th offence last 200 rides) \u2013 A fine of $8,000",
+   "finding_verbatim": "Whip Rule Offences – 1 November 2026 Happy Valley Racemeeting: Apprentice H Y Yuen (SUPER SIXTY) – 2 consecutive strides near the 200 Metres (5th offence last 200 rides) – A fine of $8,000",
    "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261104"
   },
   "passed_on": null,
@@ -1133,7 +1121,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K230 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K230"
  },
  "HK_2021_G095": {
@@ -1164,7 +1152,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2021_G095 (5 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2021_G095"
  },
  "HK_2024_K323": {
@@ -1195,7 +1183,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K323 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K323"
  },
  "HK_2024_K415": {
@@ -1335,7 +1323,7 @@
   "passed_on": "2026-09-21",
   "open_requirements": [],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L154 (5 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L154"
  },
  "HK_2023_J545": {
@@ -1446,7 +1434,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K540 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K540"
  },
  "HK_2023_J291": {
@@ -1477,7 +1465,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2023_J291 (5 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J291"
  },
  "HK_2025_L031": {
@@ -1508,7 +1496,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L031 (1 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L031"
  },
  "HK_2025_L057": {
@@ -1539,7 +1527,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L057 (1 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L057"
  },
  "HK_2023_J375": {
@@ -1570,7 +1558,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2023_J375 (11 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J375"
  },
  "HK_2024_K377": {
@@ -1601,7 +1589,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K377 (1 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K377"
  },
  "HK_2023_J501": {
@@ -1633,7 +1621,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2023_J501 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J501"
  },
  "HK_2025_L060": {
@@ -1665,7 +1653,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L060 (3 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L060"
  },
  "HK_2024_K399": {
@@ -1696,7 +1684,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K399 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K399"
  },
  "HK_2023_J224": {
@@ -1728,7 +1716,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2023_J224 (4 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2023_J224"
  },
  "HK_2020_E356": {
@@ -1759,7 +1747,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2020_E356 (8 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2020_E356"
  },
  "HK_2024_K527": {
@@ -1791,7 +1779,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K527 (4 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K527"
  },
  "HK_2025_L398": {
@@ -1823,7 +1811,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2025_L398 (2 rows)",
-  "last_checked": "2026-11-15T07:52:00-05:00",
+  "last_checked": "2026-11-18T07:47:16-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2025_L398"
  },
  "HK_2025_L438": {
