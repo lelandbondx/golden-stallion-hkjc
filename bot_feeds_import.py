@@ -81,6 +81,17 @@ ALLOWED_REPLAY_EXCUSES = {
     "hampered",
 }
 
+POSITIVE_REPLAY_VET_KEYWORDS = (
+    "blood",
+    "lame",
+    "irregular heart rhythm",
+    "roarer",
+    "epiglottic",
+    "laceration",
+    "wound",
+    "withdrawn",
+)
+
 REQUIRED_COLUMNS = {
     "trial_bot_declared": (
         "meeting_date",
@@ -1009,6 +1020,8 @@ def _extract_replay_features(prior_rows: list[dict[str, str]]) -> dict[str, Any]
     if dead_heat:
         out["bot_replay_dead_heat"] = True
 
+    _set_if_present(out, "bot_replay_race_no", parse_int(latest.get("race_no") or latest.get("race")))
+    _set_if_present(out, "bot_replay_race_id", clean_val(latest.get("race_id")))
     _set_if_present(out, "bot_replay_draw", parse_int(latest.get("draw")))
     _set_if_present(out, "bot_replay_win_odds", parse_float(latest.get("win_odds")))
     _set_if_present(out, "bot_replay_last400_sec", parse_float(latest.get("horse_last_400m_sec")))
@@ -1627,7 +1640,11 @@ def apply_live_bot_runner_overlays(
 
         if use_replay:
             has_health = bool(df_runners.at[idx, "has_health_risk"]) if "has_health_risk" in df_runners.columns else False
-            has_replay_vet = bool(bf.get("bot_replay_vet_finding") or bf.get("bot_replay_clearance_text"))
+            clearance_text = str(bf.get("bot_replay_clearance_text") or "").strip()
+            vet_finding = str(bf.get("bot_replay_vet_finding") or "").strip().lower()
+            has_positive_finding = any(kw in vet_finding for kw in POSITIVE_REPLAY_VET_KEYWORDS)
+            has_replay_vet = bool(clearance_text) or has_positive_finding
+
             rp_flags = {str(x).lower() for x in (bf.get("bot_replay_flags") or [])}
             has_excuse_flag = (
                 bf.get("bot_replay_traffic") is True
@@ -1639,10 +1656,9 @@ def apply_live_bot_runner_overlays(
                     df_runners.at[idx, "had_excuse"] = True
                 # Augment tactical memory when no newer entry is already present.
                 existing_rec = mem_out.get(c_name)
-                existing_runs = (existing_rec or {}).get("runs") or []
-                newest_existing = normalize_date((existing_runs[0] or {}).get("date")) if existing_runs else None
-                rp_date = bf.get("bot_replay_meeting_date")
-                if rp_date and (newest_existing is None or rp_date > newest_existing):
+                existing_runs = list((existing_rec or {}).get("runs") or [])
+                rp_date = normalize_date(bf.get("bot_replay_meeting_date"))
+                if rp_date:
                     inc_flags = []
                     if bf.get("bot_replay_traffic") is True or "traffic" in rp_flags:
                         inc_flags.append({
@@ -1658,19 +1674,64 @@ def apply_live_bot_runner_overlays(
                             "vet_blocked": False,
                             "snippet": "Verified replay wide without cover",
                         })
-                    if inc_flags and bf.get("bot_replay_finish") is not None:
-                        synth_run = {
-                            "date": rp_date,
-                            "barrier": int(bf.get("bot_replay_draw") or 6),
-                            "sp": float(bf.get("bot_replay_win_odds") or 99.0),
-                            "finish_pos": int(bf["bot_replay_finish"]),
-                            "beaten_lengths": 99.0,
-                            "interference_severity": 2 if bf.get("bot_replay_traffic") is True else 0,
-                            "incident_flags": inc_flags,
-                            "ground_saved_score": 0.0,
-                            "early_pos": 6.0,
+
+                    replay_severity = 2 if (bf.get("bot_replay_traffic") is True or "traffic" in rp_flags) else 0
+
+                    # Check if any existing run matches this meeting date (read race_date, fallback date)
+                    matching_run = None
+                    for r in existing_runs:
+                        if isinstance(r, dict):
+                            r_dt = normalize_date(r.get("race_date") or r.get("date"))
+                            if r_dt and r_dt == rp_date:
+                                matching_run = r
+                                break
+
+                    if matching_run is not None:
+                        # Merge replay incident_flags into that existing run
+                        curr_inc = list(matching_run.get("incident_flags") or [])
+                        existing_flag_names = {
+                            f.get("flag") for f in curr_inc if isinstance(f, dict) and f.get("flag")
                         }
-                        mem_out[c_name] = {"runs": [synth_run] + list(existing_runs)}
+                        for flag_obj in inc_flags:
+                            if flag_obj.get("flag") not in existing_flag_names:
+                                curr_inc.append(flag_obj)
+                                existing_flag_names.add(flag_obj.get("flag"))
+                        matching_run["incident_flags"] = curr_inc
+
+                        # Raise interference_severity only if lower
+                        curr_sev = matching_run.get("interference_severity")
+                        if curr_sev is None or curr_sev < replay_severity:
+                            matching_run["interference_severity"] = replay_severity
+
+                        new_rec = dict(existing_rec or {})
+                        new_rec["runs"] = existing_runs
+                        mem_out[c_name] = new_rec
+                    else:
+                        # Only create a new run when no run for that date exists, using key "race_date" plus race_id, and omit unknown fields instead of placeholders.
+                        newest_existing = normalize_date((existing_runs[0] or {}).get("race_date") or (existing_runs[0] or {}).get("date")) if existing_runs else None
+                        if newest_existing is None or rp_date >= newest_existing:
+                            if inc_flags and bf.get("bot_replay_finish") is not None:
+                                r_id = bf.get("bot_replay_race_id")
+                                if not r_id:
+                                    r_no = bf.get("bot_replay_race_no")
+                                    d_tag = rp_date.replace("-", "") if rp_date else "REPLAY"
+                                    r_id = f"{d_tag}_R{r_no}" if r_no is not None else f"{d_tag}_REPLAY"
+
+                                new_run: dict[str, Any] = {
+                                    "race_date": rp_date,
+                                    "race_id": r_id,
+                                    "finish_pos": int(bf["bot_replay_finish"]),
+                                    "interference_severity": replay_severity,
+                                    "incident_flags": inc_flags,
+                                }
+                                if bf.get("bot_replay_draw") is not None:
+                                    new_run["barrier"] = int(bf["bot_replay_draw"])
+                                if bf.get("bot_replay_win_odds") is not None:
+                                    new_run["sp"] = float(bf["bot_replay_win_odds"])
+
+                                new_rec = dict(existing_rec or {})
+                                new_rec["runs"] = [new_run] + existing_runs
+                                mem_out[c_name] = new_rec
 
     return df_runners, mem_out
 

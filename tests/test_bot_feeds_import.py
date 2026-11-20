@@ -510,6 +510,120 @@ class TestBotFeedsImport(unittest.TestCase):
         self.assertIn("UNMAPPED DIST HORSE", out)
         self.assertNotIn("best_trial_speed_diff", out["UNMAPPED DIST HORSE"])
 
+    def test_20_replay_overlay_memory_matching_race_date_merges_without_duplicate(self):
+        """Existing memory with race_date matching replay meeting date merges incident flags without duplicate run."""
+        df = pd.DataFrame([{
+            "clean_name": "BEAUTY JOY",
+            "name": "BEAUTY JOY",
+            "has_health_risk": False,
+            "had_excuse": False,
+        }])
+        tf = {
+            "BEAUTY JOY": {
+                "bot_replay_meeting_date": "2026-11-08",
+                "bot_replay_wide_no_cover": True,
+                "bot_replay_flags": ["wide_no_cover"],
+                "bot_replay_finish": 13,
+                "bot_replay_draw": 9,
+                "bot_replay_win_odds": 31.0,
+                "bot_replay_vet_finding": "A veterinary inspection immediately following the race did not show any significant findings.",
+            }
+        }
+        mem = {
+            "BEAUTY JOY": {
+                "runs": [{
+                    "race_date": "2026-11-08",
+                    "race_id": "20261108_R8",
+                    "finish_pos": 13,
+                    "barrier": 9,
+                    "sp": 31.0,
+                    "beaten_lengths": 8.0,
+                    "interference_severity": 0,
+                    "incident_flags": [],
+                }]
+            }
+        }
+        with patch.dict(os.environ, {"SILKS_BOT_FEEDS": "live", "SILKS_BOT_LIVE_REPLAY": "1"}):
+            df_out, mem_out = bfi.apply_live_bot_runner_overlays(df, tf, mem)
+
+        self.assertTrue(df_out["had_excuse"].iloc[0])
+        runs = mem_out["BEAUTY JOY"]["runs"]
+        self.assertEqual(len(runs), 1, "Must not add a duplicate run when meeting date already matches race_date")
+        self.assertEqual(runs[0]["beaten_lengths"], 8.0, "Must preserve real beaten_lengths instead of placeholder")
+        self.assertTrue(any(f["flag"] == "wide_no_cover" for f in runs[0]["incident_flags"]))
+
+    def test_21_replay_overlay_negative_vet_allows_excuse_positive_or_clearance_blocks(self):
+        """Negative vet text allows had_excuse=True; positive findings or clearance text block had_excuse."""
+        # Case A: Negative inspection text -> had_excuse is True
+        df_a = pd.DataFrame([{"clean_name": "RUNNER A", "name": "RUNNER A", "had_excuse": False}])
+        tf_a = {
+            "RUNNER A": {
+                "bot_replay_meeting_date": "2026-11-14",
+                "bot_replay_traffic": True,
+                "bot_replay_finish": 4,
+                "bot_replay_vet_finding": "A veterinary inspection immediately following the race did not show any significant findings.",
+            }
+        }
+        with patch.dict(os.environ, {"SILKS_BOT_FEEDS": "live", "SILKS_BOT_LIVE_REPLAY": "1"}):
+            df_out_a, _ = bfi.apply_live_bot_runner_overlays(df_a, tf_a, {})
+        self.assertTrue(df_out_a["had_excuse"].iloc[0], "Negative vet findings text must NOT block excuse")
+
+        # Case B: Positive finding (lame) -> had_excuse remains False
+        df_b = pd.DataFrame([{"clean_name": "RUNNER B", "name": "RUNNER B", "had_excuse": False}])
+        tf_b = {
+            "RUNNER B": {
+                "bot_replay_meeting_date": "2026-11-14",
+                "bot_replay_traffic": True,
+                "bot_replay_finish": 5,
+                "bot_replay_vet_finding": "Veterinary examination showed horse was lame in right front leg.",
+            }
+        }
+        with patch.dict(os.environ, {"SILKS_BOT_FEEDS": "live", "SILKS_BOT_LIVE_REPLAY": "1"}):
+            df_out_b, _ = bfi.apply_live_bot_runner_overlays(df_b, tf_b, {})
+        self.assertFalse(df_out_b["had_excuse"].iloc[0], "Positive vet finding must block excuse")
+
+        # Case C: Clearance text required -> had_excuse remains False
+        df_c = pd.DataFrame([{"clean_name": "RUNNER C", "name": "RUNNER C", "had_excuse": False}])
+        tf_c = {
+            "RUNNER C": {
+                "bot_replay_meeting_date": "2026-11-14",
+                "bot_replay_traffic": True,
+                "bot_replay_finish": 6,
+                "bot_replay_vet_finding": "A veterinary inspection did not show any significant findings.",
+                "bot_replay_clearance_text": "Official veterinary examination required before racing.",
+            }
+        }
+        with patch.dict(os.environ, {"SILKS_BOT_FEEDS": "live", "SILKS_BOT_LIVE_REPLAY": "1"}):
+            df_out_c, _ = bfi.apply_live_bot_runner_overlays(df_c, tf_c, {})
+        self.assertFalse(df_out_c["had_excuse"].iloc[0], "Clearance text requirement must block excuse")
+
+    def test_22_replay_overlay_new_date_creates_run_without_placeholders(self):
+        """When creating a new run for a date not in memory, uses race_date + race_id and omits unknown fields."""
+        df = pd.DataFrame([{"clean_name": "NEW HORSE", "name": "NEW HORSE", "had_excuse": False}])
+        tf = {
+            "NEW HORSE": {
+                "bot_replay_meeting_date": "2026-11-18",
+                "bot_replay_traffic": True,
+                "bot_replay_finish": 3,
+                "bot_replay_draw": 4,
+            }
+        }
+        with patch.dict(os.environ, {"SILKS_BOT_FEEDS": "live", "SILKS_BOT_LIVE_REPLAY": "1"}):
+            _, mem_out = bfi.apply_live_bot_runner_overlays(df, tf, {})
+
+        self.assertIn("NEW HORSE", mem_out)
+        runs = mem_out["NEW HORSE"]["runs"]
+        self.assertEqual(len(runs), 1)
+        run = runs[0]
+        self.assertEqual(run["race_date"], "2026-11-18")
+        self.assertIn("race_id", run)
+        self.assertEqual(run["finish_pos"], 3)
+        self.assertEqual(run["barrier"], 4)
+        # Verify placeholders are omitted
+        self.assertNotIn("beaten_lengths", run)
+        self.assertNotIn("early_pos", run)
+        self.assertNotIn("ground_saved_score", run)
+
 
 if __name__ == "__main__":
     unittest.main()
