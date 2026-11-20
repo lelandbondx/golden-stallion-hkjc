@@ -459,7 +459,6 @@
         "best_trial_pos_ratio": 0.42857142857142855,
         "trial_jockeys": [
             "M F POON",
-            "C L CHAU",
             "C L CHAU"
         ],
         "high_quality_trial": false,
@@ -618,7 +617,7 @@
         "best_trial_speed_diff": -0.1700000000000017
     },
     "LOVING VIBES": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.5,
         "trial_jockeys": [
             "L HEWITSON"
@@ -657,7 +656,7 @@
         "best_trial_speed_diff": 0.3199999999999932
     },
     "MAZING GRACE": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.5,
         "trial_jockeys": [
             "R KINGSCOTE"
@@ -752,9 +751,11 @@
         "recent_top2_trials": 0
     },
     "STORM RUNNER": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.6666666666666666,
         "trial_jockeys": [
+            "C Y HO",
+            "C Y HO",
             "C Y HO"
         ],
         "high_quality_trial": false,
@@ -848,7 +849,7 @@
         "recent_top2_trials": 0
     },
     "CALL ME TOPSEED": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.5555555555555556,
         "trial_jockeys": [
             "K C LEUNG"
@@ -886,7 +887,7 @@
         "best_trial_speed_diff": 0.9099999999999966
     },
     "FLOW WATER FLOW": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.4444444444444444,
         "trial_jockeys": [
             "Z PURTON"
@@ -895,9 +896,10 @@
         "recent_top2_trials": 0
     },
     "GOD OF PI": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.1111111111111111,
         "trial_jockeys": [
+            "K TEETAN",
             "K TEETAN"
         ],
         "high_quality_trial": true,
@@ -970,17 +972,19 @@
         "recent_top2_trials": 0
     },
     "PACKING SMART": {
-        "trial_count_30d": 1,
-        "best_trial_pos_ratio": 0.2222222222222222,
+        "trial_count_30d": 0,
+        "best_trial_pos_ratio": 0.1111111111111111,
         "trial_jockeys": [
-            "Z PURTON"
+            "Z PURTON",
+            "Z PURTON",
+            "L HEWITSON"
         ],
         "high_quality_trial": true,
         "recent_top2_trials": 3,
         "best_trial_speed_diff": 1.3299999999999983
     },
     "PRINCE ALEX": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.9,
         "trial_jockeys": [
             "L HEWITSON"
@@ -989,18 +993,23 @@
         "recent_top2_trials": 0
     },
     "RELENTLESS PURSUIT": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.2,
         "trial_jockeys": [
-            "L FERRARIS"
+            "L FERRARIS",
+            "L FERRARIS",
+            "L FERRARIS",
+            "J ORMAN"
         ],
         "high_quality_trial": false,
         "recent_top2_trials": 1
     },
     "SEA CHARIOT": {
-        "trial_count_30d": 1,
-        "best_trial_pos_ratio": 0.7,
+        "trial_count_30d": 0,
+        "best_trial_pos_ratio": 0.3,
         "trial_jockeys": [
+            "C L CHAU",
+            "C L CHAU",
             "C L CHAU"
         ],
         "high_quality_trial": false,
@@ -1046,7 +1055,7 @@
         "recent_top2_trials": 1
     },
     "TO INFINITY": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.6,
         "trial_jockeys": [
             "J ORMAN"
@@ -1064,10 +1073,13 @@
         "recent_top2_trials": 0
     },
     "UNRIVALED KING": {
-        "trial_count_30d": 1,
-        "best_trial_pos_ratio": 0.3,
+        "trial_count_30d": 0,
+        "best_trial_pos_ratio": 0.2,
         "trial_jockeys": [
-            "A ATZENI"
+            "A ATZENI",
+            "C M THABANA",
+            "A ATZENI",
+            "K TEETAN"
         ],
         "high_quality_trial": true,
         "recent_top2_trials": 2
@@ -1163,10 +1175,11 @@
         "recent_top2_trials": 1
     },
     "COLOURFUL STAR": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.6666666666666666,
         "trial_jockeys": [
-            "H BENTLEY"
+            "H BENTLEY",
+            "C L CHAU"
         ],
         "high_quality_trial": false,
         "recent_top2_trials": 0
@@ -1303,17 +1316,16 @@
         "recent_top2_trials": 0
     },
     "LIFELINE EXPRESS": {
-        "trial_count_30d": 2,
-        "best_trial_pos_ratio": 0.8333333333333334,
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 1.0,
         "trial_jockeys": [
-            "K TEETAN",
-            "A ATZENI"
+            "K TEETAN"
         ],
         "high_quality_trial": false,
         "recent_top2_trials": 0
     },
     "LIGHTNING ACE": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.4,
         "trial_jockeys": [
             "C L CHAU"
@@ -1529,7 +1541,7 @@
         "recent_top2_trials": 0
     },
     "TEN LOVES": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.5,
         "trial_jockeys": [
             "R KINGSCOTE"
@@ -1538,7 +1550,7 @@
         "recent_top2_trials": 0
     },
     "THOUSAND CUPS": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.3,
         "trial_jockeys": [
             "Y L CHUNG"
@@ -1604,7 +1616,7 @@
         "recent_top2_trials": 0
     },
     "FLYING KNIGHT": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.9,
         "trial_jockeys": [
             "K TEETAN"
@@ -1613,9 +1625,11 @@
         "recent_top2_trials": 0
     },
     "GOLD TAOGETHER": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.8888888888888888,
         "trial_jockeys": [
+            "C L CHAU",
+            "C L CHAU",
             "C L CHAU"
         ],
         "high_quality_trial": false,
@@ -1632,7 +1646,7 @@
         "recent_top2_trials": 0
     },
     "PAPAYA BROSE": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.16666666666666666,
         "trial_jockeys": [
             "E C W WONG"
@@ -1780,7 +1794,7 @@
         "recent_top2_trials": 0
     },
     "MIGHTY COMMANDER": {
-        "trial_count_30d": 1,
+        "trial_count_30d": 0,
         "best_trial_pos_ratio": 0.1111111111111111,
         "trial_jockeys": [
             "C Y HO"
@@ -1994,11 +2008,10 @@
         "recent_top2_trials": 0
     },
     "GALLANT DREAM": {
-        "trial_count_30d": 2,
+        "trial_count_30d": 1,
         "best_trial_pos_ratio": 1.0,
         "trial_jockeys": [
-            "K C LEUNG",
-            "L FERRARIS"
+            "K C LEUNG"
         ],
         "high_quality_trial": false,
         "recent_top2_trials": 0
@@ -2013,10 +2026,9 @@
         "recent_top2_trials": 0
     },
     "GREEN SUPERSTAR": {
-        "trial_count_30d": 2,
-        "best_trial_pos_ratio": 0.7777777777777778,
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.875,
         "trial_jockeys": [
-            "J ORMAN",
             "J ORMAN"
         ],
         "high_quality_trial": false,
@@ -2422,10 +2434,9 @@
         "recent_top2_trials": 0
     },
     "MAJESTIC ST PAUL'S": {
-        "trial_count_30d": 2,
+        "trial_count_30d": 1,
         "best_trial_pos_ratio": 0.375,
         "trial_jockeys": [
-            "A BADEL",
             "A BADEL"
         ],
         "high_quality_trial": false,
@@ -2469,10 +2480,9 @@
         "recent_top2_trials": 0
     },
     "OUR BOLD CHOICE": {
-        "trial_count_30d": 2,
-        "best_trial_pos_ratio": 0.2222222222222222,
+        "trial_count_30d": 1,
+        "best_trial_pos_ratio": 0.75,
         "trial_jockeys": [
-            "A BADEL",
             "A BADEL"
         ],
         "high_quality_trial": false,
@@ -2525,10 +2535,9 @@
         "recent_top2_trials": 0
     },
     "SPEED BABY": {
-        "trial_count_30d": 2,
+        "trial_count_30d": 1,
         "best_trial_pos_ratio": 0.8571428571428571,
         "trial_jockeys": [
-            "A ATZENI",
             "A ATZENI"
         ],
         "high_quality_trial": false,

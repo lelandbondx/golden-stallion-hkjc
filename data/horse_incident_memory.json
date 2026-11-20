@@ -130,7 +130,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 04 (LBW 1-1/4) | RunPos: 2 3 4 23/09/2026: Lame right front le",
+            "snippet": "No report. Last Run (23/09/26 HV / Turf / \"C\" 1000m): Fin 07 (LBW 3-1/2) | RunPos: 2 3 7 23/09/2026: Lame right front le",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -138,7 +138,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 04 (LBW 1-1/4) | RunPos: 2 3 4 23/09/2026: Lame right front leg after racing. (Passed: 29/10/2026)"
+        "steward_comment": "No report. Last Run (23/09/26 HV / Turf / \"C\" 1000m): Fin 07 (LBW 3-1/2) | RunPos: 2 3 7 23/09/2026: Lame right front leg after racing. (Passed: 29/10/2026)"
       },
       {
         "race_date": "2026-07-08",
@@ -248,7 +248,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 05 (LBW 3-1/4) | RunPos: 2 3 5 11/03/2024: Left pelvis injury. (Passed: 24/06/2024)"
+        "steward_comment": "No report. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 10 (LBW 6-1/4) | RunPos: 3 3 10 11/03/2024: Left pelvis injury. (Passed: 24/06/2024)"
       },
       {
         "race_date": "2026-11-04",
@@ -345,7 +345,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 05 (LBW 3-1/4) | RunPos: 2 3 5 11/03/2024: Left pelvis injury. (Passed: 24/06/2024)"
+        "steward_comment": "No report. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 10 (LBW 6-1/4) | RunPos: 3 3 10 11/03/2024: Left pelvis injury. (Passed: 24/06/2024)"
       },
       {
         "race_date": "2026-11-04",
@@ -2033,7 +2033,7 @@
             "flag": "wide_no_cover",
             "severity": 3,
             "marker": "mid",
-            "snippet": "Raced wide and without cover for the majority of the event.  Sent for sampling post-race. Last Run (01/10/26 ST / Turf /",
+            "snippet": "Raced wide and without cover for the majority of the event.  Sent for sampling post-race. Last Run (28/10/26 ST / AWT 12",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -2041,7 +2041,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Raced wide and without cover for the majority of the event.  Sent for sampling post-race. Last Run (01/10/26 ST / Turf / \"A\" 1200m): Fin 07 (LBW 3-1/4) | RunPos: 2 2 7 06/06/2023: Castration. (Passed: -)"
+        "steward_comment": "Raced wide and without cover for the majority of the event.  Sent for sampling post-race. Last Run (28/10/26 ST / AWT 1200m): Fin 07 (LBW 2-1/4) | RunPos: 5 5 7 11/12/2025: Throat surgery to release epiglottic entrapment. (Passed: 13/01/2026)"
       }
     ],
     "trial_note": null
@@ -2106,7 +2106,7 @@
             "flag": "wide_no_cover",
             "severity": 3,
             "marker": "mid",
-            "snippet": "Raced wide and without cover for the majority of the event.  Sent for sampling post-race. Last Run (01/10/26 ST / Turf /",
+            "snippet": "Raced wide and without cover for the majority of the event.  Sent for sampling post-race. Last Run (28/10/26 ST / AWT 12",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -2114,7 +2114,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Raced wide and without cover for the majority of the event.  Sent for sampling post-race. Last Run (01/10/26 ST / Turf / \"A\" 1200m): Fin 07 (LBW 3-1/4) | RunPos: 2 2 7 06/06/2023: Castration. (Passed: -)"
+        "steward_comment": "Raced wide and without cover for the majority of the event.  Sent for sampling post-race. Last Run (28/10/26 ST / AWT 1200m): Fin 07 (LBW 2-1/4) | RunPos: 5 5 7 11/12/2025: Throat surgery to release epiglottic entrapment. (Passed: 13/01/2026)"
       }
     ],
     "trial_note": null
@@ -2735,7 +2735,7 @@
             "flag": "slow_start",
             "severity": 1,
             "marker": "start",
-            "snippet": "Slow to begin. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 05 (LBW 3-3/4) | RunPos: 10 10 11 5 11/08/2026: Eight year",
+            "snippet": "Slow to begin. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 10 (LBW 5-3/4) | RunPos: 11 10 10 11/08/2026: Eight years ",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -2743,7 +2743,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Slow to begin. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 05 (LBW 3-3/4) | RunPos: 10 10 11 5 11/08/2026: Eight years of age or above at season end. (Passed: 09/09/2026)"
+        "steward_comment": "Slow to begin. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 10 (LBW 5-3/4) | RunPos: 11 10 10 11/08/2026: Eight years of age or above at season end. (Passed: 09/09/2026)"
       },
       {
         "race_date": "2026-11-11",
@@ -2814,7 +2814,7 @@
             "flag": "slow_start",
             "severity": 1,
             "marker": "start",
-            "snippet": "Slow to begin. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 05 (LBW 3-3/4) | RunPos: 10 10 11 5 11/08/2026: Eight year",
+            "snippet": "Slow to begin. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 10 (LBW 5-3/4) | RunPos: 11 10 10 11/08/2026: Eight years ",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -2822,7 +2822,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Slow to begin. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 05 (LBW 3-3/4) | RunPos: 10 10 11 5 11/08/2026: Eight years of age or above at season end. (Passed: 09/09/2026)"
+        "steward_comment": "Slow to begin. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 10 (LBW 5-3/4) | RunPos: 11 10 10 11/08/2026: Eight years of age or above at season end. (Passed: 09/09/2026)"
       },
       {
         "race_date": "2026-11-11",
@@ -5187,7 +5187,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Near the 100 Metres was steadied to avoid SUPERB KING (Apprentice H Y Yuen) which shifted in.  Apprentice Yuen was advised to exercise more care and to stop riding and straighten her mounts sooner than what she did on this occasion. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 08 (LBW 4) | RunPos: 8 9 8 23/09/2026: Lame left front leg after racing. (Passed: 02/10/2026)"
+        "steward_comment": "Near the 100 Metres was steadied to avoid SUPERB KING (Apprentice H Y Yuen) which shifted in.  Apprentice Yuen was advised to exercise more care and to stop riding and straighten her mounts sooner than what she did on this occasion. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 08 (LBW 4-1/2) | RunPos: 2 2 8 23/09/2026: Lame left front leg after racing. (Passed: 02/10/2026)"
       },
       {
         "race_date": "2026-11-01",
@@ -5220,7 +5220,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": true,
-        "steward_comment": "Near the 100 Metres was steadied to avoid SUPERB KING (Apprentice H Y Yuen) which shifted in.  Apprentice Yuen was advised to exercise more care and to stop riding and straighten her mounts sooner than what she did on this occasion. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 08 (LBW 4) | RunPos: 8 9 8 23/09/2026: Lame left front leg after racing. (Passed: 02/10/2026)"
+        "steward_comment": "Near the 100 Metres was steadied to avoid SUPERB KING (Apprentice H Y Yuen) which shifted in.  Apprentice Yuen was advised to exercise more care and to stop riding and straighten her mounts sooner than what she did on this occasion. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 08 (LBW 4-1/2) | RunPos: 2 2 8 23/09/2026: Lame left front leg after racing. (Passed: 02/10/2026)"
       },
       {
         "race_date": "2026-10-14",
@@ -8246,7 +8246,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Approaching the 1000 Metres was hampered when taken wider by MALPENSA which shifted out.  Apprentice P N Wong stated that her mount was disadvantaged by being obliged to race wide and without cover for the majority of the event.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 08 (LBW 5-1/4) | RunPos: 6 7 8 22/06/2026: Lame left fore and right hind. (Passed: 20/08/2026)"
+        "steward_comment": "Approaching the 1000 Metres was hampered when taken wider by MALPENSA which shifted out.  Apprentice P N Wong stated that her mount was disadvantaged by being obliged to race wide and without cover for the majority of the event.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 05 (LBW 3-1/2) | RunPos: 6 6 5 22/06/2026: Lame left fore and right hind. (Passed: 20/08/2026)"
       },
       {
         "race_date": "2026-11-04",
@@ -8295,7 +8295,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Approaching the 1000 Metres was hampered when taken wider by MALPENSA which shifted out.  Apprentice P N Wong stated that her mount was disadvantaged by being obliged to race wide and without cover for the majority of the event.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 08 (LBW 5-1/4) | RunPos: 6 7 8 22/06/2026: Lame left fore and right hind. (Passed: 20/08/2026)"
+        "steward_comment": "Approaching the 1000 Metres was hampered when taken wider by MALPENSA which shifted out.  Apprentice P N Wong stated that her mount was disadvantaged by being obliged to race wide and without cover for the majority of the event.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 05 (LBW 3-1/2) | RunPos: 6 6 5 22/06/2026: Lame left fore and right hind. (Passed: 20/08/2026)"
       }
     ],
     "trial_note": null
@@ -8414,7 +8414,41 @@
   "PARENTS' LOVE": {
     "horse_name": "PARENTS' LOVE",
     "horse_code": "H405",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-07-08",
+        "race_id": "2026-07-08_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 3.909090909090909,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "final_200m",
+            "snippet": "Raced tight over the concluding stages. 15/12/2025: Lame left hind. Withdrawn from racing. (Passed: 22/12/2025)",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Raced tight over the concluding stages. 15/12/2025: Lame left hind. Withdrawn from racing. (Passed: 22/12/2025)"
+      }
+    ],
     "trial_note": null
   },
   "H405": {
@@ -8772,7 +8806,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Near the 600 Metres lay in and made contact with the running rail.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 12 (LBW 10) | RunPos: 1 1 12 15/03/2026: Bled from left nostril after racing. (Passed: 31/08/2026)"
+        "steward_comment": "Near the 600 Metres lay in and made contact with the running rail.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (25/10/26 ST / Turf / \"A\" 1000m): Fin 08 (LBW 6-1/4) | RunPos: 4 5 8 15/03/2026: Bled from left nostril after racing. (Passed: 31/08/2026)"
       },
       {
         "race_date": "2026-09-27",
@@ -8889,11 +8923,10 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.8333333333333334,
+      "best_trial_pos_ratio": 1.0,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "K TEETAN",
-        "A ATZENI"
+        "K TEETAN"
       ]
     }
   },
@@ -9009,7 +9042,41 @@
   "MIGHTY STRENGTH": {
     "horse_name": "MIGHTY STRENGTH",
     "horse_code": "H450",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-25",
+        "race_id": "2026-10-25_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD TO FIRM",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 6,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 5.916666666666667,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "L Ferraris advised that from his wide barrier he was instructed to ride the horse in a conservative manner in the early ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "L Ferraris advised that from his wide barrier he was instructed to ride the horse in a conservative manner in the early stages.  Trainer P F Yiu confirmed the instructions and stated he issued those instructions to offset the wide barrier draw. Last Run (25/10/26 ST / Turf / \"A\" 2000m): Fin 08 (LBW 3-1/4) | RunPos: 10 9 9 9 8 14/11/2025: Bled from both nostrils after barrier trial. (Passed: 30/01/2026)"
+      }
+    ],
     "trial_note": null
   },
   "H450": {
@@ -9966,7 +10033,7 @@
             "flag": "slow_start",
             "severity": 2,
             "marker": "start",
-            "snippet": "Jumped awkwardly.  From a wide barrier was shifted across behind runners in the early stages. Last Run (18/11/26 HV / Tu",
+            "snippet": "Jumped awkwardly.  From a wide barrier was shifted across behind runners in the early stages. Last Run (11/10/26 ST / Tu",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -9974,7 +10041,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly.  From a wide barrier was shifted across behind runners in the early stages. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 06 (LBW 2-1/2) | RunPos: 10 9 7 6 No HKJC veterinary records"
+        "steward_comment": "Jumped awkwardly.  From a wide barrier was shifted across behind runners in the early stages. Last Run (11/10/26 ST / Turf / \"C\" 1400m): Fin 12 (LBW 6-1/4) | RunPos: 14 13 13 12 No HKJC veterinary records"
       },
       {
         "race_date": "2026-07-15",
@@ -10814,7 +10881,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 06 (LBW 3/4) | RunPos: 2 2 6 30/04/2026: Right fore fetlock injury. Update: Arthroscopic surgery to both fore fetlocks. (Passed: 24/08/2026)"
+        "steward_comment": "No report. Last Run (21/10/26 HV / Turf / \"B\" 1000m): Fin 04 (LBW 2) | RunPos: 3 2 4 30/04/2026: Right fore fetlock injury. Update: Arthroscopic surgery to both fore fetlocks. (Passed: 24/08/2026)"
       }
     ],
     "trial_note": {
@@ -10857,7 +10924,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Bumped at the start.  Whilst the Stewards were satisfied that the riding of E C W Wong, 5th placegetter, over the concluding stages did not affect the horse’s finishing position, he was nonetheless reminded of his obligation to ensure that he fully rides his mounts out to the finish of the race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 05 (LBW 3) | RunPos: 9 8 5 16/07/2026: Arthroscopic surgery to left front fetlock (bone fragment removal). (Passed: 06/10/2026)"
+        "steward_comment": "Bumped at the start.  Whilst the Stewards were satisfied that the riding of E C W Wong, 5th placegetter, over the concluding stages did not affect the horse’s finishing position, he was nonetheless reminded of his obligation to ensure that he fully rides his mounts out to the finish of the race. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 10 (LBW 6) | RunPos: 8 9 10 16/07/2026: Arthroscopic surgery to left front fetlock (bone fragment removal). (Passed: 06/10/2026)"
       },
       {
         "race_date": "2026-11-01",
@@ -10954,7 +11021,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Bumped at the start.  Whilst the Stewards were satisfied that the riding of E C W Wong, 5th placegetter, over the concluding stages did not affect the horse’s finishing position, he was nonetheless reminded of his obligation to ensure that he fully rides his mounts out to the finish of the race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 05 (LBW 3) | RunPos: 9 8 5 16/07/2026: Arthroscopic surgery to left front fetlock (bone fragment removal). (Passed: 06/10/2026)"
+        "steward_comment": "Bumped at the start.  Whilst the Stewards were satisfied that the riding of E C W Wong, 5th placegetter, over the concluding stages did not affect the horse’s finishing position, he was nonetheless reminded of his obligation to ensure that he fully rides his mounts out to the finish of the race. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 10 (LBW 6) | RunPos: 8 9 10 16/07/2026: Arthroscopic surgery to left front fetlock (bone fragment removal). (Passed: 06/10/2026)"
       },
       {
         "race_date": "2026-11-01",
@@ -11868,7 +11935,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": true,
-        "steward_comment": "Shifted out at the start and made contact with BRILLIANT TURN.  Sent for sampling post-race. Last Run (07/10/26 HV / Turf / \"C+3\" 1200m): Fin 07 (LBW 3-3/4) | RunPos: 2 2 7 06/06/2024: Fractious and sedation was required whilst being transported to Hong Kong. Withdrawn from racing. (Passed: 12/06/2024)"
+        "steward_comment": "Shifted out at the start and made contact with BRILLIANT TURN.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 02 (LBW SH) | RunPos: 1 1 2 14/11/2024: Right fore ligament injury. (Passed: 03/06/2025)"
       }
     ],
     "trial_note": null
@@ -14666,7 +14733,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 09 (LBW 4-1/2) | RunPos: 2 3 9 13/09/2026: Substantial ",
+            "snippet": "Jumped awkwardly. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 12 (LBW 8-1/4) | RunPos: 1 1 12 13/09/2026: Substantial",
             "vet_blocked": true,
             "is_victim": false
           },
@@ -14674,7 +14741,7 @@
             "flag": "slow_start",
             "severity": 2,
             "marker": "start",
-            "snippet": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 09 (LBW 4-1/2) | RunPos: 2 3 9 13/09/2026: Substantial ",
+            "snippet": "Jumped awkwardly. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 12 (LBW 8-1/4) | RunPos: 1 1 12 13/09/2026: Substantial",
             "vet_blocked": true,
             "is_victim": true
           }
@@ -14682,7 +14749,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 09 (LBW 4-1/2) | RunPos: 2 3 9 13/09/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 29/09/2026)"
+        "steward_comment": "Jumped awkwardly. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 12 (LBW 8-1/4) | RunPos: 1 1 12 13/09/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 29/09/2026)"
       },
       {
         "race_date": "2026-10-21",
@@ -14814,7 +14881,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "When questioned regarding the improved performance Trainer J Size stated that the horse races best when able to dictate in front without being challenged.  He said this was the reason for the horse’s improved performance today.  Sent for sampling post-race. Last Run (14/11/26 ST / Turf / \"A\" 2000m): Fin 14 (LBW 20-1/2) | RunPos: 1 1 1 2 14 27/06/2025: Heart irregularity noted after barrier trial. (Passed: 12/09/2025)"
+        "steward_comment": "Last Run (14/11/26 ST / Turf / \"A\" 2000m): Fin 14 (LBW 20-1/2) | RunPos: 1 1 1 2 14 27/06/2025: Heart irregularity noted after barrier trial. (Passed: 12/09/2025)"
       },
       {
         "race_date": "2026-11-01",
@@ -14838,7 +14905,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": true,
-        "steward_comment": "When questioned regarding the improved performance Trainer J Size stated that the horse races best when able to dictate in front without being challenged.  He said this was the reason for the horse’s improved performance today.  Sent for sampling post-race. Last Run (14/11/26 ST / Turf / \"A\" 2000m): Fin 14 (LBW 20-1/2) | RunPos: 1 1 1 2 14 27/06/2025: Heart irregularity noted after barrier trial. (Passed: 12/09/2025)"
+        "steward_comment": "Last Run (14/11/26 ST / Turf / \"A\" 2000m): Fin 14 (LBW 20-1/2) | RunPos: 1 1 1 2 14 27/06/2025: Heart irregularity noted after barrier trial. (Passed: 12/09/2025)"
       },
       {
         "race_date": "2026-10-19",
@@ -14895,7 +14962,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "When questioned regarding the improved performance Trainer J Size stated that the horse races best when able to dictate in front without being challenged.  He said this was the reason for the horse’s improved performance today.  Sent for sampling post-race. Last Run (14/11/26 ST / Turf / \"A\" 2000m): Fin 14 (LBW 20-1/2) | RunPos: 1 1 1 2 14 27/06/2025: Heart irregularity noted after barrier trial. (Passed: 12/09/2025)"
+        "steward_comment": "Last Run (14/11/26 ST / Turf / \"A\" 2000m): Fin 14 (LBW 20-1/2) | RunPos: 1 1 1 2 14 27/06/2025: Heart irregularity noted after barrier trial. (Passed: 12/09/2025)"
       }
     ],
     "trial_note": null
@@ -17147,7 +17214,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "L Ferraris reported that his mount lay in throughout the event and came under pressure from the 700 Metres.  He added in the Home Straight HIGHLAND RAHY finished the race off only fairly.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 08 (LBW 7) | RunPos: 2 2 2 8 09/11/2024: Disappointing performance. (Passed: 06/12/2024)"
+        "steward_comment": "L Ferraris reported that his mount lay in throughout the event and came under pressure from the 700 Metres.  He added in the Home Straight HIGHLAND RAHY finished the race off only fairly.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (21/10/26 HV / Turf / \"B\" 1650m): Fin 07 (LBW 3-1/2) | RunPos: 7 4 4 7 09/11/2024: Disappointing performance. (Passed: 06/12/2024)"
       },
       {
         "race_date": "2026-05-27",
@@ -18774,7 +18841,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 04 (LBW 1/2) | RunPos: 11 9 4 15/04/2026: Substantial blood in",
+            "snippet": "No report. Last Run (04/11/26 HV / Turf / \"A\" 1000m): Fin 02 (LBW NOSE) | RunPos: 9 8 2 15/04/2026: Substantial blood in",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -18782,7 +18849,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 04 (LBW 1/2) | RunPos: 11 9 4 15/04/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 07/05/2026)"
+        "steward_comment": "No report. Last Run (04/11/26 HV / Turf / \"A\" 1000m): Fin 02 (LBW NOSE) | RunPos: 9 8 2 15/04/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 07/05/2026)"
       },
       {
         "race_date": "2026-11-04",
@@ -18880,7 +18947,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 04 (LBW 1/2) | RunPos: 11 9 4 15/04/2026: Substantial blood in",
+            "snippet": "No report. Last Run (04/11/26 HV / Turf / \"A\" 1000m): Fin 02 (LBW NOSE) | RunPos: 9 8 2 15/04/2026: Substantial blood in",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -18888,7 +18955,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 04 (LBW 1/2) | RunPos: 11 9 4 15/04/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 07/05/2026)"
+        "steward_comment": "No report. Last Run (04/11/26 HV / Turf / \"A\" 1000m): Fin 02 (LBW NOSE) | RunPos: 9 8 2 15/04/2026: Substantial blood in trachea noted on post-race scoping. (Passed: 07/05/2026)"
       },
       {
         "race_date": "2026-11-04",
@@ -19205,8 +19272,8 @@
           {
             "flag": "vet_or_merit",
             "severity": 2,
-            "marker": "start",
-            "snippet": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 06 (LBW 4-1/2) | RunPos: 11 11 9 6 21/05/2025: Substant",
+            "marker": "mid",
+            "snippet": "Jumped awkwardly. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 11 (LBW 7) | RunPos: 7 6 11 21/05/2025: Substantial blo",
             "vet_blocked": true,
             "is_victim": false
           },
@@ -19214,7 +19281,7 @@
             "flag": "slow_start",
             "severity": 2,
             "marker": "start",
-            "snippet": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 06 (LBW 4-1/2) | RunPos: 11 11 9 6 21/05/2025: Substant",
+            "snippet": "Jumped awkwardly. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 11 (LBW 7) | RunPos: 7 6 11 21/05/2025: Substantial blo",
             "vet_blocked": true,
             "is_victim": true
           }
@@ -19222,7 +19289,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 06 (LBW 4-1/2) | RunPos: 11 11 9 6 21/05/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 29/08/2025)"
+        "steward_comment": "Jumped awkwardly. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 11 (LBW 7) | RunPos: 7 6 11 21/05/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 29/08/2025)"
       },
       {
         "race_date": "2026-11-11",
@@ -19292,8 +19359,8 @@
           {
             "flag": "vet_or_merit",
             "severity": 2,
-            "marker": "start",
-            "snippet": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 06 (LBW 4-1/2) | RunPos: 11 11 9 6 21/05/2025: Substant",
+            "marker": "mid",
+            "snippet": "Jumped awkwardly. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 11 (LBW 7) | RunPos: 7 6 11 21/05/2025: Substantial blo",
             "vet_blocked": true,
             "is_victim": false
           },
@@ -19301,7 +19368,7 @@
             "flag": "slow_start",
             "severity": 2,
             "marker": "start",
-            "snippet": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 06 (LBW 4-1/2) | RunPos: 11 11 9 6 21/05/2025: Substant",
+            "snippet": "Jumped awkwardly. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 11 (LBW 7) | RunPos: 7 6 11 21/05/2025: Substantial blo",
             "vet_blocked": true,
             "is_victim": true
           }
@@ -19309,7 +19376,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 06 (LBW 4-1/2) | RunPos: 11 11 9 6 21/05/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 29/08/2025)"
+        "steward_comment": "Jumped awkwardly. Last Run (11/11/26 HV / Turf / \"B\" 1200m): Fin 11 (LBW 7) | RunPos: 7 6 11 21/05/2025: Substantial blood in trachea noted on post-race scoping. (Passed: 29/08/2025)"
       },
       {
         "race_date": "2026-11-11",
@@ -22329,6 +22396,8 @@
       "best_trial_pos_ratio": 0.6666666666666666,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
+        "C Y HO",
+        "C Y HO",
         "C Y HO"
       ]
     }
@@ -22910,18 +22979,26 @@
         "field_size": 12,
         "incident_flags": [
           {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Near the 700 Metres was steadied when awkwardly positioned to the inside of MIGHTY STEED.  The Stewards inquired into th",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
             "flag": "traffic_trouble",
             "severity": 2,
             "marker": "mid",
             "snippet": "Near the 700 Metres was steadied when awkwardly positioned to the inside of MIGHTY STEED.  The Stewards inquired into th",
-            "vet_blocked": false,
+            "vet_blocked": true,
             "is_victim": true
           }
         ],
         "ground_saved_score": 0.5,
         "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Near the 700 Metres was steadied when awkwardly positioned to the inside of MIGHTY STEED.  The Stewards inquired into the reasons for TOP DRAGON being severely checked between PRAY FOR JUSTICE (K Teetan) and LUCKY SAM GOR (C L Chau) passing the winning post.  K Teetan was found guilty of a charge of careless riding [Rule 100(1)] in that passing the winning post he allowed his mount to shift out, contributing to TOP DRAGON being severely checked between PRAY FOR JUSTICE and LUCKY SAM GOR.  In all the circumstances K Teetan was issued with a severe reprimand and advised that in similar circumstances he would be expected to make a greater effort than what he did on this occasion to prevent his mounts from shifting ground.  C L Chau was found guilty of a charge of careless riding [Rule 100(1)] in that passing the winning post he allowed his mount to shift in when insufficiently clear of TOP DRAGON, contributing to TOP DRAGON being severely checked between LUCKY SAM GOR and PRAY FOR JUSTICE.  In issuing Jockey Chau with a severe reprimand the Stewards were mindful that LUCKY SAM GOR did shift in quickly which provided Jockey Chau with limited opportunity to straighten his mount.  However, the Stewards advised Jockey Chau that he must react with more urgency in similar circumstances to correct his mounts. Last Run (01/10/26 ST / Turf / \"A\" 1400m): Fin 07 (LBW 2-1/2) | RunPos: 7 8 8 7 22/07/2024: Castration. (Passed: -)"
+        "steward_comment": "Near the 700 Metres was steadied when awkwardly positioned to the inside of MIGHTY STEED.  The Stewards inquired into the reasons for TOP DRAGON being severely checked between PRAY FOR JUSTICE (K Teetan) and LUCKY SAM GOR (C L Chau) passing the winning post.  K Teetan was found guilty of a charge of careless riding [Rule 100(1)] in that passing the winning post he allowed his mount to shift out, contributing to TOP DRAGON being severely checked between PRAY FOR JUSTICE and LUCKY SAM GOR.  In all the circumstances K Teetan was issued with a severe reprimand and advised that in similar circumstances he would be expected to make a greater effort than what he did on this occasion to prevent his mounts from shifting ground.  C L Chau was found guilty of a charge of careless riding [Rule 100(1)] in that passing the winning post he allowed his mount to shift in when insufficiently clear of TOP DRAGON, contributing to TOP DRAGON being severely checked between LUCKY SAM GOR and PRAY FOR JUSTICE.  In issuing Jockey Chau with a severe reprimand the Stewards were mindful that LUCKY SAM GOR did shift in quickly which provided Jockey Chau with limited opportunity to straighten his mount.  However, the Stewards advised Jockey Chau that he must react with more urgency in similar circumstances to correct his mounts. Last Run (28/10/26 ST / AWT 1650m): Fin 03 (LBW 1/2) | RunPos: 5 6 6 3 23/03/2025: Disappointing performance. (Passed: 08/04/2025)"
       }
     ],
     "trial_note": {
@@ -22989,18 +23066,26 @@
         "field_size": 12,
         "incident_flags": [
           {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Near the 700 Metres was steadied when awkwardly positioned to the inside of MIGHTY STEED.  The Stewards inquired into th",
+            "vet_blocked": true,
+            "is_victim": false
+          },
+          {
             "flag": "traffic_trouble",
             "severity": 2,
             "marker": "mid",
             "snippet": "Near the 700 Metres was steadied when awkwardly positioned to the inside of MIGHTY STEED.  The Stewards inquired into th",
-            "vet_blocked": false,
+            "vet_blocked": true,
             "is_victim": true
           }
         ],
         "ground_saved_score": 0.5,
         "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Near the 700 Metres was steadied when awkwardly positioned to the inside of MIGHTY STEED.  The Stewards inquired into the reasons for TOP DRAGON being severely checked between PRAY FOR JUSTICE (K Teetan) and LUCKY SAM GOR (C L Chau) passing the winning post.  K Teetan was found guilty of a charge of careless riding [Rule 100(1)] in that passing the winning post he allowed his mount to shift out, contributing to TOP DRAGON being severely checked between PRAY FOR JUSTICE and LUCKY SAM GOR.  In all the circumstances K Teetan was issued with a severe reprimand and advised that in similar circumstances he would be expected to make a greater effort than what he did on this occasion to prevent his mounts from shifting ground.  C L Chau was found guilty of a charge of careless riding [Rule 100(1)] in that passing the winning post he allowed his mount to shift in when insufficiently clear of TOP DRAGON, contributing to TOP DRAGON being severely checked between LUCKY SAM GOR and PRAY FOR JUSTICE.  In issuing Jockey Chau with a severe reprimand the Stewards were mindful that LUCKY SAM GOR did shift in quickly which provided Jockey Chau with limited opportunity to straighten his mount.  However, the Stewards advised Jockey Chau that he must react with more urgency in similar circumstances to correct his mounts. Last Run (01/10/26 ST / Turf / \"A\" 1400m): Fin 07 (LBW 2-1/2) | RunPos: 7 8 8 7 22/07/2024: Castration. (Passed: -)"
+        "steward_comment": "Near the 700 Metres was steadied when awkwardly positioned to the inside of MIGHTY STEED.  The Stewards inquired into the reasons for TOP DRAGON being severely checked between PRAY FOR JUSTICE (K Teetan) and LUCKY SAM GOR (C L Chau) passing the winning post.  K Teetan was found guilty of a charge of careless riding [Rule 100(1)] in that passing the winning post he allowed his mount to shift out, contributing to TOP DRAGON being severely checked between PRAY FOR JUSTICE and LUCKY SAM GOR.  In all the circumstances K Teetan was issued with a severe reprimand and advised that in similar circumstances he would be expected to make a greater effort than what he did on this occasion to prevent his mounts from shifting ground.  C L Chau was found guilty of a charge of careless riding [Rule 100(1)] in that passing the winning post he allowed his mount to shift in when insufficiently clear of TOP DRAGON, contributing to TOP DRAGON being severely checked between LUCKY SAM GOR and PRAY FOR JUSTICE.  In issuing Jockey Chau with a severe reprimand the Stewards were mindful that LUCKY SAM GOR did shift in quickly which provided Jockey Chau with limited opportunity to straighten his mount.  However, the Stewards advised Jockey Chau that he must react with more urgency in similar circumstances to correct his mounts. Last Run (28/10/26 ST / AWT 1650m): Fin 03 (LBW 1/2) | RunPos: 5 6 6 3 23/03/2025: Disappointing performance. (Passed: 08/04/2025)"
       }
     ],
     "trial_note": {
@@ -23038,7 +23123,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "After travelling a short distance shifted out slightly and made contact with GIMME FIVE. Last Run (18/11/26 HV / Turf / ",
+            "snippet": "After travelling a short distance shifted out slightly and made contact with GIMME FIVE. Last Run (08/11/26 ST / AWT 120",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -23046,7 +23131,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "After travelling a short distance shifted out slightly and made contact with GIMME FIVE. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 05 (LBW 1-1/4) | RunPos: 12 12 5 23/04/2026: Lame right front leg on the day after racing. (Passed: 09/05/2026)"
+        "steward_comment": "After travelling a short distance shifted out slightly and made contact with GIMME FIVE. Last Run (08/11/26 ST / AWT 1200m): Fin 09 (LBW 6) | RunPos: 3 4 9 23/04/2026: Lame right front leg on the day after racing. (Passed: 09/05/2026)"
       },
       {
         "race_date": "2026-11-08",
@@ -23117,7 +23202,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "After travelling a short distance shifted out slightly and made contact with GIMME FIVE. Last Run (18/11/26 HV / Turf / ",
+            "snippet": "After travelling a short distance shifted out slightly and made contact with GIMME FIVE. Last Run (08/11/26 ST / AWT 120",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -23125,7 +23210,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "After travelling a short distance shifted out slightly and made contact with GIMME FIVE. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 05 (LBW 1-1/4) | RunPos: 12 12 5 23/04/2026: Lame right front leg on the day after racing. (Passed: 09/05/2026)"
+        "steward_comment": "After travelling a short distance shifted out slightly and made contact with GIMME FIVE. Last Run (08/11/26 ST / AWT 1200m): Fin 09 (LBW 6) | RunPos: 3 4 9 23/04/2026: Lame right front leg on the day after racing. (Passed: 09/05/2026)"
       },
       {
         "race_date": "2026-11-08",
@@ -23292,7 +23377,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (18/11/26 ",
+            "snippet": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (01/11/26 ",
             "vet_blocked": true,
             "is_victim": false
           },
@@ -23300,7 +23385,7 @@
             "flag": "slow_start",
             "severity": 2,
             "marker": "start",
-            "snippet": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (18/11/26 ",
+            "snippet": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (01/11/26 ",
             "vet_blocked": true,
             "is_victim": true
           }
@@ -23308,7 +23393,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 03 (LBW 2-1/4) | RunPos: 4 6 3 02/03/2025: Unacceptable performance and rider concerned horse's action during racing. (Passed: 28/03/2025)"
+        "steward_comment": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 03 (LBW 3) | RunPos: 4 3 3 02/03/2025: Unacceptable performance and rider concerned horse's action during racing. (Passed: 28/03/2025)"
       },
       {
         "race_date": "2026-11-01",
@@ -23333,7 +23418,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (18/11/26 ",
+            "snippet": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (01/11/26 ",
             "vet_blocked": true,
             "is_victim": false
           },
@@ -23341,7 +23426,7 @@
             "flag": "slow_start",
             "severity": 2,
             "marker": "start",
-            "snippet": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (18/11/26 ",
+            "snippet": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (01/11/26 ",
             "vet_blocked": true,
             "is_victim": true
           }
@@ -23349,7 +23434,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 03 (LBW 2-1/4) | RunPos: 4 6 3 02/03/2025: Unacceptable performance and rider concerned horse's action during racing. (Passed: 28/03/2025)"
+        "steward_comment": "Jumped awkwardly, shifted out and made contact with DO YOU JUST.  Raced keenly in the middle stages. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 03 (LBW 3) | RunPos: 4 3 3 02/03/2025: Unacceptable performance and rider concerned horse's action during racing. (Passed: 28/03/2025)"
       },
       {
         "race_date": "2026-09-23",
@@ -26695,7 +26780,6 @@
       "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON",
-        "C L CHAU",
         "C L CHAU"
       ]
     }
@@ -26743,7 +26827,6 @@
       "best_trial_speed_diff": 0.0,
       "jockeys": [
         "M F POON",
-        "C L CHAU",
         "C L CHAU"
       ]
     }
@@ -28521,7 +28604,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 3,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted out slightly at the start and made contact with GUSTOSISIMO.  Over the concluding stages could not be ridden out when held up behind AURORA LADY. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 07 (LBW 1-3/4) | RunPos: 11 12 7 25/09/2025: Failed vet exam: Lame right fore after gallop. (Passed: 15/10/2025)"
+        "steward_comment": "Shifted out slightly at the start and made contact with GUSTOSISIMO.  Over the concluding stages could not be ridden out when held up behind AURORA LADY. Last Run (25/10/26 ST / Turf / \"A\" 1200m): Fin 08 (LBW 5-3/4) | RunPos: 9 12 8 25/09/2025: Failed vet exam: Lame right fore after gallop. (Passed: 15/10/2025)"
       },
       {
         "race_date": "2026-10-25",
@@ -29815,7 +29898,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shortly after the start was bumped by WINDLORD which shifted in.  Raced keenly in the early stages.  After being crossed by WINDLORD approaching the 1400 Metres was steadied to avoid WINDLORD. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 04 (LBW 3-1/4) | RunPos: 4 4 3 4 15/03/2026: Disappointing performance. (Passed: 02/04/2026)"
+        "steward_comment": "Shortly after the start was bumped by WINDLORD which shifted in.  Raced keenly in the early stages.  After being crossed by WINDLORD approaching the 1400 Metres was steadied to avoid WINDLORD. Last Run (21/10/26 HV / Turf / \"B\" 1650m): Fin 02 (LBW HD) | RunPos: 2 2 2 2 15/03/2026: Disappointing performance. (Passed: 02/04/2026)"
       },
       {
         "race_date": "2026-10-21",
@@ -30563,7 +30646,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. 25/05/2025: After being loaded kicked out behind, got both hind legs caught between the back gates and was found to have sustained multiple abrasions. Withdrawn from racing. (Passed: 06/06/2025)"
+        "steward_comment": "No report. Last Run (19/10/26 ST / Turf / \"C+3\" 1600m): Fin 07 (LBW 4-1/4) | RunPos: 7 7 8 7 25/05/2025: After being loaded kicked out behind, got both hind legs caught between the back gates and was found to have sustained multiple abrasions. Withdrawn from racing. (Passed: 06/06/2025)"
       }
     ],
     "trial_note": null
@@ -31070,7 +31153,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Shifted in shortly after the start and was bumped.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1000",
+            "snippet": "Shifted in shortly after the start and was bumped.  Sent for sampling post-race. Last Run (21/10/26 HV / Turf / \"B\" 1200",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -31078,7 +31161,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted in shortly after the start and was bumped.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 01 (LBW SH) | RunPos: 4 6 1 21/04/2025: Lame right front leg on the day after racing. (Passed: 22/05/2025)"
+        "steward_comment": "Shifted in shortly after the start and was bumped.  Sent for sampling post-race. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 04 (LBW 2-1/2) | RunPos: 3 3 4 21/04/2025: Lame right front leg on the day after racing. (Passed: 22/05/2025)"
       },
       {
         "race_date": "2026-10-21",
@@ -31148,7 +31231,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted in shortly after the start and made contact with NOTTHESILLYONE.  From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (07/10/26 HV / Turf / \"C+3\" 1200m): Fin 02 (LBW N) | RunPos: 6 7 2 09/09/2024: Left fore humeral bone injury. (Passed: 03/01/2025)"
+        "steward_comment": "Shifted in shortly after the start and made contact with NOTTHESILLYONE.  From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 01 (LBW 1/2) | RunPos: 8 8 1 17/10/2025: Right fore tendon injury. (Passed: 24/03/2026)"
       }
     ],
     "trial_note": null
@@ -32084,7 +32167,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly, shifted out and made contact with NYX GLUCK.  K C Leung stated that his mount came under pressure in the Home Straight and when he was concerned there was something amiss he did not ride it out to the finish of the event.  A veterinary inspection immediately following the race did not show any significant findings.  The performance of EMBLAZON, which finished tailed out, was considered unacceptable.  Before being allowed to race again, EMBLAZON will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination."
+        "steward_comment": "Jumped awkwardly, shifted out and made contact with NYX GLUCK.  K C Leung stated that his mount came under pressure in the Home Straight and when he was concerned there was something amiss he did not ride it out to the finish of the event.  A veterinary inspection immediately following the race did not show any significant findings.  The performance of EMBLAZON, which finished tailed out, was considered unacceptable.  Before being allowed to race again, EMBLAZON will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination. Last Run (19/10/26 ST / Turf / \"C+3\" 1400m): Fin 13 (LBW 25-1/4) | RunPos: 9 10 10 13 19/10/2026: Unacceptable performance and rider concerned horse's action during racing. (Passed: 06/11/2026)"
       }
     ],
     "trial_note": null
@@ -32279,7 +32362,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "In the middle stages raced keenly.  For some distance near the 200 Metres and again near the 100 Metres Apprentice H Y Yuen had difficulty using her whip when positioned close to TURIN CHAMPIONS.  When questioned Apprentice Yuen stated that her instructions were to hold an on-pace position in the first four.  She said after jumping well from her inside barrier she was reluctant to ride her mount along in the early stages as PRESTIGE GOOD has previously raced keenly in its races.  She said having regard to the horse’s racing manners she did not encourage her mount to hold a position initially behind CALL ME TOPSEED and then behind LIONS SPIRIT when LIONS SPIRIT shifted to the rail.  Assistant Trainer Y K Lau confirmed the instructions issued.  After considering her explanation the Stewards advised Apprentice Yuen that in the early stages she had made an error of judgement in not endeavouring to comply with her instructions by firstly attempting to hold a position behind CALL ME TOPSEED and then by allowing her mount to lose ground behind LIONS SPIRIT after LIONS SPIRIT crossed to the rail.  She was further advised in similar circumstances she would be expected to show better judgement than what she did on this occasion.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 02 (LBW 1-1/4) | RunPos: 9 8 7 2 No HKJC veterinary records"
+        "steward_comment": "In the middle stages raced keenly.  For some distance near the 200 Metres and again near the 100 Metres Apprentice H Y Yuen had difficulty using her whip when positioned close to TURIN CHAMPIONS.  When questioned Apprentice Yuen stated that her instructions were to hold an on-pace position in the first four.  She said after jumping well from her inside barrier she was reluctant to ride her mount along in the early stages as PRESTIGE GOOD has previously raced keenly in its races.  She said having regard to the horse’s racing manners she did not encourage her mount to hold a position initially behind CALL ME TOPSEED and then behind LIONS SPIRIT when LIONS SPIRIT shifted to the rail.  Assistant Trainer Y K Lau confirmed the instructions issued.  After considering her explanation the Stewards advised Apprentice Yuen that in the early stages she had made an error of judgement in not endeavouring to comply with her instructions by firstly attempting to hold a position behind CALL ME TOPSEED and then by allowing her mount to lose ground behind LIONS SPIRIT after LIONS SPIRIT crossed to the rail.  She was further advised in similar circumstances she would be expected to show better judgement than what she did on this occasion.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1650m): Fin 04 (LBW 1) | RunPos: 6 3 2 4 No HKJC veterinary records"
       },
       {
         "race_date": "2026-11-01",
@@ -32376,7 +32459,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "In the middle stages raced keenly.  For some distance near the 200 Metres and again near the 100 Metres Apprentice H Y Yuen had difficulty using her whip when positioned close to TURIN CHAMPIONS.  When questioned Apprentice Yuen stated that her instructions were to hold an on-pace position in the first four.  She said after jumping well from her inside barrier she was reluctant to ride her mount along in the early stages as PRESTIGE GOOD has previously raced keenly in its races.  She said having regard to the horse’s racing manners she did not encourage her mount to hold a position initially behind CALL ME TOPSEED and then behind LIONS SPIRIT when LIONS SPIRIT shifted to the rail.  Assistant Trainer Y K Lau confirmed the instructions issued.  After considering her explanation the Stewards advised Apprentice Yuen that in the early stages she had made an error of judgement in not endeavouring to comply with her instructions by firstly attempting to hold a position behind CALL ME TOPSEED and then by allowing her mount to lose ground behind LIONS SPIRIT after LIONS SPIRIT crossed to the rail.  She was further advised in similar circumstances she would be expected to show better judgement than what she did on this occasion.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 02 (LBW 1-1/4) | RunPos: 9 8 7 2 No HKJC veterinary records"
+        "steward_comment": "In the middle stages raced keenly.  For some distance near the 200 Metres and again near the 100 Metres Apprentice H Y Yuen had difficulty using her whip when positioned close to TURIN CHAMPIONS.  When questioned Apprentice Yuen stated that her instructions were to hold an on-pace position in the first four.  She said after jumping well from her inside barrier she was reluctant to ride her mount along in the early stages as PRESTIGE GOOD has previously raced keenly in its races.  She said having regard to the horse’s racing manners she did not encourage her mount to hold a position initially behind CALL ME TOPSEED and then behind LIONS SPIRIT when LIONS SPIRIT shifted to the rail.  Assistant Trainer Y K Lau confirmed the instructions issued.  After considering her explanation the Stewards advised Apprentice Yuen that in the early stages she had made an error of judgement in not endeavouring to comply with her instructions by firstly attempting to hold a position behind CALL ME TOPSEED and then by allowing her mount to lose ground behind LIONS SPIRIT after LIONS SPIRIT crossed to the rail.  She was further advised in similar circumstances she would be expected to show better judgement than what she did on this occasion.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1650m): Fin 04 (LBW 1) | RunPos: 6 3 2 4 No HKJC veterinary records"
       },
       {
         "race_date": "2026-11-01",
@@ -33225,7 +33308,7 @@
             "flag": "traffic_trouble",
             "severity": 1,
             "marker": "start",
-            "snippet": "Jumped only fairly.  Briefly held up approaching the 300 Metres. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 03 (LBW ",
+            "snippet": "Jumped only fairly.  Briefly held up approaching the 300 Metres. Last Run (25/10/26 ST / Turf / \"A\" 1600m): Fin 13 (LBW ",
             "vet_blocked": false,
             "is_victim": true
           },
@@ -33233,7 +33316,7 @@
             "flag": "slow_start",
             "severity": 1,
             "marker": "start",
-            "snippet": "Jumped only fairly.  Briefly held up approaching the 300 Metres. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 03 (LBW ",
+            "snippet": "Jumped only fairly.  Briefly held up approaching the 300 Metres. Last Run (25/10/26 ST / Turf / \"A\" 1600m): Fin 13 (LBW ",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -33241,7 +33324,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 1,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped only fairly.  Briefly held up approaching the 300 Metres. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 03 (LBW N) | RunPos: 6 6 6 3 11/06/2025: Both hind fetlock injuries. Update: Surgery to both hind fetlocks. (Passed: 18/11/2025)"
+        "steward_comment": "Jumped only fairly.  Briefly held up approaching the 300 Metres. Last Run (25/10/26 ST / Turf / \"A\" 1600m): Fin 13 (LBW 12) | RunPos: 13 13 14 13 11/06/2025: Both hind fetlock injuries. Update: Surgery to both hind fetlocks. (Passed: 18/11/2025)"
       }
     ],
     "trial_note": {
@@ -33677,7 +33760,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 02 (LBW 1/2) | RunPos: 3 4 2 No HKJC veterinary records"
+        "steward_comment": "Sent for sampling post-race. Last Run (19/10/26 ST / Turf / \"C+3\" 1200m): Fin 06 (LBW 3-1/2) | RunPos: 3 2 6 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -34174,26 +34257,18 @@
         "field_size": 14,
         "incident_flags": [
           {
-            "flag": "vet_or_merit",
-            "severity": 2,
-            "marker": "start",
-            "snippet": "Shortly after the start shifted out and away from SPICY STANDARD and was bumped.  Near the 850 Metres was momentarily cr",
-            "vet_blocked": true,
-            "is_victim": false
-          },
-          {
             "flag": "traffic_trouble",
-            "severity": 1,
-            "marker": "start",
+            "severity": 2,
+            "marker": "mid",
             "snippet": "Shortly after the start shifted out and away from SPICY STANDARD and was bumped.  Near the 850 Metres was momentarily cr",
-            "vet_blocked": true,
+            "vet_blocked": false,
             "is_victim": true
           }
         ],
         "ground_saved_score": 0.5,
-        "interference_severity": 1,
+        "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Shortly after the start shifted out and away from SPICY STANDARD and was bumped.  Near the 850 Metres was momentarily crowded by GOD OF PI which shifted in before being corrected.  Near the 550 Metres was eased to avoid TARGET AUDIENCE which shifted out. Last Run (19/10/26 ST / Turf / \"C+3\" 1400m): Fin 11 (LBW 6-3/4) | RunPos: 11 11 12 11 11/06/2025: Disappointing performance. (Passed: 20/06/2025)"
+        "steward_comment": "Shortly after the start shifted out and away from SPICY STANDARD and was bumped.  Near the 850 Metres was momentarily crowded by GOD OF PI which shifted in before being corrected.  Near the 550 Metres was eased to avoid TARGET AUDIENCE which shifted out. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 04 (LBW 3) | RunPos: 10 10 4 28/10/2025: Throat surgery to correct an airway abnormality (tieback and hobday). (Passed: 26/01/2026)"
       }
     ],
     "trial_note": null
@@ -34296,26 +34371,18 @@
         "field_size": 14,
         "incident_flags": [
           {
-            "flag": "vet_or_merit",
-            "severity": 2,
-            "marker": "start",
-            "snippet": "Shortly after the start shifted out and away from SPICY STANDARD and was bumped.  Near the 850 Metres was momentarily cr",
-            "vet_blocked": true,
-            "is_victim": false
-          },
-          {
             "flag": "traffic_trouble",
-            "severity": 1,
-            "marker": "start",
+            "severity": 2,
+            "marker": "mid",
             "snippet": "Shortly after the start shifted out and away from SPICY STANDARD and was bumped.  Near the 850 Metres was momentarily cr",
-            "vet_blocked": true,
+            "vet_blocked": false,
             "is_victim": true
           }
         ],
         "ground_saved_score": 0.5,
-        "interference_severity": 1,
+        "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Shortly after the start shifted out and away from SPICY STANDARD and was bumped.  Near the 850 Metres was momentarily crowded by GOD OF PI which shifted in before being corrected.  Near the 550 Metres was eased to avoid TARGET AUDIENCE which shifted out. Last Run (19/10/26 ST / Turf / \"C+3\" 1400m): Fin 11 (LBW 6-3/4) | RunPos: 11 11 12 11 11/06/2025: Disappointing performance. (Passed: 20/06/2025)"
+        "steward_comment": "Shortly after the start shifted out and away from SPICY STANDARD and was bumped.  Near the 850 Metres was momentarily crowded by GOD OF PI which shifted in before being corrected.  Near the 550 Metres was eased to avoid TARGET AUDIENCE which shifted out. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 04 (LBW 3) | RunPos: 10 10 4 28/10/2025: Throat surgery to correct an airway abnormality (tieback and hobday). (Passed: 26/01/2026)"
       }
     ],
     "trial_note": null
@@ -34682,7 +34749,7 @@
           {
             "flag": "vet_or_merit",
             "severity": 2,
-            "marker": "start",
+            "marker": "mid",
             "snippet": "Was withdrawn at the Start by order of the Stewards acting on veterinary advice after it was found to be lame in its rig",
             "vet_blocked": true,
             "is_victim": false
@@ -34691,7 +34758,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Was withdrawn at the Start by order of the Stewards acting on veterinary advice after it was found to be lame in its right front leg.  Before being allowed to race again, SUPER STRONG KID will be subjected to an official veterinary examination which must include additional diagnostic assessments."
+        "steward_comment": "Was withdrawn at the Start by order of the Stewards acting on veterinary advice after it was found to be lame in its right front leg.  Before being allowed to race again, SUPER STRONG KID will be subjected to an official veterinary examination which must include additional diagnostic assessments. Last Run (19/10/26 ST / Turf / \"C+3\" 1200m): Fin WV-A (LBW --) | RunPos: -- 19/10/2026: On arrival at the start was examined and found to be lame in its right front leg. Withdrawn from racing. (Passed: 27/10/2026)"
       }
     ],
     "trial_note": null
@@ -35786,7 +35853,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm and an endoscopic examination also showed a substantial amount of blood in its trachea.  Before being allowed to race again, MORGAN SUCCESS will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 12 (LBW 28-3/4) | RunPos: 9 8 10 12 18/03/2025: Acute dermatitis. Withdrawn from racing. (Passed: 27/03/2025)"
+        "steward_comment": "A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm and an endoscopic examination also showed a substantial amount of blood in its trachea.  Before being allowed to race again, MORGAN SUCCESS will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (25/10/26 ST / Turf / \"A\" 1600m): Fin 10 (LBW 6-1/4) | RunPos: 6 6 8 10 18/11/2026: Irregular heart rhythm noted after racing and substantial blood in trachea noted on post-race scoping. (Passed: -)"
       }
     ],
     "trial_note": {
@@ -39244,7 +39311,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": true,
-        "steward_comment": "Apprentice H Y Yuen stated that after having to make use of her mount in the early stages to go forward MASTER COMPANION gave ground when under pressure in the Home Straight.  She added, in her opinion, MASTER CHAMPION would be better suited by dropping back in distance for its next race start.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (21/10/26 HV / Turf / \"B\" 1000m): Fin 04 (LBW 2-3/4) | RunPos: 9 9 4 15/03/2025: Lame left fore. Withdrawn from racing. (Passed: 10/04/2025)"
+        "steward_comment": "Apprentice H Y Yuen stated that after having to make use of her mount in the early stages to go forward MASTER COMPANION gave ground when under pressure in the Home Straight.  She added, in her opinion, MASTER CHAMPION would be better suited by dropping back in distance for its next race start.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 11 (LBW 4-3/4) | RunPos: 2 2 11 15/03/2025: Lame left fore. Withdrawn from racing. (Passed: 10/04/2025)"
       },
       {
         "race_date": "2026-10-21",
@@ -39310,7 +39377,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Apprentice H Y Yuen stated that after having to make use of her mount in the early stages to go forward MASTER COMPANION gave ground when under pressure in the Home Straight.  She added, in her opinion, MASTER CHAMPION would be better suited by dropping back in distance for its next race start.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (21/10/26 HV / Turf / \"B\" 1000m): Fin 04 (LBW 2-3/4) | RunPos: 9 9 4 15/03/2025: Lame left fore. Withdrawn from racing. (Passed: 10/04/2025)"
+        "steward_comment": "Apprentice H Y Yuen stated that after having to make use of her mount in the early stages to go forward MASTER COMPANION gave ground when under pressure in the Home Straight.  She added, in her opinion, MASTER CHAMPION would be better suited by dropping back in distance for its next race start.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 11 (LBW 4-3/4) | RunPos: 2 2 11 15/03/2025: Lame left fore. Withdrawn from racing. (Passed: 10/04/2025)"
       }
     ],
     "trial_note": null
@@ -39832,7 +39899,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (18/11",
+            "snippet": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (28/10",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -39840,7 +39907,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW 1) | RunPos: 11 10 1 01/01/2026: Disappointing performance. (Passed: 13/01/2026)"
+        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (28/10/26 ST / AWT 1200m): Fin 10 (LBW 8-3/4) | RunPos: 4 3 10 01/01/2026: Disappointing performance. (Passed: 13/01/2026)"
       },
       {
         "race_date": "2026-10-28",
@@ -39898,7 +39965,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (18/11",
+            "snippet": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (28/10",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -39906,7 +39973,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW 1) | RunPos: 11 10 1 01/01/2026: Disappointing performance. (Passed: 13/01/2026)"
+        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (28/10/26 ST / AWT 1200m): Fin 10 (LBW 8-3/4) | RunPos: 4 3 10 01/01/2026: Disappointing performance. (Passed: 13/01/2026)"
       }
     ],
     "trial_note": null
@@ -39938,7 +40005,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (18/11",
+            "snippet": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (28/10",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -39946,7 +40013,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW 1) | RunPos: 11 10 1 01/01/2026: Disappointing performance. (Passed: 13/01/2026)"
+        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (28/10/26 ST / AWT 1200m): Fin 10 (LBW 8-3/4) | RunPos: 4 3 10 01/01/2026: Disappointing performance. (Passed: 13/01/2026)"
       },
       {
         "race_date": "2026-10-28",
@@ -40004,7 +40071,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (18/11",
+            "snippet": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (28/10",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -40012,7 +40079,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW 1) | RunPos: 11 10 1 01/01/2026: Disappointing performance. (Passed: 13/01/2026)"
+        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  Sent for sampling post-race. Last Run (28/10/26 ST / AWT 1200m): Fin 10 (LBW 8-3/4) | RunPos: 4 3 10 01/01/2026: Disappointing performance. (Passed: 13/01/2026)"
       }
     ],
     "trial_note": null
@@ -42146,7 +42213,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 03 (LBW 1-1/4) | RunPos: 4 4 3 02/11/2025: Bled from both nost",
+            "snippet": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 09 (LBW 5) | RunPos: 3 4 9 02/11/2025: Bled from both nostri",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -42154,7 +42221,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 03 (LBW 1-1/4) | RunPos: 4 4 3 02/11/2025: Bled from both nostrils after racing. (Passed: 26/01/2026)"
+        "steward_comment": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 09 (LBW 5) | RunPos: 3 4 9 02/11/2025: Bled from both nostrils after racing. (Passed: 26/01/2026)"
       },
       {
         "race_date": "2026-11-01",
@@ -42179,7 +42246,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 03 (LBW 1-1/4) | RunPos: 4 4 3 02/11/2025: Bled from both nost",
+            "snippet": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 09 (LBW 5) | RunPos: 3 4 9 02/11/2025: Bled from both nostri",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -42187,7 +42254,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 03 (LBW 1-1/4) | RunPos: 4 4 3 02/11/2025: Bled from both nostrils after racing. (Passed: 26/01/2026)"
+        "steward_comment": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 09 (LBW 5) | RunPos: 3 4 9 02/11/2025: Bled from both nostrils after racing. (Passed: 26/01/2026)"
       },
       {
         "race_date": "2026-10-14",
@@ -43293,7 +43360,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Prior to the running of the event Mr H W Cheung representing Trainer B Crawford, who was not present tonight, advised that the horse would be ridden forward which was consistent with the manner in which it was ridden at its most recent start.  K Teetan confirmed that from a wide barrier he was instructed to go forward.  He said when under pressure in the Home Straight LUNAR DASH responded only fairly to his riding and gave ground over the final 200 Metres.  A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm, a condition which had previously been reported on 14.2.26.  Before being allowed to race again, LUNAR DASH will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 11 (LBW 5-1/4) | RunPos: 3 3 11 14/02/2026: Heart irregularity noted after trackwork. (Passed: 17/04/2026)"
+        "steward_comment": "Prior to the running of the event Mr H W Cheung representing Trainer B Crawford, who was not present tonight, advised that the horse would be ridden forward which was consistent with the manner in which it was ridden at its most recent start.  K Teetan confirmed that from a wide barrier he was instructed to go forward.  He said when under pressure in the Home Straight LUNAR DASH responded only fairly to his riding and gave ground over the final 200 Metres.  A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm, a condition which had previously been reported on 14.2.26.  Before being allowed to race again, LUNAR DASH will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 07 (LBW 2) | RunPos: 3 3 7 18/11/2026: Irregular heart rhythm noted after racing. (Passed: -)"
       },
       {
         "race_date": "2026-11-04",
@@ -43407,7 +43474,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Prior to the running of the event Mr H W Cheung representing Trainer B Crawford, who was not present tonight, advised that the horse would be ridden forward which was consistent with the manner in which it was ridden at its most recent start.  K Teetan confirmed that from a wide barrier he was instructed to go forward.  He said when under pressure in the Home Straight LUNAR DASH responded only fairly to his riding and gave ground over the final 200 Metres.  A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm, a condition which had previously been reported on 14.2.26.  Before being allowed to race again, LUNAR DASH will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 11 (LBW 5-1/4) | RunPos: 3 3 11 14/02/2026: Heart irregularity noted after trackwork. (Passed: 17/04/2026)"
+        "steward_comment": "Prior to the running of the event Mr H W Cheung representing Trainer B Crawford, who was not present tonight, advised that the horse would be ridden forward which was consistent with the manner in which it was ridden at its most recent start.  K Teetan confirmed that from a wide barrier he was instructed to go forward.  He said when under pressure in the Home Straight LUNAR DASH responded only fairly to his riding and gave ground over the final 200 Metres.  A veterinary inspection immediately following the race revealed that the horse was displaying an irregular heart rhythm, a condition which had previously been reported on 14.2.26.  Before being allowed to race again, LUNAR DASH will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (04/11/26 HV / Turf / \"A\" 1200m): Fin 07 (LBW 2) | RunPos: 3 3 7 18/11/2026: Irregular heart rhythm noted after racing. (Passed: -)"
       },
       {
         "race_date": "2026-11-04",
@@ -45041,9 +45108,11 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.7,
+      "best_trial_pos_ratio": 0.3,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
+        "C L CHAU",
+        "C L CHAU",
         "C L CHAU"
       ]
     }
@@ -45120,9 +45189,11 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.7,
+      "best_trial_pos_ratio": 0.3,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
+        "C L CHAU",
+        "C L CHAU",
         "C L CHAU"
       ]
     }
@@ -50023,7 +50094,41 @@
   "GREEN FIELD PEARL": {
     "horse_name": "GREEN FIELD PEARL",
     "horse_code": "K460",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-09-13",
+        "race_id": "2026-09-13_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 8,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.75,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "start",
+            "snippet": "K C Leung reported that his mount jumped better than expected today and as a result was able to hold an on-pace position",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "K C Leung reported that his mount jumped better than expected today and as a result was able to hold an on-pace position. 17/03/2026: Lame left fore. Withdrawn from racing. (Passed: 29/05/2026)"
+      }
+    ],
     "trial_note": null
   },
   "K460": {
@@ -50518,7 +50623,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "C L Chau reported that his mount responded only fairly to his riding in the Home Straight and, in his opinion, raced flat which he attributed to the horse having two hard runs this season.  A veterinary inspection immediately following the race did not show any significant findings."
+        "steward_comment": "C L Chau reported that his mount responded only fairly to his riding in the Home Straight and, in his opinion, raced flat which he attributed to the horse having two hard runs this season.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (19/10/26 ST / Turf / \"C+3\" 1400m): Fin 10 (LBW 4-3/4) | RunPos: 2 2 2 10 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -51118,7 +51223,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "When questioned Apprentice H Y Yuen stated that the instructions were to go forward and attempt to lead from the outside barrier.  She said despite riding her mount along in the early stages SUPERB KING did not show sufficient pace to comply with those instructions and as a result was left racing very wide and without cover for the majority of the event.  When questioned if there was an opportunity to endeavour to obtain a position with cover behind LOOKING BRIGHT, Apprentice Yuen stated that as SUPERB KING can be one-paced she elected to remain racing to LOOKING BRIGHT’s outside where it was travelling comfortably.  The Stewards advised Apprentice Yuen that, wherever possible, she should endeavour to find a more favourable position closer to the rail to give her mounts the opportunity to obtain the best possible placing in the race. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 06 (LBW 2) | RunPos: 5 7 6 No HKJC veterinary records"
+        "steward_comment": "When questioned Apprentice H Y Yuen stated that the instructions were to go forward and attempt to lead from the outside barrier.  She said despite riding her mount along in the early stages SUPERB KING did not show sufficient pace to comply with those instructions and as a result was left racing very wide and without cover for the majority of the event.  When questioned if there was an opportunity to endeavour to obtain a position with cover behind LOOKING BRIGHT, Apprentice Yuen stated that as SUPERB KING can be one-paced she elected to remain racing to LOOKING BRIGHT’s outside where it was travelling comfortably.  The Stewards advised Apprentice Yuen that, wherever possible, she should endeavour to find a more favourable position closer to the rail to give her mounts the opportunity to obtain the best possible placing in the race. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 01 (LBW 1-1/4) | RunPos: 1 1 1 No HKJC veterinary records"
       },
       {
         "race_date": "2026-11-01",
@@ -51151,7 +51256,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": true,
-        "steward_comment": "When questioned Apprentice H Y Yuen stated that the instructions were to go forward and attempt to lead from the outside barrier.  She said despite riding her mount along in the early stages SUPERB KING did not show sufficient pace to comply with those instructions and as a result was left racing very wide and without cover for the majority of the event.  When questioned if there was an opportunity to endeavour to obtain a position with cover behind LOOKING BRIGHT, Apprentice Yuen stated that as SUPERB KING can be one-paced she elected to remain racing to LOOKING BRIGHT’s outside where it was travelling comfortably.  The Stewards advised Apprentice Yuen that, wherever possible, she should endeavour to find a more favourable position closer to the rail to give her mounts the opportunity to obtain the best possible placing in the race. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 06 (LBW 2) | RunPos: 5 7 6 No HKJC veterinary records"
+        "steward_comment": "When questioned Apprentice H Y Yuen stated that the instructions were to go forward and attempt to lead from the outside barrier.  She said despite riding her mount along in the early stages SUPERB KING did not show sufficient pace to comply with those instructions and as a result was left racing very wide and without cover for the majority of the event.  When questioned if there was an opportunity to endeavour to obtain a position with cover behind LOOKING BRIGHT, Apprentice Yuen stated that as SUPERB KING can be one-paced she elected to remain racing to LOOKING BRIGHT’s outside where it was travelling comfortably.  The Stewards advised Apprentice Yuen that, wherever possible, she should endeavour to find a more favourable position closer to the rail to give her mounts the opportunity to obtain the best possible placing in the race. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 01 (LBW 1-1/4) | RunPos: 1 1 1 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -52255,7 +52360,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Bumped at the start.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW N) | RunPos: 3",
+            "snippet": "Bumped at the start.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 01 (LBW 1-1/2) | Run",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -52263,7 +52368,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Bumped at the start.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW N) | RunPos: 3 2 1 03/03/2026: Lame left hind. Withdrawn from racing. (Passed: 26/03/2026)"
+        "steward_comment": "Bumped at the start.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 01 (LBW 1-1/2) | RunPos: 3 2 1 03/03/2026: Lame left hind. Withdrawn from racing. (Passed: 26/03/2026)"
       },
       {
         "race_date": "2026-11-01",
@@ -52288,7 +52393,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Bumped at the start.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW N) | RunPos: 3",
+            "snippet": "Bumped at the start.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 01 (LBW 1-1/2) | Run",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -52296,7 +52401,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Bumped at the start.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW N) | RunPos: 3 2 1 03/03/2026: Lame left hind. Withdrawn from racing. (Passed: 26/03/2026)"
+        "steward_comment": "Bumped at the start.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 01 (LBW 1-1/2) | RunPos: 3 2 1 03/03/2026: Lame left hind. Withdrawn from racing. (Passed: 26/03/2026)"
       },
       {
         "race_date": "2026-10-21",
@@ -52354,7 +52459,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Bumped at the start.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW N) | RunPos: 3",
+            "snippet": "Bumped at the start.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 01 (LBW 1-1/2) | Run",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -52362,7 +52467,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Bumped at the start.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 01 (LBW N) | RunPos: 3 2 1 03/03/2026: Lame left hind. Withdrawn from racing. (Passed: 26/03/2026)"
+        "steward_comment": "Bumped at the start.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 01 (LBW 1-1/2) | RunPos: 3 2 1 03/03/2026: Lame left hind. Withdrawn from racing. (Passed: 26/03/2026)"
       }
     ],
     "trial_note": null
@@ -55601,7 +55706,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly.  In the Home Straight lay out and proved difficult to ride out.  K Teetan pleaded guilty to a careless riding charge for causing interference near the 200 Metres (see CLASS).  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 02 (LBW HD) | RunPos: 1 1 1 2 11/08/2025: Surgery to repair jaw injury. (Passed: 26/09/2025)"
+        "steward_comment": "Jumped awkwardly.  In the Home Straight lay out and proved difficult to ride out.  K Teetan pleaded guilty to a careless riding charge for causing interference near the 200 Metres (see CLASS).  Sent for sampling post-race. Last Run (14/10/26 HV / Turf / \"A\" 1650m): Fin 04 (LBW 1) | RunPos: 1 1 1 4 11/08/2025: Surgery to repair jaw injury. (Passed: 26/09/2025)"
       },
       {
         "race_date": "2026-09-23",
@@ -56608,7 +56713,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted out after travelling a short distance and made contact with EVERSTAR.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 01 (LBW SH) | RunPos: 1 1 1 20/04/2026: Inappetence. Withdrawn from racing. (Passed: 08/05/2026)"
+        "steward_comment": "Shifted out after travelling a short distance and made contact with EVERSTAR.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 03 (LBW 2-1/4) | RunPos: 6 3 3 20/04/2026: Inappetence. Withdrawn from racing. (Passed: 08/05/2026)"
       },
       {
         "race_date": "2026-11-01",
@@ -56632,7 +56737,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted out after travelling a short distance and made contact with EVERSTAR.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 01 (LBW SH) | RunPos: 1 1 1 20/04/2026: Inappetence. Withdrawn from racing. (Passed: 08/05/2026)"
+        "steward_comment": "Shifted out after travelling a short distance and made contact with EVERSTAR.  Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 03 (LBW 2-1/4) | RunPos: 6 3 3 20/04/2026: Inappetence. Withdrawn from racing. (Passed: 08/05/2026)"
       }
     ],
     "trial_note": null
@@ -57420,7 +57525,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 03 (LBW 1-1/4) | RunPos: 5 5 5 3 No HKJC veterinary records"
+        "steward_comment": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1650m): Fin 05 (LBW 1-1/2) | RunPos: 3 2 3 5 No HKJC veterinary records"
       },
       {
         "race_date": "2026-11-01",
@@ -57444,7 +57549,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1650m): Fin 03 (LBW 1-1/4) | RunPos: 5 5 5 3 No HKJC veterinary records"
+        "steward_comment": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1650m): Fin 05 (LBW 1-1/2) | RunPos: 3 2 3 5 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -60827,7 +60932,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 04 (LBW 2) | RunPos: 2 2 4 13/05/2026: Disappointing performan",
+            "snippet": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 03 (LBW 1-1/4) | RunPos: 5 4 3 13/05/2026: Disappointing per",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -60835,7 +60940,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 04 (LBW 2) | RunPos: 2 2 4 13/05/2026: Disappointing performance. (Passed: 27/05/2026)"
+        "steward_comment": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 03 (LBW 1-1/4) | RunPos: 5 4 3 13/05/2026: Disappointing performance. (Passed: 27/05/2026)"
       },
       {
         "race_date": "2026-11-01",
@@ -60860,7 +60965,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 04 (LBW 2) | RunPos: 2 2 4 13/05/2026: Disappointing performan",
+            "snippet": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 03 (LBW 1-1/4) | RunPos: 5 4 3 13/05/2026: Disappointing per",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -60868,7 +60973,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 04 (LBW 2) | RunPos: 2 2 4 13/05/2026: Disappointing performance. (Passed: 27/05/2026)"
+        "steward_comment": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 03 (LBW 1-1/4) | RunPos: 5 4 3 13/05/2026: Disappointing performance. (Passed: 27/05/2026)"
       },
       {
         "race_date": "2026-10-07",
@@ -61979,7 +62084,7 @@
             "flag": "vet_or_merit",
             "severity": 2,
             "marker": "mid",
-            "snippet": "Bumped shortly after the start. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 04 (LBW 3) | RunPos: 1 2 4 03/05/2026: La",
+            "snippet": "Bumped shortly after the start. Last Run (25/10/26 ST / Turf / \"A\" 1200m): Fin 09 (LBW 6-1/2) | RunPos: 5 6 9 03/05/2026",
             "vet_blocked": true,
             "is_victim": false
           }
@@ -61987,7 +62092,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Bumped shortly after the start. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 04 (LBW 3) | RunPos: 1 2 4 03/05/2026: Lame left hind leg. Withdrawn from racing. (Passed: 13/05/2026)"
+        "steward_comment": "Bumped shortly after the start. Last Run (25/10/26 ST / Turf / \"A\" 1200m): Fin 09 (LBW 6-1/2) | RunPos: 5 6 9 03/05/2026: Lame left hind leg. Withdrawn from racing. (Passed: 13/05/2026)"
       },
       {
         "race_date": "2026-10-25",
@@ -62097,7 +62202,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 02 (LBW 1/2) | RunPos: 8 1 2 No HKJC veterinary records"
+        "steward_comment": "Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 02 (LBW 3) | RunPos: 8 8 2 No HKJC veterinary records"
       },
       {
         "race_date": "2026-11-01",
@@ -62194,7 +62299,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 02 (LBW 1/2) | RunPos: 8 1 2 No HKJC veterinary records"
+        "steward_comment": "Sent for sampling post-race. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 02 (LBW 3) | RunPos: 8 8 2 No HKJC veterinary records"
       },
       {
         "race_date": "2026-11-01",
@@ -62716,7 +62821,41 @@
   "CASA BUDDY": {
     "horse_name": "CASA BUDDY",
     "horse_code": "L101",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-14",
+        "race_id": "2026-10-14_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 12,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 8.4,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Shifted in on jumping and made contact with DRAGON FOUR SEAS.  Near the 1100 Metres became unbalanced when bumped on the",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Shifted in on jumping and made contact with DRAGON FOUR SEAS.  Near the 1100 Metres became unbalanced when bumped on the hindquarters by DRAGON FOUR SEAS.  A veterinary inspection immediately following the race did not show any significant findings. H T Mo was severely reprimanded in relation to using his whip forward of the saddle in a forehand manner on one occasion near the 300 Metres. Last Run (14/10/26 HV / Turf / \"A\" 1200m): Fin 12 (LBW 17-1/4) | RunPos: 9 10 12 17/05/2026: Unacceptable performance. (Passed: 26/06/2026)"
+      }
+    ],
     "trial_note": null
   },
   "L101": {
@@ -63690,7 +63829,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted in after travelling a short distance and made contact with ANOTHER ZONDA.  Sent for sampling post-race. Last Run (25/10/26 ST / Turf / \"A\" 1200m): Fin 02 (LBW 2) | RunPos: 6 5 2"
+        "steward_comment": "Shifted in after travelling a short distance and made contact with ANOTHER ZONDA.  Sent for sampling post-race. Last Run (25/10/26 ST / Turf / \"A\" 1200m): Fin 02 (LBW 2) | RunPos: 6 5 2 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -67044,7 +67183,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  M Chadwick stated that after settling back in the field as expected, when the pace eased near the 800 Metres he allowed his mount to stride forward to follow CORLEONE.  He said from the 550 Metres he was then obliged to race very wide and without cover when commencing a forward move as he felt it was necessary to do so given the middle stages of the event were run outside of standard time.  He added in the Home Straight his mount found it difficult to finish the race off from back in the field.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (19/10/26 ST / Turf / \"C+3\" 1600m): Fin 05 (LBW 2-1/4) | RunPos: 8 8 7 5 09/06/2026: Bled from both nostrils after barrier trial. (Passed: 04/09/2026)"
+        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  M Chadwick stated that after settling back in the field as expected, when the pace eased near the 800 Metres he allowed his mount to stride forward to follow CORLEONE.  He said from the 550 Metres he was then obliged to race very wide and without cover when commencing a forward move as he felt it was necessary to do so given the middle stages of the event were run outside of standard time.  He added in the Home Straight his mount found it difficult to finish the race off from back in the field.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (04/11/26 HV / Turf / \"A\" 1650m): Fin 10 (LBW 6) | RunPos: 12 12 11 10 09/06/2026: Bled from both nostrils after barrier trial. (Passed: 04/09/2026)"
       }
     ],
     "trial_note": null
@@ -67166,7 +67305,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  M Chadwick stated that after settling back in the field as expected, when the pace eased near the 800 Metres he allowed his mount to stride forward to follow CORLEONE.  He said from the 550 Metres he was then obliged to race very wide and without cover when commencing a forward move as he felt it was necessary to do so given the middle stages of the event were run outside of standard time.  He added in the Home Straight his mount found it difficult to finish the race off from back in the field.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (19/10/26 ST / Turf / \"C+3\" 1600m): Fin 05 (LBW 2-1/4) | RunPos: 8 8 7 5 09/06/2026: Bled from both nostrils after barrier trial. (Passed: 04/09/2026)"
+        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  M Chadwick stated that after settling back in the field as expected, when the pace eased near the 800 Metres he allowed his mount to stride forward to follow CORLEONE.  He said from the 550 Metres he was then obliged to race very wide and without cover when commencing a forward move as he felt it was necessary to do so given the middle stages of the event were run outside of standard time.  He added in the Home Straight his mount found it difficult to finish the race off from back in the field.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (04/11/26 HV / Turf / \"A\" 1650m): Fin 10 (LBW 6) | RunPos: 12 12 11 10 09/06/2026: Bled from both nostrils after barrier trial. (Passed: 04/09/2026)"
       }
     ],
     "trial_note": null
@@ -70090,7 +70229,10 @@
       "best_trial_pos_ratio": 0.2,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "L FERRARIS"
+        "L FERRARIS",
+        "L FERRARIS",
+        "L FERRARIS",
+        "J ORMAN"
       ]
     }
   },
@@ -70177,7 +70319,10 @@
       "best_trial_pos_ratio": 0.2,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "L FERRARIS"
+        "L FERRARIS",
+        "L FERRARIS",
+        "L FERRARIS",
+        "J ORMAN"
       ]
     }
   },
@@ -70418,7 +70563,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Noted to have blood in the mouth at the Start.  Was examined by the Veterinary Officer and passed suitable to race.  From a wide barrier was shifted across behind runners in the early stages. Last Run (14/10/26 HV / Turf / \"A\" 1200m): Fin 07 (LBW 4-3/4) | RunPos: 4 3 7 26/04/2026: Unacceptable performance. (Passed: 08/06/2026)"
+        "steward_comment": "Noted to have blood in the mouth at the Start.  Was examined by the Veterinary Officer and passed suitable to race.  From a wide barrier was shifted across behind runners in the early stages. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 04 (LBW 2-1/2) | RunPos: 10 10 4 26/04/2026: Unacceptable performance. (Passed: 08/06/2026)"
       },
       {
         "race_date": "2026-10-14",
@@ -70484,7 +70629,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Noted to have blood in the mouth at the Start.  Was examined by the Veterinary Officer and passed suitable to race.  From a wide barrier was shifted across behind runners in the early stages. Last Run (14/10/26 HV / Turf / \"A\" 1200m): Fin 07 (LBW 4-3/4) | RunPos: 4 3 7 26/04/2026: Unacceptable performance. (Passed: 08/06/2026)"
+        "steward_comment": "Noted to have blood in the mouth at the Start.  Was examined by the Veterinary Officer and passed suitable to race.  From a wide barrier was shifted across behind runners in the early stages. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 04 (LBW 2-1/2) | RunPos: 10 10 4 26/04/2026: Unacceptable performance. (Passed: 08/06/2026)"
       }
     ],
     "trial_note": null
@@ -71858,7 +72003,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Bumped at the start.  When questioned K Teetan stated that his instructions were to settle the horse where comfortable and if possible obtain a position midfield with cover, particularly under its top weight of 135 lbs.  He said in the early stages when positioned to the outside of MAKE YOU SMILE, MR INCREDIBLE made contact with that runner when MAKE YOU SMILE shifted out slightly.  He said when caught wide to the outside of MAKE YOU SMILE, he contemplated following LA FORZA but when MR INCREDIBLE was not travelling well enough to do so he elected to obtain a trailing position behind MAKE YOU SMILE to save ground and allow the horse to travel where comfortable.  He added after following MAKE YOU SMILE in the middle stages he improved to that runner’s outside on entering the Home Straight where his mount finished the race off well.  Trainer B Crawford confirmed the instructions issued.  Sent for sampling post-race. Last Run (08/11/26 ST / Turf / \"C+3\" 1400m): Fin 04 (LBW 1-3/4) | RunPos: 7 5 5 4 No HKJC veterinary records"
+        "steward_comment": "Last Run (08/11/26 ST / Turf / \"C+3\" 1400m): Fin 04 (LBW 1-3/4) | RunPos: 7 5 5 4 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -76277,7 +76422,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shortly after the start became unbalanced when bumped by TOGETHER WE VALUE. Last Run (07/10/26 HV / Turf / \"C+3\" 1200m): Fin 05 (LBW 3) | RunPos: 5 4 5"
+        "steward_comment": "Shortly after the start became unbalanced when bumped by TOGETHER WE VALUE. Last Run (07/10/26 HV / Turf / \"C+3\" 1200m): Fin 05 (LBW 3) | RunPos: 5 4 5 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -79604,7 +79749,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "SHOW ME YOUR LOVE, which was fractious in the starting gates, jumped only fairly.  Shortly after the start then shifted out and made contact with NEVER SETTLE.  Near the 250 Metres was eased and shifted to the outside of NEVER SETTLE to continue into clear running. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 03 (LBW 1-1/4) | RunPos: 7 6 3 No HKJC veterinary records"
+        "steward_comment": "SHOW ME YOUR LOVE, which was fractious in the starting gates, jumped only fairly.  Shortly after the start then shifted out and made contact with NEVER SETTLE.  Near the 250 Metres was eased and shifted to the outside of NEVER SETTLE to continue into clear running. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 08 (LBW 2-3/4) | RunPos: 6 6 8 No HKJC veterinary records"
       },
       {
         "race_date": "2026-10-21",
@@ -80034,7 +80179,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "J Orman stated that his instructions were to hold a more forward position but after jumping awkwardly and being bumped at the start by WINNING MONEY which shifted out, his mount settled further back in the field than intended. Last Run (07/10/26 HV / Turf / \"C+3\" 1000m): Fin 04 (LBW 1) | RunPos: 6 6 4"
+        "steward_comment": "J Orman stated that his instructions were to hold a more forward position but after jumping awkwardly and being bumped at the start by WINNING MONEY which shifted out, his mount settled further back in the field than intended. Last Run (07/10/26 HV / Turf / \"C+3\" 1000m): Fin 04 (LBW 1) | RunPos: 6 6 4 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -80170,7 +80315,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "M F Poon stated that from an inside barrier when his mount commenced well it obtained a more forward position than anticipated, particularly when runners drawn beside him did not show early pace. Last Run (11/10/26 ST / Turf / \"C\" 1400m): Fin 06 (LBW 2-1/2) | RunPos: 11 14 14 6 No HKJC veterinary records"
+        "steward_comment": "M F Poon stated that from an inside barrier when his mount commenced well it obtained a more forward position than anticipated, particularly when runners drawn beside him did not show early pace. Last Run (04/11/26 HV / Turf / \"A\" 1650m): Fin 07 (LBW 4-3/4) | RunPos: 4 3 4 7 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -82757,7 +82902,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (11/10/26 ST / Turf / \"C\" 1200m): Fin 10 (LBW 10-3/4) | RunPos: 6 8 10"
+        "steward_comment": "No report. Last Run (01/11/26 HV / Turf / \"C+3\" 1200m): Fin 07 (LBW 2-1/2) | RunPos: 8 9 7 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -83259,7 +83404,41 @@
   "SHANNON GLOW": {
     "horse_name": "SHANNON GLOW",
     "horse_code": "L445",
-    "runs": [],
+    "runs": [
+      {
+        "race_date": "2026-10-19",
+        "race_id": "2026-10-19_LAST",
+        "venue": "Sha Tin",
+        "course_rail": "A",
+        "surface": "TURF",
+        "going": "GOOD",
+        "distance": 1200,
+        "class": "Class 4",
+        "barrier": 6,
+        "finish_pos": 1,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Bumped near the 100 Metres.  Sent for sampling post-race. Last Run (19/10/26 ST / Turf / \"C+3\" 1400m): Fin 01 (LBW 3/4) ",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 0,
+        "gate_speed_proven": false,
+        "steward_comment": "Bumped near the 100 Metres.  Sent for sampling post-race. Last Run (19/10/26 ST / Turf / \"C+3\" 1400m): Fin 01 (LBW 3/4) | RunPos: 9 11 9 1 21/04/2026: Lame right hind. (Passed: 18/09/2026)"
+      }
+    ],
     "trial_note": null
   },
   "L445": {
@@ -83613,7 +83792,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Withdrawn on 24.10.26 by order of the Stewards acting on veterinary advice (irregular heart rhythm).  Before being allowed to race again, CELESTIAL ZOUS will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (01/10/26 ST / Turf / \"A\" 1000m): Fin 09 (LBW 7-3/4) | RunPos: 12 11 9"
+        "steward_comment": "Withdrawn on 24.10.26 by order of the Stewards acting on veterinary advice (irregular heart rhythm).  Before being allowed to race again, CELESTIAL ZOUS will be required to perform satisfactorily in a barrier trial and be subjected to an official veterinary examination. Last Run (25/10/26 ST / Turf / \"A\" 1200m): Fin WV (LBW --) | RunPos: -- 24/10/2026: Irregular heart rhythm noted during pre-race vet inspection. Withdrawn from racing. (Passed: 10/11/2026)"
       }
     ],
     "trial_note": null
@@ -83697,10 +83876,13 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.3,
+      "best_trial_pos_ratio": 0.2,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "A ATZENI"
+        "A ATZENI",
+        "C M THABANA",
+        "A ATZENI",
+        "K TEETAN"
       ]
     }
   },
@@ -83743,10 +83925,13 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.3,
+      "best_trial_pos_ratio": 0.2,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "A ATZENI"
+        "A ATZENI",
+        "C M THABANA",
+        "A ATZENI",
+        "K TEETAN"
       ]
     }
   },
@@ -84199,6 +84384,8 @@
       "best_trial_pos_ratio": 0.8888888888888888,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
+        "C L CHAU",
+        "C L CHAU",
         "C L CHAU"
       ]
     }
@@ -84245,6 +84432,8 @@
       "best_trial_pos_ratio": 0.8888888888888888,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
+        "C L CHAU",
+        "C L CHAU",
         "C L CHAU"
       ]
     }
@@ -85050,7 +85239,8 @@
       "best_trial_pos_ratio": 0.6666666666666666,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "H BENTLEY"
+        "H BENTLEY",
+        "C L CHAU"
       ]
     }
   },
@@ -85117,7 +85307,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "H Bentley stated that the instructions were to hold a midfield position with cover if possible.  He said in order to comply with the instructions to obtain cover he was obliged to settle further back in the field. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 07 (LBW 4-1/2) | RunPos: 10 10 7 No HKJC veterinary records"
+        "steward_comment": "H Bentley stated that the instructions were to hold a midfield position with cover if possible.  He said in order to comply with the instructions to obtain cover he was obliged to settle further back in the field. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 04 (LBW 3) | RunPos: 4 4 4 No HKJC veterinary records"
       },
       {
         "race_date": "2026-11-01",
@@ -85141,7 +85331,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "H Bentley stated that the instructions were to hold a midfield position with cover if possible.  He said in order to comply with the instructions to obtain cover he was obliged to settle further back in the field. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 07 (LBW 4-1/2) | RunPos: 10 10 7 No HKJC veterinary records"
+        "steward_comment": "H Bentley stated that the instructions were to hold a midfield position with cover if possible.  He said in order to comply with the instructions to obtain cover he was obliged to settle further back in the field. Last Run (01/11/26 HV / Turf / \"C+3\" 1000m): Fin 04 (LBW 3) | RunPos: 4 4 4 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -85659,10 +85849,12 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.2222222222222222,
+      "best_trial_pos_ratio": 0.1111111111111111,
       "best_trial_speed_diff": 1.3299999999999983,
       "jockeys": [
-        "Z PURTON"
+        "Z PURTON",
+        "Z PURTON",
+        "L HEWITSON"
       ]
     }
   },
@@ -85705,10 +85897,12 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.2222222222222222,
+      "best_trial_pos_ratio": 0.1111111111111111,
       "best_trial_speed_diff": 1.3299999999999983,
       "jockeys": [
-        "Z PURTON"
+        "Z PURTON",
+        "Z PURTON",
+        "L HEWITSON"
       ]
     }
   },
@@ -86735,7 +86929,7 @@
             "flag": "slow_start",
             "severity": 1,
             "marker": "start",
-            "snippet": "Jumped only fairly.  From the outside barrier was shifted across behind runners in the early stages. Last Run (18/11/26 ",
+            "snippet": "Jumped only fairly.  From the outside barrier was shifted across behind runners in the early stages. Last Run (25/10/26 ",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -86743,7 +86937,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped only fairly.  From the outside barrier was shifted across behind runners in the early stages. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 11 (LBW 4-1/4) | RunPos: 12 11 11 No HKJC veterinary records"
+        "steward_comment": "Jumped only fairly.  From the outside barrier was shifted across behind runners in the early stages. Last Run (25/10/26 ST / Turf / \"A\" 1400m): Fin 12 (LBW 10-1/2) | RunPos: 13 13 12 12 No HKJC veterinary records"
       }
     ],
     "trial_note": {
@@ -87086,6 +87280,7 @@
       "best_trial_pos_ratio": 0.1111111111111111,
       "best_trial_speed_diff": -0.01999999999999602,
       "jockeys": [
+        "K TEETAN",
         "K TEETAN"
       ]
     }
@@ -87140,6 +87335,7 @@
       "best_trial_pos_ratio": 0.1111111111111111,
       "best_trial_speed_diff": -0.01999999999999602,
       "jockeys": [
+        "K TEETAN",
         "K TEETAN"
       ]
     }
@@ -87666,11 +87862,20 @@
         "final_section_time": 21.46,
         "final_section_rank": 1,
         "field_size": 8,
-        "incident_flags": [],
+        "incident_flags": [
+          {
+            "flag": "vet_or_merit",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Sent for sampling post-race. Last Run (21/10/26 HV / Turf / \"B\" 1000m): Fin 01 (LBW 1-3/4) | RunPos: 2 1 1 20/12/2025: B",
+            "vet_blocked": true,
+            "is_victim": false
+          }
+        ],
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Sent for sampling post-race."
+        "steward_comment": "Sent for sampling post-race. Last Run (21/10/26 HV / Turf / \"B\" 1000m): Fin 01 (LBW 1-3/4) | RunPos: 2 1 1 20/12/2025: Bled from both nostrils after racing. (Passed: 16/03/2026)"
       }
     ],
     "trial_note": null
@@ -88081,7 +88286,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly and then shortly after the start was crowded by MAJESTIC ST PAUL’S which shifted in despite the efforts of its rider.  Raced keenly in the middle stages.  For a short distance near the 150 Metres raced tight between MAJESTIC ST PAUL’S and GREATER BAE which shifted in and made slight contact with VIRTUS GLORY.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 03 (LBW 1/2) | RunPos: 8 8 3 No HKJC veterinary records"
+        "steward_comment": "Jumped awkwardly and then shortly after the start was crowded by MAJESTIC ST PAUL’S which shifted in despite the efforts of its rider.  Raced keenly in the middle stages.  For a short distance near the 150 Metres raced tight between MAJESTIC ST PAUL’S and GREATER BAE which shifted in and made slight contact with VIRTUS GLORY.  Sent for sampling post-race. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 01 (LBW 1-3/4) | RunPos: 7 7 1 No HKJC veterinary records"
       },
       {
         "race_date": "2026-10-01",
@@ -88122,7 +88327,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped awkwardly and then shortly after the start was crowded by MAJESTIC ST PAUL’S which shifted in despite the efforts of its rider.  Raced keenly in the middle stages.  For a short distance near the 150 Metres raced tight between MAJESTIC ST PAUL’S and GREATER BAE which shifted in and made slight contact with VIRTUS GLORY.  Sent for sampling post-race. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 03 (LBW 1/2) | RunPos: 8 8 3 No HKJC veterinary records"
+        "steward_comment": "Jumped awkwardly and then shortly after the start was crowded by MAJESTIC ST PAUL’S which shifted in despite the efforts of its rider.  Raced keenly in the middle stages.  For a short distance near the 150 Metres raced tight between MAJESTIC ST PAUL’S and GREATER BAE which shifted in and made slight contact with VIRTUS GLORY.  Sent for sampling post-race. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 01 (LBW 1-3/4) | RunPos: 7 7 1 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -88360,7 +88565,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 1,
         "gate_speed_proven": false,
-        "steward_comment": "After being crowded at the start made contact with the hindquarters of FORTUNE BOY soon after.  Raced wide and without cover for the majority of the event."
+        "steward_comment": "After being crowded at the start made contact with the hindquarters of FORTUNE BOY soon after.  Raced wide and without cover for the majority of the event. Last Run (01/10/26 ST / Turf / \"A\" 1400m): Fin 13 (LBW 5) | RunPos: 7 3 4 13 No HKJC veterinary records"
       }
     ],
     "trial_note": null
@@ -92270,8 +92475,7 @@
       "best_trial_pos_ratio": 1.0,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "K C LEUNG",
-        "L FERRARIS"
+        "K C LEUNG"
       ]
     }
   },
@@ -92808,10 +93012,9 @@
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.7777777777777778,
+      "best_trial_pos_ratio": 0.875,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "J ORMAN",
         "J ORMAN"
       ]
     }
@@ -92864,7 +93067,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  A veterinary inspection immediately following the race found that horse to be lame in its right front leg.  Before being allowed to race again, SUPER HONG KONG will be subjected to an official veterinary examination. <19/11/2026 Additional Veterinary Reports>SUPER HONG KONG, which performed disappointingly, was examined by the Veterinary Officer who said at that time the horse was lame in its right front leg. SUPER HONG KONG was again examined by the Veterinary Officer at the stables of Trainer C H Yip this morning. He said at this time he noted the horse to be also lame in its left hind leg. As previously advised, SUPER HONG KONG will be subjected to an official veterinary examination before being allowed to race again. Last Run (18/11/26 HV / Turf / \"C\" 2200m): Fin 12 (LBW 17-3/4) | RunPos: 12 12 12 11 11 12 24/04/2025: Lame right front leg on the day after racing. (Passed: 08/05/2025)"
+        "steward_comment": "From a wide barrier was shifted across behind runners in the early stages.  A veterinary inspection immediately following the race found that horse to be lame in its right front leg.  Before being allowed to race again, SUPER HONG KONG will be subjected to an official veterinary examination. <19/11/2026 Additional Veterinary Reports>SUPER HONG KONG, which performed disappointingly, was examined by the Veterinary Officer who said at that time the horse was lame in its right front leg. SUPER HONG KONG was again examined by the Veterinary Officer at the stables of Trainer C H Yip this morning. He said at this time he noted the horse to be also lame in its left hind leg. As previously advised, SUPER HONG KONG will be subjected to an official veterinary examination before being allowed to race again. Last Run (24/06/26 HV / Turf / \"A\" 2200m): Fin 11 (LBW 17-1/4) | RunPos: 12 12 11 9 7 11 18/11/2026: Lame right front leg after racing. Also lame left hind leg on the day after racing. (Passed: -)"
       },
       {
         "race_date": "2026-06-24",
@@ -93093,7 +93296,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "No report. Last Run (18/11/26 HV / Turf / \"C\" 1000m): Fin 09 (LBW 4) | RunPos: 6 6 9 16/02/2026: Left fore tendon injury. (Passed: 28/09/2026)"
+        "steward_comment": "No report. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 04 (LBW 2) | RunPos: 4 2 4 16/02/2026: Left fore tendon injury. (Passed: 28/09/2026)"
       },
       {
         "race_date": "2026-10-21",
@@ -93197,7 +93400,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shortly after the start shifted in and away from KYRUS DRAGON and made contact with DO YOU JUST.  K Teetan reported that his mount was able to obtain a handy position as expected but raced keenly in the middle stages.  He added that making the Home Turn MALPENSA was taken wider when MEOWTH shifted out to improve and his mount finished the race off only fairly under riding thereafter.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 10 (LBW 6-1/4) | RunPos: 5 5 10 31/05/2026: Heart irregularity noted after racing. (Passed: 25/09/2026)"
+        "steward_comment": "Shortly after the start shifted in and away from KYRUS DRAGON and made contact with DO YOU JUST.  K Teetan reported that his mount was able to obtain a handy position as expected but raced keenly in the middle stages.  He added that making the Home Turn MALPENSA was taken wider when MEOWTH shifted out to improve and his mount finished the race off only fairly under riding thereafter.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 01 (LBW 3/4) | RunPos: 6 6 1 31/05/2026: Heart irregularity noted after racing. (Passed: 25/09/2026)"
       }
     ],
     "trial_note": null
@@ -93234,7 +93437,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Near the 150 Metres shifted in and made slight contact with VIRTUS GLORY. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 04 (LBW 1/2) | RunPos: 9 10 4 No HKJC veterinary records"
+        "steward_comment": "Near the 150 Metres shifted in and made slight contact with VIRTUS GLORY. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 02 (LBW 1-1/2) | RunPos: 10 8 2 No HKJC veterinary records"
       },
       {
         "race_date": "2026-10-21",
@@ -93901,14 +94104,13 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted in shortly after the start and made contact with VIRTUS GLORY. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 09 (LBW 2-1/4) | RunPos: 6 6 9 No HKJC veterinary records"
+        "steward_comment": "Shifted in shortly after the start and made contact with VIRTUS GLORY. Unraced HK Debutant No HKJC veterinary records"
       }
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.375,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "A BADEL",
         "A BADEL"
       ]
     }
@@ -94052,7 +94254,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "From the outside barrier was shifted across behind runners in the early stages. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 04 (LBW 3/4) | RunPos: 11 10 4 No HKJC veterinary records"
+        "steward_comment": "From the outside barrier was shifted across behind runners in the early stages. Unraced HK Debutant No HKJC veterinary records"
       }
     ],
     "trial_note": {
@@ -94103,7 +94305,7 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "M Chadwick stated that his mount led the event as expected.  He stated that GALLANT TRIUMPH, which was having its first race start, raced greenly during the event and under pressure in the Home Straight hung in.  Mr P K Lo representing Trainer J Cummings, who was not present tonight, stated that, in his opinion, the horse raced keenly in the early stages when VIGOR EYE was positioned to its outside.  He also confirmed the advice of Jockey Chadwick that the horse had been disadvantaged by racing greenly.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 09 (LBW 4-1/4) | RunPos: 1 1 9 No HKJC veterinary records"
+        "steward_comment": "M Chadwick stated that his mount led the event as expected.  He stated that GALLANT TRIUMPH, which was having its first race start, raced greenly during the event and under pressure in the Home Straight hung in.  Mr P K Lo representing Trainer J Cummings, who was not present tonight, stated that, in his opinion, the horse raced keenly in the early stages when VIGOR EYE was positioned to its outside.  He also confirmed the advice of Jockey Chadwick that the horse had been disadvantaged by racing greenly.  A veterinary inspection immediately following the race did not show any significant findings. Unraced HK Debutant No HKJC veterinary records"
       }
     ],
     "trial_note": {
@@ -94155,7 +94357,7 @@
             "flag": "slow_start",
             "severity": 1,
             "marker": "start",
-            "snippet": "Jumped only fairly. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 11 (LBW 7-3/4) | RunPos: 11 11 11 No HKJC veterinary ",
+            "snippet": "Jumped only fairly. Unraced HK Debutant No HKJC veterinary records",
             "vet_blocked": false,
             "is_victim": true
           }
@@ -94163,14 +94365,13 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Jumped only fairly. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 11 (LBW 7-3/4) | RunPos: 11 11 11 No HKJC veterinary records"
+        "steward_comment": "Jumped only fairly. Unraced HK Debutant No HKJC veterinary records"
       }
     ],
     "trial_note": {
-      "best_trial_pos_ratio": 0.2222222222222222,
+      "best_trial_pos_ratio": 0.75,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "A BADEL",
         "A BADEL"
       ]
     }
@@ -94214,14 +94415,13 @@
         "ground_saved_score": 0.5,
         "interference_severity": 0,
         "gate_speed_proven": false,
-        "steward_comment": "Shifted in at the start and made contact with SUPER SIXTY. Last Run (18/11/26 HV / Turf / \"C\" 1200m): Fin 12 (LBW 7-1/2) | RunPos: 12 12 12 No HKJC veterinary records"
+        "steward_comment": "Shifted in at the start and made contact with SUPER SIXTY. Unraced HK Debutant No HKJC veterinary records"
       }
     ],
     "trial_note": {
       "best_trial_pos_ratio": 0.8571428571428571,
       "best_trial_speed_diff": 0.0,
       "jockeys": [
-        "A ATZENI",
         "A ATZENI"
       ]
     }
@@ -94238,5 +94438,493 @@
         "A ATZENI"
       ]
     }
+  },
+  "KA YING RISING": {
+    "horse_name": "KA YING RISING",
+    "horse_code": "J062",
+    "runs": [],
+    "trial_note": null
+  },
+  "J062": {
+    "horse_name": "KA YING RISING",
+    "horse_code": "J062",
+    "runs": [],
+    "trial_note": null
+  },
+  "CALL TO COMMAND": {
+    "horse_name": "CALL TO COMMAND",
+    "horse_code": "J243",
+    "runs": [],
+    "trial_note": null
+  },
+  "J243": {
+    "horse_name": "CALL TO COMMAND",
+    "horse_code": "J243",
+    "runs": [],
+    "trial_note": null
+  },
+  "CROSSBORDERPEGASUS": {
+    "horse_name": "CROSSBORDERPEGASUS",
+    "horse_code": "K008",
+    "runs": [],
+    "trial_note": null
+  },
+  "K008": {
+    "horse_name": "CROSSBORDERPEGASUS",
+    "horse_code": "K008",
+    "runs": [],
+    "trial_note": null
+  },
+  "LIVEANDLETLIVE": {
+    "horse_name": "LIVEANDLETLIVE",
+    "horse_code": "K156",
+    "runs": [],
+    "trial_note": null
+  },
+  "K156": {
+    "horse_name": "LIVEANDLETLIVE",
+    "horse_code": "K156",
+    "runs": [],
+    "trial_note": null
+  },
+  "EMERGING STAR": {
+    "horse_name": "EMERGING STAR",
+    "horse_code": "K390",
+    "runs": [],
+    "trial_note": null
+  },
+  "K390": {
+    "horse_name": "EMERGING STAR",
+    "horse_code": "K390",
+    "runs": [],
+    "trial_note": null
+  },
+  "REGENCY DREAM": {
+    "horse_name": "REGENCY DREAM",
+    "horse_code": "K499",
+    "runs": [],
+    "trial_note": null
+  },
+  "K499": {
+    "horse_name": "REGENCY DREAM",
+    "horse_code": "K499",
+    "runs": [],
+    "trial_note": null
+  },
+  "GALACTIC VOYAGE": {
+    "horse_name": "GALACTIC VOYAGE",
+    "horse_code": "K514",
+    "runs": [],
+    "trial_note": null
+  },
+  "K514": {
+    "horse_name": "GALACTIC VOYAGE",
+    "horse_code": "K514",
+    "runs": [],
+    "trial_note": null
+  },
+  "DOCKLANDS": {
+    "horse_name": "DOCKLANDS",
+    "horse_code": "K902",
+    "runs": [],
+    "trial_note": null
+  },
+  "K902": {
+    "horse_name": "DOCKLANDS",
+    "horse_code": "K902",
+    "runs": [],
+    "trial_note": null
+  },
+  "SCORCHING LEGEND": {
+    "horse_name": "SCORCHING LEGEND",
+    "horse_code": "L081",
+    "runs": [],
+    "trial_note": null
+  },
+  "L081": {
+    "horse_name": "SCORCHING LEGEND",
+    "horse_code": "L081",
+    "runs": [],
+    "trial_note": null
+  },
+  "ENTHUSIUM": {
+    "horse_name": "ENTHUSIUM",
+    "horse_code": "L107",
+    "runs": [],
+    "trial_note": null
+  },
+  "L107": {
+    "horse_name": "ENTHUSIUM",
+    "horse_code": "L107",
+    "runs": [],
+    "trial_note": null
+  },
+  "CONTINENT EXPRESS": {
+    "horse_name": "CONTINENT EXPRESS",
+    "horse_code": "L283",
+    "runs": [],
+    "trial_note": null
+  },
+  "L283": {
+    "horse_name": "CONTINENT EXPRESS",
+    "horse_code": "L283",
+    "runs": [],
+    "trial_note": null
+  },
+  "DUKE ATREIDES": {
+    "horse_name": "DUKE ATREIDES",
+    "horse_code": "L340",
+    "runs": [
+      {
+        "race_date": "2026-10-21",
+        "race_id": "2026-10-21_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 10,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "traffic_trouble",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Near the 1000 Metres was hampered when taken wider by SMART OINK which shifted out. Last Run (21/10/26 HV / Turf / \"B\" 1",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 2,
+        "gate_speed_proven": false,
+        "steward_comment": "Near the 1000 Metres was hampered when taken wider by SMART OINK which shifted out. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 11 (LBW 11-3/4) | RunPos: 8 12 11 No HKJC veterinary records"
+      }
+    ],
+    "trial_note": null
+  },
+  "L340": {
+    "horse_name": "DUKE ATREIDES",
+    "horse_code": "L340",
+    "runs": [
+      {
+        "race_date": "2026-10-21",
+        "race_id": "2026-10-21_LAST",
+        "venue": "Neutral",
+        "course_rail": "A",
+        "surface": "NEUTRAL",
+        "going": "Unknown",
+        "distance": 1200,
+        "class": "Class 3",
+        "barrier": 6,
+        "finish_pos": 10,
+        "beaten_lengths": 2.0,
+        "sp": 8.0,
+        "weight_carried": 125.0,
+        "early_pos": 9.0,
+        "final_section_time": 22.8,
+        "final_section_rank": 4,
+        "field_size": 12,
+        "incident_flags": [
+          {
+            "flag": "traffic_trouble",
+            "severity": 2,
+            "marker": "mid",
+            "snippet": "Near the 1000 Metres was hampered when taken wider by SMART OINK which shifted out. Last Run (21/10/26 HV / Turf / \"B\" 1",
+            "vet_blocked": false,
+            "is_victim": true
+          }
+        ],
+        "ground_saved_score": 0.5,
+        "interference_severity": 2,
+        "gate_speed_proven": false,
+        "steward_comment": "Near the 1000 Metres was hampered when taken wider by SMART OINK which shifted out. Last Run (21/10/26 HV / Turf / \"B\" 1200m): Fin 11 (LBW 11-3/4) | RunPos: 8 12 11 No HKJC veterinary records"
+      }
+    ],
+    "trial_note": null
+  },
+  "MIGHTY PROFIT": {
+    "horse_name": "MIGHTY PROFIT",
+    "horse_code": "L347",
+    "runs": [],
+    "trial_note": null
+  },
+  "L347": {
+    "horse_name": "MIGHTY PROFIT",
+    "horse_code": "L347",
+    "runs": [],
+    "trial_note": null
+  },
+  "NOCTURNE": {
+    "horse_name": "NOCTURNE",
+    "horse_code": "L356",
+    "runs": [],
+    "trial_note": null
+  },
+  "L356": {
+    "horse_name": "NOCTURNE",
+    "horse_code": "L356",
+    "runs": [],
+    "trial_note": null
+  },
+  "NEGENTROPY": {
+    "horse_name": "NEGENTROPY",
+    "horse_code": "L431",
+    "runs": [],
+    "trial_note": null
+  },
+  "L431": {
+    "horse_name": "NEGENTROPY",
+    "horse_code": "L431",
+    "runs": [],
+    "trial_note": null
+  },
+  "REBORN HERO": {
+    "horse_name": "REBORN HERO",
+    "horse_code": "L458",
+    "runs": [],
+    "trial_note": null
+  },
+  "L458": {
+    "horse_name": "REBORN HERO",
+    "horse_code": "L458",
+    "runs": [],
+    "trial_note": null
+  },
+  "CAMELOT KNIGHT": {
+    "horse_name": "CAMELOT KNIGHT",
+    "horse_code": "L502",
+    "runs": [],
+    "trial_note": null
+  },
+  "L502": {
+    "horse_name": "CAMELOT KNIGHT",
+    "horse_code": "L502",
+    "runs": [],
+    "trial_note": null
+  },
+  "SILENT FORGE": {
+    "horse_name": "SILENT FORGE",
+    "horse_code": "L517",
+    "runs": [],
+    "trial_note": null
+  },
+  "L517": {
+    "horse_name": "SILENT FORGE",
+    "horse_code": "L517",
+    "runs": [],
+    "trial_note": null
+  },
+  "SILK MASTER": {
+    "horse_name": "SILK MASTER",
+    "horse_code": "L521",
+    "runs": [],
+    "trial_note": null
+  },
+  "L521": {
+    "horse_name": "SILK MASTER",
+    "horse_code": "L521",
+    "runs": [],
+    "trial_note": null
+  },
+  "SO YOU IMAGINE": {
+    "horse_name": "SO YOU IMAGINE",
+    "horse_code": "L530",
+    "runs": [],
+    "trial_note": null
+  },
+  "L530": {
+    "horse_name": "SO YOU IMAGINE",
+    "horse_code": "L530",
+    "runs": [],
+    "trial_note": null
+  },
+  "KACHOW": {
+    "horse_name": "KACHOW",
+    "horse_code": "L535",
+    "runs": [],
+    "trial_note": null
+  },
+  "L535": {
+    "horse_name": "KACHOW",
+    "horse_code": "L535",
+    "runs": [],
+    "trial_note": null
+  },
+  "CURLING SWEET": {
+    "horse_name": "CURLING SWEET",
+    "horse_code": "L537",
+    "runs": [],
+    "trial_note": null
+  },
+  "L537": {
+    "horse_name": "CURLING SWEET",
+    "horse_code": "L537",
+    "runs": [],
+    "trial_note": null
+  },
+  "FIRE DRAGON": {
+    "horse_name": "FIRE DRAGON",
+    "horse_code": "L563",
+    "runs": [],
+    "trial_note": null
+  },
+  "L563": {
+    "horse_name": "FIRE DRAGON",
+    "horse_code": "L563",
+    "runs": [],
+    "trial_note": null
+  },
+  "CIRCUIT LUCKY STAR": {
+    "horse_name": "CIRCUIT LUCKY STAR",
+    "horse_code": "L577",
+    "runs": [],
+    "trial_note": null
+  },
+  "L577": {
+    "horse_name": "CIRCUIT LUCKY STAR",
+    "horse_code": "L577",
+    "runs": [],
+    "trial_note": null
+  },
+  "SUPER BOOM": {
+    "horse_name": "SUPER BOOM",
+    "horse_code": "M005",
+    "runs": [],
+    "trial_note": null
+  },
+  "M005": {
+    "horse_name": "SUPER BOOM",
+    "horse_code": "M005",
+    "runs": [],
+    "trial_note": null
+  },
+  "FAST TOP SEARCH": {
+    "horse_name": "FAST TOP SEARCH",
+    "horse_code": "M010",
+    "runs": [],
+    "trial_note": null
+  },
+  "M010": {
+    "horse_name": "FAST TOP SEARCH",
+    "horse_code": "M010",
+    "runs": [],
+    "trial_note": null
+  },
+  "AUTUMN KING": {
+    "horse_name": "AUTUMN KING",
+    "horse_code": "M035",
+    "runs": [],
+    "trial_note": null
+  },
+  "M035": {
+    "horse_name": "AUTUMN KING",
+    "horse_code": "M035",
+    "runs": [],
+    "trial_note": null
+  },
+  "LEADING ADVANTAGE": {
+    "horse_name": "LEADING ADVANTAGE",
+    "horse_code": "M039",
+    "runs": [],
+    "trial_note": null
+  },
+  "M039": {
+    "horse_name": "LEADING ADVANTAGE",
+    "horse_code": "M039",
+    "runs": [],
+    "trial_note": null
+  },
+  "GOUKEN": {
+    "horse_name": "GOUKEN",
+    "horse_code": "M053",
+    "runs": [],
+    "trial_note": null
+  },
+  "M053": {
+    "horse_name": "GOUKEN",
+    "horse_code": "M053",
+    "runs": [],
+    "trial_note": null
+  },
+  "BEAUTY OF POWER": {
+    "horse_name": "BEAUTY OF POWER",
+    "horse_code": "M055",
+    "runs": [],
+    "trial_note": null
+  },
+  "M055": {
+    "horse_name": "BEAUTY OF POWER",
+    "horse_code": "M055",
+    "runs": [],
+    "trial_note": null
+  },
+  "INSPIRED LEGEND": {
+    "horse_name": "INSPIRED LEGEND",
+    "horse_code": "M062",
+    "runs": [],
+    "trial_note": null
+  },
+  "M062": {
+    "horse_name": "INSPIRED LEGEND",
+    "horse_code": "M062",
+    "runs": [],
+    "trial_note": null
+  },
+  "PROVIDENCE": {
+    "horse_name": "PROVIDENCE",
+    "horse_code": "M071",
+    "runs": [],
+    "trial_note": null
+  },
+  "M071": {
+    "horse_name": "PROVIDENCE",
+    "horse_code": "M071",
+    "runs": [],
+    "trial_note": null
+  },
+  "ALOHA DRAGON": {
+    "horse_name": "ALOHA DRAGON",
+    "horse_code": "M073",
+    "runs": [],
+    "trial_note": null
+  },
+  "M073": {
+    "horse_name": "ALOHA DRAGON",
+    "horse_code": "M073",
+    "runs": [],
+    "trial_note": null
+  },
+  "SISUKAS": {
+    "horse_name": "SISUKAS",
+    "horse_code": "M083",
+    "runs": [],
+    "trial_note": null
+  },
+  "M083": {
+    "horse_name": "SISUKAS",
+    "horse_code": "M083",
+    "runs": [],
+    "trial_note": null
+  },
+  "DASHING MARS": {
+    "horse_name": "DASHING MARS",
+    "horse_code": "M106",
+    "runs": [],
+    "trial_note": null
+  },
+  "M106": {
+    "horse_name": "DASHING MARS",
+    "horse_code": "M106",
+    "runs": [],
+    "trial_note": null
   }
 }
