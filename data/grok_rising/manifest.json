@@ -5,8 +5,8 @@
  "branch": "trial-data",
  "run_time_hkt": "2026-11-19T02:02:01+08:00",
  "run_time_utc": "2026-11-18T18:02:01+00:00",
- "manifest_written_at_hkt": "2026-11-19T02:02:21+08:00",
- "manifest_written_at_utc": "2026-11-18T18:02:21+00:00",
+ "manifest_written_at_hkt": "2026-11-20T11:37:23+08:00",
+ "manifest_written_at_utc": "2026-11-20T03:37:23+00:00",
  "data_commits": [
   "750b6c0c045dda8262e6e7dc4ed90dc847b7470d"
  ],
@@ -171,7 +171,7 @@
   "2026-11-14_ST.json": "8b6f045d871c23a65c6b2aecd7973a9d97db0ea1a84141f52701d471665aad7a",
   "2026-11-14_ST.md": "692aa5ec0cad0958348d1bb7a643fa22796d2386278a0b25d37ac016242038c4",
   "schema.md": "67a7658aba62d4d621d437892cbecdab42932fb25515f39c1a43f09bcd3ec0ec",
-  "2026-11-18_HV.csv": "f000138de2d164ac618ab20b9a4ec7fe754c519af9bae41b2057a8cfea556138",
+  "2026-11-18_HV.csv": "d4d8353a5b1be41865834c2a5543c74890dfcf5a9821f0eebd99362d6b29f318",
   "2026-11-18_HV.json": "8ffc55651703b152669f86b5cdeb58720237798e785f804733d01c3fd71334f4",
   "2026-11-18_HV.md": "31a74ee0db1fd3fcc683684a49799687e0ec9864fea085864a3181a9044a68b5"
  }
