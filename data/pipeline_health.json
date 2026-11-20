@@ -1,6 +1,6 @@
 {
   "overall_status": "fail",
-  "updated_at": "2026-11-20T03:31:02Z",
+  "updated_at": "2026-11-20T12:32:46Z",
   "components": {
     "scraper": {
       "status": "fail",
@@ -65,73 +65,22 @@
       "error": null
     },
     "veterinary_records": {
-      "status": "warn",
-      "last_attempt_at": "2026-11-19T12:33:22Z",
-      "last_success_at": "2026-11-18T12:43:01Z",
+      "status": "ok",
+      "last_attempt_at": "2026-11-20T12:32:46Z",
+      "last_success_at": "2026-11-20T12:32:46Z",
       "metrics": {
-        "horses_scraped": 530,
-        "target_horses_this_run": 120,
-        "horses_declared": 108,
-        "declared_horses_scraped": 108,
+        "horses_scraped": 645,
+        "target_horses_this_run": 268,
+        "horses_declared": 135,
+        "declared_horses_scraped": 135,
         "declared_coverage_pct": 100.0,
-        "overecord_disagreements_count": 11,
-        "overecord_disagreements": [
-          {
-            "horse_code": "K392",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "01/11/2026"
-          },
-          {
-            "horse_code": "L455",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "24/10/2026"
-          },
-          {
-            "horse_code": "M035",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "07/08/2026"
-          },
-          {
-            "horse_code": "K121",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "25/10/2026"
-          },
-          {
-            "horse_code": "K458",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "25/10/2026"
-          },
-          {
-            "horse_code": "E436",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "19/10/2026"
-          },
-          {
-            "horse_code": "K180",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "19/10/2026"
-          },
-          {
-            "horse_code": "K585",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "19/10/2026"
-          },
-          {
-            "horse_code": "M071",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "11/09/2026"
-          },
-          {
-            "horse_code": "K122",
-            "reason": "Missing from per-horse ovehorse records",
-            "overecord_date": "19/10/2026"
-          }
-        ],
-        "latest_stats_rows_updated": 523,
-        "last_successful_commit_at": "2026-11-19T12:33:22Z",
+        "overecord_disagreements_count": 0,
+        "overecord_disagreements": [],
+        "latest_stats_rows_updated": 642,
+        "last_successful_commit_at": "2026-11-20T12:32:46Z",
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse"
       },
-      "error": "11 disagreement(s) between ovehorse and overecord"
+      "error": null
     },
     "horse_profiles_and_vet": {
       "status": "ok",
