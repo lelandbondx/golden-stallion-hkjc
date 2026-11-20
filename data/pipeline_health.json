@@ -1,11 +1,11 @@
 {
   "overall_status": "fail",
-  "updated_at": "2026-11-18T12:45:06Z",
+  "updated_at": "2026-11-20T03:31:02Z",
   "components": {
     "scraper": {
       "status": "fail",
-      "last_attempt_at": "2026-11-18T12:45:06Z",
-      "last_success_at": "2026-11-18T05:25:40Z",
+      "last_attempt_at": "2026-11-20T03:31:02Z",
+      "last_success_at": "2026-11-20T03:30:35Z",
       "metrics": {
         "source": "error"
       },
@@ -23,12 +23,12 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-18T12:45:04Z",
-      "last_success_at": "2026-11-18T12:45:04Z",
+      "last_attempt_at": "2026-11-20T03:30:47Z",
+      "last_success_at": "2026-11-20T03:30:47Z",
       "metrics": {
-        "meeting_date": "2026-11-18",
-        "venue": "Happy Valley",
-        "races_predicted": 9
+        "meeting_date": "2026-11-22",
+        "venue": "Sha Tin",
+        "races_predicted": 11
       },
       "error": null
     },
@@ -134,14 +134,14 @@
     },
     "baseline_odds": {
       "status": "ok",
-      "last_attempt_at": "2026-11-18T12:44:58Z",
-      "last_success_at": "2026-11-18T12:44:58Z",
+      "last_attempt_at": "2026-11-20T03:29:45Z",
+      "last_success_at": "2026-11-20T03:29:45Z",
       "metrics": {
-        "meeting_date": "2026-11-18",
-        "venue": "Happy Valley",
-        "runners_checked": 108,
-        "runners_with_live_baseline_price": 108,
-        "file": "data/baseline_odds_20261118.json"
+        "meeting_date": "2026-11-22",
+        "venue": "Sha Tin",
+        "runners_checked": 135,
+        "runners_with_live_baseline_price": 0,
+        "file": "data/baseline_odds_20261122.json"
       },
       "error": null
     },
@@ -170,11 +170,11 @@
     },
     "frozen_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-18T12:45:04Z",
-      "last_success_at": "2026-11-18T12:45:04Z",
+      "last_attempt_at": "2026-11-20T03:30:47Z",
+      "last_success_at": "2026-11-20T03:30:47Z",
       "metrics": {
-        "file": "frozen_predictions_20261118.json",
-        "races_cached": 9
+        "file": "frozen_predictions_20261122.json",
+        "races_cached": 11
       },
       "error": null
     },
