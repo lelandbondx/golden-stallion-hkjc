@@ -3,8 +3,8 @@
   "feed": "data/replay",
   "branch": "trial-data",
   "schema_version": 2,
-  "run_time_hkt": "2026-11-19T01:07:01+08:00",
-  "run_time_utc": "2026-11-18T17:07:01Z",
+  "run_time_hkt": "2026-11-20T11:34:27+08:00",
+  "run_time_utc": "2026-11-20T03:34:27Z",
   "meetings": [
     {
       "date": "2026-11-08",
@@ -140,7 +140,8 @@
   "completeness_notes": [
     "2026-11-14 ST R6 abandoned (no result, no replay); R1-R5 and R7-R11 reviewed.",
     "2026-11-18 HV: all 9 races (198-206) reviewed from official replays + stewards report; R6 PRESTIGE WIN withdrawn 17.11.26 (stewards-only row, blank finish).",
-    "Only horses with a trip note have a row."
+    "Only horses with a trip note have a row.",
+    "2026-11-20 11:34 HKT correction: 2026-11-18 HV R8 AMAZING KID (K434) vet_finding now carries the official stewards' sentence 'Noted to have sustained a laceration to the right hind leg after the race.' (RaceReportFull 2026/11/18 HV); previously only in stewards_excuse/note. No other values changed."
   ],
   "appended_csv_columns": [
     "meeting_date",
