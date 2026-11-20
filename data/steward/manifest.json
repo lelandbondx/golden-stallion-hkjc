@@ -2,12 +2,12 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-19T01:40:46+08:00",
-  "run_time_utc": "2026-11-18T17:40:46+00:00",
-  "source_last_run": "2026-11-18T12:40:41-05:00",
+  "run_time_hkt": "2026-11-20T20:42:55+08:00",
+  "run_time_utc": "2026-11-20T12:42:55+00:00",
+  "source_last_run": "2026-11-20T07:42:11-05:00",
   "row_counts": {
-    "records.jsonl": 188,
-    "records.csv": 188,
+    "records.jsonl": 190,
+    "records.csv": 190,
     "horses_latest.json": 78,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
@@ -20,7 +20,7 @@
   "meetings_covered": [
     {
       "meeting_id": "HV-20261104",
-      "records_in_jsonl": 30,
+      "records_in_jsonl": 31,
       "has_meeting_file": true
     },
     {
@@ -50,7 +50,7 @@
     },
     {
       "meeting_id": null,
-      "records_in_jsonl": 94,
+      "records_in_jsonl": 95,
       "has_meeting_file": false,
       "note": "history-only vet records not tied to a reviewed meeting"
     }
@@ -75,8 +75,8 @@
     "horses_snapshot_count": 78,
     "meeting_files": 6,
     "reviewed_meetings_in_state": 5,
-    "open_items": 37,
-    "records_without_meeting": 94,
+    "open_items": 36,
+    "records_without_meeting": 95,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
     ]
@@ -130,15 +130,16 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-18T12:40:41-05:00",
-      "horses_rechecked": 8,
-      "result": "Open items not re-checked this run: ST 22/11 card not published. Re-read ovehorse for the 5 horses named at HV 18/11 plus Ever Wealth, Private Wealth, Super Sixty: no 17/18 Nov entries or Passed On dates yet. No clearances."
+      "at": "2026-11-20T07:42:11-05:00",
+      "horses_rechecked": 37,
+      "result": "Re-read HKJC vet pages for all 37 open items + barrier-trial results 12,13,17,19,20 Nov. One clearance: UNSTOPPAPLE (HK_2025_L205) official vet exam, Passed Date 19/11/2026. Duke of Orange only appears in 13/11 trial (withdrawn). No other Passed Dates/trials. ST 22/11 card published (11 races); no open-item horse among declared runners/standbys R1-R11. Awesome Fluke stalls test still unpublished. Monta Frutta, Telecom Power, Turf Phoenix show no vet entries on page; Quick Money page \"No information\"."
     },
     "next_meeting": {
-      "id": "ST-20261122",
       "date": "2026-11-22",
       "venue": "ST",
-      "verification": "Verified 2026-11-18T12:40:41-05:00: official Fixture calendar (Nov 2026) shows ST on 22; official meeting reminder 'Next Meeting will be held on 22/11/2026(Sun)'. Race card RaceCard.aspx RaceDate=2026/11/22 ST returned 'No information' (not published), so no declared-runner or standby cross-match yet."
+      "verified_at": "2026-11-20T07:42:11-05:00",
+      "source": "https://racing.hkjc.com/racing/information/English/Racing/RaceCard.aspx?RaceDate=2026/11/22&Racecourse=ST&RaceNo=1",
+      "card_published": true
     },
     "upcoming_known": [
       "Awesome Fluke (J050) stalls test ST 16/11/2026: result not published on any page checked (gap)",
@@ -164,14 +165,6 @@
       "horse_name": "TELECOM POWER",
       "remaining": [
         "barrier trial",
-        "official vet exam"
-      ],
-      "since": "2026-11-04"
-    },
-    {
-      "horse_id": "HK_2025_L205",
-      "horse_name": "UNSTOPPAPLE",
-      "remaining": [
         "official vet exam"
       ],
       "since": "2026-11-04"
@@ -464,9 +457,9 @@
     }
   ],
   "sha256": {
-    "records.jsonl": "aebd81ddae6a162c0b4c00ffc6ab00664baf9c1b89d2568f69100763b614dd1c",
-    "records.csv": "71e28254a485d97c6165b8960bf8b1ee8e2711b291067d9e54f352cccd314510",
-    "horses_latest.json": "be4216cda11df4b7041b8dc0ff20c602867454bfbadf4fea52e259aa190e4bba",
+    "records.jsonl": "93f46daeebd6fc92b5299567f3f996aafafbbbd3863c15c08b9b539fcad939cd",
+    "records.csv": "86d548e3d9542bee84077e188fe84e396433322f0962818f7dc6397c0fb15853",
+    "horses_latest.json": "86fcd188ae985fc5b3500c2569409ab61575fa78503e3958e8f8cc87b3992cbf",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
