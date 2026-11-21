@@ -1,14 +1,14 @@
 {
  "schema_version": "1.0",
- "run_id": "2026-11-21_0600HKT_ST_20261122",
+ "run_id": "2026-11-22_0600HKT_ST_20261122",
  "status": "ok",
- "run_time_hkt": "2026-11-21T06:00:00+08:00",
- "retrieved_at_hkt": "2026-11-21T06:14:12+08:00",
- "retrieved_at_utc": "2026-11-20T22:14:12+00:00",
- "manifest_written_at_hkt": "2026-11-21T06:19:41+08:00",
+ "run_time_hkt": "2026-11-22T06:00:00+08:00",
+ "retrieved_at_hkt": "2026-11-22T06:15:47+08:00",
+ "retrieved_at_utc": "2026-11-21T22:15:47+00:00",
+ "manifest_written_at_hkt": "2026-11-22T06:17:14+08:00",
  "window_hkt": [
-  "2026-11-21T06:00:00+08:00",
-  "2026-11-23T06:00:00+08:00"
+  "2026-11-22T06:00:00+08:00",
+  "2026-11-24T06:00:00+08:00"
  ],
  "meetings": [
   {
@@ -16,15 +16,17 @@
    "venue": "ST",
    "races": 11,
    "runners": 149,
-   "declared": 135,
+   "declared": 134,
    "standby": 13,
-   "withdrawn_listed": 1
+   "withdrawn_listed": 2
   }
  ],
  "meetings_checked_without_card": [
   "HV 2026-11-22",
   "HV 2026-11-23",
-  "ST 2026-11-23"
+  "ST 2026-11-23",
+  "HV 2026-11-24",
+  "ST 2026-11-24"
  ],
  "row_counts": {
   "declared_trials_latest_csv": 149,
@@ -33,7 +35,7 @@
   "meeting_json": 149,
   "trials_history": 648,
   "trials_history_seeded_this_run": 0,
-  "trials_history_new_this_run": 113
+  "trials_history_new_this_run": 0
  },
  "coverage": {
   "runners": 149,
@@ -84,10 +86,10 @@
   "csv_json_counts_match": true
  },
  "sha256": {
-  "declared_trials_latest.csv": "268c67f54bfc6e2f024c06119f6aa34b7287e4490a287ef8cfd42380a144a86c",
-  "declared_trials_latest.json": "84d7074bb2a919b9057cb8c5a4537427a84a1cf478560261ba65c501f15713d0",
-  "meeting_2026-11-22_ST.csv": "268c67f54bfc6e2f024c06119f6aa34b7287e4490a287ef8cfd42380a144a86c",
-  "meeting_2026-11-22_ST.json": "37332f990c56cf41b01841ec55d697b4cad8cb25a99b97936bbc31ed74e50b4d",
+  "declared_trials_latest.csv": "711b5bdb505bc10b2667f08f53ed80f4b4a3cf370b8eef01ea5abe42154e9aa3",
+  "declared_trials_latest.json": "e8d48749b0b370cb9beddba1dc6b71ac07460d2243fa7a062c5afd572528baf9",
+  "meeting_2026-11-22_ST.csv": "711b5bdb505bc10b2667f08f53ed80f4b4a3cf370b8eef01ea5abe42154e9aa3",
+  "meeting_2026-11-22_ST.json": "9a9a64573d8981350fa4c732d7a8fe052a108fe26ce66fb8b37eb7a26982e42c",
   "schema.md": "6ac00f3856e3407d7a880aae595d79958a25127261c366a44790506f2e1aa01f",
   "trials_history.csv": "66c2379223718c76d1b003665684704a926b273a1c180b39f1c56b312070e642"
  }
