@@ -2,12 +2,12 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-20T20:42:55+08:00",
-  "run_time_utc": "2026-11-20T12:42:55+00:00",
-  "source_last_run": "2026-11-20T07:42:11-05:00",
+  "run_time_hkt": "2026-11-21T20:44:11+08:00",
+  "run_time_utc": "2026-11-21T12:44:11+00:00",
+  "source_last_run": "2026-11-21T07:44:10-05:00",
   "row_counts": {
-    "records.jsonl": 190,
-    "records.csv": 190,
+    "records.jsonl": 191,
+    "records.csv": 191,
     "horses_latest.json": 78,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
@@ -25,7 +25,7 @@
     },
     {
       "meeting_id": "HV-20261111",
-      "records_in_jsonl": 13,
+      "records_in_jsonl": 14,
       "has_meeting_file": true
     },
     {
@@ -75,7 +75,7 @@
     "horses_snapshot_count": 78,
     "meeting_files": 6,
     "reviewed_meetings_in_state": 5,
-    "open_items": 36,
+    "open_items": 35,
     "records_without_meeting": 95,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -130,15 +130,15 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-20T07:42:11-05:00",
-      "horses_rechecked": 37,
-      "result": "Re-read HKJC vet pages for all 37 open items + barrier-trial results 12,13,17,19,20 Nov. One clearance: UNSTOPPAPLE (HK_2025_L205) official vet exam, Passed Date 19/11/2026. Duke of Orange only appears in 13/11 trial (withdrawn). No other Passed Dates/trials. ST 22/11 card published (11 races); no open-item horse among declared runners/standbys R1-R11. Awesome Fluke stalls test still unpublished. Monta Frutta, Telecom Power, Turf Phoenix show no vet entries on page; Quick Money page \"No information\"."
+      "at": "2026-11-21T07:44:10-05:00",
+      "horses_rechecked": 36,
+      "result": "Re-read HKJC vet pages for all 36 open/pending horses + barrier trials 20,21 Nov. One new clearance: SPEEDY PATCH (HK_2025_L104) official vet exam, Passed Date 20/11/2026. No other new Passed Dates/trials. Awesome Fluke stalls test still unpublished."
     },
     "next_meeting": {
       "date": "2026-11-22",
       "venue": "ST",
-      "verified_at": "2026-11-20T07:42:11-05:00",
-      "source": "https://racing.hkjc.com/racing/information/English/Racing/RaceCard.aspx?RaceDate=2026/11/22&Racecourse=ST&RaceNo=1",
+      "verified_at": "2026-11-21T07:44:10-05:00",
+      "source": "https://racing.hkjc.com/en-us/local/information/racecard",
       "card_published": true
     },
     "upcoming_known": [
@@ -268,14 +268,6 @@
       "horse_name": "AWESOME FLUKE",
       "remaining": [
         "stalls test"
-      ],
-      "since": "2026-11-11"
-    },
-    {
-      "horse_id": "HK_2025_L104",
-      "horse_name": "SPEEDY PATCH",
-      "remaining": [
-        "official vet exam"
       ],
       "since": "2026-11-11"
     },
@@ -457,9 +449,9 @@
     }
   ],
   "sha256": {
-    "records.jsonl": "93f46daeebd6fc92b5299567f3f996aafafbbbd3863c15c08b9b539fcad939cd",
-    "records.csv": "86d548e3d9542bee84077e188fe84e396433322f0962818f7dc6397c0fb15853",
-    "horses_latest.json": "86fcd188ae985fc5b3500c2569409ab61575fa78503e3958e8f8cc87b3992cbf",
+    "records.jsonl": "82564e16350f04f3eda53af9114d5953b1b8eff7d165a625fa123b139305a533",
+    "records.csv": "f3ddd2531bf55aee2dad78fc83b38595bb804f56850bc024fa4e4bcf4641d019",
+    "horses_latest.json": "dd81d5d5683e6ba67b60b2c1deb64fd21142d51dcec9dc0d46f75297de7c4e86",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
