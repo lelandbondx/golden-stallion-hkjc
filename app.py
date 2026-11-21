@@ -851,7 +851,7 @@ def format_post_time_hkt_est(iso_str):
 search_term = st.text_input("🔍 Highlight Jockey or Trainer (e.g., PURTON, FOWNES)", "").strip().upper()
 
 # TABS
-tab1, tab2, tab3 = st.tabs(["🔴 Live Matrix", "📊 Archive", "📰 HKJC News"])
+tab1, tab2 = st.tabs(["🔴 Live Matrix", "📰 HKJC News"])
 
 with tab1:
     if data.get('status') != 'success':
@@ -2901,46 +2901,6 @@ with tab1:
                     print(f"Error rendering expandable vet history: {_vh_err}")
 
 with tab2:
-    st.markdown("<h3 style='font-family:\"Montserrat\";'>Historical Archive & Gallery</h3>", unsafe_allow_html=True)
-    st.write("Browse and analyze past race outcomes, field variables, and iconic moments from our data servers.")
-    
-    st.markdown("#### 📸 Classic Race Gallery")
-    gal_col1, gal_col2, gal_col3 = st.columns(3)
-    with gal_col1:
-        if os.path.exists("data/images/shatin.png"):
-            st.image("data/images/shatin.png", caption="Thrilling Finish at Sha Tin", width="stretch")
-    with gal_col2:
-        if os.path.exists("data/images/happy_valley.png"):
-            st.image("data/images/happy_valley.png", caption="Night Racing at Happy Valley", width="stretch")
-    with gal_col3:
-        if os.path.exists("data/images/winner.png"):
-            st.image("data/images/winner.png", caption="Winner's Circle Celebration", width="stretch")
-            
-    st.markdown("---")
-    
-    try:
-        runs_file = 'data/runs_slice.csv' if os.path.exists('data/runs_slice.csv') else 'data/runs.csv'
-        races_file = 'data/races_slice.csv' if os.path.exists('data/races_slice.csv') else 'data/races.csv'
-        
-        if os.path.exists(runs_file):
-            df_runs = pd.read_csv(runs_file, nrows=1000) 
-            st.markdown('<div class="tech-panel border-accent-blue">', unsafe_allow_html=True)
-            st.write("##### INDIVIDUAL RUNS LOG")
-            st.dataframe(df_runs, use_container_width=True)
-            st.markdown('</div>', unsafe_allow_html=True)
-            
-            if os.path.exists(races_file):
-                df_races = pd.read_csv(races_file, nrows=250)
-                st.markdown('<div class="tech-panel border-accent-gold">', unsafe_allow_html=True)
-                st.write("##### RACE CONDITIONS LOG")
-                st.dataframe(df_races, use_container_width=True)
-                st.markdown('</div>', unsafe_allow_html=True)
-        else:
-            st.info("Historical data not found in ./data directory.")
-    except Exception as e:
-        st.error(f"Error reading local data assets: {str(e)}")
-
-with tab3:
     st.markdown("<h3 style='font-family:\"Montserrat\"; margin-top:10px; color:#38bdf8;'>HKJC News & Media</h3>", unsafe_allow_html=True)
     
     news_items = fetch_news()
