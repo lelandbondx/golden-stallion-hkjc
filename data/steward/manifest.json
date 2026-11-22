@@ -2,8 +2,8 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-22T20:41:22+08:00",
-  "run_time_utc": "2026-11-22T12:41:22+00:00",
+  "run_time_hkt": "2026-11-22T20:44:34+08:00",
+  "run_time_utc": "2026-11-22T12:44:34+00:00",
   "source_last_run": "2026-11-22T07:50:00-05:00",
   "row_counts": {
     "records.jsonl": 224,
@@ -83,7 +83,7 @@
     "horses_snapshot_count": 96,
     "meeting_files": 7,
     "reviewed_meetings_in_state": 6,
-    "open_items": 53,
+    "open_items": 48,
     "records_without_meeting": 95,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -142,7 +142,8 @@
           "Stewards report footer says interim, to be finalised after meeting; summary section used.",
           "HKJC horse vet pages show no 22/11 entries yet for new horses (stewards report only source).",
           "No official finish clock time published; R11 scheduled 18:25 HKT, review at 20:50 HKT.",
-          "Fixture page text does not show venue; 25/11 HV from stewards notices of 25 Nov HV suspensions."
+          "Fixture page text does not show venue; 25/11 HV from stewards notices of 25 Nov HV suspensions.",
+          "Five previously reviewed horses (Lucky Blessing, Unstoppaple, Friends of Shajing, Speedy Patch, On The Way) were wrongly listed in this meeting's open_items as 'further assessment' on 22 Nov; they had no new 22 Nov finding. The first four already have Passed Dates; On The Way's 14 Nov epiglottic entrapment remains a pending vet-page gap, not an official requirement. Removed from open_items on 22 Nov review correction."
         ]
       }
     ],
@@ -178,14 +179,6 @@
       "since": "2026-11-04"
     },
     {
-      "horse_id": "HK_2024_K073",
-      "horse_name": "LUCKY BLESSING",
-      "remaining": [
-        "further assessment"
-      ],
-      "since": "2026-11-22"
-    },
-    {
       "horse_id": "HK_2023_J332",
       "horse_name": "TELECOM POWER",
       "remaining": [
@@ -193,22 +186,6 @@
         "official vet exam"
       ],
       "since": "2026-11-04"
-    },
-    {
-      "horse_id": "HK_2025_L205",
-      "horse_name": "UNSTOPPAPLE",
-      "remaining": [
-        "further assessment"
-      ],
-      "since": "2026-11-22"
-    },
-    {
-      "horse_id": "HK_2024_K202",
-      "horse_name": "FRIENDS OF SHAJING",
-      "remaining": [
-        "further assessment"
-      ],
-      "since": "2026-11-22"
     },
     {
       "horse_id": "HK_2025_L142",
@@ -321,14 +298,6 @@
       "since": "2026-11-11"
     },
     {
-      "horse_id": "HK_2025_L104",
-      "horse_name": "SPEEDY PATCH",
-      "remaining": [
-        "further assessment"
-      ],
-      "since": "2026-11-22"
-    },
-    {
       "horse_id": "HK_2025_L028",
       "horse_name": "HELENE SUPAFEELING",
       "remaining": [
@@ -368,14 +337,6 @@
         "barrier trial"
       ],
       "since": "2026-11-14"
-    },
-    {
-      "horse_id": "HK_2025_L154",
-      "horse_name": "ON THE WAY",
-      "remaining": [
-        "further assessment"
-      ],
-      "since": "2026-11-22"
     },
     {
       "horse_id": "HK_2023_J375",
@@ -629,7 +590,7 @@
     "meetings/ST-20261108.json": "b722dfa48633d18beec7474af859a7e30792ce493588fe9404a1b87e5c634886",
     "meetings/ST-20261114-precheck.json": "bcafee74a8242a858ba50f0cfdca4c75e08f6dfd9f463962072d89810d18b006",
     "meetings/ST-20261114.json": "03e8e097d89e42742754e36416b8ddcb2cb75c20c362ffd470bff535723b221b",
-    "meetings/ST-20261122.json": "366a4a7cc72950a421727d09b5c525dd791ac789fecee9eccd1a6432c78ca46c"
+    "meetings/ST-20261122.json": "83210239f34da834efad84c2c68bf0ce9ae1814d0ec6133b1ef29bbfd6e5bf23"
   },
   "repo": "lelandbondx/golden-stallion-hkjc",
   "branch": "trial-data",
