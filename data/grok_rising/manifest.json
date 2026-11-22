@@ -3,12 +3,12 @@
  "producer": "grok_rising",
  "status": "ok",
  "branch": "trial-data",
- "run_time_hkt": "2026-11-19T02:02:01+08:00",
- "run_time_utc": "2026-11-18T18:02:01+00:00",
- "manifest_written_at_hkt": "2026-11-20T11:37:23+08:00",
- "manifest_written_at_utc": "2026-11-20T03:37:23+00:00",
+ "run_time_hkt": "2026-11-23T02:02:39+08:00",
+ "run_time_utc": "2026-11-22T18:02:39+00:00",
+ "manifest_written_at_hkt": "2026-11-23T02:03:14+08:00",
+ "manifest_written_at_utc": "2026-11-22T18:03:14+00:00",
  "data_commits": [
-  "750b6c0c045dda8262e6e7dc4ed90dc847b7470d"
+  "564a565b78235a21bd7c6b490151c4b134bb383f"
  ],
  "meetings": [
   {
@@ -83,6 +83,30 @@
    "clearance_required_true": 4,
    "verified_true": 43,
    "verified_false": 6
+  },
+  {
+   "meeting_date": "2026-11-22",
+   "venue": "ST",
+   "rows": 71,
+   "source_record_count": 71,
+   "flag_type_counts": {
+    "medical": 19,
+    "regulatory": 4,
+    "gear": 5,
+    "trip_excuse": 43
+   },
+   "direction_counts": {
+    "caution": 23,
+    "neutral": 21,
+    "upgrade_candidate": 27
+   },
+   "priority_counts": {
+    "high": 22,
+    "normal": 49
+   },
+   "clearance_required_true": 16,
+   "verified_true": 63,
+   "verified_false": 8
   }
  ],
  "row_counts": {
@@ -91,7 +115,9 @@
   "2026-11-14_ST.csv": 55,
   "2026-11-14_ST.json": 55,
   "2026-11-18_HV.csv": 49,
-  "2026-11-18_HV.json": 49
+  "2026-11-18_HV.json": 49,
+  "2026-11-22_ST.csv": 71,
+  "2026-11-22_ST.json": 71
  },
  "completeness": {
   "2026-11-11_HV": {
@@ -126,6 +152,15 @@
    "missing_horse_code": [],
    "missing_race_no": [],
    "row_count_matches_source": true
+  },
+  "2026-11-22_ST": {
+   "rows": 71,
+   "rows_with_horse_code": 71,
+   "rows_with_race_no": 71,
+   "rows_with_source_url": 63,
+   "missing_horse_code": [],
+   "missing_race_no": [],
+   "row_count_matches_source": true
   }
  },
  "validation": {
@@ -149,6 +184,11 @@
    "json": "/workspace/silks_ev_summaries/2026-11-18_HV.json",
    "md": "/workspace/silks_ev_summaries/2026-11-18_HV.md",
    "source_record_count": 49
+  },
+  "2026-11-22_ST": {
+   "json": "/workspace/silks_ev_summaries/2026-11-22_ST.json",
+   "md": "/workspace/silks_ev_summaries/2026-11-22_ST.md",
+   "source_record_count": 71
   }
  },
  "files": [
@@ -161,7 +201,10 @@
   "data/grok_rising/schema.md",
   "data/grok_rising/2026-11-18_HV.csv",
   "data/grok_rising/2026-11-18_HV.json",
-  "data/grok_rising/2026-11-18_HV.md"
+  "data/grok_rising/2026-11-18_HV.md",
+  "data/grok_rising/2026-11-22_ST.csv",
+  "data/grok_rising/2026-11-22_ST.json",
+  "data/grok_rising/2026-11-22_ST.md"
  ],
  "sha256": {
   "2026-11-11_HV.csv": "c433fbb37a2e0395ec28712968dbd28533026e32f857f3c3aaeca92ed0074e6b",
@@ -173,6 +216,9 @@
   "schema.md": "67a7658aba62d4d621d437892cbecdab42932fb25515f39c1a43f09bcd3ec0ec",
   "2026-11-18_HV.csv": "d4d8353a5b1be41865834c2a5543c74890dfcf5a9821f0eebd99362d6b29f318",
   "2026-11-18_HV.json": "8ffc55651703b152669f86b5cdeb58720237798e785f804733d01c3fd71334f4",
-  "2026-11-18_HV.md": "31a74ee0db1fd3fcc683684a49799687e0ec9864fea085864a3181a9044a68b5"
+  "2026-11-18_HV.md": "31a74ee0db1fd3fcc683684a49799687e0ec9864fea085864a3181a9044a68b5",
+  "2026-11-22_ST.csv": "ee46e1ea10576ea15e5f6968cb5bbf6661417ec8a56dc2a2a512cd7f45cf4db7",
+  "2026-11-22_ST.json": "300abb65fa344c0bcbc9bac17e08cd407524dd03793c79d774ed479666974239",
+  "2026-11-22_ST.md": "af8fac80b465bd1b33888fb29d6526e18a7a53a2dcb1018b85f304744f58862d"
  }
 }
