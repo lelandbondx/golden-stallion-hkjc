@@ -65,52 +65,12 @@
  },
  "open_items": [
   {
-   "horse_id": "HK_2024_K073",
-   "horse_name": "LUCKY BLESSING",
-   "remaining": [
-    "further assessment"
-   ],
-   "since": "2026-11-22"
-  },
-  {
-   "horse_id": "HK_2025_L205",
-   "horse_name": "UNSTOPPAPLE",
-   "remaining": [
-    "further assessment"
-   ],
-   "since": "2026-11-22"
-  },
-  {
-   "horse_id": "HK_2024_K202",
-   "horse_name": "FRIENDS OF SHAJING",
-   "remaining": [
-    "further assessment"
-   ],
-   "since": "2026-11-22"
-  },
-  {
    "horse_id": "HK_2024_K308",
    "horse_name": "CIRCUIT CENTURY",
    "remaining": [
     "official vet exam"
    ],
    "since": "2026-11-11"
-  },
-  {
-   "horse_id": "HK_2025_L104",
-   "horse_name": "SPEEDY PATCH",
-   "remaining": [
-    "further assessment"
-   ],
-   "since": "2026-11-22"
-  },
-  {
-   "horse_id": "HK_2025_L154",
-   "horse_name": "ON THE WAY",
-   "remaining": [
-    "further assessment"
-   ],
-   "since": "2026-11-22"
   },
   {
    "horse_id": "HK_2025_L328",
@@ -262,8 +222,9 @@
   "Stewards report footer says interim, to be finalised after meeting; summary section used.",
   "HKJC horse vet pages show no 22/11 entries yet for new horses (stewards report only source).",
   "No official finish clock time published; R11 scheduled 18:25 HKT, review at 20:50 HKT.",
-  "Fixture page text does not show venue; 25/11 HV from stewards notices of 25 Nov HV suspensions."
+  "Fixture page text does not show venue; 25/11 HV from stewards notices of 25 Nov HV suspensions.",
+  "Five previously reviewed horses (Lucky Blessing, Unstoppaple, Friends of Shajing, Speedy Patch, On The Way) were wrongly listed in this meeting's open_items as 'further assessment' on 22 Nov; they had no new 22 Nov finding. The first four already have Passed Dates; On The Way's 14 Nov epiglottic entrapment remains a pending vet-page gap, not an official requirement. Removed from open_items on 22 Nov review correction."
  ],
  "replay_bot_coverage": "No Replay Bot trip_notes.csv for 2026-11-22 on box at review time (raw fetch only): cross-check NOT possible.",
- "notes": "Facts only."
+ "notes": "Facts only. Five previously reviewed horses (Lucky Blessing, Unstoppaple, Friends of Shajing, Speedy Patch, On The Way) were wrongly listed in this meeting's open_items as 'further assessment' on 22 Nov; they had no new 22 Nov finding. The first four already have Passed Dates; On The Way's 14 Nov epiglottic entrapment remains a pending vet-page gap, not an official requirement. Removed from open_items on 22 Nov review correction."
 }
