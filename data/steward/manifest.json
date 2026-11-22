@@ -2,20 +2,21 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-21T20:44:11+08:00",
-  "run_time_utc": "2026-11-21T12:44:11+00:00",
-  "source_last_run": "2026-11-21T07:44:10-05:00",
+  "run_time_hkt": "2026-11-22T20:41:22+08:00",
+  "run_time_utc": "2026-11-22T12:41:22+00:00",
+  "source_last_run": "2026-11-22T07:50:00-05:00",
   "row_counts": {
-    "records.jsonl": 191,
-    "records.csv": 191,
-    "horses_latest.json": 78,
+    "records.jsonl": 224,
+    "records.csv": 224,
+    "horses_latest.json": 96,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
     "meetings/HV-20261111.json": 1,
     "meetings/HV-20261118.json": 1,
     "meetings/ST-20261108.json": 1,
     "meetings/ST-20261114-precheck.json": 1,
-    "meetings/ST-20261114.json": 1
+    "meetings/ST-20261114.json": 1,
+    "meetings/ST-20261122.json": 1
   },
   "meetings_covered": [
     {
@@ -44,6 +45,11 @@
       "has_meeting_file": true
     },
     {
+      "meeting_id": "ST-20261122",
+      "records_in_jsonl": 33,
+      "has_meeting_file": true
+    },
+    {
       "meeting_id": "ST-20261028",
       "records_in_jsonl": 1,
       "has_meeting_file": false
@@ -60,22 +66,24 @@
     "ST-20261108",
     "HV-20261111",
     "ST-20261114",
-    "HV-20261118"
+    "HV-20261118",
+    "ST-20261122"
   ],
   "meeting_status": {
     "HV-20261104": "FLAGGED",
     "ST-20261108": "FLAGGED",
     "HV-20261111": "FLAGGED",
     "ST-20261114": "FLAGGED",
-    "HV-20261118": "FLAGGED"
+    "HV-20261118": "FLAGGED",
+    "ST-20261122": "FLAGGED"
   },
   "completeness": {
     "records_jsonl_csv_match": true,
     "records_validated": true,
-    "horses_snapshot_count": 78,
-    "meeting_files": 6,
-    "reviewed_meetings_in_state": 5,
-    "open_items": 35,
+    "horses_snapshot_count": 96,
+    "meeting_files": 7,
+    "reviewed_meetings_in_state": 6,
+    "open_items": 53,
     "records_without_meeting": 95,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -127,23 +135,32 @@
           "Per-race vet records page covers upcoming card only; stewards' report summary used for withdrawals.",
           "Next meeting race card not yet published (No information), so no declared-runner cross-match possible."
         ]
+      },
+      {
+        "meeting_id": "ST-20261122",
+        "source_gaps": [
+          "Stewards report footer says interim, to be finalised after meeting; summary section used.",
+          "HKJC horse vet pages show no 22/11 entries yet for new horses (stewards report only source).",
+          "No official finish clock time published; R11 scheduled 18:25 HKT, review at 20:50 HKT.",
+          "Fixture page text does not show venue; 25/11 HV from stewards notices of 25 Nov HV suspensions."
+        ]
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-21T07:44:10-05:00",
-      "horses_rechecked": 36,
-      "result": "Re-read HKJC vet pages for all 36 open/pending horses + barrier trials 20,21 Nov. One new clearance: SPEEDY PATCH (HK_2025_L104) official vet exam, Passed Date 20/11/2026. No other new Passed Dates/trials. Awesome Fluke stalls test still unpublished."
+      "at": "2026-11-22T07:50:00-05:00",
+      "horses_rechecked": 35,
+      "result": "Re-read HKJC vet pages (ovehorse) for all 37 previously open horses + new 22 Nov horses; no new Passed Dates; HKJC barrier-trial results page newest trial date 20/11/2026 (none since last check). Awesome Fluke stalls test still unpublished. Retired/other-horse pages (Monta Frutta, Turf Phoenix, Telecom Power, Circuit Century) show no vet table; unchanged."
     },
     "next_meeting": {
-      "date": "2026-11-22",
-      "venue": "ST",
-      "verified_at": "2026-11-21T07:44:10-05:00",
-      "source": "https://racing.hkjc.com/en-us/local/information/racecard",
-      "card_published": true
+      "date": "2026-11-25",
+      "venue": "HV",
+      "verified_at": "2026-11-22T07:50:00-05:00",
+      "source": "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 (25/11 listed as next date after 22/11; venue HV per stewards notice of 25 Nov HV suspensions; race card not yet published)",
+      "card_published": false
     },
     "upcoming_known": [
       "Awesome Fluke (J050) stalls test ST 16/11/2026: result not published on any page checked (gap)",
-      "K Teetan suspended 25/11-29/11, resumes 30/11 (HV 25 Nov); M Chadwick suspended 25/11; P N Wong deferred 22/11-25/11 resume 26/11 (origin not identified); C L Chau deferred 29/11-02/12 resume 03/12"
+      "K Teetan suspended 25/11-29/11, resumes 30/11 (HV 25 Nov); M Chadwick suspended 25/11; P N Wong deferred 22/11-25/11 resume 26/11 (origin not identified); C L Chau 29/11-02/12 resume 03/12; C L Chau 23/12-29/12 resume 30/12 (new, ST 22 Nov careless riding, $90,000 fine)"
     ],
     "publication_retries": 0,
     "notes": [
@@ -161,6 +178,14 @@
       "since": "2026-11-04"
     },
     {
+      "horse_id": "HK_2024_K073",
+      "horse_name": "LUCKY BLESSING",
+      "remaining": [
+        "further assessment"
+      ],
+      "since": "2026-11-22"
+    },
+    {
       "horse_id": "HK_2023_J332",
       "horse_name": "TELECOM POWER",
       "remaining": [
@@ -168,6 +193,22 @@
         "official vet exam"
       ],
       "since": "2026-11-04"
+    },
+    {
+      "horse_id": "HK_2025_L205",
+      "horse_name": "UNSTOPPAPLE",
+      "remaining": [
+        "further assessment"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2024_K202",
+      "horse_name": "FRIENDS OF SHAJING",
+      "remaining": [
+        "further assessment"
+      ],
+      "since": "2026-11-22"
     },
     {
       "horse_id": "HK_2025_L142",
@@ -248,6 +289,14 @@
       "since": "2026-11-08"
     },
     {
+      "horse_id": "HK_2024_K308",
+      "horse_name": "CIRCUIT CENTURY",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-11"
+    },
+    {
       "horse_id": "HK_2025_L339",
       "horse_name": "CALL ME MAGNIFIQUE",
       "remaining": [
@@ -272,12 +321,29 @@
       "since": "2026-11-11"
     },
     {
+      "horse_id": "HK_2025_L104",
+      "horse_name": "SPEEDY PATCH",
+      "remaining": [
+        "further assessment"
+      ],
+      "since": "2026-11-22"
+    },
+    {
       "horse_id": "HK_2025_L028",
       "horse_name": "HELENE SUPAFEELING",
       "remaining": [
         "official vet exam"
       ],
       "since": "2026-11-05"
+    },
+    {
+      "horse_id": "HK_2024_K334",
+      "horse_name": "LUNAR DASH",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-18"
     },
     {
       "horse_id": "HK_2024_K230",
@@ -304,36 +370,12 @@
       "since": "2026-11-14"
     },
     {
-      "horse_id": "HK_2024_K540",
-      "horse_name": "DUKE OF ORANGE",
+      "horse_id": "HK_2025_L154",
+      "horse_name": "ON THE WAY",
       "remaining": [
-        "official vet exam"
+        "further assessment"
       ],
-      "since": "2026-11-13"
-    },
-    {
-      "horse_id": "HK_2023_J291",
-      "horse_name": "YOUNG ACHIEVER",
-      "remaining": [
-        "official vet exam"
-      ],
-      "since": "2026-11-12"
-    },
-    {
-      "horse_id": "HK_2025_L031",
-      "horse_name": "AKERMANIS GOLD",
-      "remaining": [
-        "official vet exam"
-      ],
-      "since": "2026-11-12"
-    },
-    {
-      "horse_id": "HK_2025_L057",
-      "horse_name": "FLYING FORTUNE",
-      "remaining": [
-        "official vet exam"
-      ],
-      "since": "2026-11-12"
+      "since": "2026-11-22"
     },
     {
       "horse_id": "HK_2023_J375",
@@ -421,15 +463,6 @@
       "since": "2026-11-18"
     },
     {
-      "horse_id": "HK_2024_K334",
-      "horse_name": "LUNAR DASH",
-      "remaining": [
-        "barrier trial",
-        "official vet exam"
-      ],
-      "since": "2026-11-18"
-    },
-    {
       "horse_id": "HK_2024_K203",
       "horse_name": "MORGAN SUCCESS",
       "remaining": [
@@ -446,19 +479,157 @@
         "official vet exam"
       ],
       "since": "2026-11-17"
+    },
+    {
+      "horse_id": "HK_2025_L328",
+      "horse_name": "TURBO JEFFERIES",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2024_K456",
+      "horse_name": "SO MY FOLKS",
+      "remaining": [
+        "compulsory retirement"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2025_L458",
+      "horse_name": "REBORN HERO",
+      "remaining": [
+        "barrier trial"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2025_L533",
+      "horse_name": "S AND S GLORY",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-20"
+    },
+    {
+      "horse_id": "HK_2023_J116",
+      "horse_name": "WINNING MONEY",
+      "remaining": [
+        "further assessment of heart condition"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2025_L434",
+      "horse_name": "SHANGHAI WARRIOR",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2025_L419",
+      "horse_name": "HARVEST MOON",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2026_M010",
+      "horse_name": "FAST TOP SEARCH",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2025_L347",
+      "horse_name": "MIGHTY PROFIT",
+      "remaining": [
+        "barrier practice",
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2026_M035",
+      "horse_name": "AUTUMN KING",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2024_K458",
+      "horse_name": "SUPER GOLDENDRAGON",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2024_K902",
+      "horse_name": "DOCKLANDS",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-21"
+    },
+    {
+      "horse_id": "HK_2024_K180",
+      "horse_name": "SUPER STRONG KID",
+      "remaining": [
+        "barrier trial (around a bend, 2 consecutive)",
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2025_L409",
+      "horse_name": "GREAT LEGEND",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2024_K122",
+      "horse_name": "EMBLAZON",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2025_L563",
+      "horse_name": "FIRE DRAGON",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-22"
     }
   ],
   "sha256": {
-    "records.jsonl": "82564e16350f04f3eda53af9114d5953b1b8eff7d165a625fa123b139305a533",
-    "records.csv": "f3ddd2531bf55aee2dad78fc83b38595bb804f56850bc024fa4e4bcf4641d019",
-    "horses_latest.json": "dd81d5d5683e6ba67b60b2c1deb64fd21142d51dcec9dc0d46f75297de7c4e86",
+    "records.jsonl": "3adb69f3b663c00d806e7cd9ec238bfe4a4d4559fefbf5a60ea2444bba9aea93",
+    "records.csv": "09c0153d0bbe2bc1dd58e298322d90772659a87d049189fc24c44a65c75b8328",
+    "horses_latest.json": "4fa2c8b64b79a28c1312d9dcd0965be1feb677dddb5734a01d0527414c90fab8",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
     "meetings/HV-20261118.json": "6354e1141518f1dffb5da316d26cff9cb8a6830380dd792108418fbd7734db50",
     "meetings/ST-20261108.json": "b722dfa48633d18beec7474af859a7e30792ce493588fe9404a1b87e5c634886",
     "meetings/ST-20261114-precheck.json": "bcafee74a8242a858ba50f0cfdca4c75e08f6dfd9f463962072d89810d18b006",
-    "meetings/ST-20261114.json": "03e8e097d89e42742754e36416b8ddcb2cb75c20c362ffd470bff535723b221b"
+    "meetings/ST-20261114.json": "03e8e097d89e42742754e36416b8ddcb2cb75c20c362ffd470bff535723b221b",
+    "meetings/ST-20261122.json": "366a4a7cc72950a421727d09b5c525dd791ac789fecee9eccd1a6432c78ca46c"
   },
   "repo": "lelandbondx/golden-stallion-hkjc",
   "branch": "trial-data",
