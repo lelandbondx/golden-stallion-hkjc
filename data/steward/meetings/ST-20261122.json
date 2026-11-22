@@ -1,0 +1,269 @@
+{
+ "meeting_id": "ST-20261122",
+ "meeting_date": "2026-11-22",
+ "venue": "ST",
+ "description": "Sha Tin Turf B+2 course, 11 races (207-217), going GOOD, R11 scheduled 18:25 HKT; official results for all 11 races and stewards report published (report labelled interim, summary section complete); reviewed >2h after R11 scheduled start",
+ "status": "FLAGGED",
+ "reviewed_at": "2026-11-22T07:50:00-05:00",
+ "records_count": 33,
+ "horses_with_records": 18,
+ "summary": {
+  "bleeding": [
+   "TURBO JEFFERIES (R1, 10th): bled from both nostrils (nostril): barrier trial + official vet exam",
+   "SO MY FOLKS (R1, 13th): bled from both nostrils, SECOND bleed: ineligible to run in any Club race (compulsory retirement)",
+   "SHANGHAI WARRIOR (R3, 4th), AUTUMN KING (R5, 13th), GREAT LEGEND (R10, 10th): substantial blood in trachea (tracheal): official vet exam"
+  ],
+  "irregular_heart": [
+   "WINNING MONEY (R2): withdrawn pre-race on vet advice, heart condition requiring further assessment"
+  ],
+  "lameness": [
+   "S AND S GLORY (R2, withdrawn 20.11): lame left fore: official vet exam",
+   "DOCKLANDS (R9, withdrawn 21.11): lame right hind: official vet exam"
+  ],
+  "injury": [
+   "GREAT LEGEND (R10): abrasion left hind leg",
+   "HARVEST MOON (R3): awkward in action, not ridden out; no significant findings; tailed out"
+  ],
+  "gate_incidents": [
+   "FAST TOP SEARCH (R3): fractious, fell heavily in gates, withdrawn: barrier trial + vet exam",
+   "MIGHTY PROFIT (R3): reared over gate, withdrawn: barrier practice + trial + vet exam"
+  ],
+  "barrier_trial_requirements": [
+   "TURBO JEFFERIES",
+   "REBORN HERO (barrier manners)",
+   "FAST TOP SEARCH",
+   "MIGHTY PROFIT",
+   "HARVEST MOON",
+   "SUPER GOLDENDRAGON",
+   "SUPER STRONG KID (around a bend, 2 consecutive)",
+   "EMBLAZON",
+   "FIRE DRAGON"
+  ],
+  "vet_exam_requirements": [
+   "TURBO JEFFERIES",
+   "S AND S GLORY",
+   "MIGHTY PROFIT",
+   "SHANGHAI WARRIOR",
+   "FAST TOP SEARCH",
+   "HARVEST MOON",
+   "AUTUMN KING",
+   "SUPER GOLDENDRAGON",
+   "DOCKLANDS",
+   "SUPER STRONG KID",
+   "GREAT LEGEND",
+   "EMBLAZON (with additional diagnostics)",
+   "FIRE DRAGON"
+  ],
+  "suspensions": [
+   "C L Chau (SHANNON GLOW, R4): careless riding, suspended 23/12/2026-30/12/2026 (resumes 30/12; 3 racedays), fined $90,000; also severe reprimand"
+  ],
+  "other": [
+   "Reprimand C L Chau (LIGHTNING ACE R1); warnings R Kingscote, A Badel; declaration error fine $2,000 Trainer D A Hayes; whip: R2 18 Nov HV C L Chau fined $5,000, H T Mo warned (18 Nov HV)",
+   "General note: CANDLELIGHT DINNER (1 Nov meeting R8) further assessment confirmed epiglottic entrapment (horse_id not resolved, not written as a record)",
+   "Race 4 put back 10 minutes; E C W Wong indisposed (riding substitutions)"
+  ]
+ },
+ "open_items": [
+  {
+   "horse_id": "HK_2024_K073",
+   "horse_name": "LUCKY BLESSING",
+   "remaining": [
+    "further assessment"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L205",
+   "horse_name": "UNSTOPPAPLE",
+   "remaining": [
+    "further assessment"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K202",
+   "horse_name": "FRIENDS OF SHAJING",
+   "remaining": [
+    "further assessment"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K308",
+   "horse_name": "CIRCUIT CENTURY",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-11"
+  },
+  {
+   "horse_id": "HK_2025_L104",
+   "horse_name": "SPEEDY PATCH",
+   "remaining": [
+    "further assessment"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L154",
+   "horse_name": "ON THE WAY",
+   "remaining": [
+    "further assessment"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L328",
+   "horse_name": "TURBO JEFFERIES",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K456",
+   "horse_name": "SO MY FOLKS",
+   "remaining": [
+    "compulsory retirement"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L458",
+   "horse_name": "REBORN HERO",
+   "remaining": [
+    "barrier trial"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L533",
+   "horse_name": "S AND S GLORY",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-20"
+  },
+  {
+   "horse_id": "HK_2023_J116",
+   "horse_name": "WINNING MONEY",
+   "remaining": [
+    "further assessment of heart condition"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L434",
+   "horse_name": "SHANGHAI WARRIOR",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L419",
+   "horse_name": "HARVEST MOON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2026_M010",
+   "horse_name": "FAST TOP SEARCH",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L347",
+   "horse_name": "MIGHTY PROFIT",
+   "remaining": [
+    "barrier practice",
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2026_M035",
+   "horse_name": "AUTUMN KING",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K458",
+   "horse_name": "SUPER GOLDENDRAGON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K902",
+   "horse_name": "DOCKLANDS",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-21"
+  },
+  {
+   "horse_id": "HK_2024_K180",
+   "horse_name": "SUPER STRONG KID",
+   "remaining": [
+    "barrier trial (around a bend, 2 consecutive)",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L409",
+   "horse_name": "GREAT LEGEND",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K122",
+   "horse_name": "EMBLAZON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L563",
+   "horse_name": "FIRE DRAGON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  }
+ ],
+ "sources_checked": [
+  "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261122",
+  "https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/11/22&Racecourse=ST&RaceNo=1..11",
+  "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=<id> (54 horses)",
+  "https://racing.hkjc.com/en-us/local/information/btresult (newest 20/11/2026)",
+  "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11",
+  "https://racing.hkjc.com/en-us/local/information/racecard"
+ ],
+ "source_gaps": [
+  "Stewards report footer says interim, to be finalised after meeting; summary section used.",
+  "HKJC horse vet pages show no 22/11 entries yet for new horses (stewards report only source).",
+  "No official finish clock time published; R11 scheduled 18:25 HKT, review at 20:50 HKT.",
+  "Fixture page text does not show venue; 25/11 HV from stewards notices of 25 Nov HV suspensions."
+ ],
+ "replay_bot_coverage": "No Replay Bot trip_notes.csv for 2026-11-22 on box at review time (raw fetch only): cross-check NOT possible.",
+ "notes": "Facts only."
+}
