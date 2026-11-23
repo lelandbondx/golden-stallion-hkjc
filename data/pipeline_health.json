@@ -1,6 +1,6 @@
 {
   "overall_status": "fail",
-  "updated_at": "2026-11-22T12:23:05Z",
+  "updated_at": "2026-11-23T14:03:53Z",
   "components": {
     "scraper": {
       "status": "fail",
@@ -65,22 +65,43 @@
       "error": null
     },
     "veterinary_records": {
-      "status": "ok",
-      "last_attempt_at": "2026-11-22T12:19:49Z",
+      "status": "warn",
+      "last_attempt_at": "2026-11-23T14:03:53Z",
       "last_success_at": "2026-11-22T12:19:49Z",
       "metrics": {
         "horses_scraped": 646,
-        "target_horses_this_run": 161,
+        "target_horses_this_run": 148,
         "horses_declared": 131,
         "declared_horses_scraped": 131,
         "declared_coverage_pct": 100.0,
-        "overecord_disagreements_count": 0,
-        "overecord_disagreements": [],
+        "overecord_disagreements_count": 4,
+        "overecord_disagreements": [
+          {
+            "horse_code": "J458",
+            "reason": "Missing from per-horse ovehorse records",
+            "overecord_date": "29/12/2025"
+          },
+          {
+            "horse_code": "K112",
+            "reason": "Missing from per-horse ovehorse records",
+            "overecord_date": "04/11/2026"
+          },
+          {
+            "horse_code": "L158",
+            "reason": "Missing from per-horse ovehorse records",
+            "overecord_date": "31/05/2026"
+          },
+          {
+            "horse_code": "K202",
+            "reason": "Missing from per-horse ovehorse records",
+            "overecord_date": "04/11/2026"
+          }
+        ],
         "latest_stats_rows_updated": 642,
-        "last_successful_commit_at": "2026-11-22T12:19:49Z",
+        "last_successful_commit_at": "2026-11-23T14:03:53Z",
         "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse"
       },
-      "error": null
+      "error": "4 disagreement(s) between ovehorse and overecord"
     },
     "horse_profiles_and_vet": {
       "status": "ok",
