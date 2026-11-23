@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-22T12:23:03Z",
+  "updated_at_utc": "2026-11-23T14:07:38Z",
   "target_meeting": "2026-11-22 Sha Tin",
   "first_filtered_meeting": "2026-11-14 Sha Tin",
   "standing_bots": {
@@ -7,8 +7,8 @@
       "duty": "Daily 06:00 HKT (speed_diff, quality opposition, poor-finish flag - recent trials only)",
       "file_used": "engineered_trial_features.json",
       "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/engineered_trial_features.json",
-      "timestamp_hkt": "2026-11-22 20:19:00 HKT",
-      "timestamp_utc": "2026-11-22T12:19:00Z",
+      "timestamp_hkt": "2026-11-23 22:04:05 HKT",
+      "timestamp_utc": "2026-11-23T14:04:05Z",
       "fields_read": [
         "best_trial_speed_diff",
         "best_trial_pos_ratio",
@@ -25,8 +25,8 @@
       "duty": "2h post-meeting (documented excuses: traffic/wide/checked/blocked + 400m sectional rank)",
       "file_used": "grok_trip_notes_resolved.json",
       "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/grok_trip_notes_resolved.json",
-      "timestamp_hkt": "2026-11-22 20:16:57 HKT",
-      "timestamp_utc": "2026-11-22T12:16:57Z",
+      "timestamp_hkt": "2026-11-23 22:01:51 HKT",
+      "timestamp_utc": "2026-11-23T14:01:51Z",
       "fields_read": [
         "date",
         "excuses",
@@ -42,8 +42,8 @@
       "duty": "2h post-meeting (official vet clearance or active requirement flag)",
       "file_used": "vet_records.json",
       "file_path": "/home/runner/work/golden-stallion-hkjc/golden-stallion-hkjc/data/vet_records.json",
-      "timestamp_hkt": "2026-11-22 20:19:49 HKT",
-      "timestamp_utc": "2026-11-22T12:19:49Z",
+      "timestamp_hkt": "2026-11-23 22:05:15 HKT",
+      "timestamp_utc": "2026-11-23T14:05:15Z",
       "fields_read": [
         "horse_code",
         "status",
