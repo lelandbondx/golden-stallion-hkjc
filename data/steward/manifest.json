@@ -2,12 +2,12 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-22T20:44:34+08:00",
-  "run_time_utc": "2026-11-22T12:44:34+00:00",
-  "source_last_run": "2026-11-22T07:50:00-05:00",
+  "run_time_hkt": "2026-11-23T20:41:57+08:00",
+  "run_time_utc": "2026-11-23T12:41:57+00:00",
+  "source_last_run": "2026-11-23T07:50:00-05:00",
   "row_counts": {
-    "records.jsonl": 224,
-    "records.csv": 224,
+    "records.jsonl": 226,
+    "records.csv": 226,
     "horses_latest.json": 96,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
@@ -41,7 +41,7 @@
     },
     {
       "meeting_id": "ST-20261114",
-      "records_in_jsonl": 21,
+      "records_in_jsonl": 23,
       "has_meeting_file": true
     },
     {
@@ -83,7 +83,7 @@
     "horses_snapshot_count": 96,
     "meeting_files": 7,
     "reviewed_meetings_in_state": 6,
-    "open_items": 48,
+    "open_items": 46,
     "records_without_meeting": 95,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -148,16 +148,17 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-22T07:50:00-05:00",
-      "horses_rechecked": 35,
-      "result": "Re-read HKJC vet pages (ovehorse) for all 37 previously open horses + new 22 Nov horses; no new Passed Dates; HKJC barrier-trial results page newest trial date 20/11/2026 (none since last check). Awesome Fluke stalls test still unpublished. Retired/other-horse pages (Monta Frutta, Turf Phoenix, Telecom Power, Circuit Century) show no vet table; unchanged."
+      "at": "2026-11-23T07:50:00-05:00",
+      "horses_rechecked": 53,
+      "result": "Re-read HKJC ovehorse for all 53 open (active_requirement/pending) horses and barrier-trial results 14-23 Nov. New: SETANTA and SPEEDY TRIDENT barrier trial Passed 23/11/2026 (Conghua) -> requirement_met, cleared. SKY JEWELLERY barrier trial 23/11 result Failed (still open, no vet Passed Date). No new vet Passed Dates otherwise. Awesome Fluke stalls test still unpublished."
     },
     "next_meeting": {
       "date": "2026-11-25",
       "venue": "HV",
-      "verified_at": "2026-11-22T07:50:00-05:00",
-      "source": "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 (25/11 listed as next date after 22/11; venue HV per stewards notice of 25 Nov HV suspensions; race card not yet published)",
-      "card_published": false
+      "verified_at": "2026-11-23T07:50:00-05:00",
+      "source": "https://racing.hkjc.com/en-us/local/information/racecard?racedate=2026/11/25&Racecourse=HV&RaceNo=1 (official HKJC race card: Wednesday 25 November 2026, Happy Valley, R1 18:40, 9 races, 14 runners each); fixture page https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 lists 25/11",
+      "card_published": true,
+      "verified": true
     },
     "upcoming_known": [
       "Awesome Fluke (J050) stalls test ST 16/11/2026: result not published on any page checked (gap)",
@@ -313,22 +314,6 @@
         "official vet exam"
       ],
       "since": "2026-11-18"
-    },
-    {
-      "horse_id": "HK_2024_K230",
-      "horse_name": "SPEEDY TRIDENT",
-      "remaining": [
-        "barrier trial"
-      ],
-      "since": "2026-11-14"
-    },
-    {
-      "horse_id": "HK_2021_G095",
-      "horse_name": "SETANTA",
-      "remaining": [
-        "barrier trial"
-      ],
-      "since": "2026-11-14"
     },
     {
       "horse_id": "HK_2024_K323",
@@ -580,9 +565,9 @@
     }
   ],
   "sha256": {
-    "records.jsonl": "3adb69f3b663c00d806e7cd9ec238bfe4a4d4559fefbf5a60ea2444bba9aea93",
-    "records.csv": "09c0153d0bbe2bc1dd58e298322d90772659a87d049189fc24c44a65c75b8328",
-    "horses_latest.json": "4fa2c8b64b79a28c1312d9dcd0965be1feb677dddb5734a01d0527414c90fab8",
+    "records.jsonl": "14c854046a7f0a94676ee8736d19fcdf23e9704e731e3c4feab65794cd9df5ec",
+    "records.csv": "39d4a348e8bd608aae265b9ed74baddbdccb83f983aaed208888bc5488677006",
+    "horses_latest.json": "fee7920f716d55dbae140e00da2b303c43aae46fc1ae1c3f013d07e1158f7d3c",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
