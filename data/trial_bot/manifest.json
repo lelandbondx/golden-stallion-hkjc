@@ -5,7 +5,7 @@
  "run_time_hkt": "2026-11-24T06:00:00+08:00",
  "retrieved_at_hkt": "2026-11-24T06:16:32+08:00",
  "retrieved_at_utc": "2026-11-23T22:16:32+00:00",
- "manifest_written_at_hkt": "2026-11-24T06:21:00+08:00",
+ "manifest_written_at_hkt": "2026-11-24T06:25:11+08:00",
  "window_hkt": [
   "2026-11-24T06:00:00+08:00",
   "2026-11-26T06:00:00+08:00"
@@ -35,7 +35,7 @@
   "meeting_json": 126,
   "trials_history": 732,
   "trials_history_seeded_this_run": 0,
-  "trials_history_new_this_run": 84
+  "trials_history_new_this_run": 0
  },
  "coverage": {
   "runners": 126,
@@ -83,10 +83,10 @@
   "csv_json_counts_match": true
  },
  "sha256": {
-  "declared_trials_latest.csv": "a4b7a7985e1470db1f902ff4eaf959f53268986fa9638ab66416c56375766681",
-  "declared_trials_latest.json": "c02764eda4611ad0c2d0ccd1156aee460289dc88598637cd99b88961c1a8b983",
-  "meeting_2026-11-25_HV.csv": "a4b7a7985e1470db1f902ff4eaf959f53268986fa9638ab66416c56375766681",
-  "meeting_2026-11-25_HV.json": "1d653129ad26f1693bf7858e265c887677d887bdb7663c02387aefdf9e78a38a",
+  "declared_trials_latest.csv": "7a67049343416c1105aa115cb8c43c0f92b5297b063af7e0c679be751f654fff",
+  "declared_trials_latest.json": "9cc2a18acc29699011837a57758aba52e586bfce8197770c88e2c1cf3a207036",
+  "meeting_2026-11-25_HV.csv": "7a67049343416c1105aa115cb8c43c0f92b5297b063af7e0c679be751f654fff",
+  "meeting_2026-11-25_HV.json": "cc7e814a9ee46d97a27f7ad95cc943425023ecb60627b1d425a13b7be3412a8b",
   "schema.md": "6ac00f3856e3407d7a880aae595d79958a25127261c366a44790506f2e1aa01f",
   "trials_history.csv": "97ccfc096f97790d7ee213917e570a06a3ff55d45a96e59deb5588a285d206f4"
  }
