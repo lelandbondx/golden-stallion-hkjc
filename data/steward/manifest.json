@@ -2,12 +2,12 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-24T20:50:40+08:00",
-  "run_time_utc": "2026-11-24T12:50:40+00:00",
+  "run_time_hkt": "2026-11-24T20:54:04+08:00",
+  "run_time_utc": "2026-11-24T12:54:04+00:00",
   "source_last_run": "2026-11-24T07:50:40-05:00",
   "row_counts": {
-    "records.jsonl": 229,
-    "records.csv": 229,
+    "records.jsonl": 230,
+    "records.csv": 230,
     "horses_latest.json": 96,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
@@ -56,7 +56,7 @@
     },
     {
       "meeting_id": null,
-      "records_in_jsonl": 95,
+      "records_in_jsonl": 96,
       "has_meeting_file": false,
       "note": "history-only vet records not tied to a reviewed meeting"
     }
@@ -84,7 +84,7 @@
     "meeting_files": 7,
     "reviewed_meetings_in_state": 6,
     "open_items": 44,
-    "records_without_meeting": 95,
+    "records_without_meeting": 96,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
     ]
@@ -548,9 +548,9 @@
     }
   ],
   "sha256": {
-    "records.jsonl": "6a5d7713c77125c7dd09c2ab3104fbbcd5611c36231bec733eb93125b9072531",
-    "records.csv": "628432c20a19043acda40ce08bae245b9df4b9afdd6734ee20ee175271a697ff",
-    "horses_latest.json": "b25adafe206592c1b25f9475e9ea7cece9a9d7d7309222631c595f2bb7366fea",
+    "records.jsonl": "2a9661b85fdace9e2f632d530a9b1878f1ae7b7b7e9ca8a0517617ea0405657d",
+    "records.csv": "c01c0125fa0945ba6ca475d3638341c1d178c127d93304ab7d98b3087783a873",
+    "horses_latest.json": "95e8c8c218609c431f95975d0971bab1d624c7292158eeae05c9b4eca16864df",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
@@ -562,15 +562,5 @@
   },
   "repo": "lelandbondx/golden-stallion-hkjc",
   "branch": "trial-data",
-  "remote_folder": "data/steward",
-  "git": {
-    "branch": "trial-data",
-    "data_commit": "f5d6f0067090d79cf5af2c4b9a472b937efc8695",
-    "data_files": [
-      "records.jsonl",
-      "records.csv",
-      "horses_latest.json"
-    ],
-    "main_touched": false
-  }
+  "remote_folder": "data/steward"
 }
