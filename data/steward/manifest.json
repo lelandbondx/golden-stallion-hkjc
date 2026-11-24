@@ -2,12 +2,12 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-23T20:41:57+08:00",
-  "run_time_utc": "2026-11-23T12:41:57+00:00",
-  "source_last_run": "2026-11-23T07:50:00-05:00",
+  "run_time_hkt": "2026-11-24T20:50:40+08:00",
+  "run_time_utc": "2026-11-24T12:50:40+00:00",
+  "source_last_run": "2026-11-24T07:50:40-05:00",
   "row_counts": {
-    "records.jsonl": 226,
-    "records.csv": 226,
+    "records.jsonl": 229,
+    "records.csv": 229,
     "horses_latest.json": 96,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
@@ -26,7 +26,7 @@
     },
     {
       "meeting_id": "HV-20261111",
-      "records_in_jsonl": 14,
+      "records_in_jsonl": 15,
       "has_meeting_file": true
     },
     {
@@ -36,12 +36,12 @@
     },
     {
       "meeting_id": "ST-20261108",
-      "records_in_jsonl": 18,
+      "records_in_jsonl": 19,
       "has_meeting_file": true
     },
     {
       "meeting_id": "ST-20261114",
-      "records_in_jsonl": 23,
+      "records_in_jsonl": 24,
       "has_meeting_file": true
     },
     {
@@ -83,7 +83,7 @@
     "horses_snapshot_count": 96,
     "meeting_files": 7,
     "reviewed_meetings_in_state": 6,
-    "open_items": 46,
+    "open_items": 44,
     "records_without_meeting": 95,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -148,15 +148,15 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-23T07:50:00-05:00",
-      "horses_rechecked": 53,
-      "result": "Re-read HKJC ovehorse for all 53 open (active_requirement/pending) horses and barrier-trial results 14-23 Nov. New: SETANTA and SPEEDY TRIDENT barrier trial Passed 23/11/2026 (Conghua) -> requirement_met, cleared. SKY JEWELLERY barrier trial 23/11 result Failed (still open, no vet Passed Date). No new vet Passed Dates otherwise. Awesome Fluke stalls test still unpublished."
+      "at": "2026-11-24T07:50:40-05:00",
+      "horses_rechecked": 49,
+      "result": "Re-read HKJC ovehorse for all open (active_requirement/pending) horses and barrier-trial results 23-24 Nov. New: QUICK MONEY barrier trial Passed 24/11/2026 (Sha Tin Batch 3) -> requirement_met, cleared. APEX GLORY barrier trial Passed 24/11/2026 (Batch 2) -> requirement_met for trial; official vet exam still open. CALL ME MAGNIFIQUE vet exam Passed Date 23/11/2026 -> requirement_met, cleared. SPEEDY PATCH trial 24/11 Batch 3 result blank (no Passed/Failed; no trial requirement on ledger). SKY JEWELLERY new vet record 23/11/2026 Failed vet exam: Substantial blood on scope after barrier trial (no Passed Date; still open, not added as ledger row). SO MY FOLKS (K456) and CIRCUIT DUFFY (J501) now shown (Retired) on HKJC with no vet table (gap). Awesome Fluke stalls test still unpublished."
     },
     "next_meeting": {
       "date": "2026-11-25",
       "venue": "HV",
-      "verified_at": "2026-11-23T07:50:00-05:00",
-      "source": "https://racing.hkjc.com/en-us/local/information/racecard?racedate=2026/11/25&Racecourse=HV&RaceNo=1 (official HKJC race card: Wednesday 25 November 2026, Happy Valley, R1 18:40, 9 races, 14 runners each); fixture page https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 lists 25/11",
+      "verified_at": "2026-11-24T07:50:40-05:00",
+      "source": "https://racing.hkjc.com/en-us/local/information/racecard?racedate=2026/11/25&Racecourse=HV&RaceNo=1 (official HKJC race card: Wednesday 25 November 2026, Happy Valley, R1 18:40, 9 races); fixture page https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 lists 25/11",
       "card_published": true,
       "verified": true
     },
@@ -226,7 +226,6 @@
       "horse_id": "HK_2025_L265",
       "horse_name": "APEX GLORY",
       "remaining": [
-        "barrier trial",
         "official vet exam"
       ],
       "since": "2026-11-08"
@@ -269,14 +268,6 @@
     {
       "horse_id": "HK_2024_K308",
       "horse_name": "CIRCUIT CENTURY",
-      "remaining": [
-        "official vet exam"
-      ],
-      "since": "2026-11-11"
-    },
-    {
-      "horse_id": "HK_2025_L339",
-      "horse_name": "CALL ME MAGNIFIQUE",
       "remaining": [
         "official vet exam"
       ],
@@ -326,14 +317,6 @@
     {
       "horse_id": "HK_2023_J375",
       "horse_name": "VIGOR ELLEEGANT",
-      "remaining": [
-        "barrier trial"
-      ],
-      "since": "2026-11-14"
-    },
-    {
-      "horse_id": "HK_2024_K377",
-      "horse_name": "QUICK MONEY",
       "remaining": [
         "barrier trial"
       ],
@@ -565,9 +548,9 @@
     }
   ],
   "sha256": {
-    "records.jsonl": "14c854046a7f0a94676ee8736d19fcdf23e9704e731e3c4feab65794cd9df5ec",
-    "records.csv": "39d4a348e8bd608aae265b9ed74baddbdccb83f983aaed208888bc5488677006",
-    "horses_latest.json": "fee7920f716d55dbae140e00da2b303c43aae46fc1ae1c3f013d07e1158f7d3c",
+    "records.jsonl": "6a5d7713c77125c7dd09c2ab3104fbbcd5611c36231bec733eb93125b9072531",
+    "records.csv": "628432c20a19043acda40ce08bae245b9df4b9afdd6734ee20ee175271a697ff",
+    "horses_latest.json": "b25adafe206592c1b25f9475e9ea7cece9a9d7d7309222631c595f2bb7366fea",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
@@ -579,5 +562,15 @@
   },
   "repo": "lelandbondx/golden-stallion-hkjc",
   "branch": "trial-data",
-  "remote_folder": "data/steward"
+  "remote_folder": "data/steward",
+  "git": {
+    "branch": "trial-data",
+    "data_commit": "f5d6f0067090d79cf5af2c4b9a472b937efc8695",
+    "data_files": [
+      "records.jsonl",
+      "records.csv",
+      "horses_latest.json"
+    ],
+    "main_touched": false
+  }
 }
