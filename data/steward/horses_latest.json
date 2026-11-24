@@ -429,13 +429,13 @@
   "horse_name": "SKY JEWELLERY",
   "status": "active_requirement",
   "latest_entry": {
-   "record_id": "c66496d06732d6bde6032f32d46b5c0eeaa1c540",
-   "record_type": "requirement",
-   "category": "administrative",
-   "event_date": "2026-11-08",
-   "meeting_id": "ST-20261108",
-   "finding_verbatim": "Before being allowed to race again, SKY JEWELLERY will be required to perform to the satisfaction of the Stewards in a barrier trial and be subjected to an official veterinary examination.",
-   "source_url": "https://racing.hkjc.com/racing/information/English/Racing/RaceReportFull.aspx?date=20261108"
+   "record_id": "9239e8d60425b1376eb78848ab4c6dfe64c1fe8b",
+   "record_type": "flag",
+   "category": "tracheal_blood",
+   "event_date": "2026-11-23",
+   "meeting_id": null,
+   "finding_verbatim": "Failed vet exam: Substantial blood on scope after barrier trial.",
+   "source_url": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K032"
   },
   "passed_on": null,
   "open_requirements": [
@@ -452,7 +452,7 @@
    }
   ],
   "history_pointer": "records.jsonl rows with horse_id=HK_2024_K032 (4 rows)",
-  "last_checked": "2026-11-24T07:49:59-05:00",
+  "last_checked": "2026-11-24T07:54:04-05:00",
   "vet_page": "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=HK_2024_K032"
  },
  "HK_2025_L016": {
