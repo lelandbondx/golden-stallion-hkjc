@@ -1,18 +1,15 @@
 {
-  "overall_status": "warn",
-  "updated_at": "2026-11-25T01:51:48Z",
+  "overall_status": "fail",
+  "updated_at": "2026-11-25T02:28:31Z",
   "components": {
     "scraper": {
-      "status": "ok",
-      "last_attempt_at": "2026-11-25T01:51:46Z",
+      "status": "fail",
+      "last_attempt_at": "2026-11-25T02:28:31Z",
       "last_success_at": "2026-11-25T01:51:46Z",
       "metrics": {
-        "source": "live_html_racecard",
-        "meeting_date": "2026-11-25",
-        "meetings_count": 2,
-        "races_count": 9
+        "source": "error"
       },
-      "error": null
+      "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."
     },
     "incident_memory": {
       "status": "ok",

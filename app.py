@@ -814,7 +814,24 @@ def get_hkjc_profile_url(runner):
         return f"https://racing.hkjc.com/racing/information/English/Horse/SelectHorse.aspx?HorseName={urllib.parse.quote(name)}"
     return "https://racing.hkjc.com/racing/information/English/Horse/SelectHorse.aspx"
 
-def format_horse_link(runner, prefix="", show_arrow=True):
+def get_silks_img_html(runner, size=24):
+    """Returns an inline HTML img tag for the official HKJC jockey silks with error hiding."""
+    if not isinstance(runner, dict) and not hasattr(runner, 'get'):
+        return ""
+    code = str(runner.get('code') or runner.get('horse_code') or '').strip().upper()
+    if not code:
+        return ""
+    if '_' in code:
+        code = code.split('_')[-1]
+    url = f"https://racing.hkjc.com/racing/content/Images/RaceColor/{code}.gif"
+    return (
+        f'<img src="{url}" alt="" class="jockey-silks-icon" '
+        f'style="width:{size}px; height:{size}px; vertical-align:middle; border-radius:3px; '
+        f'margin-right:6px; display:inline-block; box-shadow:0 1px 4px rgba(0,0,0,0.4);" '
+        f'onerror="this.style.display=\'none\';" />'
+    )
+
+def format_horse_link(runner, prefix="", show_arrow=True, show_silks=False, silks_size=24):
     url = get_hkjc_profile_url(runner)
     name = runner.get('name', 'Unknown') if hasattr(runner, 'get') else str(runner)
     no_val = runner.get('no', '') if hasattr(runner, 'get') else ''
@@ -825,7 +842,8 @@ def format_horse_link(runner, prefix="", show_arrow=True):
     else:
         prefix_str = prefix
     arrow_html = '<span class="hkjc-link-arrow">↗</span>' if show_arrow else ''
-    return f'<a href="{url}" target="_blank" rel="noopener noreferrer" class="horse-profile-link" title="View Official HKJC Horse Profile">{prefix_str}{name}{arrow_html}</a>'
+    silks_html = get_silks_img_html(runner, size=silks_size) if show_silks else ''
+    return f'{silks_html}<a href="{url}" target="_blank" rel="noopener noreferrer" class="horse-profile-link" title="View Official HKJC Horse Profile">{prefix_str}{name}{arrow_html}</a>'
 
 def format_post_time_hkt_est(iso_str):
     """
@@ -2076,12 +2094,12 @@ with tab1:
                 "race_no": r.get("race_no"),
                 "p1_no": p1_sel['no'],
                 "p1_name": p1_sel['name'],
-                "p1_link": format_horse_link(p1_sel, prefix="#"),
+                "p1_link": format_horse_link(p1_sel, prefix="#", show_silks=True, silks_size=22),
                 "p1_odds": safe_num(p1_sel.get('win_odds'), 20.0),
                 "p1_status": p1_sel.get('primary_reason', ''),
                 "p5_no": p5_sel['no'],
                 "p5_name": p5_sel['name'],
-                "p5_link": format_horse_link(p5_sel, prefix="#"),
+                "p5_link": format_horse_link(p5_sel, prefix="#", show_silks=True, silks_size=22),
                 "p5_odds": safe_num(p5_sel.get('win_odds'), 20.0),
                 "p5_ev": safe_num(p5_sel.get('value_diff'), 0.0)
             })
@@ -2094,7 +2112,7 @@ with tab1:
                 <div class="tech-panel pick-card-1" style="background: linear-gradient(145deg, rgba(42, 6, 13, 0.96), rgba(24, 3, 7, 0.98)); min-height: 160px; {check_highlight(top_pick_today, search_term)}">
                     {get_match_badge(top_pick_today, search_term)}
                     <div class="data-label" style="color:#38bdf8; font-size:0.90rem; font-weight:800;">🏆 HIGHEST EXPECTED VALUE (EV) SELECTION</div>
-                    <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_pick_today['race_no']} – {format_horse_link(top_pick_today, '#')}</div>
+                    <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_pick_today['race_no']} – {format_horse_link(top_pick_today, '#', show_silks=True, silks_size=28)}</div>
                     <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{safe_fmt(top_pick_today.get('win_odds'))}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{safe_fmt(top_pick_today.get('confidence'), 50, 0)}%</b></div>
                 </div>
                 '''), unsafe_allow_html=True)
@@ -2105,11 +2123,11 @@ with tab1:
                     <div class="tech-panel pick-card-1" style="background: linear-gradient(145deg, rgba(42, 6, 13, 0.96), rgba(24, 3, 7, 0.98)); min-height: 160px; {check_highlight(top_gs_pick, search_term)}">
                         {get_match_badge(top_gs_pick, search_term)}
                         <div class="data-label" style="color:#38bdf8; font-size:0.90rem; font-weight:800;">💎 AI STRONGEST CONFIDENCE (BEST BET)</div>
-                        <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_gs_pick['race_no']} – {format_horse_link(top_gs_pick, '#')}</div>
+                        <div class="data-value" style="font-size:1.8rem; font-family:'Montserrat'; font-weight:800; margin-top: 5px; color:#ffffff;">Race {top_gs_pick['race_no']} – {format_horse_link(top_gs_pick, '#', show_silks=True, silks_size=28)}</div>
                         <div class="data-value" style="font-size:1.0rem; color:#cbd5e1; margin-top: 5px;">Live Odds: <b style="color:#38bdf8;">{safe_fmt(top_gs_pick.get('win_odds'))}</b> &nbsp;|&nbsp; AI Confidence: <b style="color:#38bdf8;">{safe_fmt(top_gs_pick.get('confidence'), 50, 0)}%</b></div>
                     </div>
                     '''), unsafe_allow_html=True)
-            parlay_str = " + ".join([f"R{bb.get('race_no')} " + format_horse_link(bb, "#") for bb in parlay_sorted[:3]])
+            parlay_str = " + ".join([f"R{bb.get('race_no')} " + format_horse_link(bb, "#", show_silks=True, silks_size=20) for bb in parlay_sorted[:3]])
             st.markdown(f"<div style='margin-top:12px; font-family:\"Inter\"; font-size:1.15rem; color:#f1f5f9;'><b>Optimized Multi-Leg Sequence (Excl. Class 5):</b> <span style='color:#38bdf8; font-weight:800;'>{parlay_str}</span></div>", unsafe_allow_html=True)
             if len(parlay_sorted) >= 2:
                 b1 = parlay_sorted[0]
@@ -2125,7 +2143,7 @@ with tab1:
                     p2_gs = safe_num(runner.get('p2_gs'), 0.0)
                     p1_gs = safe_num(runner.get('gs_score'), 0.0)
                     combined_gs = p1_gs + p2_gs
-                    r_link = format_horse_link(runner, "#")
+                    r_link = format_horse_link(runner, "#", show_silks=True, silks_size=20)
 
                     if win_active and ev >= 0.035:
                         return {
@@ -2136,7 +2154,7 @@ with tab1:
                             "rationale": f"High Expected Value (+{safe_fmt(ev, 0.0, 3)} EV) & dominant win conversion"
                         }
                     elif p2_no and combined_gs >= 36.0:
-                        p2_link = format_horse_link({'no': p2_no, 'name': p2_name}, "#")
+                        p2_link = format_horse_link({'no': p2_no, 'name': p2_name, 'code': runner.get('p2_code')}, "#", show_silks=True, silks_size=20)
                         return {
                             "pool": "QUINELLA (連贏 Q)",
                             "badge_bg": "#b45309",
@@ -2637,7 +2655,7 @@ with tab1:
                 <div class="tech-panel pick-card-1" style="{check_highlight(best, search_term)}">
                     {get_match_badge(best, search_term)}
                     <div class="data-label" style="color:#38bdf8; font-size:0.85rem; font-weight:800;">🏆 PICK 1 — WINNING HORSE</div>
-                    <div class="data-value" style="font-size:1.35rem; color:#ffffff; font-weight:800;">{format_horse_link(best, '.')}</div>
+                    <div class="data-value" style="font-size:1.35rem; color:#ffffff; font-weight:800;">{format_horse_link(best, '.', show_silks=True, silks_size=24)}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{best.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{best.get('trainer', 'Unknown')}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(best.get('win_odds'))}</span>{get_shift_badge(best)}
@@ -2651,7 +2669,7 @@ with tab1:
                 <div class="tech-panel pick-card-2" style="{check_highlight(second, search_term)}">
                     {get_match_badge(second, search_term)}
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">🎯 PICK 2 — EXACTA/QUINELLA</div>
-                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(second, '.')}</div>
+                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(second, '.', show_silks=True, silks_size=24)}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{second.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{second.get('trainer', 'Unknown')}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(second.get('win_odds'))}</span>{get_shift_badge(second)}
@@ -2665,7 +2683,7 @@ with tab1:
                 <div class="tech-panel pick-card-3" style="{check_highlight(third, search_term)}">
                     {get_match_badge(third, search_term)}
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">💠 PICK 3 — TRIO PODIUM</div>
-                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(third, '.')}</div>
+                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(third, '.', show_silks=True, silks_size=24)}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{third.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{third.get('trainer', 'Unknown')}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(third.get('win_odds'))}</span>{get_shift_badge(third)}
@@ -2679,7 +2697,7 @@ with tab1:
                 <div class="tech-panel pick-card-4" style="{check_highlight(fourth, search_term)}">
                     {get_match_badge(fourth, search_term)}
                     <div class="data-label" style="font-size:0.85rem; color:#cbd5e1; font-weight:800;">📊 PICK 4 — 4TH TRIO BOX</div>
-                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(fourth, '.')}</div>
+                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(fourth, '.', show_silks=True, silks_size=24)}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{fourth.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{fourth.get('trainer', 'Unknown')}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(fourth.get('win_odds'))}</span>{get_shift_badge(fourth)}
@@ -2693,7 +2711,7 @@ with tab1:
                 <div class="tech-panel pick-card-5" style="{check_highlight(fifth, search_term)}">
                     {get_match_badge(fifth, search_term)}
                     <div class="data-label" style="font-size:0.85rem; color:#38bdf8; font-weight:800;">💣 PICK 5 — DUAL-STAKE SLEEPER</div>
-                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(fifth, '.')}</div>
+                    <div class="data-value" style="font-size:1.25rem; color:#ffffff; font-weight:800;">{format_horse_link(fifth, '.', show_silks=True, silks_size=24)}</div>
                     <div class="data-value" style="font-size:0.92rem; color:#cbd5e1; margin-top:8px;">
                         J: <span style="color:#ffffff; font-weight:800;">{fifth.get('jockey', 'Unknown')}</span> | T: <span style="color:#ffffff; font-weight:800;">{fifth.get('trainer', 'Unknown')}</span>
                         <br><span style="color:#94a3b8;">Odds:</span> <span style="color:#38bdf8; font-weight:800;">{safe_fmt(fifth.get('win_odds'))}</span>{get_shift_badge(fifth)}
