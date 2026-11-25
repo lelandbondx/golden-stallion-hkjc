@@ -97,8 +97,6 @@ def generate():
                 outcome_str = " 🥉 *[3rd]*"
             elif pos < 99:
                 outcome_str = f" *(Finished {pos})*"
-            else:
-                outcome_str = " *(Finished NP)*"
                 
             prefix = emojis.get(idx + 1, "🔹")
             report += f"{prefix}: #{no} {name} (Odds: {odds:.1f}) - Conf: {conf}% - Jockey: {jockey}{outcome_str}\n"

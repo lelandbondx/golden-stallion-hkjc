@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-25T01:37:20Z",
+  "updated_at_utc": "2026-11-25T01:51:46Z",
   "target_meeting": "2026-11-25 Happy Valley",
   "first_filtered_meeting": "2026-11-14 Sha Tin",
   "standing_bots": {
@@ -42,8 +42,8 @@
       "duty": "2h post-meeting (official vet clearance or active requirement flag)",
       "file_used": "vet_records.json",
       "file_path": "C:\\Users\\lelan\\Desktop\\golden-stallion-hkjc\\data\\vet_records.json",
-      "timestamp_hkt": "2026-11-25 09:36:32 HKT",
-      "timestamp_utc": "2026-11-25T01:36:32Z",
+      "timestamp_hkt": "2026-11-25 09:41:14 HKT",
+      "timestamp_utc": "2026-11-25T01:41:14Z",
       "fields_read": [
         "horse_code",
         "status",
