@@ -2,17 +2,18 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-24T20:54:04+08:00",
-  "run_time_utc": "2026-11-24T12:54:04+00:00",
-  "source_last_run": "2026-11-24T07:50:40-05:00",
+  "run_time_hkt": "2026-11-26T01:45:41+08:00",
+  "run_time_utc": "2026-11-25T17:45:41+00:00",
+  "source_last_run": "2026-11-25T12:44:57-05:00",
   "row_counts": {
-    "records.jsonl": 230,
-    "records.csv": 230,
-    "horses_latest.json": 96,
+    "records.jsonl": 254,
+    "records.csv": 254,
+    "horses_latest.json": 110,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
     "meetings/HV-20261111.json": 1,
     "meetings/HV-20261118.json": 1,
+    "meetings/HV-20261125.json": 1,
     "meetings/ST-20261108.json": 1,
     "meetings/ST-20261114-precheck.json": 1,
     "meetings/ST-20261114.json": 1,
@@ -35,8 +36,13 @@
       "has_meeting_file": true
     },
     {
+      "meeting_id": "HV-20261125",
+      "records_in_jsonl": 23,
+      "has_meeting_file": true
+    },
+    {
       "meeting_id": "ST-20261108",
-      "records_in_jsonl": 19,
+      "records_in_jsonl": 20,
       "has_meeting_file": true
     },
     {
@@ -67,7 +73,8 @@
     "HV-20261111",
     "ST-20261114",
     "HV-20261118",
-    "ST-20261122"
+    "ST-20261122",
+    "HV-20261125"
   ],
   "meeting_status": {
     "HV-20261104": "FLAGGED",
@@ -75,15 +82,16 @@
     "HV-20261111": "FLAGGED",
     "ST-20261114": "FLAGGED",
     "HV-20261118": "FLAGGED",
-    "ST-20261122": "FLAGGED"
+    "ST-20261122": "FLAGGED",
+    "HV-20261125": "FLAGGED"
   },
   "completeness": {
     "records_jsonl_csv_match": true,
     "records_validated": true,
-    "horses_snapshot_count": 96,
-    "meeting_files": 7,
-    "reviewed_meetings_in_state": 6,
-    "open_items": 44,
+    "horses_snapshot_count": 110,
+    "meeting_files": 8,
+    "reviewed_meetings_in_state": 7,
+    "open_items": 50,
     "records_without_meeting": 96,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -120,6 +128,17 @@
         ]
       },
       {
+        "meeting_id": "HV-20261125",
+        "source_gaps": [
+          "Stewards report is labelled interim; summary section used.",
+          "HKJC horse vet pages show no 25/11/2026 entries for any of the 7 newly flagged horses at retrieval (stewards report only source); SUNDAY'S SERENADE has no 24/11 vet entry either.",
+          "No official finish clock time used; R9 result published.",
+          "Per-race veterinaryrecord page not parsed beyond horse pages.",
+          "Z Purton suspensions not yet on meeting reminder page at retrieval.",
+          "Meeting reminder lists C L Chau 16/12-20/12 resuming 21/12 (not in state before; origin not identified; not written as a record)."
+        ]
+      },
+      {
         "meeting_id": "ST-20261108",
         "source_gaps": [
           "Per-race vet records and late-change/scratching pages for this past meeting are not archived on HKJC (veterinaryrecord/overecord pages show only the upcoming Sha Tin 2026-11-14 card); stewards' report summary used for withdrawals.",
@@ -148,21 +167,21 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-24T07:50:40-05:00",
-      "horses_rechecked": 49,
-      "result": "Re-read HKJC ovehorse for all open (active_requirement/pending) horses and barrier-trial results 23-24 Nov. New: QUICK MONEY barrier trial Passed 24/11/2026 (Sha Tin Batch 3) -> requirement_met, cleared. APEX GLORY barrier trial Passed 24/11/2026 (Batch 2) -> requirement_met for trial; official vet exam still open. CALL ME MAGNIFIQUE vet exam Passed Date 23/11/2026 -> requirement_met, cleared. SPEEDY PATCH trial 24/11 Batch 3 result blank (no Passed/Failed; no trial requirement on ledger). SKY JEWELLERY new vet record 23/11/2026 Failed vet exam: Substantial blood on scope after barrier trial (no Passed Date; still open, not added as ledger row). SO MY FOLKS (K456) and CIRCUIT DUFFY (J501) now shown (Retired) on HKJC with no vet table (gap). Awesome Fluke stalls test still unpublished."
+      "at": "2026-11-25T12:44:57-05:00",
+      "horses_rechecked": 44,
+      "result": "Re-read HKJC ovehorse for all 44 open horses plus 109 HV 25 Nov runners. APEX GLORY vet exam Passed 24/11/2026 (cleared). No other new Passed Dates; btresult 25/11 No information. Awesome Fluke stalls test still unpublished. No 25/11 vet entries on HKJC pages for new flags."
     },
     "next_meeting": {
-      "date": "2026-11-25",
-      "venue": "HV",
-      "verified_at": "2026-11-24T07:50:40-05:00",
-      "source": "https://racing.hkjc.com/en-us/local/information/racecard?racedate=2026/11/25&Racecourse=HV&RaceNo=1 (official HKJC race card: Wednesday 25 November 2026, Happy Valley, R1 18:40, 9 races); fixture page https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 lists 25/11",
-      "card_published": true,
+      "date": "2026-11-29",
+      "venue": "ST",
+      "verified_at": "2026-11-25T12:44:57-05:00",
+      "source": "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 (29 Nov: ST, day, 11 races) and meetingreminder \"Next Meeting 29/11/2026(Sun)\"",
+      "card_published": false,
       "verified": true
     },
     "upcoming_known": [
       "Awesome Fluke (J050) stalls test ST 16/11/2026: result not published on any page checked (gap)",
-      "K Teetan suspended 25/11-29/11, resumes 30/11 (HV 25 Nov); M Chadwick suspended 25/11; P N Wong deferred 22/11-25/11 resume 26/11 (origin not identified); C L Chau 29/11-02/12 resume 03/12; C L Chau 23/12-29/12 resume 30/12 (new, ST 22 Nov careless riding, $90,000 fine)"
+      "Suspended per reminder 25/11: K Teetan (resumes 30/11), M Chadwick, P N Wong; C L Chau 29/11-02/12 (resume 03/12), 16/12-20/12 (resume 21/12, origin not identified), 23/12-29/12 (resume 30/12); Z Purton 16/12 (1 day) and 23/12-27/12 (resume 27/12) from HV 25 Nov careless riding"
     ],
     "publication_retries": 0,
     "notes": [
@@ -217,14 +236,6 @@
     {
       "horse_id": "HK_2025_L305",
       "horse_name": "KANSAS",
-      "remaining": [
-        "official vet exam"
-      ],
-      "since": "2026-11-08"
-    },
-    {
-      "horse_id": "HK_2025_L265",
-      "horse_name": "APEX GLORY",
       "remaining": [
         "official vet exam"
       ],
@@ -545,16 +556,77 @@
         "official vet exam"
       ],
       "since": "2026-11-22"
+    },
+    {
+      "horse_id": "HK_2025_L074",
+      "horse_name": "STARRY SHOW",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-25"
+    },
+    {
+      "horse_id": "HK_2024_K517",
+      "horse_name": "ORIGIN OF FORM",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-25"
+    },
+    {
+      "horse_id": "HK_2025_L221",
+      "horse_name": "QUANTUM CLOUD",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-25"
+    },
+    {
+      "horse_id": "HK_2023_J231",
+      "horse_name": "SUNDAY'S SERENADE",
+      "remaining": [
+        "barrier trial",
+        "official vet exam"
+      ],
+      "since": "2026-11-24"
+    },
+    {
+      "horse_id": "HK_2024_K252",
+      "horse_name": "ENTHRALLED",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-25"
+    },
+    {
+      "horse_id": "HK_2024_K397",
+      "horse_name": "KING OF SELECTION",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-25"
+    },
+    {
+      "horse_id": "HK_2024_K228",
+      "horse_name": "FLYING TING LOK",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-25"
     }
   ],
   "sha256": {
-    "records.jsonl": "2a9661b85fdace9e2f632d530a9b1878f1ae7b7b7e9ca8a0517617ea0405657d",
-    "records.csv": "c01c0125fa0945ba6ca475d3638341c1d178c127d93304ab7d98b3087783a873",
-    "horses_latest.json": "95e8c8c218609c431f95975d0971bab1d624c7292158eeae05c9b4eca16864df",
+    "records.jsonl": "25b9ca88f6859f9365c3358b3adf3ede1a116a9c38bbc37c59a247fd58f9d981",
+    "records.csv": "247f687aaa133192ea3feaa346aabfcc62b5451485f9b6cc1c05d1435959011c",
+    "horses_latest.json": "490dab592f056d78d713e7e9c908ef7125ccfb9e39775dc77d4e35b70fe79e25",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
     "meetings/HV-20261118.json": "6354e1141518f1dffb5da316d26cff9cb8a6830380dd792108418fbd7734db50",
+    "meetings/HV-20261125.json": "8765efe9b11aa00c9f0ad6184f5f89ccc191cc0e9e53cb2379cfb562785ef85c",
     "meetings/ST-20261108.json": "b722dfa48633d18beec7474af859a7e30792ce493588fe9404a1b87e5c634886",
     "meetings/ST-20261114-precheck.json": "bcafee74a8242a858ba50f0cfdca4c75e08f6dfd9f463962072d89810d18b006",
     "meetings/ST-20261114.json": "03e8e097d89e42742754e36416b8ddcb2cb75c20c362ffd470bff535723b221b",
