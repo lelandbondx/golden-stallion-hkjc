@@ -2496,6 +2496,31 @@ with tab1:
                             'text': f"<b>{r_item_link}</b>: Acceptable mid draw (Gate {safe_int(r_item.get('draw'), 5)}) on Course A; monitor for moderate-hot tempo favoring closers with strong 400m sectionals."
                         })
 
+                # 8. Grok Bot Verified EV Signal (Canonical Factual Flags)
+                if r_name in trial_features and trial_features[r_name].get('bot_ev_flags'):
+                    for ev_flag in trial_features[r_name]['bot_ev_flags']:
+                        f_dir = ev_flag.get('direction', 'neutral')
+                        f_type = str(ev_flag.get('flag_type', 'trip_excuse')).replace('_', ' ')
+                        f_prio = ev_flag.get('priority', 'normal')
+                        f_dt = ev_flag.get('meeting_date', 'prior run')
+                        if f_dir == 'upgrade_candidate':
+                            prio_badge = "🔥 HIGH PRIORITY " if f_prio == 'high' else ""
+                            tactical_radar_items.append({
+                                'type': f'🤖 {prio_badge}GROK BOT EV UPGRADE ({f_type.upper()})',
+                                'color': '#10b981',
+                                'bg': 'rgba(16, 185, 129, 0.10)',
+                                'border': 'rgba(16, 185, 129, 0.4)',
+                                'text': f"<b>{r_item_link}</b>: Verified factual excuse on {f_dt} identified by Grok Bot as positive EV upgrade candidate."
+                            })
+                        elif f_dir == 'caution':
+                            tactical_radar_items.append({
+                                'type': f'⚠️ GROK BOT CAUTION ({f_type.upper()})',
+                                'color': '#ef4444',
+                                'bg': 'rgba(239, 68, 68, 0.10)',
+                                'border': 'rgba(239, 68, 68, 0.4)',
+                                'text': f"<b>{r_item_link}</b>: Factual integrity/medical notice on {f_dt} flagged by Grok Bot for caution."
+                            })
+
             if tactical_radar_items:
                 with st.expander("⚡ TACTICAL EDGE & OUTLIER RADAR (STEWARDS & VET MONITOR)", expanded=False):
                     radar_html = '<div style="display:flex; flex-direction:column; gap:8px;">'

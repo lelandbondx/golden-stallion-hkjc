@@ -455,8 +455,12 @@ def _default_http_transport(ref: str, timeout_s: float) -> Callable[[str, str], 
         try:
             with urllib.request.urlopen(req, timeout=timeout_s) as resp:
                 return resp.read()
-        except urllib.error.HTTPError as err:
-            if err.code in (403, 404) and token:
+        except (urllib.error.HTTPError, urllib.error.URLError, ConnectionError, OSError) as primary_err:
+            if isinstance(primary_err, urllib.error.HTTPError) and primary_err.code == 404:
+                raise FileNotFoundError(f"{folder}/{rel_clean} not found (HTTP 404)") from primary_err
+
+            # Fallback 1: GitHub API with raw accept header
+            try:
                 api_url = (
                     f"https://api.github.com/repos/{REPO_SLUG}/contents/"
                     f"data/{folder}/{rel_clean}?ref={ref}"
@@ -464,14 +468,30 @@ def _default_http_transport(ref: str, timeout_s: float) -> Callable[[str, str], 
                 api_headers = {
                     "User-Agent": "SilksAI-BotFeeds/1.0",
                     "Accept": "application/vnd.github.raw",
-                    "Authorization": f"Bearer {token}",
                 }
+                if token:
+                    api_headers["Authorization"] = f"Bearer {token}"
                 api_req = urllib.request.Request(api_url, headers=api_headers)
                 with urllib.request.urlopen(api_req, timeout=timeout_s) as api_resp:
                     return api_resp.read()
-            if err.code == 404:
-                raise FileNotFoundError(f"{folder}/{rel_clean} not found (HTTP 404)") from err
-            raise
+            except Exception as api_err:
+                logger.debug(f"GitHub API fallback failed for {folder}/{rel_clean}: {api_err}")
+
+            # Fallback 2: Local git cache / ref if repository clone is available
+            try:
+                import subprocess
+                for target_ref in (f"origin/{ref}", ref):
+                    proc = subprocess.run(
+                        ["git", "show", f"{target_ref}:data/{folder}/{rel_clean}"],
+                        capture_output=True,
+                        timeout=5.0,
+                    )
+                    if proc.returncode == 0 and proc.stdout:
+                        return proc.stdout
+            except Exception as git_err:
+                logger.debug(f"Git fallback failed for {folder}/{rel_clean}: {git_err}")
+
+            raise primary_err
 
     return _fetch
 
@@ -1372,7 +1392,7 @@ def load_bot_feeds(
         is_standby = (st_raw == "standby") or (rn.get("horse_no") in ("", None) and rn.get("standby_order") not in ("", None))
         is_withdrawn = st_raw in ("withdrawn", "scratched")
 
-        c_name = normalize_horse_name(rn.get("clean_name") or rn.get("name"))
+        c_name = normalize_horse_name(rn.get("clean_name") or rn.get("name") or rn.get("horse_name"))
         if not c_name:
             continue
         h_code = normalize_horse_code(rn.get("code") or rn.get("horse_code"))

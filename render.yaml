@@ -15,3 +15,9 @@ services:
         value: "false"
       - key: SILKS_BOT_FEEDS
         value: "live"
+      - key: SILKS_BOT_LIVE_TRIALS
+        value: "1"
+      - key: SILKS_BOT_LIVE_STEWARD
+        value: "1"
+      - key: SILKS_BOT_LIVE_REPLAY
+        value: "1"
