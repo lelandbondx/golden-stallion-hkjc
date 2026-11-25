@@ -90,3 +90,16 @@
 {"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T03:43:19Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 9}, "error": null}
 {"component": "run_predictions", "status": "ok", "timestamp": "2026-11-25T03:43:19Z", "metrics": {"meeting_date": "2026-11-25", "venue": "Happy Valley", "races_predicted": 9}, "error": null}
 {"component": "scraper", "status": "fail", "timestamp": "2026-11-25T03:43:32Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-25T05:43:15Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-25", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-25T05:45:40Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-25", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:41Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 1}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:41Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 2}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:41Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 3}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:41Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 4}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:41Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 5}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:41Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 6}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:42Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 7}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:42Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 8}, "error": null}
+{"component": "frozen_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:42Z", "metrics": {"file": "frozen_predictions_20261125.json", "races_cached": 9}, "error": null}
+{"component": "run_predictions", "status": "ok", "timestamp": "2026-11-25T05:45:42Z", "metrics": {"meeting_date": "2026-11-25", "venue": "Happy Valley", "races_predicted": 9}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-25T05:45:58Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}

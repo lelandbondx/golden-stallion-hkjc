@@ -740,6 +740,29 @@ try:
         trial_features = merge_bot_features(
             trial_features, meeting, all_meeting_runners, prefetched_bot_features=bot_feats_prefetched
         )
+        if os.path.exists("data/grok_trip_notes_resolved.json"):
+            with open("data/grok_trip_notes_resolved.json", "r", encoding="utf-8") as _gf:
+                _grok_resolved = json.load(_gf)
+            for _grow in (_grok_resolved if isinstance(_grok_resolved, list) else []):
+                _gh = str(_grow.get("horse") or "").strip().upper()
+                _gflags = [f.strip().lower() for f in str(_grow.get("flags") or "").split(";") if f.strip()]
+                _gdt = str(_grow.get("date") or "").strip()
+                if not _gh or not _gflags or not _gdt:
+                    continue
+                _gdest = trial_features.setdefault(_gh, {})
+                _gev_list = list(_gdest.get("bot_ev_flags") or [])
+                if any(e.get("meeting_date") == _gdt for e in _gev_list):
+                    continue
+                if "vet_blocked" in _gflags:
+                    _gev_list.append({"flag_type": "vet_blocked", "direction": "caution", "priority": "normal", "clearance_required": False, "verified": True, "meeting_date": _gdt})
+                elif any(f in ("blocked", "checked", "wide_no_cover", "more_in_hand") for f in _gflags):
+                    _gfin = safe_int(_grow.get("finish"), 99)
+                    _glbw = safe_num(_grow.get("lbw"), 99.0)
+                    _gprio = "high" if (_gfin <= 3 or _glbw <= 1.5) else "normal"
+                    _gft = "+".join([f for f in _gflags if f in ("blocked", "checked", "wide_no_cover", "more_in_hand")])
+                    _gev_list.append({"flag_type": _gft, "direction": "upgrade_candidate", "priority": _gprio, "clearance_required": False, "verified": True, "meeting_date": _gdt})
+                if _gev_list:
+                    _gdest["bot_ev_flags"] = _gev_list
 except Exception as _bot_err:
     print("Warning in bot_feeds fetch/merge:", _bot_err)
 
