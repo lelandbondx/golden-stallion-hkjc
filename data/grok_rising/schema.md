@@ -11,7 +11,7 @@ This feed contains facts only. It does not include probabilities, rankings, or s
 | `<YYYY-MM-DD>_<HV\|ST>.csv` / `.json` | One row per horse flag for that meeting |
 | `<YYYY-MM-DD>_<HV\|ST>.md` | Human-readable team-review summary for that meeting (copied from the source summary) |
 | `schema.md` | Column descriptions, row key, allowed values, and column policy |
-| `manifest.json` | Written last, in its own commit: run timestamps (HKT and UTC), files, row counts, completeness, source paths, and checksums. If the manifest is older than the data files, treat the feed as incomplete. |
+| `manifest.json` | Written last, in its own commit: run timestamps (HKT and UTC), files, row counts, completeness, source paths, checksums (`sha256`) and byte sizes (`size_bytes`, added 2026-11-25). If the manifest is older than the data files, treat the feed as incomplete. |
 
 JSON meeting files have the shape `{"rows":[...]}`. Missing numeric `race_no` is `null` in JSON and an empty cell in CSV. Missing or inapplicable strings are empty (`""` / empty CSV cell). Booleans are JSON `true` / `false` and CSV `true` / `false`. Unknown values are left empty; placeholders are never invented.
 
