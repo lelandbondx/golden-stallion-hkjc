@@ -29,3 +29,5 @@
 {"component": "bot_feed_coverage", "status": "ok", "timestamp": "2026-11-25T01:40:19Z", "metrics": {"meeting_date": "2026-11-14", "venue": "ST", "matched": 153, "declared": 153, "coverage_ratio": 1.0}, "error": null}
 {"component": "bot_feed_coverage", "status": "ok", "timestamp": "2026-11-25T01:40:19Z", "metrics": {"meeting_date": "2026-11-14", "venue": "ST", "matched": 153, "declared": 153, "coverage_ratio": 1.0}, "error": null}
 {"component": "scraper", "status": "fail", "timestamp": "2026-11-25T01:40:35Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
+{"component": "scraper", "status": "ok", "timestamp": "2026-11-25T01:47:37Z", "metrics": {"source": "live_html_racecard", "meeting_date": "2026-11-25", "meetings_count": 2, "races_count": 9}, "error": null}
+{"component": "scraper", "status": "fail", "timestamp": "2026-11-25T01:49:07Z", "metrics": {"source": "error"}, "error": "Live HKJC GraphQL unavailable (RuntimeError: Connection timeout) and no valid cached meeting available."}
