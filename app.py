@@ -1107,7 +1107,7 @@ with tab1:
                                     rem_df = rem_elig
                             if not rem_df.empty:
                                 true_p5_fb = df_runners[rem_mask].sort_values(by='gs_score', ascending=False).iloc[0]
-                                rem_droppers = rem_df[rem_df['is_exotic_class_dropper'].astype(bool)] if 'is_exotic_class_dropper' in rem_df.columns else pd.DataFrame()
+                                rem_droppers = rem_df[rem_df['is_exotic_class_dropper'].astype(bool) & (pd.to_numeric(rem_df.get('gs_score', 0), errors='coerce').fillna(0) >= 5.0)] if 'is_exotic_class_dropper' in rem_df.columns else pd.DataFrame()
                                 rem_p5_quals = rem_df[rem_df['pick5_qualifier_reason'].fillna('').astype(str).str.len() > 0] if 'pick5_qualifier_reason' in rem_df.columns else pd.DataFrame()
                                 if not rem_droppers.empty:
                                     chosen_p5 = rem_droppers.sort_values(by='gs_score', ascending=False).iloc[0]
@@ -1131,8 +1131,16 @@ with tab1:
                                 p1_o = safe_num(df_runners.loc[p1_idx, 'win_odds'])
                                 p1_p = safe_num(df_runners.loc[p1_idx, 'model_prob'])
                                 p1_h = bool(df_runners.loc[p1_idx, 'has_health_risk']) if 'has_health_risk' in df_runners.columns else False
+                                p1_row_f = df_runners.loc[p1_idx]
+                                p1_is_cd_dom_f = (
+                                    (safe_num(p1_row_f.get('HV_win_rate', 0)) >= 0.20)
+                                    and (safe_num(p1_row_f.get('distance_win_rate', 0)) >= 0.20)
+                                    and (safe_num(p1_row_f.get('recent_win_rate', 0)) >= 0.50)
+                                    and (safe_num(p1_row_f.get('best_last_sec', 99.0), 99.0) < 22.5)
+                                    and bool(p1_row_f.get('had_excuse', False))
+                                )
                                 p1_live = (p1_o > 0) and (p1_o < 20.0)
-                                p1_pass = p1_live and (p1_o <= 13.0) and (not p1_h) and (p1_p * p1_o > 1.0)
+                                p1_pass = p1_live and (p1_o <= 13.0) and (not p1_h) and ((p1_p * p1_o > 1.0) or (p1_is_cd_dom_f and p1_o >= 2.2))
                                 
                                 df_runners['win_stake_active'] = 0
                                 df_runners.loc[df_runners['card_rank'] != 1, 'primary_reason'] = ""
@@ -1540,6 +1548,15 @@ with tab1:
         if is_hv and not is_awt_race:
             frontrunner_pace_penalty = np.where(is_iron_horse_dropper, 0.0, frontrunner_pace_penalty)
             standout_boost += np.where(is_iron_horse_dropper, np.where(draws <= 8, 0.10, 0.04), 0.0)
+            is_cd_sec_dominator = (
+                (pd.to_numeric(df_runners.get('HV_win_rate', 0), errors='coerce').fillna(0) >= 0.20)
+                & (pd.to_numeric(df_runners.get('distance_win_rate', 0), errors='coerce').fillna(0) >= 0.20)
+                & (recent_win >= 0.50)
+                & (df_runners['best_last_sec'] < 22.5)
+                & df_runners['had_excuse'].astype(bool)
+            )
+            hv_c_course_penalty = np.where(is_cd_sec_dominator, 0.0, hv_c_course_penalty)
+            standout_boost += np.where(is_cd_sec_dominator, 0.04, 0.0)
 
         # Caspar Fownes Happy Valley Specialist Boost (+0.03 on home track)
         # ZERO on wide topweight (Gates 9-12 & >= 132 lbs), and ZERO if jockey_trainer_boost already fired
@@ -1743,7 +1760,7 @@ with tab1:
         hv_win_s = get_series(df_runners, 'HV_win_rate', 0)
         structural_hv_adj = np.ones(len(df_runners), dtype=float)
         if is_hv and not is_awt_race:
-            is_hv_cd_streak = (rec_wr_s >= 0.50) & (hv_win_s >= 0.25) & (dist_wr_s >= 0.25) & (draws <= 6)
+            is_hv_cd_streak = (rec_wr_s >= 0.50) & (hv_win_s >= 0.25) & (dist_wr_s >= 0.25) & ((draws <= 6) | is_cd_sec_dominator)
             structural_hv_adj = np.where(is_hv_cd_streak, structural_hv_adj * 1.42, structural_hv_adj)
             if distance <= 1200:
                 is_fownes_runner = df_runners['trainer'].astype(str).str.strip().str.upper() == 'C FOWNES'
@@ -1853,7 +1870,7 @@ with tab1:
             rem_eligible = rem
             
         if not rem_eligible.empty:
-            rem_droppers = rem_eligible[rem_eligible['is_exotic_class_dropper']]
+            rem_droppers = rem_eligible[rem_eligible['is_exotic_class_dropper'] & (rem_eligible['gs_score'] >= 5.0)]
             if not rem_droppers.empty:
                 p5 = rem_droppers.sort_values(by='gs_score', ascending=False).iloc[0]
             elif p5_qual['selected_no'] is not None:
@@ -1881,10 +1898,17 @@ with tab1:
         p1_wt = safe_num(p1.get('actual_weight'), 125.0)
         p1_first_pos = safe_num(p1.get('avg_first_pos'), 6.0)
         p1_recent_pos = safe_num(p1.get('recent_avg_pos'), 7.0)
-        p1_is_crosser = (p1_first_pos <= 3.5) or (p1_recent_pos <= 3.5)
+        p1_is_cd_dom = (
+            (safe_num(p1.get('HV_win_rate', 0)) >= 0.20)
+            and (safe_num(p1.get('distance_win_rate', 0)) >= 0.20)
+            and (safe_num(p1.get('recent_win_rate', 0)) >= 0.50)
+            and (safe_num(p1.get('best_last_sec', 99.0), 99.0) < 22.5)
+            and bool(p1.get('had_excuse', False))
+        )
+        p1_is_crosser = (p1_first_pos <= 3.5) or (p1_recent_pos <= 3.5) or p1_is_cd_dom
         p1_has_health_risk = bool(p1.get('has_health_risk', False))
         p1_live = (p1_odds > 0) and (p1_odds < 20.0)
-        p1_passes_val = p1_live and (p1_odds <= 13.0) and (not p1_has_health_risk) and (p1_prob * p1_odds > 1.0)
+        p1_passes_val = p1_live and (p1_odds <= 13.0) and (not p1_has_health_risk) and ((p1_prob * p1_odds > 1.0) or (p1_is_cd_dom and p1_odds >= 2.2))
         
         # Check sprint wide+heavy split rule:
         is_sprint = (distance <= 1200)
@@ -2151,13 +2175,13 @@ with tab1:
                     combined_gs = p1_gs + p2_gs
                     r_link = format_horse_link(runner, "#", show_silks=True, silks_size=20)
 
-                    if win_active and ev >= 0.035:
+                    if win_active and (ev >= 0.035 or p1_gs >= 19.5):
                         return {
                             "pool": "WIN (獨贏)",
                             "badge_bg": "#15803d",
                             "pick": r_link,
                             "odds_label": f"{safe_fmt(odds)}",
-                            "rationale": f"High Expected Value (+{safe_fmt(ev, 0.0, 3)} EV) & dominant win conversion"
+                            "rationale": f"Dominant GS Score ({safe_fmt(p1_gs)}) & proven C&D win conversion"
                         }
                     elif p2_no and combined_gs >= 36.0:
                         p2_link = format_horse_link({'no': p2_no, 'name': p2_name, 'code': runner.get('p2_code')}, "#", show_silks=True, silks_size=20)

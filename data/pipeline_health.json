@@ -1,11 +1,11 @@
 {
   "overall_status": "fail",
-  "updated_at": "2026-11-25T02:50:28Z",
+  "updated_at": "2026-11-25T03:43:32Z",
   "components": {
     "scraper": {
       "status": "fail",
-      "last_attempt_at": "2026-11-25T02:50:28Z",
-      "last_success_at": "2026-11-25T02:44:52Z",
+      "last_attempt_at": "2026-11-25T03:43:32Z",
+      "last_success_at": "2026-11-25T03:43:07Z",
       "metrics": {
         "source": "error"
       },
@@ -23,8 +23,8 @@
     },
     "run_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-25T01:51:48Z",
-      "last_success_at": "2026-11-25T01:51:48Z",
+      "last_attempt_at": "2026-11-25T03:43:19Z",
+      "last_success_at": "2026-11-25T03:43:19Z",
       "metrics": {
         "meeting_date": "2026-11-25",
         "venue": "Happy Valley",
@@ -170,8 +170,8 @@
     },
     "frozen_predictions": {
       "status": "ok",
-      "last_attempt_at": "2026-11-25T01:51:48Z",
-      "last_success_at": "2026-11-25T01:51:48Z",
+      "last_attempt_at": "2026-11-25T03:43:19Z",
+      "last_success_at": "2026-11-25T03:43:19Z",
       "metrics": {
         "file": "frozen_predictions_20261125.json",
         "races_cached": 9

@@ -464,6 +464,15 @@ def run():
         if is_hv and "ALL WEATHER" not in race_track_type and "AWT" not in race_track_type:
             frontrunner_pace_penalty = np.where(is_iron_horse_dropper, 0.0, frontrunner_pace_penalty)
             standout_boost += np.where(is_iron_horse_dropper, np.where(draws <= 8, 0.10, 0.04), 0.0)
+            is_cd_sec_dominator = (
+                (pd.to_numeric(df_runners.get('HV_win_rate', 0), errors='coerce').fillna(0) >= 0.20)
+                & (pd.to_numeric(df_runners.get('distance_win_rate', 0), errors='coerce').fillna(0) >= 0.20)
+                & (recent_win >= 0.50)
+                & (df_runners['best_last_sec'] < 22.5)
+                & df_runners['had_excuse'].astype(bool)
+            )
+            hv_c_course_penalty = np.where(is_cd_sec_dominator, 0.0, hv_c_course_penalty)
+            standout_boost += np.where(is_cd_sec_dominator, 0.04, 0.0)
             
         # Caspar Fownes Happy Valley Specialist Boost (+0.03 on home track)
         # ZERO on wide topweight (Gates 9-12 & >= 132 lbs), and ZERO if jockey_trainer_boost already fired
@@ -671,7 +680,7 @@ def run():
         hv_win_s = pd.to_numeric(df_runners.get('HV_win_rate', 0), errors='coerce').fillna(0)
         structural_hv_adj = np.ones(len(df_runners), dtype=float)
         if is_hv and not is_awt_race:
-            is_hv_cd_streak = (rec_wr_s >= 0.50) & (hv_win_s >= 0.25) & (dist_wr_s >= 0.25) & (draws <= 6)
+            is_hv_cd_streak = (rec_wr_s >= 0.50) & (hv_win_s >= 0.25) & (dist_wr_s >= 0.25) & ((draws <= 6) | is_cd_sec_dominator)
             structural_hv_adj = np.where(is_hv_cd_streak, structural_hv_adj * 1.42, structural_hv_adj)
             if distance <= 1200:
                 is_fownes_runner = df_runners['trainer'].astype(str).str.strip().str.upper() == 'C FOWNES'
@@ -779,7 +788,7 @@ def run():
             rem_eligible = rem
             
         if not rem_eligible.empty:
-            rem_droppers = rem_eligible[rem_eligible['is_exotic_class_dropper']]
+            rem_droppers = rem_eligible[rem_eligible['is_exotic_class_dropper'] & (rem_eligible['gs_score'] >= 5.0)]
             if not rem_droppers.empty:
                 p5 = rem_droppers.sort_values(by='gs_score', ascending=False).iloc[0]
             elif p5_qual['selected_no'] is not None:
@@ -809,13 +818,20 @@ def run():
         p1_odds_missing = bool(p1.get('odds_missing', False))
         p1_has_health_risk = bool(p1.get('has_health_risk', False))
         p1_live = (not p1_odds_missing) and (not race_odds_incomplete) and (p1_odds > 0) and (p1_odds < 20.0)
-        p1_passes_val = p1_live and (p1_odds <= 13.0) and (not p1_has_health_risk) and (p1_prob * p1_odds > 1.0)
+        p1_is_cd_dom = (
+            (float(pd.to_numeric(p1.get('HV_win_rate', 0), errors='coerce') or 0) >= 0.20)
+            and (float(pd.to_numeric(p1.get('distance_win_rate', 0), errors='coerce') or 0) >= 0.20)
+            and (float(pd.to_numeric(p1.get('recent_win_rate', 0), errors='coerce') or 0) >= 0.50)
+            and (float(pd.to_numeric(p1.get('best_last_sec', 99.0), errors='coerce') or 99.0) < 22.5)
+            and bool(p1.get('had_excuse', False))
+        )
+        p1_passes_val = p1_live and (p1_odds <= 13.0) and (not p1_has_health_risk) and ((p1_prob * p1_odds > 1.0) or (p1_is_cd_dom and p1_odds >= 2.2))
         
         # Check sprint wide+heavy split rule:
         is_sprint = (distance <= 1200)
         is_p1_wide_heavy = is_hv and is_sprint and (p1_draw >= 9) and (p1_wt >= 132)
         p1_recent_pos = float(pd.to_numeric(p1.get('recent_avg_pos', 7.0), errors='coerce'))
-        p1_is_crosser = (p1_first_pos <= 3.5) or (p1_recent_pos <= 3.5)
+        p1_is_crosser = (p1_first_pos <= 3.5) or (p1_recent_pos <= 3.5) or p1_is_cd_dom
         
         shifted_win_runner = None
         shifted_from_rank = None
@@ -1033,8 +1049,8 @@ def run():
             p1_gs = float(runner.get('gs_score', 0.0))
             combined_gs = p1_gs + p2_gs
 
-            if win_active and ev >= 0.035:
-                return 'WIN (獨贏)', f"#{runner['no']} {runner['name']} ({odds:.1f})", f"High EV (+{ev:.3f}) & dominant win conversion"
+            if win_active and (ev >= 0.035 or p1_gs >= 19.5):
+                return 'WIN (獨贏)', f"#{runner['no']} {runner['name']} ({odds:.1f})", f"Top GS ({p1_gs:.1f}) & dominant C&D win conversion"
             elif p2_no and combined_gs >= 36.0:
                 return 'QUINELLA (連贏 Q)', f"#{runner['no']} + #{p2_no} {p2_name}", f"Dominant 1-2 lock (Combined GS {combined_gs:.1f})"
             else:
