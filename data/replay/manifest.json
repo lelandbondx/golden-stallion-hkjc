@@ -3,8 +3,8 @@
   "feed": "data/replay",
   "branch": "trial-data",
   "schema_version": 2,
-  "run_time_hkt": "2026-11-22T20:57:23+08:00",
-  "run_time_utc": "2026-11-22T12:57:23Z",
+  "run_time_hkt": "2026-11-26T01:24:23+08:00",
+  "run_time_utc": "2026-11-25T17:24:23Z",
   "meetings": [
     {
       "date": "2026-11-08",
@@ -170,15 +170,52 @@
         "Going: GOOD for all 11 races on the turf B+2 course (penetrometer 2.72), with a 4m false outside rail. The track was rolled after Race 6. No surface or bias conclusion is drawn from this single card.",
         "Opinions from the video reviewer (e.g. 'had more to offer', 'plenty in hand', 'unlucky') are untested hypotheses. They are kept out of the official fields and appear only in notes labelled as replay. Win odds in notes are official final odds; R7 KA YING RISING's odds are shown on the results page as '1' and are described only as odds-on."
       ]
+    },
+    {
+      "date": "2026-11-25",
+      "venue": "HV",
+      "venue_name": "Happy Valley",
+      "races_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "row_count": 109,
+      "csv": "2026-11-25_HV.csv",
+      "json": "2026-11-25_HV.json",
+      "generated_at": "2026-11-26T01:23:14+08:00",
+      "source_fetched_at": "2026-11-26T01:23:13+08:00",
+      "validation": "OVERALL PASS",
+      "limitations": [
+        "All 9 races (218-226) were reviewed. Each race's official HKJC replay-full file (English, 2500 kbps, 1080p originals, 106-155 s) was downloaded with HTTP 200 and fully decoded (no tail errors). Video review used a 720p re-encode of each file, one race per review.",
+        "Replays: one official full broadcast replay per race: a side-on pan of the whole race, plus aerial/overhead and/or head-on or slow-motion finish replays where the broadcast included them (R1 aerial + head-on finish; R2 finish pan + aerial last ~200m + head-on final strides; R3 overhead finish + slow-motion close-up, no head-on; R4 head-on straight from ~250m; R5 slow-motion side-on + low head-on finish; R6 elevated finish + aerial + head-on; R7 aerial last 250m + head-on straight; R8 fixed elevated finish camera only, no head-on or aerial; R9 overhead finish + slow-motion head-on last ~200m). There was no patrol or multi-angle footage, and the wide pan hid individual contacts in start scrambles and in the pack.",
+        "Incidents not confirmable on video, recorded from the stewards report only: R1 the individual contacts in the 1500m chain (Super Sicario/Can't Go Wong/Grand Turbo/Whowrotethatsong), Super Sicario touching the running rail near 600m, Word Of Kindness bumped at the start, Whowrotethatsong laying in in the straight; R2 Z Purton's shift on Forza Leader near 1000m (Autumn Vibes' loss of ground was visible, the shift was not), Casa Primo/Iconical contact near 900m, Lakeshore Hero steadied near 550m; R3 Z Purton looking down near 1000m; R4 Lightness Of Being/Crossborderdude contact after the start, Flash Current bumping the rail near 600m; R5 Joker Orbit bumped near 250m (contact obscured), Tourbillon Golfer steadied approaching the finish; R6 Ace/Sturdy Ruby contact near 1600m; R7 Friends Of Shajing knuckling on jumping and steadied near 550m, Call Me Success crowded near 600m.",
+        "Replay-only flags (not in the stewards report): R1 Word Of Kindness wide_no_cover (three-wide without cover from ~1200m); R6 Amazing Award wide_no_cover (three-wide without cover from ~1200m; stewards say only that it was held up making the home turn). Both flags are consistent with the wide barriers (11 and 11) and official positions, but neither is an official finding. strong_closer flags are based on official last-400m sectionals (fastest or near-fastest in the race from a rearward position), not on replay impressions: R1 Only U, R2 Majestic Delight, R3 Take Action and King Of Selection, R4 Copartner Fleet, R5 Quick Contribution and Same To You, R6 Vermilion Tempest and Ace, R7 Golden Champ, R8 Win Method, R9 Young Arrow. led_throughout and faded_after_leading come from official running positions. Replay-only notes without flags: R1 Prince Alex circled wide on straight entry (against its stated instruction to run inside runners); R4 Copartner Fleet wide sweeping run from ~600m; R5 Noble Fans three-wide without cover from ~600m; R6 Stormi three-wide for part of the back straight; R8 Flow Water Flow angled off the rail around the weakening Flying Wrote (effect unverified).",
+        "Replay observations dropped or corrected because they conflicted with official data: R3 the reviewer said Superb Kid ran the fastest final sectional (official: Take Action 22.99, King Of Selection 23.00, Superb Kid 23.28) and that Automated and Jumbo Steps 'faded out of contention' (official: 5th and 4th, both beaten 2-1/2 lengths); R3 the reviewer put Casa Rochester near the rear on straight entry (official 6-6-5-7-10), official positions used; R5 the reviewer called Quick Contribution the fastest closer (official: Same To You 22.73 vs 22.74); R6 the reviewer called the early tempo 'very slow' (official second section 22.83) and said Luck Is Back used 'the inside draw' (official barrier 7); R7 the reviewer said Call Me Success made late ground 'from the back half' (official 6-5-5); R8 the reviewer called the early tempo 'solid to strong' (official opening 28.47, slowest of the three 1650m races). R9 the reviewer's remark that Quantum Cloud's fade was 'visually consistent with a physical issue' is speculation and was not used; only the official vet finding is recorded. All margins and odds quoted come from official results.",
+        "Vet findings and clearances are copied verbatim from the official stewards report. Bled from both nostrils (listed under Bleeders in the stewards' summary; barrier trial and official veterinary examination required): R5 STARRY SHOW, R7 ORIGIN OF FORM. Substantial amount of blood in the trachea on post-race endoscopic examination (a tracheal endoscopy finding, NOT bleeding from the nostrils and not a bleeder declaration; official veterinary examination required): R3 KING OF SELECTION, R6 ENTHRALLED, R7 FLYING TING LOK. Irregular heart rhythm (barrier trial and official veterinary examination required): R9 QUANTUM CLOUD (post-race) and R8 SUNDAY'S SERENADE (withdrawn 24.11.26). R9 ACE CHAMPION was found to have blood in the mouth; the report states no clearance requirement. R4 VIGOR HAPPINESS had its right hind plate refitted at the holding stables and was passed suitable to race. R9 LIGHTNESS OF MUSIC is described by its rider as previously declared a bleeder (context only, not a new finding). No medical diagnosis is inferred beyond the official wording.",
+        "Withdrawn horse (stewards-only row, so it has no draw, odds, running positions or sectional): R8 SUNDAY'S SERENADE (24.11.26, irregular heart rhythm), replaced by Standby Declared Starter PRECISION TIME, which finished 3rd.",
+        "Official context: Z Purton was suspended twice at this meeting: R2 FORZA LEADER careless riding near 1000m (23-27 December 2026, 2 Hong Kong racedays) and R6 EXCEED THE LIMIT careless riding passing the 200m (16 December 2026 at Happy Valley, 1 raceday). R7 protest by Winning Machine against Hero Mastermind was overruled. S Osborne became ill after weighing out for R7 and was stood down; H Bentley rode CALL ME SUCCESS (R7) and A Atzeni rode YOUNG ARROW (R9). The stewards' General note says Races 8 and 9 were each put back 10 minutes.",
+        "Timing: HKJC published no official finish clock time for any race. The racecard advertised R9 for 23:00 HKT (the parsed racecard does not say whether this includes the 10-minute put-back). The R9 replay file's CDN Last-Modified of 23:08:17 HKT is server metadata only, not an official finish time. The review started at 01:09:05 HKT on 26 Nov, about 2h09m after R9's advertised time, with official results for all 9 races and the full stewards report (R1-R9, General and Summary) published.",
+        "Going: GOOD for all 9 races on the turf C+3 course (penetrometer 2.72 at 08:00 and 17:40). The track was rolled after Race 5. No surface, draw or bias conclusion is drawn from this single card. Pace notes come only from official sectionals (e.g. quick second sections in R2 22.59, R4 22.71, R6 22.83) and official running positions.",
+        "Opinions from riders, trainers and the video reviewer (e.g. Flash Current 'would benefit from being stepped up in distance', Casa Rochester 'better suited when ridden in a more conservative manner', Ace Champion 'may not have been suited by carrying 134 lbs', Embraces 'may have been disadvantaged by racing towards the inside', 'standout performance') are untested hypotheses. They are kept out of the official fields and appear only in notes, attributed. Win odds in notes are official final odds.",
+        "Every runner has a row (108 starters plus the withdrawn horse). Rows for runners with 'No report' or only routine official comments carry official positions and sectionals but no flags; no flag means nothing notable was recorded, not a confirmed clean trip."
+      ]
     }
   ],
-  "total_rows": 458,
+  "total_rows": 567,
   "completeness_notes": [
     "2026-11-14 ST R6 abandoned (no result, no replay); R1-R5 and R7-R11 reviewed.",
     "2026-11-18 HV: all 9 races (198-206) reviewed from official replays + stewards report; R6 PRESTIGE WIN withdrawn 17.11.26 (stewards-only row, blank finish).",
     "Only horses with a trip note have a row.",
     "2026-11-20 11:34 HKT correction: 2026-11-18 HV R8 AMAZING KID (K434) vet_finding now carries the official stewards' sentence 'Noted to have sustained a laceration to the right hind leg after the race.' (RaceReportFull 2026/11/18 HV); previously only in stewards_excuse/note. No other values changed.",
-    "2026-11-22 ST: all 11 races (207-217) reviewed from official replays + full stewards report; withdrawn (stewards-only rows, blank finish): R2 WINNING MONEY, S AND S GLORY; R3 MIGHTY PROFIT, FAST TOP SEARCH; R9 DOCKLANDS. R10 SUPER STRONG KID DNF (finish 'DNF'; horse_last_400m_sec blank because its final sectional is a partial segment). R7 SING DRAGON pronounced deceased after the race (official)."
+    "2026-11-22 ST: all 11 races (207-217) reviewed from official replays + full stewards report; withdrawn (stewards-only rows, blank finish): R2 WINNING MONEY, S AND S GLORY; R3 MIGHTY PROFIT, FAST TOP SEARCH; R9 DOCKLANDS. R10 SUPER STRONG KID DNF (finish 'DNF'; horse_last_400m_sec blank because its final sectional is a partial segment). R7 SING DRAGON pronounced deceased after the race (official).",
+    "2026-11-25 HV: all 9 races (218-226) reviewed from official replays + full stewards report (R1-R9, General, Summary); every runner has a row (108 starters + R8 SUNDAY'S SERENADE withdrawn 24.11.26, stewards-only row, blank finish). 108/108 horse_last_400m_sec filled; no sectional gaps. No official finish clock published; review started 01:09:05 HKT 26 Nov (R9 advertised 23:00 HKT)."
   ],
   "appended_csv_columns": [
     "meeting_date",
@@ -187,5 +224,5 @@
     "retrieved_at_hkt",
     "retrieved_at_utc"
   ],
-  "validation_status": "PASS (tools/validate.py OVERALL PASS for all 5 meetings)"
+  "validation_status": "PASS (tools/validate.py OVERALL PASS for all 6 meetings)"
 }
