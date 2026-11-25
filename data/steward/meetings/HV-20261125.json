@@ -1,0 +1,505 @@
+{
+ "meeting_id": "HV-20261125",
+ "meeting_date": "2026-11-25",
+ "venue": "HV",
+ "description": "Happy Valley Turf C+3 course, 9 races (218-226), going GOOD, first race 18:40 HKT; official results for all 9 races and stewards report (labelled interim; summary section complete) published; reviewed after the last race",
+ "status": "FLAGGED",
+ "reviewed_at": "2026-11-25T12:44:57-05:00",
+ "records_count": 23,
+ "horses_with_records": 16,
+ "summary": {
+  "bleeding": [
+   "STARRY SHOW (R5, 12th): bled from both nostrils (nostril): barrier trial + official vet exam",
+   "ORIGIN OF FORM (R7, 11th): bled from both nostrils (nostril): barrier trial + official vet exam",
+   "ENTHRALLED (R6, 9th), KING OF SELECTION (R3, 11th), FLYING TING LOK (R7, 9th): substantial blood in trachea on endoscopy (tracheal): official vet exam (FLYING TING LOK previously bled from both nostrils 21/01/2026)"
+  ],
+  "irregular_heart": [
+   "QUANTUM CLOUD (R9, 11th): irregular heart rhythm after race: barrier trial + official vet exam",
+   "SUNDAY'S SERENADE (R8, withdrawn 24.11 on vet advice): irregular heart rhythm: barrier trial + official vet exam; PRECISION TIME promoted from standby (3rd)"
+  ],
+  "lameness": [],
+  "injury": [
+   "ACE CHAMPION (R9, 7th): blood in the mouth (non-material, no requirement)"
+  ],
+  "barrier_trial_requirements": [
+   "STARRY SHOW",
+   "ORIGIN OF FORM",
+   "QUANTUM CLOUD",
+   "SUNDAY'S SERENADE"
+  ],
+  "vet_exam_requirements": [
+   "STARRY SHOW",
+   "ORIGIN OF FORM",
+   "QUANTUM CLOUD",
+   "SUNDAY'S SERENADE",
+   "ENTHRALLED",
+   "KING OF SELECTION",
+   "FLYING TING LOK"
+  ],
+  "suspensions": [
+   "Z Purton (FORZA LEADER, R2): careless riding, 23/12/2026-27/12/2026, resumes 27/12 (2 racedays)",
+   "Z Purton (EXCEED THE LIMIT, R6): careless riding, one raceday Wed 16/12/2026 at Happy Valley"
+  ],
+  "integrity": [
+   "R7: protest/objection by E C W Wong (WINNING MACHINE, 2nd) against HERO MASTERMIND (1st) alleging interference inside final 150m: overruled, result unchanged"
+  ],
+  "clearances": [
+   "APEX GLORY (08/11 requirement): official vet exam passed 24/11/2026 (barrier trial passed 24/11); all requirements met"
+  ],
+  "other": [
+   "Severe reprimands: D B McMonagle (SUPER SICARIO R1), A Atzeni (MAJESTIC DELIGHT R2); reprimands: R Kingscote (WINNING DIAMOND R1), A Badel (VERMILION TEMPEST R6); whip reprimands for 22/11 ST: K C Leung, A Badel; warnings (shifting/whip) to several riders",
+   "S Osborne became ill in Parade Ring, stood down by Club CMO: H Bentley on CALL ME SUCCESS (R7), A Atzeni on YOUNG ARROW (R9)",
+   "Races 8 and 9 put back 10 minutes; track rolled after R5; going GOOD (penetrometer 2.72)",
+   "Prior-meeting laboratory tests (14.11.26) all negative"
+  ]
+ },
+ "open_items": [
+  {
+   "horse_id": "HK_2022_H455",
+   "horse_name": "MONTA FRUTTA",
+   "remaining": [
+    "compulsory retirement"
+   ],
+   "since": "2026-11-04"
+  },
+  {
+   "horse_id": "HK_2023_J332",
+   "horse_name": "TELECOM POWER",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-04"
+  },
+  {
+   "horse_id": "HK_2025_L142",
+   "horse_name": "LIVE WIRE",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-04"
+  },
+  {
+   "horse_id": "HK_2025_L193",
+   "horse_name": "ALL OUT FOR SIX",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-04"
+  },
+  {
+   "horse_id": "HK_2023_J294",
+   "horse_name": "TURF PHOENIX",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-08"
+  },
+  {
+   "horse_id": "HK_2025_L305",
+   "horse_name": "KANSAS",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-08"
+  },
+  {
+   "horse_id": "HK_2025_L220",
+   "horse_name": "LADY'S LOVE",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-08"
+  },
+  {
+   "horse_id": "HK_2024_K238",
+   "horse_name": "PERFECTDAY",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-08"
+  },
+  {
+   "horse_id": "HK_2024_K032",
+   "horse_name": "SKY JEWELLERY",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-08"
+  },
+  {
+   "horse_id": "HK_2025_L016",
+   "horse_name": "MAJESTIC VALOUR",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-08"
+  },
+  {
+   "horse_id": "HK_2024_K308",
+   "horse_name": "CIRCUIT CENTURY",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-11"
+  },
+  {
+   "horse_id": "HK_2025_L238",
+   "horse_name": "HYMNBOOK",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-11"
+  },
+  {
+   "horse_id": "HK_2023_J050",
+   "horse_name": "AWESOME FLUKE",
+   "remaining": [
+    "stalls test"
+   ],
+   "since": "2026-11-11"
+  },
+  {
+   "horse_id": "HK_2025_L028",
+   "horse_name": "HELENE SUPAFEELING",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-05"
+  },
+  {
+   "horse_id": "HK_2024_K334",
+   "horse_name": "LUNAR DASH",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-18"
+  },
+  {
+   "horse_id": "HK_2024_K323",
+   "horse_name": "SUPERB GUY",
+   "remaining": [
+    "barrier trial"
+   ],
+   "since": "2026-11-14"
+  },
+  {
+   "horse_id": "HK_2023_J375",
+   "horse_name": "VIGOR ELLEEGANT",
+   "remaining": [
+    "barrier trial"
+   ],
+   "since": "2026-11-14"
+  },
+  {
+   "horse_id": "HK_2023_J501",
+   "horse_name": "CIRCUIT DUFFY",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-14"
+  },
+  {
+   "horse_id": "HK_2025_L060",
+   "horse_name": "VIEW OF COSMOS",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-14"
+  },
+  {
+   "horse_id": "HK_2024_K399",
+   "horse_name": "HAPPY ACTION",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-13"
+  },
+  {
+   "horse_id": "HK_2023_J224",
+   "horse_name": "GOOD GOOD",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-14"
+  },
+  {
+   "horse_id": "HK_2020_E356",
+   "horse_name": "LUCKY WITH YOU",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-14"
+  },
+  {
+   "horse_id": "HK_2024_K527",
+   "horse_name": "FOREST KING",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-14"
+  },
+  {
+   "horse_id": "HK_2025_L398",
+   "horse_name": "VOYAGE HORIZON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-14"
+  },
+  {
+   "horse_id": "HK_2019_D241",
+   "horse_name": "SUPER HONG KONG",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-18"
+  },
+  {
+   "horse_id": "HK_2024_K203",
+   "horse_name": "MORGAN SUCCESS",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-18"
+  },
+  {
+   "horse_id": "HK_2025_L248",
+   "horse_name": "PRESTIGE WIN",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-17"
+  },
+  {
+   "horse_id": "HK_2025_L328",
+   "horse_name": "TURBO JEFFERIES",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K456",
+   "horse_name": "SO MY FOLKS",
+   "remaining": [
+    "compulsory retirement"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L458",
+   "horse_name": "REBORN HERO",
+   "remaining": [
+    "barrier trial"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L533",
+   "horse_name": "S AND S GLORY",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-20"
+  },
+  {
+   "horse_id": "HK_2023_J116",
+   "horse_name": "WINNING MONEY",
+   "remaining": [
+    "further assessment of heart condition"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L434",
+   "horse_name": "SHANGHAI WARRIOR",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L419",
+   "horse_name": "HARVEST MOON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2026_M010",
+   "horse_name": "FAST TOP SEARCH",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L347",
+   "horse_name": "MIGHTY PROFIT",
+   "remaining": [
+    "barrier practice",
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2026_M035",
+   "horse_name": "AUTUMN KING",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K458",
+   "horse_name": "SUPER GOLDENDRAGON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K902",
+   "horse_name": "DOCKLANDS",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-21"
+  },
+  {
+   "horse_id": "HK_2024_K180",
+   "horse_name": "SUPER STRONG KID",
+   "remaining": [
+    "barrier trial (around a bend, 2 consecutive)",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L409",
+   "horse_name": "GREAT LEGEND",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2024_K122",
+   "horse_name": "EMBLAZON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L563",
+   "horse_name": "FIRE DRAGON",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-22"
+  },
+  {
+   "horse_id": "HK_2025_L074",
+   "horse_name": "STARRY SHOW",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-25"
+  },
+  {
+   "horse_id": "HK_2024_K517",
+   "horse_name": "ORIGIN OF FORM",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-25"
+  },
+  {
+   "horse_id": "HK_2025_L221",
+   "horse_name": "QUANTUM CLOUD",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-25"
+  },
+  {
+   "horse_id": "HK_2023_J231",
+   "horse_name": "SUNDAY'S SERENADE",
+   "remaining": [
+    "barrier trial",
+    "official vet exam"
+   ],
+   "since": "2026-11-24"
+  },
+  {
+   "horse_id": "HK_2024_K252",
+   "horse_name": "ENTHRALLED",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-25"
+  },
+  {
+   "horse_id": "HK_2024_K397",
+   "horse_name": "KING OF SELECTION",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-25"
+  },
+  {
+   "horse_id": "HK_2024_K228",
+   "horse_name": "FLYING TING LOK",
+   "remaining": [
+    "official vet exam"
+   ],
+   "since": "2026-11-25"
+  }
+ ],
+ "sources_checked": [
+  "https://racing.hkjc.com/en-us/local/information/racereportfull?racedate=20261125",
+  "https://racing.hkjc.com/en-us/local/information/localresults?racedate=2026/11/25&Racecourse=HV&RaceNo=1..9",
+  "https://racing.hkjc.com/en-us/local/information/ovehorse?horseid=<id> (109 meeting runners/withdrawn + 44 open-item horses)",
+  "https://racing.hkjc.com/en-us/local/information/btresult?Date=2026/11/25 (No information)",
+  "https://racing.hkjc.com/en-us/local/information/changes?racedate=2026/11/25&Racecourse=HV",
+  "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11",
+  "https://racing.hkjc.com/racing/english/racing-widget/meetingreminder.aspx",
+  "https://racing.hkjc.com/en-us/local/information/racecard?racedate=2026/11/29&Racecourse=ST&RaceNo=1"
+ ],
+ "source_gaps": [
+  "Stewards report is labelled interim; summary section used.",
+  "HKJC horse vet pages show no 25/11/2026 entries for any of the 7 newly flagged horses at retrieval (stewards report only source); SUNDAY'S SERENADE has no 24/11 vet entry either.",
+  "No official finish clock time used; R9 result published.",
+  "Per-race veterinaryrecord page not parsed beyond horse pages.",
+  "Z Purton suspensions not yet on meeting reminder page at retrieval.",
+  "Meeting reminder lists C L Chau 16/12-20/12 resuming 21/12 (not in state before; origin not identified; not written as a record)."
+ ],
+ "replay_bot_coverage": "Replay Bot 2026-11-25_HV.csv (109 rows) read from /workspace/silks_ingest/repo_push/data/replay: vet_finding/clearance_required and finishing positions match official report for STARRY SHOW, ORIGIN OF FORM, QUANTUM CLOUD, SUNDAY'S SERENADE, ENTHRALLED, KING OF SELECTION, FLYING TING LOK, ACE CHAMPION. Nothing material missed.",
+ "notes": "Facts only. Results verified from official localresults pages; winners R1-R9: INCANTO STAR, FORZA LEADER, KINGLY DEMEANOR, COPARTNER FLEET, QUICK CONTRIBUTION, VERMILION TEMPEST, HERO MASTERMIND, HAPPY BOSS, CALIFORNIA BLITZ."
+}
