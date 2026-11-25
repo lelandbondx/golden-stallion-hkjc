@@ -839,7 +839,15 @@ def render_runner_vet_block_html(
     no_val = runner_row.get("no", "")
     name_val = str(runner_row.get("name") or (horse_record or {}).get("horse_name") or "").strip().upper()
     code_val = str(runner_row.get("code") or runner_row.get("horse_code") or (horse_record or {}).get("horse_code") or "").strip().upper()
-    header_title = f"{role_prefix}#{no_val} {name_val} ({code_val})".strip()
+    silks_html = ""
+    if code_val and code_val not in ("NAN", "NONE", "NULL"):
+        c_clean = code_val.split("_")[-1]
+        silks_html = (
+            f'<img src="https://racing.hkjc.com/racing/content/Images/RaceColor/{c_clean}.gif" alt="" '
+            f'style="width:20px; height:20px; vertical-align:middle; border-radius:3px; margin-right:6px; display:inline-block;" '
+            f'onerror="this.style.display=\'none\';" />'
+        )
+    header_title = f"{silks_html}{role_prefix}#{no_val} {name_val} ({code_val})".strip()
 
     if not horse_record or not isinstance(horse_record, dict) or horse_record.get("fetch_failed"):
         return f"""

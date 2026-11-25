@@ -814,16 +814,22 @@ def get_hkjc_profile_url(runner):
         return f"https://racing.hkjc.com/racing/information/English/Horse/SelectHorse.aspx?HorseName={urllib.parse.quote(name)}"
     return "https://racing.hkjc.com/racing/information/English/Horse/SelectHorse.aspx"
 
-def get_silks_img_html(runner, size=24):
-    """Returns an inline HTML img tag for the official HKJC jockey silks with error hiding."""
+def get_silks_url(runner):
+    """Returns official HKJC image URL for jockey silks by horse brand code."""
     if not isinstance(runner, dict) and not hasattr(runner, 'get'):
         return ""
     code = str(runner.get('code') or runner.get('horse_code') or '').strip().upper()
-    if not code:
+    if not code or code in ('NAN', 'NONE', 'NULL'):
         return ""
     if '_' in code:
         code = code.split('_')[-1]
-    url = f"https://racing.hkjc.com/racing/content/Images/RaceColor/{code}.gif"
+    return f"https://racing.hkjc.com/racing/content/Images/RaceColor/{code}.gif"
+
+def get_silks_img_html(runner, size=24):
+    """Returns an inline HTML img tag for the official HKJC jockey silks with error hiding."""
+    url = get_silks_url(runner)
+    if not url:
+        return ""
     return (
         f'<img src="{url}" alt="" class="jockey-silks-icon" '
         f'style="width:{size}px; height:{size}px; vertical-align:middle; border-radius:3px; '
@@ -831,7 +837,7 @@ def get_silks_img_html(runner, size=24):
         f'onerror="this.style.display=\'none\';" />'
     )
 
-def format_horse_link(runner, prefix="", show_arrow=True, show_silks=False, silks_size=24):
+def format_horse_link(runner, prefix="", show_arrow=True, show_silks=True, silks_size=24):
     url = get_hkjc_profile_url(runner)
     name = runner.get('name', 'Unknown') if hasattr(runner, 'get') else str(runner)
     no_val = runner.get('no', '') if hasattr(runner, 'get') else ''
@@ -2613,7 +2619,20 @@ with tab1:
                             trio_box_nos.append(n_cd)
                     except Exception:
                         pass
-            trio_pill_str = ", ".join(f"#{n}" for n in trio_box_nos)
+            def _ticket_runner_pill(r_cand):
+                if r_cand is None:
+                    return ""
+                n = r_cand.get('no', '')
+                silk = get_silks_img_html(r_cand, size=18)
+                return f"{silk}#{n}"
+
+            def _ticket_no_pill(n_val):
+                m = df_runners[df_runners['no'] == n_val]
+                r_cand = m.iloc[0] if not m.empty else {'no': n_val}
+                return _ticket_runner_pill(r_cand)
+
+            q_box_str = ", ".join([_ticket_runner_pill(best), _ticket_runner_pill(second), _ticket_runner_pill(third)])
+            trio_pill_str = ", ".join(_ticket_no_pill(n) for n in trio_box_nos)
             tierce_cd_pill = ""
             if 'is_tierce_class_dropper' in df_runners.columns:
                 t_cd_nos = []
@@ -2625,15 +2644,15 @@ with tab1:
                     except Exception:
                         pass
                 if t_cd_nos:
-                    tierce_cd_pill = f' &nbsp; <span style="color:#cbd5e1; font-weight:700;">💎 Tierce Class-Dropper:</span> <span class="ticket-pill">{", ".join(f"#{n}" for n in t_cd_nos)}</span>'
+                    tierce_cd_pill = f' &nbsp; <span style="color:#cbd5e1; font-weight:700;">💎 Tierce Class-Dropper:</span> <span class="ticket-pill">{", ".join(_ticket_no_pill(n) for n in t_cd_nos)}</span>'
 
             st.markdown(clean_html(f'''
             <div style="background: linear-gradient(145deg, rgba(38, 5, 12, 0.96), rgba(20, 3, 6, 0.98)); padding: 14px 20px; border-radius: 10px; border: 1.5px solid rgba(56, 189, 248, 0.55); margin-bottom: 12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; box-shadow: 0 4px 14px rgba(0,0,0,0.4);">
                 <div style="color:#f8fafc; line-height:1.8;">
                     <b style="font-size:1.05rem; color:#38bdf8;">Official Window Tickets:</b> &nbsp;
-                    <span style="color:#cbd5e1; font-weight:700;">🎯 Quinella Box:</span> <span class="ticket-pill">#{best.get('no')}, #{second.get('no')}, #{third.get('no')}</span> &nbsp;
+                    <span style="color:#cbd5e1; font-weight:700;">🎯 Quinella Box:</span> <span class="ticket-pill">{q_box_str}</span> &nbsp;
                     <span style="color:#cbd5e1; font-weight:700;">💠 Trio Box:</span> <span class="ticket-pill">{trio_pill_str}</span> &nbsp;
-                    <span style="color:#cbd5e1; font-weight:700;">💣 Dual-Stake:</span> <span class="ticket-pill">Anchor #{best.get('no')} + Sleeper #{fifth.get('no')}</span>{tierce_cd_pill}
+                    <span style="color:#cbd5e1; font-weight:700;">💣 Dual-Stake:</span> <span class="ticket-pill">Anchor {_ticket_runner_pill(best)} + Sleeper {_ticket_runner_pill(fifth)}</span>{tierce_cd_pill}
                 </div>
                 <div>{stake_badge}</div>
             </div>
@@ -2859,6 +2878,7 @@ with tab1:
                     return "❌ None"
 
                 # Populate transformed columns
+                df_runners['silks'] = [get_silks_url(r_row) for _, r_row in df_runners.iterrows()]
                 df_runners['name_link'] = [
                     f"{get_hkjc_profile_url(r_row)}#{str(r_row.get('name', '')).strip()} ↗"
                     for _, r_row in df_runners.iterrows()
@@ -2876,7 +2896,7 @@ with tab1:
                 df_runners['steward_status'] = df_runners['steward_notes'].apply(_fmt_stewards)
 
                 display_cols = [
-                    'no', 'name_link', 'draw', 'jockey', 'trainer', 'rtg', 'win_odds',
+                    'no', 'silks', 'name_link', 'draw', 'jockey', 'trainer', 'rtg', 'win_odds',
                     'gs_score', 'confidence', 'recent_avg_pos', 'dist_record', 'class_move',
                     'display_gear', 'last_win_rating_fmt', 'days_off', 'tipster_pts',
                     'ST_vs_HV_pref_fmt', 'last_form_going_fmt', 'photo_hist', 'vet_status', 'steward_status'
@@ -2900,6 +2920,7 @@ with tab1:
                         df_display,
                         column_config={
                             "no": st.column_config.NumberColumn("No.", width="small"),
+                            "silks": st.column_config.ImageColumn("Silks", width="small", help="Official HKJC Jockey Silk"),
                             "name_link": st.column_config.LinkColumn("Horse Name", display_text=r"#(.+)$", width="medium"),
                             "draw": st.column_config.NumberColumn("Draw", width="small"),
                             "jockey": st.column_config.TextColumn("Jockey", width="small"),
@@ -2930,7 +2951,7 @@ with tab1:
                     )
                 except Exception as err:
                     print(f"Error rendering race dataframe: {err}")
-                    st.dataframe(df_display, hide_index=True, use_container_width=True)
+                    st.dataframe(df_display.drop(columns=['silks'], errors='ignore'), hide_index=True, use_container_width=True)
 
                 # Complete Official HKJC Veterinary Records block (a)-(e) for EVERY runner in the race
                 try:
