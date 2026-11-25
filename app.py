@@ -11,6 +11,14 @@ import odds_tracker
 import textwrap
 import base64
 
+# Force standing bot feeds to live mode with all sub-overlays enabled
+os.environ.setdefault("SILKS_BOT_FEEDS", "live")
+os.environ.setdefault("SILKS_BOT_LIVE_TRIALS", "1")
+os.environ.setdefault("SILKS_BOT_LIVE_STEWARD", "1")
+os.environ.setdefault("SILKS_BOT_LIVE_REPLAY", "1")
+if os.environ.get("SILKS_BOT_FEEDS") == "shadow":
+    os.environ["SILKS_BOT_FEEDS"] = "live"
+
 try:
     from patch_index import patch_index
     patch_index()

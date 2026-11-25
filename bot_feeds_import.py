@@ -1666,10 +1666,17 @@ def apply_live_bot_runner_overlays(
             has_replay_vet = bool(clearance_text) or has_positive_finding
 
             rp_flags = {str(x).lower() for x in (bf.get("bot_replay_flags") or [])}
+            grok_has_excuse = any(
+                str(ef.get("flag_type", "")).lower() in ("trip_excuse", "traffic", "wide_no_cover")
+                and ef.get("direction") == "upgrade_candidate"
+                and ef.get("verified") is True
+                for ef in (bf.get("bot_ev_flags") or [])
+            )
             has_excuse_flag = (
                 bf.get("bot_replay_traffic") is True
                 or bf.get("bot_replay_wide_no_cover") is True
                 or bool(rp_flags & ALLOWED_REPLAY_EXCUSES)
+                or grok_has_excuse
             )
             if has_excuse_flag and not has_health and not has_replay_vet:
                 if "had_excuse" in df_runners.columns:
