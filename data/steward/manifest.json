@@ -2,8 +2,8 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-26T20:45:29+08:00",
-  "run_time_utc": "2026-11-26T12:45:29+00:00",
+  "run_time_hkt": "2026-11-26T20:48:26+08:00",
+  "run_time_utc": "2026-11-26T12:48:26+00:00",
   "source_last_run": "2026-11-26T07:50:00-05:00",
   "row_counts": {
     "records.jsonl": 258,
@@ -91,7 +91,7 @@
     "horses_snapshot_count": 110,
     "meeting_files": 8,
     "reviewed_meetings_in_state": 7,
-    "open_items": 50,
+    "open_items": 49,
     "records_without_meeting": 96,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -169,7 +169,8 @@
     "last_open_item_recheck": {
       "at": "2026-11-26T07:50:00-05:00",
       "horses_rechecked": 55,
-      "result": "Re-read HKJC vet records for all 55 open/pending horses (retired horses redirect to otherhorse page, no vet table) plus BT results 24/11, 25/11 (no information), 26/11. 26/11 trials: VIGOR ELLEEGANT passed (cleared); VIEW OF COSMOS and FAST TOP SEARCH passed (vet exam still open); FOREST KING failed (still open). No new vet Passed Dates; Awesome Fluke stalls test still unpublished."
+      "result": "Re-read HKJC vet records for all 55 open/pending horses (retired horses redirect to otherhorse page, no vet table) plus BT results 24/11, 25/11 (no information), 26/11. 26/11 trials: VIGOR ELLEEGANT passed (cleared); VIEW OF COSMOS and FAST TOP SEARCH passed (vet exam still open); FOREST KING failed (still open). No new vet Passed Dates; Awesome Fluke stalls test still unpublished.",
+      "apex_glory_correction": "2026-11-26 recheck had wrongly reopened APEX GLORY by treating only the 24/11 barrier trial as met and leaving official vet exam open. Official vet page still shows 08/11/2026 'Disappointing performance.' Passed Date 24/11/2026. Restored to cleared; open items 49 (Vigor Elleegant cleared; Apex Glory stays cleared)."
     },
     "next_meeting": {
       "date": "2026-11-29",
@@ -607,20 +608,12 @@
         "official vet exam"
       ],
       "since": "2026-11-25"
-    },
-    {
-      "horse_id": "HK_2025_L265",
-      "horse_name": "APEX GLORY",
-      "since": "2026-11-08",
-      "remaining": [
-        "official vet exam"
-      ]
     }
   ],
   "sha256": {
     "records.jsonl": "1507361cc40131dac2b13e427a374e13d172257d9e4e3194f86fdf2ebbff26a2",
     "records.csv": "1603269b0d82e6e651be7a0fa84513a083065f075e76d6493e5e2175d0035b6b",
-    "horses_latest.json": "b65d7a396640c39757ece633cc20836dae331899dd8cc80d61131f497e35a262",
+    "horses_latest.json": "bad116b01bd41b0927490198737ed4826fbb88b571d54264a96bf14c2ea6d5b6",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
@@ -633,11 +626,5 @@
   },
   "repo": "lelandbondx/golden-stallion-hkjc",
   "branch": "trial-data",
-  "remote_folder": "data/steward",
-  "git": {
-    "repo": "lelandbondx/golden-stallion-hkjc",
-    "branch": "trial-data",
-    "data_commit": "80c8dbba77ec12f33c4fc80ccf0f2b998e375ffe",
-    "folder": "data/steward/"
-  }
+  "remote_folder": "data/steward"
 }
