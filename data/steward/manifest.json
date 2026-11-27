@@ -2,12 +2,12 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-26T20:48:26+08:00",
-  "run_time_utc": "2026-11-26T12:48:26+00:00",
-  "source_last_run": "2026-11-26T07:50:00-05:00",
+  "run_time_hkt": "2026-11-27T20:46:17+08:00",
+  "run_time_utc": "2026-11-27T12:46:17+00:00",
+  "source_last_run": "2026-11-27T07:46:17-05:00",
   "row_counts": {
-    "records.jsonl": 258,
-    "records.csv": 258,
+    "records.jsonl": 268,
+    "records.csv": 268,
     "horses_latest.json": 110,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
@@ -42,17 +42,17 @@
     },
     {
       "meeting_id": "ST-20261108",
-      "records_in_jsonl": 20,
+      "records_in_jsonl": 23,
       "has_meeting_file": true
     },
     {
       "meeting_id": "ST-20261114",
-      "records_in_jsonl": 27,
+      "records_in_jsonl": 30,
       "has_meeting_file": true
     },
     {
       "meeting_id": "ST-20261122",
-      "records_in_jsonl": 34,
+      "records_in_jsonl": 36,
       "has_meeting_file": true
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "meeting_id": null,
-      "records_in_jsonl": 96,
+      "records_in_jsonl": 98,
       "has_meeting_file": false,
       "note": "history-only vet records not tied to a reviewed meeting"
     }
@@ -91,8 +91,8 @@
     "horses_snapshot_count": 110,
     "meeting_files": 8,
     "reviewed_meetings_in_state": 7,
-    "open_items": 49,
-    "records_without_meeting": 96,
+    "open_items": 45,
+    "records_without_meeting": 98,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
     ]
@@ -167,19 +167,18 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-26T07:50:00-05:00",
-      "horses_rechecked": 55,
-      "result": "Re-read HKJC vet records for all 55 open/pending horses (retired horses redirect to otherhorse page, no vet table) plus BT results 24/11, 25/11 (no information), 26/11. 26/11 trials: VIGOR ELLEEGANT passed (cleared); VIEW OF COSMOS and FAST TOP SEARCH passed (vet exam still open); FOREST KING failed (still open). No new vet Passed Dates; Awesome Fluke stalls test still unpublished.",
-      "apex_glory_correction": "2026-11-26 recheck had wrongly reopened APEX GLORY by treating only the 24/11 barrier trial as met and leaving official vet exam open. Official vet page still shows 08/11/2026 'Disappointing performance.' Passed Date 24/11/2026. Restored to cleared; open items 49 (Vigor Elleegant cleared; Apex Glory stays cleared)."
+      "at": "2026-11-27T07:46:17-05:00",
+      "horses_rechecked": 48,
+      "result": "Re-read HKJC vet records for all open/pending horses (retired/sold horses have no vet table) plus BT results 27/11 (Conghua turf trials only). Vet exams Passed 26/11: MAJESTIC VALOUR, VIEW OF COSMOS, FAST TOP SEARCH (all cleared). Barrier trials passed 27/11: SUPERB GUY (cleared), LADY'S LOVE (vet exam still open). No new vet Passed Dates otherwise; Awesome Fluke stalls test still unpublished. Bookkeeping: Lucky Blessing/Friends of Shajing now cleared (Passed Dates 17/11, 13/11), Apex Glory clearance chained."
     },
     "next_meeting": {
       "date": "2026-11-29",
       "venue": "ST",
-      "verified_at": "2026-11-26T07:50:00-05:00",
-      "source": "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 (29 Nov: ST, day, 11 races; no meeting since HV 25 Nov); racecard pages racedate=2026/11/29 list 141 runners across 11 races",
+      "verified_at": "2026-11-27T07:46:17-05:00",
+      "source": "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 (29 Nov: ST, day; no meeting since HV 25 Nov)",
       "card_published": true,
       "verified": true,
-      "declared_cross_match": "141 runners (brand codes) cross-matched vs ledger at 2026-11-26 07:50: 0 horses with an open requirement"
+      "declared_cross_match": "Racecard pages racedate=2026/11/29 races 1-11 (156 brand codes incl. standbys) cross-matched vs ledger at 2026-11-27T07:46:17-05:00: 0 horses with an open requirement"
     },
     "upcoming_known": [
       "Awesome Fluke (J050) stalls test ST 16/11/2026: result not published on any page checked (gap)",
@@ -247,7 +246,6 @@
       "horse_id": "HK_2025_L220",
       "horse_name": "LADY'S LOVE",
       "remaining": [
-        "barrier trial",
         "official vet exam"
       ],
       "since": "2026-11-08"
@@ -266,14 +264,6 @@
       "horse_name": "SKY JEWELLERY",
       "remaining": [
         "barrier trial",
-        "official vet exam"
-      ],
-      "since": "2026-11-08"
-    },
-    {
-      "horse_id": "HK_2025_L016",
-      "horse_name": "MAJESTIC VALOUR",
-      "remaining": [
         "official vet exam"
       ],
       "since": "2026-11-08"
@@ -311,6 +301,14 @@
       "since": "2026-11-05"
     },
     {
+      "horse_id": "HK_2024_K228",
+      "horse_name": "FLYING TING LOK",
+      "remaining": [
+        "official vet exam"
+      ],
+      "since": "2026-11-25"
+    },
+    {
       "horse_id": "HK_2024_K334",
       "horse_name": "LUNAR DASH",
       "remaining": [
@@ -320,26 +318,10 @@
       "since": "2026-11-18"
     },
     {
-      "horse_id": "HK_2024_K323",
-      "horse_name": "SUPERB GUY",
-      "remaining": [
-        "barrier trial"
-      ],
-      "since": "2026-11-14"
-    },
-    {
       "horse_id": "HK_2023_J501",
       "horse_name": "CIRCUIT DUFFY",
       "remaining": [
         "barrier trial",
-        "official vet exam"
-      ],
-      "since": "2026-11-14"
-    },
-    {
-      "horse_id": "HK_2025_L060",
-      "horse_name": "VIEW OF COSMOS",
-      "remaining": [
         "official vet exam"
       ],
       "since": "2026-11-14"
@@ -472,14 +454,6 @@
       "since": "2026-11-22"
     },
     {
-      "horse_id": "HK_2026_M010",
-      "horse_name": "FAST TOP SEARCH",
-      "remaining": [
-        "official vet exam"
-      ],
-      "since": "2026-11-22"
-    },
-    {
       "horse_id": "HK_2025_L347",
       "horse_name": "MIGHTY PROFIT",
       "remaining": [
@@ -600,20 +574,12 @@
         "official vet exam"
       ],
       "since": "2026-11-25"
-    },
-    {
-      "horse_id": "HK_2024_K228",
-      "horse_name": "FLYING TING LOK",
-      "remaining": [
-        "official vet exam"
-      ],
-      "since": "2026-11-25"
     }
   ],
   "sha256": {
-    "records.jsonl": "1507361cc40131dac2b13e427a374e13d172257d9e4e3194f86fdf2ebbff26a2",
-    "records.csv": "1603269b0d82e6e651be7a0fa84513a083065f075e76d6493e5e2175d0035b6b",
-    "horses_latest.json": "bad116b01bd41b0927490198737ed4826fbb88b571d54264a96bf14c2ea6d5b6",
+    "records.jsonl": "ab2b87e1b09034aa41b213ae08d8ed250e973f91fe0b1ffee9ba23a4b8c24460",
+    "records.csv": "611be1e23bae85f0490313e22bfe8e0c2ec9f9bde2c4cffa454bc31e629eb8fd",
+    "horses_latest.json": "bceebf181b3b055d0ce7802f51f008e2aaa13d624ab83dbadfad991efdfc65b8",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
