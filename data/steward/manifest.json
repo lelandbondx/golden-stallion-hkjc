@@ -2,12 +2,12 @@
   "schema_version": "1",
   "feed": "steward_medical_integrity",
   "status": "ok",
-  "run_time_hkt": "2026-11-27T20:46:17+08:00",
-  "run_time_utc": "2026-11-27T12:46:17+00:00",
-  "source_last_run": "2026-11-27T07:46:17-05:00",
+  "run_time_hkt": "2026-11-28T20:39:50+08:00",
+  "run_time_utc": "2026-11-28T12:39:50+00:00",
+  "source_last_run": "2026-11-28T07:55:00-05:00",
   "row_counts": {
-    "records.jsonl": 268,
-    "records.csv": 268,
+    "records.jsonl": 270,
+    "records.csv": 270,
     "horses_latest.json": 110,
     "schema.md": 1,
     "meetings/HV-20261104.json": 1,
@@ -42,7 +42,7 @@
     },
     {
       "meeting_id": "ST-20261108",
-      "records_in_jsonl": 23,
+      "records_in_jsonl": 25,
       "has_meeting_file": true
     },
     {
@@ -91,7 +91,7 @@
     "horses_snapshot_count": 110,
     "meeting_files": 8,
     "reviewed_meetings_in_state": 7,
-    "open_items": 45,
+    "open_items": 44,
     "records_without_meeting": 98,
     "meeting_ids_in_records_missing_file": [
       "ST-20261028"
@@ -167,18 +167,18 @@
       }
     ],
     "last_open_item_recheck": {
-      "at": "2026-11-27T07:46:17-05:00",
+      "at": "2026-11-28T07:55:00-05:00",
       "horses_rechecked": 48,
-      "result": "Re-read HKJC vet records for all open/pending horses (retired/sold horses have no vet table) plus BT results 27/11 (Conghua turf trials only). Vet exams Passed 26/11: MAJESTIC VALOUR, VIEW OF COSMOS, FAST TOP SEARCH (all cleared). Barrier trials passed 27/11: SUPERB GUY (cleared), LADY'S LOVE (vet exam still open). No new vet Passed Dates otherwise; Awesome Fluke stalls test still unpublished. Bookkeeping: Lucky Blessing/Friends of Shajing now cleared (Passed Dates 17/11, 13/11), Apex Glory clearance chained."
+      "result": "Re-read HKJC vet records for all open/pending horses (retired/sold have no vet table). New: LADY'S LOVE vet exam Passed Date 27/11 -> cleared (barrier trial passed 27/11). No other new Passed Dates; BT results latest still 27/11 (Conghua); Awesome Fluke stalls test still unpublished. No meeting 26-28 Nov per fixture calendar."
     },
     "next_meeting": {
       "date": "2026-11-29",
       "venue": "ST",
-      "verified_at": "2026-11-27T07:46:17-05:00",
+      "verified_at": "2026-11-28T07:55:00-05:00",
       "source": "https://racing.hkjc.com/en-us/local/information/fixture?calyear=2026&calmonth=11 (29 Nov: ST, day; no meeting since HV 25 Nov)",
       "card_published": true,
       "verified": true,
-      "declared_cross_match": "Racecard pages racedate=2026/11/29 races 1-11 (156 brand codes incl. standbys) cross-matched vs ledger at 2026-11-27T07:46:17-05:00: 0 horses with an open requirement"
+      "declared_cross_match": "Racecard pages racedate=2026/11/29 races 1-11 (155 brand codes incl. standbys) cross-matched vs ledger at 2026-11-28T07:55:00-05:00: 0 horses with an open requirement (Akashvani no_requirement only)"
     },
     "upcoming_known": [
       "Awesome Fluke (J050) stalls test ST 16/11/2026: result not published on any page checked (gap)",
@@ -237,14 +237,6 @@
     {
       "horse_id": "HK_2025_L305",
       "horse_name": "KANSAS",
-      "remaining": [
-        "official vet exam"
-      ],
-      "since": "2026-11-08"
-    },
-    {
-      "horse_id": "HK_2025_L220",
-      "horse_name": "LADY'S LOVE",
       "remaining": [
         "official vet exam"
       ],
@@ -577,9 +569,9 @@
     }
   ],
   "sha256": {
-    "records.jsonl": "ab2b87e1b09034aa41b213ae08d8ed250e973f91fe0b1ffee9ba23a4b8c24460",
-    "records.csv": "611be1e23bae85f0490313e22bfe8e0c2ec9f9bde2c4cffa454bc31e629eb8fd",
-    "horses_latest.json": "bceebf181b3b055d0ce7802f51f008e2aaa13d624ab83dbadfad991efdfc65b8",
+    "records.jsonl": "fc577b539994b4fef6a9bbd824a8b8d0a76ba7a6e6c6fb00fa68f6db4cc02685",
+    "records.csv": "a12b07a4897d6e5fe3b54a92c19ccd833e0f1cd0e8c5675be3ba1b3464998e7f",
+    "horses_latest.json": "cfd17af3c3dbade95cd3f6ffd8a294517c18b1438306e2be2444aa48375828aa",
     "schema.md": "beb4f5b5c9f813ea84236b4aa63ee6e0b256a0fc3b382440876389879ddc2734",
     "meetings/HV-20261104.json": "7fc96c609a9795d05dc3e336f4f8558e469f797753c6c6cc45ec41aaa10eaa82",
     "meetings/HV-20261111.json": "1d46de0e326418db08f40226d427ee305ba3083dae1cf58407f91293c6eb8bce",
