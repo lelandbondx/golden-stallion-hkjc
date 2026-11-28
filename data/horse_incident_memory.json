@@ -79056,26 +79056,18 @@
         "field_size": 12,
         "incident_flags": [
           {
-            "flag": "vet_or_merit",
-            "severity": 2,
-            "marker": "mid",
-            "snippet": "Had its right hind plate refitted at the holding stables, was examined by the Veterinary Officer and passed suitable to ",
-            "vet_blocked": true,
-            "is_victim": false
-          },
-          {
             "flag": "traffic_trouble",
             "severity": 2,
             "marker": "mid",
             "snippet": "Had its right hind plate refitted at the holding stables, was examined by the Veterinary Officer and passed suitable to ",
-            "vet_blocked": true,
+            "vet_blocked": false,
             "is_victim": true
           }
         ],
         "ground_saved_score": 0.5,
         "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Had its right hind plate refitted at the holding stables, was examined by the Veterinary Officer and passed suitable to race.  Near the 150 Metres was steadied when crowded between WORLD HERO which was taken in slightly by COPARTNER FLEET (C Y Ho) which shifted in and LIGHTNESS OF BEING which was taken out by THUNDER ACTION (M L Yeung) when THUNDER ACTION lay out.  Both C Y Ho and M L Yeung were advised to exercise more care and to make a greater effort to straighten their mounts when they shift ground whilst not clear.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (25/11/26 HV / Turf / \"C+3\" 1200m): Fin 11 (LBW 6) | RunPos: 5 6 11 27/06/2026: Unacceptable performance. (Passed: 07/09/2026)"
+        "steward_comment": "Had its right hind plate refitted at the holding stables, was examined by the Veterinary Officer and passed suitable to race.  Near the 150 Metres was steadied when crowded between WORLD HERO which was taken in slightly by COPARTNER FLEET (C Y Ho) which shifted in and LIGHTNESS OF BEING which was taken out by THUNDER ACTION (M L Yeung) when THUNDER ACTION lay out.  Both C Y Ho and M L Yeung were advised to exercise more care and to make a greater effort to straighten their mounts when they shift ground whilst not clear.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (25/11/26 HV / Turf / \"C+3\" 1200m): Fin 11 (LBW 6) | RunPos: 5 6 11 No HKJC veterinary records"
       },
       {
         "race_date": "2026-11-08",
@@ -79097,26 +79089,18 @@
         "field_size": 12,
         "incident_flags": [
           {
-            "flag": "vet_or_merit",
-            "severity": 2,
-            "marker": "mid",
-            "snippet": "Had its right hind plate refitted at the holding stables, was examined by the Veterinary Officer and passed suitable to ",
-            "vet_blocked": true,
-            "is_victim": false
-          },
-          {
             "flag": "traffic_trouble",
             "severity": 2,
             "marker": "mid",
             "snippet": "Had its right hind plate refitted at the holding stables, was examined by the Veterinary Officer and passed suitable to ",
-            "vet_blocked": true,
+            "vet_blocked": false,
             "is_victim": true
           }
         ],
         "ground_saved_score": 0.5,
         "interference_severity": 2,
         "gate_speed_proven": false,
-        "steward_comment": "Had its right hind plate refitted at the holding stables, was examined by the Veterinary Officer and passed suitable to race.  Near the 150 Metres was steadied when crowded between WORLD HERO which was taken in slightly by COPARTNER FLEET (C Y Ho) which shifted in and LIGHTNESS OF BEING which was taken out by THUNDER ACTION (M L Yeung) when THUNDER ACTION lay out.  Both C Y Ho and M L Yeung were advised to exercise more care and to make a greater effort to straighten their mounts when they shift ground whilst not clear.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (25/11/26 HV / Turf / \"C+3\" 1200m): Fin 11 (LBW 6) | RunPos: 5 6 11 27/06/2026: Unacceptable performance. (Passed: 07/09/2026)"
+        "steward_comment": "Had its right hind plate refitted at the holding stables, was examined by the Veterinary Officer and passed suitable to race.  Near the 150 Metres was steadied when crowded between WORLD HERO which was taken in slightly by COPARTNER FLEET (C Y Ho) which shifted in and LIGHTNESS OF BEING which was taken out by THUNDER ACTION (M L Yeung) when THUNDER ACTION lay out.  Both C Y Ho and M L Yeung were advised to exercise more care and to make a greater effort to straighten their mounts when they shift ground whilst not clear.  A veterinary inspection immediately following the race did not show any significant findings. Last Run (25/11/26 HV / Turf / \"C+3\" 1200m): Fin 11 (LBW 6) | RunPos: 5 6 11 No HKJC veterinary records"
       }
     ],
     "trial_note": {
